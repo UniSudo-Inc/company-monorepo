@@ -1,0 +1,14 @@
+{
+  "extends": ["./tsconfig.app.json", "@company/configs/typescript/jest.tsconfig.json"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["src/**/*.test.ts", "src/**/*.spec.ts"],
+  "exclude": ["e2e", "**/*.config.ts"]
+}

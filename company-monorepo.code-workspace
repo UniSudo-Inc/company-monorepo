@@ -1,0 +1,113 @@
+{
+  "folders": [
+    {
+      "name": "frontends/website",
+      "path": "apps/frontends/website"
+    },
+    {
+      "name": "frontends/docs",
+      "path": "apps/frontends/docs"
+    },
+    {
+      "name": "frontends/admin",
+      "path": "apps/frontends/admin"
+    },
+    {
+      "name": "frontends/web",
+      "path": "apps/frontends/web"
+    },
+    {
+      "name": "frontends/mobile",
+      "path": "apps/frontends/mobile"
+    },
+    {
+      "name": "frontends/desktop",
+      "path": "apps/frontends/desktop"
+    },
+    {
+      "name": "backends/users",
+      "path": "apps/backends/users"
+    },
+    {
+      "name": "infra/api",
+      "path": "apps/infra/api"
+    },
+    {
+      "name": "packages/ui",
+      "path": "packages/ui"
+    },
+    {
+      "name": "packages/configs",
+      "path": "packages/configs"
+    },
+    {
+      "name": "packages/openapi",
+      "path": "packages/openapi"
+    }
+  ],
+  "settings": {
+    "eslint.workingDirectories": [
+      {
+        "mode": "auto"
+      }
+    ],
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "never",
+        "source.fixAll": "explicit",
+      }
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "never",
+        "source.fixAll": "explicit",
+      }
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "never",
+        "source.fixAll": "explicit",
+      }
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "never",
+        "source.fixAll": "explicit",
+      }
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+      }
+    },
+    "search.followSymlinks": false,
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+      "node_modules/": true,
+      "dist/": true,
+      "coverage/": true,
+      "generated/": true,
+      ".turbo/": true,
+      ".pnpm-store/": true
+    },
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "jest.runMode": "deferred",
+    "jest.jestCommandLine": "pnpm run test",
+    "files.associations": {
+      "*.css": "tailwindcss"
+    },
+    "liveServer.settings.multiRootWorkspaceName": "interface",
+    "cSpell.words": [
+      "astro",
+      "clsx"
+    ],
+    "git.openRepositoryInParentFolders": "always"
+  }
+}

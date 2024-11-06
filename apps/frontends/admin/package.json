@@ -1,0 +1,64 @@
+{
+  "name": "@company/admin",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.app.json && refine build",
+    "dev": "refine dev",
+    "e2e": "playwright test",
+    "e2e:codegen": "playwright codegen",
+    "e2e:debug": "playwright test --debug",
+    "e2e:report": "playwright test --report=html",
+    "e2e:ui": "playwright test --ui",
+    "format": "prettier --write",
+    "lint": "eslint --fix",
+    "refine": "refine",
+    "start": "refine start",
+    "test": "vitest run",
+    "test:ci": "CI=1 vitest run --coverage",
+    "test:coverage": "vitest run --coverage",
+    "test:preview": "vitest-preview",
+    "test:ui": "vitest --ui",
+    "test:watch": "vitest watch"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/icons": "5.5.1",
+    "@company/ui": "workspace:*",
+    "@refinedev/antd": "5.43.1",
+    "@refinedev/core": "4.55.0",
+    "@refinedev/react-router-v6": "4.6.0",
+    "@refinedev/simple-rest": "5.0.8",
+    "@uiw/react-md-editor": "4.0.4",
+    "antd": "5.21.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.27.0"
+  },
+  "devDependencies": {
+    "@company/configs": "workspace:*",
+    "@refinedev/cli": "2.16.39",
+    "@refinedev/devtools": "1.2.9",
+    "@testing-library/jest-dom": "6.5.0",
+    "@testing-library/react": "16.0.1",
+    "@testing-library/user-event": "14.5.2",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.2",
+    "vite": "5.4.9"
+  },
+  "refine": {
+    "projectId": "Zg6sWL-pDSdcs-dad6RZ"
+  }
+}

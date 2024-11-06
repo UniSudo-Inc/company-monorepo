@@ -1,0 +1,14 @@
+{
+  "language": "typescript",
+  "app": "pnpm tsx --tsconfig=tsconfig.app.json src/index.ts",
+  "output": "cdktf.out",
+  "projectId": "e595dea1-0f63-4abd-96b3-a610429f26ba",
+  "sendCrashReports": "true",
+  "terraformProviders": [],
+  "terraformModules": [],
+  "context": {
+    "excludeStackIdFromLogicalIds": "true",
+    "allowSepCharsInLogicalIds": "true"
+  },
+  "watchPattern": ["./**/*.ts"]
+}

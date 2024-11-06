@@ -1,0 +1,17 @@
+{
+  "name": "frontends/mobile",
+  "forwardPorts": [8081],
+  "dockerComposeFile": "../../docker-compose.dev.yml",
+  "service": "mobile",
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace/apps/frontends/mobile",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "orta.vscode-jest"
+      ]
+    }
+  }
+}

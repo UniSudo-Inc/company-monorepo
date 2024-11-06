@@ -1,0 +1,14 @@
+{
+  "extends": ["../tsconfig.json", "@company/configs/typescript/jest.tsconfig.json"],
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "dist"
+  },
+  "include": ["**/*.test.ts", "**/*.spec.ts", "**/*.setup.ts"],
+  "exclude": [],
+  "references": [
+    {
+      "path": "../tsconfig.app.json"
+    }
+  ]
+}

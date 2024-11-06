@@ -1,0 +1,18 @@
+{
+  "name": "packages/ui",
+  "forwardPorts": [6006],
+  "service": "storybook",
+  "dockerComposeFile": "../../docker-compose.dev.yml",
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace/packages/ui",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "vitest.explorer",
+        "bradlc.vscode-tailwindcss"
+      ]
+    }
+  }
+}

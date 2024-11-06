@@ -1,0 +1,16 @@
+{
+  "name": "get-all",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lambdas to do CRUD operations on DynamoDB",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "3.665.0",
+    "@aws-sdk/lib-dynamodb": "3.665.0",
+    "uuid": "10.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.145",
+    "@types/uuid": "10.0.0"
+  }
+}

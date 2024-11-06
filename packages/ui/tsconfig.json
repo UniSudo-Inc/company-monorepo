@@ -1,0 +1,20 @@
+{
+  "extends": "@company/configs/typescript/react.tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "."
+  },
+  "include": ["**/*"],
+  "exclude": ["src", "dist", "build", "node_modules"],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": ".storybook"
+    }
+  ]
+}

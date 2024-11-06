@@ -1,0 +1,17 @@
+{
+  "name": "infra/api",
+  "forwardPorts": [3000],
+  "dockerComposeFile": "../../docker-compose.dev.yml",
+  "service": "api",
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace/apps/infra/api",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "vitest.explorer"
+      ]
+    }
+  }
+}

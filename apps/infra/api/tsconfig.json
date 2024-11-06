@@ -1,0 +1,26 @@
+{
+  "extends": "./node_modules/@company/configs/typescript/node.tsconfig.json",
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "."
+  },
+  "include": ["**/*", "assets/functions/.ts"],
+  "exclude": ["src", "dist", "build", "node_modules"],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./tests"
+    },
+    {
+      "path": "./assets/functions"
+    }
+  ]
+}

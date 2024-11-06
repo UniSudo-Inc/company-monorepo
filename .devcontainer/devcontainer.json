@@ -1,0 +1,31 @@
+{
+  "name": "company-monorepo",
+  "shutdownAction": "none",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "runArgs": ["--name", "company-monorepo"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "orta.vscode-jest",
+        "ms-playwright.playwright",
+        "vitest.explorer",
+        "bradlc.vscode-tailwindcss",
+        "ms-vsliveshare.vsliveshare",
+        "postman.postman-for-vscode",
+        "figma.figma-vscode-extension",
+        "streetsidesoftware.code-spell-checker",
+        "mikestead.dotenv",
+        "editorconfig.editorconfig",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+        "github.vscode-github-actions",
+        "github.vscode-pull-request-github",
+        "github.remotehub",
+        "codezombiech.gitignore",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}

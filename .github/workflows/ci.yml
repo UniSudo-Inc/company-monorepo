@@ -1,0 +1,113 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - 'dev'
+      - 'main'
+    paths:
+      - '**.js'
+      - '**.ts'
+      - '**.json'
+      - '**.yaml'
+      - '.github/workflows/ci.yml'
+
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      changes: ${{ steps.changes.outputs.changes }}
+    steps:
+      - uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          filters: |
+            admin:
+              - 'apps/frontends/admin/**'
+            desktop:
+              - 'apps/frontends/desktop/**'
+            docs:
+              - 'apps/frontends/docs/**'
+            mobile:
+              - 'apps/frontends/mobile/**'
+            web:
+              - 'apps/frontends/web/**'
+            website:
+              - 'apps/frontends/website/**'
+            users:
+              - 'apps/backends/users/**'
+            api:
+              - 'apps/infra/api/**'
+            ui:
+              - 'packages/ui/**'
+            configs:
+              - 'packages/configs/**'
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: filter
+    strategy:
+      matrix:
+        package: ${{ fromJSON(needs.filter.outputs.changes) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.11.0
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.17.0
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Lint
+        run: pnpm lint --filter @company/${{ matrix.package }}
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [filter, lint]
+    strategy:
+      matrix:
+        package: ${{ fromJSON(needs.filter.outputs.changes) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.11.0
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.17.0
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build
+        run: pnpm build --filter @company/${{ matrix.package }}
+
+  test:
+    runs-on: ubuntu-latest
+    needs: [filter, build]
+    strategy:
+      matrix:
+        package: ${{ fromJSON(needs.filter.outputs.changes) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.11.0
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.17.0
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Test
+        run: pnpm test:ci --filter @company/${{ matrix.package }}

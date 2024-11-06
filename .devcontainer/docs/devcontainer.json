@@ -1,0 +1,19 @@
+{
+  "name": "frontends/docs",
+  "forwardPorts": [3000],
+  "dockerComposeFile": "../../docker-compose.dev.yml",
+  "service": "docs",
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace/apps/frontends/docs",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "vitest.explorer",
+        "ms-playwright.playwright",
+        "bradlc.vscode-tailwindcss"
+      ]
+    }
+  }
+}

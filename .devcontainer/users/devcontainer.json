@@ -1,0 +1,17 @@
+{
+  "name": "backends/users",
+  "forwardPorts": [8787],
+  "service": "users",
+  "dockerComposeFile": "../../docker-compose.dev.yml",
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace/apps/backends/users",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "vitest.explorer"
+      ]
+    }
+  }
+}

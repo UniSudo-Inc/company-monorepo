@@ -1,0 +1,9 @@
+tasks:
+    install:
+        name: Install
+        description: Install dependencies
+        # triggeredBy lists all trigger that start the service. If none are provided the service isn't started automatically.
+        # See below for a complete list of trigger.
+        triggeredBy:
+            - postEnvironmentStart
+        command: pnpm install
