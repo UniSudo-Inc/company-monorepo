@@ -13,18 +13,6 @@
       "path": "apps/frontends/admin"
     },
     {
-      "name": "frontends/web",
-      "path": "apps/frontends/web"
-    },
-    {
-      "name": "frontends/mobile",
-      "path": "apps/frontends/mobile"
-    },
-    {
-      "name": "frontends/desktop",
-      "path": "apps/frontends/desktop"
-    },
-    {
       "name": "backends/users",
       "path": "apps/backends/users"
     },
@@ -39,10 +27,6 @@
     {
       "name": "packages/configs",
       "path": "packages/configs"
-    },
-    {
-      "name": "packages/openapi",
-      "path": "packages/openapi"
     }
   ],
   "settings": {
