@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import type { AstroConfig, AstroIntegration } from 'astro';
-import configBuilder, { type Config } from './utils/configBuilder';
-import loadConfig from './utils/loadConfig';
+import configBuilder, { type Config } from './utils/config-builder';
+import loadConfig from './utils/load-config';
 
 export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegration => {
   let cfg: AstroConfig;
@@ -22,7 +22,7 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegra
         const buildLogger = logger.fork('astrowind');
 
         const virtualModuleId = 'astrowind:config';
-        const resolvedVirtualModuleId = `\0${  virtualModuleId}`;
+        const resolvedVirtualModuleId = `\0${virtualModuleId}`;
 
         const rawJsonConfig = (await loadConfig(_themeConfig)) as Config;
         const { SITE, I18N, METADATA, APP_BLOG, UI, ANALYTICS } = configBuilder(rawJsonConfig);
@@ -41,8 +41,6 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegra
                   if (id === virtualModuleId) {
                     return resolvedVirtualModuleId;
                   }
-
-                  
                 },
                 load(id) {
                   if (id === resolvedVirtualModuleId) {
@@ -55,8 +53,6 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegra
                     export const ANALYTICS = ${JSON.stringify(ANALYTICS)};
                     `;
                   }
-
-                  
                 },
               },
             ],

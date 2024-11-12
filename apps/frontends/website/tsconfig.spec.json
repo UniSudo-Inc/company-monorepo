@@ -1,15 +1,26 @@
 {
-  "extends": ["./tsconfig.json", "@company/configs/typescript/vitest.tsconfig.json"],
+  "extends": [
+    "./tsconfig.json",
+    "@company/configs/typescript/vitest.tsconfig.json"
+  ],
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",
     "baseUrl": "src",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ]
     }
   },
-  "include": ["src/**/*.test.ts", "src/**/*.spec.ts", "src/**/*.astro"],
-  "exclude": ["e2e", "**/*.config.ts"],
+  "include": [
+    "src/**/*.test.ts",
+    "src/**/*.spec.ts"
+  ],
+  "exclude": [
+    "e2e",
+    "**/*.config.ts"
+  ],
   "references": [
     {
       "path": "./tsconfig.app.json"

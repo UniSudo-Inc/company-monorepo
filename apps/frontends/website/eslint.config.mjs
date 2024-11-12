@@ -6,16 +6,4 @@ import playwright from '@company/configs/eslint/playwright.mjs';
 import domTest from '@company/configs/eslint/dom-test.mjs';
 
 /** @type {import("eslint").Linter.Config[]} */
-export default [
-  ...browser,
-  ...typescript,
-  ...vitest,
-  ...astro,
-  ...domTest,
-  ...playwright,
-  {
-    rules: {
-      'sonarjs/no-unknown-property': 'off',
-    },
-  },
-];
+export default [...browser, ...typescript, ...astro, ...vitest, ...domTest, ...playwright];

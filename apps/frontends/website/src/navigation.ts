@@ -1,180 +1,191 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Homes',
+      text: '关于我们',
       links: [
         {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
-        },
-      ],
-    },
-    {
-      text: 'Pages',
-      links: [
-        {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'About us',
+          text: '公司简介',
           href: getPermalink('/about'),
         },
         {
-          text: 'Contact',
+          text: '发展历程',
+          href: getPermalink('/homes/startup'),
+        },
+        {
+          text: '团队介绍',
+          href: getPermalink('/team'),
+        },
+        {
+          text: '联系我们',
           href: getPermalink('/contact'),
         },
         {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
+          text: '加入我们',
+          href: getPermalink('/career'),
         },
       ],
     },
     {
-      text: 'Landing',
+      text: '解决方案',
       links: [
         {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
+          text: '智能制造',
+          href: getPermalink('/solutions/industry'),
         },
         {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
+          text: '智慧交通',
+          href: getPermalink('/solutions/transport'),
         },
         {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
+          text: '智能客服',
+          href: getPermalink('/solutions/customer-service'),
         },
         {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
+          text: '企业服务',
+          href: getPermalink('/solutions/enterprise'),
         },
       ],
     },
     {
-      text: 'Blog',
+      text: '产品体系',
       links: [
         {
-          text: 'Blog List',
-          href: getBlogPermalink(),
+          text: 'UniChat',
+          href: getPermalink('/chat'),
         },
         {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          text: 'UniStudio',
+          href: getPermalink('/studio'),
         },
         {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
+          text: 'UniSpeech',
+          href: getPermalink('/speech'),
         },
         {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
+          text: 'UniData',
+          href: getPermalink('/data'),
         },
         {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
+          text: '数据标注服务',
+          href: getPermalink('/labeling'),
+        },
+        {
+          text: '智能硬件服务',
+          href: getPermalink('/hardware'),
         },
       ],
     },
     {
-      text: 'Widgets',
-      href: '#',
+      text: '联系我们',
+      href: '/contact',
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [{ text: '加入我们', href: '/career', target: '_blank' }],
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: '产品体系',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        {
+          text: 'UniChat',
+          href: getPermalink('/chat'),
+        },
+        {
+          text: 'UniStudio',
+          href: getPermalink('/studio'),
+        },
+        {
+          text: 'UniSpeech',
+          href: getPermalink('/speech'),
+        },
+        {
+          text: 'UniData',
+          href: getPermalink('/data'),
+        },
+        {
+          text: '数据标注服务',
+          href: getPermalink('/labeling'),
+        },
+        {
+          text: '智能硬件服务',
+          href: getPermalink('/hardware'),
+        },
       ],
     },
     {
-      title: 'Platform',
+      title: '解决方案',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        {
+          text: '智能制造',
+          href: getPermalink('/solutions/industry'),
+        },
+        {
+          text: '智慧交通',
+          href: getPermalink('/solutions/transport'),
+        },
+        {
+          text: '智能客服',
+          href: getPermalink('/solutions/customer-service'),
+        },
+        {
+          text: '企业服务',
+          href: getPermalink('/solutions/enterprise'),
+        },
       ],
     },
     {
-      title: 'Support',
+      title: '关于我们',
       links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
+        {
+          text: '公司简介',
+          href: getPermalink('/about'),
+        },
+        {
+          text: '发展历程',
+          href: getPermalink('/homes/startup'),
+        },
+        {
+          text: '团队介绍',
+          href: getPermalink('/team'),
+        },
+        {
+          text: '加入我们',
+          href: getPermalink('/career'),
+        },
       ],
     },
     {
-      title: 'Company',
+      title: '联系我们',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        {
+          text: '商务合作',
+          href: 'mailto:contact@unisudo.com',
+        },
+        {
+          text: '客户支持',
+          href: 'mailto:support@unisudo.com',
+        },
+        {
+          text: '媒体咨询',
+          href: 'mailto:media@unisudo.com',
+        },
       ],
     },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: '服务条款', href: getPermalink('/terms') },
+    { text: '隐私政策', href: getPermalink('/privacy') },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/UniSudo-Inc' },
   ],
   footNote: `
     <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>

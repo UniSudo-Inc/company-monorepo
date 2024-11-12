@@ -30,7 +30,7 @@ export type ImagesOptimizer = (
   breakpoints: number[],
   width?: number,
   height?: number,
-  format?: string
+  format?: string,
 ) => Promise<{ src: string; width: number }[]>;
 
 /* ******* */
@@ -216,7 +216,7 @@ export const astroAsseetsOptimizer: ImagesOptimizer = async (
   breakpoints,
   _width,
   _height,
-  format = undefined
+  format = undefined,
 ) => {
   if (!image) {
     return [];
@@ -231,7 +231,7 @@ export const astroAsseetsOptimizer: ImagesOptimizer = async (
         width: result.attributes['width'] ?? w,
         height: result.attributes['height'],
       };
-    })
+    }),
   );
 };
 
@@ -266,7 +266,7 @@ export const unpicOptimizer: ImagesOptimizer = async (image, breakpoints, width,
         width: w,
         height: _height,
       };
-    })
+    }),
   );
 };
 
@@ -286,7 +286,7 @@ export async function getImagesOptimized(
     format,
     ...rest
   }: ImageProps,
-  transform: ImagesOptimizer = () => Promise.resolve([])
+  transform: ImagesOptimizer = () => Promise.resolve([]),
 ): Promise<{ src: string; attributes: HTMLAttributes<'img'> }> {
   if (typeof image !== 'string') {
     width ||= Number(image.width) || undefined;
