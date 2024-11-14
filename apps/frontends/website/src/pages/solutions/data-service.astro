@@ -1,0 +1,277 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Features3 from '@/components/widgets/Features3.astro';
+import Steps2 from '@/components/widgets/Steps2.astro';
+import Timeline from '@/components/widgets/Timeline.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
+import Features2 from '@/components/widgets/Features2.astro';
+
+const metadata = {
+  title: '数据服务',
+};
+---
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <div class="relative h-96 flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+        数据清洗与标注解决方案
+      </h1>
+      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
+        成本低· 可信企业 · 数据安全
+      </p>
+    </div>
+  </div>
+  <!-- Hero Section - 更简洁的标题和副标题 -->
+  <Hero
+    tagline=" "
+    image={{
+      src: 'https://images.unsplash.com/photo-1599727277707-b429a4994c15?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AI数据处理',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-4xl md:text-5xl font-bold leading-tight">数据赋能 智创未来</span><br />
+      <span class="highlight text-2xl text-accent dark:text-white md:text-3xl mt-2 font-medium">专业的AI数据服务解决方案</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+        从数据标注到隐私保护，提供全方位的AI数据处理服务，助力您的AI项目成功落地
+      </span>
+    </Fragment>
+  </Hero>
+
+  <!-- Timeline Service Process - 移到前面突出服务流程 -->
+  <Timeline
+    title="数据服务流程"
+    subtitle="标准化的处理流程，确保高质量交付"
+    items={[
+      {
+        title: '需求分析',
+        description: '深入了解业务场景，制定解决方案',
+        icon: 'tabler:search',
+        date: '第一阶段'
+      },
+      {
+        title: '数据采集',
+        description: '多渠道数据收集与预处理',
+        icon: 'tabler:database-import',
+        date: '第二阶段'
+      },
+      {
+        title: '数据处理',
+        description: '专业的清洗、标注与处理',
+        icon: 'tabler:tool',
+        date: '第三阶段'
+      },
+      {
+        title: '质量控制',
+        description: '严格的质量管理与验证',
+        icon: 'tabler:certificate',
+        date: '第四阶段'
+      },
+      {
+        title: '交付服务',
+        description: '及时交付并持续技术支持',
+        icon: 'tabler:send',
+        date: '第五阶段'
+      },
+    ]}
+  />
+
+  <!-- Core Services Part 1 - 核心服务分两部分展示 -->
+  <Features2
+  
+    title="核心数据服务"
+    subtitle="专业的数据处理能力"
+    columns={3}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'AI训练数据标注',
+        description: `
+        • 图像与视频标注
+        • 文本数据标注
+        • 语音数据标注
+        • 多语言数据标注
+        • 专业领域标注
+        • 标注质量管理`,
+        icon: 'tabler:tag',
+        image: {
+          src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+          alt: '数据标注'
+        }
+      },
+      {
+        title: '多模态数据处理',
+        description: `
+        • 图像预处理
+        • 视频数据处理
+        • 语音数据处理
+        • 文本数据处理
+        • 多模态数据融合
+        • 数据格式转换`,
+        icon: 'tabler:layers-intersect',
+        image: {
+          src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80',
+          alt: '多模态处理'
+        }
+      },
+      {
+        title: '数据清洗与增强',
+        description: `
+        • 数据去重与纠错
+        • 数据补全修复
+        • 数据增强扩充
+        • 数据质量提升
+        • 数据集均衡
+        • 噪声数据处理`,
+        icon: 'tabler:refresh',
+        image: {
+          src: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2076&q=80',
+          alt: '数据清洗'
+        }
+      },
+    ]}
+  />
+
+  <!-- Service Advantages - 移到中间位置 -->
+  <Steps2
+    title="服务优势"
+    subtitle="专业可靠的服务保障"
+    items={[
+      {
+        title: '专业团队',
+        description: '拥有AI数据处理领域专业人才团队',
+        icon: 'tabler:users',
+      },
+      {
+        title: '质量保证',
+        description: '严格的质量管理体系，确保数据质量',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: '成本效益',
+        description: '高效的处理流程，优化成本投入',
+        icon: 'tabler:coin',
+      },
+      {
+        title: '安全保障',
+        description: '完善的数据安全保护机制',
+        icon: 'tabler:shield',
+      },
+    ]}
+  />
+
+  <!-- Core Services Part 2 -->
+  <Features3
+    columns={3}
+    isAfterContent={true}
+    items={[
+      {
+        title: '专业领域数据集构建',
+        description: `
+        • 医疗影像数据集
+        • 金融数据集
+        • 工业视觉数据
+        • 自然语言数据
+        • 交通场景数据
+        • 零售数据集`,
+        icon: 'tabler:database',
+        image: {
+          src: 'https://images.unsplash.com/photo-1516321165247-4aa89a48be28?ixlib=rb-4.0.3&auto=format&fit=crop&w=2094&q=80',
+          alt: '专业数据集'
+        }
+      },
+      {
+        title: '数据质量评估体系',
+        description: `
+        • 标注准确度评估
+        • 数据完整性检查
+        • 数据一致性验证
+        • 数据集均衡度
+        • 质量评分体系
+        • 持续改进方案`,
+        icon: 'tabler:chart-dots',
+        image: {
+          src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+          alt: '质量评估'
+        }
+      },
+      {
+        title: '隐私数据保护方案',
+        description: `
+        • 数据脱敏处理
+        • 隐私信息保护
+        • 数据加密存储
+        • 访问权限控制
+        • 合规性保障
+        • 安全审计追溯`,
+        icon: 'tabler:shield-lock',
+        image: {
+          src: 'https://images.unsplash.com/photo-1483706600674-e0c87d3fe85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+          alt: '隐私保护'
+        }
+      },
+    ]}
+  />
+
+  <!-- Call to Action - 更突出的行动召唤 -->
+  <CallToAction
+    title="让数据为您创造价值"
+    subtitle="专业的数据服务团队，为您提供一站式解决方案"
+    actions={[
+      {
+        variant: 'primary',
+        text: '立即咨询',
+        href: '/contact',
+        icon: 'tabler:mail',
+        class: 'hover:scale-105 transition-transform duration-300'
+      },
+      {
+        text: '了解更多',
+        href: '/about',
+        class: 'hover:scale-105 transition-transform duration-300'
+      },
+    ]}
+  />
+</Layout>
+
+<style>
+  /* 统一字体样式 */
+  :root {
+    --font-primary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  /* 标题样式优化 */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    letter-spacing: -0.02em;
+  }
+
+  /* 内容文字优化 */
+  p, li {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+  }
+
+  /* 卡片内容间距优化 */
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  /* 模块间距优化 */
+  section {
+    padding: 4rem 0;
+  }
+
+  /* 响应式间距调整 */
+  @media (max-width: 768px) {
+    section {
+      padding: 3rem 0;
+    }
+  }
+</style>

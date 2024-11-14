@@ -11,11 +11,11 @@ export const headerData = {
         },
         {
           text: '发展历程',
-          href: getPermalink('/homes/startup'),
+          href: getPermalink('/roadmap'),
         },
         {
-          text: '团队介绍',
-          href: getPermalink('/team'),
+          text: '技术创新',
+          href: getPermalink('/technology'),
         },
         {
           text: '联系我们',
@@ -31,20 +31,28 @@ export const headerData = {
       text: '解决方案',
       links: [
         {
-          text: '智能制造',
-          href: getPermalink('/solutions/industry'),
+          text: '数字人展厅',
+          href: getPermalink('/solutions/digital-human'),
         },
         {
-          text: '智慧交通',
-          href: getPermalink('/solutions/transport'),
+          text: '数据服务',
+          href: getPermalink('/solutions/data-service'),
+        },
+        {
+          text: '模型训练',
+          href: getPermalink('/solutions/model-training'),
         },
         {
           text: '智能客服',
           href: getPermalink('/solutions/customer-service'),
         },
         {
-          text: '企业服务',
-          href: getPermalink('/solutions/enterprise'),
+          text: '企业数智化',
+          href: getPermalink('/solutions/enterprise-digitalization'),
+        },
+        {
+          text: '行业解决方案',
+          href: getPermalink('/solutions/industry-solutions'),
         },
       ],
     },

@@ -1,77 +1,55 @@
 ---
 import Layout from '@/layouts/PageLayout.astro';
 import HeroText from '@/components/widgets/HeroText.astro';
-import ContactUs from '@/components/widgets/Contact.astro';
 import Features2 from '@/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: '联系我们',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText tagline='Contact' title="Let's Connect!" />
-
-  <ContactUs
-    id='form'
-    title='Drop us a message today!'
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description='Our support team typically responds within 24 business hours.'
-  />
-
-  <!-- Features2 Widget ************** -->
-
+  <div class="text-center">
+    <HeroText tagline=' ' title='<span class="text-primary">期待与您沟通！</span>' />
+    
+    <div class="relative mx-auto mt-4 h-16 w-16">
+      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+      <span class="relative inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      </span>
+    </div>
+  </div>
+  
   <Features2
-    title='We are here to help!'
+    title='我们随时为您服务！'
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
+        title: '商务合作',
+        description: '如果您对我们的产品和服务感兴趣，期待与您探讨合作机会，为您的企业提供最适合的AI解决方案。',
       },
       {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+        title: '技术支持',
+        description: '我们的技术团队为您提供专业的技术支持，解决您在使用过程中遇到的问题，确保系统稳定运行。',
       },
       {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+        title: '售后服务',
+        description: '我们提供完善的售后服务体系，确保您的需求得到及时响应和解决，为您的业务保驾护航。',
       },
       {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
+        title: '联系电话',
+        description: '16628597963',
         icon: 'tabler:headset',
       },
       {
-        title: 'Email',
-        description: 'contact@support.com',
+        title: '电子邮箱',
+        description: '<a href="mailto:contact@unisudo.com" class="hover:text-primary">contact@unisudo.com</a>',
         icon: 'tabler:mail',
       },
       {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
+        title: '公司地址',
+        description: '上海市浦东新区临港自贸区水芸路55号港城广场二街坊1号楼8层802室',
         icon: 'tabler:map-pin',
       },
     ]}

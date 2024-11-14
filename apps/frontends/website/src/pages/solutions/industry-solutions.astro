@@ -1,0 +1,330 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Content from '@/components/widgets/Content.astro';
+import Features3 from '@/components/widgets/Features3.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
+import Timeline from '@/components/widgets/Timeline.astro';
+
+const metadata = {
+  title: '行业解决方案展示',
+};
+---
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <div class="relative h-96 flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+        多行业解决方案
+      </h1>
+      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
+        本地部署· 交互友好 · 数据安全
+      </p>
+    </div>
+  </div>
+<Layout metadata={metadata}>
+  <!-- Case 1: Education -->
+  <Content
+    isReversed
+    tagline="解决方案 1"
+    title="教育培训数字化转型"
+    items={[
+      {
+        title: '行业痛点',
+        description: `
+        • 个性化教学需求难满足
+        • 教学质量评估困难
+        • 学习效果追踪不足
+        • 优质教育资源分配不均`,
+      },
+      {
+        title: '解决方案',
+        description: `
+        • 部署3B本地模型，构建智能教学系统
+        • 个性化学习路径规划
+        • AI助教实时答疑系统
+        • 智能作业批改与分析
+        • 学情分析与预警机制`,
+      },
+      {
+        title: '落地效果',
+        description: `
+        • 学习效率提升40%
+        • 教师工作负担降低60%
+        • 学生参与度提升50%
+        • 本地部署月成本低至3000元
+        • 系统响应时间<0.5秒`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: '教育解决方案',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">技术亮点</h3>
+      <p>基于本地小模型部署，确保学生数据安全。支持离线运行，适用于各类教育场景。单机可支持千人级并发，性价比极高。</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case 2: Healthcare -->
+  <Content
+    isAfterContent
+    tagline="解决方案 2"
+    title="医疗健康智能诊疗"
+    items={[
+      {
+        title: '行业痛点',
+        description: `
+        • 优质医疗资源短缺
+        • 诊疗效率需提升
+        • 医患沟通待改善
+        • 慢病管理难度大`,
+      },
+      {
+        title: '解决方案',
+        description: `
+        • 部署7B本地模型，保障患者隐私
+        • 智能预问诊系统
+        • 辅助诊断决策支持
+        • 智能随访管理
+        • 医疗知识图谱服务`,
+      },
+      {
+        title: '落地效果',
+        description: `
+        • 诊疗效率提升50%
+        • 医生工作负荷降低45%
+        • 患者满意度提升60%
+        • 本地部署日均成本400元
+        • 诊断准确率达95%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: '医疗解决方案',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">隐私保护</h3>
+      <p>采用本地部署模式，医疗数据绝不出院。支持多院区协同，满足等级医院数据安全要求。</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case 3: Financial Risk Control -->
+  <Content
+    isReversed
+    tagline="解决方案 3"
+    title="金融风控智能分析"
+    items={[
+      {
+        title: '行业痛点',
+        description: `
+        • 风险识别实时性差
+        • 欺诈手段不断升级
+        • 人工审核成本高
+        • 合规要求日益严格`,
+      },
+      {
+        title: '解决方案',
+        description: `
+        • 部署3B本地模型，确保数据合规
+        • 实时风险预警系统
+        • 智能反欺诈引擎
+        • 自动化审核流程
+        • 合规风险评估`,
+      },
+      {
+        title: '落地效果',
+        description: `
+        • 风险识别率提升70%
+        • 人工审核成本降低65%
+        • 业务处理效率提升80%
+        • 本地部署月成本7000元
+        • 系统可用性99.99%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: '金融风控',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">安全合规</h3>
+      <p>本地化部署确保金融数据安全，符合监管要求。毫秒级响应满足实时风控需求，成本低至云服务十分之一。</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case 4: Retail -->
+  <Content
+    isAfterContent
+    tagline="解决方案 4"
+    title="零售智能化升级"
+    items={[
+      {
+        title: '行业痛点',
+        description: `
+        • 库存管理效率低
+        • 个性化营销难度大
+        • 客户体验待提升
+        • 运营成本居高不下`,
+      },
+      {
+        title: '解决方案',
+        description: `
+        • 部署7B本地模型，保护消费者数据
+        • 智能补货预测系统
+        • 个性化推荐引擎
+        • 全渠道客服机器人
+        • 会员精准营销`,
+      },
+      {
+        title: '落地效果',
+        description: `
+        • 库存周转率提升40%
+        • 营销转化率提升55%
+        • 客户满意度提升45%
+        • 本地部署日均成本300元
+        • ROI提升200%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: '零售升级',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">成本优势</h3>
+      <p>本地部署模式大幅降低运营成本，单店部署即可服务全区域，性价比远超云服务。</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case 5: Smart City -->
+  <Content
+    isReversed
+    tagline="解决方案 5"
+    title="智慧城市数据平台"
+    items={[
+      {
+        title: '行业痛点',
+        description: `
+        • 数据孤岛严重
+        • 跨部门协同难
+        • 服务效率低下
+        • 决策支持不足`,
+      },
+      {
+        title: '解决方案',
+        description: `
+        • 部署3B本地模型，确保政务数据安全
+        • 城市数据智能分析
+        • 跨部门业务协同
+        • 智能决策支持
+        • 市民服务一体化`,
+      },
+      {
+        title: '落地效果',
+        description: `
+        • 部门协同效率提升80%
+        • 市民服务满意度提升65%
+        • 决策响应时间降低70%
+        • 本地部署月成本降低85%
+        • 系统利用率提升200%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: '智慧城市',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">数据安全</h3>
+      <p>本地部署确保政务数据安全，支持跨部门协同的同时严格管控数据权限，成本低至云服务五分之一。</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case 6: Tourism -->
+  <Content
+    isAfterContent
+    tagline="解决方案 6"
+    title="文旅行业数字服务"
+    items={[
+      {
+        title: '行业痛点',
+        description: `
+        • 游客体验待提升
+        • 景区管理效率低
+        • 营销方式单一
+        • 资源利用率不高`,
+      },
+      {
+        title: '解决方案',
+        description: `
+        • 部署7B本地模型，打造智慧景区
+        • 智能导游讲解系统
+        • 客流预测与调控
+        • 个性化行程推荐
+        • 文创产品智能营销`,
+      },
+      {
+        title: '落地效果',
+        description: `
+        • 游客停留时间增加45%
+        • 景区收入提升50%
+        • 运营成本降低40%
+        • 本地部署日均成本200元
+        • 游客满意度提升55%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: '文旅服务',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景创新</h3>
+      <p>本地部署支持离线场景，即使在网络受限的景区也能稳定运行。单个服务器即可支撑全景区业务，大幅降低运营成本。</p>
+    </Fragment>
+  </Content>
+
+  <!-- Success Metrics -->
+  <Timeline
+    title="行业解决方案整体价值"
+    items={[
+      {
+        title: '成本优势',
+        description: '本地部署小模型，平均节省75%运营成本',
+      },
+      {
+        title: '数据安全',
+        description: '本地化部署，数据100%可控',
+      },
+      {
+        title: '性能保障',
+        description: '毫秒级响应，99.99%可用性',
+      },
+      {
+        title: '效果提升',
+        description: '平均提升业务效率60%，满意度提升50%',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction
+    title="开启行业数字化转型之旅"
+    subtitle="本地化部署，安全可靠，成本更低"
+    actions={[
+      {
+        variant: 'primary',
+        text: '预约咨询',
+        href: '/contact',
+        icon: 'tabler:download',
+      },
+      {
+        text: '了解更多',
+        href: '/about',
+      },
+    ]}
+  />
+</Layout>

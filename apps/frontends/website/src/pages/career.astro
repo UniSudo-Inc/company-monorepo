@@ -1,0 +1,125 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Features from '@/components/widgets/Features.astro';
+import Features2 from '@/components/widgets/Features2.astro';
+import Content from '@/components/widgets/Content.astro';
+import { fade } from 'astro:transitions';
+
+const metadata = {
+  title: '加入我们 - 上海智独数科技有限公司',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: '立即投递简历',
+        href: 'mailto:HR@unisudo.com',
+      },
+    ]}
+    image={{ src: '@/assets/images/recruitment.png', alt: 'Recruitment Hero Image' }}
+  >
+    <Fragment slot='title'>
+      加入智独数科技
+      <span class='highlight text-accent dark:text-white'>开启AI新未来</span>
+    </Fragment>
+
+    <Fragment slot='subtitle'>
+      在这里，你将与行业顶尖人才一起，探索AI技术的无限可能，创造改变世界的解决方案。
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+  <Features
+    id='features'
+    tagline='为什么选择我们'
+    title='在智独数科技，你将获得'
+    classes={{ container: 'max-w-5xl mx-auto' }}
+    items={[
+      {
+        title: '技术创新的第一线',
+        description: '直接参与前沿AI技术的研发和应用，与行业专家共同探索创新解决方案。',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: '富有挑战的工作环境',
+        description: '接触多样化的项目和技术栈，不断突破自我，实现职业成长。',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: '完善的培训发展体系',
+        description: '系统化的培训计划，帮助你快速成长，实现职业理想。',
+        icon: 'tabler:school',
+      },
+      {
+        title: '有竞争力的薪酬福利',
+        description: '提供具有市场竞争力的薪酬package，认可并回报你的贡献。',
+        icon: 'tabler:certificate',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+  <Features2
+    title='当前招聘职位'
+    subtitle='加入我们，与行业顶尖人才一起探索AI技术的无限可能'
+    tagline='招贤纳士'
+    classes={{ container: 'max-w-5xl mx-auto' }}
+    items={[
+      {
+        title: '前端开发工程师',
+        description: '',
+        icon: 'tabler:code',
+        callToAction: {
+          text: '查看详情',
+          href: '/jobs/frontend-engineer'
+        }
+      },
+      {
+        title: 'AI开发工程师',
+        description: '',
+        icon: 'tabler:code',
+        callToAction: {
+          text: '查看详情',
+          href: '/jobs/ai-engineer'
+        }
+      }
+    ]}
+  >
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Features2>
+
+  <!-- CallToAction Widget *********** -->
+  <Content
+    isAfterContent
+    classes={{ container: 'max-w-5xl mx-auto' }}
+    items={[
+      {
+        title: '简历投递',
+        description: `<a href="mailto:hr@unisudo.com" class="hover:text-primary transition-all duration-200 ease-in-out" 
+                     transition:animate={fade({ duration: '0.3s' })}>
+                     发送简历至: hr@unisudo.com</a>`,
+      },
+      {
+        title: '工作地点',
+        description: '上海市浦东新区临港自贸区水芸路55号港城广场二街坊1号楼8层802室',
+      },
+    ]}
+  >
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>加入我们</h3>
+      <p>期待优秀的你加入智独数科技，一起开创AI的未来！</p>
+    </Fragment>
+
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Content>
+</Layout>

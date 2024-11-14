@@ -1,0 +1,314 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Content from '@/components/widgets/Content.astro';
+import Features3 from '@/components/widgets/Features3.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
+import Timeline from '@/components/widgets/Timeline.astro';
+
+const metadata = {
+  title: '数字人案例展示',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <div class="relative h-96 flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+        数字人解决方案
+      </h1>
+      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
+        本地部署 · 成本可控 · 模型可训
+      </p>
+    </div>
+  </div>
+
+
+<Layout metadata={metadata}>
+  <!-- Case Study 1: Banking -->
+  <Content
+    isReversed
+    tagline="案例研究 1"
+    title="银行智能网点数字员工"
+    items={[
+      {
+        title: '项目背景',
+        description: `
+        • 需求分析：提升网点服务效率，降低人力成本
+        • 痛点：非工作时间无法服务、高峰期等待时间长、人工成本高
+        • 目标：打造24/7全天候服务的智能网点`,
+      },
+      {
+        title: '解决方案',
+        description: `
+        • 部署智能数字员工
+        • 集成核心业务系统
+        • 提供多语言服务能力
+        • 实现业务咨询、产品推荐、办理指导等功能`,
+      },
+      {
+        title: '实施效果',
+        description: `
+        • 客户等待时间减少60%
+        • 业务处理效率提升40%
+        • 客户满意度提升25%
+        • 年节省运营成本约200万元`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: '银行数字员工',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+      <p>某客户在深夜需要办理一笔紧急的国际汇款。传统银行网点已经下班，但智能网点数字员工24小时在线。数字员工不仅帮助客户完成了汇款预约，还贴心地提供了汇率咨询和手续费优惠方案，整个过程仅用时10分钟。</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case Study 2: Museum -->
+  <Content
+    isAfterContent
+    tagline="案例研究 2"
+    title="博物馆虚拟讲解员"
+    items={[
+      {
+        title: '项目背景',
+        description: `
+        • 需求分析：提升文物展示体验，解决讲解员人手不足问题
+        • 痛点：优质讲解资源有限，个性化讲解需求难满足
+        • 目标：打造沉浸式智能讲解体验`,
+      },
+      {
+        title: '解决方案',
+        description: `
+        • 部署虚拟讲解员
+        • 构建文物知识图谱
+        • 支持多语种讲解服务
+        • 提供个性化参观路线规划`,
+      },
+      {
+        title: '实施效果',
+        description: `
+        • 日均服务游客增加300%
+        • 讲解满意度达95%
+        • 文物知识传播效果提升50%
+        • 运营成本降低40%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1584652761653-7980c782d8b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: '博物馆讲解',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+      <p>一个对历史特别感兴趣的小学生在参观博物馆时，虚拟讲解员不仅为他详细讲解了展品历史，还能根据他的兴趣互动问答，通过生动的故事和3D展示让历史知识变得生动有趣。家长表示，这比传统讲解更能激发孩子的学习兴趣。</p>
+    </Fragment>
+  </Content>
+   <!-- Case Study 3: Enterprise Exhibition -->
+    <Content
+      isReversed
+      tagline="案例研究 3"
+      title="企业展厅互动导购"
+      items={[
+        {
+          title: '项目背景',
+          description: `
+          • 需求分析：提升展厅互动体验，实现智能化产品展示
+          • 痛点：专业展示人员成本高，服务标准不统一
+          • 目标：打造沉浸式智能展厅体验`,
+        },
+        {
+          title: '解决方案',
+          description: `
+          • 部署AI导购助手
+          • 开发3D产品配置展示系统
+          • 实现智能报价与方案定制
+          • 提供虚拟体验服务`,
+        },
+        {
+          title: '实施效果',
+          description: `
+          • 客户驻留时间增加45%
+          • 成交转化率提升35%
+          • 客户满意度达98%
+          • 人力成本降低50%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1670500953230-1cb6b7f9d284?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '展厅导购',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>某位客户对新能源汽车产品感兴趣，通过数字导购的互动介绍，不仅了解了产品的详细配置，还通过AR技术实时体验了不同外观选择的效果。数字导购根据客户需求提供了个性化的配置建议和金融方案，最终帮助客户找到了最适合的选择。</p>
+      </Fragment>
+    </Content>
+  
+    <!-- Case Study 4: Shopping Mall -->
+    <Content
+      isAfterContent
+      tagline="案例研究 4"
+      title="商场数字导购助手"
+      items={[
+        {
+          title: '项目背景',
+          description: `
+          • 需求分析：提升购物体验，解决商场导购资源不足问题
+          • 痛点：商品信息获取困难，导购服务不均衡
+          • 目标：打造智能化购物服务体验`,
+        },
+        {
+          title: '解决方案',
+          description: `
+          • 部署智能导购助手
+          • 开发商场导航系统
+          • 实时优惠信息推送
+          • 提供个性化购物建议`,
+        },
+        {
+          title: '实施效果',
+          description: `
+          • 客单价提升28%
+          • 会员转化率增加40%
+          • 导购满意度达96%
+          • 商户经营效率提升35%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1573855619003-97b4799dcd8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '商场导购',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>某顾客想购买一套职业装，数字导购助手通过智能分析其喜好和预算，推荐了合适的品牌和款式，并规划了最优购物路线。通过AR试衣功能，顾客快速找到了心仪的搭配，同时享受到了会员专属优惠。</p>
+      </Fragment>
+    </Content>
+  
+    <!-- Case Study 5: Education -->
+    <Content
+      isReversed
+      tagline="案例研究 5"
+      title="教育培训数字讲师"
+      items={[
+        {
+          title: '项目背景',
+          description: `
+          • 需求分析：提供个性化英语学习体验，解决教师资源不足问题
+          • 痛点：学习效果跟踪困难，互动练习机会少
+          • 目标：打造智能化学习辅导系统`,
+        },
+        {
+          title: '解决方案',
+          description: `
+          • 部署AI外教系统
+          • 开发智能学习评估系统
+          • 实现实时口语互动
+          • 提供个性化学习建议`,
+        },
+        {
+          title: '实施效果',
+          description: `
+          • 学习积极性提升55%
+          • 口语水平提升显著
+          • 学习时长增加40%
+          • 续班率提升35%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1573511860302-28c524319d2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '教育培训',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>一位备考学生通过AI外教获得了全天候的口语练习机会。AI系统不仅能纠正发音问题，还根据学习进度调整教学内容，通过情景对话和实时反馈，帮助学生在三个月内口语成绩获得显著提升。</p>
+      </Fragment>
+    </Content>
+  
+    <!-- Case Study 6: Brand Ambassador -->
+    <Content
+      isAfterContent
+      tagline="案例研究 6"
+      title="企业形象数字代言人"
+      items={[
+        {
+          title: '项目背景',
+          description: `
+          • 需求分析：提升品牌形象，增强用户互动体验
+          • 痛点：传统代言成本高，互动性差
+          • 目标：打造亲和力强的品牌数字形象`,
+        },
+        {
+          title: '解决方案',
+          description: `
+          • 创建数字品牌代言人
+          • 开发直播互动系统
+          • 实现社交媒体互动
+          • 提供产品发布会主持`,
+        },
+        {
+          title: '实施效果',
+          description: `
+          • 品牌好感度提升45%
+          • 社交媒体互动增加200%
+          • 直播转化率提升60%
+          • 营销成本降低30%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '数字代言人',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>在某品牌新品发布会上，数字代言人不仅完成了产品发布演示，还能实时与用户互动，回答技术问题。在社交媒体上，数字代言人每天发布产品使用技巧和生活方式内容，通过亲和力十足的形象成功吸引了大量年轻用户的关注。</p>
+      </Fragment>
+    </Content>
+  
+    <!-- Success Metrics -->
+    <Timeline
+      title="数字人解决方案整体效果"
+      items={[
+        {
+          title: '服务效率提升',
+          description: '平均提升服务效率40%，24/7全天候服务覆盖',
+        },
+        {
+          title: '成本优化',
+          description: '运营成本平均降低45%，人力资源优化配置',
+        },
+        {
+          title: '用户满意度',
+          description: '客户满意度提升35%，互动体验显著改善',
+        },
+        {
+          title: '品牌价值',
+          description: '品牌形象提升40%，市场认知度大幅提升',
+        },
+      ]}
+    />
+  
+    <!-- Call to Action -->
+    <CallToAction
+      title="开启您的数字化转型之旅"
+      subtitle="让我们帮助您打造专属的数字人解决方案"
+      actions={[
+        {
+          variant: 'primary',
+          text: '预约演示',
+          href: '/contact',
+          icon: 'tabler:download',
+        },
+        {
+          text: '了解更多',
+          href: '/about',
+        },
+      ]}
+    />
+  </Layout>
