@@ -3,3 +3,10 @@
 /// <reference types="astro/client" />
 /// <reference types="vite/client" />
 /// <reference types="../vendor/integration/types.d.ts" />
+
+interface ImportMetaEnv {
+  PUBLIC_API_BASE_URL: string;
+  PUBLIC_LIVEKIT_URL: string;
+  PUBLIC_DEMO_AGENT_ID: string;
+  PUBLIC_GUEST_USER_JWT: string;
+}
