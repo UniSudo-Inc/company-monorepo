@@ -167,6 +167,8 @@ export class LiveChatDemo extends LitElement {
     if (_changedProperties.has('_localTrack')) {
       const oldLocalTrack = _changedProperties.get('_localTrack') as LocalAudioTrack | undefined;
       const newLocalTrack = this._localTrack;
+      console.log('oldLocalTrack', oldLocalTrack);
+
       if (!oldLocalTrack?.attachedElements.length && newLocalTrack?.attachedElements.length) {
         this._updateVisualizer(newLocalTrack);
       }
@@ -195,18 +197,23 @@ export class LiveChatDemo extends LitElement {
   }
 
   private async _connectToRoom(): Promise<void> {
-    document.cookie = `JWT=${import.meta.env.PUBLIC_GUEST_USER_JWT}`;
-    // const data = await fetch(`${import.meta.env.PUBLIC_API_BASE_URL}/v1/room`, {
-    //   method: 'POST',
-    //   credentials: 'include',
-    //   body: JSON.stringify({
-    //     agentId: import.meta.env.PUBLIC_DEMO_AGENT_ID,
-    //   }),
-    // }).then((res) => res.json() as Promise<{ roomToken: string }>);
-    const data = {
-      roomToken:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Njc3MzE0MTYsImlzcyI6IkFQSW1EVW50SDRpalNRUiIsIm5hbWUiOiJBdXN0aW4iLCJuYmYiOjE3MzE3MzE0MTYsInN1YiI6Ijk0ZTdhMjg5LTVmNDctNDVmMC04YTkwLTM0YThkMTE2NzFhZSIsInZpZGVvIjp7InJvb20iOiJ4V1lBVVNKbWpKeEYiLCJyb29tSm9pbiI6dHJ1ZX19.kqRCUA52A_v2yWdUJCzhsdrk88vXEQGk_1a3SMtrhPE',
-    };
+    const data = await fetch(`${import.meta.env.PUBLIC_API_BASE_URL}/v1/room`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${import.meta.env.PUBLIC_GUEST_USER_JWT}`,
+      },
+      body: JSON.stringify({
+        agentId: import.meta.env.PUBLIC_DEMO_AGENT_ID,
+      }),
+    }).then((res) => res.json() as Promise<{ roomToken: string }>);
+
+    // const data = {
+    //   roomToken:
+    //     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjgwMDU5NTAsImlzcyI6IkFQSW1EVW50SDRpalNRUiIsIm5hbWUiOiJBdXN0aW4iLCJuYmYiOjE3MzIwMDU5NTAsInN1YiI6Ijk0ZTdhMjg5LTVmNDctNDVmMC04YTkwLTM0YThkMTE2NzFhZSIsInZpZGVvIjp7InJvb20iOiJ4V1lBVVNKbWpKeEYiLCJyb29tSm9pbiI6dHJ1ZX19.neEsxuiGXgzUIW3aQjdU5JB3OqDWHJEwT_zdMicRyYQ',
+    // };
+
     const {
       video: { room: roomName },
     } = jwtDecode<{ video: { room: string } }>(data.roomToken);
@@ -226,35 +233,8 @@ export class LiveChatDemo extends LitElement {
     await this._room.localParticipant.setMicrophoneEnabled(true);
   }
 
-  private async _handleConnected(): Promise<void> {
+  private _handleConnected(): void {
     console.log('connected to room');
-
-    const handleSpeechStart = async (): Promise<void> => {
-      console.log('speech start');
-      const signal = Uint8Array.from([0]);
-      await this._room.localParticipant.publishData(signal, {
-        topic: 'vad',
-        reliable: true,
-      });
-    };
-
-    const handleSpeechEnd = async (): Promise<void> => {
-      console.log('speech end');
-      const signal = Uint8Array.from([1]);
-      await this._room.localParticipant.publishData(signal, {
-        topic: 'vad',
-        reliable: true,
-      });
-    };
-
-    const vad = await MicVAD.new({
-      positiveSpeechThreshold: 0.6,
-      redemptionFrames: 5,
-      onSpeechStart: handleSpeechStart,
-      onSpeechEnd: handleSpeechEnd,
-    });
-    this._vad = vad;
-    vad.start();
   }
 
   private async _handleTrackSubscribed(
@@ -286,6 +266,37 @@ export class LiveChatDemo extends LitElement {
 
   private _handleLocalTrackPublished(publication: LocalTrackPublication, participant: LocalParticipant): void {
     this._localTrack = publication.audioTrack;
+
+    const handleSpeechStart = async (): Promise<void> => {
+      console.log('speech start');
+      const signal = Uint8Array.from([0]);
+      await participant.publishData(signal, {
+        topic: 'vad',
+        reliable: true,
+      });
+    };
+
+    const handleSpeechEnd = async (): Promise<void> => {
+      console.log('speech end');
+      const signal = Uint8Array.from([1]);
+      await participant.publishData(signal, {
+        topic: 'vad',
+        reliable: true,
+      });
+    };
+
+    const initVad = async (): Promise<void> => {
+      const vad = await MicVAD.new({
+        positiveSpeechThreshold: 0.6,
+        redemptionFrames: 5,
+        onSpeechStart: handleSpeechStart,
+        onSpeechEnd: handleSpeechEnd,
+      });
+      this._vad = vad;
+      vad.start();
+    };
+
+    void initVad();
   }
 
   private _handleLocalTrackUnpublished(publication: LocalTrackPublication, participant: LocalParticipant): void {

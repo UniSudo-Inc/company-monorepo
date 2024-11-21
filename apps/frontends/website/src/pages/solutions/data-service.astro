@@ -1,0 +1,301 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Content from '@/components/widgets/Content.astro';
+import Features2 from '@/components/widgets/Features2.astro';
+import Steps from '@/components/widgets/Steps.astro';
+
+const metadata = {
+  title: '数据服务',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <div class="relative h-96 flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+        数据赋能 智创未来
+      </h1>
+      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
+        专业的AI数据服务解决方案
+      </p>
+    </div>
+  </div>
+
+  <!-- Process Flow -->
+  <Steps
+    title="数据服务流程"
+    items={[
+      {
+        title: '需求分析',
+        description: '深入了解业务场景，制定解决方案',
+        icon: 'tabler:search',
+      },
+      {
+        title: '数据采集',
+        description: '多渠道数据收集与预处理',
+        icon: 'tabler:database-import',
+      },
+      {
+        title: '数据处理',
+        description: '专业的清洗、标注与处理',
+        icon: 'tabler:tool',
+      },
+      {
+        title: '质量控制',
+        description: '严格的质量管理与验证',
+        icon: 'tabler:certificate',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1599727277707-b429a4994c15?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: '服务流程',
+    }}
+  />
+
+  <!-- Service Content -->
+  <Content
+    isReversed
+    title="AI训练数据标注"
+    items={[
+      {
+        title: '业务领域',
+        description: `图像与视频标注、文本数据标注、语音数据标注、多语言数据标注、专业领域标注`,
+      },
+      {
+        title: '服务优势',
+        description: `专业团队、严格质控、高效流程、安全保障`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: '数据标注',
+    }}
+  />
+
+  <Content
+    title="多模态数据处理"
+    items={[
+      {
+        title: '处理能力',
+        description: `图像预处理、视频数据处理、语音数据处理、文本数据处理、多模态数据融合`,
+      },
+      {
+        title: '技术优势',
+        description: `先进算法、高效处理、质量保证、成本优化`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80',
+      alt: '多模态处理',
+    }}
+  />
+
+    <!-- Case Studies -->
+    <Content
+      isReversed
+      tagline="案例研究 1"
+      title="金融数据处理"
+      items={[
+        {
+          title: '项目背景',
+          description: `• 需求分析：大型银行的交易数据清洗和标注需求
+  • 痛点：数据量大、隐私要求高、准确度要求严格
+  • 挑战：需要处理历史数据和实时数据流
+  • 目标：建立高质量的金融数据集`,
+        },
+        {
+          title: '解决方案',
+          description: `• 部署专业数据处理团队
+  • 建立多重数据验证机制
+  • 实施数据加密和脱敏处理
+  • 开发自动化数据清洗流程
+  • 构建金融标注规范体系`,
+        },
+        {
+          title: '实施效果',
+          description: `• 数据准确率达99.9%
+  • 处理效率提升200%
+  • 数据安全零事故
+  • 标注成本降低40%
+  • 客户满意度98%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '金融数据处理',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>为某大型银行处理了超过1000万条交易数据，通过AI辅助标注和多重验证机制，成功建立了高质量的反欺诈训练数据集，帮助客户的AI模型准确率提升了15%。</p>
+      </Fragment>
+    </Content>
+
+    <Content
+      isAfterContent
+      tagline="案例研究 2"
+      title="医疗影像数据标注"
+      items={[
+        {
+          title: '项目背景',
+          description: `• 需求分析：医院CT影像数据标注和分析
+  • 痛点：专业要求高，人工标注耗时
+  • 挑战：需要医学专业知识支持
+  • 目标：提供高质量医疗数据集`,
+        },
+        {
+          title: '解决方案',
+          description: `• 组建医疗AI标注团队
+  • 开发医疗影像标注工具
+  • 建立三级质检机制
+  • 引入专家审核环节
+  • 应用数据增强技术`,
+        },
+        {
+          title: '实施效果',
+          description: `• 标注效率提升150%
+  • 准确率达到95%以上
+  • 数据集扩充3倍
+  • 模型诊断准确率提升20%
+  • 标注成本降低35%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '医疗数据',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>协助三甲医院完成了10万张胸部CT影像的标注工作，通过专业团队和AI辅助标注，显著提高了肺部疾病检测模型的准确率，获得了医生团队的一致好评。</p>
+      </Fragment>
+    </Content>
+
+    <Content
+      isReversed
+      tagline="案例研究 3"
+      title="工业视觉数据处理"
+      items={[
+        {
+          title: '项目背景',
+          description: `• 需求分析：制造业质检数据标注需求
+  • 痛点：标注规则复杂，要求高
+  • 挑战：需要处理多种缺陷类型
+  • 目标：提升质检自动化水平`,
+        },
+        {
+          title: '解决方案',
+          description: `• 定制化标注方案
+  • 开发缺陷识别工具
+  • 建立标准化流程
+  • 实施数据增强技术
+  • 应用质量跟踪系统`,
+        },
+        {
+          title: '实施效果',
+          description: `• 检测准确率提升25%
+  • 生产效率提升40%
+  • 质检成本降低50%
+  • 数据集规模扩大5倍
+  • ROI提升200%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1633934542430-0905ccb5f050?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '工业视觉',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>为某半导体制造商建立了芯片缺陷检测数据集，通过精确的标注和数据增强，帮助客户将产品质检效率提升40%，年度节省成本超过500万。</p>
+      </Fragment>
+    </Content>
+
+    <Content
+      isAfterContent
+      tagline="案例研究 4"
+      title="智慧零售数据分析"
+      items={[
+        {
+          title: '项目背景',
+          description: `• 需求分析：零售场景数据处理需求
+  • 痛点：多源数据整合难度大
+  • 挑战：实时性要求高，数据量大
+  • 目标：提升零售智能化水平`,
+        },
+        {
+          title: '解决方案',
+          description: `• 部署实时数据处理系统
+  • 开发多源数据融合平台
+  • 建立用户行为分析模型
+  • 实施隐私保护方案
+  • 提供可视化分析工具`,
+        },
+        {
+          title: '实施效果',
+          description: `• 数据处理效率提升300%
+  • 销售转化率提升20%
+  • 库存优化效率提升35%
+  • 客户满意度提升25%
+  • 运营成本降低30%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1567103472667-6898f3a79cf2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '零售数据',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>帮助连锁零售企业构建了客流分析系统，通过处理视觉数据和交易数据，优化了商品陈列和人员配置，实现销售额提升15%。</p>
+      </Fragment>
+    </Content>
+
+
+  <!-- Features -->
+  <Features2
+    title="核心优势"
+    subtitle="专业的数据处理能力"
+    items={[
+      {
+        title: '专业团队',
+        description: '拥有AI数据处理领域专业人才团队',
+        icon: 'tabler:users',
+      },
+      {
+        title: '质量保证',
+        description: '严格的质量管理体系，确保数据质量',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: '成本效益',
+        description: '高效的处理流程，优化成本投入',
+        icon: 'tabler:coin',
+      },
+      {
+        title: '安全保障',
+        description: '完善的数据安全保护机制',
+        icon: 'tabler:shield',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <div class="relative bg-primary-50 dark:bg-slate-800 py-16">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4">
+          让数据为您创造价值
+        </h2>
+        <a href="/contact" class="btn btn-primary mb-4">
+          立即咨询
+        </a>
+        <p class="text-xl text-gray-600 dark:text-slate-400">
+          专业的数据服务团队，为您提供一站式解决方案
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

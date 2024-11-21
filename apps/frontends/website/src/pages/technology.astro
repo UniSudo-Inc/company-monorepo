@@ -1,0 +1,361 @@
+---
+import { Icon } from 'astro-icon/components';
+import Layout from '@/layouts/PageLayout.astro';
+import HeroText from '@/components/widgets/HeroText.astro';
+import Features3 from '@/components/widgets/Features3.astro';
+import Steps from '@/components/widgets/Steps.astro';
+import Content from '@/components/widgets/Content.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: '核心技术 - 上海智独数科技',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+  <HeroText
+    title="智独数科技核心技术"
+    subtitle="突破传统架构限制，创新AI交互体验"
+    tagline=" "
+  />
+
+  <!-- Core Technology Features ******************* -->
+  <Features3
+    title="创新对话架构"
+    subtitle="突破性的技术创新，引领行业发展"
+    columns={3}
+    items={[
+      {
+        title: '流式对话技术',
+        description: `
+          • 业界领先的50倍实时率提升
+          • 支持多语言实时打断与重构
+          • 自然流畅的对话体验
+        `,
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: '轻量级模型架构',
+        description: `
+          • 突破传统Transformer限制
+          • 3B-7B小型模型精准服务
+          • 显著降低训练和部署成本
+          • 支持垂直场景的深度优化
+        `,
+        icon: 'tabler:brain',
+      },
+      {
+        title: '云原生技术平台',
+        description: `
+          • 全自研商用级部署能力
+          • 灵活的Function Call支持
+          • 开放的API生态系统
+          • 支持多样化本地部署方案
+        `,
+        icon: 'tabler:cloud',
+      },
+    ]}
+  />
+
+  <!-- Technology Advantages ******************* -->
+  <Steps
+    title="技术优势"
+    items={[
+      {
+        title: '成本效益',
+        description: `
+          • 计算资源优化
+          - 相比传统方案降低80%计算资源消耗
+          - 支持商用级GPU和消费级显卡部署
+          - 优化的并发处理能力
+          
+          • 部署成本优势
+          - 灵活的本地化部署方案
+          - 最小化硬件要求
+          - 简化的运维管理
+        `,
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: '性能突破',
+        description: `
+          • 实时交互能力
+          - 毫秒级响应速度
+          - 流畅的打断重构体验
+          - 多轮对话优化
+          
+          • 精准性提升
+          - 场景化优化算法
+          - 超越大模型API的准确度
+          - 持续学习与优化能力
+        `,
+        icon: 'tabler:rocket',
+      },
+      {
+        title: '扩展能力',
+        description: `
+          • 多语言支持
+          - 跨语言模型融合
+          - 多语种实时交互
+          - 语言模型动态适配
+          
+          • 场景适配
+          - 工业现场快速部署
+          - 智能客服深度优化
+          - 垂直领域定制能力
+        `,
+        icon: 'tabler:arrows-maximize',
+      },
+    ]}
+  />
+
+  <!-- Innovation Results ******************* -->
+  <Content
+    title="创新成果"
+    subtitle="持续突破，不断创新"
+    items={[
+      {
+        title: '技术突破',
+        description: `
+          • 核心算法创新
+          - 非Transformer架构的突破性进展
+          - 轻量级模型训练框架
+          - 实时交互性能突破
+          
+          • 应用创新
+          - 本地化部署方案
+          - 多场景融合能力
+          - 生态系统整合
+        `,
+      },
+      {
+        title: '未来发展',
+        description: `
+          • 技术路线图
+          - 持续优化核心算法
+          - 扩展场景适配能力
+          - 深化AI基础设施建设
+          
+          • 创新方向
+          - 探索新型模型架构
+          - 优化资源利用效率
+          - 拓展应用场景边界
+        `,
+      },
+    ]}
+    image={{
+      src: '@/assets/images/innovation.svg',
+      alt: '创新成果',
+    }}
+  />
+
+  <!-- Technology Value ******************* -->
+  <div class="relative max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 scroll-section" data-aos="fade-up">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4 tech-title">技术价值</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400">创造行业价值，推动产业升级</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 value-cards">
+      <!-- 行业价值 -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 value-card" data-aos="fade-right">
+        <div class="flex items-center mb-6">
+          <Icon name="tabler:building" class="w-8 h-8 text-blue-600" />
+          <h3 class="text-2xl font-bold ml-4">行业价值</h3>
+        </div>
+        <ul class="space-y-4">
+          <li class="flex items-center value-item" data-aos="fade-up" data-aos-delay="100">
+            <Icon name="tabler:arrow-right" class="w-5 h-5 text-blue-600 mr-2" />
+            <span>降低AI应用门槛</span>
+          </li>
+          <li class="flex items-center value-item" data-aos="fade-up" data-aos-delay="200">
+            <Icon name="tabler:arrow-right" class="w-5 h-5 text-blue-600 mr-2" />
+            <span>提升部署灵活性</span>
+          </li>
+          <li class="flex items-center value-item" data-aos="fade-up" data-aos-delay="300">
+            <Icon name="tabler:arrow-right" class="w-5 h-5 text-blue-600 mr-2" />
+            <span>加速产业智能化升级</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 商业价值 -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 value-card" data-aos="fade-left">
+        <div class="flex items-center mb-6">
+          <Icon name="tabler:chart-dots" class="w-8 h-8 text-blue-600" />
+          <h3 class="text-2xl font-bold ml-4">商业价值</h3>
+        </div>
+        <ul class="space-y-4">
+          <li class="flex items-center value-item" data-aos="fade-up" data-aos-delay="100">
+            <Icon name="tabler:arrow-right" class="w-5 h-5 text-blue-600 mr-2" />
+            <span>显著降低使用成本</span>
+          </li>
+          <li class="flex items-center value-item" data-aos="fade-up" data-aos-delay="200">
+            <Icon name="tabler:arrow-right" class="w-5 h-5 text-blue-600 mr-2" />
+            <span>提升落地效率</span>
+          </li>
+          <li class="flex items-center value-item" data-aos="fade-up" data-aos-delay="300">
+            <Icon name="tabler:arrow-right" class="w-5 h-5 text-blue-600 mr-2" />
+            <span>创造新商业模式</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+2. 然后添加全局动画样式和脚本：
+
+```astro
+<style>
+  /* 基础动画定义 */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* 应用动画的类 */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .slide-left {
+    opacity: 0;
+    animation: slideInLeft 1s ease forwards;
+  }
+
+  .slide-right {
+    opacity: 0;
+    animation: slideInRight 1s ease forwards;
+  }
+
+  .slide-up {
+    opacity: 0;
+    animation: slideInUp 1s ease forwards;
+  }
+
+  .scale-in {
+    opacity: 0;
+    animation: scaleIn 1s ease forwards;
+  }
+
+  /* 为不同延迟添加类 */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+</style>
+
+<script>
+  // 交叉观察器选项
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  // 创建观察器
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // 获取当前元素应该使用的动画类
+        const animationClass = entry.target.dataset.animation;
+        const delay = entry.target.dataset.delay;
+        
+        // 添加动画类
+        if (animationClass) {
+          entry.target.classList.add(animationClass);
+        }
+        if (delay) {
+          entry.target.style.animationDelay = `${delay}ms`;
+        }
+        
+        // 停止观察该元素
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  // 开始观察元素
+  document.addEventListener('DOMContentLoaded', () => {
+    // 观察所有带有data-animation属性的元素
+    document.querySelectorAll('[data-animation]').forEach(element => {
+      observer.observe(element);
+    });
+
+    // 观察滚动区域
+    document.querySelectorAll('.scroll-section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // 观察价值卡片
+    document.querySelectorAll('.value-card').forEach(card => {
+      observer.observe(card);
+    });
+
+    // 观察价值项
+    document.querySelectorAll('.value-item').forEach(item => {
+      observer.observe(item);
+    });
+  });
+
+  // 添加滚动动画
+  document.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const windowHeight = window.innerHeight;
+    
+    document.querySelectorAll('.scroll-animate').forEach(element => {
+      const elementTop = element.getBoundingClientRect().top + scrolled;
+      
+      if (scrolled > elementTop - windowHeight + 100) {
+        element.classList.add('active');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,366 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Content from '@/components/widgets/Content.astro';
+import Steps from '@/components/widgets/Steps.astro';
+import Features2 from '@/components/widgets/Features2.astro';
+
+const metadata = {
+  title: '智能客服解决方案',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <div class="relative h-96 flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+        智能客服解决方案
+      </h1>
+      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
+        本地部署 · 成本可控 · 安全可靠
+      </p>
+    </div>
+  </div>
+
+  <!-- Process Flow -->
+  <Steps
+    title="智能服务流程"
+    items={[
+      {
+        title: '多渠道接入',
+        description: '支持网页、APP、小程序等多渠道统一接入',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: '智能理解',
+        description: '基于3B/7B小模型的自然语言处理能力',
+        icon: 'tabler:brain',
+      },
+      {
+        title: '知识匹配',
+        description: '精准匹配企业知识库，提供专业解答',
+        icon: 'tabler:database',
+      },
+      {
+        title: '智能回复',
+        description: '自然流畅的对话响应，像真人一样交流',
+        icon: 'tabler:message-circle',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: '流程图',
+    }}
+  />
+
+
+    <!-- Case Study 1: Financial Services -->
+    <Content
+      isReversed
+      tagline="案例研究 1"
+      title="金融行业智能客服"
+      items={[
+        {
+          title: '项目背景',
+          description: `
+          • 需求分析：大型银行每日面临超10万次咨询，人工客服应对压力大
+          • 痛点：金融专业问题复杂，培训成本高，人员流动大
+          • 挑战：需要确保数据安全，响应准确度要求高
+          • 目标：构建安全、专业、高效的智能客服体系`,
+        },
+        {
+          title: '解决方案',
+          description: `
+          • 本地部署3B轻量级模型，确保数据安全性
+          • 构建金融专业知识图谱，覆盖90%常见问题
+          • 开发多轮对话理解引擎，精准识别客户意图
+          • 集成业务系统，实现一站式服务
+          • 配置金融领域词库，提升专业度`,
+        },
+        {
+          title: '实施效果',
+          description: `
+          • 智能解决率达到85%，较同行高出15%
+          • 人工坐席减少60%，年节省成本800万+
+          • 客户等待时间从均值15分钟降至30秒
+          • 售后满意度提升35%
+          • 业务处理准确率达99.9%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '金融智能客服',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>某用户在深夜需要办理信用卡额度调整。传统人工服务需等待次日，但智能客服系统立即响应，通过多轮对话了解用户需求，调取用户画像和信用数据，在3分钟内完成了评估和调额，全程无需人工介入。用户对响应速度和服务体验给出了5星好评。</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 2: E-commerce -->
+    <Content
+      isAfterContent
+      tagline="案例研究 2"
+      title="电商行业智能客服"
+      items={[
+        {
+          title: '项目背景',
+          description: `
+          • 需求分析：大促期间日均咨询量超50万，人工客服难以应对
+          • 痛点：订单查询、物流跟踪等重复性工作占比70%
+          • 挑战：需要处理复杂的售后场景，保证服务质量
+          • 目标：提供全天候高质量客户服务`,
+        },
+        {
+          title: '解决方案',
+          description: `
+          • 部署7B本地模型，支持高并发访问
+          • 对接订单系统、物流系统、会员系统
+          • 开发智能工单分配机制
+          • 建立商品知识库和FAQ体系
+          • 集成智能推荐引擎`,
+        },
+        {
+          title: '实施效果',
+          description: `
+          • 客服效率提升200%，响应时间降低75%
+          • 全自动处理率达到78%
+          • 大促期间可支撑百万级并发
+          • 客户满意度维持在95%以上
+          • 月节省运营成本120万+`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '电商智能客服',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>双11期间，某用户咨询多个订单的发货状态和退换货问题。智能客服系统快速汇总了用户的所有订单信息，主动推送了最新物流进度，并针对退换货需求自动生成工单、预约上门取件，整个过程只用了5分钟，避免了传统人工客服在高峰期的长时间等待。</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 3: Government Services -->
+    <Content
+      isReversed
+      tagline="案例研究 3"
+      title="政务服务智能助手"
+      items={[
+        {
+          title: '项目背景',
+          description: `
+          • 需求分析：政务服务事项多，市民咨询量大
+          • 痛点：政策更新频繁，人工解答准确度不稳定
+          • 挑战：需要覆盖上千项服务政策，保证准确性
+          • 目标：提供准确、及时的政策咨询服务`,
+        },
+        {
+          title: '解决方案',
+          description: `
+          • 部署本地3B模型，构建政务知识库
+          • 开发政策实时更新机制
+          • 集成在线预约和办理系统
+          • 支持多方言交互
+          • 提供办事指南智能推荐`,
+        },
+        {
+          title: '实施效果',
+          description: `
+          • 日均服务市民5000+，24小时在线
+          • 政策解答准确率达98%
+          • 市民满意度提升40%
+          • 窗口等待时间减少65%
+          • 工作人员效率提升80%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1591839221653-a5cc0583e01c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '政务服务',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>一位市民想要办理老年人医保待遇资格认证，但不清楚具体流程。智能助手通过语音交互方式，用方言为老人详细讲解了办理流程，自动预约了就近办理点，还贴心推送了乘车路线，让老人感受到了暖心的智能化服务。</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 4: Enterprise Knowledge Base -->
+    <Content
+      isAfterContent
+      tagline="案例研究 4"
+      title="企业知识库管���"
+      items={[
+        {
+          title: '项目背景',
+          description: `
+          • 需求分析：企业内部知识分散，检索效率低
+          • 痛点：员工培训成本高，知识传承困难
+          • ���战：需要处理非结构化数据，实现智能推荐
+          • 目标：建立高效的知识管理和共享平台`,
+        },
+        {
+          title: '解决方案',
+          description: `
+          • 部署7B本地模型处理非结构化数据
+          • 构建知识图谱，实现智能关联
+          • 开发语义检索引擎
+          • 集成文档管理系统
+          • 提供个性化学习推荐`,
+        },
+        {
+          title: '实施效果',
+          description: `
+          • 知识检索时间减少80%
+          • 新员工培训周期缩短50%
+          • 知识库使用率提升200%
+          • 员工满意度达到96%
+          • 年节省培训成本300万+`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '企业知识库',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>某新入职员工在处理客户项目时遇到技术难题，通过智能知识库快速检索到相关案例和解决方案，系统还主动推荐了相关的最佳实践文档，帮助员工在半小时内解决了问题，大大提升了工作效率。</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 5: Multi-round Dialogue -->
+    <Content
+      isReversed
+      tagline="案例研究 5"
+      title="智能对话管理平台"
+      items={[
+        {
+          title: '项目背景',
+          description: `
+          • 需求分析：传统客服难以处理复杂多轮对话
+          • 痛点：上下文理解不足，对话体验割裂
+          • 挑战：需要准确理解用户意图，保持对话连贯
+          • 目标：打造流畅自然的对话体验`,
+        },
+        {
+          title: '解决方案',
+          description: `
+          • 部署本地7B模型，增强对话理解能力
+          • 开发上下文管理系统
+          • 集成情感分析引擎
+          • 设计多轮对话策略
+          • 实现实时意图识别`,
+        },
+        {
+          title: '实施效果',
+          description: `
+          • 对话完成率提升60%
+          • 用户满意度提升45%
+          • 平均对话轮次减少30%
+          • 理解准确率达到92%
+          • 客户流失率下降25%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '多轮对话',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>一位客户在咨询产品时，从简单的功能询问逐步深入到具体应用场景和价格方案。系统通过多轮对话准确把握用户需求变化，适时推荐合适的解决方案，最终帮助客户选择了最适合的产品配置，整个过程自然流畅，客户直赞"像在和真人聊天"。</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 6: Emotion Recognition -->
+    <Content
+      isAfterContent
+      tagline="案例研究 6"
+      title="情感识别互动系统"
+      items={[
+        {
+          title: '项目背景',
+          description: `
+          • 需求分析：客户情绪识别不准，服务体验差
+          • 痛点：无法及时发现客户不满情绪
+          • 挑战：需要精准识别文本情感倾向
+          • 目标：提供温暖贴心的情感化服务`,
+        },
+        {
+          title: '解决方案',
+          description: `
+          • 部署3B情感分析模型
+          • 开发情绪预警机制
+          • 设计差异化回复策略
+          • 集成客户画像系统
+          • 建立服务质量评估体系`,
+        },
+        {
+          title: '实施效果',
+          description: `
+          • 情感识别准确率达88%
+          • 投诉率下降50%
+          • 客户满意度提升40%
+          • 客户忠诚度提升35%
+          • NPS提升45个百分点`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '情感识别',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
+        <p>某用户在退款过程中表现出明显的不耐烦情绪，系统及时识别到情绪变化，立即调整回复策略，采用更简洁直接的表达方式，并适时表达理解和歉意。同时主动升级服务等级，加速处理退款申请。用户对这种贴心的服务感到惊喜，最终还给予了五星好评。</p>
+      </Fragment>
+    </Content>
+
+  <!-- Features Section -->
+  <Features2
+    title="平台核心优势"
+    subtitle="基于本地部署的小模型解决方案"
+    items={[
+      {
+        title: '成本优势',
+        description: '相比云端大模型，本地部署3B/7B小模型可节省80%运营成本',
+        icon: 'tabler:coin',
+      },
+      {
+        title: '数据安全',
+        description: '企业数据完全本地存储，无需担心敏感信息泄露风险',
+        icon: 'tabler:shield',
+      },
+      {
+        title: '响应速度',
+        description: '本地部署模型响应时间<100ms，比云端快10倍以上',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: '个性定制',
+        description: '支持针对企业场景的模型微调，提供更精准的服务',
+        icon: 'tabler:tools',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <div class="relative bg-primary-50 dark:bg-slate-800 py-16">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4">
+          开启智能客服新时代
+        </h2>
+        <a href="/contact" class="btn btn-primary mb-4">
+          预约演示
+        </a>
+        <p class="text-xl text-gray-600 dark:text-slate-400">
+          让我们助力您的企业提供更优质的客户服务
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
