@@ -61,7 +61,7 @@ export const headerData = {
       links: [
         {
           text: 'UniChat',
-          href: 'https://limit-4o-monorepo.vercel.app/my',
+          href: getPermalink('/products/unichat'),
         },
         {
           text: 'UniStudio',
@@ -77,7 +77,7 @@ export const headerData = {
         },
         {
           text: '数据标注服务',
-          href: getPermalink('/labeling'),
+          href: 'http://120.27.240.221:32051',
         },
         {
           text: '智能硬件服务',
