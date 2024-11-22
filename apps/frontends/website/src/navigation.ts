@@ -61,11 +61,11 @@ export const headerData = {
       links: [
         {
           text: 'UniChat',
-          href: getPermalink('/products/unichat'),
+          href: 'https://limit-4o-monorepo.vercel.app/my',
         },
         {
           text: 'UniStudio',
-          href: getPermalink('/studio'),
+          href: 'https://studio.limit.dev/dash/overview',
         },
         {
           text: 'UniSpeech',
@@ -73,7 +73,7 @@ export const headerData = {
         },
         {
           text: 'UniData',
-          href: getPermalink('/data'),
+          href: 'https://datai.limit.dev/',
         },
         {
           text: '数据标注服务',
