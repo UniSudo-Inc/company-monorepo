@@ -48,7 +48,7 @@
     "astro": "4.16.11",
     "astro-embed": "0.9.0",
     "astro-icon": "1.1.2",
-    "jwt-decode": "4.0.0",
+    "dayjs": "1.11.13",
     "limax": "4.1.0",
     "lit": "3.2.1",
     "livekit-client": "2.6.0",

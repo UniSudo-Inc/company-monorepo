@@ -17,7 +17,11 @@ import {
   RoomEvent,
   Track,
 } from 'livekit-client';
-import { jwtDecode } from 'jwt-decode';
+import duration from 'dayjs/plugin/duration';
+import dayjs from 'dayjs';
+
+dayjs.extend(duration);
+const DEMO_TIMEOUT = 300;
 
 @customElement('live-chat-demo')
 export class LiveChatDemo extends LitElement {
@@ -25,10 +29,13 @@ export class LiveChatDemo extends LitElement {
   private _visualizerContainer!: HTMLDivElement;
 
   @state()
-  private _vad: MicVAD | null = null;
+  private _vad?: MicVAD;
 
   @state()
-  private _visualizer: SiriWave | null = null;
+  private _isSpeaking = false;
+
+  @state()
+  private _visualizer?: SiriWave;
 
   @state()
   private _room: Room = new Room({
@@ -55,7 +62,12 @@ export class LiveChatDemo extends LitElement {
   @state()
   private _remoteCleanupCallback?: () => void;
 
-  // center icon in button
+  @state()
+  private _countdown = 300;
+
+  @state()
+  private _countdownInterval?: NodeJS.Timeout;
+
   static override readonly styles = css`
     .btn {
       background-color: var(--aw-color-primary);
@@ -72,6 +84,7 @@ export class LiveChatDemo extends LitElement {
       align-items: center;
       justify-content: center;
       box-shadow: 0 0 10px 1px var(--aw-color-primary);
+      animation: glow 1.5s infinite;
     }
     .btn:hover {
       transform: scale(1.1);
@@ -80,7 +93,14 @@ export class LiveChatDemo extends LitElement {
     .loading-spinner {
       animation: spin 1s linear infinite;
     }
-
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px 1px var(--aw-color-primary);
+      }
+      50% {
+        box-shadow: 0 0 20px 2px var(--aw-color-primary);
+      }
+    }
     @keyframes spin {
       from {
         transform: rotate(0deg);
@@ -96,7 +116,10 @@ export class LiveChatDemo extends LitElement {
   }
 
   private _renderSession(): TemplateResult {
-    return html`<div id="visualizer-container"></div>`;
+    return html`
+      <div id="visualizer-container"></div>
+      <div id="countdown">${dayjs.duration(this._countdown, 'seconds').format('mm:ss')}</div>
+    `;
   }
 
   private _renderButton(): TemplateResult {
@@ -145,13 +168,15 @@ export class LiveChatDemo extends LitElement {
   }
 
   protected override updated(_changedProperties: PropertyValues): void {
+    console.debug('updated', _changedProperties);
+
     if (_changedProperties.has('_status')) {
       const oldStatus = _changedProperties.get('_status') as 'ready' | 'idle' | 'loading';
       const newStatus = this._status;
 
       if (oldStatus === 'ready' && newStatus !== 'ready') {
         this._visualizer?.dispose();
-        this._visualizer = null;
+        this._visualizer = undefined;
       }
       if (oldStatus !== 'ready' && newStatus === 'ready') {
         this._visualizer = new SiriWave({
@@ -160,32 +185,33 @@ export class LiveChatDemo extends LitElement {
           width: 640,
           height: 200,
           autostart: true,
+          amplitude: 0,
         });
-      }
-    }
-
-    if (_changedProperties.has('_localTrack')) {
-      const oldLocalTrack = _changedProperties.get('_localTrack') as LocalAudioTrack | undefined;
-      const newLocalTrack = this._localTrack;
-      console.log('oldLocalTrack', oldLocalTrack);
-
-      if (!oldLocalTrack?.attachedElements.length && newLocalTrack?.attachedElements.length) {
-        this._updateVisualizer(newLocalTrack);
-      }
-      if (oldLocalTrack?.attachedElements.length && !newLocalTrack?.attachedElements.length) {
-        this._visualizer?.dispose();
-        this._localCleanupCallback?.();
       }
     }
 
     if (_changedProperties.has('_remoteTrack')) {
       const oldRemoteTrack = _changedProperties.get('_remoteTrack') as RemoteAudioTrack | undefined;
       const newRemoteTrack = this._remoteTrack;
-      if (!oldRemoteTrack?.attachedElements.length && newRemoteTrack?.attachedElements.length) {
-        // update visualizer
+
+      if (!oldRemoteTrack && newRemoteTrack) {
+        this._remoteCleanupCallback = this._updateVisualizer(newRemoteTrack);
       }
-      if (oldRemoteTrack?.attachedElements.length && !newRemoteTrack?.attachedElements.length) {
-        // remove visualizer
+    }
+
+    if (_changedProperties.has('_isSpeaking')) {
+      if (this._isSpeaking) {
+        this._remoteCleanupCallback?.();
+        this._localCleanupCallback = this._updateVisualizer(this._localTrack);
+      } else {
+        this._localCleanupCallback?.();
+        this._remoteCleanupCallback = this._updateVisualizer(this._remoteTrack);
+      }
+    }
+
+    if (_changedProperties.has('_countdown')) {
+      if (this._countdown <= 0) {
+        void this._room.disconnect();
       }
     }
   }
@@ -193,7 +219,6 @@ export class LiveChatDemo extends LitElement {
   async _handleClick(e: MouseEvent): Promise<void> {
     this._status = 'loading';
     await this._connectToRoom();
-    this._status = 'ready';
   }
 
   private async _connectToRoom(): Promise<void> {
@@ -209,15 +234,6 @@ export class LiveChatDemo extends LitElement {
       }),
     }).then((res) => res.json() as Promise<{ roomToken: string }>);
 
-    // const data = {
-    //   roomToken:
-    //     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjgwMDU5NTAsImlzcyI6IkFQSW1EVW50SDRpalNRUiIsIm5hbWUiOiJBdXN0aW4iLCJuYmYiOjE3MzIwMDU5NTAsInN1YiI6Ijk0ZTdhMjg5LTVmNDctNDVmMC04YTkwLTM0YThkMTE2NzFhZSIsInZpZGVvIjp7InJvb20iOiJ4V1lBVVNKbWpKeEYiLCJyb29tSm9pbiI6dHJ1ZX19.neEsxuiGXgzUIW3aQjdU5JB3OqDWHJEwT_zdMicRyYQ',
-    // };
-
-    const {
-      video: { room: roomName },
-    } = jwtDecode<{ video: { room: string } }>(data.roomToken);
-
     await this._room.prepareConnection(import.meta.env.PUBLIC_LIVEKIT_URL, data.roomToken);
     this._room
       .on(RoomEvent.Connected, this._handleConnected)
@@ -226,6 +242,7 @@ export class LiveChatDemo extends LitElement {
       .on(RoomEvent.Disconnected, this._handleDisconnect)
       .on(RoomEvent.LocalTrackPublished, this._handleLocalTrackPublished)
       .on(RoomEvent.LocalTrackUnpublished, this._handleLocalTrackUnpublished);
+
     await this._room.connect(import.meta.env.PUBLIC_LIVEKIT_URL, data.roomToken, {
       maxRetries: 10,
     });
@@ -233,56 +250,58 @@ export class LiveChatDemo extends LitElement {
     await this._room.localParticipant.setMicrophoneEnabled(true);
   }
 
-  private _handleConnected(): void {
-    console.log('connected to room');
-  }
+  private _handleConnected = (): void => {
+    console.info('connected to room');
+    this._status = 'ready';
+    this._countdown = DEMO_TIMEOUT;
+    this._countdownInterval = setInterval(() => {
+      this._countdown--;
+    }, 1000);
+  };
 
-  private async _handleTrackSubscribed(
+  private _handleTrackSubscribed = (
     track: RemoteTrack,
     publication: RemoteTrackPublication,
     participant: RemoteParticipant,
-  ): Promise<void> {
+  ): void => {
     if (track.kind === Track.Kind.Audio) {
       // attach it to a new HTMLVideoElement or HTMLAudioElement
       const element = track.attach();
-      const updateComplete = await this.updateComplete;
-
-      if (updateComplete) {
-        this.renderRoot.appendChild(element);
-      }
-
+      this.renderRoot.appendChild(element);
       this._remoteTrack = track as RemoteAudioTrack;
     }
-  }
+  };
 
-  private _handleTrackUnsubscribed(
+  private _handleTrackUnsubscribed = (
     track: RemoteTrack,
     publication: RemoteTrackPublication,
     participant: RemoteParticipant,
-  ): void {
+  ): void => {
     // remove tracks from all attached elements
     track.detach();
-  }
+  };
 
-  private _handleLocalTrackPublished(publication: LocalTrackPublication, participant: LocalParticipant): void {
+  private _handleLocalTrackPublished = (publication: LocalTrackPublication, participant: LocalParticipant): void => {
     this._localTrack = publication.audioTrack;
 
     const handleSpeechStart = async (): Promise<void> => {
-      console.log('speech start');
+      console.debug('speech start');
       const signal = Uint8Array.from([0]);
       await participant.publishData(signal, {
         topic: 'vad',
         reliable: true,
       });
+      this._isSpeaking = true;
     };
 
     const handleSpeechEnd = async (): Promise<void> => {
-      console.log('speech end');
+      console.debug('speech end');
       const signal = Uint8Array.from([1]);
       await participant.publishData(signal, {
         topic: 'vad',
         reliable: true,
       });
+      this._isSpeaking = false;
     };
 
     const initVad = async (): Promise<void> => {
@@ -297,24 +316,25 @@ export class LiveChatDemo extends LitElement {
     };
 
     void initVad();
-  }
+  };
 
-  private _handleLocalTrackUnpublished(publication: LocalTrackPublication, participant: LocalParticipant): void {
+  private _handleLocalTrackUnpublished = (publication: LocalTrackPublication, participant: LocalParticipant): void => {
     // when local tracks are ended, update UI to remove them from rendering
     publication.track?.detach();
-  }
+  };
 
-  private _handleDisconnect(): void {
-    console.log('disconnected from room');
-
+  private _handleDisconnect = (): void => {
+    console.info('disconnected from room');
     this._vad?.destroy();
+    this._vad = undefined;
+    clearInterval(this._countdownInterval);
     this._status = 'idle';
-  }
+  };
 
-  private _updateVisualizer(
+  private _updateVisualizer = (
     track?: AudioTrack,
     options: AudioAnalyserOptions = { fftSize: 32, smoothingTimeConstant: 0 },
-  ): () => void {
+  ): (() => void) => {
     if (!track?.mediaStream) {
       return () => void 0;
     }
@@ -327,8 +347,7 @@ export class LiveChatDemo extends LitElement {
       analyser.getByteFrequencyData(dataArray);
       const sum = dataArray.reduce((acc, curr) => acc + curr * curr, 0);
       const volume = Math.sqrt(sum / dataArray.length) / 255;
-      const amp = volume * 3;
-      console.log('amp', amp);
+      const amp = volume * volume * 2;
       this._visualizer?.setAmplitude(amp);
     };
 
@@ -338,7 +357,7 @@ export class LiveChatDemo extends LitElement {
       void cleanup();
       clearInterval(interval);
     };
-  }
+  };
 }
 
 declare global {
