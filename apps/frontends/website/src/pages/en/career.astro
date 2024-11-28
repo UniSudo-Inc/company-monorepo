@@ -6,7 +6,7 @@ import Features2 from '@/components/widgets/Features2.astro';
 import Content from '@/components/widgets/Content.astro';
 
 const metadata = {
-  title: '加入我们 - 上海智独数科技有限公司',
+  title: 'Join Us - UniSudo Inc.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -17,47 +17,47 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: '立即投递简历',
+        text: 'Submit Your Resume',
         href: 'mailto:HR@unisudo.com',
       },
     ]}
     image={{ src: '@/assets/images/recruitment.png', alt: 'Recruitment Hero Image' }}
   >
     <Fragment slot='title'>
-      加入智独数科技
-      <span class='highlight text-accent dark:text-white'>开启AI新未来</span>
+      Join UniSudo Inc.
+      <span class='highlight text-accent dark:text-white'>Start a New Future with AI</span>
     </Fragment>
 
     <Fragment slot='subtitle'>
-      在这里，你将与行业顶尖人才一起，探索AI技术的无限可能，创造改变世界的解决方案。
+      Here, you will work with top talent in the industry, explore the limitless possibilities of AI technology, and create solutions that change the world.
     </Fragment>
   </Hero>
 
   <!-- Features Widget *************** -->
   <Features
     id='features'
-    tagline='为什么选择我们'
-    title='在智独数科技，你将获得'
+    tagline='Why Choose Us'
+    title='At UniSudo Inc., you will get'
     classes={{ container: 'max-w-5xl mx-auto' }}
     items={[
       {
-        title: '技术创新的第一线',
-        description: '直接参与前沿AI技术的研发和应用，与行业专家共同探索创新解决方案。',
+        title: 'Innovation at the Forefront',
+        description: 'Participate directly in the research and application of cutting-edge AI technology, and explore innovative solutions with industry experts.',
         icon: 'tabler:bulb',
       },
       {
-        title: '富有挑战的工作环境',
-        description: '接触多样化的项目和技术栈，不断突破自我，实现职业成长。',
+        title: 'Challenging Work Environment',
+        description: 'Expose yourself to diverse projects and technology stacks, continuously突破自我，实现职业成长。',
         icon: 'tabler:rocket',
       },
       {
-        title: '完善的培训发展体系',
-        description: '系统化的培训计划，帮助你快速成长，实现职业理想。',
+        title: 'Comprehensive Training and Development System',
+        description: 'Systematic training programs to help you grow quickly and achieve your career goals.',
         icon: 'tabler:school',
       },
       {
-        title: '有竞争力的薪酬福利',
-        description: '提供具有市场竞争力的薪酬package，认可并回报你的贡献。',
+        title: 'Competitive Compensation and Benefits',
+        description: 'Offer a competitive salary package, recognize and reward your contributions.',
         icon: 'tabler:certificate',
       },
     ]}
@@ -65,26 +65,26 @@ const metadata = {
 
   <!-- Features2 Widget ************** -->
   <Features2
-    title='当前招聘职位'
-    subtitle='加入我们，与行业顶尖人才一起探索AI技术的无限可能'
-    tagline='招贤纳士'
+    title='Current Job Openings'
+    subtitle='Join us, and explore the limitless possibilities of AI technology with top talent in the industry'
+    tagline='Recruitment'
     classes={{ container: 'max-w-5xl mx-auto' }}
     items={[
       {
-        title: '前端开发工程师',
+        title: 'Frontend Engineer',
         description: '',
         icon: 'tabler:code',
         callToAction: {
-          text: '查看详情',
+          text: 'View Details',
           href: '/jobs/frontend-engineer'
         }
       },
       {
-        title: 'AI开发工程师',
+        title: 'AI Engineer',
         description: '',
         icon: 'tabler:code',
         callToAction: {
-          text: '查看详情',
+          text: 'View Details',
           href: '/jobs/ai-engineer'
         }
       }
@@ -101,20 +101,20 @@ const metadata = {
     classes={{ container: 'max-w-5xl mx-auto' }}
     items={[
       {
-        title: '简历投递',
+        title: 'Submit Your Resume',
         description: `<a href="mailto:hr@unisudo.com" class="hover:text-primary transition-all duration-200 ease-in-out"
                      transition:animate={fade({ duration: '0.3s' })}>
-                     发送简历至: hr@unisudo.com</a>`,
+                      Send your resume to: hr@unisudo.com</a>`,
       },
       {
-        title: '工作地点',
-        description: '上海市浦东新区临港自贸区水芸路55号港城广场二街坊1号楼8层802室',
+        title: 'Work Location',
+        description: 'No. 1 Building, Block 2, Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai',
       },
     ]}
   >
     <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>加入我们</h3>
-      <p>期待优秀的你加入智独数科技，一起开创AI的未来！</p>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Join Us</h3>
+      <p>We look forward to your joining UniSudo Inc. to create the future of AI together!</p>
     </Fragment>
 
     <Fragment slot='bg'>

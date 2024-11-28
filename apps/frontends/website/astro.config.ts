@@ -71,6 +71,11 @@ export default defineConfig({
     domains: ['cdn.pixabay.com'],
   },
 
+  i18n: {
+    defaultLocale: 'zh-cn',
+    locales: ['zh-cn', 'en'],
+  },
+
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],

@@ -2,21 +2,21 @@ site:
   name: UniSudo
   site: "https://astrowind.vercel.app"
   base: "/"
-  trailingSlash: false
+  trailingSlash: true
 
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: "%s — AstroWind"
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: UniSudo
+    template: "%s — UniSudo"
+  description: "上海智独数科技有限公司 - 数字人展厅、数据服务、AI应用"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: UniSudo
     images:
       - url: "@/assets/images/default.png"
         width: 1200
@@ -28,7 +28,7 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: zh-cn
   textDirection: ltr
 
 apps:

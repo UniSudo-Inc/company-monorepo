@@ -1,0 +1,329 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Content from '@/components/widgets/Content.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
+import Timeline from '@/components/widgets/Timeline.astro';
+
+const metadata = {
+  title: 'Industry Solutions',
+};
+---
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <div class="relative h-96 flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+        Industry Solutions
+      </h1>
+      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
+        Local Deployment · Friendly Interaction · Data Security
+      </p>
+    </div>
+  </div>
+
+  <!-- Case 1: Education -->
+  <Content
+    isReversed
+    tagline="Solution 1"
+    title="Educational Training Digital Transformation"
+    items={[
+      {
+        title: 'Industry Pain Points',
+        description: `
+        • Personalized teaching needs are difficult to meet
+        • Teaching quality assessment is difficult
+        • Learning outcomes tracking is insufficient
+        • Uneven distribution of high-quality educational resources`,
+      },
+      {
+        title: 'Solution',
+        description: `
+        • Deploy 3B local models to build intelligent teaching systems
+        • Personalized learning path planning
+        • AI tutor real-time Q&A system
+        • Intelligent homework grading and analysis
+        • Learning situation analysis and early warning mechanism`,
+      },
+      {
+        title: 'Implementation Effect',
+        description: `
+        • Learning efficiency increased by 40%
+        • Teacher workload reduced by 60%
+        • Student engagement increased by 50%
+        • Local deployment monthly cost as low as 3000 yuan
+        • System response time <0.5 seconds`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Educational Solutions',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Technical Highlights</h3>
+      <p>Based on local small model deployment, ensure student data security. Supports offline operation, suitable for various educational scenarios. Single machine can support thousands of concurrent users, with extremely high cost performance.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case 2: Healthcare -->
+  <Content
+    isAfterContent
+    tagline="Solution 2"
+    title="Medical Health Intelligent Diagnosis"
+    items={[
+      {
+        title: 'Industry Pain Points',
+        description: `
+        • Shortage of high-quality medical resources
+        • Need to improve diagnosis efficiency
+        • Need to improve doctor-patient communication
+        • Difficulty in managing chronic diseases`,
+      },
+      {
+        title: 'Solution',
+        description: `
+        • Deploy 7B local models to ensure patient privacy
+        • Intelligent pre-consultation system
+        • Support for diagnostic decision-making
+        • Intelligent follow-up management
+        • Medical knowledge graph service`,
+      },
+      {
+        title: 'Implementation Effect',
+        description: `
+        • Diagnosis efficiency increased by 50%
+        • Doctor workload reduced by 45%
+        • Patient satisfaction increased by 60%
+        • Local deployment daily cost as low as 400 yuan
+        • Diagnosis accuracy rate 95%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Medical Solutions',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Privacy Protection</h3>
+      <p>Adopt local deployment mode, medical data will not leave the hospital. Supports multi-hospital collaboration, meeting the data security requirements of level III hospitals.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case 3: Financial Risk Control -->
+  <Content
+    isReversed
+    tagline="Solution 3"
+    title="Financial Risk Control Intelligent Analysis"
+    items={[
+      {
+        title: 'Industry Pain Points',
+        description: `
+        • Poor real-time risk identification
+        • Fraudulent methods are constantly evolving
+        • High cost of manual audit
+        • Increasing compliance requirements`,
+      },
+      {
+        title: 'Solution',
+        description: `
+        • Deploy 3B local models to ensure data compliance
+        • Real-time risk warning system
+        • Intelligent anti-fraud engine
+        • Automated audit process
+        • Compliance risk assessment`,
+      },
+      {
+        title: 'Implementation Effect',
+        description: `
+        • Risk identification rate increased by 70%
+        • Manual audit cost reduced by 65%
+        • Business processing efficiency increased by 80%
+        • Local deployment monthly cost as low as 7000 yuan
+        • System availability 99.99%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Financial Risk Control',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Security Compliance</h3>
+      <p>Local deployment ensures financial data security and compliance with regulations. Millisecond response time meets real-time risk control needs, with costs as low as one-tenth of cloud services.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case 4: Retail -->
+  <Content
+    isAfterContent
+    tagline="Solution 4"
+    title="Retail Intelligent Upgrade"
+    items={[
+      {
+        title: 'Industry Pain Points',
+        description: `
+        • Low inventory management efficiency
+        • Difficulty in personalized marketing
+        • Need to improve customer experience
+        • High operating costs`,
+      },
+      {
+        title: 'Solution',
+        description: `
+        • Deploy 7B local models to protect consumer data
+        • Intelligent replenishment prediction system
+        • Personalized recommendation engine
+        • Omnichannel customer service robot
+        • Precise member marketing`,
+      },
+      {
+        title: 'Implementation Effect',
+        description: `
+        • Inventory turnover rate increased by 40%
+        • Marketing conversion rate increased by 55%
+        • Customer satisfaction increased by 45%
+        • Local deployment daily cost as low as 300 yuan
+        • ROI increased by 200%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Retail Upgrade',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Cost Advantage</h3>
+      <p>Local deployment mode significantly reduces operating costs, with single-store deployment capable of serving the entire region, and far exceeding the cost of cloud services.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case 5: Smart City -->
+  <Content
+    isReversed
+    tagline="Solution 5"
+    title="Smart City Data Platform"
+    items={[
+      {
+        title: 'Industry Pain Points',
+        description: `
+        • Severe data islanding
+        • Difficulty in cross-department collaboration
+        • Low service efficiency
+        • Lack of decision support`,
+      },
+      {
+        title: 'Solution',
+        description: `
+        • Deploy 3B local models to ensure government data security
+        • City data intelligent analysis
+        • Cross-department business collaboration
+        • Intelligent decision support
+        • Integrated citizen services`,
+      },
+      {
+        title: 'Implementation Effect',
+        description: `
+        • Departmental collaboration efficiency increased by 80%
+        • Citizen service satisfaction increased by 65%
+        • Decision response time reduced by 70%
+        • Local deployment monthly cost reduced by 85%
+        • System utilization increased by 200%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Smart City',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Data Security</h3>
+      <p>Local deployment ensures government data security, supports cross-department collaboration while strictly controlling data permissions, with costs far lower than one-fifth of cloud services.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case 6: Tourism -->
+  <Content
+    isAfterContent
+    tagline="Solution 6"
+    title="Tourism Industry Digital Service"
+    items={[
+      {
+        title: 'Industry Pain Points',
+        description: `
+        • Visitor experience to be improved
+        • Low efficiency of scenic spot management
+        • Single marketing approach
+        • Inefficient utilization of resources`,
+      },
+      {
+        title: 'Solution',
+        description: `
+        • Deploy 7B local models to build smart scenic spots
+        • Intelligent tour guide system
+        • Passenger flow prediction and control
+        • Personalized itinerary recommendation
+        • Intelligent marketing for cultural and creative products`,
+      },
+      {
+        title: 'Implementation Effect',
+        description: `
+        • Visitor stay time increased by 45%
+        • Scenic spot revenue increased by 50%
+        • Operating costs reduced by 40%
+        • Local deployment daily cost 200 yuan
+        • Visitor satisfaction increased by 55%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Tourism Service',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Innovation</h3>
+      <p>Local deployment supports offline scenarios, ensuring stable operation even in areas with limited network access. A single server can support all business needs of the entire scenic area, significantly reducing operational costs.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Success Metrics -->
+  <Timeline
+    title="Overall Value of Industry Solutions"
+    items={[
+      {
+        title: 'Cost Advantage',
+        description: 'Local deployment of small models, average cost savings of 75%',
+      },
+      {
+        title: 'Data Security',
+        description: 'Local deployment, data 100% controllable',
+      },
+      {
+        title: 'Performance Guarantee',
+        description: 'Millisecond response, 99.99% availability',
+      },
+      {
+        title: 'Effect Enhancement',
+        description: 'Average business efficiency increased by 60%, satisfaction increased by 50%',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction
+    title="Start Your Industry Digital Transformation Journey"
+    subtitle="Local deployment, secure and cost-effective"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book a Consultation',
+        href: '/contact',
+        icon: 'tabler:download',
+      },
+      {
+        text: 'Learn More',
+        href: '/about',
+      },
+    ]}
+  />
+</Layout>

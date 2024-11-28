@@ -93,6 +93,99 @@ export const headerData = {
   actions: [{ text: '加入我们', href: '/career', target: '_blank' }],
 };
 
+export const headerDataEn = {
+  links: [
+    {
+      text: 'About Us',
+      links: [
+        {
+          text: 'Company Profile',
+          href: getPermalink('/en/about'),
+        },
+        {
+          text: 'Roadmap',
+          href: getPermalink('/en/roadmap'),
+        },
+        {
+          text: 'Technology Innovation',
+          href: getPermalink('/en/technology'),
+        },
+        {
+          text: 'Contact Us',
+          href: getPermalink('/en/contact'),
+        },
+        {
+          text: 'Join Us',
+          href: getPermalink('/en/career'),
+        },
+      ],
+    },
+    {
+      text: 'Solutions',
+      links: [
+        {
+          text: 'Digital Human Exhibition',
+          href: getPermalink('/en/solutions/digital-human'),
+        },
+        {
+          text: 'Data Service',
+          href: getPermalink('/en/solutions/data-service'),
+        },
+        {
+          text: 'Model Training',
+          href: getPermalink('/en/solutions/model-training'),
+        },
+        {
+          text: 'Customer Service',
+          href: getPermalink('/en/solutions/customer-service'),
+        },
+        {
+          text: 'Enterprise Digitalization',
+          href: getPermalink('/en/solutions/enterprise-digitalization'),
+        },
+        {
+          text: 'Industry Solutions',
+          href: getPermalink('/en/solutions/industry-solutions'),
+        },
+      ],
+    },
+    {
+      text: 'Product System',
+      links: [
+        {
+          text: 'UniChat',
+          href: getPermalink('/en/products/unichat'),
+        },
+        {
+          text: 'UniStudio',
+          href: 'https://studio.limit.dev/dash/overview',
+        },
+        {
+          text: 'UniSpeech',
+          href: getPermalink('/en/speech'),
+        },
+        {
+          text: 'UniData',
+          href: 'https://datai.limit.dev/',
+        },
+        {
+          text: 'Data Annotation Service',
+          href: 'http://120.27.240.221:32051',
+        },
+        {
+          text: 'Smart Hardware Service',
+          href: getPermalink('/en/hardware'),
+        },
+      ],
+    },
+    {
+      text: 'Contact Us',
+      href: '/en/contact',
+    },
+  ],
+  actions: [{ text: 'Join Us', href: '/en/career', target: '_blank' }],
+};
+
 export const footerData = {
   links: [
     {
@@ -100,23 +193,23 @@ export const footerData = {
       links: [
         {
           text: 'UniChat',
-          href: getPermalink('/chat'),
+          href: getPermalink('/products/unichat'),
         },
         {
           text: 'UniStudio',
-          href: getPermalink('/studio'),
+          href: 'https://studio.limit.dev/dash/overview',
         },
         {
           text: 'UniSpeech',
-          href: getPermalink('/speech'),
+          href: getPermalink('/en/speech'),
         },
         {
           text: 'UniData',
-          href: getPermalink('/data'),
+          href: 'https://datai.limit.dev/',
         },
         {
           text: '数据标注服务',
-          href: getPermalink('/labeling'),
+          href: 'http://120.27.240.221:32051',
         },
         {
           text: '智能硬件服务',
@@ -187,6 +280,114 @@ export const footerData = {
   secondaryLinks: [
     { text: '服务条款', href: getPermalink('/terms') },
     { text: '隐私政策', href: getPermalink('/privacy') },
+  ],
+  socialLinks: [
+    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
+    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/UniSudo-Inc' },
+  ],
+  footNote: `
+    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>
+    Made by <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
+  `,
+};
+
+export const footerDataEn = {
+  links: [
+    {
+      title: 'Product System',
+      links: [
+        {
+          text: 'UniChat',
+          href: getPermalink('/products/unichat'),
+        },
+        {
+          text: 'UniStudio',
+          href: 'https://studio.limit.dev/dash/overview',
+        },
+        {
+          text: 'UniSpeech',
+          href: getPermalink('/en/speech'),
+        },
+        {
+          text: 'UniData',
+          href: 'https://datai.limit.dev/',
+        },
+        {
+          text: 'Data Annotation Service',
+          href: 'http://120.27.240.221:32051',
+        },
+        {
+          text: 'Smart Hardware Service',
+          href: getPermalink('/en/hardware'),
+        },
+      ],
+    },
+    {
+      title: 'Solutions',
+      links: [
+        {
+          text: 'Intelligent Manufacturing',
+          href: getPermalink('/en/solutions/industry'),
+        },
+        {
+          text: 'Smart Traffic',
+          href: getPermalink('/en/solutions/transport'),
+        },
+        {
+          text: 'Customer Service',
+          href: getPermalink('/en/solutions/customer-service'),
+        },
+        {
+          text: 'Enterprise Service',
+          href: getPermalink('/en/solutions/enterprise'),
+        },
+      ],
+    },
+    {
+      title: 'About Us',
+      links: [
+        {
+          text: 'Company Profile',
+          href: getPermalink('/en/about'),
+        },
+        {
+          text: 'Roadmap',
+          href: getPermalink('/en/roadmap'),
+        },
+        {
+          text: 'Team Introduction',
+          href: getPermalink('/en/team'),
+        },
+        {
+          text: 'Join Us',
+          href: getPermalink('/en/career'),
+        },
+      ],
+    },
+    {
+      title: 'Contact Us',
+      links: [
+        {
+          text: 'Business Cooperation',
+          href: 'mailto:contact@unisudo.com',
+        },
+        {
+          text: 'Customer Support',
+          href: 'mailto:support@unisudo.com',
+        },
+        {
+          text: 'Media Consulting',
+          href: 'mailto:media@unisudo.com',
+        },
+      ],
+    },
+  ],
+  secondaryLinks: [
+    { text: 'Terms of Service', href: getPermalink('/en/terms') },
+    { text: 'Privacy Policy', href: getPermalink('/en/privacy') },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },

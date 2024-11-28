@@ -1,0 +1,57 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import HeroText from '@/components/widgets/HeroText.astro';
+import Features2 from '@/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact Us',
+};
+---
+
+<Layout metadata={metadata}>
+  <div class="text-center">
+    <HeroText tagline=' ' title='<span class="text-primary">We look forward to your communication!</span>' />
+
+    <div class="relative mx-auto mt-4 h-16 w-16">
+      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+      <span class="relative inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      </span>
+    </div>
+  </div>
+
+  <Features2
+    title='We are always here for you!'
+    items={[
+      {
+        title: 'Business Cooperation',
+        description: 'If you are interested in our products and services, we look forward to discussing cooperation opportunities with you to provide the most suitable AI solutions for your business.',
+      },
+      {
+        title: 'Technical Support',
+        description: 'Our technical team provides professional technical support to help you solve any issues you encounter during use, ensuring stable system operation.',
+      },
+      {
+        title: 'After-sales Service',
+        description: 'We provide a comprehensive after-sales service system to ensure that your needs are responded to and resolved in a timely manner, providing support for your business.',
+      },
+      {
+        title: 'Telephone',
+        description: '16628597963',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Email',
+        description: '<a href="mailto:contact@unisudo.com" class="hover:text-primary">contact@unisudo.com</a>',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Company Address',
+        description: 'No. 1 Building, Block 2, Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>

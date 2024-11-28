@@ -1,0 +1,380 @@
+---
+import { Icon } from 'astro-icon/components';
+import Layout from '@/layouts/PageLayout.astro';
+import HeroText from '@/components/widgets/HeroText.astro';
+import Features3 from '@/components/widgets/Features3.astro';
+import Steps from '@/components/widgets/Steps.astro';
+import Content from '@/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Core Technologies - UniSudo Inc.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+  <HeroText
+    title="UniSudo's Core Technologies"
+    subtitle='Break through the limitations of traditional architectures and innovate AI interaction experiences'
+    tagline=' '
+  />
+
+  <!-- Core Technology Features ******************* -->
+  <Features3
+    title='Innovative Dialogue Architecture'
+    subtitle='Breakthrough technological innovation, leading industry development'
+    columns={3}
+    items={[
+      {
+        title: 'Streaming Dialogue Technology',
+        description: `
+          • Industry-leading 50x real-time rate improvement
+          • Support multi-language real-time interruption and reconstruction
+          • Natural and smooth dialogue experience
+        `,
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Lightweight Model Architecture',
+        description: `
+          • Break through the limitations of traditional Transformer
+          • 3B-7B small model precision service
+          • Significant reduction in training and deployment costs
+          • Support deep optimization for vertical scenarios
+        `,
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Cloud Native Technology Platform',
+        description: `
+          • Full-stack commercial deployment capabilities
+          • Flexible Function Call support
+          • Open API ecosystem
+          • Support a variety of local deployment solutions
+        `,
+        icon: 'tabler:cloud',
+      },
+    ]}
+  />
+
+  <!-- Technology Advantages ******************* -->
+  <Steps
+    title='Technical Advantages'
+    items={[
+      {
+        title: 'Cost Efficiency',
+        description: `
+          • Calculation resource optimization
+          - 80% reduction in computational resource consumption compared to traditional solutions
+          - Support commercial-grade GPU and consumer graphics card deployment
+          - Optimized concurrency processing capabilities
+
+          • Deployment cost advantage
+          - Flexible local deployment solutions
+          - Minimized hardware requirements
+          - Simplified maintenance management
+        `,
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Performance Breakthrough',
+        description: `
+          • Real-time interaction capabilities
+          - Millisecond response speed
+          - Smooth interruption and reconstruction experience
+          - Multi-turn dialogue optimization
+
+          • Accuracy improvement
+          - Scenario-optimized algorithm
+          - Accuracy beyond large model APIs
+          - Continuous learning and optimization capabilities
+        `,
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Extended Capabilities',
+        description: `
+          • Multi-language support
+          - Cross-language model fusion
+          - Multi-language real-time interaction
+          - Language model dynamic adaptation
+
+          • Scenario adaptation
+          - Rapid industrial deployment
+          - Intelligent customer service deep optimization
+          - Vertical domain customization capabilities
+        `,
+        icon: 'tabler:arrows-maximize',
+      },
+    ]}
+  />
+
+  <!-- Innovation Results ******************* -->
+  <Content
+    title='Innovation Results'
+    subtitle='Continuous breakthroughs, continuous innovation'
+    items={[
+      {
+        title: 'Technical Breakthrough',
+        description: `
+          • Core algorithm innovation
+          - Breakthrough progress of non-Transformer architecture
+          - Lightweight model training framework
+          - Real-time interaction performance breakthrough
+
+          • Application innovation
+          - Local deployment solution
+          - Multi-scenario fusion capabilities
+          - Ecosystem integration
+        `,
+      },
+      {
+        title: 'Future Development',
+        description: `
+          • Technical roadmap
+          - Continuously optimize core algorithms
+          - Expand scenario adaptation capabilities
+          - Deepen AI infrastructure construction
+
+          • Innovation direction
+          - Explore new model architectures
+          - Optimize resource utilization efficiency
+          - Expand application scenario boundaries
+        `,
+      },
+    ]}
+    image={{
+      src: '@/assets/images/innovation.svg',
+      alt: 'Innovation Results',
+    }}
+  />
+
+  <!-- Technology Value ******************* -->
+  <div class='scroll-section relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8' data-aos='fade-up'>
+    <div class='mb-12 text-center'>
+      <h2 class='tech-title mb-4 text-3xl font-bold'>Technical Value</h2>
+      <p class='text-xl text-gray-600 dark:text-gray-400'>Create industry value, drive industrial upgrade</p>
+    </div>
+
+    <div class='value-cards grid grid-cols-1 gap-8 md:grid-cols-2'>
+      <!-- 行业价值 -->
+      <div
+        class='value-card transform rounded-lg bg-white p-8 shadow-lg transition-transform duration-300 hover:scale-105 dark:bg-gray-800'
+        data-aos='fade-right'
+      >
+        <div class='mb-6 flex items-center'>
+          <Icon name='tabler:building' class='h-8 w-8 text-blue-600' />
+          <h3 class='ml-4 text-2xl font-bold'>Industry Value</h3>
+        </div>
+        <ul class='space-y-4'>
+          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='100'>
+            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
+            <span>Reduce AI application barriers</span>
+          </li>
+          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='200'>
+            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
+            <span>Enhance deployment flexibility</span>
+          </li>
+          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='300'>
+            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
+            <span>Accelerate industrial intelligence upgrade</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 商业价值 -->
+      <div
+        class='value-card transform rounded-lg bg-white p-8 shadow-lg transition-transform duration-300 hover:scale-105 dark:bg-gray-800'
+        data-aos='fade-left'
+      >
+        <div class='mb-6 flex items-center'>
+          <Icon name='tabler:chart-dots' class='h-8 w-8 text-blue-600' />
+          <h3 class='ml-4 text-2xl font-bold'>Business Value</h3>
+        </div>
+        <ul class='space-y-4'>
+          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='100'>
+            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
+            <span>Significant cost reduction</span>
+          </li>
+          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='200'>
+            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
+            <span>Enhance deployment efficiency</span>
+          </li>
+          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='300'>
+            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
+            <span>Create new business models</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 动画样式 -->
+  <style>
+    /* 基础动画定义 */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* 应用动画的类 */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .slide-left {
+      opacity: 0;
+      animation: slideInLeft 1s ease forwards;
+    }
+
+    .slide-right {
+      opacity: 0;
+      animation: slideInRight 1s ease forwards;
+    }
+
+    .slide-up {
+      opacity: 0;
+      animation: slideInUp 1s ease forwards;
+    }
+
+    .scale-in {
+      opacity: 0;
+      animation: scaleIn 1s ease forwards;
+    }
+
+    /* 为不同延迟添加类 */
+    .delay-100 {
+      animation-delay: 100ms;
+    }
+    .delay-200 {
+      animation-delay: 200ms;
+    }
+    .delay-300 {
+      animation-delay: 300ms;
+    }
+    .delay-400 {
+      animation-delay: 400ms;
+    }
+    .delay-500 {
+      animation-delay: 500ms;
+    }
+  </style>
+
+  <!-- 动画脚本 -->
+  <script>
+    // 交叉观察器选项
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    };
+
+    // 创建观察器
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // 获取当前元素应该使用的动画类
+          const animationClass = entry.target.dataset.animation;
+          const delay = entry.target.dataset.delay;
+
+          // 添加动画类
+          if (animationClass) {
+            entry.target.classList.add(animationClass);
+          }
+          if (delay) {
+            entry.target.style.animationDelay = `${delay}ms`;
+          }
+
+          // 停止观察该元素
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    // 开始观察元素
+    document.addEventListener('DOMContentLoaded', () => {
+      // 观察所有带有data-animation属性的元素
+      document.querySelectorAll('[data-animation]').forEach((element) => {
+        observer.observe(element);
+      });
+
+      // 观察滚动区域
+      document.querySelectorAll('.scroll-section').forEach((section) => {
+        observer.observe(section);
+      });
+
+      // 观察价值卡片
+      document.querySelectorAll('.value-card').forEach((card) => {
+        observer.observe(card);
+      });
+
+      // 观察价值项
+      document.querySelectorAll('.value-item').forEach((item) => {
+        observer.observe(item);
+      });
+    });
+
+    // 添加滚动动画
+    document.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      document.querySelectorAll('.scroll-animate').forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top + scrolled;
+
+        if (scrolled > elementTop - windowHeight + 100) {
+          element.classList.add('active');
+        }
+      });
+    });
+  </script>
+</Layout>

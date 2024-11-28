@@ -5,7 +5,6 @@ import HeroText from '@/components/widgets/HeroText.astro';
 import Features3 from '@/components/widgets/Features3.astro';
 import Steps from '@/components/widgets/Steps.astro';
 import Content from '@/components/widgets/Content.astro';
-import CallToAction from '@/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: '核心技术 - 上海智独数科技',
@@ -69,7 +68,7 @@ const metadata = {
           - 相比传统方案降低80%计算资源消耗
           - 支持商用级GPU和消费级显卡部署
           - 优化的并发处理能力
-          
+
           • 部署成本优势
           - 灵活的本地化部署方案
           - 最小化硬件要求
@@ -84,7 +83,7 @@ const metadata = {
           - 毫秒级响应速度
           - 流畅的打断重构体验
           - 多轮对话优化
-          
+
           • 精准性提升
           - 场景化优化算法
           - 超越大模型API的准确度
@@ -99,7 +98,7 @@ const metadata = {
           - 跨语言模型融合
           - 多语种实时交互
           - 语言模型动态适配
-          
+
           • 场景适配
           - 工业现场快速部署
           - 智能客服深度优化
@@ -122,7 +121,7 @@ const metadata = {
           - 非Transformer架构的突破性进展
           - 轻量级模型训练框架
           - 实时交互性能突破
-          
+
           • 应用创新
           - 本地化部署方案
           - 多场景融合能力
@@ -136,7 +135,7 @@ const metadata = {
           - 持续优化核心算法
           - 扩展场景适配能力
           - 深化AI基础设施建设
-          
+
           • 创新方向
           - 探索新型模型架构
           - 优化资源利用效率
@@ -307,7 +306,7 @@ const metadata = {
         // 获取当前元素应该使用的动画类
         const animationClass = entry.target.dataset.animation;
         const delay = entry.target.dataset.delay;
-        
+
         // 添加动画类
         if (animationClass) {
           entry.target.classList.add(animationClass);
@@ -315,7 +314,7 @@ const metadata = {
         if (delay) {
           entry.target.style.animationDelay = `${delay}ms`;
         }
-        
+
         // 停止观察该元素
         observer.unobserve(entry.target);
       }
@@ -349,10 +348,10 @@ const metadata = {
   document.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     const windowHeight = window.innerHeight;
-    
+
     document.querySelectorAll('.scroll-animate').forEach(element => {
       const elementTop = element.getBoundingClientRect().top + scrolled;
-      
+
       if (scrolled > elementTop - windowHeight + 100) {
         element.classList.add('active');
       }

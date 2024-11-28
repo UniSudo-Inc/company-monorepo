@@ -1,0 +1,19 @@
+---
+const { pathname } = Astro.url;
+
+const currentLang = Astro.currentLocale;
+
+const targetLang = currentLang === 'en' ? 'zh-cn' : 'en';
+const targetPath =
+  targetLang === 'zh-cn' ? pathname.replace('/en', '') : `/en${pathname}`;
+---
+
+<div class="gap-2 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
+  <a
+    href={targetPath}
+    class="lang-link"
+    title={targetLang === 'en' ? 'Switch to English' : '切换到中文'}
+  >
+    {targetLang === 'en' ? 'EN' : '中文'}
+  </a>
+</div>
