@@ -112,7 +112,7 @@ export class LiveChatDemo extends LitElement {
   `;
 
   protected override render(): TemplateResult {
-    return this._status !== 'ready' ? this._renderButton() : this._renderSession();
+    return html`${this._status !== 'ready' ? this._renderButton() : this._renderSession()}`;
   }
 
   private _renderSession(): TemplateResult {
@@ -309,6 +309,8 @@ export class LiveChatDemo extends LitElement {
         redemptionFrames: 5,
         onSpeechStart: handleSpeechStart,
         onSpeechEnd: handleSpeechEnd,
+        workletURL: '/_astro/vad.worklet.bundle.min.js',
+        modelURL: '/_astro/silero_vad.onnx',
       });
       this._vad = vad;
       vad.start();

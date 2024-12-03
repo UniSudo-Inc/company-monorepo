@@ -95,19 +95,19 @@ export default defineConfig({
         targets: [
           {
             src: path.resolve(__dirname, '../../../node_modules/@ricky0123/vad-web/dist/vad.worklet.bundle.min.js'),
-            dest: './',
+            dest: './_astro/',
           },
           {
             src: path.resolve(__dirname, '../../../node_modules/@ricky0123/vad-web/dist/silero_vad.onnx'),
-            dest: './',
+            dest: './_astro/',
           },
           {
-            src: path.resolve(__dirname, '../../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.jsep.wasm'),
-            dest: './',
+            src: path.resolve(__dirname, '../../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.wasm'),
+            dest: './_astro/',
           },
           {
             src: path.resolve(__dirname, '../../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.mjs'),
-            dest: './',
+            dest: './_astro/',
           },
         ],
       }),
