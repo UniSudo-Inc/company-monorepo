@@ -224,7 +224,6 @@ export class LiveChatDemo extends LitElement {
   private async _connectToRoom(): Promise<void> {
     const data = await fetch(`${import.meta.env.PUBLIC_API_BASE_URL}/v1/room`, {
       method: 'POST',
-      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${import.meta.env.PUBLIC_GUEST_USER_JWT}`,
