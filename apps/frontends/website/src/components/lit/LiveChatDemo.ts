@@ -168,8 +168,6 @@ export class LiveChatDemo extends LitElement {
   }
 
   protected override updated(_changedProperties: PropertyValues): void {
-    console.debug('updated', _changedProperties);
-
     if (_changedProperties.has('_status')) {
       const oldStatus = _changedProperties.get('_status') as 'ready' | 'idle' | 'loading';
       const newStatus = this._status;
