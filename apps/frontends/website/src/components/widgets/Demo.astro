@@ -1,9 +1,17 @@
 ---
 import { LiveChatDemo } from '@/components/lit/LiveChatDemo';
+
+export interface Props {
+  title?: string;
+  classes?: string;
+}
+
+const { title, classes } = Astro.props;
 ---
 
 <section class="dark:bg-dark">
-  <div class="max-w-6xl mx-auto flex justify-center motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+  <div class=`max-w-6xl mx-auto flex flex-col gap-4 items-center justify-center motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${classes}`>
+    {title && <span class="text-3xl font-bold mb-4">{title}</span>}
     <LiveChatDemo client:load />
   </div>
 </section>

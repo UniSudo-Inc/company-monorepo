@@ -66,27 +66,15 @@ const advantages = [
 
 <Layout metadata={metadata}>
   <!-- Hero Section -->
+  <!-- add a animated down chevron in content slot -->
   <Hero
     tagline=" "
     title="立即开启智能新时代"
     subtitle="UniChat是一款 AI Agent应用，通过 TTS、RAG 和 CV 技术，为客户服务、销售和问答助手提供智能解决方案。只需提供行业知识，AI 即可高效服务,智能助力业务发展。"
-    actions={[
-      {
-        variant: 'primary',
-        text: '立即试用',
-        href: 'https://limit-4o-monorepo.vercel.app',
-        icon: 'tabler:arrow-right'
-      },
-      {
-        variant: 'secondary',
-        text: '产品案例',
-        href: '#'
-      },
-    ]}
   />
 
   <!-- Demo Section -->
-  <Demo />
+  <Demo title="立即体验" classes="mt-[-100px]" />
 
   <!-- Services Section -->
   <section class="py-16 px-4 mx-auto max-w-6xl motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
