@@ -1,10 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components';
+import LanguageSwitcher from '../common/LanguageSwitcher.astro';
 import Logo from '@/components/Logo.astro';
 import ToggleTheme from '@/components/common/ToggleTheme.astro';
 import ToggleMenu from '@/components/common/ToggleMenu.astro';
 import Button from '@/components/ui/Button.astro';
-import { getHomePermalink, trimSlash, getAsset } from '@/utils/permalinks';
+import { getHomePermalink, trimSlash, getAsset, getHomePermalinkEn } from '@/utils/permalinks';
 import type { CallToAction } from '@/types';
 
 interface Link {
@@ -69,7 +70,10 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     ]}
   >
     <div class:list={[{ 'mr-auto rtl:ml-auto rtl:mr-0': position === 'right' }, 'flex justify-between']}>
-      <a class='flex items-center' href={getHomePermalink()}>
+      <a
+        class='flex items-center'
+        href={Astro.currentLocale === 'en' ? getHomePermalinkEn() : getHomePermalink()}
+      >
         <Logo />
       </a>
       <div class='flex items-center md:hidden'>
@@ -135,6 +139,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     >
       <div class='flex w-full items-center justify-between md:w-auto'>
         <div class='flex'>
+          <LanguageSwitcher />
           {showToggleTheme && <ToggleTheme iconClass='w-6 h-6 md:w-5 md:h-5 md:inline-block' />}
           {
             showRssFeed && (

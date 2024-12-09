@@ -1,0 +1,335 @@
+---
+import { slide } from 'astro:transitions';
+import Layout from '@/layouts/PageLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Content from '@/components/widgets/Content.astro';
+import Features2 from '@/components/widgets/Features2.astro';
+
+const metadata = {
+  title: '发展路线 - 上海智独数科技有限公司',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero>
+    <Fragment slot='title'>
+      智独数科技
+      <span class='text-blue-600 dark:text-blue-400 animate-pulse'>发展蓝图</span>
+    </Fragment>
+
+    <Fragment slot='subtitle'>
+      从技术创新到商业落地，我们规划了清晰的发展路径，致力于成为AI基础设施的创新者。
+    </Fragment>
+  </Hero>
+
+  <!-- Animated Timeline Section -->
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="relative">
+      <!-- 垂直时间线 -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-600 to-blue-200 timeline-line"></div>
+
+      <!-- 2024 Section -->
+      <div class="timeline-section mb-24" transition:animate={slide({ duration: '1s' })}>
+        <div class="flex justify-center mb-8">
+          <h2 class="text-3xl font-bold bg-blue-600 text-white px-8 py-2 rounded-full timeline-year">
+            2024 技术奠基
+          </h2>
+        </div>
+
+        <div class="grid gap-8">
+          {/* Q1 */}
+          <div class="timeline-item">
+            <div class="flex items-center gap-4">
+              <div class="flex-1 text-right">
+                <h3 class="text-xl font-bold mb-2">Q1 创新启航</h3>
+                <ul class="space-y-2">
+                  <li class="timeline-event">• 3月，上海智独数科技有限公司创始成员碰撞出创新框架</li>
+                  <li class="timeline-event">• 完成流式可打断对话系统理论突破，实现50倍实时率</li>
+                  <li class="timeline-event">• 发布首个技术验证原型，验证技术可行性</li>
+                </ul>
+              </div>
+              <div class="w-6 h-6 bg-blue-600 rounded-full z-10 timeline-dot"></div>
+              <div class="flex-1"></div>
+            </div>
+          </div>
+
+          {/* Q2-Q3 */}
+          <div class="timeline-item">
+            <div class="flex items-center gap-4">
+              <div class="flex-1"></div>
+              <div class="w-6 h-6 bg-blue-500 rounded-full z-10 timeline-dot"></div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold mb-2">Q2-Q3 核心技术突破</h3>
+                <ul class="space-y-2">
+                  <li class="timeline-event">• 完成TTS核心技术研发，实现关键性能指标</li>
+                  <li class="timeline-event">• 搭建云原生平台框架，完成基础架构部署</li>
+                  <li class="timeline-event">• 开展核心算法优化，建立技术壁垒</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Q4 */}
+          <div class="timeline-item">
+            <div class="flex items-center gap-4">
+              <div class="flex-1 text-right">
+                <h3 class="text-xl font-bold mb-2">Q4 产品矩阵起航</h3>
+                <ul class="space-y-2">
+                  <li class="timeline-event">• 发布流式可打断对话系统1.0版本</li>
+                  <li class="timeline-event">• 推出智能硬件解决方案初代产品</li>
+                  <li class="timeline-event">• 完成AI工作流平台基础版开发</li>
+                  <li class="timeline-event">• 启动数据标注平台和AI分析平台研发</li>
+                </ul>
+              </div>
+              <div class="w-6 h-6 bg-blue-400 rounded-full z-10 timeline-dot"></div>
+              <div class="flex-1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2025 Section -->
+      <div class="timeline-section mb-24">
+        <div class="flex justify-center mb-8">
+          <h2 class="text-3xl font-bold bg-blue-600 text-white px-8 py-2 rounded-full timeline-year">
+            2025 场景深耕
+          </h2>
+        </div>
+
+        <div class="grid gap-8">
+          {/* H1 */}
+          <div class="timeline-item">
+            <div class="flex items-center gap-4">
+              <div class="flex-1"></div>
+              <div class="w-6 h-6 bg-blue-500 rounded-full z-10 timeline-dot"></div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold mb-2">H1 垂直领域突破</h3>
+                <ul class="space-y-2">
+                  <li class="timeline-event">• 推出面向制造业的数字员工解决方案</li>
+                  <li class="timeline-event">• 完成自动驾驶场景数据处理平台</li>
+                  <li class="timeline-event">• 发布企业级知识库智能问答系统</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* H2 */}
+          <div class="timeline-item">
+            <div class="flex items-center gap-4">
+              <div class="flex-1 text-right">
+                <h3 class="text-xl font-bold mb-2">H2 技术升级与场景扩展</h3>
+                <ul class="space-y-2">
+                  <li class="timeline-event">• 优化小型模型训练框架，降低50%计算资源消耗</li>
+                  <li class="timeline-event">• 拓展低空飞行、智能电网等新兴领域</li>
+                  <li class="timeline-event">• 建立产品生态联动机制</li>
+                </ul>
+              </div>
+              <div class="w-6 h-6 bg-blue-400 rounded-full z-10 timeline-dot"></div>
+              <div class="flex-1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2026 Section -->
+      <div class="timeline-section mb-24">
+        <div class="flex justify-center mb-8">
+          <h2 class="text-3xl font-bold bg-blue-600 text-white px-8 py-2 rounded-full timeline-year">
+            2026 规模化商用
+          </h2>
+        </div>
+
+        <div class="grid gap-8">
+          {/* H1 */}
+          <div class="timeline-item">
+            <div class="flex items-center gap-4">
+              <div class="flex-1"></div>
+              <div class="w-6 h-6 bg-blue-500 rounded-full z-10 timeline-dot"></div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold mb-2">H1 产品成熟与市场拓展</h3>
+                <ul class="space-y-2">
+                  <li class="timeline-event">• 发布全线产品2.0版本</li>
+                  <li class="timeline-event">• 打造行业标杆案例</li>
+                  <li class="timeline-event">• 建立渠道合作体系</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* H2 */}
+          <div class="timeline-item">
+            <div class="flex items-center gap-4">
+              <div class="flex-1 text-right">
+                <h3 class="text-xl font-bold mb-2">H2 技术创新与商业突破</h3>
+                <ul class="space-y-2">
+                  <li class="timeline-event">• 推出革命性的轻量级AI引擎</li>
+                  <li class="timeline-event">• 实现规模化商业落地</li>
+                  <li class="timeline-event">• 探索消费级产品布局</li>
+                </ul>
+              </div>
+              <div class="w-6 h-6 bg-blue-400 rounded-full z-10 timeline-dot"></div>
+              <div class="flex-1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Milestones -->
+  <Features2
+    title='核心里程碑'
+    subtitle='三大维度全面突破'
+    items={[
+      {
+        title: '技术创新',
+        description: `
+          • 创新框架突破，建立技术壁垒
+          • 轻量化AI引擎研发成功
+          • 多场景适配能力实现
+        `,
+        icon: 'tabler:bulb',
+      },
+      {
+        title: '产品体系',
+        description: `
+          • 完成"5+X"产品矩阵搭建
+          • 建立产品协同生态
+          • 实现场景化深度应用
+        `,
+        icon: 'tabler:stack',
+      },
+      {
+        title: '商业发展',
+        description: `
+          • 确立技术驱动的商业模式
+          • 打造标杆解决方案
+          • 构建完整商业生态
+        `,
+        icon: 'tabler:chart-dots',
+      },
+    ]}
+  >
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Future Vision -->
+  <Content
+    tagline='愿景'
+    title='未来展望'
+    classes={{ container: 'text-center' }}
+    items={[
+      {
+        title: '成为AI基础设施创新者',
+      },
+      {
+        title: '引领场景化AI应用发展',
+      },
+      {
+        title: '推动AI技术普惠落地',
+      },
+      {
+        title: '打造开放技术生态',
+      },
+    ]}
+  >
+    <Fragment slot='content'>
+      <p class="text-center max-w-3xl mx-auto mt-4 leading-relaxed">
+        上海智独数科技从创新理念的火花，到核心技术的突破，再到完整产品体系的构建，始终坚持以技术创新为核心驱动力。我们将持续深耕垂直场景，用创新科技为传统产业赋能，让AI技术真正服务于产业升级。
+      </p>
+    </Fragment>
+  </Content>
+
+  <style>
+    .timeline-line {
+      transform: scaleY(0);
+      animation: growLine 2s ease forwards;
+      transform-origin: top;
+    }
+
+    .timeline-section {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .timeline-year {
+      transform: scale(0.9);
+      animation: scaleIn 0.5s ease forwards;
+    }
+
+    .timeline-dot {
+      transform: scale(0);
+      animation: popIn 0.3s ease forwards;
+    }
+
+    .timeline-item {
+      transition: all 0.3s ease;
+    }
+
+    .timeline-event {
+      opacity: 0;
+      animation: slideIn 0.5s ease forwards;
+      animation-delay: calc(var(--index) * 0.1s);
+    }
+
+    @keyframes growLine {
+      to { transform: scaleY(1); }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      to { transform: scale(1); }
+    }
+
+    @keyframes popIn {
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+
+  <script>
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '-50px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          entry.target.style.setProperty('--index', index.toString());
+          entry.target.classList.add('in-view');
+
+          // 为每个事件项添加序列动画
+          const events = entry.target.querySelectorAll('.timeline-event');
+          events.forEach((event, eventIndex) => {
+            event.style.setProperty('--index', eventIndex.toString());
+          });
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.timeline-item').forEach(item => observer.observe(item));
+  </script>
+</Layout>

@@ -1,0 +1,321 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Features from '@/components/widgets/Features.astro';
+import Features2 from '@/components/widgets/Features2.astro';
+import Content from '@/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'UniSudo Inc. — Unique AI Solutions for SUDO Permissions',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/contact',
+        target: '_blank',
+      },
+      { text: 'Company Introduction', href: '#features' },
+    ]}
+    image={{ src: '@/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+  >
+    <Fragment slot='title'>
+      Unique AI Solutions for
+      <span class='highlight text-accent dark:text-white'>SUDO Permissions</span>
+    </Fragment>
+
+    <Fragment slot='subtitle'>
+      <span class='hidden sm:inline'> <span class='font-semibold'>UniSudo Inc.</span></span>
+      <span class='mb-1 block font-bold text-blue-600 sm:hidden'>UniSudo Inc.</span>
+      We are dedicated to creating high-performance, low-cost AI solutions, with research and development as our core competitive advantage. Through innovative model architectures and full-process technical support, we help enterprises implement AI accurately at a cost far lower than traditional solutions.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <!-- <Note /> -->
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id='features'
+    tagline='Core Competitiveness'
+    title='Industry Experts + Innovative Thinking + New Technology Development'
+    subtitle='UniSudo Inc. will continue to deepen technological innovation, focusing on providing more efficient and cost-effective AI deployment solutions for enterprises. We look forward to partnering with more leading enterprises in various vertical industries to jointly promote the deep application of AI technology.'
+    items={[
+      {
+        title: 'Innovative Technology',
+        description: 'Break through the limitations of traditional architectures to achieve low-cost, high-performance AI solutions.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'Scene Understanding',
+        description: 'Deeply understand the needs of vertical industries to provide accurate industry solutions.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Cost Advantage',
+        description: 'Significantly reduce deployment and operational costs through innovative technology architectures.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Complete Ecosystem',
+        description: 'Develop an end-to-end technology chain independently to provide one-stop service capabilities.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline='Product System'
+    title='Meet All Your AI Needs'
+    items={[
+      {
+        title: 'Industry-leading Real-time Interaction Capabilities',
+        description: 'Support multi-turn conversations, context understanding, intent recognition, knowledge base question answering, and other complex interactive scenarios.',
+      },
+      {
+        title: 'Intelligent Dialogue Path Reconstruction',
+        description: 'Through intelligent path reconstruction, achieve more efficient and intelligent dialogue experiences.',
+      },
+      {
+        title: 'Support Real-time Knowledge Base Question Answering in Multiple Scenarios',
+        description: 'Support real-time knowledge base question answering in multiple scenarios to meet different business needs.',
+      },
+      {
+        title: 'Smooth User Interaction Experience',
+        description: 'Provide a smooth and natural dialogue experience for users.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Streaming Interruptable Dialogue System</h3>
+      <p>Provide more intelligent and smooth dialogue experiences for your business.</p>
+    </Fragment>
+
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Support Localized Low-cost Deployment',
+        description: 'Support deployment on private servers to save costs while ensuring data security.',
+      },
+      {
+        title: 'Flexible Model Integration',
+        description: 'Can integrate multiple models to meet different business needs.',
+      },
+      {
+        title: 'Support Private Model Training and Optimization',
+        description: 'Support private model training and optimization, customize exclusive models.',
+      },
+      {
+        title: 'Adapt to Commercial and Industrial Scenarios',
+        description: 'Adapt to commercial and industrial scenarios to meet professional needs.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Smart Hardware Solutions</h3>
+      <p>We provide a variety of smart hardware solutions to meet your business needs.</p>
+    </Fragment>
+
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Complete Commercial Deployment Capability',
+        description: 'Support cloud deployment to provide complete commercial deployment capabilities.',
+      },
+      {
+        title: 'Strong Function Call Support',
+        description: 'Support Function Call to achieve more intelligent and flexible dialogue experiences.',
+      },
+      {
+        title: 'Flexible Local Deployment Solutions',
+        description: 'Support private deployment to meet data security needs.',
+      },
+      {
+        title: 'Open API Ecosystem',
+        description: 'Support API integration to enhance scalability.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Cloud-native Workflow Platform</h3>
+      <p>Provide full-process support for your business to allow you to focus on core business.</p>
+    </Fragment>
+
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Service Multiple Well-known Automobile Companies',
+        description: 'Service multiple well-known automobile companies, provide professional data annotation solutions.',
+      },
+      {
+        title: 'Support Autonomous Driving Data Processing',
+        description: 'Support autonomous driving data processing, provide professional data annotation solutions for intelligent driving.',
+      },
+      {
+        title: 'Low Altitude Flight Scene Data Annotation',
+        description: 'Support low altitude flight scene data annotation, provide professional data annotation solutions for drones.',
+      },
+      {
+        title: 'Multi-modal Data Processing Capability',
+        description: 'Support multi-modal data processing,',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Professional Data Annotation Platform</h3>
+      <p>We provide professional data annotation solutions to meet your business needs.</p>
+    </Fragment>
+
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Low Code Development Environment',
+      },
+      {
+        title: 'Intelligent Data Processing',
+      },
+      {
+        title: 'Visual Analysis Tools',
+      },
+      {
+        title: 'Deep Insight Capabilities',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>AI Data Analysis Platform</h3>
+      Matrix data analysis platform, support multi-dimensional data analysis, provide deep insight capabilities.
+    </Fragment>
+
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Content>
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title='AI Application Scenarios'
+    subtitle='AI empowers multiple fields such as intelligent manufacturing, intelligent transportation, intelligent customer service, and enterprise services.'
+    tagline=''
+    items={[
+      {
+        title: 'Digital Human Exhibition',
+        description:
+          '<ul><li>Bank Intelligent Net Digital Employee</li><li>Museum Virtual Guide</li><li>Enterprise Exhibition Interactive Guide</li><li>Shopping Mall Digital Guide Assistant</li><li>Educational Training Digital Lecturer</li><li>Enterprise Image Digital Spokesperson</li></ul>',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Data Services',
+        description:
+          '<ul><li>AI Training Data Annotation</li><li>Multi-modal Data Processing</li><li>Data Cleaning and Enhancement</li><li>Professional Domain Data Set Construction</li><li>Data Quality Evaluation System</li><li>Privacy Data Protection Scheme</li></ul>',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Model Training',
+        description:
+          '<ul><li>Large Language Model Fine-tuning Training</li><li>Vertical Domain Model Development</li><li>Multi-modal Model Training and Deployment</li><li>Model Performance Optimization Service</li><li>Small Sample Learning Solution</li><li>Incremental Learning System Construction</li></ul>',
+        icon: 'flat-color-icons:approval',
+      },
+
+      {
+        title: 'Intelligent Customer Service',
+        description:
+          '<ul><li>Financial Services Intelligent Question Answering System</li><li>E-commerce Full-process Customer Service Robot</li><li>Government Service Intelligent Assistant</li><li>Enterprise Knowledge Base Intelligent Retrieval</li><li>Multi-turn Dialogue Management System</li><li>Emotion Recognition and Response Service</li></ul>',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Enterprise Digital Transformation',
+        description:
+          '<ul><li>Smart Talent Screening System</li><li>Enterprise Training Digital Assistant</li><li>Intelligent Office Automation Platform</li><li>Data Analysis Decision System</li><li>Enterprise Knowledge Accumulation Platform</li><li>Intelligent Meeting Assistant System</li></ul>',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Industry Solutions',
+        description:
+          '<ul><li>Educational Training Digital Transformation</li><li>Medical Health Intelligent Diagnosis</li><li>Financial Risk Intelligent Analysis</li><li>Retail Intelligent Upgrade</li><li>Smart City Data Platform</li><li>Cultural Tourism Industry Digital Service</li></ul>',
+        icon: 'flat-color-icons:document',
+      },
+    ]}
+  >
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <!-- <BlogLatestPosts
+    title='Find out more content in our Blog'
+    information={`The blog is used to display AstroWind documentation.
+                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+                        Astro is a very interesting technology. Thanks.
+                `}
+  /> -->
+</Layout>

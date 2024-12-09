@@ -83,7 +83,7 @@ export interface UIConfig {
 
 const DEFAULT_SITE_NAME = 'Website';
 
-const getSite = (config: Config) => {
+const getSite = (config: Config): SiteConfig => {
   const _default = {
     name: DEFAULT_SITE_NAME,
     site: undefined,
@@ -96,7 +96,7 @@ const getSite = (config: Config) => {
   return merge({}, _default, config.site ?? {}) as SiteConfig;
 };
 
-const getMetadata = (config: Config) => {
+const getMetadata = (config: Config): MetaDataConfig => {
   const siteConfig = getSite(config);
 
   const _default = {
@@ -117,7 +117,7 @@ const getMetadata = (config: Config) => {
   return merge({}, _default, config.metadata ?? {}) as MetaDataConfig;
 };
 
-const getI18N = (config: Config) => {
+const getI18N = (config: Config): I18NConfig => {
   const _default = {
     language: 'en',
     textDirection: 'ltr',
@@ -128,7 +128,7 @@ const getI18N = (config: Config) => {
   return value as I18NConfig;
 };
 
-const getAppBlog = (config: Config) => {
+const getAppBlog = (config: Config): AppBlogConfig => {
   const _default = {
     isEnabled: false,
     postsPerPage: 6,
@@ -171,7 +171,7 @@ const getAppBlog = (config: Config) => {
   return merge({}, _default, config.apps?.blog ?? {}) as AppBlogConfig;
 };
 
-const getUI = (config: Config) => {
+const getUI = (config: Config): UIConfig => {
   const _default = {
     theme: 'system',
   };
@@ -179,7 +179,7 @@ const getUI = (config: Config) => {
   return merge({}, _default, config.ui ?? {});
 };
 
-const getAnalytics = (config: Config) => {
+const getAnalytics = (config: Config): AnalyticsConfig => {
   const _default = {
     vendors: {
       googleAnalytics: {

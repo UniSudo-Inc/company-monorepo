@@ -1,0 +1,322 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Content from '@/components/widgets/Content.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
+import Timeline from '@/components/widgets/Timeline.astro';
+
+const metadata = {
+  title: '企业数字化解决方案',
+};
+---
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <div class="relative h-96 flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+        企业数字化解决方案
+      </h1>
+      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
+        本地部署· 全天候服务 · 数据安全
+      </p>
+    </div>
+  </div>
+
+  <!-- Case Study 1: Financial Services -->
+  <Content
+    isReversed
+    tagline="案例研究 1"
+    title="金融服务智能问答系统"
+    items={[
+      {
+        title: '项目背景',
+        description: `
+        • 需求分析：提升金融服务响应效率，降低人工成本
+        • 痛点：专业知识更新频繁，人工培训成本高，服务质量不稳定
+        • 目标：打造安全可靠的智能金融顾问`,
+      },
+      {
+        title: '解决方案',
+        description: `
+        • 部署3B本地小模型，确保数据安全
+        • 构建金融领域专业知识库
+        • 支持多轮对话理解
+        • 提供7x24小时专业咨询服务
+        • 实现金融产品精准推荐`,
+      },
+      {
+        title: '实施效果',
+        description: `
+        • 响应时间降低至0.5秒
+        • 准确率达到95%
+        • 人力成本降低60%
+        • 客户满意度提升40%
+        • 本地部署月运营成本仅需5000元`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: '金融智能客服',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">技术亮点</h3>
+      <p>采用3B小模型本地部署方案，无需联网，确保数据安全性。专业金融知识库让回答更精准，多轮对话能力让服务更自然。每月仅需一台普通服务器即可运行，大幅降低运营成本。</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case Study 2: E-commerce -->
+  <Content
+    isAfterContent
+    tagline="案例研究 2"
+    title="电商全流程客服机器人"
+    items={[
+      {
+        title: '项目背景',
+        description: `
+        • 需求分析：提升电商服务效率，解决售前售后服务压力
+        • 痛点：节假日人力不足，客服培训周期长
+        • 目标：打造全流程智能服务体系`,
+      },
+      {
+        title: '解决方案',
+        description: `
+        • 部署7B本地模型，保障数据隐私
+        • 订单查询与售后跟踪
+        • 商品推荐与比价服务
+        • 退换货智能处理
+        • 多语言客服支持`,
+      },
+      {
+        title: '实施效果',
+        description: `
+        • 服务容量提升300%
+        • 客单价提升25%
+        • 退货率降低15%
+        • 月运营成本降低70%
+        • 本地部署每日仅需200元`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1556742393-d75f468bfcb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: '电商客服',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">技术亮点</h3>
+      <p>本地部署7B小模型，断网环境也能稳定运行。个性化推荐算法提升成交率，智能工单分类提高处理效率。支持私有化部署，确保商业数据安全。</p>
+    </Fragment>
+  </Content>
+
+  <!-- Similar structure continues for other 4 case studies -->
+  <!-- Case Study 3: Government Services -->
+  <Content
+    isReversed
+    tagline="案例研究 3"
+    title="政务服务智能助手"
+    items={[
+      {
+        title: '项目背景',
+        description: `
+        • 需求分析：提升政务服务效率，实现智能化政务咨询
+        • 痛点：政策更新频繁，咨询量大，人工解答效率低
+        • 目标：打造安全可靠的政务智能服务系统`,
+      },
+      {
+        title: '解决方案',
+        description: `
+        • 部署3B本地模型，确保数据安全
+        • 政务知识库实时更新
+        • 多部门业务协同
+        • 智能预约和提醒
+        • 政策精准推送服务`,
+      },
+      {
+        title: '实施效果',
+        description: `
+        • 咨询效率提升200%
+        • 群众满意度达98%
+        • 人力投入降低50%
+        • 本地部署每月成本降低80%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: '政务服务',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">安全特点</h3>
+      <p>采用本地部署方案，确保政务数据安全。支持离线运行，稳定可靠，成本低廉。每个部门可独立部署，数据互不干扰。</p>
+    </Fragment>
+  </Content>
+
+<!-- Case Study 4: State Grid -->
+<Content
+  isAfterContent
+  tagline="案例研究 4"
+  title="国家电网智能服务平台"
+  items={[
+    {
+      title: '项目背景',
+      description: `
+      • 需求分析：提升电力服务响应速度，解决用户咨询压力
+      • 痛点：24小时服务需求大，突发事件处理压力大
+      • 目标：打造安全可靠的电力服务智能平台`,
+    },
+    {
+      title: '解决方案',
+      description: `
+      • 部署3B本地小模型，确保电网数据安全
+      • 电力故障智能诊断系统
+      • 用电账单智能解答
+      • 突发事件应急响应
+      • 智能工单分配机制`,
+    },
+    {
+      title: '实施效果',
+      description: `
+      • 故障响应时间降低70%
+      • 客服工作量减少65%
+      • 用户满意度提升40%
+      • 本地部署单月成本低至8000元
+      • 系统准确率达到98%`,
+    }
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+    alt: '电网服务',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">安全性亮点</h3>
+    <p>采用本地部署模式，确保电网核心数据安全。支持离线运行，即使在网络受限环境下也能正常服务。单个服务器即可支撑全省级业务量，性价比极高。</p>
+  </Fragment>
+</Content>
+
+<!-- Case Study 5: Retail Brand -->
+<Content
+  isReversed
+  tagline="案例研究 5"
+  title="品牌零售智能导购系统"
+  items={[
+    {
+      title: '项目背景',
+      description: `
+      • 需求分析：提升品牌购物体验，解决专业导购人员短缺
+      • 痛点：导购培训成本高，服务标准不统一
+      • 目标：打造全渠道智能导购体系`,
+    },
+    {
+      title: '解决方案',
+      description: `
+      • 部署7B本地模型，保护会员数据
+      • 个性化商品推荐系统
+      • 全渠道会员服务
+      • VIP客户精准营销
+      • 商品专业知识问答`,
+    },
+    {
+      title: '实施效果',
+      description: `
+      • 转化率提升45%
+      • 会员满意度提升50%
+      • 导购成本降低60%
+      • 本地部署日均成本300元
+      • 商品知识覆盖率99%`,
+    }
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1590907047706-ee9c08cf3189?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+    alt: '品牌零售',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">成本优势</h3>
+    <p>本地部署7B小模型，支持多家门店同时使用，性价比远超云端服务。专业知识库让新手导购快速上手，大幅降低培训成本。</p>
+  </Fragment>
+</Content>
+
+<!-- Case Study 6: Telemarketing Center -->
+<Content
+  isAfterContent
+  tagline="案例研究 6"
+  title="电销中心智能外呼系统"
+  items={[
+    {
+      title: '项目背景',
+      description: `
+      • 需求分析：提升电销效率，降低人工成本
+      • 痛点：人员流动大，培训成本高，质量不稳定
+      • 目标：打造智能化电销服务平台`,
+    },
+    {
+      title: '解决方案',
+      description: `
+      • 部署3B本地模型，确保通��隐私
+      • 智能话术生成系统
+      • 实时话术优化推荐
+      • 销售场景快速响应
+      • 通话质检自动化`,
+    },
+    {
+      title: '实施效果',
+      description: `
+      • 电销成功率提升35%
+      • 培训时间缩短70%
+      • 人工成本降低55%
+      • 本地部署月成本低至6000元
+      • 客户投诉率降低40%`,
+    }
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+    alt: '电销中心',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">效率提升</h3>
+    <p>本地化部署保障数据安全，智能话术生成提升销售效率。新人可快速掌握专业技能，大幅降低培训成本和人员流失带来的损失。</p>
+  </Fragment>
+</Content>
+  <!-- Success Metrics -->
+  <Timeline
+    title="智能客服整体解决方案效果"
+    items={[
+      {
+        title: '成本优势',
+        description: '本地部署小模型，平均节省70%运营成本',
+      },
+      {
+        title: '安全保障',
+        description: '私有化部署，数据100%安全可控',
+      },
+      {
+        title: '服务效率',
+        description: '平均提升服务效率200%，全天候服务覆盖',
+      },
+      {
+        title: '用户满意',
+        description: '客户满意度提升45%，服务体验显著改善',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction
+    title="开启企业智能新时代"
+    subtitle="私有化部署，安全可靠，成本更低"
+    actions={[
+      {
+        variant: 'primary',
+        text: '预约演示',
+        href: '/contact',
+        icon: 'tabler:download',
+      },
+      {
+        text: '了解更多',
+        href: '/about',
+      },
+    ]}
+  />
+</Layout>

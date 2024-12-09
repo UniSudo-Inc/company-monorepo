@@ -8,7 +8,7 @@ const createPath = (...params: string[]) => {
     .map((el) => trimSlash(el))
     .filter((el) => Boolean(el))
     .join('/');
-  return `/${  paths  }${SITE.trailingSlash && paths ? '/' : ''}`;
+  return `/${paths}${SITE.trailingSlash && paths ? '/' : ''}`;
 };
 
 const BASE_PATHNAME = SITE.base || '/';
@@ -31,7 +31,7 @@ export const getCanonical = (path = ''): string | URL => {
   if (SITE.trailingSlash == false && path && url.endsWith('/')) {
     return url.slice(0, -1);
   } else if (SITE.trailingSlash == true && path && !url.endsWith('/')) {
-    return `${url  }/`;
+    return `${url}/`;
   }
   return url;
 };
@@ -87,13 +87,14 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 /** */
 export const getHomePermalink = (): string => getPermalink('/');
 
+export const getHomePermalinkEn = (): string => getPermalink('/en');
+
 /** */
 export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
 
 /** */
 export const getAsset = (path: string): string =>
-  `/${
-  [BASE_PATHNAME, path]
+  `/${[BASE_PATHNAME, path]
     .map((el) => trimSlash(el))
     .filter((el) => Boolean(el))
     .join('/')}`;

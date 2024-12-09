@@ -1,0 +1,157 @@
+---
+import Layout from '@/layouts/LandingLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Features from '@/components/widgets/Features.astro';
+import Stats from '@/components/widgets/Stats.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
+import Demo from '@/components/widgets/Demo.astro';
+
+const metadata = {
+  title: 'UniChat - 智能助力客户服务',
+};
+
+const features = [
+  {
+    title: '实时对话服务',
+    description: '您可以创建一个带有知识库的实时对话机器人，并进行5分钟实时对话。',
+    icon: 'tabler:message-circle',
+    link: '#',
+    linkText: '免费试用',
+    textColor: 'text-black'
+  },
+  {
+    title: '文字转语音 (TTS) 服务',
+    description: '高质量的语音合成服务，每10,000个Token收费1元。',
+    icon: 'tabler:volume',
+    link: '#',
+    linkText: '现在注册充值，即可享受八折优惠！',
+    textColor: 'text-black'
+  },
+  {
+    title: '知识库检索 (RAG) 服务',
+    description: '企业用户定制，上传自己的知识库并进行检索。',
+    icon: 'tabler:search',
+    link: '#',
+    linkText: '了解更多',
+    textColor: 'text-black'
+  }
+];
+
+const stats = [
+  {
+    title: '客户满意度',
+    amount: '98%',
+    icon: 'tabler:user-check'
+  },
+  {
+    title: '客服响应时间',
+    amount: '< 10秒钟',
+    icon: 'tabler:clock'
+  }
+];
+
+const advantages = [
+  {
+    title: '快速配置',
+    description: '只需输入行业知识，我们的 AI 即可快速为您提供精准服务。',
+    icon: 'tabler:bolt'
+  },
+  {
+    title: '多场景适用',
+    description: '我们的AI技术适用于多种场景，包括客户服务、销售和问答助手等。',
+    icon: 'tabler:layout-grid'
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <!-- add a animated down chevron in content slot -->
+  <Hero
+    tagline=" "
+    title="立即开启智能新时代"
+    subtitle="UniChat是一款 AI Agent应用，通过 TTS、RAG 和 CV 技术，为客户服务、销售和问答助手提供智能解决方案。只需提供行业知识，AI 即可高效服务,智能助力业务发展。"
+  />
+
+  <!-- Demo Section -->
+  <Demo title="立即体验" classes="mt-[-100px]" />
+
+  <!-- Services Section -->
+  <section class="py-16 px-4 mx-auto max-w-6xl motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">我们的服务</h2>
+      <p class="text-gray-600">为您提供全方位的AI解决方案</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {features.map(feature => (
+        <div class="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
+          <div class="text-primary mb-4">
+            <i class={feature.icon}></i>
+          </div>
+          <h3 class={`text-xl font-semibold mb-2 ${feature.textColor || ''}`}>{feature.title}</h3>
+          <p class="text-gray-600 mb-4">{feature.description}</p>
+          <a href={feature.link} class="text-blue-600 hover:text-blue-700">
+            {feature.linkText}
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <Stats
+    title="智能客服提升客户满意度"
+    subtitle="UniChat是一款 AI Agent应用，通过 TTS、RAG 和 CV 技术，为客户服务、销售和问答助手提供智能解决方案。只需提供行业知识，AI 即可高效服务,智能助力业务发展。"
+    stats={stats}
+  />
+
+  <!-- Features -->
+  <Features
+    title="我们的优势"
+    subtitle={`
+      <div class="relative inline-block">
+        <span class="text-3xl font-bold text-primary animate-pulse">
+          行业 1/50 的实时率
+        </span>
+        <div class="absolute -inset-1 bg-primary/20 blur-lg -z-10"></div>
+      </div>
+    `}
+    items={advantages}
+    columns={2}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction
+    title="开始使用智能服务"
+    subtitle="立即体验AI带来的效率提升"
+    actions={[
+      {
+        variant: 'primary',
+        text: '联系我们',
+        href: '/contact',
+        icon: 'tabler:mail'
+      }
+    ]}
+  />
+</Layout>
+
+<style>
+  @keyframes highlight {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-highlight {
+    animation: highlight 2s ease-in-out infinite;
+  }
+</style>

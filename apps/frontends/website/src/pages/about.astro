@@ -7,220 +7,171 @@ import Steps2 from '@/components/widgets/Steps2.astro';
 import Layout from '@/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: '关于我们',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
-    tagline='About us'
+    tagline='关于我们'
     image={{
       src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
+      alt: '公司形象',
     }}
   >
     <Fragment slot='title'>
-      Elevate your online presence with our <br />
-      <span class='highlight text-accent dark:text-white'> Beautiful Website Templates</span>
+      <span class='text-4xl md:text-6xl'>上海智独数科技有限公司</span><br />
+      <span class='highlight text-3xl text-accent dark:text-white md:text-5xl'>一站式AI解决方案服务商</span>
     </Fragment>
 
     <Fragment slot='subtitle'>
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      <span class='text-xl md:text-2xl'>
+        上海智独数科技有限公司是一家专业的一站式AI服务提供商。我们提供从数据标注、模型训练部署、生产环境搭建、定制开发交互，到低成本语音交互的全流程解决方案。凭借我们的专业技术和丰富经验，我们帮助企业以最优成本实现AI转型，打造符合企业需求的智能化系统。
+      </span>
     </Fragment>
   </Hero>
 
-  <!-- Stats Widget ****************** -->
-
   <Stats
-    title='Statistics about us'
+    title='公司数据'
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: '技术专利', amount: '3+' },
+      { title: '技术团队', amount: '15+' },
+      { title: '服务项目', amount: '30+' },
+      { title: '合作伙伴', amount: '15+' },
     ]}
-  />
-
-  <!-- Features3 Widget ************** -->
+  >
+    <Fragment slot='bg'>
+      <div class='mt-6 flex flex-wrap justify-center space-x-8'>
+        <img src='/placeholder-logo1.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
+        <img src='/placeholder-logo2.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
+        <img src='/placeholder-logo3.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
+        <img src='/placeholder-logo4.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
+        <img src='/placeholder-logo5.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
+      </div>
+    </Fragment>
+  </Stats>
 
   <Features3
-    title='Our templates'
-    subtitle='Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod.'
+    title='核心技术'
+    subtitle='提供全方位的AI解决方案，助力企业数字化转型'
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
+        title: '专业的数据标注服务',
+        description: '提供高质量、高效率的数据标注服务，为AI模型训练提供坚实基础。',
         icon: 'tabler:template',
       },
       {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
+        title: '全流程模型开发部署',
+        description: '从模型选型、训练到部署的一站式服务，确保AI系统的稳定运行。',
         icon: 'tabler:template',
       },
       {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
+        title: '低成本语音交互方案',
+        description: '创新的语音交互技术，帮助企业大幅降低AI应用成本。',
         icon: 'tabler:template',
       },
     ]}
   />
-
-  <!-- Features3 Widget ************** -->
 
   <Features3
     columns={3}
     isAfterContent={true}
     items={[
       {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
+        title: '生产环境定制化',
+        description: '根据企业需求定制开发生产环境，确保AI系统的最佳性能表现。',
         icon: 'tabler:template',
       },
       {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
+        title: '交互系统开发',
+        description: '专业的交互系统开发团队，打造流畅自然的人机交互体验。',
         icon: 'tabler:template',
       },
       {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
+        title: '一体化技术支持',
+        description: '提供全周期的技术支持服务，保障系统的持续优化与升级。',
         icon: 'tabler:template',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
+      alt: '技术展示',
     }}
   />
 
-  <!-- Steps2 Widget ****************** -->
-
   <Steps2
-    title='Our values'
-    subtitle='Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus.'
+    title='企业价值观'
+    subtitle='专业、创新、务实、高效'
     items={[
       {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+        title: '技术创新',
+        description: '持续投入研发，追求技术创新，为客户提供最先进的AI解决方案。',
       },
       {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+        title: '客户至上',
+        description: '深入理解客户需求，提供定制化服务，确保项目的落地效果。',
       },
       {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        title: '专业服务',
+        description: '专业的技术团队，全流程的服务支持，确保客户获得最佳服务体验。',
       },
     ]}
   />
 
-  <!-- Steps2 Widget ****************** -->
-
   <Steps2
-    title='Achievements'
-    subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla.'
+    title='发展成就'
+    subtitle='用专业技术服务创造价值'
     isReversed={true}
     callToAction={{
-      text: 'See more',
+      text: '回到主页',
       href: '/',
     }}
     items={[
       {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
+        title: '技术创新',
+        description: '自主研发多项核心技术，持续推动行业创新发展。',
         icon: 'tabler:globe',
       },
       {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
+        title: '客户认可',
+        description: '获得众多知名企业的信赖与认可，建立长期合作关系。',
         icon: 'tabler:message-star',
       },
       {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
+        title: '服务能力',
+        description: '完善的服务体系，确保为客户提供最优质的解决方案。',
         icon: 'tabler:award',
       },
     ]}
   />
 
-  <!-- Features2 Widget ************** -->
-
   <Features2
-    title='Our locations'
-    tagline='Find us'
-    columns={4}
+    title='联系我们'
+    tagline='办公地点'
+    columns={1}
     items={[
       {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
+        title: '上海总部',
+        description: '上海市浦东新区临港自贸区水芸路55号港城广场二街坊1号楼8层802室',
       },
     ]}
   />
 
-  <!-- Features2 Widget ************** -->
-
   <Features2
-    title='Technical Support'
-    tagline='Contact us'
+    title='技术支持'
+    tagline='联系方式'
     columns={2}
     items={[
       {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
+        title: '在线咨询',
+        description: '我们的技术支持团队随时为您提供专业的咨询服务和技术支持。',
         icon: 'tabler:messages',
       },
       {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
+        title: '电话咨询',
+        description: '工作时间：周一至周五 9:00-18:00，欢迎来电咨询。',
         icon: 'tabler:headset',
       },
     ]}

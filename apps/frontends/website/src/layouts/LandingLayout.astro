@@ -1,7 +1,7 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
 import Header from '@/components/widgets/Header.astro';
-import { headerData } from '@/navigation';
+import { headerData, headerDataEn } from '@/navigation';
 import type { MetaData } from '@/types';
 
 export interface Props {
@@ -9,6 +9,7 @@ export interface Props {
 }
 
 const { metadata } = Astro.props;
+const locale = Astro.currentLocale;
 ---
 
 <PageLayout metadata={metadata}>
@@ -18,13 +19,15 @@ const { metadata } = Astro.props;
   <Fragment slot='header'>
     <slot name='header'>
       <Header
-        links={headerData?.links[2] ? [headerData.links[2]] : undefined}
-        actions={[
-          {
-            text: 'Download',
-            href: 'https://github.com/onwidget/astrowind',
-          },
-        ]}
+        links={
+          locale === 'en'
+            ? headerDataEn?.links[2]
+              ? [headerDataEn.links[2]]
+              : undefined
+            : headerData?.links[2]
+              ? [headerData.links[2]]
+              : undefined
+        }
         showToggleTheme
         position='right'
       />

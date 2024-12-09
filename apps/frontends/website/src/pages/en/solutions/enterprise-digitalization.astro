@@ -1,0 +1,322 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Content from '@/components/widgets/Content.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
+import Timeline from '@/components/widgets/Timeline.astro';
+
+const metadata = {
+  title: 'Enterprise Digitalization Solutions',
+};
+---
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <div class="relative h-96 flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+        Enterprise Digitalization Solutions
+      </h1>
+      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
+        Local Deployment · 24/7 Service · Data Security
+      </p>
+    </div>
+  </div>
+
+  <!-- Case Study 1: Financial Services -->
+  <Content
+    isReversed
+    tagline="Case Study 1"
+    title="Financial Services Intelligent Question-Answering System"
+    items={[
+      {
+        title: 'Project Background',
+        description: `
+        • Demand analysis: improve financial service response efficiency and reduce human costs
+        • Pain point: frequent updates of professional knowledge, high costs of human training, and unstable service quality
+        • Goal: build a secure and reliable intelligent financial advisor`,
+      },
+      {
+        title: 'Solution',
+        description: `
+        • Deploy 3B local small models to ensure data security
+        • Build a professional knowledge base in the financial field
+        • Support multi-turn dialogue understanding
+        • Provide 7x24-hour professional consultation services
+        • Achieve accurate financial product recommendations`,
+      },
+      {
+        title: 'Implementation Effect',
+        description: `
+        • Response time reduced to 0.5 seconds
+        • Accuracy rate of 95%
+        • Human cost reduced by 60%
+        • Customer satisfaction increased by 40%
+        • Local deployment monthly operating cost仅需5000元`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Financial Intelligent Customer Service',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Technical Highlights</h3>
+      <p>Adopt the 3B local small model deployment plan, no need to connect to the network, ensuring data security. The professional financial knowledge base makes the answers more accurate, and the multi-turn dialogue capability makes the service more natural. Only one ordinary server is needed monthly to run, greatly reducing operating costs.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case Study 2: E-commerce -->
+  <Content
+    isAfterContent
+    tagline="Case Study 2"
+    title="E-commerce Full-process Customer Service Robot"
+    items={[
+      {
+        title: 'Project Background',
+        description: `
+        • Demand analysis: improve e-commerce service efficiency and solve the pressure of pre-sale and after-sale service
+        • Pain point: insufficient human resources during holidays, long customer service training cycle
+        • Goal: build a full-process intelligent service system`,
+      },
+      {
+        title: 'Solution',
+        description: `
+        • Deploy 7B local models to ensure data privacy
+        • Order query and after-sales tracking
+        • Product recommendation and price comparison service
+        • Intelligent processing of returns and exchanges
+        • Multi-language customer support`,
+      },
+      {
+        title: 'Implementation Effect',
+        description: `
+        • Service capacity increased by 300%
+        • Customer unit price increased by 25%
+        • Return rate reduced by 15%
+        • Monthly operating cost reduced by 70%
+        • Local deployment daily cost仅需200元`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1556742393-d75f468bfcb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'E-commerce Customer Service',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Technical Highlights</h3>
+      <p>Local deployment of 7B small models, stable operation even in offline environments. Personalized recommendation algorithms improve conversion rates, and intelligent ticket classification improves processing efficiency. Support private deployment to ensure business data security.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Similar structure continues for other 4 case studies -->
+  <!-- Case Study 3: Government Services -->
+  <Content
+    isReversed
+    tagline="Case Study 3"
+    title="Government Services Intelligent Assistant"
+    items={[
+      {
+        title: 'Project Background',
+        description: `
+        • Demand analysis: improve government service efficiency and achieve intelligent government consultation
+        • Pain point: frequent policy updates, large consultation volume, low efficiency of manual answers
+        • Goal: build a secure and reliable government intelligent service system`,
+      },
+      {
+        title: 'Solution',
+        description: `
+        • Deploy 3B local models to ensure data security
+        • Real-time update of government knowledge base
+        • Multi-department business collaboration
+        • Intelligent appointment and reminder
+        • Policy precision push service`,
+      },
+      {
+        title: 'Implementation Effect',
+        description: `
+        • Consultation efficiency increased by 200%
+        • Public satisfaction rate of 98%
+        • Human resources reduced by 50%
+        • Local deployment monthly cost reduced by 80%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Government Services',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Security Highlights</h3>
+      <p>Adopt local deployment plan, ensure government data security. Support offline operation, stable and reliable, low cost. Each department can be independently deployed, data interference free.</p>
+    </Fragment>
+  </Content>
+
+<!-- Case Study 4: State Grid -->
+<Content
+  isAfterContent
+  tagline="Case Study 4"
+  title="State Grid Intelligent Service Platform"
+  items={[
+    {
+      title: 'Project Background',
+      description: `
+      • Demand analysis: improve power service response speed and solve user consultation pressure
+      • Pain point: 24-hour service demand is large, and the pressure of dealing with occasional incidents is large
+      • Goal: build a secure and reliable power service intelligent platform`,
+    },
+    {
+      title: 'Solution',
+      description: `
+      • Deploy 3B local small models to ensure grid data security
+      • Intelligent diagnosis system for power failures
+      • Intelligent resolution for electricity bills
+      • Emergency response to occasional incidents
+      • Intelligent ticket allocation mechanism`,
+    },
+    {
+      title: 'Implementation Effect',
+      description: `
+      • Fault response time reduced by 70%
+      • Customer service workload reduced by 65%
+      • User satisfaction increased by 40%
+      • Local deployment monthly cost reduced to 8000元
+      • System accuracy rate of 98%`,
+    }
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+    alt: 'Grid Service',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Security Highlights</h3>
+    <p>Adopt local deployment mode, ensure grid core data security. Support offline operation, normal service even in network-restricted environments. A single server can support provincial business volume, with extremely high cost performance.</p>
+  </Fragment>
+</Content>
+
+<!-- Case Study 5: Retail Brand -->
+<Content
+  isReversed
+  tagline="Case Study 5"
+  title="Retail Brand Intelligent Guide System"
+  items={[
+    {
+      title: 'Project Background',
+      description: `
+      • Demand analysis: improve brand shopping experience and solve the shortage of professional guides
+      • Pain point: high cost of guide training, inconsistent service standards
+      • Goal: build a full-channel intelligent guide system`,
+    },
+    {
+      title: 'Solution',
+      description: `
+      • Deploy 7B local models to protect member data
+      • Personalized product recommendation system
+      • Full-channel member service
+      • VIP customer precision marketing
+      • Product professional knowledge question answering`,
+    },
+    {
+      title: 'Implementation Effect',
+      description: `
+      • Conversion rate increased by 45%
+      • Member satisfaction increased by 50%
+      • Guide cost reduced by 60%
+      • Local deployment daily cost reduced to 300元
+      • Product knowledge coverage rate of 99%`,
+    }
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1590907047706-ee9c08cf3189?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+    alt: 'Retail Brand',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Cost Highlights</h3>
+    <p>Local deployment of 7B small models, supporting multiple stores to use at the same time, with far lower cost than cloud services. Professional knowledge base allows new guides to quickly get started, significantly reducing training costs.</p>
+  </Fragment>
+</Content>
+
+<!-- Case Study 6: Telemarketing Center -->
+<Content
+  isAfterContent
+  tagline="Case Study 6"
+  title="Telemarketing Center Intelligent Call System"
+  items={[
+    {
+      title: 'Project Background',
+      description: `
+      • Demand analysis: improve telemarketing efficiency and reduce human costs
+      • Pain point: high staff turnover, high training costs, unstable service quality
+      • Goal: build an intelligent telemarketing service platform`,
+    },
+    {
+      title: 'Solution',
+      description: `
+      • Deploy 3B local models to ensure communication privacy
+      • Intelligent script generation system
+      • Real-time script optimization recommendation
+      • Sales scenario quick response
+      • Automated call quality inspection`,
+    },
+    {
+      title: 'Implementation Effect',
+      description: `
+      • Telemarketing success rate increased by 35%
+      • Training time reduced by 70%
+      • Human cost reduced by 55%
+      • Local deployment monthly cost reduced to 6000元
+      • Customer complaint rate reduced by 40%`,
+    }
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+    alt: 'Telemarketing Center',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Efficiency Highlights</h3>
+    <p>Local deployment ensures data security, intelligent script generation improves sales efficiency. Newcomers can quickly master professional skills, significantly reducing training costs and losses from staff turnover.</p>
+  </Fragment>
+</Content>
+  <!-- Success Metrics -->
+  <Timeline
+    title="Intelligent Customer Service Overall Solution Effect"
+    items={[
+      {
+        title: 'Cost Highlights',
+        description: 'Local deployment of small models, average cost savings of 70%',
+      },
+      {
+        title: 'Security Highlights',
+        description: 'Private deployment, 100% data security',
+      },
+      {
+        title: 'Service Efficiency',
+        description: 'Average service efficiency increased by 200%, 24/7 all-day service coverage',
+      },
+      {
+        title: 'User Satisfaction',
+        description: 'Customer satisfaction increased by 45%, service experience significantly improved',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction
+    title="Start the Enterprise Intelligent New Era"
+    subtitle="Private deployment, secure and reliable, lower cost"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book a Demo',
+        href: '/contact',
+        icon: 'tabler:download',
+      },
+      {
+        text: 'Learn More',
+        href: '/about',
+      },
+    ]}
+  />
+</Layout>

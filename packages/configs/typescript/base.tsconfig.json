@@ -7,6 +7,8 @@
     "noImplicitAny": false,
     "exactOptionalPropertyTypes": false,
     "resolveJsonModule": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false
   }
 }

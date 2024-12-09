@@ -1,0 +1,366 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Content from '@/components/widgets/Content.astro';
+import Steps from '@/components/widgets/Steps.astro';
+import Features2 from '@/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Intelligent Customer Service Solutions',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <div class="relative h-96 flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+        Intelligent Customer Service Solutions
+      </h1>
+      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
+        Local Deployment · Cost-effective · Secure and Reliable
+      </p>
+    </div>
+  </div>
+
+  <!-- Process Flow -->
+  <Steps
+    title="Intelligent Service Process"
+    items={[
+      {
+        title: 'Multi-channel Access',
+        description: 'Support multi-channel access such as web pages, apps, and mini programs',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Intelligent Understanding',
+        description: 'Based on the natural language processing capabilities of 3B/7B small models',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Knowledge Matching',
+        description: 'Accurate matching of enterprise knowledge bases to provide professional answers',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Intelligent Reply',
+        description: 'Natural and fluent dialogue response, like talking to a real person',
+        icon: 'tabler:message-circle',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Flow Chart',
+    }}
+  />
+
+
+    <!-- Case Study 1: Financial Services -->
+    <Content
+      isReversed
+      tagline="Case Study 1"
+      title="Intelligent Customer Service for Financial Services"
+      items={[
+        {
+          title: 'Project Background',
+          description: `
+          • Demand Analysis: Large banks face over 100,000 consultations daily, with human customer service under pressure
+          • Pain Points: Complex financial professional questions, high training costs, and high staff turnover
+          • Challenges: Ensuring data security and high accuracy requirements
+          • Target: Building a secure, professional, and efficient intelligent customer service system`,
+        },
+        {
+          title: 'Solution',
+          description: `
+          • Local deployment of a 3B lightweight model to ensure data security
+          • Build a financial professional knowledge graph covering 90% of common issues
+          • Develop multi-round dialogue understanding engine to accurately identify customer intent
+          • Integrate business systems to provide一站式 service
+          • Configure financial domain vocabulary to enhance professionalism`,
+        },
+        {
+          title: 'Implementation Effect',
+          description: `
+          • Intelligent resolution rate of 85%, 15% higher than peers
+          • 60% reduction in human staff, saving 8 million+ annually
+          • Customer waiting time reduced from an average of 15 minutes to 30 seconds
+          • After-sales satisfaction increased by 35%
+          • Business processing accuracy rate of 99.9%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: 'Financial Intelligent Customer Service',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
+        <p>A user needs to adjust their credit card limit at night. Traditional human service requires waiting until the next day, but the intelligent customer service system responds immediately, through multi-round dialogue to understand user needs, retrieve user portraits and credit data, and complete the assessment and adjustment within 3 minutes, without any human intervention. The user gave a 5-star rating for the response speed and service experience.</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 2: E-commerce -->
+    <Content
+      isAfterContent
+      tagline="Case Study 2"
+      title="Intelligent Customer Service for E-commerce"
+      items={[
+        {
+          title: 'Project Background',
+          description: `
+          • Demand Analysis: Over 500,000 consultations daily during peak seasons, making it difficult for human customer service to cope
+          • Pain Points: Orders, logistics tracking, and other repetitive tasks account for 70%
+          • Challenges: Need to handle complex after-sales scenarios while ensuring service quality
+          • Target: Provide 24/7 high-quality customer service`,
+        },
+        {
+          title: 'Solution',
+          description: `
+          • Deploy a 7B local model to support high concurrency
+          • Integrate order systems, logistics systems, and member systems
+          • Develop intelligent work order allocation mechanisms
+          • Establish a product knowledge base and FAQ system
+          • Integrate intelligent recommendation engines`,
+        },
+        {
+          title: 'Implementation Effect',
+          description: `
+          • Customer service efficiency increased by 200%, response time reduced by 75%
+          • Full automation rate of 78%
+          • Can support millions of concurrent requests during peak seasons
+          • Customer satisfaction maintained at over 95%
+          • Monthly operational cost savings of 1.2 million+`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: 'E-commerce Intelligent Customer Service',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
+        <p>During the Double 11 period, a user consulted multiple orders about delivery status and return/exchange issues. The intelligent customer service system quickly summarized the user's all order information, proactively pushed the latest logistics progress, and automatically generated a work order and scheduled a pickup appointment for return/exchange requests, all of which took only 5 minutes, avoiding the long waiting time for traditional human customer service during the peak period.</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 3: Government Services -->
+    <Content
+      isReversed
+      tagline="Case Study 3"
+      title="Intelligent Assistant for Government Services"
+      items={[
+        {
+          title: 'Project Background',
+          description: `
+          • Demand Analysis: Many government service items, large amount of citizen consultation
+          • Pain Points: Frequent policy updates, unstable accuracy of manual answers
+          • Challenges: Need to cover thousands of service policies, ensure accuracy
+          • Target: Provide accurate and timely policy consultation services`,
+        },
+        {
+          title: 'Solution',
+          description: `
+          • Deploy a 3B local model to build a government knowledge base
+          • Develop a policy real-time update mechanism
+          • Integrate online appointment and processing systems
+          • Support multi-language interaction
+          • Provide smart recommendations for handling procedures`,
+        },
+        {
+          title: 'Implementation Effect',
+          description: `
+          • Daily service for citizens of 5000+, 24 hours online
+          • Policy resolution accuracy of 98%
+          • Customer satisfaction increased by 40%
+          • Window waiting time reduced by 65%
+          • Staff efficiency increased by 80%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1591839221653-a5cc0583e01c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: 'Government Service',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
+        <p>A citizen wants to apply for the elderly medical insurance benefits qualification certification, but is unclear about the specific process. The intelligent assistant explains the process in detail through voice interaction, automatically schedules the nearest processing point, and贴心推送了乘车路线，让老人感受到了暖心的智能化服务。</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 4: Enterprise Knowledge Base -->
+    <Content
+      isAfterContent
+      tagline="Case Study 4"
+      title="Enterprise Knowledge Base Management"
+      items={[
+        {
+          title: 'Project Background',
+          description: `
+          • Demand Analysis: Dispersed internal knowledge, low retrieval efficiency
+          • Pain Points: High employee training costs, difficulty in knowledge inheritance
+          • Challenges: Need to process unstructured data, implement intelligent recommendations
+          • Target: Establish an efficient knowledge management and sharing platform`,
+        },
+        {
+          title: 'Solution',
+          description: `
+          • Deploy a 7B local model to process unstructured data
+          • Build a knowledge graph to implement intelligent association
+          • Develop semantic search engines
+          • Integrate document management systems
+          • Provide personalized learning recommendations`,
+        },
+        {
+          title: 'Implementation Effect',
+          description: `
+          • Knowledge retrieval time reduced by 80%
+          • New employee training cycle shortened by 50%
+          • Knowledge base usage rate increased by 200%
+          • Employee satisfaction reached 96%
+          • Annual training cost savings of 3 million+`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: 'Enterprise Knowledge Base',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
+        <p>A new employee encountered a technical problem while processing a customer project. Through the intelligent knowledge base, they quickly retrieved relevant cases and solutions, and the system also proactively recommended related best practice documents to help the employee solve the problem within half an hour, greatly improving work efficiency.</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 5: Multi-round Dialogue -->
+    <Content
+      isReversed
+      tagline="Case Study 5"
+      title="Intelligent Dialogue Management Platform"
+      items={[
+        {
+          title: 'Project Background',
+          description: `
+          • Demand Analysis: Traditional customer service is unable to handle complex multi-round dialogues
+          • Pain Points: Insufficient context understanding, fragmented dialogue experience
+          • Challenges: Need to accurately understand user intent while maintaining dialogue continuity
+          • Target: Create a seamless and natural dialogue experience`,
+        },
+        {
+          title: 'Solution',
+          description: `
+          • Deploy a 7B local model to enhance dialogue understanding capabilities
+          • Develop context management systems
+          • Integrate emotional analysis engines
+          • Design multi-round dialogue strategies
+          • Implement real-time intent recognition`,
+        },
+        {
+          title: 'Implementation Effect',
+          description: `
+          • Dialogue completion rate increased by 60%
+          • User satisfaction increased by 45%
+          • Average dialogue turns reduced by 30%
+          • Understanding accuracy reached 92%
+          • Customer churn rate decreased by 25%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: 'Multi-round Dialogue',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
+        <p>A customer was consulting about product features, gradually delving into specific application scenarios and price plans. The system accurately grasped the changes in user needs through multi-round dialogue, timely recommended suitable solutions, and finally helped the customer choose the most suitable product configuration. The entire process was natural and smooth, and the customer praised it as "like talking to a real person".</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 6: Emotion Recognition -->
+    <Content
+      isAfterContent
+      tagline="Case Study 6"
+      title="Emotion Recognition Interaction System"
+      items={[
+        {
+          title: 'Project Background',
+          description: `
+          • Demand Analysis: Inaccurate customer emotion recognition, poor service experience
+          • Pain Points: Unable to detect customer dissatisfaction in time
+          • Challenges: Need to accurately identify the emotional倾向 of text
+          • Target: Provide warm and considerate emotional services`,
+        },
+        {
+          title: 'Solution',
+          description: `
+          • Deploy a 3B emotional analysis model
+          • Develop an emotional warning mechanism
+          • Design differentiated reply strategies
+          • Integrate customer portrait systems
+          • Establish a service quality evaluation system`,
+        },
+        {
+          title: 'Implementation Effect',
+          description: `
+          • Emotional recognition accuracy of 88%
+          • Complaint rate decreased by 50%
+          • Customer satisfaction increased by 40%
+          • Customer loyalty increased by 35%
+          • NPS increased by 45 points`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: 'Emotion Recognition',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
+        <p>A user showed obvious signs of impatience during the refund process. The system quickly identified the change in mood and adjusted the reply strategy immediately, using a more concise and direct expression, and适时表达理解和歉意。同时主动升级服务等级，加速处理退款申请。用户对这种贴心的服务感到惊喜，最终还给予了五星好评。</p>
+      </Fragment>
+    </Content>
+
+  <!-- Features Section -->
+  <Features2
+    title="Platform Core Advantages"
+    subtitle="Local deployment of small model solutions"
+    items={[
+      {
+        title: 'Cost Advantage',
+        description: 'Compared to cloud-based large models, local deployment of 3B/7B small models can save 80% of operating costs',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Data Security',
+        description: 'Enterprise data is fully stored locally, with no need to worry about sensitive information leakage risks',
+        icon: 'tabler:shield',
+      },
+      {
+        title: 'Response Speed',
+        description: 'Local deployment model response time <100ms, faster than cloud-based models by 10 times',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Customization',
+        description: 'Support model fine-tuning for enterprise scenarios to provide more accurate services',
+        icon: 'tabler:tools',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <div class="relative bg-primary-50 dark:bg-slate-800 py-16">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4">
+          Start the Intelligent Customer Service Era
+        </h2>
+        <a href="/contact" class="btn btn-primary mb-4">
+          Book a Demo
+        </a>
+        <p class="text-xl text-gray-600 dark:text-slate-400">
+          Let us help your business provide better customer service
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

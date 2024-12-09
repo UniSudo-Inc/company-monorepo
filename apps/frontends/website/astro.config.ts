@@ -8,6 +8,8 @@ import type { AstroIntegration } from 'astro';
 import compress from 'astro-compress';
 import icon from 'astro-icon';
 import { defineConfig } from 'astro/config';
+import lit from '@astrojs/lit';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 import astrowind from './vendor/integration';
 import { lazyImagesRehypePlugin, readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter';
 
@@ -42,13 +44,11 @@ export default defineConfig({
         ],
       },
     }),
-
     ...whenExternalScripts(() =>
       partytown({
         config: { forward: ['dataLayer.push'] },
-      })
+      }),
     ),
-
     compress({
       CSS: true,
       HTML: {
@@ -61,14 +61,19 @@ export default defineConfig({
       SVG: false,
       Logger: 1,
     }),
-
     astrowind({
       config: './src/config.yaml',
     }),
+    lit(),
   ],
 
   image: {
     domains: ['cdn.pixabay.com'],
+  },
+
+  i18n: {
+    defaultLocale: 'zh-cn',
+    locales: ['zh-cn', 'en'],
   },
 
   markdown: {
@@ -82,5 +87,30 @@ export default defineConfig({
         '@': path.resolve(__dirname, './src'),
       },
     },
+    optimizeDeps: {
+      exclude: ['onnxruntime-web'],
+    },
+    plugins: [
+      viteStaticCopy({
+        targets: [
+          {
+            src: path.resolve(__dirname, '../../../node_modules/@ricky0123/vad-web/dist/vad.worklet.bundle.min.js'),
+            dest: './_astro/',
+          },
+          {
+            src: path.resolve(__dirname, '../../../node_modules/@ricky0123/vad-web/dist/silero_vad.onnx'),
+            dest: './_astro/',
+          },
+          {
+            src: path.resolve(__dirname, '../../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.wasm'),
+            dest: './_astro/',
+          },
+          {
+            src: path.resolve(__dirname, '../../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.mjs'),
+            dest: './_astro/',
+          },
+        ],
+      }),
+    ],
   },
 });

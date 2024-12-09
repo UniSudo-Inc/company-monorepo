@@ -1,0 +1,169 @@
+---
+import Layout from '@/layouts/LandingLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Features from '@/components/widgets/Features.astro';
+import Stats from '@/components/widgets/Stats.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
+import Demo from '@/components/widgets/Demo.astro';
+
+const metadata = {
+  title: 'UniChat - Intelligent Customer Service Assistant',
+};
+
+const features = [
+  {
+    title: 'Real-time Dialogue Service',
+    description: 'You can create a real-time dialogue robot with a knowledge base and conduct a 5-minute real-time dialogue.',
+    icon: 'tabler:message-circle',
+    link: '#',
+    linkText: 'Free Trial',
+    textColor: 'text-black'
+  },
+  {
+    title: 'Text-to-Speech (TTS) Service',
+    description: 'High-quality speech synthesis service, charged at 1 yuan per 10,000 tokens.',
+    icon: 'tabler:volume',
+    link: '#',
+    linkText: 'Register and recharge now to enjoy an 80% discount!',
+    textColor: 'text-black'
+  },
+  {
+    title: 'Knowledge Base Retrieval (RAG) Service',
+    description: 'Enterprise users customize their own knowledge base and retrieve it.',
+    icon: 'tabler:search',
+    link: '#',
+    linkText: 'Learn more',
+    textColor: 'text-black'
+  }
+];
+
+const stats = [
+  {
+    title: 'Customer Satisfaction',
+    amount: '98%',
+    icon: 'tabler:user-check'
+  },
+  {
+    title: 'Customer Service Response Time',
+    amount: '< 10 seconds',
+    icon: 'tabler:clock'
+  }
+];
+
+const advantages = [
+  {
+    title: 'Quick Configuration',
+    description: 'Simply input industry knowledge, and our AI can quickly provide precise services for you.',
+    icon: 'tabler:bolt'
+  },
+  {
+    title: 'Multi-scenario Application',
+    description: 'Our AI technology is applicable to various scenarios, including customer service, sales, and Q&A assistants.',
+    icon: 'tabler:layout-grid'
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <Hero
+    tagline=" "
+    title="Start the Intelligent Era"
+    subtitle="UniChat is an AI Agent application that provides intelligent solutions for customer service, sales, and Q&A assistants through TTS, RAG, and CV technologies. Simply provide industry knowledge, and AI can efficiently serve, smartly helping business development."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Free Trial',
+        href: 'https://limit-4o-monorepo.vercel.app/my',
+        icon: 'tabler:arrow-right'
+      },
+      {
+        variant: 'secondary',
+        text: 'Product Case',
+        href: '#'
+      },
+    ]}
+  />
+
+  <!-- Demo Section -->
+  <Demo />
+
+  <!-- Services Section -->
+  <section class="py-16 px-4 mx-auto max-w-6xl motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Our Services</h2>
+      <p class="text-gray-600">We provide comprehensive AI solutions for you</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {features.map(feature => (
+        <div class="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
+          <div class="text-primary mb-4">
+            <i class={feature.icon}></i>
+          </div>
+          <h3 class={`text-xl font-semibold mb-2 ${feature.textColor || ''}`}>{feature.title}</h3>
+          <p class="text-gray-600 mb-4">{feature.description}</p>
+          <a href={feature.link} class="text-blue-600 hover:text-blue-700">
+            {feature.linkText}
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <Stats
+    title="Intelligent Customer Service Enhances Customer Satisfaction"
+    subtitle="UniChat is an AI Agent application that provides intelligent solutions for customer service, sales, and Q&A assistants through TTS, RAG, and CV technologies. Simply provide industry knowledge, and AI can efficiently serve, smartly helping business development."
+    stats={stats}
+  />
+
+  <!-- Features -->
+  <Features
+    title="Our Advantages"
+    subtitle={`
+      <div class="relative inline-block">
+        <span class="text-3xl font-bold text-primary animate-pulse">
+          Industry 1/50 Real-time Rate
+        </span>
+        <div class="absolute -inset-1 bg-primary/20 blur-lg -z-10"></div>
+      </div>
+    `}
+    items={advantages}
+    columns={2}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction
+    title="Start Using Intelligent Services"
+    subtitle="Experience the efficiency boost from AI"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/contact',
+        icon: 'tabler:mail'
+      }
+    ]}
+  />
+</Layout>
+
+<style>
+  @keyframes highlight {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-highlight {
+    animation: highlight 2s ease-in-out infinite;
+  }
+</style>

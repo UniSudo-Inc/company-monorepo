@@ -1,0 +1,124 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Features from '@/components/widgets/Features.astro';
+import Features2 from '@/components/widgets/Features2.astro';
+import Content from '@/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Join Us - UniSudo Inc.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Submit Your Resume',
+        href: 'mailto:HR@unisudo.com',
+      },
+    ]}
+    image={{ src: '@/assets/images/recruitment.png', alt: 'Recruitment Hero Image' }}
+  >
+    <Fragment slot='title'>
+      Join UniSudo Inc.
+      <span class='highlight text-accent dark:text-white'>Start a New Future with AI</span>
+    </Fragment>
+
+    <Fragment slot='subtitle'>
+      Here, you will work with top talent in the industry, explore the limitless possibilities of AI technology, and create solutions that change the world.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+  <Features
+    id='features'
+    tagline='Why Choose Us'
+    title='At UniSudo Inc., you will get'
+    classes={{ container: 'max-w-5xl mx-auto' }}
+    items={[
+      {
+        title: 'Innovation at the Forefront',
+        description: 'Participate directly in the research and application of cutting-edge AI technology, and explore innovative solutions with industry experts.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Challenging Work Environment',
+        description: 'Expose yourself to diverse projects and technology stacks, continuously突破自我，实现职业成长。',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Comprehensive Training and Development System',
+        description: 'Systematic training programs to help you grow quickly and achieve your career goals.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Competitive Compensation and Benefits',
+        description: 'Offer a competitive salary package, recognize and reward your contributions.',
+        icon: 'tabler:certificate',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+  <Features2
+    title='Current Job Openings'
+    subtitle='Join us, and explore the limitless possibilities of AI technology with top talent in the industry'
+    tagline='Recruitment'
+    classes={{ container: 'max-w-5xl mx-auto' }}
+    items={[
+      {
+        title: 'Frontend Engineer',
+        description: '',
+        icon: 'tabler:code',
+        callToAction: {
+          text: 'View Details',
+          href: '/jobs/frontend-engineer'
+        }
+      },
+      {
+        title: 'AI Engineer',
+        description: '',
+        icon: 'tabler:code',
+        callToAction: {
+          text: 'View Details',
+          href: '/jobs/ai-engineer'
+        }
+      }
+    ]}
+  >
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Features2>
+
+  <!-- CallToAction Widget *********** -->
+  <Content
+    isAfterContent
+    classes={{ container: 'max-w-5xl mx-auto' }}
+    items={[
+      {
+        title: 'Submit Your Resume',
+        description: `<a href="mailto:hr@unisudo.com" class="hover:text-primary transition-all duration-200 ease-in-out"
+                     transition:animate={fade({ duration: '0.3s' })}>
+                      Send your resume to: hr@unisudo.com</a>`,
+      },
+      {
+        title: 'Work Location',
+        description: 'No. 1 Building, Block 2, Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai',
+      },
+    ]}
+  >
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Join Us</h3>
+      <p>We look forward to your joining UniSudo Inc. to create the future of AI together!</p>
+    </Fragment>
+
+    <Fragment slot='bg'>
+      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
+    </Fragment>
+  </Content>
+</Layout>

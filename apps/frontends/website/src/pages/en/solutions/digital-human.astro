@@ -1,0 +1,319 @@
+---
+import Layout from '@/layouts/PageLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Content from '@/components/widgets/Content.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
+import Timeline from '@/components/widgets/Timeline.astro';
+
+const metadata = {
+  title: 'Digital Human',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Keep only one Hero section - using the Hero component -->
+  <Hero
+    tagline=" "
+    image={{
+      src: 'https://images.unsplash.com/photo-1599727277707-b429a4994c15?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'AI Data Processing',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-4xl md:text-5xl font-bold leading-tight">Data Empowerment, Intelligent Future</span><br />
+      <span class="highlight text-2xl text-accent dark:text-white md:text-3xl mt-2 font-medium">Professional AI Data Service Solutions</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+        From data annotation to privacy protection, providing comprehensive AI data processing services to help your AI projects succeed
+      </span>
+    </Fragment>
+  </Hero>
+
+  <!-- Case Study 1: Banking -->
+  <Content
+    isReversed
+    tagline="Case Study 1"
+    title="Bank Intelligent Digital Employee"
+    items={[
+      {
+        title: 'Project Background',
+        description: `
+        • Demand analysis: improve the efficiency of branch services and reduce labor costs
+        • Pain point: unable to serve during non-working hours, long waiting times during peak periods, and high labor costs
+        • Goal: build a smart branch that provides 24/7 services`,
+      },
+      {
+        title: 'Solution',
+        description: `
+        • Deploy intelligent digital employees
+        • Integrate core business systems
+        • Provide multi-language service capabilities
+        • Implement functions such as business consultation, product recommendation, and processing guidance`,
+      },
+      {
+        title: 'Implementation Effect',
+        description: `
+        • Customer waiting time reduced by 60%
+        • Business processing efficiency increased by 40%
+        • Customer satisfaction increased by 25%
+        • Annual operating cost savings of approximately 200万元`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Bank Digital Employee',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
+      <p>A customer needed to make an urgent international remittance late at night. The traditional bank branch was closed, but the smart digital employee was online 24 hours a day. The digital employee not only helped the customer complete the remittance appointment but also provided currency consultation and fee discount plans, completing the entire process in just 10 minutes.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Case Study 2: Museum -->
+  <Content
+    isAfterContent
+    tagline="Case Study 2"
+    title="Museum Virtual Guide"
+    items={[
+      {
+        title: 'Project Background',
+        description: `
+        • Demand analysis: improve the experience of cultural relics display and solve the problem of insufficient guide personnel
+        • Pain point: limited high-quality guide resources, personalized guide needs difficult to meet
+        • Goal: build an immersive smart guide experience`,
+      },
+      {
+        title: 'Solution',
+        description: `
+        • Deploy virtual guide
+        • Build cultural relics knowledge graph
+        • Support multi-language guide services
+        • Provide personalized tour route planning`,
+      },
+      {
+        title: 'Implementation Effect',
+        description: `
+        • Daily service tourists increased by 300%
+        • Guide satisfaction reached 95%
+        • Cultural relics knowledge dissemination effect increased by 50%
+        • Operating cost reduced by 40%`,
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1584652761653-7980c782d8b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Museum Guide',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
+      <p>A student interested in history visited the museum. The virtual guide not only explained the history of the exhibits in detail but also interacted with him based on his interests, making historical knowledge vivid and interesting through interesting stories and 3D displays. The parent expressed that this was more likely to stimulate the child's interest in learning than traditional explanations.</p>
+    </Fragment>
+  </Content>
+   <!-- Case Study 3: Enterprise Exhibition -->
+    <Content
+      isReversed
+      tagline="Case Study 3"
+      title="Enterprise Exhibition Interactive Guide"
+      items={[
+        {
+          title: 'Project Background',
+          description: `
+          • Demand analysis: improve the interactive experience of the exhibition hall and realize intelligent product display
+          • Pain point: high cost of professional display personnel, inconsistent service standards
+          • Goal: build an immersive smart exhibition hall experience`,
+        },
+        {
+          title: 'Solution',
+          description: `
+          • Deploy AI guide assistant
+          • Develop 3D product configuration display system
+          • Implement intelligent quotation and customized solution
+          • Provide virtual experience service`,
+        },
+        {
+          title: 'Implementation Effect',
+          description: `
+          • Customer retention time increased by 45%
+          • Transaction conversion rate increased by 35%
+          • Customer satisfaction reached 98%
+          • Human cost reduced by 50%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1670500953230-1cb6b7f9d284?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: 'Exhibition Guide',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
+        <p>A customer interested in new energy vehicles products through the interactive introduction of the digital guide, not only understood the detailed configuration of the product but also experienced the effect of different appearance choices in real time through AR technology. The digital guide provided personalized configuration suggestions and financial solutions based on customer needs, ultimately helping the customer find the most suitable choice.</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 4: Shopping Mall -->
+    <Content
+      isAfterContent
+      tagline="Case Study 4"
+      title="Shopping Mall Digital Guide Assistant"
+      items={[
+        {
+          title: 'Project Background',
+          description: `
+          • Demand analysis: improve shopping experience and solve the problem of insufficient mall guide resources
+          • Pain point: difficulty in obtaining product information, uneven guide services
+          • Goal: build an intelligent shopping service experience`,
+        },
+        {
+          title: 'Solution',
+          description: `
+          • Deploy intelligent guide assistant
+          • Develop mall navigation system
+          • Push real-time discount information
+          • Provide personalized shopping advice`,
+        },
+        {
+          title: 'Implementation Effect',
+          description: `
+          • Customer average spend increased by 28%
+          • Member conversion rate increased by 40%
+          • Guide satisfaction reached 96%
+          • Merchant operating efficiency increased by 35%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1573855619003-97b4799dcd8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: 'Shopping Mall Guide',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
+        <p>A customer wants to buy a set of professional attire. The digital guide assistant recommends suitable brands and styles through intelligent analysis of their preferences and budget, and plans the optimal shopping route. Through the AR try-on function, the customer quickly finds the desired combination and enjoys member-exclusive discounts.</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 5: Education -->
+    <Content
+      isReversed
+      tagline="Case Study 5"
+      title="Education Training Digital Instructor"
+      items={[
+        {
+          title: 'Project Background',
+          description: `
+          • Demand analysis: provide personalized English learning experience and solve the problem of insufficient teacher resources
+          • Pain point: difficulty in tracking learning progress, lack of interactive practice opportunities
+          • Goal: build an intelligent learning辅导系统`,
+        },
+        {
+          title: 'Solution',
+          description: `
+          • Deploy AI foreign teacher system
+          • Develop intelligent learning assessment system
+          • Implement real-time oral interaction
+          • Provide personalized learning advice`,
+        },
+        {
+          title: 'Implementation Effect',
+          description: `
+          • Learning enthusiasm increased by 55%
+          • Oral proficiency improved significantly
+          • Learning duration increased by 40%
+          • Renewal rate increased by 35%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1573511860302-28c524319d2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: 'Education Training',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
+        <p>A student preparing for exams has access to AI foreign teachers for continuous oral practice. The AI system not only corrects pronunciation issues but also adjusts teaching content based on learning progress, helping the student significantly improve their口语成绩 through情景对话和实时反馈 in just three months.</p>
+      </Fragment>
+    </Content>
+
+    <!-- Case Study 6: Brand Ambassador -->
+    <Content
+      isAfterContent
+      tagline="Case Study 6"
+      title="Enterprise Image Digital Ambassador"
+      items={[
+        {
+          title: 'Project Background',
+          description: `
+          • Demand analysis: improve brand image and enhance user interaction experience
+          • Pain point: high cost of traditional endorsements, poor interactivity
+          • Goal: build a brand digital image with strong appeal`,
+        },
+        {
+          title: 'Solution',
+          description: `
+          • Create digital brand ambassador
+          • Develop live interaction system
+          • Implement social media interaction
+          • Provide product launch hosting`,
+        },
+        {
+          title: 'Implementation Effect',
+          description: `
+          • Brand favorability increased by 45%
+          • Social media interaction increased by 200%
+          • Live broadcast conversion rate increased by 60%
+          • Marketing cost reduced by 30%`,
+        }
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: 'Digital Ambassador',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
+        <p>At a brand's new product launch event, the digital ambassador not only completed the product launch demonstration but also interacted with users in real-time, answering technical questions. On social media, the digital ambassador posts daily product usage tips and lifestyle content, successfully attracting a lot of attention from young users through a friendly image.</p>
+      </Fragment>
+    </Content>
+
+    <!-- Success Metrics -->
+    <Timeline
+      title="Digital Human Solution Overall Effect"
+      items={[
+        {
+          title: 'Service Efficiency Improvement',
+          description: 'Average service efficiency increased by 40%, 24/7全天候服务覆盖',
+        },
+        {
+          title: 'Cost Optimization',
+          description: 'Average operating cost reduced by 45%, optimized human resource allocation',
+        },
+        {
+          title: 'User Satisfaction',
+          description: 'Customer satisfaction increased by 35%, interactive experience significantly improved',
+        },
+        {
+          title: 'Brand Value',
+          description: 'Brand image improved by 40%, market awareness significantly enhanced',
+        },
+      ]}
+    />
+
+    <!-- Call to Action -->
+    <CallToAction
+      title="Start Your Digital Transformation Journey"
+      subtitle="Let us help you create a customized digital human solution"
+      actions={[
+        {
+          variant: 'primary',
+          text: 'Book a Demo',
+          href: '/contact',
+          icon: 'tabler:download',
+        },
+        {
+          text: 'Learn More',
+          href: '/about',
+        },
+      ]}
+    />
+  </Layout>
