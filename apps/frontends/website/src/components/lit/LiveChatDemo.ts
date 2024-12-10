@@ -224,7 +224,6 @@ export class LiveChatDemo extends LitElement {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${import.meta.env.PUBLIC_GUEST_USER_JWT}`,
       },
       body: JSON.stringify({}),
     }).then((res) => res.json() as Promise<{ roomToken: string }>);
