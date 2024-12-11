@@ -87,10 +87,10 @@ export const headerData = {
     },
     {
       text: '联系我们',
-      href: '/contact',
+      href: getPermalink('/contact'),
     },
   ],
-  actions: [{ text: '加入我们', href: '/career', target: '_blank' }],
+  actions: [{ text: '加入我们', href: getPermalink('/career'), target: '_blank' }],
 };
 
 export const headerDataEn = {
@@ -180,7 +180,7 @@ export const headerDataEn = {
     },
     {
       text: 'Contact Us',
-      href: '/en/contact',
+      href: getPermalink('/en/contact'),
     },
   ],
   actions: [{ text: 'Join Us', href: '/en/career', target: '_blank' }],

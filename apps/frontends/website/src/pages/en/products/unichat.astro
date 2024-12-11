@@ -5,6 +5,7 @@ import Features from '@/components/widgets/Features.astro';
 import Stats from '@/components/widgets/Stats.astro';
 import CallToAction from '@/components/widgets/CallToAction.astro';
 import Demo from '@/components/widgets/Demo.astro';
+import { getPermalink } from '@/utils/permalinks';
 
 const metadata = {
   title: 'UniChat - Intelligent Customer Service Assistant',
@@ -140,7 +141,7 @@ const advantages = [
       {
         variant: 'primary',
         text: 'Contact Us',
-        href: '/contact',
+        href: getPermalink('/contact'),
         icon: 'tabler:mail'
       }
     ]}

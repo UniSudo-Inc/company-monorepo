@@ -4,6 +4,7 @@ import Hero from '@/components/widgets/Hero.astro';
 import Features from '@/components/widgets/Features.astro';
 import Features2 from '@/components/widgets/Features2.astro';
 import Content from '@/components/widgets/Content.astro';
+import { getPermalink } from '@/utils/permalinks';
 
 const metadata = {
   title: 'UniSudo Inc. — Unique AI Solutions for SUDO Permissions',
@@ -19,7 +20,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Contact Us',
-        href: '/contact',
+        href: getPermalink('/contact'),
         target: '_blank',
       },
       { text: 'Company Introduction', href: '#features' },

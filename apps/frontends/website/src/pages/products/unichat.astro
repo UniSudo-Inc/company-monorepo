@@ -5,6 +5,7 @@ import Features from '@/components/widgets/Features.astro';
 import Stats from '@/components/widgets/Stats.astro';
 import CallToAction from '@/components/widgets/CallToAction.astro';
 import Demo from '@/components/widgets/Demo.astro';
+import { getPermalink } from '@/utils/permalinks';
 
 const metadata = {
   title: 'UniChat - 智能助力客户服务',
@@ -128,7 +129,7 @@ const advantages = [
       {
         variant: 'primary',
         text: '联系我们',
-        href: '/contact',
+        href: getPermalink('/contact'),
         icon: 'tabler:mail'
       }
     ]}
