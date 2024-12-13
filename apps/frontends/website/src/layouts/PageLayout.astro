@@ -19,17 +19,12 @@ const locale = Astro.currentLocale;
     <Announcement />
   </slot> -->
   <slot name='header'>
-    <Header
-      {...(locale === 'en' ? headerDataEn : headerData)}
-      isSticky
-      showRssFeed
-      showToggleTheme
-    />
+    <Header {...locale === 'en' ? headerDataEn : headerData} isSticky showToggleTheme />
   </slot>
   <main>
     <slot />
   </main>
   <slot name='footer'>
-    <Footer {...(locale === 'en' ? footerDataEn : footerData)} />
+    <Footer {...locale === 'en' ? footerDataEn : footerData} />
   </slot>
 </Layout>

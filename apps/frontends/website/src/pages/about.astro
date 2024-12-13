@@ -1,10 +1,16 @@
 ---
+import Brands from '@/components/widgets/Brands.astro';
 import Features2 from '@/components/widgets/Features2.astro';
 import Features3 from '@/components/widgets/Features3.astro';
 import Hero from '@/components/widgets/Hero.astro';
-import Stats from '@/components/widgets/Stats.astro';
 import Steps2 from '@/components/widgets/Steps2.astro';
 import Layout from '@/layouts/PageLayout.astro';
+import tencentLogo from '@/assets/images/tencent.png';
+import alibabaLogo from '@/assets/images/alibaba.png';
+import huaweiLogo from '@/assets/images/huawei.png';
+import ppioLogo from '@/assets/images/ppio.png';
+import amazonLogo from '@/assets/images/amazon.png';
+import cloudflareLogo from '@/assets/images/cloudflare.png';
 
 const metadata = {
   title: '关于我们',
@@ -31,25 +37,39 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <Stats
-    title='公司数据'
-    stats={[
-      { title: '技术专利', amount: '3+' },
-      { title: '技术团队', amount: '15+' },
-      { title: '服务项目', amount: '30+' },
-      { title: '合作伙伴', amount: '15+' },
+  <Brands
+    title='合作伙伴'
+    images={[
+      {
+        src: tencentLogo,
+        alt: 'Tencent',
+      },
+      {
+        src: alibabaLogo,
+        alt: 'Alibaba',
+      },
+      {
+        src: huaweiLogo,
+        alt: 'Huawei',
+      },
+      {
+        src: ppioLogo,
+        alt: 'PPIO',
+      },
+      {
+        src: amazonLogo,
+        alt: 'Amazon',
+      },
+      {
+        src: cloudflareLogo,
+        alt: 'Cloudflare',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
+        alt: 'Microsoft',
+      },
     ]}
-  >
-    <Fragment slot='bg'>
-      <div class='mt-6 flex flex-wrap justify-center space-x-8'>
-        <img src='/placeholder-logo1.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
-        <img src='/placeholder-logo2.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
-        <img src='/placeholder-logo3.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
-        <img src='/placeholder-logo4.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
-        <img src='/placeholder-logo5.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
-      </div>
-    </Fragment>
-  </Stats>
+  />
 
   <Features3
     title='核心技术'
@@ -165,13 +185,13 @@ const metadata = {
     columns={2}
     items={[
       {
-        title: '在线咨询',
-        description: '我们的技术支持团队随时为您提供专业的咨询服务和技术支持。',
-        icon: 'tabler:messages',
+        title: '电子邮箱',
+        description: '<a href="mailto:developer@unisudo.com" class="hover:text-primary">developer@unisudo.com</a>',
+        icon: 'tabler:mail',
       },
       {
         title: '电话咨询',
-        description: '工作时间：周一至周五 9:00-18:00，欢迎来电咨询。',
+        description: '16628597963',
         icon: 'tabler:headset',
       },
     ]}
