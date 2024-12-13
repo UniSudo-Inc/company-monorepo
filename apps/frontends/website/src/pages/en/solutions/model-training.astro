@@ -13,21 +13,17 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Section -->
-  <div class="relative h-96 flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
-    <div class="relative z-10 text-center text-white">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
-        Model Training and Fine-tuning Solutions
-      </h1>
-      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
-        Customized · Loop Learning · Data Security
-      </p>
+  <div class='relative flex h-96 items-center justify-center overflow-hidden'>
+    <div class='absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90'></div>
+    <div class='relative z-10 text-center text-white'>
+      <h1 class='mb-4 text-4xl font-bold md:text-5xl' data-aos='fade-up'>Model Training and Fine-tuning Solutions</h1>
+      <p class='text-xl' data-aos='fade-up' data-aos-delay='200'>Customized · Loop Learning · Data Security</p>
     </div>
   </div>
 
   <!-- Process Flow -->
   <Steps
-    title="Model Training Process"
+    title='Model Training Process'
     items={[
       {
         title: 'Demand Analysis',
@@ -56,12 +52,11 @@ const metadata = {
     }}
   />
 
-<Layout metadata={metadata}>
   <!-- Case Study 1: LLM Fine-tuning -->
   <Content
     isReversed
-    tagline="Case Study 1"
-    title="LLM Fine-tuning"
+    tagline='Case Study 1'
+    title='LLM Fine-tuning'
     items={[
       {
         title: 'Project Background',
@@ -85,24 +80,28 @@ const metadata = {
         • Training cost reduced by 70%
         • Model deployment scale reduced by 80%
         • User satisfaction increased by 45%`,
-      }
+      },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1655720837928-eff154e1ac52?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
       alt: 'Model Training',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
-      <p>Through the deep integration of professional domain knowledge and efficient fine-tuning technology, the client significantly improved the model's professional performance in the legal field while controlling costs, achieving accurate legal consultation services.</p>
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
+      <p>
+        Through the deep integration of professional domain knowledge and efficient fine-tuning technology, the client
+        significantly improved the model's professional performance in the legal field while controlling costs,
+        achieving accurate legal consultation services.
+      </p>
     </Fragment>
   </Content>
 
   <!-- Case Study 2: Domain Model -->
   <Content
     isAfterContent
-    tagline="Case Study 2"
-    title="Vertical Domain Model Development"
+    tagline='Case Study 2'
+    title='Vertical Domain Model Development'
     items={[
       {
         title: 'Project Background',
@@ -126,24 +125,28 @@ const metadata = {
         • Diagnosis time reduced by 80%
         • Labor costs reduced by 50%
         • Diagnosis efficiency increased by 300%`,
-      }
+      },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
       alt: 'Medical Image',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
-      <p>The project team collected and annotated a large amount of medical image data, combined with the diagnostic experience of professional doctors, developed a high-precision AI-assisted diagnostic system, greatly improving the diagnostic efficiency of medical institutions.</p>
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
+      <p>
+        The project team collected and annotated a large amount of medical image data, combined with the diagnostic
+        experience of professional doctors, developed a high-precision AI-assisted diagnostic system, greatly improving
+        the diagnostic efficiency of medical institutions.
+      </p>
     </Fragment>
   </Content>
 
   <!-- Case Study 3: Multi-modal Model -->
   <Content
     isReversed
-    tagline="Case Study 3"
-    title="Multi-modal Model Training and Deployment"
+    tagline='Case Study 3'
+    title='Multi-modal Model Training and Deployment'
     items={[
       {
         title: 'Project Background',
@@ -167,24 +170,27 @@ const metadata = {
         • Processing efficiency increased by 200%
         • Manual audit reduced by 90%
         • User experience significantly improved`,
-      }
+      },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
       alt: 'Multi-modal Training',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
-      <p>By developing a multi-modal model, intelligent processing of product images and description texts is achieved, helping e-commerce platforms improve product management efficiency and optimize user shopping experiences.</p>
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
+      <p>
+        By developing a multi-modal model, intelligent processing of product images and description texts is achieved,
+        helping e-commerce platforms improve product management efficiency and optimize user shopping experiences.
+      </p>
     </Fragment>
   </Content>
 
   <!-- Case Study 4: Performance Optimization -->
   <Content
     isAfterContent
-    tagline="Case Study 4"
-    title="Model Performance Optimization Service"
+    tagline='Case Study 4'
+    title='Model Performance Optimization Service'
     items={[
       {
         title: 'Project Background',
@@ -208,24 +214,27 @@ const metadata = {
         • Inference speed increased by 300%
         • Energy consumption reduced by 80%
         • Precision loss less than 1%`,
-      }
+      },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
       alt: 'Performance Optimization',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
-      <p>Through model compression and optimization technology, the client successfully deployed large AI models to resource-constrained devices, maintaining high performance while significantly reducing resource consumption.</p>
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
+      <p>
+        Through model compression and optimization technology, the client successfully deployed large AI models to
+        resource-constrained devices, maintaining high performance while significantly reducing resource consumption.
+      </p>
     </Fragment>
   </Content>
 
   <!-- Case Study 5: Few-shot Learning -->
   <Content
     isReversed
-    tagline="Case Study 5"
-    title="Few-shot Learning Solution"
+    tagline='Case Study 5'
+    title='Few-shot Learning Solution'
     items={[
       {
         title: 'Project Background',
@@ -249,24 +258,28 @@ const metadata = {
         • Detection accuracy reached 90%
         • Deployment cycle reduced by 75%
         • Maintenance cost reduced by 60%`,
-      }
+      },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1598425237654-4fc758e50a93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
       alt: 'Few-shot Learning',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
-      <p>For the manufacturing industry with few defect samples, the few-shot learning technology is used to help customers quickly build high-precision defect detection systems, significantly reducing data collection and annotation costs.</p>
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
+      <p>
+        For the manufacturing industry with few defect samples, the few-shot learning technology is used to help
+        customers quickly build high-precision defect detection systems, significantly reducing data collection and
+        annotation costs.
+      </p>
     </Fragment>
   </Content>
 
   <!-- Case Study 6: Incremental Learning -->
   <Content
     isAfterContent
-    tagline="Case Study 6"
-    title="Incremental Learning System Construction"
+    tagline='Case Study 6'
+    title='Incremental Learning System Construction'
     items={[
       {
         title: 'Project Background',
@@ -290,89 +303,94 @@ const metadata = {
         • New knowledge learning speed increased by 90%
         • Maintenance cost reduced by 50%
         • System stability improved`,
-      }
+      },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1488229297570-58520851e868?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
       alt: 'Incremental Learning',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
-      <p>For the smart customer service system, the incremental learning ability is developed to achieve continuous knowledge updates and online model optimization, significantly improving the service quality and response efficiency of the system.</p>
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
+      <p>
+        For the smart customer service system, the incremental learning ability is developed to achieve continuous
+        knowledge updates and online model optimization, significantly improving the service quality and response
+        efficiency of the system.
+      </p>
     </Fragment>
   </Content>
 
   <!-- Success Metrics -->
   <Timeline
-    title="Model Training Solution Effect"
+    title='Model Training Solution Effect'
     items={[
       {
         title: 'Training Efficiency',
         description: 'Average training time reduced by 65%, resource utilization increased by 40%',
-        icon: 'tabler:chart-arrows'
+        icon: 'tabler:chart-arrows',
       },
       {
         title: 'Model Performance',
         description: 'Accuracy increased by 50%, inference speed increased by 200%',
-        icon: 'tabler:brain'
+        icon: 'tabler:brain',
       },
       {
         title: 'Deployment Cost',
         description: 'Computing resource cost reduced by 70%, operation and maintenance cost reduced by 45%',
-        icon: 'tabler:coin'
+        icon: 'tabler:coin',
       },
       {
         title: 'System Stability',
         description: 'System availability reached 99.9%, fault response time reduced by 80%',
-        icon: 'tabler:shield'
+        icon: 'tabler:shield',
       },
     ]}
   />
 
   <!-- Call to Action -->
- <!-- Core Advantages -->
- <Features2
- title="Core Advantages"
- subtitle="Professional Model Training Capabilities"
- items={[
-   {
-     title: 'Professional Team',
-     description: 'Professional technical team in AI training field',
-     icon: 'tabler:users',
-   },
-   {
-     title: 'Efficient Training',
-     description: 'Advanced training architecture and optimization scheme',
-     icon: 'tabler:rocket',
-   },
-   {
-     title: 'Cost Control',
-     description: 'Efficient resource scheduling and cost optimization',
-     icon: 'tabler:coin',
-   },
-   {
-     title: 'Continuous Optimization',
-     description: 'Comprehensive effect evaluation and continuous improvement',
-     icon: 'tabler:refresh',
-   },
- ]}
-/>
+  <!-- Core Advantages -->
+  <Features2
+    title='Core Advantages'
+    subtitle='Professional Model Training Capabilities'
+    columns={2}
+    items={[
+      {
+        title: 'Professional Team',
+        description: 'Professional technical team in AI training field',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Efficient Training',
+        description: 'Advanced training architecture and optimization scheme',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Cost Control',
+        description: 'Efficient resource scheduling and cost optimization',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Continuous Optimization',
+        description: 'Comprehensive effect evaluation and continuous improvement',
+        icon: 'tabler:refresh',
+      },
+    ]}
+  />
 
-<CallToAction
-title="Start Your Industry Digital Transformation Journey"
-subtitle="Local Deployment, Secure and Reliable, Lower Cost"
-actions={[
-  {
-    variant: 'primary',
-    text: 'Book a Consultation',
-    href: '/contact',
-    icon: 'tabler:download',
-  },
-  {
-    text: 'Learn More',
-    href: '/about',
-  },
-]}
-/>
+  <CallToAction
+    title='Start Your Industry Digital Transformation Journey'
+    subtitle='Local Deployment, Secure and Reliable, Lower Cost'
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book a Consultation',
+        href: '/contact',
+        icon: 'tabler:download',
+      },
+      {
+        text: 'Learn More',
+        href: '/about',
+      },
+    ]}
+  />
 </Layout>

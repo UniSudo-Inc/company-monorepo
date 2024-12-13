@@ -17,7 +17,7 @@ const features = [
     icon: 'tabler:message-circle',
     link: '#',
     linkText: '免费试用',
-    textColor: 'text-black'
+    textColor: 'text-black',
   },
   {
     title: '文字转语音 (TTS) 服务',
@@ -25,7 +25,7 @@ const features = [
     icon: 'tabler:volume',
     link: '#',
     linkText: '现在注册充值，即可享受八折优惠！',
-    textColor: 'text-black'
+    textColor: 'text-black',
   },
   {
     title: '知识库检索 (RAG) 服务',
@@ -33,34 +33,34 @@ const features = [
     icon: 'tabler:search',
     link: '#',
     linkText: '了解更多',
-    textColor: 'text-black'
-  }
+    textColor: 'text-black',
+  },
 ];
 
 const stats = [
   {
     title: '客户满意度',
     amount: '98%',
-    icon: 'tabler:user-check'
+    icon: 'tabler:user-check',
   },
   {
     title: '客服响应时间',
     amount: '< 10秒钟',
-    icon: 'tabler:clock'
-  }
+    icon: 'tabler:clock',
+  },
 ];
 
 const advantages = [
   {
     title: '快速配置',
     description: '只需输入行业知识，我们的 AI 即可快速为您提供精准服务。',
-    icon: 'tabler:bolt'
+    icon: 'tabler:bolt',
   },
   {
     title: '多场景适用',
     description: '我们的AI技术适用于多种场景，包括客户服务、销售和问答助手等。',
-    icon: 'tabler:layout-grid'
-  }
+    icon: 'tabler:layout-grid',
+  },
 ];
 ---
 
@@ -68,46 +68,48 @@ const advantages = [
   <!-- Hero Section -->
   <!-- add a animated down chevron in content slot -->
   <Hero
-    tagline=" "
-    title="立即开启智能新时代"
-    subtitle="UniChat是一款 AI Agent应用，通过 TTS、RAG 和 CV 技术，为客户服务、销售和问答助手提供智能解决方案。只需提供行业知识，AI 即可高效服务,智能助力业务发展。"
+    tagline=' '
+    title='立即开启智能新时代'
+    subtitle='UniChat是一款 AI Agent应用，通过 TTS、RAG 和 CV 技术，为客户服务、销售和问答助手提供智能解决方案。只需提供行业知识，AI 即可高效服务,智能助力业务发展。'
   />
 
   <!-- Demo Section -->
-  <Demo title="立即体验" classes="mt-[-100px]" />
+  <Demo title='立即体验' classes='mt-[-100px]' />
 
   <!-- Services Section -->
-  <section class="py-16 px-4 mx-auto max-w-6xl motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold mb-4">我们的服务</h2>
-      <p class="text-gray-600">为您提供全方位的AI解决方案</p>
+  <section class='mx-auto max-w-6xl px-4 py-16 motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'>
+    <div class='mb-12 text-center'>
+      <h2 class='mb-4 text-3xl font-bold'>我们的服务</h2>
+      <p class='text-gray-600'>为您提供全方位的AI解决方案</p>
     </div>
-    <div class="grid md:grid-cols-3 gap-8">
-      {features.map(feature => (
-        <div class="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
-          <div class="text-primary mb-4">
-            <i class={feature.icon}></i>
+    <div class='grid gap-8 md:grid-cols-3'>
+      {
+        features.map((feature) => (
+          <div class='rounded-lg bg-white p-6 shadow-sm transition-all hover:shadow-md dark:bg-slate-900'>
+            <div class='mb-4 text-primary'>
+              <i class={feature.icon} />
+            </div>
+            <h3 class={`mb-2 text-xl font-semibold dark:text-slate-300 ${feature.textColor || ''}`}>{feature.title}</h3>
+            <p class='mb-4 text-gray-600 dark:text-slate-500'>{feature.description}</p>
+            <a href={feature.link} class='text-blue-600 hover:text-blue-700'>
+              {feature.linkText}
+            </a>
           </div>
-          <h3 class={`text-xl font-semibold mb-2 ${feature.textColor || ''}`}>{feature.title}</h3>
-          <p class="text-gray-600 mb-4">{feature.description}</p>
-          <a href={feature.link} class="text-blue-600 hover:text-blue-700">
-            {feature.linkText}
-          </a>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </section>
 
   <!-- Stats Section -->
   <Stats
-    title="智能客服提升客户满意度"
-    subtitle="UniChat是一款 AI Agent应用，通过 TTS、RAG 和 CV 技术，为客户服务、销售和问答助手提供智能解决方案。只需提供行业知识，AI 即可高效服务,智能助力业务发展。"
+    title='智能客服提升客户满意度'
+    subtitle='UniChat是一款 AI Agent应用，通过 TTS、RAG 和 CV 技术，为客户服务、销售和问答助手提供智能解决方案。只需提供行业知识，AI 即可高效服务,智能助力业务发展。'
     stats={stats}
   />
 
   <!-- Features -->
   <Features
-    title="我们的优势"
+    title='我们的优势'
     subtitle={`
       <div class="relative inline-block">
         <span class="text-3xl font-bold text-primary animate-pulse">
@@ -122,15 +124,15 @@ const advantages = [
 
   <!-- Call to Action -->
   <CallToAction
-    title="开始使用智能服务"
-    subtitle="立即体验AI带来的效率提升"
+    title='开始使用智能服务'
+    subtitle='立即体验AI带来的效率提升'
     actions={[
       {
         variant: 'primary',
         text: '联系我们',
         href: '/contact',
-        icon: 'tabler:mail'
-      }
+        icon: 'tabler:mail',
+      },
     ]}
   />
 </Layout>
