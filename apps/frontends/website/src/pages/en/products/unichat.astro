@@ -194,6 +194,9 @@ const advantages = [
   form!.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form!);
+    if (!formData) {
+      return;
+    }
     fetch(`${import.meta.env.PUBLIC_USER_API_BASE_URL}/v1/wishlist`, {
       method: 'POST',
       headers: {
