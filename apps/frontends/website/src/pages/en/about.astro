@@ -1,10 +1,17 @@
 ---
+import Brands from '@/components/widgets/Brands.astro';
 import Features2 from '@/components/widgets/Features2.astro';
 import Features3 from '@/components/widgets/Features3.astro';
 import Hero from '@/components/widgets/Hero.astro';
 import Stats from '@/components/widgets/Stats.astro';
 import Steps2 from '@/components/widgets/Steps2.astro';
 import Layout from '@/layouts/PageLayout.astro';
+import tencentLogo from '@/assets/images/tencent.png';
+import alibabaLogo from '@/assets/images/alibaba.png';
+import huaweiLogo from '@/assets/images/huawei.png';
+import ppioLogo from '@/assets/images/ppio.png';
+import amazonLogo from '@/assets/images/amazon.png';
+import cloudflareLogo from '@/assets/images/cloudflare.png';
 
 const metadata = {
   title: 'About Us',
@@ -26,30 +33,47 @@ const metadata = {
 
     <Fragment slot='subtitle'>
       <span class='text-xl md:text-2xl'>
-        UniSudo Inc. is a professional one-stop AI service provider. We provide a full-process solution from data annotation, model training and deployment, production environment setup, custom development of interactive systems, to low-cost voice interaction. With our professional technology and rich experience, we help enterprises achieve AI transformation at the lowest cost, and build intelligent systems tailored to their needs.
+        UniSudo Inc. is a professional one-stop AI service provider. We provide a full-process solution from data
+        annotation, model training and deployment, production environment setup, custom development of interactive
+        systems, to low-cost voice interaction. With our professional technology and rich experience, we help
+        enterprises achieve AI transformation at the lowest cost, and build intelligent systems tailored to their needs.
       </span>
     </Fragment>
   </Hero>
 
-  <Stats
+  <Brands
     title='Company Data'
-    stats={[
-      { title: 'Technical Patents', amount: '3+' },
-      { title: 'Technical Team', amount: '15+' },
-      { title: 'Service Projects', amount: '30+' },
-      { title: 'Partners', amount: '15+' },
+    images={[
+      {
+        src: tencentLogo,
+        alt: 'Tencent',
+      },
+      {
+        src: alibabaLogo,
+        alt: 'Alibaba',
+      },
+      {
+        src: huaweiLogo,
+        alt: 'Huawei',
+      },
+      {
+        src: ppioLogo,
+        alt: 'PPIO',
+      },
+      {
+        src: amazonLogo,
+        alt: 'Amazon',
+      },
+      {
+        src: cloudflareLogo,
+        alt: 'Cloudflare',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
+        alt: 'Microsoft',
+      },
     ]}
-  >
-    <Fragment slot='bg'>
-      <div class='mt-6 flex flex-wrap justify-center space-x-8'>
-        <img src='/placeholder-logo1.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
-        <img src='/placeholder-logo2.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
-        <img src='/placeholder-logo3.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
-        <img src='/placeholder-logo4.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
-        <img src='/placeholder-logo5.png' alt='合作伙伴logo' class='h-12 grayscale transition-all hover:grayscale-0' />
-      </div>
-    </Fragment>
-  </Stats>
+  />
 
   <Features3
     title='Core Technology'
@@ -59,17 +83,20 @@ const metadata = {
     items={[
       {
         title: 'Professional Data Annotation Service',
-        description: 'Provide high-quality and efficient data annotation services to provide a solid foundation for AI model training.',
+        description:
+          'Provide high-quality and efficient data annotation services to provide a solid foundation for AI model training.',
         icon: 'tabler:template',
       },
       {
         title: 'Full-process Model Development and Deployment',
-        description: 'From model selection, training to deployment, we provide a one-stop service to ensure the stable operation of AI systems.',
+        description:
+          'From model selection, training to deployment, we provide a one-stop service to ensure the stable operation of AI systems.',
         icon: 'tabler:template',
       },
       {
         title: 'Low-cost Voice Interaction Solution',
-        description: 'Innovative voice interaction technology helps enterprises significantly reduce the cost of AI applications.',
+        description:
+          'Innovative voice interaction technology helps enterprises significantly reduce the cost of AI applications.',
         icon: 'tabler:template',
       },
     ]}
@@ -81,17 +108,20 @@ const metadata = {
     items={[
       {
         title: 'Production Environment Customization',
-        description: 'Customize production environments based on enterprise needs to ensure the best performance of AI systems.',
+        description:
+          'Customize production environments based on enterprise needs to ensure the best performance of AI systems.',
         icon: 'tabler:template',
       },
       {
         title: 'Interactive System Development',
-        description: 'Professional interactive system development team to create a smooth and natural human-machine interaction experience.',
+        description:
+          'Professional interactive system development team to create a smooth and natural human-machine interaction experience.',
         icon: 'tabler:template',
       },
       {
         title: 'Integrated Technical Support',
-        description: 'Provide comprehensive technical support services to ensure continuous optimization and upgrade of systems.',
+        description:
+          'Provide comprehensive technical support services to ensure continuous optimization and upgrade of systems.',
         icon: 'tabler:template',
       },
     ]}
@@ -107,15 +137,18 @@ const metadata = {
     items={[
       {
         title: 'Innovation',
-        description: 'Continuously invest in research and development, pursue technological innovation, and provide the most advanced AI solutions for customers.',
+        description:
+          'Continuously invest in research and development, pursue technological innovation, and provide the most advanced AI solutions for customers.',
       },
       {
         title: 'Customer-centric',
-        description: 'Deeply understand customer needs, provide customized services, and ensure project implementation effects.',
+        description:
+          'Deeply understand customer needs, provide customized services, and ensure project implementation effects.',
       },
       {
         title: 'Professional Service',
-        description: 'Professional technical team, comprehensive service support, ensuring customers receive the best service experience.',
+        description:
+          'Professional technical team, comprehensive service support, ensuring customers receive the best service experience.',
       },
     ]}
   />
@@ -131,12 +164,14 @@ const metadata = {
     items={[
       {
         title: 'Innovation',
-        description: 'Independent research and development of multiple core technologies, continuously driving innovation in the industry.',
+        description:
+          'Independent research and development of multiple core technologies, continuously driving innovation in the industry.',
         icon: 'tabler:globe',
       },
       {
         title: 'Customer Recognition',
-        description: 'Obtain the trust and recognition of many well-known enterprises, establish long-term cooperative relationships.',
+        description:
+          'Obtain the trust and recognition of many well-known enterprises, establish long-term cooperative relationships.',
         icon: 'tabler:message-star',
       },
       {
@@ -154,7 +189,8 @@ const metadata = {
     items={[
       {
         title: 'Shanghai Office',
-        description: 'Room 802, 8th Floor, Building 1, 2nd Section, Gangcheng Plaza, No. 55 Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai',
+        description:
+          'Room 802, 8th Floor, Building 1, 2nd Section, Gangcheng Plaza, No. 55 Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai',
       },
     ]}
   />
@@ -165,13 +201,13 @@ const metadata = {
     columns={2}
     items={[
       {
-        title: 'Online Consultation',
-        description: 'Our technical support team is ready to provide professional consultation and technical support services.',
-        icon: 'tabler:messages',
+        title: 'Email Inquiry',
+        description: '<a href="mailto:developer@unisudo.com" class="hover:text-primary">developer@unisudo.com</a>',
+        icon: 'tabler:mail',
       },
       {
         title: 'Phone Consultation',
-        description: 'Working hours: Monday to Friday 9:00-18:00, welcome to call for consultation.',
+        description: '+86 16628597963',
         icon: 'tabler:headset',
       },
     ]}

@@ -109,45 +109,78 @@ const metadata = {
     ]}
   />
 
-  <!-- Innovation Results ******************* -->
+  <!-- Content Widget **************** -->
   <Content
+    isReversed
     title='Innovation Results'
     subtitle='Continuous breakthroughs, continuous innovation'
     items={[
       {
-        title: 'Technical Breakthrough',
-        description: `
-          • Core algorithm innovation
-          - Breakthrough progress of non-Transformer architecture
-          - Lightweight model training framework
-          - Real-time interaction performance breakthrough
-
-          • Application innovation
-          - Local deployment solution
-          - Multi-scenario fusion capabilities
-          - Ecosystem integration
-        `,
+        title: 'Breakthrough progress of non-Transformer architecture',
       },
       {
-        title: 'Future Development',
-        description: `
-          • Technical roadmap
-          - Continuously optimize core algorithms
-          - Expand scenario adaptation capabilities
-          - Deepen AI infrastructure construction
-
-          • Innovation direction
-          - Explore new model architectures
-          - Optimize resource utilization efficiency
-          - Expand application scenario boundaries
-        `,
+        title: 'Lightweight model training framework',
+      },
+      {
+        title: 'Real-time interaction performance breakthrough',
+      },
+      {
+        title: 'Local deployment solution',
+      },
+      {
+        title: 'Multi-scenario fusion capabilities',
+      },
+      {
+        title: 'Ecosystem integration',
       },
     ]}
     image={{
-      src: '@/assets/images/innovation.svg',
-      alt: 'Innovation Results',
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
     }}
-  />
+  >
+    <Fragment slot='content'>
+      <h2 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>
+        Core algorithm innovation and application innovation
+      </h2></Fragment
+    >
+  </Content>
+
+  <!-- Content Widget **************** -->
+  <Content
+    title='Future Development'
+    isAfterContent
+    items={[
+      {
+        title: 'Continuously optimize core algorithms',
+      },
+      {
+        title: 'Expand scenario adaptation capabilities',
+      },
+      {
+        title: 'Deepen AI infrastructure construction',
+      },
+      {
+        title: 'Explore new model architectures',
+      },
+      {
+        title: 'Optimize resource utilization efficiency',
+      },
+      {
+        title: 'Expand application scenario boundaries',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot='content'>
+      <h2 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>
+        Technical roadmap and innovation direction
+      </h2></Fragment
+    >
+  </Content>
 
   <!-- Technology Value ******************* -->
   <div class='scroll-section relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8' data-aos='fade-up'>
