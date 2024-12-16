@@ -143,9 +143,64 @@ const advantages = [
       name: 'message',
       label: '留言',
     }}
-    button='联系我们'
-  />
+    button='申请试用'
+  >
+    <Fragment slot='bg'>
+      <div
+        id='snackbar-toast'
+        class='toast absolute bottom-6 right-12 z-10 rounded-md border bg-white p-4 shadow-lg dark:bg-slate-900'
+        hidden
+      >
+      </div>
+    </Fragment>
+  </ContactUs>
 </Layout>
+
+<script>
+  function toast(message: string) {
+    const toastElem = document.getElementById('snackbar-toast');
+    if (!toastElem) {
+      console.error('Could not find the toast element');
+    }
+    toastElem!.innerText = message;
+    toastElem!.hidden = false;
+    setTimeout(() => {
+      toastElem!.hidden = true;
+      toastElem!.innerText = '';
+    }, 3000);
+  }
+
+  const button = document.querySelector('button[type="submit"]');
+  const form = document.querySelector('form');
+
+  if (!button || !form) {
+    console.error('Could not find the button or form');
+  }
+
+  button!.addEventListener('click', (event) => {
+    event.preventDefault();
+    const formData = new FormData(form!);
+    if (!formData) {
+      return;
+    }
+    fetch(`${import.meta.env.PUBLIC_USER_API_BASE_URL}/v1/wishlist`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(Object.fromEntries(formData)),
+    }).then((res) => {
+      if (res.status === 200) {
+        toast('提交成功');
+        button!.setAttribute('disabled', '');
+      } else if (res.status === 409) {
+        toast('用户或申请已存在');
+      } else {
+        toast('提交失败');
+      }
+    });
+  });
+</script>
 
 <style>
   @keyframes highlight {
