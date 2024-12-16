@@ -191,7 +191,7 @@ const advantages = [
     console.error('Could not find the button or form');
   }
 
-  button!.addEventListener('click', (event) => {
+  form!.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form!);
     fetch(`${import.meta.env.PUBLIC_USER_API_BASE_URL}/v1/wishlist`, {
@@ -202,12 +202,12 @@ const advantages = [
       body: JSON.stringify(Object.fromEntries(formData)),
     }).then((res) => {
       if (res.status === 200) {
-        toast('提交成功');
+        toast('Submitted successfully');
         button!.setAttribute('disabled', '');
       } else if (res.status === 409) {
-        toast('用户或申请已存在');
+        toast('User already exists');
       } else {
-        toast('提交失败');
+        toast('Failed to submit');
       }
     });
   });

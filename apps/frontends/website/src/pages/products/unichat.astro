@@ -177,7 +177,7 @@ const advantages = [
     console.error('Could not find the button or form');
   }
 
-  button!.addEventListener('click', (event) => {
+  form!.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form!);
     if (!formData) {
