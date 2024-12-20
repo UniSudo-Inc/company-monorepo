@@ -183,7 +183,7 @@ export const headerDataEn = {
       href: getPermalink('/en/contact'),
     },
   ],
-  actions: [{ text: 'Join Us', href: '/en/career', target: '_blank' }],
+  actions: [{ text: 'Join Us', href: getPermalink('/en/career'), target: '_blank' }],
 };
 
 export const footerData = {

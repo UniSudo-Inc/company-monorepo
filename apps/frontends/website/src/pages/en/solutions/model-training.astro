@@ -5,6 +5,7 @@ import Features2 from '@/components/widgets/Features2.astro';
 import Steps from '@/components/widgets/Steps.astro';
 import Timeline from '@/components/widgets/Timeline.astro';
 import CallToAction from '@/components/widgets/CallToAction.astro';
+import { getPermalink } from '@/utils/permalinks';
 
 const metadata = {
   title: 'Model Training and Fine-tuning Solutions',
@@ -384,12 +385,12 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Book a Consultation',
-        href: '/contact',
+        href: getPermalink('/en/contact'),
         icon: 'tabler:download',
       },
       {
         text: 'Learn More',
-        href: '/about',
+        href: getPermalink('/en/about'),
       },
     ]}
   />

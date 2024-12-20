@@ -3,6 +3,7 @@ import Layout from '@/layouts/PageLayout.astro';
 import Content from '@/components/widgets/Content.astro';
 import Features2 from '@/components/widgets/Features2.astro';
 import Steps from '@/components/widgets/Steps.astro';
+import { getPermalink } from '@/utils/permalinks';
 
 const metadata = {
   title: 'Data Service',
@@ -11,21 +12,17 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Section -->
-  <div class="relative h-96 flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
-    <div class="relative z-10 text-center text-white">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
-        Data Empowerment, Intelligent Future
-      </h1>
-      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
-        Professional AI Data Service Solutions
-      </p>
+  <div class='relative flex h-96 items-center justify-center overflow-hidden'>
+    <div class='absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90'></div>
+    <div class='relative z-10 text-center text-white'>
+      <h1 class='mb-4 text-4xl font-bold md:text-5xl' data-aos='fade-up'>Data Empowerment, Intelligent Future</h1>
+      <p class='text-xl' data-aos='fade-up' data-aos-delay='200'>Professional AI Data Service Solutions</p>
     </div>
   </div>
 
   <!-- Process Flow -->
   <Steps
-    title="Data Service Process"
+    title='Data Service Process'
     items={[
       {
         title: 'Demand Analysis',
@@ -57,7 +54,7 @@ const metadata = {
   <!-- Service Content -->
   <Content
     isReversed
-    title="AI Training Data Annotation"
+    title='AI Training Data Annotation'
     items={[
       {
         title: 'Business Field',
@@ -75,7 +72,7 @@ const metadata = {
   />
 
   <Content
-    title="Multi-modal Data Processing"
+    title='Multi-modal Data Processing'
     items={[
       {
         title: 'Processing Capability',
@@ -92,172 +89,186 @@ const metadata = {
     }}
   />
 
-    <!-- Case Studies -->
-    <Content
-      isReversed
-      tagline="Case Study 1"
-      title="Financial Data Processing"
-      items={[
-        {
-          title: 'Project Background',
-          description: `• Demand analysis: large bank transaction data cleaning and annotation requirements
+  <!-- Case Studies -->
+  <Content
+    isReversed
+    tagline='Case Study 1'
+    title='Financial Data Processing'
+    items={[
+      {
+        title: 'Project Background',
+        description: `• Demand analysis: large bank transaction data cleaning and annotation requirements
   • Pain point: large data volume, high privacy requirements, strict accuracy requirements
   • Challenge: need to process historical data and real-time data streams
   • Goal: establish a high-quality financial data set`,
-        },
-        {
-          title: 'Solution',
-          description: `• Deploy professional data processing teams
+      },
+      {
+        title: 'Solution',
+        description: `• Deploy professional data processing teams
   • Establish multiple data verification mechanisms
   • Implement data encryption and de-sensitization processing
   • Develop automated data cleaning processes
   • Build a financial annotation specification system`,
-        },
-        {
-          title: 'Implementation Effect',
-          description: `• Data accuracy rate of 99.9%
+      },
+      {
+        title: 'Implementation Effect',
+        description: `• Data accuracy rate of 99.9%
   • Processing efficiency increased by 200%
   • Zero data security incidents
   • Annotation cost reduced by 40%
   • Customer satisfaction 98%`,
-        }
-      ]}
-      image={{
-        src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-        alt: 'Financial Data Processing',
-      }}
-    >
-      <Fragment slot="content">
-        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
-        <p>Processed over 10 million transaction data for a large bank, successfully established a high-quality anti-fraud training data set through AI-assisted annotation and multiple verification mechanisms, and helped the customer's AI model accuracy improve by 15%. </p>
-      </Fragment>
-    </Content>
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Financial Data Processing',
+    }}
+  >
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
+      <p>
+        Processed over 10 million transaction data for a large bank, successfully established a high-quality anti-fraud
+        training data set through AI-assisted annotation and multiple verification mechanisms, and helped the customer's
+        AI model accuracy improve by 15%.
+      </p>
+    </Fragment>
+  </Content>
 
-    <Content
-      isAfterContent
-      tagline="Case Study 2"
-      title="Medical Image Data Annotation"
-      items={[
-        {
-          title: 'Project Background',
-          description: `• Demand analysis: hospital CT image data annotation and analysis
+  <Content
+    isAfterContent
+    tagline='Case Study 2'
+    title='Medical Image Data Annotation'
+    items={[
+      {
+        title: 'Project Background',
+        description: `• Demand analysis: hospital CT image data annotation and analysis
   • Pain point: high professional requirements, time-consuming manual annotation
   • Challenge: need medical professional knowledge support
   • Goal: provide high-quality medical data sets`,
-        },
-        {
-          title: 'Solution',
-          description: `• Establish a medical AI annotation team
+      },
+      {
+        title: 'Solution',
+        description: `• Establish a medical AI annotation team
   • Develop medical image annotation tools
   • Establish a three-level quality inspection mechanism
   • Introduce expert review process
   • Apply data enhancement technology`,
-        },
-        {
-          title: 'Implementation Effect',
-          description: `• Annotation efficiency increased by 150%
+      },
+      {
+        title: 'Implementation Effect',
+        description: `• Annotation efficiency increased by 150%
   • Accuracy rate of 95% or higher
   • Data set expanded 3 times
   • Model diagnostic accuracy improved by 20%
   • Annotation cost reduced by 35%`,
-        }
-      ]}
-      image={{
-        src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-        alt: 'Medical Data',
-      }}
-    >
-      <Fragment slot="content">
-        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
-        <p>Assisted a tertiary hospital to complete the annotation of 100,000 chest CT images, significantly improving the accuracy of lung disease detection models through professional teams and AI-assisted annotation, and receiving high praise from the doctor team.</p>
-      </Fragment>
-    </Content>
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Medical Data',
+    }}
+  >
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
+      <p>
+        Assisted a tertiary hospital to complete the annotation of 100,000 chest CT images, significantly improving the
+        accuracy of lung disease detection models through professional teams and AI-assisted annotation, and receiving
+        high praise from the doctor team.
+      </p>
+    </Fragment>
+  </Content>
 
-    <Content
-      isReversed
-      tagline="Case Study 3"
-      title="Industrial Visual Data Processing"
-      items={[
-        {
-          title: 'Project Background',
-          description: `• Demand analysis: manufacturing quality inspection data annotation requirements
+  <Content
+    isReversed
+    tagline='Case Study 3'
+    title='Industrial Visual Data Processing'
+    items={[
+      {
+        title: 'Project Background',
+        description: `• Demand analysis: manufacturing quality inspection data annotation requirements
   • Pain point: complex annotation rules, high requirements
   • Challenge: need to process various types of defects
   • Goal: improve the level of automatic inspection`,
-        },
-        {
-          title: 'Solution',
-          description: `• Customized annotation scheme
+      },
+      {
+        title: 'Solution',
+        description: `• Customized annotation scheme
   • Develop defect recognition tools
   • Establish standardized processes
   • Implement data enhancement technology
   • Apply quality tracking system`,
-        },
-        {
-          title: 'Implementation Effect',
-          description: `• Detection accuracy rate improved by 25%
+      },
+      {
+        title: 'Implementation Effect',
+        description: `• Detection accuracy rate improved by 25%
   • Production efficiency increased by 40%
   • Quality inspection cost reduced by 50%
   • Data set size increased by 5 times
   • ROI increased by 200%`,
-        }
-      ]}
-      image={{
-        src: 'https://images.unsplash.com/photo-1633934542430-0905ccb5f050?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-        alt: 'Industrial Visual',
-      }}
-    >
-      <Fragment slot="content">
-        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
-        <p>Established a chip defect detection data set for a semiconductor manufacturer, helping customers improve product quality inspection efficiency by 40% through precise annotation and data enhancement, and saving over 5 million yuan in annual costs.</p>
-      </Fragment>
-    </Content>
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1633934542430-0905ccb5f050?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Industrial Visual',
+    }}
+  >
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
+      <p>
+        Established a chip defect detection data set for a semiconductor manufacturer, helping customers improve product
+        quality inspection efficiency by 40% through precise annotation and data enhancement, and saving over 5 million
+        yuan in annual costs.
+      </p>
+    </Fragment>
+  </Content>
 
-    <Content
-      isAfterContent
-      tagline="Case Study 4"
-      title="Retail Data Analysis"
-      items={[
-        {
-          title: 'Project Background',
-          description: `• Demand analysis: retail scene data processing requirements
+  <Content
+    isAfterContent
+    tagline='Case Study 4'
+    title='Retail Data Analysis'
+    items={[
+      {
+        title: 'Project Background',
+        description: `• Demand analysis: retail scene data processing requirements
   • Pain point: difficulty in integrating multi-source data
   • Challenge: high real-time requirements, large data volume
   • Goal: improve the level of retail intelligence`,
-        },
-        {
-          title: 'Solution',
-          description: `• Deploy real-time data processing systems
+      },
+      {
+        title: 'Solution',
+        description: `• Deploy real-time data processing systems
   • Develop multi-source data fusion platforms
   • Establish user behavior analysis models
   • Implement privacy protection schemes
   • Provide visualization analysis tools`,
-        },
-        {
-          title: 'Implementation Effect',
-          description: `• Data processing efficiency increased by 300%
+      },
+      {
+        title: 'Implementation Effect',
+        description: `• Data processing efficiency increased by 300%
   • Sales conversion rate increased by 20%
   • Inventory optimization efficiency increased by 35%
   • Customer satisfaction increased by 25%
   • Operating cost reduced by 30%`,
-        }
-      ]}
-      image={{
-        src: 'https://images.unsplash.com/photo-1567103472667-6898f3a79cf2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-        alt: 'Retail Data',
-      }}
-    >
-      <Fragment slot="content">
-        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Scenario Story</h3>
-        <p>Helped a chain retail enterprise build a customer flow analysis system, optimized product display and staff allocation through processing visual data and transaction data, and achieved a 15% increase in sales.</p>
-      </Fragment>
-    </Content>
-
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1567103472667-6898f3a79cf2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Retail Data',
+    }}
+  >
+    <Fragment slot='content'>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
+      <p>
+        Helped a chain retail enterprise build a customer flow analysis system, optimized product display and staff
+        allocation through processing visual data and transaction data, and achieved a 15% increase in sales.
+      </p>
+    </Fragment>
+  </Content>
 
   <!-- Features -->
   <Features2
-    title="Core Advantages"
-    subtitle="Professional Data Processing Capabilities"
+    title='Core Advantages'
+    subtitle='Professional Data Processing Capabilities'
     items={[
       {
         title: 'Professional Team',
@@ -283,16 +294,14 @@ const metadata = {
   />
 
   <!-- Call to Action -->
-  <div class="relative bg-primary-50 dark:bg-slate-800 py-16">
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center">
-        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4">
+  <div class='bg-primary-50 relative py-16 dark:bg-slate-800'>
+    <div class='relative mx-auto max-w-7xl px-4 sm:px-6'>
+      <div class='text-center'>
+        <h2 class='leading-tighter mb-4 text-3xl font-bold tracking-tighter md:text-4xl'>
           Data Empowerment, Intelligent Future
         </h2>
-        <a href="/contact" class="btn btn-primary mb-4">
-          Consult Now
-        </a>
-        <p class="text-xl text-gray-600 dark:text-slate-400">
+        <a href={getPermalink('/en/about')} class='btn btn-primary mb-4'> Consult Now </a>
+        <p class='text-xl text-gray-600 dark:text-slate-400'>
           Professional data service team, providing one-stop solutions
         </p>
       </div>

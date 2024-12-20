@@ -20,10 +20,9 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Contact Us',
-        href: getPermalink('/contact'),
-        target: '_blank',
+        href: getPermalink('/en/contact'),
       },
-      { text: 'Company Introduction', href: '#features' },
+      { text: 'Company Introduction', href: getPermalink('/en/about') },
     ]}
     image={{ src: '@/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
   >
@@ -35,7 +34,9 @@ const metadata = {
     <Fragment slot='subtitle'>
       <span class='hidden sm:inline'> <span class='font-semibold'>UniSudo Inc.</span></span>
       <span class='mb-1 block font-bold text-blue-600 sm:hidden'>UniSudo Inc.</span>
-      We are dedicated to creating high-performance, low-cost AI solutions, with research and development as our core competitive advantage. Through innovative model architectures and full-process technical support, we help enterprises implement AI accurately at a cost far lower than traditional solutions.
+      We are dedicated to creating high-performance, low-cost AI solutions, with research and development as our core competitive
+      advantage. Through innovative model architectures and full-process technical support, we help enterprises implement
+      AI accurately at a cost far lower than traditional solutions.
     </Fragment>
   </Hero>
 
@@ -53,7 +54,8 @@ const metadata = {
     items={[
       {
         title: 'Innovative Technology',
-        description: 'Break through the limitations of traditional architectures to achieve low-cost, high-performance AI solutions.',
+        description:
+          'Break through the limitations of traditional architectures to achieve low-cost, high-performance AI solutions.',
         icon: 'tabler:brand-tailwind',
       },
       {
@@ -63,7 +65,8 @@ const metadata = {
       },
       {
         title: 'Cost Advantage',
-        description: 'Significantly reduce deployment and operational costs through innovative technology architectures.',
+        description:
+          'Significantly reduce deployment and operational costs through innovative technology architectures.',
         icon: 'tabler:list-check',
       },
       {
@@ -83,15 +86,18 @@ const metadata = {
     items={[
       {
         title: 'Industry-leading Real-time Interaction Capabilities',
-        description: 'Support multi-turn conversations, context understanding, intent recognition, knowledge base question answering, and other complex interactive scenarios.',
+        description:
+          'Support multi-turn conversations, context understanding, intent recognition, knowledge base question answering, and other complex interactive scenarios.',
       },
       {
         title: 'Intelligent Dialogue Path Reconstruction',
-        description: 'Through intelligent path reconstruction, achieve more efficient and intelligent dialogue experiences.',
+        description:
+          'Through intelligent path reconstruction, achieve more efficient and intelligent dialogue experiences.',
       },
       {
         title: 'Support Real-time Knowledge Base Question Answering in Multiple Scenarios',
-        description: 'Support real-time knowledge base question answering in multiple scenarios to meet different business needs.',
+        description:
+          'Support real-time knowledge base question answering in multiple scenarios to meet different business needs.',
       },
       {
         title: 'Smooth User Interaction Experience',
@@ -104,7 +110,9 @@ const metadata = {
     }}
   >
     <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Streaming Interruptable Dialogue System</h3>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>
+        Streaming Interruptable Dialogue System
+      </h3>
       <p>Provide more intelligent and smooth dialogue experiences for your business.</p>
     </Fragment>
 
@@ -195,15 +203,18 @@ const metadata = {
     items={[
       {
         title: 'Service Multiple Well-known Automobile Companies',
-        description: 'Service multiple well-known automobile companies, provide professional data annotation solutions.',
+        description:
+          'Service multiple well-known automobile companies, provide professional data annotation solutions.',
       },
       {
         title: 'Support Autonomous Driving Data Processing',
-        description: 'Support autonomous driving data processing, provide professional data annotation solutions for intelligent driving.',
+        description:
+          'Support autonomous driving data processing, provide professional data annotation solutions for intelligent driving.',
       },
       {
         title: 'Low Altitude Flight Scene Data Annotation',
-        description: 'Support low altitude flight scene data annotation, provide professional data annotation solutions for drones.',
+        description:
+          'Support low altitude flight scene data annotation, provide professional data annotation solutions for drones.',
       },
       {
         title: 'Multi-modal Data Processing Capability',
@@ -216,7 +227,9 @@ const metadata = {
     }}
   >
     <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Professional Data Annotation Platform</h3>
+      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>
+        Professional Data Annotation Platform
+      </h3>
       <p>We provide professional data annotation solutions to meet your business needs.</p>
     </Fragment>
 
