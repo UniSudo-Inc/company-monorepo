@@ -3,7 +3,7 @@ import Layout from '@/layouts/LandingLayout.astro';
 import Hero from '@/components/widgets/Hero.astro';
 import Features from '@/components/widgets/Features.astro';
 import Stats from '@/components/widgets/Stats.astro';
-import CallToAction from '@/components/widgets/CallToAction.astro';
+import ContactUs from '@/components/widgets/Contact.astro';
 import Demo from '@/components/widgets/Demo.astro';
 
 const metadata = {
@@ -136,20 +136,85 @@ const advantages = [
     columns={2}
   />
 
-  <!-- Call to Action -->
-  <CallToAction
+  <!-- Contact Us -->
+  <ContactUs
+    id='form'
     title='Start Using Intelligent Services'
     subtitle='Experience the efficiency boost from AI'
-    actions={[
+    inputs={[
       {
-        variant: 'primary',
-        text: 'Contact Us',
-        href: '/contact',
-        icon: 'tabler:mail',
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
       },
     ]}
-  />
+    textarea={{
+      name: 'message',
+      label: 'Message',
+    }}
+    button='Contact Us'
+  >
+    <Fragment slot='bg'>
+      <div
+        id='snackbar-toast'
+        class='toast absolute bottom-6 right-12 z-10 rounded-md border bg-white p-4 shadow-lg dark:bg-slate-900'
+        hidden
+      >
+      </div>
+    </Fragment>
+  </ContactUs>
 </Layout>
+
+<script>
+  function toast(message: string) {
+    const toastElem = document.getElementById('snackbar-toast');
+    if (!toastElem) {
+      console.error('Could not find the toast element');
+    }
+    toastElem!.innerText = message;
+    toastElem!.hidden = false;
+    setTimeout(() => {
+      toastElem!.hidden = true;
+      toastElem!.innerText = '';
+    }, 3000);
+  }
+
+  const button = document.querySelector('button[type="submit"]');
+  const form = document.querySelector('form');
+
+  if (!button || !form) {
+    console.error('Could not find the button or form');
+  }
+
+  form!.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(form!);
+    if (!formData) {
+      return;
+    }
+    fetch(`${import.meta.env.PUBLIC_USER_API_BASE_URL}/v1/wishlist`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(Object.fromEntries(formData)),
+    }).then((res) => {
+      if (res.status === 200) {
+        toast('Submitted successfully');
+        button!.setAttribute('disabled', '');
+      } else if (res.status === 409) {
+        toast('User already exists');
+      } else {
+        toast('Failed to submit');
+      }
+    });
+  });
+</script>
 
 <style>
   @keyframes highlight {

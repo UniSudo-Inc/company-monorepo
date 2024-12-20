@@ -11,7 +11,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
       inputs.map(
         ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
           name && (
-            <div class='mb-6'>
+            <div class='mb-5 space-y-2'>
               {label && (
                 <label for={name} class='block text-sm font-medium'>
                   {label}
@@ -23,7 +23,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 id={name}
                 autocomplete={autocomplete}
                 placeholder={placeholder}
-                class='text-md block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-gray-700 dark:bg-slate-900'
+                class='text-md block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-gray-700 dark:bg-slate-900'
               />
             </div>
           ),
@@ -32,7 +32,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
 
   {
     textarea && (
-      <div>
+      <div class='space-y-2'>
         <label for='textarea' class='block text-sm font-medium'>
           {textarea.label}
         </label>
@@ -41,7 +41,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
           name={textarea.name ? textarea.name : 'message'}
           rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
-          class='text-md block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-gray-700 dark:bg-slate-900'
+          class='text-md block w-full rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-gray-700 dark:bg-slate-900'
         />
       </div>
     )

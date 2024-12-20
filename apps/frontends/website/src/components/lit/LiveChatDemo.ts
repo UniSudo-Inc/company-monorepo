@@ -304,6 +304,7 @@ export class LiveChatDemo extends LitElement {
         redemptionFrames: 5,
         onSpeechStart: handleSpeechStart,
         onSpeechEnd: handleSpeechEnd,
+        onVADMisfire: handleSpeechEnd,
         workletURL: '/_astro/vad.worklet.bundle.min.js',
         modelURL: '/_astro/silero_vad.onnx',
       });

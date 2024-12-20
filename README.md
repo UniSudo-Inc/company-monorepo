@@ -1,4 +1,4 @@
-# js-monorepo-template
+# company-monorepo
 
 A monorepo template for JavaScript/TypeScript projects.
 
