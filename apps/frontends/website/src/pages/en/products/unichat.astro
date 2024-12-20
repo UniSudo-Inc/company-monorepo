@@ -13,11 +13,12 @@ const metadata = {
 const features = [
   {
     title: 'Real-time Dialogue Service',
-    description: 'You can create a real-time dialogue robot with a knowledge base and conduct a 5-minute real-time dialogue.',
+    description:
+      'You can create a real-time dialogue robot with a knowledge base and conduct a 5-minute real-time dialogue.',
     icon: 'tabler:message-circle',
     link: '#',
     linkText: 'Free Trial',
-    textColor: 'text-black'
+    textColor: 'text-black',
   },
   {
     title: 'Text-to-Speech (TTS) Service',
@@ -25,7 +26,7 @@ const features = [
     icon: 'tabler:volume',
     link: '#',
     linkText: 'Register and recharge now to enjoy an 80% discount!',
-    textColor: 'text-black'
+    textColor: 'text-black',
   },
   {
     title: 'Knowledge Base Retrieval (RAG) Service',
@@ -33,54 +34,55 @@ const features = [
     icon: 'tabler:search',
     link: '#',
     linkText: 'Learn more',
-    textColor: 'text-black'
-  }
+    textColor: 'text-black',
+  },
 ];
 
 const stats = [
   {
     title: 'Customer Satisfaction',
     amount: '98%',
-    icon: 'tabler:user-check'
+    icon: 'tabler:user-check',
   },
   {
     title: 'Customer Service Response Time',
     amount: '< 10 seconds',
-    icon: 'tabler:clock'
-  }
+    icon: 'tabler:clock',
+  },
 ];
 
 const advantages = [
   {
     title: 'Quick Configuration',
     description: 'Simply input industry knowledge, and our AI can quickly provide precise services for you.',
-    icon: 'tabler:bolt'
+    icon: 'tabler:bolt',
   },
   {
     title: 'Multi-scenario Application',
-    description: 'Our AI technology is applicable to various scenarios, including customer service, sales, and Q&A assistants.',
-    icon: 'tabler:layout-grid'
-  }
+    description:
+      'Our AI technology is applicable to various scenarios, including customer service, sales, and Q&A assistants.',
+    icon: 'tabler:layout-grid',
+  },
 ];
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Section -->
   <Hero
-    tagline=" "
-    title="Start the Intelligent Era"
-    subtitle="UniChat is an AI Agent application that provides intelligent solutions for customer service, sales, and Q&A assistants through TTS, RAG, and CV technologies. Simply provide industry knowledge, and AI can efficiently serve, smartly helping business development."
+    tagline=' '
+    title='Start the Intelligent Era'
+    subtitle='UniChat is an AI Agent application that provides intelligent solutions for customer service, sales, and Q&A assistants through TTS, RAG, and CV technologies. Simply provide industry knowledge, and AI can efficiently serve, smartly helping business development.'
     actions={[
       {
         variant: 'primary',
         text: 'Free Trial',
         href: 'https://limit-4o-monorepo.vercel.app/my',
-        icon: 'tabler:arrow-right'
+        icon: 'tabler:arrow-right',
       },
       {
         variant: 'secondary',
         text: 'Product Case',
-        href: '#'
+        href: '#',
       },
     ]}
   />
@@ -89,37 +91,39 @@ const advantages = [
   <Demo />
 
   <!-- Services Section -->
-  <section class="py-16 px-4 mx-auto max-w-6xl motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold mb-4">Our Services</h2>
-      <p class="text-gray-600">We provide comprehensive AI solutions for you</p>
+  <section class='mx-auto max-w-6xl px-4 py-16 motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'>
+    <div class='mb-12 text-center'>
+      <h2 class='mb-4 text-3xl font-bold'>Our Services</h2>
+      <p class='text-gray-600'>We provide comprehensive AI solutions for you</p>
     </div>
-    <div class="grid md:grid-cols-3 gap-8">
-      {features.map(feature => (
-        <div class="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
-          <div class="text-primary mb-4">
-            <i class={feature.icon}></i>
+    <div class='grid gap-8 md:grid-cols-3'>
+      {
+        features.map((feature) => (
+          <div class='rounded-lg bg-white p-6 shadow-sm transition-all hover:shadow-md dark:bg-slate-900'>
+            <div class='mb-4 text-primary'>
+              <i class={feature.icon} />
+            </div>
+            <h3 class={`mb-2 text-xl font-semibold dark:text-slate-300 ${feature.textColor || ''}`}>{feature.title}</h3>
+            <p class='mb-4 text-gray-600 dark:text-slate-500'>{feature.description}</p>
+            <a href={feature.link} class='text-blue-600 hover:text-blue-700'>
+              {feature.linkText}
+            </a>
           </div>
-          <h3 class={`text-xl font-semibold mb-2 ${feature.textColor || ''}`}>{feature.title}</h3>
-          <p class="text-gray-600 mb-4">{feature.description}</p>
-          <a href={feature.link} class="text-blue-600 hover:text-blue-700">
-            {feature.linkText}
-          </a>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </section>
 
   <!-- Stats Section -->
   <Stats
-    title="Intelligent Customer Service Enhances Customer Satisfaction"
-    subtitle="UniChat is an AI Agent application that provides intelligent solutions for customer service, sales, and Q&A assistants through TTS, RAG, and CV technologies. Simply provide industry knowledge, and AI can efficiently serve, smartly helping business development."
+    title='Intelligent Customer Service Enhances Customer Satisfaction'
+    subtitle='UniChat is an AI Agent application that provides intelligent solutions for customer service, sales, and Q&A assistants through TTS, RAG, and CV technologies. Simply provide industry knowledge, and AI can efficiently serve, smartly helping business development.'
     stats={stats}
   />
 
   <!-- Features -->
   <Features
-    title="Our Advantages"
+    title='Our Advantages'
     subtitle={`
       <div class="relative inline-block">
         <span class="text-3xl font-bold text-primary animate-pulse">
@@ -134,15 +138,15 @@ const advantages = [
 
   <!-- Call to Action -->
   <CallToAction
-    title="Start Using Intelligent Services"
-    subtitle="Experience the efficiency boost from AI"
+    title='Start Using Intelligent Services'
+    subtitle='Experience the efficiency boost from AI'
     actions={[
       {
         variant: 'primary',
         text: 'Contact Us',
         href: '/contact',
-        icon: 'tabler:mail'
-      }
+        icon: 'tabler:mail',
+      },
     ]}
   />
 </Layout>
