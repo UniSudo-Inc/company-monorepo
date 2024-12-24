@@ -2,7 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import { getHomePermalink } from '@/utils/permalinks';
 
-const title = `Error 404`;
+const title = `错误 404`;
 ---
 
 <Layout metadata={{ title }}>
@@ -10,14 +10,12 @@ const title = `Error 404`;
     <div class='container mx-auto my-8 flex flex-col items-center justify-center px-5'>
       <div class='max-w-md text-center'>
         <h2 class='mb-8 text-9xl font-bold'>
-          <span class='sr-only'>Error</span>
+          <span class='sr-only'>错误</span>
           <span class='text-primary'>404</span>
         </h2>
-        <p class='text-3xl font-semibold md:text-3xl'>Sorry, we couldn't find this page.</p>
-        <p class='mb-8 mt-4 text-lg text-muted dark:text-slate-400'>
-          But dont worry, you can find plenty of other things on our homepage.
-        </p>
-        <a rel='noopener noreferrer' href={getHomePermalink()} class='btn ml-4'>Back to homepage</a>
+        <p class='text-3xl font-semibold md:text-3xl'>抱歉，我们找不到此页面。</p>
+        <p class='mb-8 mt-4 text-lg text-muted dark:text-slate-400'>不用担心，您可以在我们的主页上找到更多内容。</p>
+        <a rel='noopener noreferrer' href={getHomePermalink()} class='btn ml-4'>返回主页</a>
       </div>
     </div>
   </section>
