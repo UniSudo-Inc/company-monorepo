@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { getHomePermalink } from '@/utils/permalinks';
+import { getHomePermalinkEn } from '@/utils/permalinks';
 
 const title = `Error 404`;
 ---
@@ -17,7 +17,7 @@ const title = `Error 404`;
         <p class='mb-8 mt-4 text-lg text-muted dark:text-slate-400'>
           But don't worry, you can find many other things on our homepage.
         </p>
-        <a rel='noopener noreferrer' href={getHomePermalink()} class='btn ml-4'>返回主页</a>
+        <a rel='noopener noreferrer' href={getHomePermalinkEn()} class='btn ml-4'>Back to homepage</a>
       </div>
     </div>
   </section>

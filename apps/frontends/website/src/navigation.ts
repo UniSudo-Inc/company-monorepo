@@ -1,4 +1,4 @@
-import { getPermalink, getAsset } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -183,7 +183,7 @@ export const headerDataEn = {
       href: getPermalink('/en/contact'),
     },
   ],
-  actions: [{ text: 'Join Us', href: '/en/career', target: '_blank' }],
+  actions: [{ text: 'Join Us', href: getPermalink('/en/career'), target: '_blank' }],
 };
 
 export const footerData = {
@@ -341,20 +341,28 @@ export const footerDataEn = {
       title: 'Solutions',
       links: [
         {
-          text: 'Intelligent Manufacturing',
-          href: getPermalink('/en/solutions/industry'),
+          text: 'Digital Human Exhibition',
+          href: getPermalink('/en/solutions/digital-human'),
         },
         {
-          text: 'Smart Traffic',
-          href: getPermalink('/en/solutions/transport'),
+          text: 'Data Service',
+          href: getPermalink('/en/solutions/data-service'),
+        },
+        {
+          text: 'Model Training',
+          href: getPermalink('/en/solutions/model-training'),
         },
         {
           text: 'Customer Service',
           href: getPermalink('/en/solutions/customer-service'),
         },
         {
-          text: 'Enterprise Service',
-          href: getPermalink('/en/solutions/enterprise'),
+          text: 'Enterprise Digitalization',
+          href: getPermalink('/en/solutions/enterprise-digitalization'),
+        },
+        {
+          text: 'Industry Solutions',
+          href: getPermalink('/en/solutions/industry-solutions'),
         },
       ],
     },
@@ -370,8 +378,12 @@ export const footerDataEn = {
           href: getPermalink('/en/roadmap'),
         },
         {
-          text: 'Team Introduction',
-          href: getPermalink('/en/team'),
+          text: 'Technology Innovation',
+          href: getPermalink('/en/technology'),
+        },
+        {
+          text: 'Contact Us',
+          href: getPermalink('/en/contact'),
         },
         {
           text: 'Join Us',

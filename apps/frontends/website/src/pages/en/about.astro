@@ -12,6 +12,7 @@ import huaweiLogo from '@/assets/images/huawei.png';
 import ppioLogo from '@/assets/images/ppio.png';
 import amazonLogo from '@/assets/images/amazon.png';
 import cloudflareLogo from '@/assets/images/cloudflare.png';
+import { getHomePermalinkEn, getPermalink } from '@/utils/permalinks';
 
 const metadata = {
   title: 'About Us',
@@ -159,7 +160,7 @@ const metadata = {
     isReversed={true}
     callToAction={{
       text: 'Back to Homepage',
-      href: '/',
+      href: getHomePermalinkEn(),
     }}
     items={[
       {

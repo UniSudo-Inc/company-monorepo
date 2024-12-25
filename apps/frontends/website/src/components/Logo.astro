@@ -2,10 +2,11 @@
 import { Image } from 'astro:assets';
 import { SITE } from 'astrowind:config';
 import logoDark from '@/assets/images/logo-dark.png';
+import logo from '@/assets/images/logo.png';
 ---
 
-<!-- FIXME: light mode logo -->
-<Image src={logoDark} alt='unisudo' height={23} width={23} />
+<Image src={logo} alt='unisudo' height={23} width={23} class='block dark:hidden' />
+<Image src={logoDark} alt='unisudo' height={23} width={23} class='hidden dark:block' />
 <span
   class='ml-2 self-center whitespace-nowrap text-2xl font-bold text-gray-900 dark:text-white md:text-xl rtl:ml-0 rtl:mr-2'
 >
