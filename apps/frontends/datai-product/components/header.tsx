@@ -26,9 +26,6 @@ interface NavItem {
 
 export function Header() {
   const { t, i18n } = useTranslation();
-  // const [currentLanguage, setCurrentLanguage] = useState(
-  //   languages.find((lang) => lang.code === i18n.language) || languages[0],
-  // );
   const [fontSize, setFontSize] = useState("1rem");
 
   useEffect(() => {
@@ -38,13 +35,6 @@ export function Header() {
       setFontSize("1rem");
     }
   }, [i18n.language]);
-
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-    // setCurrentLanguage(
-    //   languages.find((lang) => lang.code === lng) || languages[0],
-    // );
-  };
 
   const navItems: NavItem[] = [
     { title: t("nav.userManual"), href: "/manual" },
@@ -120,7 +110,7 @@ export function Header() {
               {languages.map((lang) => (
                 <DropdownMenuItem
                   key={lang.code}
-                  onClick={() => changeLanguage(lang.code)}
+                  onClick={() => i18n.changeLanguage(lang.code)}
                 >
                   {lang.name}
                 </DropdownMenuItem>
