@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "userManual": "Manuel d'utilisation",
+    "aboutUs": "À propos de nous",
+    "companyProfile": "Profil de l'entreprise",
+    "teamIntroduction": "Présentation de l'équipe",
+    "contactUs": "Contactez-nous",
+    "companyHomepage": "Page d'accueil de l'entreprise",
+    "sudokuHomepage": "Page d'accueil Sudoku",
+    "tts": "TTS",
+    "aiVoiceCustomerService": "Service Client Vocal IA",
+    "workflowPlatform": "Plateforme de Flux de Travail"
+  },
+  "login": "Connexion",
+  "register": "S'inscrire",
+  "hero": {
+    "title": "Bienvenue sur l'Assistant de Données AI Datai",
+    "subtitle": "Rendre le traitement des données simple, rapide et intelligent",
+    "startButton": "Commencer"
+  },
+  "products": {
+    "dataiAssistant": "Assistant de Données AI Datai",
+    "interruptibleTTS": "TTS Interruptible",
+    "aiVoiceCustomerService": "Service Client Vocal IA",
+    "workflowPlatform": "Plateforme de Flux de Travail",
+    "sudokuHomepage": "Page d'accueil Sudoku",
+    "tts": "TTS"
+  },
+  "caseStudies": {
+    "title": "Études de Cas",
+    "finance": "Analyse de Données Financières",
+    "healthcare": "Traitement de Données de Santé",
+    "education": "Gestion de Données Éducatives",
+    "retail": "Insights de Données de Vente au Détail",
+    "videoNotSupported": "Votre navigateur ne prend pas en charge la balise vidéo.",
+    "selectCase": "Sélectionner une Étude de Cas",
+    "productIntro": "Introduction au Produit",
+    "quickStart": "Démarrage Rapide",
+    "selectPlaceholder": "Sélectionner une étude de cas"
+  },
+  "footer": {
+    "copyright": "© {{year}} Unisudo .Inc",
+    "allRightsReserved": "Tous droits réservés.",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions d'Utilisation",
+    "contactUs": "Contactez-nous",
+    "icpRecord": "Licence ICP : XXXXXXXX",
+    "publicSecurityRecord": "Enregistrement de Sécurité Publique : XXXXXXXXXXXX"
+  },
+  "pricing": {
+    "title": "Choisissez votre plan",
+    "basic": {
+      "name": "Basique",
+      "price": "Gratuit",
+      "feature1": "Fonctionnalités Excel et de transparence des données",
+      "feature2": "Outils de base gratuits à vie pour l'opération et l'analyse des données",
+      "feature3": "Convient aux utilisateurs individuels et aux petits projets",
+      "cta": "Commencer maintenant"
+    },
+    "standard": {
+      "name": "Standard",
+      "price": "Gratuit pour une durée limitée",
+      "originalPrice": "1,5€/mois",
+      "feature1": "Toutes les fonctionnalités d'exploration de données",
+      "feature2": "Convient aux utilisateurs nécessitant des analyses de données complexes et la génération de rapports",
+      "feature3": "Fournit des services complets d'analyse de données",
+      "cta": "Choisir ce plan"
+    },
+    "enterprise": {
+      "name": "Entreprise",
+      "price": "Support commercial",
+      "feature1": "Déploiement local : Solutions de déploiement local personnalisées",
+      "feature2": "Adaptation des paramètres de recherche : Adaptation des paramètres selon les besoins de recherche",
+      "feature3": "Formation d'experts : Fournit des services de formation professionnelle en analyse de données",
+      "feature4": "Personnalisation d'algorithmes : Personnalisation d'algorithmes selon les besoins spécifiques",
+      "feature5": "Convient aux grandes entreprises ou aux institutions de recherche",
+      "contactUs": "Contactez-nous",
+      "emailSubject": "Demande de renseignements sur la version Entreprise",
+      "emailBody": "Je suis intéressé(e) par la version Entreprise et j'aimerais obtenir plus d'informations."
+    }
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "items": [
+      {
+        "question": "Comment fonctionne l'Assistant de Données AI Datai ?",
+        "answer": "L'Assistant de Données AI Datai utilise une technologie d'intelligence artificielle avancée pour aider les utilisateurs à traiter et analyser rapidement de grandes quantités de données. Il peut identifier automatiquement les types de données, fournir des fonctions de nettoyage et de transformation intelligentes, et générer des rapports visuels intuitifs."
+      },
+      {
+        "question": "Ai-je besoin de connaissances en programmation pour utiliser l'Assistant de Données AI Datai ?",
+        "answer": "Non. L'Assistant de Données AI Datai est conçu pour être très convivial, et même les utilisateurs sans expérience en programmation peuvent facilement commencer à l'utiliser. Nous fournissons une interface intuitive et des opérations guidées pour rendre le traitement des données simple et facile à comprendre."
+      },
+      {
+        "question": "Quels formats de données l'Assistant de Données AI Datai prend-il en charge ?",
+        "answer": "Nous prenons en charge une variété de formats de données courants, y compris, mais sans s'y limiter, Excel, CSV, JSON, XML, etc. De plus, nous prenons également en charge les connexions directes à diverses bases de données telles que MySQL, PostgreSQL, MongoDB, etc."
+      },
+      {
+        "question": "Comment la sécurité des données est-elle assurée ?",
+        "answer": "La sécurité des données est notre priorité absolue. Tout le traitement des données est effectué localement et ne sera pas téléchargé sur le cloud. Nous utilisons une technologie de cryptage avancée pour protéger vos données et fournissons des mesures de sécurité telles que l'authentification multifactorielle."
+      },
+      {
+        "question": "Proposez-vous des services de personnalisation pour les entreprises ?",
+        "answer": "Oui, nous proposons des services de personnalisation de niveau entreprise. Notre équipe peut développer des solutions de traitement de données personnalisées en fonction de vos besoins spécifiques, y compris le déploiement local, l'intégration API, la formation exclusive et d'autres services."
+      }
+    ]
+  }
+}

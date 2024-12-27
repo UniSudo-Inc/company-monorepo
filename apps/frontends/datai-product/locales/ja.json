@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "userManual": "ユーザーマニュアル",
+    "aboutUs": "会社概要",
+    "companyProfile": "会社プロフィール",
+    "teamIntroduction": "チーム紹介",
+    "contactUs": "お問い合わせ",
+    "companyHomepage": "会社ホームページ",
+    "sudokuHomepage": "数独ホームページ",
+    "tts": "TTS",
+    "aiVoiceCustomerService": "AIボイスカスタマーサービス",
+    "workflowPlatform": "ワークフロープラットフォーム"
+  },
+  "login": "ログイン",
+  "register": "登録",
+  "hero": {
+    "title": "Datai AIデータアシスタントへようこそ",
+    "subtitle": "データ処理をシンプル、迅速、インテリジェントに",
+    "startButton": "始めましょう"
+  },
+  "products": {
+    "dataiAssistant": "Datai AIデータアシスタント",
+    "interruptibleTTS": "中断可能なTTS",
+    "aiVoiceCustomerService": "AIボイスカスタマーサービス",
+    "workflowPlatform": "ワークフロープラットフォーム",
+    "sudokuHomepage": "数独ホームページ",
+    "tts": "TTS"
+  },
+  "caseStudies": {
+    "title": "ケーススタディ",
+    "finance": "金融データ分析",
+    "healthcare": "医療データ処理",
+    "education": "教育データ管理",
+    "retail": "小売データインサイト",
+    "videoNotSupported": "お使いのブラウザはビデオタグをサポートしていません。",
+    "selectCase": "ケーススタディを選択",
+    "productIntro": "製品紹介",
+    "quickStart": "クイックスタート",
+    "selectPlaceholder": "ケーススタディを選択"
+  },
+  "footer": {
+    "copyright": "© {{year}} Unisudo .Inc",
+    "allRightsReserved": "全著作権所有。",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約",
+    "contactUs": "お問い合わせ",
+    "icpRecord": "ICP許可証番号：XXXXXXXX",
+    "publicSecurityRecord": "公安備案番号：XXXXXXXXXXXX"
+  },
+  "pricing": {
+    "title": "プランを選択",
+    "basic": {
+      "name": "ベーシック",
+      "price": "無料",
+      "feature1": "ExcelとデータTransparency機能",
+      "feature2": "基本的なデータ操作と分析ツールを永久無料で提供",
+      "feature3": "個人ユーザーや小規模プロジェクトに適しています",
+      "cta": "今すぐ始める"
+    },
+    "standard": {
+      "name": "スタンダード",
+      "price": "期間限定無料",
+      "originalPrice": "150円/月",
+      "feature1": "すべてのデータ探索機能",
+      "feature2": "複雑なデータ分析とレポート生成が必要なユーザーに適しています",
+      "feature3": "包括的なデータ分析サービスを提供",
+      "cta": "プランを選択"
+    },
+    "enterprise": {
+      "name": "エンタープライズ",
+      "price": "ビジネスサポート",
+      "feature1": "ローカル展開：カスタマイズされたローカル展開ソリューション",
+      "feature2": "研究パラメータ適応：研究ニーズに応じたパラメータ適応",
+      "feature3": "専門家トレーニング：専門的なデータ分析トレーニングサービスを提供",
+      "feature4": "アルゴリズムカスタマイズ：特別なニーズに応じたアルゴリズムのカスタマイズ",
+      "feature5": "大企業や研究機関に適しています",
+      "contactUs": "お問い合わせ",
+      "emailSubject": "エンタープライズ版に関する問い合わせ",
+      "emailBody": "エンタープライズ版に興味があり、詳細情報を知りたいです。"
+    }
+  },
+  "faq": {
+    "title": "よくある質問",
+    "items": [
+      {
+        "question": "Datai AIデータアシスタントはどのように機能しますか？",
+        "answer": "Datai AIデータアシスタントは、先進的な人工知能技術を活用して、ユーザーが大量のデータを迅速に処理・分析できるよう支援します。データタイプを自動的に識別し、インテリジェントなクリーニングと変換機能を提供し、直感的な視覚的レポートを生成します。"
+      },
+      {
+        "question": "Datai AIデータアシスタントを使用するにはプログラミングの知識が必要ですか？",
+        "answer": "いいえ、必要ありません。Datai AIデータアシスタントは非常にユーザーフレンドリーに設計されており、プログラミング経験のないユーザーでも簡単に使い始めることができます。直感的なインターフェースとガイド付きの操作により、データ処理を簡単で分かりやすいものにしています。"
+      },
+      {
+        "question": "Datai AIデータアシスタントはどのようなデータ形式をサポートしていますか？",
+        "answer": "Excel、CSV、JSON、XMLなど、さまざまな一般的なデータ形式をサポートしています。さらに、MySQL、PostgreSQL、MongoDBなど、さまざまなデータベースへの直接接続もサポートしています。"
+      },
+      {
+        "question": "データセキュリティはどのように確保されていますか？",
+        "answer": "データセキュリティは最優先事項です。すべてのデータ処理はローカルで行われ、クラウドにアップロードされることはありません。高度な暗号化技術を使用してデータを保護し、多要素認証などのセキュリティ対策を提供しています。"
+      },
+      {
+        "question": "企業向けのカスタマイズサービスは提供していますか？",
+        "answer": "はい、企業レベルのカスタマイズサービスを提供しています。当社のチームは、お客様の具体的なニーズに基づいて、ローカル展開、API統合、専用トレーニングなどのサービスを含む、カスタマイズされたデータ処理ソリューションを開発することができます。"
+      }
+    ]
+  }
+}

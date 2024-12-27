@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "userManual": "User Manual",
+    "aboutUs": "About Us",
+    "companyProfile": "Company Profile",
+    "teamIntroduction": "Team Introduction",
+    "contactUs": "Contact Us",
+    "companyHomepage": "Company Homepage",
+    "sudokuHomepage": "Sudoku Homepage",
+    "tts": "TTS",
+    "aiVoiceCustomerService": "AI Voice Customer Service",
+    "workflowPlatform": "Workflow Platform"
+  },
+  "login": "Login",
+  "register": "Register",
+  "hero": {
+    "title": "Welcome to Datai AI Data Assistant",
+    "subtitle": "Making data processing simple, fast, and intelligent",
+    "startButton": "Get Started"
+  },
+  "products": {
+    "dataiAssistant": "Datai AI Data Assistant",
+    "interruptibleTTS": "Interruptible TTS",
+    "aiVoiceCustomerService": "AI Voice Customer Service",
+    "workflowPlatform": "Workflow Platform",
+    "sudokuHomepage": "Sudoku Homepage",
+    "tts": "TTS"
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "finance": "Financial Data Analysis",
+    "healthcare": "Healthcare Data Processing",
+    "education": "Education Data Management",
+    "retail": "Retail Data Insights",
+    "videoNotSupported": "Your browser does not support the video tag.",
+    "selectCase": "Select a Case Study",
+    "productIntro": "Product Introduction",
+    "quickStart": "Quick Start",
+    "selectPlaceholder": "Select a case study"
+  },
+  "footer": {
+    "copyright": "© {{year}} Unisudo .Inc",
+    "allRightsReserved": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contactUs": "Contact Us",
+    "icpRecord": "ICP License: XXXXXXXX",
+    "publicSecurityRecord": "Public Security Record: XXXXXXXXXXXX"
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "basic": {
+      "name": "Basic",
+      "price": "Free",
+      "feature1": "Excel and data transparency features",
+      "feature2": "Free basic data operation and analysis tools forever",
+      "feature3": "Suitable for individual users and small projects",
+      "cta": "Start Now"
+    },
+    "standard": {
+      "name": "Standard",
+      "price": "Free for a limited time",
+      "originalPrice": "$1.5/month",
+      "feature1": "All data exploration features",
+      "feature2": "Suitable for users who need complex data analysis and report generation",
+      "feature3": "Provides comprehensive data analysis services",
+      "cta": "Choose Plan"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Business Support",
+      "feature1": "Local deployment: Customized local deployment solutions",
+      "feature2": "Research parameter adaptation: Adapt parameters according to research needs",
+      "feature3": "Expert training: Provide professional data analysis training services",
+      "feature4": "Algorithm customization: Customize algorithms according to special needs",
+      "feature5": "Suitable for large enterprises or research institutions",
+      "contactUs": "Contact Us",
+      "emailSubject": "Enterprise Version Inquiry",
+      "emailBody": "I'm interested in the Enterprise version and would like to know more information."
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "How does Datai AI Data Assistant work?",
+        "answer": "Datai AI Data Assistant uses advanced artificial intelligence technology to help users quickly process and analyze large amounts of data. It can automatically identify data types, provide intelligent cleaning and transformation functions, and generate intuitive visual reports."
+      },
+      {
+        "question": "Do I need programming knowledge to use Datai AI Data Assistant?",
+        "answer": "No. Datai AI Data Assistant is designed to be very user-friendly, and even users without programming experience can easily get started. We provide an intuitive interface and guided operations to make data processing simple and easy to understand."
+      },
+      {
+        "question": "What data formats does Datai AI Data Assistant support?",
+        "answer": "We support a variety of common data formats, including but not limited to Excel, CSV, JSON, XML, etc. In addition, we also support direct connections to various databases such as MySQL, PostgreSQL, MongoDB, etc."
+      },
+      {
+        "question": "How is data security ensured?",
+        "answer": "Data security is our top priority. All data processing is done locally and will not be uploaded to the cloud. We use advanced encryption technology to protect your data and provide security measures such as multi-factor authentication."
+      },
+      {
+        "question": "Do you provide enterprise customization services?",
+        "answer": "Yes, we provide enterprise-level customization services. Our team can develop customized data processing solutions based on your specific needs, including local deployment, API integration, exclusive training, and other services."
+      }
+    ]
+  }
+}

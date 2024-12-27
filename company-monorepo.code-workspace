@@ -13,6 +13,10 @@
       "path": "apps/frontends/admin"
     },
     {
+      "name": "frontends/datai-product",
+      "path": "apps/frontends/datai-product"
+    },
+    {
       "name": "backends/users",
       "path": "apps/backends/users"
     },
