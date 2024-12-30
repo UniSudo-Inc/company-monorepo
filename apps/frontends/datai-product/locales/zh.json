@@ -1,0 +1,152 @@
+{
+  "hero": {
+    "title": "欢迎使用达泰AI数据助手",
+    "subtitle": "让数据处理变得简单、快速、智能",
+    "startButton": "立即开始"
+  },
+  "nav": {
+    "userManual": "用户手册",
+    "aboutUs": "关于我们",
+    "companyProfile": "公司简介",
+    "teamIntroduction": "团队介绍",
+    "contactUs": "联系我们",
+    "companyHomepage": "公司主页"
+  },
+  "login": "登录",
+  "register": "注册",
+  "caseStudies": {
+    "title": "相关案例",
+    "finance": "金融数据分析",
+    "healthcare": "医疗数据处理",
+    "education": "教育数据管理",
+    "retail": "零售数据洞察",
+    "videoNotSupported": "您的浏览器不支持视频标签。",
+    "selectCase": "选择案例",
+    "productIntro": "产品介绍",
+    "quickStart": "快速入门",
+    "selectPlaceholder": "选择案例"
+  },
+  "footer": {
+    "copyright": "© {{year}} 上海智独数科技有限公司",
+    "allRightsReserved": "保留所有权利。",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "contactUs": "联系我们",
+    "icpRecord": "京ICP备XXXXXXXX号-X",
+    "publicSecurityRecord": "京公网安备 XXXXXXXXXXXX号"
+  },
+  "features": {
+    "title": "智能数据解决方案的核心优势",
+    "items": [
+      {
+        "title": "开箱即用",
+        "description": "预置多种数据处理模型，快速部署，无需复杂配置，立即创造价值"
+      },
+      {
+        "title": "安全可控",
+        "description": "严格的数据加密和访问控制机制，确保您的数据资产安全无忧"
+      },
+      {
+        "title": "高效智能",
+        "description": "先进的AI算法赋能，实现数据快速处理和智能分析，提升决策效率"
+      },
+      {
+        "title": "简单易用",
+        "description": "直观的用户界面设计，友好的操作体验，让数据分析变得轻松简单"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "选择您的计划",
+    "basic": {
+      "name": "基础版",
+      "price": "免费",
+      "feature1": "Excel和数透表功能",
+      "feature2": "永久免费提供基础的数据操作和分析工具",
+      "feature3": "适合个人用户和小型项目",
+      "cta": "立即使用"
+    },
+    "standard": {
+      "name": "标准版",
+      "price": "限时免费",
+      "originalPrice": "10元/月",
+      "feature1": "数据探索的所有功能",
+      "feature2": "适合需要进行复杂数据分析和报告生成的用户",
+      "feature3": "提供全面的数据分析服务",
+      "cta": "选择计划"
+    },
+    "enterprise": {
+      "name": "企业版",
+      "price": "商务支持",
+      "feature1": "本地部署：定制化的本地部署方案",
+      "feature2": "科研参数适配：根据科研需求适配参数",
+      "feature3": "专家培训：提供专业的数据分析培训服务",
+      "feature4": "算法定制：根据特殊需求定制算法",
+      "feature5": "适合大型企业或研究机构",
+      "contactUs": "联系我们",
+      "emailSubject": "企业版咨询",
+      "emailBody": "我对企业版感兴趣，想了解更多信息。"
+    }
+  },
+  "faq": {
+    "title": "常见问题",
+    "items": [
+      {
+        "question": "达泰AI数据助手是如何工作的？",
+        "answer": "达泰AI数据助手利用先进的人工智能技术，帮助用户快速处理和分析大量数据。它可以自动识别数据类型，提供智能清洗和转换功能，并生成直观的可视化报告。"
+      },
+      {
+        "question": "使用达泰AI数据助手需要编程知识吗？",
+        "answer": "不需要。达泰AI数据助手设计得非常用户友好，即使没有编程经验的用户也能轻松上手。我们提供直观的界面和引导式操作，让数据处理变得简单易懂。"
+      },
+      {
+        "question": "达泰AI数据助手支持哪些数据格式？",
+        "answer": "我们支持多种常见的数据格式，包括但不限于Excel、CSV、JSON、XML等。此外，我们还支持直接连接多种数据库，如MySQL、PostgreSQL、MongoDB等。"
+      },
+      {
+        "question": "数据安全性如何保障？",
+        "answer": "数据安全是我们的首要考虑。所有数据处理都在本地完成，不会上传到云端。我们使用高级加密技术保护您的数据，并提供多重身份验证等安全措施。"
+      },
+      {
+        "question": "是否提供企业定制服务？",
+        "answer": "是的，我们提供企业级定制服务。我们的团队可以根据您的具体需求，开发定制化的数据处理解决方案，包括本地部署、API集成、专属培训等服务。"
+      }
+    ]
+  },
+  "aiArticles": {
+    "title": "AI数据赋能",
+    "readMore": "阅读更多",
+    "items": [
+      {
+        "title": "AI在金融领域的应用",
+        "content": "探讨AI如何改变金融行业的数据分析和风险管理...",
+        "href": "#"
+      },
+      {
+        "title": "医疗健康中的AI数据处理",
+        "content": "AI如何帮助医疗机构更好地利用患者数据...",
+        "href": "#"
+      },
+      {
+        "title": "AI驱动的教育数据分析",
+        "content": "如何利用AI技术优化教育资源分配和个性化学习...",
+        "href": "#"
+      },
+      {
+        "title": "零售业中的AI数据洞察",
+        "content": "AI如何帮助零售商理解消费者行为并优化库存管理...",
+        "href": "#"
+      },
+      {
+        "title": "制造业中的AI预测性维护",
+        "content": "使用AI分析设备数据来预测维护需求，提高生产效率...",
+        "href": "#"
+      },
+      {
+        "title": "AI在农业中的数据应用",
+        "content": "如何利用AI技术分析农业数据，优化作物产量和资源利用...",
+        "href": "#"
+      }
+    ]
+  }
+}
