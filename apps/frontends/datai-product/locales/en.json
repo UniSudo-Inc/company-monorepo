@@ -5,11 +5,7 @@
     "companyProfile": "Company Profile",
     "teamIntroduction": "Team Introduction",
     "contactUs": "Contact Us",
-    "companyHomepage": "Company Homepage",
-    "sudokuHomepage": "Sudoku Homepage",
-    "tts": "TTS",
-    "aiVoiceCustomerService": "AI Voice Customer Service",
-    "workflowPlatform": "Workflow Platform"
+    "companyHomepage": "Company Home"
   },
   "login": "Login",
   "register": "Register",
@@ -17,14 +13,6 @@
     "title": "Welcome to Datai AI Data Assistant",
     "subtitle": "Making data processing simple, fast, and intelligent",
     "startButton": "Get Started"
-  },
-  "products": {
-    "dataiAssistant": "Datai AI Data Assistant",
-    "interruptibleTTS": "Interruptible TTS",
-    "aiVoiceCustomerService": "AI Voice Customer Service",
-    "workflowPlatform": "Workflow Platform",
-    "sudokuHomepage": "Sudoku Homepage",
-    "tts": "TTS"
   },
   "caseStudies": {
     "title": "Case Studies",
@@ -46,6 +34,27 @@
     "contactUs": "Contact Us",
     "icpRecord": "ICP License: XXXXXXXX",
     "publicSecurityRecord": "Public Security Record: XXXXXXXXXXXX"
+  },
+  "features": {
+    "title": "Core Advantages of Intelligent Data Solutions",
+    "items": [
+      {
+        "title": "Ready to Use",
+        "description": "Pre-configured with various data processing models, quick deployment, no complex configuration required, and immediate value creation"
+      },
+      {
+        "title": "Secure and Controllable",
+        "description": "Strict data encryption and access control mechanisms ensure the security of your data assets"
+      },
+      {
+        "title": "Efficient and Intelligent",
+        "description": "Powered by advanced AI algorithms, enabling fast data processing and intelligent analysis, enhancing decision-making efficiency"
+      },
+      {
+        "title": "Simple and Easy to Use",
+        "description": "Intuitive user interface design and friendly operation experience make data analysis easy and simple"
+      }
+    ]
   },
   "pricing": {
     "title": "Choose Your Plan",
@@ -101,6 +110,42 @@
       {
         "question": "Do you provide enterprise customization services?",
         "answer": "Yes, we provide enterprise-level customization services. Our team can develop customized data processing solutions based on your specific needs, including local deployment, API integration, exclusive training, and other services."
+      }
+    ]
+  },
+  "aiArticles": {
+    "title": "AI Data Empowerment",
+    "readMore": "Read More",
+    "items": [
+      {
+        "title": "Application of AI in the Financial Sector",
+        "content": "Exploring how AI is transforming data analysis and risk management in the financial industry...",
+        "href": "#"
+      },
+      {
+        "title": "AI Data Processing in Healthcare",
+        "content": "How AI helps healthcare institutions better utilize patient data...",
+        "href": "#"
+      },
+      {
+        "title": "AI-Driven Educational Data Analysis",
+        "content": "How to use AI technology to optimize educational resource allocation and personalized learning...",
+        "href": "#"
+      },
+      {
+        "title": "AI Data Insights in Retail",
+        "content": "How AI helps retailers understand consumer behavior and optimize inventory management...",
+        "href": "#"
+      },
+      {
+        "title": "Predictive Maintenance in Manufacturing with AI",
+        "content": "Using AI to analyze equipment data to predict maintenance needs and improve production efficiency...",
+        "href": "#"
+      },
+      {
+        "title": "AI Data Applications in Agriculture",
+        "content": "How to use AI technology to analyze agricultural data, optimize crop yields and resource utilization...",
+        "href": "#"
       }
     ]
   }

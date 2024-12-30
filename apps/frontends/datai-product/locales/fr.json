@@ -5,11 +5,7 @@
     "companyProfile": "Profil de l'entreprise",
     "teamIntroduction": "Présentation de l'équipe",
     "contactUs": "Contactez-nous",
-    "companyHomepage": "Page d'accueil de l'entreprise",
-    "sudokuHomepage": "Page d'accueil Sudoku",
-    "tts": "TTS",
-    "aiVoiceCustomerService": "Service Client Vocal IA",
-    "workflowPlatform": "Plateforme de Flux de Travail"
+    "companyHomepage": "Page d'accueil de l'entreprise"
   },
   "login": "Connexion",
   "register": "S'inscrire",
@@ -18,14 +14,7 @@
     "subtitle": "Rendre le traitement des données simple, rapide et intelligent",
     "startButton": "Commencer"
   },
-  "products": {
-    "dataiAssistant": "Assistant de Données AI Datai",
-    "interruptibleTTS": "TTS Interruptible",
-    "aiVoiceCustomerService": "Service Client Vocal IA",
-    "workflowPlatform": "Plateforme de Flux de Travail",
-    "sudokuHomepage": "Page d'accueil Sudoku",
-    "tts": "TTS"
-  },
+
   "caseStudies": {
     "title": "Études de Cas",
     "finance": "Analyse de Données Financières",
@@ -46,6 +35,27 @@
     "contactUs": "Contactez-nous",
     "icpRecord": "Licence ICP : XXXXXXXX",
     "publicSecurityRecord": "Enregistrement de Sécurité Publique : XXXXXXXXXXXX"
+  },
+  "features": {
+    "title": "Principaux avantages des solutions de données intelligentes",
+    "items": [
+      {
+        "title": "Prêt à l'emploi",
+        "description": "Prédéfinis avec divers modèles de traitement de données, déploiement rapide, sans configuration complexe, créez de la valeur immédiatement"
+      },
+      {
+        "title": "Sécurisé et contrôlable",
+        "description": "Mécanismes stricts de cryptage des données et de contrôle d'accès, garantissant la sécurité de vos actifs de données"
+      },
+      {
+        "title": "Efficace et intelligent",
+        "description": "Algorithmes AI avancés permettant un traitement rapide des données et une analyse intelligente, améliorant l'efficacité des décisions"
+      },
+      {
+        "title": "Simple et facile à utiliser",
+        "description": "Conception intuitive de l'interface utilisateur, expérience utilisateur conviviale, rendant l'analyse des données simple et facile"
+      }
+    ]
   },
   "pricing": {
     "title": "Choisissez votre plan",
@@ -101,6 +111,42 @@
       {
         "question": "Proposez-vous des services de personnalisation pour les entreprises ?",
         "answer": "Oui, nous proposons des services de personnalisation de niveau entreprise. Notre équipe peut développer des solutions de traitement de données personnalisées en fonction de vos besoins spécifiques, y compris le déploiement local, l'intégration API, la formation exclusive et d'autres services."
+      }
+    ]
+  },
+  "aiArticles": {
+    "title": "L'IA au service des données",
+    "readMore": "Lire la suite",
+    "items": [
+      {
+        "title": "Applications de l'IA dans le domaine financier",
+        "content": "Explorer comment l'IA transforme l'analyse des données financières et la gestion des risques...",
+        "href": "#"
+      },
+      {
+        "title": "Traitement des données de santé par l'IA",
+        "content": "Comment l'IA aide les institutions médicales à mieux utiliser les données des patients...",
+        "href": "#"
+      },
+      {
+        "title": "Analyse des données éducatives pilotée par l'IA",
+        "content": "Comment utiliser la technologie IA pour optimiser la répartition des ressources éducatives et l'apprentissage personnalisé...",
+        "href": "#"
+      },
+      {
+        "title": "Insights des données de vente au détail grâce à l'IA",
+        "content": "Comment l'IA aide les détaillants à comprendre le comportement des consommateurs et à optimiser la gestion des stocks...",
+        "href": "#"
+      },
+      {
+        "title": "Maintenance prédictive dans l'industrie manufacturière grâce à l'IA",
+        "content": "Utiliser l'IA pour analyser les données des équipements afin de prévoir les besoins de maintenance et améliorer l'efficacité de la production...",
+        "href": "#"
+      },
+      {
+        "title": "Applications des données agricoles par l'IA",
+        "content": "Comment utiliser la technologie IA pour analyser les données agricoles, optimiser les rendements des cultures et l'utilisation des ressources...",
+        "href": "#"
       }
     ]
   }

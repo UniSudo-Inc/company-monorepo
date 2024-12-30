@@ -4,25 +4,13 @@
     "subtitle": "让数据处理变得简单、快速、智能",
     "startButton": "立即开始"
   },
-  "products": {
-    "dataiAssistant": "达泰AI数据助手",
-    "interruptibleTTS": "可打断TTS",
-    "aiVoiceCustomerService": "智能语音客服",
-    "workflowPlatform": "工作流平台",
-    "sudokuHomepage": "数独主页",
-    "tts": "TTS"
-  },
   "nav": {
     "userManual": "用户手册",
     "aboutUs": "关于我们",
     "companyProfile": "公司简介",
     "teamIntroduction": "团队介绍",
     "contactUs": "联系我们",
-    "companyHomepage": "公司主页",
-    "sudokuHomepage": "数独主页",
-    "tts": "TTS",
-    "aiVoiceCustomerService": "智能语音客服",
-    "workflowPlatform": "工作流平台"
+    "companyHomepage": "公司主页"
   },
   "login": "登录",
   "register": "注册",

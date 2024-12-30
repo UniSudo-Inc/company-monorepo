@@ -5,11 +5,7 @@
     "companyProfile": "会社プロフィール",
     "teamIntroduction": "チーム紹介",
     "contactUs": "お問い合わせ",
-    "companyHomepage": "会社ホームページ",
-    "sudokuHomepage": "数独ホームページ",
-    "tts": "TTS",
-    "aiVoiceCustomerService": "AIボイスカスタマーサービス",
-    "workflowPlatform": "ワークフロープラットフォーム"
+    "companyHomepage": "会社ホームページ"
   },
   "login": "ログイン",
   "register": "登録",
@@ -17,14 +13,6 @@
     "title": "Datai AIデータアシスタントへようこそ",
     "subtitle": "データ処理をシンプル、迅速、インテリジェントに",
     "startButton": "始めましょう"
-  },
-  "products": {
-    "dataiAssistant": "Datai AIデータアシスタント",
-    "interruptibleTTS": "中断可能なTTS",
-    "aiVoiceCustomerService": "AIボイスカスタマーサービス",
-    "workflowPlatform": "ワークフロープラットフォーム",
-    "sudokuHomepage": "数独ホームページ",
-    "tts": "TTS"
   },
   "caseStudies": {
     "title": "ケーススタディ",
@@ -46,6 +34,27 @@
     "contactUs": "お問い合わせ",
     "icpRecord": "ICP許可証番号：XXXXXXXX",
     "publicSecurityRecord": "公安備案番号：XXXXXXXXXXXX"
+  },
+  "features": {
+    "title": "インテリジェントデータソリューションの主要な利点",
+    "items": [
+      {
+        "title": "すぐに使える",
+        "description": "多くのデータ処理モデルが事前に設定されており、迅速に展開でき、複雑な設定は不要で、すぐに価値を生み出します"
+      },
+      {
+        "title": "安全で制御可能",
+        "description": "厳格なデータ暗号化とアクセス制御メカニズムにより、データ資産の安全性を確保します"
+      },
+      {
+        "title": "効率的でインテリジェント",
+        "description": "先進的なAIアルゴリズムを活用し、データの迅速な処理とインテリジェントな分析を実現し、意思決定の効率を向上させます"
+      },
+      {
+        "title": "簡単で使いやすい",
+        "description": "直感的なユーザーインターフェースデザインと使いやすい操作体験により、データ分析が簡単になります"
+      }
+    ]
   },
   "pricing": {
     "title": "プランを選択",
@@ -101,6 +110,42 @@
       {
         "question": "企業向けのカスタマイズサービスは提供していますか？",
         "answer": "はい、企業レベルのカスタマイズサービスを提供しています。当社のチームは、お客様の具体的なニーズに基づいて、ローカル展開、API統合、専用トレーニングなどのサービスを含む、カスタマイズされたデータ処理ソリューションを開発することができます。"
+      }
+    ]
+  },
+  "aiArticles": {
+    "title": "AIデータの活用",
+    "readMore": "もっと読む",
+    "items": [
+      {
+        "title": "金融分野におけるAIの応用",
+        "content": "AIが金融業界のデータ分析とリスク管理をどのように変革しているかを探ります...",
+        "href": "#"
+      },
+      {
+        "title": "医療におけるAIデータ処理",
+        "content": "AIが医療機関の患者データの活用をどのように支援しているか...",
+        "href": "#"
+      },
+      {
+        "title": "AI駆動の教育データ分析",
+        "content": "AI技術を活用して教育資源の配分と個別学習を最適化する方法...",
+        "href": "#"
+      },
+      {
+        "title": "小売業におけるAIデータインサイト",
+        "content": "AIが小売業者の消費者行動の理解と在庫管理の最適化をどのように支援しているか...",
+        "href": "#"
+      },
+      {
+        "title": "製造業におけるAI予測保守",
+        "content": "AIを使用して設備データを分析し、保守ニーズを予測し、生産効率を向上させる方法...",
+        "href": "#"
+      },
+      {
+        "title": "農業におけるAIデータの応用",
+        "content": "AI技術を活用して農業データを分析し、作物の収量と資源利用を最適化する方法...",
+        "href": "#"
       }
     ]
   }
