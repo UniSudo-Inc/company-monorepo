@@ -46,7 +46,7 @@ export function Header() {
       <div className="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
         <div className="flex items-center space-x-2">
           <Image
-            src={"/assets/icon.png"}
+            src={"/assets/logo.svg"}
             alt="logo"
             height={20}
             width={20}
