@@ -73,7 +73,7 @@ export const headerData = {
         },
         {
           text: 'UniData',
-          href: 'https://datai.limit.dev/',
+          href: 'https://datai-product.vercel.app/',
         },
         {
           text: '数据标注服务',
@@ -166,7 +166,7 @@ export const headerDataEn = {
         },
         {
           text: 'UniData',
-          href: 'https://datai.limit.dev/',
+          href: 'https://datai-product.vercel.app/',
         },
         {
           text: 'Data Annotation Service',
@@ -205,7 +205,7 @@ export const footerData = {
         },
         {
           text: 'UniData',
-          href: 'https://datai.limit.dev/',
+          href: 'https://datai-product.vercel.app/',
         },
         {
           text: '数据标注服务',
@@ -325,7 +325,7 @@ export const footerDataEn = {
         },
         {
           text: 'UniData',
-          href: 'https://datai.limit.dev/',
+          href: 'https://datai-product.vercel.app/',
         },
         {
           text: 'Data Annotation Service',
