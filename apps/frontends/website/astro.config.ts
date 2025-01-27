@@ -88,6 +88,7 @@ export default defineConfig({
       },
     },
     optimizeDeps: {
+      include: ['lit', 'lit/decorators.js'],
       exclude: ['onnxruntime-web'],
     },
     plugins: [

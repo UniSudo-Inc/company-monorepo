@@ -2,7 +2,9 @@
   "extends": "@company/configs/typescript/astro.tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "rootDir": "."
+    "rootDir": ".",
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false
   },
   "include": ["**/*"],
   "exclude": ["src", "e2e", "dist", "build", "node_modules"],

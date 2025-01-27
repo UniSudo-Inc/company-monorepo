@@ -9,9 +9,11 @@ export interface Props {
 const { title, classes } = Astro.props;
 ---
 
-<section class="dark:bg-dark">
-  <div class=`max-w-6xl mx-auto flex flex-col gap-4 items-center justify-center motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${classes}`>
-    {title && <span class="text-3xl font-bold mb-4">{title}</span>}
-    <LiveChatDemo client:load />
+<section class='dark:bg-dark'>
+  <div
+    class=`max-w-6xl mx-auto flex flex-col gap-4 items-center justify-center motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${classes}`
+  >
+    {title && <span class='mb-4 text-3xl font-bold'>{title}</span>}
+    <LiveChatDemo client:only='react' />
   </div>
 </section>
