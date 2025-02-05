@@ -29,6 +29,9 @@ export class LiveChatDemo extends LitElement {
   private _visualizerContainer!: HTMLDivElement;
 
   @state()
+  private language = '';
+
+  @state()
   private _vad?: MicVAD;
 
   @state()
@@ -110,6 +113,11 @@ export class LiveChatDemo extends LitElement {
       }
     }
   `;
+
+  constructor() {
+    super();
+    this.language = (/\/([a-z]{2})\/products/.exec(window.location.pathname))?.[1] || '';
+  }
 
   protected override render(): TemplateResult {
     return html`${this._status !== 'ready' ? this._renderButton() : this._renderSession()}`;
@@ -312,7 +320,18 @@ export class LiveChatDemo extends LitElement {
       vad.start();
     };
 
+    const setLanguage = async (): Promise<void> => {
+      console.debug(`set language to ${  this.language}`);
+      if (this.language) {
+        await participant.publishData(Buffer.from(this.language), {
+          topic: 'lang',
+          reliable: true,
+        });
+      }
+    };
+
     void initVad();
+    void setLanguage();
   };
 
   private _handleLocalTrackUnpublished = (publication: LocalTrackPublication, participant: LocalParticipant): void => {
