@@ -72,7 +72,7 @@ export function Pricing() {
                     </a>
                   ) : (
                     <a
-                      href="https://datai.limit.dev/"
+                      href="https://datai.unisudo.dev/"
                       className="w-full bg-[#217346] text-white hover:bg-[#1e6b3e] mt-auto py-2 px-4 rounded text-center text-base"
                       target="_blank"
                       rel="noopener noreferrer"

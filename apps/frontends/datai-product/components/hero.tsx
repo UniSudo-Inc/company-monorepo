@@ -67,7 +67,7 @@ export function Hero() {
   }, [controls]);
 
   const handleStartClick = () => {
-    router.push("https://datai.limit.dev");
+    router.push("https://datai.unisudo.dev");
   };
 
   return (
