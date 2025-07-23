@@ -68,9 +68,13 @@ export const headerData = {
           href: 'https://studio.limit.dev/dash/overview',
         },
         {
-          text: 'UniSpeech',
-          href: getPermalink('/speech'),
+          text: 'A1 Platform',
+          href: 'https://a1.unisudo.dev/landing-page',
         },
+        // {
+        //   text: 'UniSpeech',
+        //   href: getPermalink('/speech'),
+        // },
         {
           text: 'UniData',
           href: 'https://datai.unisudo.com/',
@@ -161,9 +165,13 @@ export const headerDataEn = {
           href: 'https://studio.limit.dev/dash/overview',
         },
         {
-          text: 'UniSpeech',
-          href: getPermalink('/en/speech'),
+          text: 'A1 Platform',
+          href: 'https://a1.unisudo.dev/landing-page',
         },
+        // {
+        //   text: 'UniSpeech',
+        //   href: getPermalink('/en/speech'),
+        // },
         {
           text: 'UniData',
           href: 'https://datai.unisudo.com/',
@@ -200,9 +208,13 @@ export const footerData = {
           href: 'https://studio.limit.dev/dash/overview',
         },
         {
-          text: 'UniSpeech',
-          href: getPermalink('/en/speech'),
+          text: 'A1 Platform',
+          href: 'https://a1.unisudo.dev/landing-page',
         },
+        // {
+        //   text: 'UniSpeech',
+        //   href: getPermalink('/en/speech'),
+        // },
         {
           text: 'UniData',
           href: 'https://datai.unisudo.com/',
@@ -320,9 +332,13 @@ export const footerDataEn = {
           href: 'https://studio.limit.dev/dash/overview',
         },
         {
-          text: 'UniSpeech',
-          href: getPermalink('/en/speech'),
+          text: 'A1 Platform',
+          href: 'https://a1.unisudo.dev/landing-page',
         },
+        // {
+        //   text: 'UniSpeech',
+        //   href: getPermalink('/en/speech'),
+        // },
         {
           text: 'UniData',
           href: 'https://datai.unisudo.com/',
