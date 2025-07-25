@@ -5,6 +5,7 @@ import Features from '@/components/widgets/Features.astro';
 import Features2 from '@/components/widgets/Features2.astro';
 import Content from '@/components/widgets/Content.astro';
 import { getPermalink } from '@/utils/permalinks';
+import videoUrl from '@/assets/videos/a1.mp4';
 
 const metadata = {
   title: '上海智独数科技有限公司 — 赋能SUDO权限的独特AI解决方案',
@@ -24,8 +25,18 @@ const metadata = {
       },
       { text: '公司简介', href: getPermalink('/about') },
     ]}
-    image={{ src: '@/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
   >
+    <Fragment slot='video'>
+      <video
+        src={videoUrl}
+        autoplay
+        muted
+        loop
+        playsinline
+        style={{ borderRadius: '20px', width: '900px', height: 'auto' }}
+      />
+    </Fragment>
+
     <Fragment slot='title'>
       赋能SUDO权限的
       <span class='highlight text-accent dark:text-white'>独特AI解决方案</span>

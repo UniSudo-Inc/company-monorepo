@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/PageLayout.astro';
 import HeroText from '@/components/widgets/HeroText.astro';
+import ContactUs from '@/components/widgets/Contact.astro';
 import Features2 from '@/components/widgets/Features2.astro';
 
 const metadata = {
@@ -10,7 +11,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <div class="text-center">
-    <HeroText tagline=' ' title='<span class="text-primary">We look forward to your communication!</span>' />
+    <HeroText tagline=' ' title='<span class="text-primary">We look forward to hearing from you!</span>' />
 
     <div class="relative mx-auto mt-4 h-16 w-16">
       <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
@@ -22,6 +23,55 @@ const metadata = {
     </div>
   </div>
 
+  <!-- Contact Us Form -->
+  <ContactUs
+    id='form'
+    title='Business Inquiry'
+    subtitle='Please fill out the form below, and we will get back to you as soon as possible.'
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Your Name',
+        placeholder: 'Enter your name'
+      },
+      {
+        type: 'text',
+        name: 'company',
+        label: 'Company Name',
+        placeholder: 'Enter your company name'
+      },
+       {
+        type: 'tel',
+        name: 'phone',
+        label: 'Phone Number',
+        placeholder: 'Enter your phone number'
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email Address',
+        placeholder: 'you@example.com'
+      }
+    ]}
+    textarea={{
+      name: 'message',
+      label: 'Your Needs or Partnership Interests',
+      placeholder: 'Please describe your needs in detail here...'
+    }}
+    button='Submit Information'
+  >
+    <Fragment slot='bg'>
+      <div
+        id='snackbar-toast'
+        class='toast absolute bottom-6 right-12 z-10 rounded-md border bg-white p-4 shadow-lg dark:bg-slate-900'
+        hidden
+      >
+      </div>
+    </Fragment>
+  </ContactUs>
+
+  <!-- Features Section -->
   <Features2
     title='We are always here for you!'
     items={[
@@ -49,9 +99,102 @@ const metadata = {
       },
       {
         title: 'Company Address',
-        description: 'No. 1 Building, Block 2, Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai',
+        description: 'Room 802, 8th Floor, Building 1, Block 2, Gangcheng Plaza, 55 Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai',
         icon: 'tabler:map-pin',
       },
     ]}
   />
 </Layout>
+
+<script>
+  function toast(message: string) {
+    const toastElem = document.getElementById('snackbar-toast');
+    if (!toastElem) {
+      console.error('Could not find the toast element');
+      return;
+    }
+    toastElem.innerText = message;
+    toastElem.hidden = false;
+    setTimeout(() => {
+      toastElem.hidden = true;
+      toastElem.innerText = '';
+    }, 3000);
+  }
+
+  const form = document.querySelector('#form form');
+  const button = form?.querySelector('button[type="submit"]');
+
+  if (!form || !button) {
+    console.error('Could not find the contact form or submit button');
+  } else {
+    const originalButtonHTML = button.innerHTML;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      button.setAttribute('disabled', '');
+      button.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Submitting...
+      `;
+
+      const formData = new FormData(form as HTMLFormElement);
+      const formProps = Object.fromEntries(formData);
+
+      const payload = {
+        name: formProps["name"],
+        email: formProps["email"],
+        phone: formProps["phone"],
+        company: formProps["company"],
+        message: formProps["message"],
+        subject: 'Business Inquiry',
+        source: 'Website Contact Page'
+      };
+
+      const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+      const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+
+      if (!supabaseUrl || !supabaseAnonKey) {
+        console.error('Supabase URL or Anon Key is not defined in environment variables.');
+        toast('Client configuration error.');
+        button.removeAttribute('disabled');
+        button.innerHTML = originalButtonHTML;
+        return;
+      }
+
+      try {
+        const response = await fetch(`${supabaseUrl}/functions/v1/sendmail`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${supabaseAnonKey}`,
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (response.ok) {
+          await response.json();
+          toast('Thank you for your message. We have received your information and will get back to you as soon as possible.');
+          (form as HTMLFormElement).reset();
+          
+          button.removeAttribute('disabled');
+          button.innerHTML = originalButtonHTML;
+
+        } else {
+          const errorData = await response.json().catch(() => null);
+          toast(`Submission failed (${response.status}): ${errorData?.message || 'Please try again later'}`);
+          button.removeAttribute('disabled');
+          button.innerHTML = originalButtonHTML;
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        toast('Submission failed. Please check your network connection.');
+        button.removeAttribute('disabled');
+        button.innerHTML = originalButtonHTML;
+      }
+    });
+  }
+</script>

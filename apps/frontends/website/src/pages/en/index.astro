@@ -5,6 +5,7 @@ import Features from '@/components/widgets/Features.astro';
 import Features2 from '@/components/widgets/Features2.astro';
 import Content from '@/components/widgets/Content.astro';
 import { getPermalink } from '@/utils/permalinks';
+import videoUrl from '@/assets/videos/a1.mp4';
 
 const metadata = {
   title: 'UniSudo Inc. — Unique AI Solutions for SUDO Permissions',
@@ -24,8 +25,18 @@ const metadata = {
       },
       { text: 'Company Introduction', href: getPermalink('/en/about') },
     ]}
-    image={{ src: '@/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
   >
+    <Fragment slot='video'>
+      <video
+        src={videoUrl}
+        autoplay
+        muted
+        loop
+        playsinline
+        style={{ borderRadius: '20px', width: '900px', height: 'auto' }}
+      />
+    </Fragment>
+
     <Fragment slot='title'>
       Unique AI Solutions for
       <span class='highlight text-accent dark:text-white'>SUDO Permissions</span>

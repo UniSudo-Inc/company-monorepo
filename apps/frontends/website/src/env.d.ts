@@ -10,4 +10,6 @@ interface ImportMetaEnv {
   PUBLIC_LIVEKIT_URL: string;
   PUBLIC_DEMO_AGENT_ID: string;
   PUBLIC_GUEST_USER_JWT: string;
+  PUBLIC_SUPABASE_URL: string;
+  PUBLIC_SUPABASE_ANON_KEY: string;
 }

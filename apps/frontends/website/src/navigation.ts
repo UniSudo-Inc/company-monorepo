@@ -64,13 +64,13 @@ export const headerData = {
           href: getPermalink('/products/unichat'),
         },
         {
-          text: 'UniStudio',
-          href: 'https://studio.limit.dev/dash/overview',
+          text: 'A1 Platform',
+          href: 'https://a1.unisudo.dev/landing-page',
         },
-        {
-          text: 'UniSpeech',
-          href: getPermalink('/speech'),
-        },
+        // {
+        //   text: 'UniSpeech',
+        //   href: getPermalink('/speech'),
+        // },
         {
           text: 'UniData',
           href: 'https://datai.unisudo.com/',
@@ -79,10 +79,10 @@ export const headerData = {
           text: '数据标注服务',
           href: 'http://120.27.240.221:32051',
         },
-        {
-          text: '智能硬件服务',
-          href: getPermalink('/hardware'),
-        },
+        // {
+        //   text: '智能硬件服务',
+        //   href: getPermalink('/hardware'),
+        // },
       ],
     },
     {
@@ -157,13 +157,13 @@ export const headerDataEn = {
           href: getPermalink('/en/products/unichat'),
         },
         {
-          text: 'UniStudio',
-          href: 'https://studio.limit.dev/dash/overview',
+          text: 'A1 Platform',
+          href: 'https://a1.unisudo.dev/landing-page',
         },
-        {
-          text: 'UniSpeech',
-          href: getPermalink('/en/speech'),
-        },
+        // {
+        //   text: 'UniSpeech',
+        //   href: getPermalink('/en/speech'),
+        // },
         {
           text: 'UniData',
           href: 'https://datai.unisudo.com/',
@@ -172,10 +172,10 @@ export const headerDataEn = {
           text: 'Data Annotation Service',
           href: 'http://120.27.240.221:32051',
         },
-        {
-          text: 'Smart Hardware Service',
-          href: getPermalink('/en/hardware'),
-        },
+        // {
+        //   text: 'Smart Hardware Service',
+        //   href: getPermalink('/en/hardware'),
+        // },
       ],
     },
     {
@@ -196,13 +196,13 @@ export const footerData = {
           href: getPermalink('/products/unichat'),
         },
         {
-          text: 'UniStudio',
-          href: 'https://studio.limit.dev/dash/overview',
+          text: 'A1 Platform',
+          href: 'https://a1.unisudo.dev/landing-page',
         },
-        {
-          text: 'UniSpeech',
-          href: getPermalink('/en/speech'),
-        },
+        // {
+        //   text: 'UniSpeech',
+        //   href: getPermalink('/en/speech'),
+        // },
         {
           text: 'UniData',
           href: 'https://datai.unisudo.com/',
@@ -211,10 +211,10 @@ export const footerData = {
           text: '数据标注服务',
           href: 'http://120.27.240.221:32051',
         },
-        {
-          text: '智能硬件服务',
-          href: getPermalink('/hardware'),
-        },
+        // {
+        //   text: '智能硬件服务',
+        //   href: getPermalink('/hardware'),
+        // },
       ],
     },
     {
@@ -316,13 +316,13 @@ export const footerDataEn = {
           href: getPermalink('/products/unichat'),
         },
         {
-          text: 'UniStudio',
-          href: 'https://studio.limit.dev/dash/overview',
+          text: 'A1 Platform',
+          href: 'https://a1.unisudo.dev/landing-page',
         },
-        {
-          text: 'UniSpeech',
-          href: getPermalink('/en/speech'),
-        },
+        // {
+        //   text: 'UniSpeech',
+        //   href: getPermalink('/en/speech'),
+        // },
         {
           text: 'UniData',
           href: 'https://datai.unisudo.com/',
@@ -331,10 +331,10 @@ export const footerDataEn = {
           text: 'Data Annotation Service',
           href: 'http://120.27.240.221:32051',
         },
-        {
-          text: 'Smart Hardware Service',
-          href: getPermalink('/en/hardware'),
-        },
+        // {
+        //   text: 'Smart Hardware Service',
+        //   href: getPermalink('/en/hardware'),
+        // },
       ],
     },
     {
