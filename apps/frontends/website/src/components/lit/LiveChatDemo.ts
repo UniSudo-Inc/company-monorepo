@@ -1,12 +1,10 @@
-import { LitElement, html, css, type TemplateResult, type PropertyDeclarations, type PropertyValues } from 'lit';
-import { customElement, property, query, state } from 'lit/decorators.js';
-import SiriWave from 'siriwave/src/index';
+import { LitElement, html, css, type TemplateResult, type PropertyValues } from 'lit';
+import { customElement, query, state } from 'lit/decorators.js';
+import type { Application as PixiApplication } from 'pixi.js';
+import type { Live2DModel as PixiLive2DModel } from 'pixi-live2d-display';
 import { MicVAD } from '@ricky0123/vad-web';
 import {
-  type AudioAnalyserOptions,
-  type AudioTrack,
-  createAudioAnalyser,
-  type LocalAudioTrack,
+  // type LocalAudioTrack,
   type LocalParticipant,
   type LocalTrackPublication,
   type RemoteAudioTrack,
@@ -19,26 +17,34 @@ import {
 } from 'livekit-client';
 import duration from 'dayjs/plugin/duration';
 import dayjs from 'dayjs';
+import { Live2DModel } from 'pixi-live2d-display';
+import * as PIXI from 'pixi.js';
+import { MotionSync } from "live2d-motionsync/stream";
 
 dayjs.extend(duration);
 const DEMO_TIMEOUT = 300;
+const LIVE2D_MODEL_URL = '/haru_greeter/haru_greeter_t05.model3.json';
+
+declare global {
+  interface Window {
+    PIXI?: typeof import('pixi.js');
+  }
+}
+
+window.PIXI ??= PIXI;
+
+type Status = 'idle' | 'loading' | 'running';
 
 @customElement('live-chat-demo')
 export class LiveChatDemo extends LitElement {
   @query('#visualizer-container')
-  private _visualizerContainer!: HTMLDivElement;
-
-  @state()
-  private language = '';
+  private _visualizerContainer?: HTMLDivElement;
 
   @state()
   private _vad?: MicVAD;
 
-  @state()
-  private _isSpeaking = false;
-
-  @state()
-  private _visualizer?: SiriWave;
+  // @state()
+  // private _isSpeaking = false;
 
   @state()
   private _room: Room = new Room({
@@ -51,25 +57,28 @@ export class LiveChatDemo extends LitElement {
   });
 
   @state()
-  private _status: 'idle' | 'loading' | 'ready' = 'idle';
+  private _status: Status = 'idle';
 
-  @state()
-  private _localTrack?: LocalAudioTrack;
+  // @state()
+  // private _localTrack?: LocalAudioTrack;
 
   @state()
   private _remoteTrack?: RemoteAudioTrack;
-
-  @state()
-  private _localCleanupCallback?: () => void;
-
-  @state()
-  private _remoteCleanupCallback?: () => void;
 
   @state()
   private _countdown = 300;
 
   @state()
   private _countdownInterval?: NodeJS.Timeout;
+
+  private _live2dApp?: PixiApplication;
+  private _live2dModel?: PixiLive2DModel;
+  @state()
+  private _live2dMotionSync?: MotionSync;
+  private _live2dCanvas?: HTMLCanvasElement;
+  private _live2dResizeObserver?: ResizeObserver;
+
+  private _language = '';
 
   static override readonly styles = css`
     .btn {
@@ -112,15 +121,35 @@ export class LiveChatDemo extends LitElement {
         transform: rotate(360deg);
       }
     }
+    #visualizer-container {
+      position: relative;
+      width: min(100%, 640px);
+      height: 360px;
+      margin: 0 auto;
+    }
+    #visualizer-container canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    #countdown {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--aw-color-primary);
+      text-shadow: 0 0 8px rgba(1, 97, 239, 0.25);
+    }
   `;
 
   constructor() {
     super();
-    this.language = (/\/([a-z]{2})\/products/.exec(window.location.pathname))?.[1] || '';
+    const match = /\/(?<lang>[a-z]{2})\/products/.exec(window.location.pathname);
+    this._language = match?.groups?.['lang'] ?? '';
   }
 
   protected override render(): TemplateResult {
-    return html`${this._status !== 'ready' ? this._renderButton() : this._renderSession()}`;
+    return html`${this._status !== 'running' ? this._renderButton() : this._renderSession()}`;
   }
 
   private _renderSession(): TemplateResult {
@@ -175,65 +204,47 @@ export class LiveChatDemo extends LitElement {
     </svg>`;
   }
 
-  protected override updated(_changedProperties: PropertyValues): void {
-    if (_changedProperties.has('_status')) {
-      const oldStatus = _changedProperties.get('_status') as 'ready' | 'idle' | 'loading';
+  protected override updated(changedProperties: PropertyValues): void {
+    if (changedProperties.has('_status')) {
+      const oldStatus = changedProperties.get('_status') as Status;
       const newStatus = this._status;
 
-      if (oldStatus === 'ready' && newStatus !== 'ready') {
-        this._visualizer?.dispose();
-        this._visualizer = undefined;
+      if (oldStatus === 'running' && newStatus !== 'running') {
+        this._disposeLive2D();
       }
-      if (oldStatus !== 'ready' && newStatus === 'ready') {
-        this._visualizer = new SiriWave({
-          container: this._visualizerContainer,
-          color: '#0161ef',
-          width: 640,
-          height: 200,
-          autostart: true,
-          amplitude: 0,
-        });
+      if (oldStatus !== 'running' && newStatus === 'running') {
+        void this._setupLive2D();
       }
     }
 
-    if (_changedProperties.has('_remoteTrack')) {
-      const oldRemoteTrack = _changedProperties.get('_remoteTrack') as RemoteAudioTrack | undefined;
-      const newRemoteTrack = this._remoteTrack;
-
-      if (!oldRemoteTrack && newRemoteTrack) {
-        this._remoteCleanupCallback = this._updateVisualizer(newRemoteTrack);
+    if (changedProperties.has('_remoteTrack') || changedProperties.has('_live2dMotionSync')) {
+      if (this._remoteTrack && this._live2dMotionSync) {
+        if (this._remoteTrack.mediaStream) {
+          this._live2dMotionSync.play(this._remoteTrack.mediaStream);
+        } else {
+          console.error('Remote track has no media stream, cannot play motion sync');
+        }
       }
     }
 
-    if (_changedProperties.has('_isSpeaking')) {
-      if (this._isSpeaking) {
-        this._remoteCleanupCallback?.();
-        this._localCleanupCallback = this._updateVisualizer(this._localTrack);
-      } else {
-        this._localCleanupCallback?.();
-        this._remoteCleanupCallback = this._updateVisualizer(this._remoteTrack);
-      }
-    }
-
-    if (_changedProperties.has('_countdown')) {
+    if (changedProperties.has('_countdown')) {
       if (this._countdown <= 0) {
         void this._room.disconnect();
       }
     }
   }
 
-  async _handleClick(e: MouseEvent): Promise<void> {
+  async _handleClick(): Promise<void> {
     this._status = 'loading';
     await this._connectToRoom();
   }
 
   private async _connectToRoom(): Promise<void> {
-    const data = await fetch(`${import.meta.env.PUBLIC_API_BASE_URL}/v1/room/guest`, {
-      method: 'POST',
+    const data = await fetch(`${import.meta.env.PUBLIC_DEMO_AGENT_API_URL}/guest_demo`, {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({}),
     }).then((res) => res.json() as Promise<{ roomToken: string }>);
 
     await this._room.prepareConnection(import.meta.env.PUBLIC_LIVEKIT_URL, data.roomToken);
@@ -254,7 +265,7 @@ export class LiveChatDemo extends LitElement {
 
   private _handleConnected = (): void => {
     console.info('connected to room');
-    this._status = 'ready';
+    this._status = 'running';
     this._countdown = DEMO_TIMEOUT;
     this._countdownInterval = setInterval(() => {
       this._countdown--;
@@ -263,10 +274,10 @@ export class LiveChatDemo extends LitElement {
 
   private _handleTrackSubscribed = (
     track: RemoteTrack,
-    publication: RemoteTrackPublication,
+    _publication: RemoteTrackPublication,
     participant: RemoteParticipant,
   ): void => {
-    if (track.kind === Track.Kind.Audio) {
+    if (track.kind === Track.Kind.Audio && participant.identity === 'agent') {
       // attach it to a new HTMLVideoElement or HTMLAudioElement
       const element = track.attach();
       this.renderRoot.appendChild(element);
@@ -274,17 +285,20 @@ export class LiveChatDemo extends LitElement {
     }
   };
 
-  private _handleTrackUnsubscribed = (
+  private _handleTrackUnsubscribed = async (
     track: RemoteTrack,
-    publication: RemoteTrackPublication,
+    _publication: RemoteTrackPublication,
     participant: RemoteParticipant,
-  ): void => {
+  ): Promise<void> => {
     // remove tracks from all attached elements
+    if (this._live2dMotionSync && participant.identity === 'agent') {
+      await this._live2dMotionSync.reset();
+    }
     track.detach();
   };
 
-  private _handleLocalTrackPublished = (publication: LocalTrackPublication, participant: LocalParticipant): void => {
-    this._localTrack = publication.audioTrack;
+  private _handleLocalTrackPublished = (_: LocalTrackPublication, participant: LocalParticipant): void => {
+    // this._localTrack = publication.audioTrack;
 
     const handleSpeechStart = async (): Promise<void> => {
       console.debug('speech start');
@@ -293,7 +307,7 @@ export class LiveChatDemo extends LitElement {
         topic: 'vad',
         reliable: true,
       });
-      this._isSpeaking = true;
+      // this._isSpeaking = true;
     };
 
     const handleSpeechEnd = async (): Promise<void> => {
@@ -303,7 +317,7 @@ export class LiveChatDemo extends LitElement {
         topic: 'vad',
         reliable: true,
       });
-      this._isSpeaking = false;
+      // this._isSpeaking = false;
     };
 
     const initVad = async (): Promise<void> => {
@@ -321,9 +335,9 @@ export class LiveChatDemo extends LitElement {
     };
 
     const setLanguage = async (): Promise<void> => {
-      console.debug(`set language to ${  this.language}`);
-      if (this.language) {
-        await participant.publishData(Buffer.from(this.language), {
+      if (this._language) {
+        console.debug(`set language to ${this._language}`);
+        await participant.publishData(Buffer.from(this._language), {
           topic: 'lang',
           reliable: true,
         });
@@ -334,7 +348,10 @@ export class LiveChatDemo extends LitElement {
     void setLanguage();
   };
 
-  private _handleLocalTrackUnpublished = (publication: LocalTrackPublication, participant: LocalParticipant): void => {
+  private _handleLocalTrackUnpublished = (
+    publication: LocalTrackPublication,
+    _participant: LocalParticipant,
+  ): void => {
     // when local tracks are ended, update UI to remove them from rendering
     publication.track?.detach();
   };
@@ -347,33 +364,101 @@ export class LiveChatDemo extends LitElement {
     this._status = 'idle';
   };
 
-  private _updateVisualizer = (
-    track?: AudioTrack,
-    options: AudioAnalyserOptions = { fftSize: 32, smoothingTimeConstant: 0 },
-  ): (() => void) => {
-    if (!track?.mediaStream) {
-      return () => void 0;
+  private async _setupLive2D(): Promise<void> {
+    const container = this._visualizerContainer;
+
+    if (this._live2dApp || !container) {
+      return;
+    }
+    container.innerHTML = '';
+
+    const canvas = document.createElement('canvas');
+    canvas.setAttribute('aria-label', 'Live2D character');
+    container.appendChild(canvas);
+    this._live2dCanvas = canvas;
+
+    const width = container.clientWidth || 640;
+    const height = container.clientHeight || 360;
+
+    const app = new PIXI.Application({
+      view: canvas,
+      backgroundAlpha: 0,
+      antialias: true,
+      autoDensity: true,
+      resolution: window.devicePixelRatio || 1,
+      width,
+      height,
+    });
+    this._live2dApp = app;
+
+    try {
+      const model = await Live2DModel.from(LIVE2D_MODEL_URL);
+
+      model.anchor.set(0.5, 0.6);
+      const scale = 0.7;
+      model.scale.set(scale);
+
+      this._live2dModel = model;
+
+      const motionSync = new MotionSync(model.internalModel);
+      await motionSync.loadDefaultMotionSync();
+      this._live2dMotionSync = motionSync;
+      app.stage.addChild(model);
+    } catch (error) {
+      console.error('Failed to load Live2D model', error);
     }
 
-    const { cleanup, analyser } = createAudioAnalyser(track, options);
-    const bufferLength = analyser.frequencyBinCount;
-    const dataArray = new Uint8Array(bufferLength);
+    this._live2dResizeObserver = new ResizeObserver(() => {
+      this._handleLive2DResize();
+    });
+    this._live2dResizeObserver.observe(container);
+  }
 
-    const updateVolume = (): void => {
-      analyser.getByteFrequencyData(dataArray);
-      const sum = dataArray.reduce((acc, curr) => acc + curr * curr, 0);
-      const volume = Math.sqrt(sum / dataArray.length) / 255;
-      const amp = volume * volume * 2;
-      this._visualizer?.setAmplitude(amp);
-    };
+  private _calculateInitialScale(model: PixiLive2DModel, width: number, height: number): number {
+    const baseWidth = model.width || 1;
+    const baseHeight = model.height || 1;
+    const scale = Math.min(width / baseWidth, height / baseHeight) * 1.2;
+    return Number.isFinite(scale) && scale > 0 ? scale : 1;
+  }
 
-    const interval = setInterval(updateVolume, 1000 / 30);
+  private _handleLive2DResize(): void {
+    const container = this._visualizerContainer;
 
-    return () => {
-      void cleanup();
-      clearInterval(interval);
-    };
-  };
+    if (!container || !this._live2dApp || !this._live2dModel) {
+      return;
+    }
+
+    const width = container.clientWidth || 640;
+    const height = container.clientHeight || 360;
+
+    this._live2dApp.renderer.resize(width, height);
+
+    const scale = this._calculateInitialScale(this._live2dModel, width, height);
+    this._live2dModel.scale.set(scale);
+    this._live2dModel.x = width / 2;
+    this._live2dModel.y = height * 0.95;
+  }
+
+  private _disposeLive2D(): void {
+    this._live2dResizeObserver?.disconnect();
+    this._live2dResizeObserver = undefined;
+
+    this._live2dModel = undefined;
+
+    if (this._live2dApp) {
+      this._live2dApp.destroy(true, {
+        children: true,
+        texture: true,
+        baseTexture: true,
+      });
+      this._live2dApp = undefined;
+    }
+
+    if (this._live2dCanvas?.parentElement) {
+      this._live2dCanvas.remove();
+    }
+    this._live2dCanvas = undefined;
+  }
 }
 
 declare global {
