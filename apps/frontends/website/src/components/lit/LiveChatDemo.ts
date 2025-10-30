@@ -146,6 +146,13 @@ export class LiveChatDemo extends LitElement {
     super();
     const match = /\/(?<lang>[a-z]{2})\/products/.exec(window.location.pathname);
     this._language = match?.groups?.['lang'] ?? '';
+    this._room
+      .on(RoomEvent.Connected, this._handleConnected)
+      .on(RoomEvent.TrackSubscribed, this._handleTrackSubscribed)
+      .on(RoomEvent.TrackUnsubscribed, this._handleTrackUnsubscribed)
+      .on(RoomEvent.Disconnected, this._handleDisconnect)
+      .on(RoomEvent.LocalTrackPublished, this._handleLocalTrackPublished)
+      .on(RoomEvent.LocalTrackUnpublished, this._handleLocalTrackUnpublished);
   }
 
   protected override render(): TemplateResult {
@@ -248,14 +255,6 @@ export class LiveChatDemo extends LitElement {
     }).then((res) => res.json() as Promise<{ roomToken: string }>);
 
     await this._room.prepareConnection(import.meta.env.PUBLIC_LIVEKIT_URL, data.roomToken);
-    this._room
-      .on(RoomEvent.Connected, this._handleConnected)
-      .on(RoomEvent.TrackSubscribed, this._handleTrackSubscribed)
-      .on(RoomEvent.TrackUnsubscribed, this._handleTrackUnsubscribed)
-      .on(RoomEvent.Disconnected, this._handleDisconnect)
-      .on(RoomEvent.LocalTrackPublished, this._handleLocalTrackPublished)
-      .on(RoomEvent.LocalTrackUnpublished, this._handleLocalTrackUnpublished);
-
     await this._room.connect(import.meta.env.PUBLIC_LIVEKIT_URL, data.roomToken, {
       maxRetries: 10,
     });
