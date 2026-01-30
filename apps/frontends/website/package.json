@@ -51,6 +51,7 @@
     "dayjs": "1.11.13",
     "limax": "4.1.0",
     "lit": "3.2.1",
+    "live2d-motionsync": "^0.0.4",
     "livekit-client": "2.6.0",
     "lodash.merge": "4.6.2",
     "onnxruntime-web": "1.20.0",

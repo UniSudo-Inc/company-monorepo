@@ -111,7 +111,7 @@ export default defineConfig({
             dest: './_astro/',
           },
         ],
-      }),
+      }) as any,
     ],
   },
 });
