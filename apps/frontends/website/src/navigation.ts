@@ -65,7 +65,7 @@ export const headerData = {
         },
         {
           text: 'A1 Platform',
-          href: 'https://a1.unisudo.dev/landing-page',
+          href: 'https://a1.v7.unisudo.dev/',
         },
         // {
         //   text: 'UniSpeech',
@@ -158,7 +158,7 @@ export const headerDataEn = {
         },
         {
           text: 'A1 Platform',
-          href: 'https://a1.unisudo.dev/landing-page',
+          href: 'https://a1.v7.unisudo.dev/',
         },
         // {
         //   text: 'UniSpeech',
@@ -197,7 +197,7 @@ export const footerData = {
         },
         {
           text: 'A1 Platform',
-          href: 'https://a1.unisudo.dev/landing-page',
+          href: 'https://a1.v7.unisudo.dev/',
         },
         // {
         //   text: 'UniSpeech',
@@ -317,7 +317,7 @@ export const footerDataEn = {
         },
         {
           text: 'A1 Platform',
-          href: 'https://a1.unisudo.dev/landing-page',
+          href: 'https://a1.v7.unisudo.dev/',
         },
         // {
         //   text: 'UniSpeech',
