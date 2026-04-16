@@ -14,7 +14,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Hero Widget -->
 
   <Hero
     actions={[
@@ -33,27 +33,23 @@ const metadata = {
         muted
         loop
         playsinline
-        style={{ borderRadius: '20px', width: '900px', height: 'auto' }}
+        style={{ borderRadius: '16px', width: '100%', maxWidth: '900px', height: 'auto' }}
       />
     </Fragment>
 
     <Fragment slot='title'>
       赋能SUDO权限的
-      <span class='highlight text-accent dark:text-white'>独特AI解决方案</span>
+      <span class='text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent dark:text-white'>独特AI解决方案</span>
     </Fragment>
 
     <Fragment slot='subtitle'>
-      <span class='hidden sm:inline'> <span class='font-semibold'>上海智独数科技有限公司</span></span>
-      <span class='mb-1 block font-bold text-blue-600 sm:hidden'>上海智独数科技有限公司</span>
+      <span class='hidden sm:inline'><span class='font-semibold'>上海智独数科技有限公司</span></span>
+      <span class='mb-2 block font-bold text-blue-600 sm:hidden'>上海智独数科技有限公司</span>
       致力于打造高效能、低成本的AI解决方案，以研发能力作为市场核心竞争力。通过创新的模型架构和全流程技术支持，我们帮助企业以远低于传统方案的成本实现AI的精准落地。
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
-
-  <!-- <Note /> -->
-
-  <!-- Features Widget *************** -->
+  <!-- Features Widget -->
 
   <Features
     id='features'
@@ -64,7 +60,7 @@ const metadata = {
       {
         title: '技术创新',
         description: '突破传统架构限制，实现低成本、高效能的AI解决方案。',
-        icon: 'tabler:brand-tailwind',
+        icon: 'tabler:rocket',
       },
       {
         title: '场景理解',
@@ -74,17 +70,17 @@ const metadata = {
       {
         title: '成本优势',
         description: '通过创新技术架构大幅降低部署和运营成本。',
-        icon: 'tabler:list-check',
+        icon: 'tabler:coin',
       },
       {
         title: '生态完整',
         description: '自主研发全流程技术链，提供一站式服务能力。',
-        icon: 'tabler:rocket',
+        icon: 'tabler:stack-2',
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
+  <!-- Content Widget -->
 
   <Content
     isReversed
@@ -110,20 +106,19 @@ const metadata = {
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      alt: 'AI对话系统',
     }}
   >
     <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>流式可打断对话系统</h3>
-      <p>为您的业务提供更智能、更流畅的对话体验。</p>
+      <h3 class='mb-4 text-2xl font-bold tracking-tight text-default dark:text-white sm:text-3xl'>流式可打断对话系统</h3>
+      <p class='text-muted leading-relaxed'>为您的业务提供更智能、更流畅的对话体验。</p>
     </Fragment>
 
     <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
+          </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- Content Widget -->
 
   <Content
     isAfterContent
@@ -147,20 +142,19 @@ const metadata = {
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
+      alt: '智能硬件',
     }}
   >
     <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>智能硬件解决方案</h3>
-      <p>我们提供多种智能硬件解决方案，满足您的业务需求。</p>
+      <h3 class='mb-4 text-2xl font-bold tracking-tight text-default dark:text-white sm:text-3xl'>智能硬件解决方案</h3>
+      <p class='text-muted leading-relaxed'>我们提供多种智能硬件解决方案，满足您的业务需求。</p>
     </Fragment>
 
     <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- Content Widget -->
 
   <Content
     isReversed
@@ -185,20 +179,19 @@ const metadata = {
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      alt: '云原生平台',
     }}
   >
     <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>云原生工作流平台</h3>
-      <p>为您的企业自动化提供全流程支持，让您专注于核心业务。</p>
+      <h3 class='mb-4 text-2xl font-bold tracking-tight text-default dark:text-white sm:text-3xl'>云原生工作流平台</h3>
+      <p class='text-muted leading-relaxed'>为您的企业自动化提供全流程支持，让您专注于核心业务。</p>
     </Fragment>
 
     <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
+          </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- Content Widget -->
 
   <Content
     isAfterContent
@@ -217,25 +210,24 @@ const metadata = {
       },
       {
         title: '多模态数据处理能力',
-        description: '支持多种模态数据处理，',
+        description: '支持多种模态数据处理，满足多元化需求。',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      alt: '数据标注',
     }}
   >
     <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>专业数据标注平台</h3>
-      <p>我们提供专业的数据标注解决方案，满足您的业务需求。</p>
+      <h3 class='mb-4 text-2xl font-bold tracking-tight text-default dark:text-white sm:text-3xl'>专业数据标注平台</h3>
+      <p class='text-muted leading-relaxed'>我们提供专业的数据标注解决方案，满足您的业务需求。</p>
     </Fragment>
 
     <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- Content Widget -->
 
   <Content
     isReversed
@@ -243,33 +235,36 @@ const metadata = {
     items={[
       {
         title: '低代码开发环境',
+        description: '快速构建AI应用，降低开发门槛。',
       },
       {
         title: '智能化数据处理',
+        description: '自动化数据清洗与预处理，提升数据质量。',
       },
       {
         title: '可视化分析工具',
+        description: '直观的数据可视化，帮助业务决策。',
       },
       {
         title: '深度洞察能力',
+        description: 'AI驱动的深度数据分析，挖掘业务价值。',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: '数据分析平台',
     }}
   >
     <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>AI数据分析平台</h3>
-      矩阵式数据分析平台，支持多维度数据分析，提供深度洞察能力。
+      <h3 class='mb-4 text-2xl font-bold tracking-tight text-default dark:text-white sm:text-3xl'>AI数据分析平台</h3>
+      <p class='text-muted leading-relaxed'>矩阵式数据分析平台，支持多维度数据分析，提供深度洞察能力。</p>
     </Fragment>
 
     <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
+          </Fragment>
   </Content>
 
-  <!-- Features2 Widget ************** -->
+  <!-- Features2 Widget -->
 
   <Features2
     title='AI应用场景'
@@ -279,54 +274,43 @@ const metadata = {
       {
         title: '数字人展厅',
         description:
-          '<ul><li>银行智能网点数字员工</li><li>博物馆虚拟讲解员</li><li>企业展厅互动导购</li><li>商场数字导购助手</li><li>教育培训数字讲师</li><li>企业形象数字代言人</li></ul>',
-        icon: 'flat-color-icons:template',
+          '<ul class="space-y-2 text-sm"><li>银行智能网点数字员工</li><li>博物馆虚拟讲解员</li><li>企业展厅互动导购</li><li>商场数字导购助手</li><li>教育培训数字讲师</li><li>企业形象数字代言人</li></ul>',
+        icon: 'tabler:user',
       },
       {
         title: '数据服务',
         description:
-          '<ul><li>AI训练数据标注</li><li>多模态数据处理</li><li>数据清洗与增强</li><li>专业领域数据集构建</li><li>数据质量评估体系</li><li>隐私数据保护方案</li></ul>',
-        icon: 'flat-color-icons:gallery',
+          '<ul class="space-y-2 text-sm"><li>AI训练数据标注</li><li>多模态数据处理</li><li>数据清洗与增强</li><li>专业领域数据集构建</li><li>数据质量评估体系</li><li>隐私数据保护方案</li></ul>',
+        icon: 'tabler:database',
       },
       {
         title: '模型训练',
         description:
-          '<ul><li>大语言模型微调训练</li><li>垂直领域模型开发</li><li>多模态模型训练部署</li><li>模型性能优化服务</li><li>小样本学习解决方案</li><li>增量学习系统搭建</li></ul>',
-        icon: 'flat-color-icons:approval',
+          '<ul class="space-y-2 text-sm"><li>大语言模型微调训练</li><li>垂直领域模型开发</li><li>多模态模型训练部署</li><li>模型性能优化服务</li><li>小样本学习解决方案</li><li>增量学习系统搭建</li></ul>',
+        icon: 'tabler:brain',
       },
 
       {
         title: '智能客服',
         description:
-          '<ul><li>金融服务智能问答系统</li><li>电商全流程客服机器人</li><li>政务服务智能助手</li><li>企业知识库智能检索</li><li>多轮对话管理系统</li><li>情感识别与回应服务</li></ul>',
-        icon: 'flat-color-icons:document',
+          '<ul class="space-y-2 text-sm"><li>金融服务智能问答系统</li><li>电商全流程客服机器人</li><li>政务服务智能助手</li><li>企业知识库智能检索</li><li>多轮对话管理系统</li><li>情感识别与回应服务</li></ul>',
+        icon: 'tabler:headset',
       },
       {
         title: '企业数智化',
         description:
-          '<ul><li>智能人才筛选系统</li><li>企业培训数字助手</li><li>智能办公自动化平台</li><li>数据分析决策系统</li><li>企业知识沉淀平台</li><li>智能会议助手系统</li></ul>',
-        icon: 'flat-color-icons:document',
+          '<ul class="space-y-2 text-sm"><li>智能人才筛选系统</li><li>企业培训数字助手</li><li>智能办公自动化平台</li><li>数据分析决策系统</li><li>企业知识沉淀平台</li><li>智能会议助手系统</li></ul>',
+        icon: 'tabler:building',
       },
       {
         title: '行业解决方案',
         description:
-          '<ul><li>教育培训数字化转型</li><li>医疗健康智能诊疗</li><li>金融风控智能分析</li><li>零售智能化升级</li><li>智慧城市数据平台</li><li>文旅行业数字服务</li></ul>',
-        icon: 'flat-color-icons:document',
+          '<ul class="space-y-2 text-sm"><li>教育培训数字化转型</li><li>医疗健康智能诊疗</li><li>金融风控智能分析</li><li>零售智能化升级</li><li>智慧城市数据平台</li><li>文旅行业数字服务</li></ul>',
+        icon: 'tabler:chart-bar',
       },
     ]}
   >
     <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
     </Fragment>
   </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <!-- <BlogLatestPosts
-    title='Find out more content in our Blog'
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  /> -->
 </Layout>

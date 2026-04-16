@@ -1,9 +1,7 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
 import Hero from '@/components/widgets/Hero.astro';
-import Features from '@/components/widgets/Features.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-import Content from '@/components/widgets/Content.astro';
 
 const metadata = {
   title: '加入我们 - 上海智独数科技有限公司',
@@ -12,7 +10,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
   <Hero
     actions={[
       {
@@ -24,102 +21,113 @@ const metadata = {
     image={{ src: '@/assets/images/recruitment.png', alt: 'Recruitment Hero Image' }}
   >
     <Fragment slot='title'>
-      加入智独数科技
-      <span class='highlight text-accent dark:text-white'>开启AI新未来</span>
+      <span class='text-4xl md:text-6xl font-bold tracking-tight'>加入智独数科技</span><br />
+      <span class='text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-3xl md:text-5xl mt-2 font-semibold'>开启AI新未来</span>
     </Fragment>
 
     <Fragment slot='subtitle'>
-      在这里，你将与行业顶尖人才一起，探索AI技术的无限可能，创造改变世界的解决方案。
+      <span class='text-xl leading-relaxed'>在这里，你将与行业顶尖人才一起，探索AI技术的无限可能，创造改变世界的解决方案。</span>
     </Fragment>
   </Hero>
 
-  <!-- Features Widget *************** -->
-  <Features
-    id='features'
-    tagline='为什么选择我们'
-    title='在智独数科技，你将获得'
-    classes={{ container: 'max-w-5xl mx-auto' }}
-    items={[
-      {
-        title: '技术创新的第一线',
-        description: '直接参与前沿AI技术的研发和应用，与行业专家共同探索创新解决方案。',
-        icon: 'tabler:bulb',
-      },
-      {
-        title: '富有挑战的工作环境',
-        description: '接触多样化的项目和技术栈，不断突破自我，实现职业成长。',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: '完善的培训发展体系',
-        description: '系统化的培训计划，帮助你快速成长，实现职业理想。',
-        icon: 'tabler:school',
-      },
-      {
-        title: '有竞争力的薪酬福利',
-        description: '提供具有市场竞争力的薪酬package，认可并回报你的贡献。',
-        icon: 'tabler:certificate',
-      },
-    ]}
-  />
+  <div class='relative'>
+    
+    <div class='relative mx-auto max-w-7xl px-4 py-20 sm:px-6'>
+      <div class='mb-16 text-center'>
+        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>为什么选择我们</p>
+        <h2 class='text-4xl font-bold tracking-tight text-default dark:text-white md:text-5xl'>在智独数科技，你将获得</h2>
+      </div>
+      <div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4'>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 0ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:bulb' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>技术创新的第一线</h3>
+          <p class='text-muted leading-relaxed'>直接参与前沿AI技术的研发和应用，与行业专家共同探索创新解决方案。</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 100ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:rocket' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>富有挑战的工作环境</h3>
+          <p class='text-muted leading-relaxed'>接触多样化的项目和技术栈，不断突破自我，实现职业成长。</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 200ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:school' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>完善的培训发展体系</h3>
+          <p class='text-muted leading-relaxed'>系统化的培训计划，帮助你快速成长，实现职业理想。</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 300ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:certificate' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>有竞争力的薪酬福利</h3>
+          <p class='text-muted leading-relaxed'>提供具有市场竞争力的薪酬package，认可并回报你的贡献。</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Features2 Widget ************** -->
-  <Features2
-    title='当前招聘职位'
-    subtitle='加入我们，与行业顶尖人才一起探索AI技术的无限可能'
-    tagline='招贤纳士'
-    classes={{ container: 'max-w-5xl mx-auto' }}
-    columns={2}
-    items={[
-      {
-        title: '前端开发工程师',
-        description: '',
-        icon: 'tabler:code',
-        callToAction: {
-          text: '查看详情',
-          href: '/jobs/frontend-engineer',
-        },
-      },
-      {
-        title: 'AI开发工程师',
-        description: '',
-        icon: 'tabler:code',
-        callToAction: {
-          text: '查看详情',
-          href: '/jobs/ai-engineer',
-        },
-      },
-    ]}
-  >
-    <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
-  </Features2>
+  <div class='relative'>
+    
+    <div class='relative mx-auto max-w-7xl px-4 py-20 sm:px-6'>
+      <div class='mb-16 text-center'>
+        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>招贤纳士</p>
+        <h2 class='text-3xl font-bold tracking-tight text-default dark:text-white md:text-4xl'>当前招聘职位</h2>
+        <p class='mx-auto mt-4 max-w-2xl text-lg text-muted'>加入我们，与行业顶尖人才一起探索AI技术的无限可能</p>
+      </div>
+      <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 0ms'>
+          <div class='flex items-start gap-5'>
+            <div class='flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+              <Icon name='tabler:brand-react' class='h-7 w-7 text-primary' />
+            </div>
+            <div>
+              <h3 class='mb-2 text-xl font-bold tracking-tight text-default dark:text-white'>前端开发工程师</h3>
+              <p class='mb-4 text-muted text-sm leading-relaxed'>参与公司核心产品的前端开发，与设计团队紧密合作，实现高质量的用户界面。</p>
+              <a href='/jobs/frontend-engineer/' class='inline-flex items-center text-sm font-medium text-primary hover:text-accent transition-colors'>
+                查看详情 <Icon name='tabler:arrow-right' class='ml-1 h-4 w-4' />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 100ms'>
+          <div class='flex items-start gap-5'>
+            <div class='flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+              <Icon name='tabler:brain' class='h-7 w-7 text-primary' />
+            </div>
+            <div>
+              <h3 class='mb-2 text-xl font-bold tracking-tight text-default dark:text-white'>AI开发工程师</h3>
+              <p class='mb-4 text-muted text-sm leading-relaxed'>负责AI模型的开发、训练和优化，参与公司核心AI技术的研发工作。</p>
+              <a href='/jobs/ai-engineer/' class='inline-flex items-center text-sm font-medium text-primary hover:text-accent transition-colors'>
+                查看详情 <Icon name='tabler:arrow-right' class='ml-1 h-4 w-4' />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- CallToAction Widget *********** -->
-  <Content
-    isAfterContent
-    classes={{ container: 'max-w-5xl mx-auto' }}
-    items={[
-      {
-        title: '简历投递',
-        description: `<a href="mailto:hr@unisudo.com" class="hover:text-primary transition-all duration-200 ease-in-out"
-                     transition:animate={fade({ duration: '0.3s' })}>
-                     发送简历至: hr@unisudo.com</a>`,
-      },
-      {
-        title: '工作地点',
-        description: '上海市浦东新区临港自贸区水芸路55号港城广场二街坊1号楼8层802室',
-      },
-    ]}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>加入我们</h3>
-      <p>期待优秀的你加入智独数科技，一起开创AI的未来！</p>
-    </Fragment>
-
-    <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
-  </Content>
+  <div class='relative pb-20'>
+    
+    <div class='relative mx-auto max-w-7xl px-4 sm:px-6'>
+      <div class='mx-auto max-w-3xl'>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento text-center p-10'>
+          <Icon name='tabler:users' class='mx-auto mb-6 h-12 w-12 text-primary' />
+          <h3 class='mb-4 text-2xl font-bold tracking-tight text-default dark:text-white'>加入我们</h3>
+          <p class='mb-8 text-muted leading-relaxed'>期待优秀的你加入智独数科技，一起开创AI的未来！</p>
+          <div class='flex flex-col gap-4 sm:flex-row sm:justify-center'>
+            <a href='mailto:hr@unisudo.com' class='btn-primary inline-flex items-center justify-center'>
+              <Icon name='tabler:mail' class='mr-2 h-5 w-5' />
+              发送简历至: hr@unisudo.com
+            </a>
+          </div>
+          <p class='mt-6 text-sm text-muted'>工作地点：上海市浦东新区临港自贸区水芸路55号港城广场二街坊1号楼8层802室</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>

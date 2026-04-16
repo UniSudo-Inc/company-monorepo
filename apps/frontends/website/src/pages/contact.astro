@@ -1,9 +1,7 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import HeroText from '@/components/widgets/HeroText.astro';
 import ContactUs from '@/components/widgets/Contact.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-
 
 const metadata = {
   title: '联系我们',
@@ -11,98 +9,130 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <div class="text-center">
-    <HeroText tagline=' ' title='<span class="text-primary">期待与您沟通！</span>' />
-
-    <div class="relative mx-auto mt-4 h-16 w-16">
-      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-      <span class="relative inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      </span>
+  <div class='relative'>
+    
+    <div class='relative mx-auto max-w-7xl px-4 py-20 sm:px-6'>
+      <div class='text-center'>
+        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>联系我们</p>
+        <h1 class='mb-6 text-4xl font-bold tracking-tight text-default dark:text-white md:text-5xl'>
+          <span class='text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent'>期待与您沟通！</span>
+        </h1>
+        
+        <div class='relative mx-auto mb-12 mt-4 inline-flex'>
+          <span class='absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-20'></span>
+          <span class='relative inline-flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent shadow-lg shadow-primary/30'>
+            <Icon name='tabler:messages' class='h-10 w-10 text-white' />
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 
-<ContactUs
-    id='form'
-    title='商务合作咨询'
-    subtitle='请填写以下信息，我们会尽快与您联系'
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: '您的姓名',
-        placeholder: '请输入您的姓名'
-      },
-      {
-        type: 'text',
-        name: 'company',
-        label: '公司名称',
-        placeholder: '请输入您的公司名称'
-      },
-       {
-        type: 'tel',
-        name: 'phone',
-        label: '手机号码',
-        placeholder: '请输入您的手机号码'
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: '电子邮箱',
-        placeholder: 'you@example.com'
-      }
-    ]}
-    textarea={{
-      name: 'message',
-      label: '您的需求或合作意向',
-      placeholder: '请在此处详细描述您的需求...'
-    }}
-    button='提交信息'
-  >
-    <Fragment slot='bg'>
-      <div
-        id='snackbar-toast'
-        class='toast absolute bottom-6 right-12 z-10 rounded-md border bg-white p-4 shadow-lg dark:bg-slate-900'
-        hidden
+  <div class='relative mx-auto max-w-7xl px-4 py-0 sm:px-6'>
+    <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento mx-auto max-w-3xl p-0'>
+      <ContactUs
+        id='form'
+        title='商务合作咨询'
+        subtitle='请填写以下信息，我们会尽快与您联系'
+        inputs={[
+          {
+            type: 'text',
+            name: 'name',
+            label: '您的姓名',
+            placeholder: '请输入您的姓名'
+          },
+          {
+            type: 'text',
+            name: 'company',
+            label: '公司名称',
+            placeholder: '请输入您的公司名称'
+          },
+          {
+            type: 'tel',
+            name: 'phone',
+            label: '手机号码',
+            placeholder: '请输入您的手机号码'
+          },
+          {
+            type: 'email',
+            name: 'email',
+            label: '电子邮箱',
+            placeholder: 'you@example.com'
+          }
+        ]}
+        textarea={{
+          name: 'message',
+          label: '您的需求或合作意向',
+          placeholder: '请在此处详细描述您的需求...'
+        }}
+        button='提交信息'
       >
+        <Fragment slot='bg'>
+          <div
+            id='snackbar-toast'
+            class='toast absolute bottom-6 right-12 z-10 rounded-xl border border-hairline bg-surface p-4 shadow-xl dark:bg-surface'
+            hidden
+          >
+          </div>
+        </Fragment>
+      </ContactUs>
+    </div>
+  </div>
+
+  <div class='relative'>
+    
+    <div class='relative mx-auto max-w-7xl px-4 py-16 sm:px-6'>
+      <div class='mb-12 text-center'>
+        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>服务支持</p>
+        <h2 class='text-3xl font-bold tracking-tight text-default dark:text-white'>我们随时为您服务！</h2>
       </div>
-    </Fragment>
-  </ContactUs>
-  
-  <Features2
-    title='我们随时为您服务！'
-    items={[
-      {
-        title: '商务合作',
-        description: '如果您对我们的产品和服务感兴趣，期待与您探讨合作机会，为您的企业提供最适合的AI解决方案。',
-      },
-      {
-        title: '技术支持',
-        description: '我们的技术团队为您提供专业的技术支持，解决您在使用过程中遇到的问题，确保系统稳定运行。',
-      },
-      {
-        title: '售后服务',
-        description: '我们提供完善的售后服务体系，确保您的需求得到及时响应和解决，为您的业务保驾护航。',
-      },
-      {
-        title: '联系电话',
-        description: '16628597963',
-        icon: 'tabler:headset',
-      },
-      {
-        title: '电子邮箱',
-        description: '<a href="mailto:contact@unisudo.com" class="hover:text-primary">contact@unisudo.com</a>',
-        icon: 'tabler:mail',
-      },
-      {
-        title: '公司地址',
-        description: '上海市浦东新区临港自贸区水芸路55号港城广场二街坊1号楼8层802室',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
+      <div class='grid grid-cols-1 gap-6 md:grid-cols-3'>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 0ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10'>
+            <Icon name='tabler:briefcase' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>商务合作</h3>
+          <p class='text-muted leading-relaxed'>如果您对我们的产品和服务感兴趣，期待与您探讨合作机会，为您的企业提供最适合的AI解决方案。</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 100ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10'>
+            <Icon name='tabler:headset' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>技术支持</h3>
+          <p class='text-muted leading-relaxed'>我们的技术团队为您提供专业的技术支持，解决您在使用过程中遇到的问题，确保系统稳定运行。</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 200ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10'>
+            <Icon name='tabler:shield-check' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>售后服务</h3>
+          <p class='text-muted leading-relaxed'>我们提供完善的售后服务体系，确保您的需求得到及时响应和解决，为您的业务保驾护航。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='relative pb-20'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6'>
+      <div class='grid grid-cols-1 gap-6 md:grid-cols-3'>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8 text-center' style='animation-delay: 0ms'>
+          <Icon name='tabler:phone' class='mx-auto mb-4 h-8 w-8 text-primary' />
+          <h3 class='mb-2 text-lg font-bold tracking-tight text-default dark:text-white'>联系电话</h3>
+          <p class='text-muted'>16628597963</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8 text-center' style='animation-delay: 100ms'>
+          <Icon name='tabler:mail' class='mx-auto mb-4 h-8 w-8 text-primary' />
+          <h3 class='mb-2 text-lg font-bold tracking-tight text-default dark:text-white'>电子邮箱</h3>
+          <a href='mailto:contact@unisudo.com' class='text-muted hover:text-primary transition-colors'>contact@unisudo.com</a>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8 text-center' style='animation-delay: 200ms'>
+          <Icon name='tabler:map-pin' class='mx-auto mb-4 h-8 w-8 text-primary' />
+          <h3 class='mb-2 text-lg font-bold tracking-tight text-default dark:text-white'>公司地址</h3>
+          <p class='text-muted text-sm'>上海市浦东新区临港自贸区水芸路55号港城广场二街坊1号楼8层802室</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
 
 <script>
@@ -126,13 +156,11 @@ const metadata = {
   if (!form || !button) {
     console.error('Could not find the contact form or submit button');
   } else {
-    // 保存按钮原始的HTML内容
     const originalButtonHTML = button.innerHTML;
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
-      // 开始 loading 状态
       button.setAttribute('disabled', '');
       button.innerHTML = `
         <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -162,7 +190,7 @@ const metadata = {
         console.error('Supabase URL or Anon Key is not defined in environment variables.');
         toast('客户端配置错误');
         button.removeAttribute('disabled');
-        button.innerHTML = originalButtonHTML; // 恢复按钮
+        button.innerHTML = originalButtonHTML;
         return;
       }
 
@@ -183,14 +211,12 @@ const metadata = {
           button.removeAttribute('disabled');
           button.innerHTML = originalButtonHTML;
         } else {
-          // 服务器返回错误
           const errorData = await response.json().catch(() => null);
           toast(`提交失败: ${errorData?.message || '请稍后重试'}`);
           button.removeAttribute('disabled');
           button.innerHTML = originalButtonHTML;
         }
       } catch (error) {
-        // 网络或其他客户端错误
         console.error('Form submission error:', error);
         toast('提交失败，请检查您的网络连接。');
         button.removeAttribute('disabled');

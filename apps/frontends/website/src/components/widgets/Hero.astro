@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 ---
 
-<section class='not-prose relative md:-mt-[76px]' {...id ? { id } : {}}>
+<section class='not-prose relative overflow-hidden md:-mt-[76px]' {...id ? { id } : {}}>
   <div class='pointer-events-none absolute inset-0' aria-hidden='true'>
     <slot name='bg'>
       {bg ? <Fragment set:html={bg} /> : null}
@@ -31,7 +31,7 @@ const {
         {
           tagline && (
             <p
-              class='intersect-once intersect-quarter text-base font-bold uppercase tracking-wide text-secondary dark:text-blue-200 motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
+              class='intersect-once intersect-quarter text-base font-bold uppercase tracking-[0.2em] text-accent dark:text-accent/80 motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
               set:html={tagline}
             />
           )
@@ -46,7 +46,7 @@ const {
         {
           title && (
             <h1
-              class='leading-tighter intersect-once intersect-quarter mb-4 font-heading text-5xl font-bold tracking-tighter dark:text-gray-200 md:text-6xl motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
+              class='leading-tighter intersect-once intersect-quarter mb-6 font-heading text-4xl font-bold tracking-tight text-default dark:text-white sm:text-5xl md:text-6xl motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
               set:html={title}
             />
           )
@@ -55,7 +55,7 @@ const {
           {
             subtitle && (
               <p
-                class='intersect-once intersect-quarter mb-6 text-xl text-muted dark:text-slate-300 motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
+                class='intersect-once intersect-quarter mb-10 text-lg leading-relaxed text-muted dark:text-slate-400 motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
                 set:html={subtitle}
               />
             )
@@ -79,7 +79,7 @@ const {
         {content && <Fragment set:html={content} />}
       </div>
       <div
-        class='intersect-once intercept-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
+        class='intersect-once intersect-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
       >
         {
           image && (
@@ -88,7 +88,7 @@ const {
                 <Fragment set:html={image} />
               ) : (
                 <Image
-                  class='mx-auto w-full rounded-md'
+                  class='mx-auto w-full rounded-2xl'
                   widths={[400, 768, 1024, 2040]}
                   sizes='(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px'
                   loading='eager'

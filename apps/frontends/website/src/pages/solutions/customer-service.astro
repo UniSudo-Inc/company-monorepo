@@ -10,20 +10,19 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Section -->
-  <div class="relative h-96 flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
-    <div class="relative z-10 text-center text-white">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-90"></div>
+    <div class="absolute inset-0 bg-[url(&quot;data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E&quot;)] opacity-30"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white tracking-tight">
         智能客服解决方案
       </h1>
-      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
+      <p class="text-xl text-white/90">
         本地部署 · 成本可控 · 安全可靠
       </p>
     </div>
   </div>
 
-  <!-- Process Flow -->
   <Steps
     title="智能服务流程"
     items={[
@@ -54,8 +53,6 @@ const metadata = {
     }}
   />
 
-
-    <!-- Case Study 1: Financial Services -->
     <Content
       isReversed
       tagline="案例研究 1"
@@ -95,11 +92,10 @@ const metadata = {
     >
       <Fragment slot="content">
         <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
-        <p>某用户在深夜需要办理信用卡额度调整。传统人工服务需等待次日，但智能客服系统立即响应，通过多轮对话了解用户需求，调取用户画像和信用数据，在3分钟内完成了评估和调额，全程无需人工介入。用户对响应速度和服务体验给出了5星好评。</p>
+        <p class="text-muted leading-relaxed">某用户在深夜需要办理信用卡额度调整。传统人工服务需等待次日，但智能客服系统立即响应，通过多轮对话了解用户需求，调取用户画像和信用数据，在3分钟内完成了评估和调额，全程无需人工介入。用户对响应速度和服务体验给出了5星好评。</p>
       </Fragment>
     </Content>
 
-    <!-- Case Study 2: E-commerce -->
     <Content
       isAfterContent
       tagline="案例研究 2"
@@ -139,11 +135,10 @@ const metadata = {
     >
       <Fragment slot="content">
         <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
-        <p>双11期间，某用户咨询多个订单的发货状态和退换货问题。智能客服系统快速汇总了用户的所有订单信息，主动推送了最新物流进度，并针对退换货需求自动生成工单、预约上门取件，整个过程只用了5分钟，避免了传统人工客服在高峰期的长时间等待。</p>
+        <p class="text-muted leading-relaxed">双11期间，某用户咨询多个订单的发货状态和退换货问题。智能客服系统快速汇总了用户的所有订单信息，主动推送了最新物流进度，并针对退换货需求自动生成工单、预约上门取件，整个过程只用了5分钟，避免了传统人工客服在高峰期的长时间等待。</p>
       </Fragment>
     </Content>
 
-    <!-- Case Study 3: Government Services -->
     <Content
       isReversed
       tagline="案例研究 3"
@@ -183,22 +178,21 @@ const metadata = {
     >
       <Fragment slot="content">
         <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
-        <p>一位市民想要办理老年人医保待遇资格认证，但不清楚具体流程。智能助手通过语音交互方式，用方言为老人详细讲解了办理流程，自动预约了就近办理点，还贴心推送了乘车路线，让老人感受到了暖心的智能化服务。</p> 
+        <p class="text-muted leading-relaxed">一位市民想要办理老年人医保待遇资格认证，但不清楚具体流程。智能助手通过语音交互方式，用方言为老人详细讲解了办理流程，自动预约了就近办理点，还贴心推送了乘车路线，让老人感受到了暖心的智能化服务。</p> 
       </Fragment>
     </Content>
 
-    <!-- Case Study 4: Enterprise Knowledge Base -->
     <Content
       isAfterContent
       tagline="案例研究 4"
-      title="企业知识库管���"
+      title="企业知识库管理"
       items={[
         {
           title: '项目背景',
           description: `
           • 需求分析：企业内部知识分散，检索效率低
           • 痛点：员工培训成本高，知识传承困难
-          • ���战：需要处理非结构化数据，实现智能推荐
+          • 挑战：需要处理非结构化数据，实现智能推荐
           • 目标：建立高效的知识管理和共享平台`,
         },
         {
@@ -227,11 +221,10 @@ const metadata = {
     >
       <Fragment slot="content">
         <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
-        <p>某新入职员工在处理客户项目时遇到技术难题，通过智能知识库快速检索到相关案例和解决方案，系统还主动推荐了相关的最佳实践文档，帮助员工在半小时内解决了问题，大大提升了工作效率。</p>
+        <p class="text-muted leading-relaxed">某新入职员工在处理客户项目时遇到技术难题，通过智能知识库快速检索到相关案例和解决方案，系统还主动推荐了相关的最佳实践文档，帮助员工在半小时内解决了问题，大大提升了工作效率。</p>
       </Fragment>
     </Content>
 
-    <!-- Case Study 5: Multi-round Dialogue -->
     <Content
       isReversed
       tagline="案例研究 5"
@@ -271,11 +264,10 @@ const metadata = {
     >
       <Fragment slot="content">
         <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
-        <p>一位客户在咨询产品时，从简单的功能询问逐步深入到具体应用场景和价格方案。系统通过多轮对话准确把握用户需求变化，适时推荐合适的解决方案，最终帮助客户选择了最适合的产品配置，整个过程自然流畅，客户直赞"像在和真人聊天"。</p>
+        <p class="text-muted leading-relaxed">一位客户在咨询产品时，从简单的功能询问逐步深入到具体应用场景和价格方案。系统通过多轮对话准确把握用户需求变化，适时推荐合适的解决方案，最终帮助客户选择了最适合的产品配置，整个过程自然流畅，客户直赞"像在和真人聊天"。</p>
       </Fragment>
     </Content>
 
-    <!-- Case Study 6: Emotion Recognition -->
     <Content
       isAfterContent
       tagline="案例研究 6"
@@ -315,11 +307,10 @@ const metadata = {
     >
       <Fragment slot="content">
         <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景故事</h3>
-        <p>某用户在退款过程中表现出明显的不耐烦情绪，系统及时识别到情绪变化，立即调整回复策略，采用更简洁直接的表达方式，并适时表达理解和歉意。同时主动升级服务等级，加速处理退款申请。用户对这种贴心的服务感到惊喜，最终还给予了五星好评。</p>
+        <p class="text-muted leading-relaxed">某用户在退款过程中表现出明显的不耐烦情绪，系统及时识别到情绪变化，立即调整回复策略，采用更简洁直接的表达方式，并适时表达理解和歉意。同时主动升级服务等级，加速处理退款申请。用户对这种贴心的服务感到惊喜，最终还给予了五星好评。</p>
       </Fragment>
     </Content>
 
-  <!-- Features Section -->
   <Features2
     title="平台核心优势"
     subtitle="基于本地部署的小模型解决方案"
@@ -347,17 +338,16 @@ const metadata = {
     ]}
   />
 
-  <!-- Call to Action -->
-  <div class="relative bg-primary-50 dark:bg-slate-800 py-16">
+  <div class="relative py-16">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center">
-        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-default dark:text-white">
           开启智能客服新时代
         </h2>
-        <a href="/contact" class="btn btn-primary mb-4">
+        <a href="/contact/" class="btn btn-primary mb-4">
           预约演示
         </a>
-        <p class="text-xl text-gray-600 dark:text-slate-400">
+        <p class="text-xl text-muted">
           让我们助力您的企业提供更优质的客户服务
         </p>
       </div>

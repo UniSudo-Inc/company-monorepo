@@ -251,7 +251,26 @@ import { UI } from 'astrowind:config';
 
   Observer.start();
 
+  const animateOnScrollObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          animateOnScrollObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+  );
+
+  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    animateOnScrollObserver.observe(el);
+  });
+
   document.addEventListener('astro:after-swap', () => {
     Observer.start();
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      animateOnScrollObserver.observe(el);
+    });
   });
 </script>

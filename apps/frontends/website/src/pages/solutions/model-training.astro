@@ -1,7 +1,7 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
 import Content from '@/components/widgets/Content.astro';
-import Features2 from '@/components/widgets/Features2.astro';
 import Steps from '@/components/widgets/Steps.astro';
 import Timeline from '@/components/widgets/Timeline.astro';
 import CallToAction from '@/components/widgets/CallToAction.astro';
@@ -13,74 +13,69 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Section -->
-  <div class='relative flex h-96 items-center justify-center overflow-hidden'>
-    <div class='absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90'></div>
-    <div class='relative z-10 text-center text-white'>
-      <h1 class='mb-4 text-4xl font-bold md:text-5xl' data-aos='fade-up'>模型训练和微调解决方案</h1>
-      <p class='text-xl' data-aos='fade-up' data-aos-delay='200'>定制化 · 循环学习 · 数据安全</p>
+  <div class='relative overflow-hidden'>
+    <div class='absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-90'></div>
+    <div class='absolute inset-0 bg-[url("data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E")] opacity-30'></div>
+    <div class='relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 text-center'>
+      <p class='mb-4 text-base font-bold uppercase tracking-[0.2em] text-white/80'>模型训练</p>
+      <h1 class='mb-6 text-4xl font-bold tracking-tight text-white md:text-6xl'>
+        模型训练和微调解决方案
+      </h1>
+      <p class='mx-auto max-w-2xl text-xl text-white/90'>
+        定制化 · 循环学习 · 数据安全
+      </p>
     </div>
   </div>
 
-  <!-- Process Flow -->
-  <Steps
-    title='模型训练流程'
-    items={[
-      {
-        title: '需求分析',
-        description: '深入了解业务场景和模型需求',
-        icon: 'tabler:brain',
-      },
-      {
-        title: '数据准备',
-        description: '数据处理和标注',
-        icon: 'tabler:database',
-      },
-      {
-        title: '模型训练',
-        description: '专业的训练和优化',
-        icon: 'tabler:code',
-      },
-      {
-        title: '效果验证',
-        description: '严格的模型评估',
-        icon: 'tabler:chart-dots',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '训练流程',
-    }}
-  />
+  <div class='relative'>
+    
+    <Steps
+      title='模型训练流程'
+      items={[
+        {
+          title: '需求分析',
+          description: '深入了解业务场景和模型需求',
+          icon: 'tabler:brain',
+        },
+        {
+          title: '数据准备',
+          description: '数据处理和标注',
+          icon: 'tabler:database',
+        },
+        {
+          title: '模型训练',
+          description: '专业的训练和优化',
+          icon: 'tabler:code',
+        },
+        {
+          title: '效果验证',
+          description: '严格的模型评估',
+          icon: 'tabler:chart-dots',
+        },
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+        alt: '训练流程',
+      }}
+    />
+  </div>
 
-  <!-- Case Study 1: LLM Fine-tuning -->
   <Content
     isReversed
-    tagline='案例研究 1'
+    tagline='案例研究'
     title='大语言模型微调训练'
     items={[
       {
         title: '项目背景',
-        description: `
-        • 需求分析：某法律咨询平台需要专业的法律问答模型
-        • 痛点：通用模型法律专业性不足，响应准确度低
-        • 目标：构建专业的法律领域问答模型`,
+        description: '需求：某法律咨询平台需要专业的法律问答模型。痛点：通用模型法律专业性不足，响应准确度低。目标：构建专业的法律领域问答模型。',
       },
       {
         title: '解决方案',
-        description: `
-        • 构建法律专业知识库
-        • 设计高效微调方案
-        • 应用PEFT技术降低成本
-        • 实现增量训练更新`,
+        description: '构建法律专业知识库，设计高效微调方案，应用PEFT技术降低成本，实现增量训练更新。',
       },
       {
         title: '实施效果',
-        description: `
-        • 法律问答准确率提升60%
-        • 训练成本降低70%
-        • 模型部署规模减少80%
-        • 用户满意度提升45%`,
+        description: '法律问答准确率提升60%，训练成本降低70%，模型部署规模减少80%，用户满意度提升45%。',
       },
     ]}
     image={{
@@ -89,41 +84,27 @@ const metadata = {
     }}
   >
     <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>场景故事</h3>
-      <p>
-        通过专业领域知识的深度融合和高效微调技术，帮助客户在控制成本的同时显著提升了模型在法律领域的专业表现，实现了精准的法律咨询服务。
-      </p>
+      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4'>场景故事</h3>
+      <p class='text-muted leading-relaxed'>通过专业领域知识的深度融合和高效微调技术，帮助客户在控制成本的同时显著提升了模型在法律领域的专业表现，实现了精准的法律咨询服务。</p>
     </Fragment>
   </Content>
 
-  <!-- Case Study 2: Domain Model -->
   <Content
     isAfterContent
-    tagline='案例研究 2'
+    tagline='案例研究'
     title='垂直领域模型开发'
     items={[
       {
         title: '项目背景',
-        description: `
-        • 需求分析：某医疗机构需要医学影像智能诊断系统
-        • 痛点：传统诊断耗时长，人工成本高
-        • 目标：开发高精度医学影像诊断模型`,
+        description: '需求：某医疗机构需要医学影像智能诊断系统。痛点：传统诊断耗时长，人工成本高。目标：开发高精度医学影像诊断模型。',
       },
       {
         title: '解决方案',
-        description: `
-        • 医学影像数据处理
-        • 专业医生团队标注
-        • 深度学习模型优化
-        • 多轮迭代验证`,
+        description: '医学影像数据处理，专业医生团队标注，深度学习模型优化，多轮迭代验证。',
       },
       {
         title: '实施效果',
-        description: `
-        • 诊断准确率达到95%
-        • 诊断时间缩短80%
-        • 人工成本降低50%
-        • 诊断效率提升300%`,
+        description: '诊断准确率达到95%，诊断时间缩短80%，人工成本降低50%，诊断效率提升300%。',
       },
     ]}
     image={{
@@ -132,254 +113,108 @@ const metadata = {
     }}
   >
     <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>场景故事</h3>
-      <p>
-        项目团队通过收集和标注大量医学影像数据，结合专业医生的诊断经验，开发出高精度的AI辅助诊断系统，大幅提升了医疗机构的诊断效率。
-      </p>
+      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4'>场景故事</h3>
+      <p class='text-muted leading-relaxed'>项目团队通过收集和标注大量医学影像数据，结合专业医生的诊断经验，开发出高精度的AI辅助诊断系统，大幅提升了医疗机构的诊断效率。</p>
     </Fragment>
   </Content>
 
-  <!-- Case Study 3: Multi-modal Model -->
   <Content
     isReversed
-    tagline='案例研究 3'
+    isAfterContent
+    tagline='案例研究'
     title='多模态模型训练部署'
     items={[
       {
         title: '项目背景',
-        description: `
-        • 需求分析：电商平台需要智能商品识别系统
-        • 痛点：商品描述不准确，分类效率低
-        • 目标：实现图文商品智能处理`,
+        description: '需求：某电商平台需要商品推荐和图像识别系统。痛点：人工推荐效率低，图像识别准确率不足。目标：构建多模态智能推荐系统。',
       },
       {
         title: '解决方案',
-        description: `
-        • 多模态数据预处理
-        • 跨模态特征融合
-        • 分布式训练部署
-        • 实时推理优化`,
+        description: '整合用户行为数据，构建商品图像库，训练多模态融合模型，实现个性化推荐。',
       },
       {
         title: '实施效果',
-        description: `
-        • 商品分类准确率98%
-        • 处理效率提升200%
-        • 人工审核减少90%
-        • 用户体验显著提升`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '多模态训练',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>场景故事</h3>
-      <p>
-        通过开发图文多模态模型，实现了商品图片和描述文本的智能处理，帮助电商平台提高了商品管理效率，优化了用户购物体验。
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Case Study 4: Performance Optimization -->
-  <Content
-    isAfterContent
-    tagline='案例研究 4'
-    title='模型性能优化服务'
-    items={[
-      {
-        title: '项目背景',
-        description: `
-        • 需求分析：智能设备制造商需要轻量级AI模型
-        • 痛点：模型体积大，推理速度慢
-        • 目标：实现模型轻量化部署`,
-      },
-      {
-        title: '解决方案',
-        description: `
-        • 模型压缩量化
-        • 知识蒸馏优化
-        • 算子融合加速
-        • 异构设备适配`,
-      },
-      {
-        title: '实施效果',
-        description: `
-        • 模型体积减少95%
-        • 推理速度提升300%
-        • 能耗降低80%
-        • 精度损失小于1%`,
+        description: '推荐点击率提升120%，图像识别准确率达到98%，用户停留时间增加60%，销售额增长35%。',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '性能优化',
+      alt: '多模态模型',
     }}
   >
     <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>场景故事</h3>
-      <p>
-        针对客户的终端设备限制，通过模型压缩和优化技术，成功将大型AI模型轻量化部署到资源受限设备上，保持高性能的同时大幅降低资源消耗。
-      </p>
+      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4'>场景故事</h3>
+      <p class='text-muted leading-relaxed'>通过整合用户行为数据和商品图像信息，训练出能够同时理解文本和图像的多模态模型，为用户提供更加精准和个性化的商品推荐服务。</p>
     </Fragment>
   </Content>
 
-  <!-- Case Study 5: Few-shot Learning -->
-  <Content
-    isReversed
-    tagline='案例研究 5'
-    title='小样本学习解决方案'
-    items={[
-      {
-        title: '项目背景',
-        description: `
-        • 需求分析：制造业客户需要缺陷检测系统
-        • 痛点：样本数据稀缺，标注成本高
-        • 目标：实现小样本快速学习`,
-      },
-      {
-        title: '解决方案',
-        description: `
-        • 数据增强技术
-        • 迁移学习应用
-        • 元学习方法
-        • 持续学习更新`,
-      },
-      {
-        title: '实施效果',
-        description: `
-        • 10样本即可训练
-        • 检测准确率90%
-        • 部署周期缩短75%
-        • 维护成本降低60%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1598425237654-4fc758e50a93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '小样本学习',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>场景故事</h3>
-      <p>
-        针对制造业缺陷样本少的特点，采用小样本学习技术，帮助客户快速构建高精度的缺陷检测系统，大幅降低了数据收集和标注成本。
-      </p>
-    </Fragment>
-  </Content>
+  <div class='relative'>
+    
+    <div class='relative mx-auto max-w-7xl px-4 py-16 sm:px-6'>
+      <div class='mb-12 text-center'>
+        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>核心优势</p>
+        <h2 class='text-3xl font-bold tracking-tight text-default dark:text-white md:text-4xl'>专业的模型训练服务</h2>
+      </div>
+      <div class='grid grid-cols-1 gap-6 md:grid-cols-4'>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-6 text-center' style='animation-delay: 0ms'>
+          <Icon name='tabler:brain' class='mx-auto mb-4 h-8 w-8 text-primary' />
+          <h3 class='font-semibold text-default dark:text-white'>专业团队</h3>
+          <p class='mt-2 text-sm text-muted'>资深算法工程师</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-6 text-center' style='animation-delay: 100ms'>
+          <Icon name='tabler:database' class='mx-auto mb-4 h-8 w-8 text-primary' />
+          <h3 class='font-semibold text-default dark:text-white'>数据安全</h3>
+          <p class='mt-2 text-sm text-muted'>严格的数据保护</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-6 text-center' style='animation-delay: 200ms'>
+          <Icon name='tabler:rocket' class='mx-auto mb-4 h-8 w-8 text-primary' />
+          <h3 class='font-semibold text-default dark:text-white'>高效训练</h3>
+          <p class='mt-2 text-sm text-muted'>优化训练流程</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-6 text-center' style='animation-delay: 300ms'>
+          <Icon name='tabler:shield-check' class='mx-auto mb-4 h-8 w-8 text-primary' />
+          <h3 class='font-semibold text-default dark:text-white'>质量保证</h3>
+          <p class='mt-2 text-sm text-muted'>严格的模型评估</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Case Study 6: Incremental Learning -->
-  <Content
-    isAfterContent
-    tagline='案例研究 6'
-    title='增量学习系统搭建'
-    items={[
-      {
-        title: '项目背景',
-        description: `
-        • 需求分析：智能客服系统需要持续优化
-        • 痛点：新问题无法及时应对
-        • 目标：构建在线学习系统`,
-      },
-      {
-        title: '解决方案',
-        description: `
-        • 增量训练架构
-        • 在线学习策略
-        • 灾备回滚机制
-        • 性能监控系统`,
-      },
-      {
-        title: '实施效果',
-        description: `
-        • 响应准确率提升40%
-        • 新知识学习提速90%
-        • 维护成本降低50%
-        • 系统稳定性提升`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1488229297570-58520851e868?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '增量学习',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>场景故事</h3>
-      <p>为智能客服系统开发增量学习能力，实现了知识的持续更新和模型的在线优化，显著提升了系统的服务质量和响应效率。</p>
-    </Fragment>
-  </Content>
-
-  <!-- Success Metrics -->
   <Timeline
-    title='模型训练解决方案效果'
+    title='模型训练服务效果'
     items={[
       {
-        title: '训练效率',
-        description: '平均训练时间减少65%，资源利用率提升40%',
-        icon: 'tabler:chart-arrows',
+        title: '准确率提升',
+        description: '平均提升60%以上',
       },
       {
-        title: '模型性能',
-        description: '准确率平均提升50%，推理速度提升200%',
-        icon: 'tabler:brain',
+        title: '成本降低',
+        description: '训练成本降低70%',
       },
       {
-        title: '部署成本',
-        description: '计算资源成本降低70%，运维成本降低45%',
-        icon: 'tabler:coin',
+        title: '部署优化',
+        description: '部署规模减少80%',
       },
       {
-        title: '系统稳定性',
-        description: '系统可用性达99.9%，故障响应时间降低80%',
-        icon: 'tabler:shield',
+        title: '用户满意度',
+        description: '提升45%以上',
       },
     ]}
   />
 
-  <!-- Call to Action -->
-  <!-- Core Advantages -->
-  <Features2
-    title='核心优势'
-    subtitle='专业的模型训练能力'
-    columns={2}
-    items={[
-      {
-        title: '专业团队',
-        description: '拥有AI训练领域专业技术团队',
-        icon: 'tabler:users',
-      },
-      {
-        title: '高效训练',
-        description: '先进的训练架构和优化方案',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: '成本可控',
-        description: '高效的资源调度和成本优化',
-        icon: 'tabler:coin',
-      },
-      {
-        title: '持续优化',
-        description: '完善的效果评估和持续改进',
-        icon: 'tabler:refresh',
-      },
-    ]}
-  />
-
-  <CallToAction
-    title='开启行业数字化转型之旅'
-    subtitle='本地化部署，安全可靠，成本更低'
-    actions={[
-      {
-        variant: 'primary',
-        text: '预约咨询',
-        href: '/contact',
-        icon: 'tabler:download',
-      },
-      {
-        text: '了解更多',
-        href: '/about',
-      },
-    ]}
-  />
+  <div class='relative'>
+    
+    <CallToAction
+      title='开启您的模型训练之旅'
+      subtitle='专业团队为您定制专属的模型训练方案'
+      actions={[
+        {
+          variant: 'primary',
+          text: '立即咨询',
+          href: '/contact/',
+          icon: 'tabler:messages',
+        },
+      ]}
+    />
+  </div>
 </Layout>

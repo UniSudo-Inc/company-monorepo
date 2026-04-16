@@ -1,6 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
 import WidgetWrapper from '@/components/ui/WidgetWrapper.astro';
-import ItemGrid from '@/components/ui/ItemGrid.astro';
 import Headline from '@/components/ui/Headline.astro';
 import type { Features as Props } from '@/types';
 
@@ -9,10 +9,6 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
   items = [],
-  columns = 2,
-
-  defaultIcon,
-
   id,
   isDark = false,
   classes = {},
@@ -20,22 +16,38 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.['container'] ?? ''}`} bg={bg}>
-  <Headline
-    title={title}
-    subtitle={subtitle}
-    tagline={tagline}
-    classes={classes?.['headline'] as Record<string, string>}
-  />
-  <ItemGrid
-    items={items}
-    columns={columns}
-    defaultIcon={defaultIcon}
-    classes={{
-      container: '',
-      title: 'md:text-[1.3rem]',
-      icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
-      ...((classes?.['items'] as Record<string, never>) ?? {}),
-    }}
-  />
+<WidgetWrapper id={id} isDark={isDark} containerClass='max-w-7xl' bg={bg}>
+  <div class='relative'>
+    <Headline
+      title={title}
+      subtitle={subtitle}
+      tagline={tagline}
+      classes={{
+        title: 'text-4xl font-bold tracking-tight',
+        subtitle: 'text-lg text-muted max-w-3xl',
+        tagline: 'text-base font-bold uppercase tracking-[0.2em] text-accent',
+        ...((classes?.['headline'] as Record<string, string>) ?? {}),
+      }}
+    />
+    <div class='mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4'>
+      {items.map((item, index) => (
+        <div 
+          class={`intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade group card-bento hover:border-primary/40`}
+          style={`animation-delay: ${index * 100}ms`}
+        >
+          <div class='mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-transform duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            {item.icon && (
+              <Icon name={item.icon} class='h-6 w-6 text-primary' />
+            )}
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>
+            {item.title}
+          </h3>
+          <p class='text-muted leading-relaxed'>
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
 </WidgetWrapper>

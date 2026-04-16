@@ -1,10 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import HeroText from '@/components/widgets/HeroText.astro';
-import Features3 from '@/components/widgets/Features3.astro';
+import Hero from '@/components/widgets/Hero.astro';
 import Steps from '@/components/widgets/Steps.astro';
 import Content from '@/components/widgets/Content.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: '核心技术 - 上海智独数科技',
@@ -12,104 +12,124 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-  <HeroText title='智独数科技核心技术' subtitle='突破传统架构限制，创新AI交互体验' tagline=' ' />
+  <Hero>
+    <Fragment slot='tagline'>技术创新</Fragment>
+    <Fragment slot='title'>
+      <span class='text-4xl md:text-6xl font-bold tracking-tight'>智独数科技</span><br />
+      <span class='text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-3xl md:text-5xl mt-2 font-semibold'>核心技术</span>
+    </Fragment>
 
-  <!-- Core Technology Features ******************* -->
-  <Features3
-    title='创新对话架构'
-    subtitle='突破性的技术创新，引领行业发展'
-    columns={3}
-    items={[
-      {
-        title: '流式对话技术',
-        description: `
-          • 业界领先的50倍实时率提升
-          • 支持多语言实时打断与重构
-          • 自然流畅的对话体验
-        `,
-        icon: 'tabler:message-circle',
-      },
-      {
-        title: '轻量级模型架构',
-        description: `
-          • 突破传统Transformer限制
-          • 3B-7B小型模型精准服务
-          • 显著降低训练和部署成本
-          • 支持垂直场景的深度优化
-        `,
-        icon: 'tabler:brain',
-      },
-      {
-        title: '云原生技术平台',
-        description: `
-          • 全自研商用级部署能力
-          • 灵活的Function Call支持
-          • 开放的API生态系统
-          • 支持多样化本地部署方案
-        `,
-        icon: 'tabler:cloud',
-      },
-    ]}
-  />
+    <Fragment slot='subtitle'>
+      <span class='text-xl leading-relaxed'>突破传统架构限制，创新AI交互体验</span>
+    </Fragment>
+  </Hero>
 
-  <!-- Technology Advantages ******************* -->
-  <Steps
-    title='技术优势'
-    items={[
-      {
-        title: '成本效益',
-        description: `
-          • 计算资源优化
-          - 相比传统方案降低80%计算资源消耗
-          - 支持商用级GPU和消费级显卡部署
-          - 优化的并发处理能力
+  <div class='relative'>
+    
+    <div class='relative mx-auto max-w-7xl px-4 pb-20 sm:px-6'>
+      <div class='mb-16 text-center'>
+        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>创新对话架构</p>
+        <h2 class='text-4xl font-bold tracking-tight text-default dark:text-white md:text-5xl'>突破性的技术创新</h2>
+        <p class='mx-auto mt-4 max-w-2xl text-lg text-muted'>引领行业发展</p>
+      </div>
+      <div class='grid grid-cols-1 gap-6 md:grid-cols-3'>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 0ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:message-circle' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>流式对话技术</h3>
+          <ul class='space-y-2 text-muted text-sm leading-relaxed'>
+            <li>• 业界领先的50倍实时率提升</li>
+            <li>• 支持多语言实时打断与重构</li>
+            <li>• 自然流畅的对话体验</li>
+          </ul>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 100ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:brain' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>轻量级模型架构</h3>
+          <ul class='space-y-2 text-muted text-sm leading-relaxed'>
+            <li>• 突破传统Transformer限制</li>
+            <li>• 3B-7B小型模型精准服务</li>
+            <li>• 显著降低训练和部署成本</li>
+            <li>• 支持垂直场景的深度优化</li>
+          </ul>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 200ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:cloud' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>云原生技术平台</h3>
+          <ul class='space-y-2 text-muted text-sm leading-relaxed'>
+            <li>• 全自研商用级部署能力</li>
+            <li>• 灵活的Function Call支持</li>
+            <li>• 开放的API生态系统</li>
+            <li>• 支持多样化本地部署方案</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          • 部署成本优势
-          - 灵活的本地化部署方案
-          - 最小化硬件要求
-          - 简化的运维管理
-        `,
-        icon: 'tabler:chart-bar',
-      },
-      {
-        title: '性能突破',
-        description: `
-          • 实时交互能力
-          - 毫秒级响应速度
-          - 流畅的打断重构体验
-          - 多轮对话优化
+  <div class='relative'>
+    
+    <Steps
+      title='技术优势'
+      items={[
+        {
+          title: '成本效益',
+          description: `
+            • 计算资源优化
+              - 相比传统方案降低80%计算资源消耗
+              - 支持商用级GPU和消费级显卡部署
+              - 优化的并发处理能力
 
-          • 精准性提升
-          - 场景化优化算法
-          - 超越大模型API的准确度
-          - 持续学习与优化能力
-        `,
-        icon: 'tabler:rocket',
-      },
-      {
-        title: '扩展能力',
-        description: `
-          • 多语言支持
-          - 跨语言模型融合
-          - 多语种实时交互
-          - 语言模型动态适配
+            • 部署成本优势
+              - 灵活的本地化部署方案
+              - 最小化硬件要求
+              - 简化的运维管理
+          `,
+          icon: 'tabler:coin',
+        },
+        {
+          title: '性能突破',
+          description: `
+            • 实时交互能力
+              - 毫秒级响应速度
+              - 流畅的打断重构体验
+              - 多轮对话优化
 
-          • 场景适配
-          - 工业现场快速部署
-          - 智能客服深度优化
-          - 垂直领域定制能力
-        `,
-        icon: 'tabler:arrows-maximize',
-      },
-    ]}
-  />
+            • 精准性提升
+              - 场景化优化算法
+              - 超越大模型API的准确度
+              - 持续学习与优化能力
+          `,
+          icon: 'tabler:rocket',
+        },
+        {
+          title: '扩展能力',
+          description: `
+            • 多语言支持
+              - 跨语言模型融合
+              - 多语种实时交互
+              - 语言模型动态适配
 
-  <!-- Content Widget **************** -->
+            • 场景适配
+              - 工业现场快速部署
+              - 智能客服深度优化
+              - 垂直领域定制能力
+          `,
+          icon: 'tabler:arrows-maximize',
+        },
+      ]}
+    />
+  </div>
+
   <Content
     isReversed
-    title='创新成果'
-    subtitle='持续突破，不断创新'
+    tagline='创新成果'
+    title='核心算法创新与应用创新'
     items={[
       {
         title: '非Transformer架构的突破性进展',
@@ -135,17 +155,15 @@ const metadata = {
       alt: 'Colorful Image',
     }}
   >
-    <Fragment slot='content'>
-      <h2 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>
-        核心算法创新与应用创新
-      </h2></Fragment
-    >
+    <Fragment slot='bg'>
+      
+    </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
   <Content
-    title='未来发展'
     isAfterContent
+    tagline='未来发展'
+    title='技术路线图与创新方向'
     items={[
       {
         title: '持续优化核心算法',
@@ -171,236 +189,84 @@ const metadata = {
       alt: 'Blueprint Image',
     }}
   >
-    <Fragment slot='content'>
-      <h2 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>技术路线图与创新方向</h2></Fragment
-    >
+    <Fragment slot='bg'>
+      
+    </Fragment>
   </Content>
 
-  <!-- Technology Value ******************* -->
-  <div class='scroll-section relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8' data-aos='fade-up'>
-    <div class='mb-12 text-center'>
-      <h2 class='tech-title mb-4 text-3xl font-bold'>技术价值</h2>
-      <p class='text-xl text-gray-600 dark:text-gray-400'>创造行业价值，推动产业升级</p>
-    </div>
-
-    <div class='value-cards grid grid-cols-1 gap-8 md:grid-cols-2'>
-      <!-- 行业价值 -->
-      <div
-        class='value-card transform rounded-lg bg-white p-8 shadow-lg transition-transform duration-300 hover:scale-105 dark:bg-gray-800'
-        data-aos='fade-right'
-      >
-        <div class='mb-6 flex items-center'>
-          <Icon name='tabler:building' class='h-8 w-8 text-blue-600' />
-          <h3 class='ml-4 text-2xl font-bold'>行业价值</h3>
-        </div>
-        <ul class='space-y-4'>
-          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='100'>
-            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
-            <span>降低AI应用门槛</span>
-          </li>
-          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='200'>
-            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
-            <span>提升部署灵活性</span>
-          </li>
-          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='300'>
-            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
-            <span>加速产业智能化升级</span>
-          </li>
-        </ul>
+  <div class='relative'>
+    
+    <div class='relative mx-auto max-w-7xl px-4 py-16 sm:px-6'>
+      <div class='mb-12 text-center'>
+        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>技术价值</p>
+        <h2 class='text-3xl font-bold tracking-tight text-default dark:text-white md:text-4xl'>创造行业价值，推动产业升级</h2>
       </div>
-
-      <!-- 商业价值 -->
-      <div
-        class='value-card transform rounded-lg bg-white p-8 shadow-lg transition-transform duration-300 hover:scale-105 dark:bg-gray-800'
-        data-aos='fade-left'
-      >
-        <div class='mb-6 flex items-center'>
-          <Icon name='tabler:chart-dots' class='h-8 w-8 text-blue-600' />
-          <h3 class='ml-4 text-2xl font-bold'>商业价值</h3>
+      <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 0ms'>
+          <div class='mb-5 flex items-center gap-4'>
+            <div class='flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10'>
+              <Icon name='tabler:building' class='h-6 w-6 text-primary' />
+            </div>
+            <h3 class='text-xl font-bold tracking-tight text-default dark:text-white'>行业价值</h3>
+          </div>
+          <ul class='space-y-3 text-muted'>
+            <li class='flex items-center gap-3'>
+              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
+              <span>降低AI应用门槛</span>
+            </li>
+            <li class='flex items-center gap-3'>
+              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
+              <span>提升部署灵活性</span>
+            </li>
+            <li class='flex items-center gap-3'>
+              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
+              <span>加速产业智能化升级</span>
+            </li>
+          </ul>
         </div>
-        <ul class='space-y-4'>
-          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='100'>
-            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
-            <span>显著降低使用成本</span>
-          </li>
-          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='200'>
-            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
-            <span>提升落地效率</span>
-          </li>
-          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='300'>
-            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
-            <span>创造新商业模式</span>
-          </li>
-        </ul>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 100ms'>
+          <div class='mb-5 flex items-center gap-4'>
+            <div class='flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10'>
+              <Icon name='tabler:chart-dots' class='h-6 w-6 text-primary' />
+            </div>
+            <h3 class='text-xl font-bold tracking-tight text-default dark:text-white'>商业价值</h3>
+          </div>
+          <ul class='space-y-3 text-muted'>
+            <li class='flex items-center gap-3'>
+              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
+              <span>显著降低使用成本</span>
+            </li>
+            <li class='flex items-center gap-3'>
+              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
+              <span>提升落地效率</span>
+            </li>
+            <li class='flex items-center gap-3'>
+              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
+              <span>创造新商业模式</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- 2. 然后添加全局动画样式和脚本： ```astro -->
-  <style>
-    /* 基础动画定义 */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes scaleIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    /* 应用动画的类 */
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    .slide-left {
-      opacity: 0;
-      animation: slideInLeft 1s ease forwards;
-    }
-
-    .slide-right {
-      opacity: 0;
-      animation: slideInRight 1s ease forwards;
-    }
-
-    .slide-up {
-      opacity: 0;
-      animation: slideInUp 1s ease forwards;
-    }
-
-    .scale-in {
-      opacity: 0;
-      animation: scaleIn 1s ease forwards;
-    }
-
-    /* 为不同延迟添加类 */
-    .delay-100 {
-      animation-delay: 100ms;
-    }
-    .delay-200 {
-      animation-delay: 200ms;
-    }
-    .delay-300 {
-      animation-delay: 300ms;
-    }
-    .delay-400 {
-      animation-delay: 400ms;
-    }
-    .delay-500 {
-      animation-delay: 500ms;
-    }
-  </style>
-
-  <script>
-    // 交叉观察器选项
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1,
-    };
-
-    // 创建观察器
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // 获取当前元素应该使用的动画类
-          const animationClass = entry.target.dataset.animation;
-          const delay = entry.target.dataset.delay;
-
-          // 添加动画类
-          if (animationClass) {
-            entry.target.classList.add(animationClass);
-          }
-          if (delay) {
-            entry.target.style.animationDelay = `${delay}ms`;
-          }
-
-          // 停止观察该元素
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-
-    // 开始观察元素
-    document.addEventListener('DOMContentLoaded', () => {
-      // 观察所有带有data-animation属性的元素
-      document.querySelectorAll('[data-animation]').forEach((element) => {
-        observer.observe(element);
-      });
-
-      // 观察滚动区域
-      document.querySelectorAll('.scroll-section').forEach((section) => {
-        observer.observe(section);
-      });
-
-      // 观察价值卡片
-      document.querySelectorAll('.value-card').forEach((card) => {
-        observer.observe(card);
-      });
-
-      // 观察价值项
-      document.querySelectorAll('.value-item').forEach((item) => {
-        observer.observe(item);
-      });
-    });
-
-    // 添加滚动动画
-    document.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      const windowHeight = window.innerHeight;
-
-      document.querySelectorAll('.scroll-animate').forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top + scrolled;
-
-        if (scrolled > elementTop - windowHeight + 100) {
-          element.classList.add('active');
-        }
-      });
-    });
-  </script>
+  <div class='relative pb-20'>
+    
+    <CallToAction
+      title='了解更多技术详情'
+      subtitle='探索我们的核心技术如何为您的业务赋能'
+      actions={[
+        {
+          variant: 'primary',
+          text: '联系我们',
+          href: '/contact/',
+          icon: 'tabler:messages',
+        },
+        {
+          text: '查看发展历程',
+          href: '/roadmap/',
+        },
+      ]}
+    />
+  </div>
 </Layout>

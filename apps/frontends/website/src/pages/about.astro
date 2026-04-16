@@ -1,7 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Brands from '@/components/widgets/Brands.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-import Features3 from '@/components/widgets/Features3.astro';
 import Hero from '@/components/widgets/Hero.astro';
 import Steps2 from '@/components/widgets/Steps2.astro';
 import Layout from '@/layouts/PageLayout.astro';
@@ -26,174 +25,213 @@ const metadata = {
     }}
   >
     <Fragment slot='title'>
-      <span class='text-4xl md:text-6xl'>上海智独数科技有限公司</span><br />
-      <span class='highlight text-3xl text-accent dark:text-white md:text-5xl'>一站式AI解决方案服务商</span>
+      <span class='text-4xl md:text-6xl font-bold tracking-tight'>上海智独数科技有限公司</span><br />
+      <span class='text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-3xl md:text-5xl mt-2 font-semibold'>一站式AI解决方案服务商</span>
     </Fragment>
 
     <Fragment slot='subtitle'>
-      <span class='text-xl md:text-2xl'>
+      <span class='text-xl md:text-2xl leading-relaxed'>
         上海智独数科技有限公司是一家专业的一站式AI服务提供商。我们提供从数据标注、模型训练部署、生产环境搭建、定制开发交互，到低成本语音交互的全流程解决方案。凭借我们的专业技术和丰富经验，我们帮助企业以最优成本实现AI转型，打造符合企业需求的智能化系统。
       </span>
     </Fragment>
   </Hero>
 
-  <Brands
-    title='合作伙伴'
-    images={[
-      {
-        src: tencentLogo,
-        alt: 'Tencent',
-      },
-      {
-        src: alibabaLogo,
-        alt: 'Alibaba',
-      },
-      {
-        src: huaweiLogo,
-        alt: 'Huawei',
-      },
-      {
-        src: ppioLogo,
-        alt: 'PPIO',
-      },
-      {
-        src: amazonLogo,
-        alt: 'Amazon',
-      },
-      {
-        src: cloudflareLogo,
-        alt: 'Cloudflare',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
-        alt: 'Microsoft',
-      },
-    ]}
-  />
+  <div class='relative'>
+    <Brands
+      title='合作伙伴'
+      images={[
+        {
+          src: tencentLogo,
+          alt: 'Tencent',
+        },
+        {
+          src: alibabaLogo,
+          alt: 'Alibaba',
+        },
+        {
+          src: huaweiLogo,
+          alt: 'Huawei',
+        },
+        {
+          src: ppioLogo,
+          alt: 'PPIO',
+        },
+        {
+          src: amazonLogo,
+          alt: 'Amazon',
+        },
+        {
+          src: cloudflareLogo,
+          alt: 'Cloudflare',
+        },
+        {
+          src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
+          alt: 'Microsoft',
+        },
+      ]}
+    />
+  </div>
 
-  <Features3
-    title='核心技术'
-    subtitle='提供全方位的AI解决方案，助力企业数字化转型'
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: '专业的数据标注服务',
-        description: '提供高质量、高效率的数据标注服务，为AI模型训练提供坚实基础。',
-        icon: 'tabler:template',
-      },
-      {
-        title: '全流程模型开发部署',
-        description: '从模型选型、训练到部署的一站式服务，确保AI系统的稳定运行。',
-        icon: 'tabler:template',
-      },
-      {
-        title: '低成本语音交互方案',
-        description: '创新的语音交互技术，帮助企业大幅降低AI应用成本。',
-        icon: 'tabler:template',
-      },
-    ]}
-  />
+  <section class='relative py-20'>
+    
+    <div class='relative mx-auto max-w-7xl px-4 sm:px-6'>
+      <div class='mb-16 text-center'>
+        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>核心技术</p>
+        <h2 class='text-4xl font-bold tracking-tight text-default dark:text-white md:text-5xl'>提供全方位的AI解决方案</h2>
+        <p class='mx-auto mt-4 max-w-2xl text-lg text-muted'>助力企业数字化转型</p>
+      </div>
+      <div class='grid grid-cols-1 gap-6 md:grid-cols-3'>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 0ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:database' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>专业的数据标注服务</h3>
+          <p class='text-muted leading-relaxed'>提供高质量、高效率的数据标注服务，为AI模型训练提供坚实基础。</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 100ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:brain' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>全流程模型开发部署</h3>
+          <p class='text-muted leading-relaxed'>从模型选型、训练到部署的一站式服务，确保AI系统的稳定运行。</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 200ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:microphone' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>低成本语音交互方案</h3>
+          <p class='text-muted leading-relaxed'>创新的语音交互技术，帮助企业大幅降低AI应用成本。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: '生产环境定制化',
-        description: '根据企业需求定制开发生产环境，确保AI系统的最佳性能表现。',
-        icon: 'tabler:template',
-      },
-      {
-        title: '交互系统开发',
-        description: '专业的交互系统开发团队，打造流畅自然的人机交互体验。',
-        icon: 'tabler:template',
-      },
-      {
-        title: '一体化技术支持',
-        description: '提供全周期的技术支持服务，保障系统的持续优化与升级。',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: '技术展示',
-    }}
-  />
+  <section class='relative py-20'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6'>
+      <div class='grid grid-cols-1 gap-6 md:grid-cols-3'>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 0ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:settings' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>生产环境定制化</h3>
+          <p class='text-muted leading-relaxed'>根据企业需求定制开发生产环境，确保AI系统的最佳性能表现。</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 100ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:message' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>交互系统开发</h3>
+          <p class='text-muted leading-relaxed'>专业的交互系统开发团队，打造流畅自然的人机交互体验。</p>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 200ms'>
+          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+            <Icon name='tabler:headset' class='h-7 w-7 text-primary' />
+          </div>
+          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>一体化技术支持</h3>
+          <p class='text-muted leading-relaxed'>提供全周期的技术支持服务，保障系统的持续优化与升级。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <Steps2
-    title='企业价值观'
-    subtitle='专业、创新、务实、高效'
-    items={[
-      {
-        title: '技术创新',
-        description: '持续投入研发，追求技术创新，为客户提供最先进的AI解决方案。',
-      },
-      {
-        title: '客户至上',
-        description: '深入理解客户需求，提供定制化服务，确保项目的落地效果。',
-      },
-      {
-        title: '专业服务',
-        description: '专业的技术团队，全流程的服务支持，确保客户获得最佳服务体验。',
-      },
-    ]}
-  />
+  <div class='relative'>
+    
+    <Steps2
+      title='企业价值观'
+      subtitle='专业、创新、务实、高效'
+      items={[
+        {
+          title: '技术创新',
+          description: '持续投入研发，追求技术创新，为客户提供最先进的AI解决方案。',
+          icon: 'tabler:rocket',
+        },
+        {
+          title: '客户至上',
+          description: '深入理解客户需求，提供定制化服务，确保项目的落地效果。',
+          icon: 'tabler:heart',
+        },
+        {
+          title: '专业服务',
+          description: '专业的技术团队，全流程的服务支持，确保客户获得最佳服务体验。',
+          icon: 'tabler:shield-check',
+        },
+      ]}
+    />
+  </div>
 
-  <Steps2
-    title='发展成就'
-    subtitle='用专业技术服务创造价值'
-    isReversed={true}
-    callToAction={{
-      text: '回到主页',
-      href: '/',
-    }}
-    items={[
-      {
-        title: '技术创新',
-        description: '自主研发多项核心技术，持续推动行业创新发展。',
-        icon: 'tabler:globe',
-      },
-      {
-        title: '客户认可',
-        description: '获得众多知名企业的信赖与认可，建立长期合作关系。',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: '服务能力',
-        description: '完善的服务体系，确保为客户提供最优质的解决方案。',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
+  <div class='relative'>
+    
+    <Steps2
+      title='发展成就'
+      subtitle='用专业技术服务创造价值'
+      isReversed={true}
+      callToAction={{
+        text: '回到主页',
+        href: '/',
+      }}
+      items={[
+        {
+          title: '技术创新',
+          description: '自主研发多项核心技术，持续推动行业创新发展。',
+          icon: 'tabler:globe',
+        },
+        {
+          title: '客户认可',
+          description: '获得众多知名企业的信赖与认可，建立长期合作关系。',
+          icon: 'tabler:message-star',
+        },
+        {
+          title: '服务能力',
+          description: '完善的服务体系，确保为客户提供最优质的解决方案。',
+          icon: 'tabler:award',
+        },
+      ]}
+    />
+  </div>
 
-  <Features2
-    title='联系我们'
-    tagline='办公地点'
-    columns={1}
-    items={[
-      {
-        title: '上海总部',
-        description: '上海市浦东新区临港自贸区水芸路55号港城广场二街坊1号楼8层802室',
-      },
-    ]}
-  />
+  <div class='relative py-20'>
+    
+    <div class='relative mx-auto max-w-7xl px-4 sm:px-6'>
+      <div class='mb-12 text-center'>
+        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>办公地点</p>
+        <h2 class='text-3xl font-bold tracking-tight text-default dark:text-white'>联系我们</h2>
+      </div>
+      <div class='mx-auto max-w-2xl'>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento text-center p-8'>
+          <Icon name='tabler:map-pin' class='mx-auto mb-4 h-10 w-10 text-primary' />
+          <h3 class='mb-2 text-xl font-bold tracking-tight text-default dark:text-white'>上海总部</h3>
+          <p class='text-muted leading-relaxed'>上海市浦东新区临港自贸区水芸路55号港城广场二街坊1号楼8层802室</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <Features2
-    title='技术支持'
-    tagline='联系方式'
-    columns={2}
-    items={[
-      {
-        title: '电子邮箱',
-        description: '<a href="mailto:developer@unisudo.com" class="hover:text-primary">developer@unisudo.com</a>',
-        icon: 'tabler:mail',
-      },
-      {
-        title: '电话咨询',
-        description: '16628597963',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
+  <div class='relative pb-20'>
+    <div class='mx-auto max-w-7xl px-4 sm:px-6'>
+      <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 0ms'>
+          <div class='flex items-center gap-4 mb-4'>
+            <div class='flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10'>
+              <Icon name='tabler:mail' class='h-6 w-6 text-primary' />
+            </div>
+            <div>
+              <h3 class='text-lg font-bold tracking-tight text-default dark:text-white'>电子邮箱</h3>
+              <p class='text-muted'>developer@unisudo.com</p>
+            </div>
+          </div>
+        </div>
+        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 100ms'>
+          <div class='flex items-center gap-4 mb-4'>
+            <div class='flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10'>
+              <Icon name='tabler:phone' class='h-6 w-6 text-primary' />
+            </div>
+            <div>
+              <h3 class='text-lg font-bold tracking-tight text-default dark:text-white'>电话咨询</h3>
+              <p class='text-muted'>16628597963</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>

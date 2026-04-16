@@ -1,7 +1,7 @@
 ---
+import { Icon } from 'astro-icon/components';
 import WidgetWrapper from '@/components/ui/WidgetWrapper.astro';
 import Headline from '@/components/ui/Headline.astro';
-import ItemGrid2 from '@/components/ui/ItemGrid2.astro';
 import type { Features as Props } from '@/types';
 
 const {
@@ -19,25 +19,33 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.['container'] ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass='max-w-7xl mx-auto' bg={bg}>
   <Headline
     title={title}
     subtitle={subtitle}
     tagline={tagline}
-    classes={classes?.['headline'] as Record<string, string>}
-  />
-  <ItemGrid2
-    items={items}
-    columns={columns}
-    defaultIcon={defaultIcon}
     classes={{
-      container: 'gap-4 md:gap-6',
-      panel:
-        'rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6',
-      // panel:
-      //   "text-center bg-page items-center md:text-left rtl:md:text-right md:items-start p-6 p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-800",
-      icon: 'w-12 h-12 mb-6 text-primary',
-      ...((classes?.['items'] as Record<string, never>) ?? {}),
+      title: 'text-4xl md:text-5xl font-bold tracking-tight',
+      subtitle: 'text-lg text-muted max-w-3xl',
+      ...((classes?.['headline'] as Record<string, string>) ?? {}),
     }}
   />
+  <div class='mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+    {items.map((item, index) => (
+      <div 
+        class={`intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer`}
+        style={`animation-delay: ${index * 80}ms`}
+      >
+        <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
+          {item.icon && (
+            <Icon name={item.icon} class='h-7 w-7 text-primary' />
+          )}
+        </div>
+        <h3 class='mb-4 text-xl font-bold tracking-tight text-default dark:text-white'>
+          {item.title}
+        </h3>
+        <div class='text-muted leading-relaxed' set:html={item.description} />
+      </div>
+    ))}
+  </div>
 </WidgetWrapper>
