@@ -402,6 +402,9 @@ importers:
       '@fontsource/jetbrains-mono':
         specifier: ^5.2.8
         version: 5.2.8
+      '@iconify-json/lucide':
+        specifier: ^1.2.102
+        version: 1.2.102
       '@ricky0123/vad-web':
         specifier: 0.0.19
         version: 0.0.19
@@ -4070,6 +4073,9 @@ packages:
   '@iconify-json/flat-color-icons@1.2.0':
     resolution: {integrity: sha512-CluocFRgwnVsjfLbHnoaToSJs8II6dGDNvFu+uIMz8WvgMDwNZASFJdS2UT4mU8aG0MWl2GyLcKaFjQR6HeZSA==}
 
+  '@iconify-json/lucide@1.2.102':
+    resolution: {integrity: sha512-Dm3EEqu5NrmzyDMB2U1+8yroEj2/dB9V4KlH0m/szwwF/ofSf0cPaGTZqkd1aExXjCor+vU53ttRMCGuXf+/cg==}
+
   '@iconify-json/tabler@1.2.7':
     resolution: {integrity: sha512-q6FbDeC5caOC7i7/dcJOv7PdovHWItd84hCvsnlD/mzsrl5Nhol6eSQOMRv1bIpyxykGEiSDbOsVK5f23j/aFg==}
 
@@ -7166,6 +7172,7 @@ packages:
   '@xmldom/xmldom@0.8.10':
     resolution: {integrity: sha512-2WALfTl4xo2SkGCYRt6rDTFfk9R1czmBvUQy12gK2KuRKIpWEhcbbzy8EZXtz/jkRqHX8bFEc6FC1HjX4TUWYw==}
     engines: {node: '>=10.0.0'}
+    deprecated: this version has critical issues, please update to the latest version
 
   '@xtuc/ieee754@1.2.0':
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
@@ -10606,6 +10613,7 @@ packages:
   git-raw-commits@4.0.0:
     resolution: {integrity: sha512-ICsMM1Wk8xSGMowkOmPrzo2Fgmfo4bMHLNX6ytHjajRJUqvHOw/TFapQ+QG75c3X/tTDDhOSRPGC52dDbNM8FQ==}
     engines: {node: '>=16'}
+    deprecated: This package is no longer maintained. For the JavaScript API, please use @conventional-changelog/git-client instead.
     hasBin: true
 
   github-from-package@0.0.0:
@@ -16637,8 +16645,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@6.0.0-dev.20260401:
-    resolution: {integrity: sha512-trGd1r4vZ89ABUR8VnF2Lsl/Tb9ObfQNH3r+kF8NFVSLCq3b3x96McL6pXMnH/aa4tutrziJZvb7zm3WsAEfCA==}
+  typescript@6.0.0-dev.20260416:
+    resolution: {integrity: sha512-64CCow5rQc6+oBAPqLtvZ8f3iz4WVCLwMVkg6/kOfMQlGshVOMkBhCXn+MMP4SX4Xtnz48VpD98FkptirMEuEQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -22777,6 +22785,10 @@ snapshots:
   '@humanwhocodes/retry@0.3.1': {}
 
   '@iconify-json/flat-color-icons@1.2.0':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/lucide@1.2.102':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -29368,7 +29380,7 @@ snapshots:
     dependencies:
       semver: 7.6.3
       shelljs: 0.8.5
-      typescript: 6.0.0-dev.20260401
+      typescript: 6.0.0-dev.20260416
 
   drizzle-kit@0.26.2:
     dependencies:
@@ -39111,7 +39123,7 @@ snapshots:
 
   typescript@5.6.3: {}
 
-  typescript@6.0.0-dev.20260401: {}
+  typescript@6.0.0-dev.20260416: {}
 
   ufo@1.5.4: {}
 

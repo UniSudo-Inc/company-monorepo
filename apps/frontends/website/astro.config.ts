@@ -31,6 +31,7 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['*'],
+        lucide: ['*'],
         'flat-color-icons': [
           'template',
           'gallery',
