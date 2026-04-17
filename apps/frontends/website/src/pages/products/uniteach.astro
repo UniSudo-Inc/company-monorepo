@@ -4,6 +4,7 @@ import Beams from './components/Beams.astro';
 import VisualAnalysis from './components/VisualAnalysis.astro';
 import AIInsightEngine from './components/AIInsightEngine.astro';
 import Layout from '@/layouts/LandingLayout.astro';
+import { getHomePermalink } from '@/utils/permalinks';
 
 const metadata = {
   title: 'UniTeach AI - 让每一份试卷都有 AI 的温度',
@@ -50,7 +51,7 @@ const pricingPlans = [
 <Layout metadata={metadata}>
   <div class="min-h-screen transition-colors duration-300">
     {/* Navigation */}
-    <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-border px-12 py-4 flex items-center justify-between">
+    <!-- <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-border px-12 py-4 flex items-center justify-between">
       <div class="flex items-center gap-2">
         <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold">U</div>
         <span class="text-2xl font-extrabold tracking-tighter text-primary">UniTeach</span>
@@ -72,10 +73,10 @@ const pricingPlans = [
         </button>
         <button class="px-5 py-2 bg-bg-dark border border-border rounded-xl text-xs font-bold hover:bg-surface transition-colors">管理控制台</button>
       </div>
-    </nav>
+    </nav> -->
 
     {/* 01 | Hero Section */}
-    <header class="relative pt-32 pb-32 overflow-hidden">
+    <header class="relative pt-16 pb-32 overflow-hidden">
       <Beams className="opacity-50" />
       
       <div class="container mx-auto px-12 relative z-10">
@@ -596,33 +597,17 @@ const pricingPlans = [
           </p>
           <div class="flex flex-wrap justify-center gap-6">
             <button class="btn-primary">申请演示</button>
-            <button class="px-12 py-4 rounded-2xl bg-surface text-text border border-border font-bold hover:bg-bg transition-all text-lg">定制方案咨询</button>
+            <button class="px-12 py-4 rounded-2xl bg-surface text-text border border-border font-bold hover:bg-bg transition-all text-lg">
+              <a rel='noopener noreferrer' href={getHomePermalink()}>返回主页</a>
+            </button>
           </div>
-          <div class="mt-20 flex flex-col items-center gap-4">
+          <!-- <div class="mt-20 flex flex-col items-center gap-4">
             <div class="text-text-muted/20 font-mono tracking-[0.5em] text-sm font-bold">WWW.UNISUDO.COM</div>
             <div class="w-px h-12 bg-gradient-to-b from-primary/50 to-transparent"></div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
-
-    {/* Footer */}
-    <footer class="py-12 border-t border-border bg-surface">
-      <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="flex items-center gap-2">
-          <div class="w-6 h-6 bg-primary rounded flex items-center justify-center text-white text-xs font-bold">U</div>
-          <span class="font-bold text-text">UniTeach</span>
-        </div>
-        <div class="text-sm text-text-muted">
-          © 2026 UniTeach AI. All rights reserved.
-        </div>
-        <div class="flex gap-6 text-sm text-text-muted">
-          <a href="#" class="hover:text-primary transition-colors">隐私政策</a>
-          <a href="#" class="hover:text-primary transition-colors">服务条款</a>
-          <a href="#" class="hover:text-primary transition-colors">联系我们</a>
-        </div>
-      </div>
-    </footer>
   </div>
 </Layout>
 

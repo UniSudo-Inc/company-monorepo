@@ -9,21 +9,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--aw-color-primary)',
-        secondary: 'var(--aw-color-secondary)',
-        accent: 'var(--aw-color-accent)',
-        surface: {
-          light: 'rgb(248 250 252)',
-          dark: 'rgb(11 18 59)',
+        primary: {
+          DEFAULT: '#7C3AED',
+          light: '#7C3AED',
+          dark: '#7C3AED',
         },
-        default: 'var(--aw-color-text-default)',
-        muted: 'var(--aw-color-text-muted)',
+        secondary: {
+          DEFAULT: '#5B21B6',
+          light: '#5B21B6',
+          dark: '#5B21B6',
+        },
+        accent: {
+          DEFAULT: '#C084FC',
+          light: '#C084FC',
+          dark: '#C084FC',
+        },
+        surface: {
+          light: '#FFFFFF',
+          dark: '#161436',
+        },
+        default: {
+          light: '#1E1B4B',
+          dark: '#FDFCFE',
+        },
+        muted: {
+          light: 'rgba(30, 27, 75, 0.6)',
+          dark: 'rgba(253, 252, 254, 0.6)',
+        },
       },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
-        mono: ['JetBrains Mono', 'ui-monospace', ...defaultTheme.fontFamily.mono],
+        mono: ['var(--aw-font-mono, JetBrains Mono)', ...defaultTheme.fontFamily.mono],
       },
       fontSize: {
         'heading-tight': ['2rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
@@ -36,14 +54,16 @@ const config: Config = {
         '4xl': '2.5rem',
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(1, 97, 239, 0.3)',
-        'glow-hover': '0 0 30px rgba(1, 97, 239, 0.5)',
+        'glow': '0 0 20px rgba(124, 58, 237, 0.3)',
+        'glow-sm': '0 10px 30px rgba(124, 58, 237, 0.3)',
+        'glow-hover': '0 15px 40px rgba(124, 58, 237, 0.4)',
       },
       animation: {
         'fade': 'fadeInUp 0.6s both',
         'fade-in': 'fadeIn 0.5s ease-out both',
         'slide-up': 'slideUp 0.6s ease-out both',
         'gradient': 'gradient 3s ease infinite',
+        'scan': 'scanPulse 5s ease-in-out infinite',
       },
       keyframes: {
         fadeInUp: {
@@ -61,6 +81,10 @@ const config: Config = {
         gradient: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
+        },
+        scanPulse: {
+          '0%, 100%': { top: '0%', opacity: '0.5' },
+          '50%': { top: '100%', opacity: '1' },
         },
       },
       backgroundImage: {

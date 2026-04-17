@@ -68,6 +68,10 @@ export const headerData = {
           href: getPermalink('/products/uniteach'),
         },
         {
+          text: 'UniClause',
+          href: getPermalink('/products/uniclause'),
+        },
+        {
           text: 'A1 Platform',
           href: 'https://a1.v7.unisudo.dev/',
         },
@@ -165,6 +169,10 @@ export const headerDataEn = {
           href: getPermalink('/en/products/uniteach'),
         },
         {
+          text: 'UniClause',
+          href: getPermalink('/products/uniclause'),
+        },
+        {
           text: 'A1 Platform',
           href: 'https://a1.v7.unisudo.dev/',
         },
@@ -206,6 +214,10 @@ export const footerData = {
         {
           text: 'UniTeach',
           href: getPermalink('/products/uniteach'),
+        },
+        {
+          text: 'UniClause',
+          href: getPermalink('/products/uniclause'),
         },
         {
           text: 'A1 Platform',
@@ -330,6 +342,10 @@ export const footerDataEn = {
         {
           text: 'UniTeach',
           href: getPermalink('/products/uniteach'),
+        },
+        {
+          text: 'UniClause',
+          href: getPermalink('/products/uniclause'),
         },
         {
           text: 'A1 Platform',
