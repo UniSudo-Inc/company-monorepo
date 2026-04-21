@@ -1,272 +1,294 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Hero from '@/components/widgets/Hero.astro';
-import Steps from '@/components/widgets/Steps.astro';
-import Content from '@/components/widgets/Content.astro';
-import CallToAction from '@/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: '核心技术 - 上海智独数科技',
+  title: '技术创新 - 上海智独数科技有限公司',
 };
+
+const technologies = [
+  {
+    title: '流式对话技术',
+    items: [
+      '业界领先的 50 倍实时率提升',
+      '支持多语言实时打断与重构',
+      '自然流畅的对话体验'
+    ],
+    icon: 'lucide:message-circle',
+    delay: '0ms'
+  },
+  {
+    title: '轻量级模型架构',
+    items: [
+      '突破传统 Transformer 限制',
+      '3B-7B 小型模型精准服务',
+      '显著降低训练和部署成本',
+      '支持垂直场景的深度优化'
+    ],
+    icon: 'lucide:brain',
+    delay: '100ms'
+  },
+  {
+    title: '云原生技术平台',
+    items: [
+      '全自研商用级部署能力',
+      '灵活的 Function Call 支持',
+      '开放的 API 生态系统',
+      '支持多样化本地部署方案'
+    ],
+    icon: 'lucide:cloud',
+    delay: '200ms'
+  }
+];
+
+const advantages = [
+  {
+    title: '成本效益',
+    content: [
+      {
+        sub: '计算资源优化',
+        points: ['相比传统方案降低 80% 计算资源消耗', '支持商用级 GPU 和消费级显卡部署', '优化的并发处理能力']
+      },
+      {
+        sub: '部署成本优势',
+        points: ['灵活的本地化部署方案', '最小化硬件要求', '简化的运维管理']
+      }
+    ],
+    icon: 'lucide:coins',
+    color: 'text-violet-500',
+    bg: 'bg-violet-500/10'
+  },
+  {
+    title: '性能突破',
+    content: [
+      {
+        sub: '实时交互能力',
+        points: ['毫秒级响应速度', '流畅的打断重构体验', '多轮对话优化']
+      },
+      {
+        sub: '精准性提升',
+        points: ['场景化优化算法', '超越大模型 API 的准确度', '持续学习与优化能力']
+      }
+    ],
+    icon: 'lucide:zap',
+    color: 'text-orange-500',
+    bg: 'bg-orange-500/10'
+  }
+];
 ---
 
 <Layout metadata={metadata}>
-  <Hero>
-    <Fragment slot='tagline'>技术创新</Fragment>
-    <Fragment slot='title'>
-      <span class='text-4xl md:text-6xl font-bold tracking-tight'>智独数科技</span><br />
-      <span class='text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-3xl md:text-5xl mt-2 font-semibold'>核心技术</span>
-    </Fragment>
-
-    <Fragment slot='subtitle'>
-      <span class='text-xl leading-relaxed'>突破传统架构限制，创新AI交互体验</span>
-    </Fragment>
-  </Hero>
-
-  <div class='relative'>
-    
-    <div class='relative mx-auto max-w-7xl px-4 pb-20 sm:px-6'>
-      <div class='mb-16 text-center'>
-        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>创新对话架构</p>
-        <h2 class='text-4xl font-bold tracking-tight text-default dark:text-white md:text-5xl'>突破性的技术创新</h2>
-        <p class='mx-auto mt-4 max-w-2xl text-lg text-muted'>引领行业发展</p>
-      </div>
-      <div class='grid grid-cols-1 gap-6 md:grid-cols-3'>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 0ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:message-circle' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>流式对话技术</h3>
-          <ul class='space-y-2 text-muted text-sm leading-relaxed'>
-            <li>• 业界领先的50倍实时率提升</li>
-            <li>• 支持多语言实时打断与重构</li>
-            <li>• 自然流畅的对话体验</li>
-          </ul>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 100ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:brain' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>轻量级模型架构</h3>
-          <ul class='space-y-2 text-muted text-sm leading-relaxed'>
-            <li>• 突破传统Transformer限制</li>
-            <li>• 3B-7B小型模型精准服务</li>
-            <li>• 显著降低训练和部署成本</li>
-            <li>• 支持垂直场景的深度优化</li>
-          </ul>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 200ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:cloud' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>云原生技术平台</h3>
-          <ul class='space-y-2 text-muted text-sm leading-relaxed'>
-            <li>• 全自研商用级部署能力</li>
-            <li>• 灵活的Function Call支持</li>
-            <li>• 开放的API生态系统</li>
-            <li>• 支持多样化本地部署方案</li>
-          </ul>
-        </div>
-      </div>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
     </div>
-  </div>
 
-  <div class='relative'>
-    
-    <Steps
-      title='技术优势'
-      items={[
-        {
-          title: '成本效益',
-          description: `
-            • 计算资源优化
-              - 相比传统方案降低80%计算资源消耗
-              - 支持商用级GPU和消费级显卡部署
-              - 优化的并发处理能力
-
-            • 部署成本优势
-              - 灵活的本地化部署方案
-              - 最小化硬件要求
-              - 简化的运维管理
-          `,
-          icon: 'tabler:coin',
-        },
-        {
-          title: '性能突破',
-          description: `
-            • 实时交互能力
-              - 毫秒级响应速度
-              - 流畅的打断重构体验
-              - 多轮对话优化
-
-            • 精准性提升
-              - 场景化优化算法
-              - 超越大模型API的准确度
-              - 持续学习与优化能力
-          `,
-          icon: 'tabler:rocket',
-        },
-        {
-          title: '扩展能力',
-          description: `
-            • 多语言支持
-              - 跨语言模型融合
-              - 多语种实时交互
-              - 语言模型动态适配
-
-            • 场景适配
-              - 工业现场快速部署
-              - 智能客服深度优化
-              - 垂直领域定制能力
-          `,
-          icon: 'tabler:arrows-maximize',
-        },
-      ]}
-    />
-  </div>
-
-  <Content
-    isReversed
-    tagline='创新成果'
-    title='核心算法创新与应用创新'
-    items={[
-      {
-        title: '非Transformer架构的突破性进展',
-      },
-      {
-        title: '轻量级模型训练框架',
-      },
-      {
-        title: '实时交互性能突破',
-      },
-      {
-        title: '本地化部署方案',
-      },
-      {
-        title: '多场景融合能力',
-      },
-      {
-        title: '生态系统整合',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot='bg'>
-      
-    </Fragment>
-  </Content>
-
-  <Content
-    isAfterContent
-    tagline='未来发展'
-    title='技术路线图与创新方向'
-    items={[
-      {
-        title: '持续优化核心算法',
-      },
-      {
-        title: '扩展场景适配能力',
-      },
-      {
-        title: '深化AI基础设施建设',
-      },
-      {
-        title: '探索新型模型架构',
-      },
-      {
-        title: '优化资源利用效率',
-      },
-      {
-        title: '拓展应用场景边界',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot='bg'>
-      
-    </Fragment>
-  </Content>
-
-  <div class='relative'>
-    
-    <div class='relative mx-auto max-w-7xl px-4 py-16 sm:px-6'>
-      <div class='mb-12 text-center'>
-        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>技术价值</p>
-        <h2 class='text-3xl font-bold tracking-tight text-default dark:text-white md:text-4xl'>创造行业价值，推动产业升级</h2>
+    <!-- Hero Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto text-center animate-on-scroll">
+      <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+        INNOVATION · 技术创新
+      </span>
+      <div class="text-5xl md:text-7xl mb-8 tracking-tighter leading-[0.9] italic dark:text-white/80 text-black/80">
+        智独数科技<br />
+        <span class="animate-pulse text-primary dark:text-primary font-black tracking-tighter italic">核心技术架构</span>
       </div>
-      <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 0ms'>
-          <div class='mb-5 flex items-center gap-4'>
-            <div class='flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10'>
-              <Icon name='tabler:building' class='h-6 w-6 text-primary' />
+      <p class="text-xl text-muted max-w-2xl mx-auto font-medium leading-relaxed">
+        突破传统架构限制，创新 AI 交互体验。我们深耕底层技术，致力于用更低的成本交付更强的智能。
+      </p>
+    </section>
+
+    <!-- Break-through Section (Bento Cards) -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">创新对话架构</p>
+        <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic">突破性的核心技术</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {technologies.map((t) => (
+          <div class="animate-on-scroll bento-card group hover:scale-[1.02] transition-all duration-500" style={`transition-delay: ${t.delay}`}>
+            <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 group-hover:from-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
+              <Icon name={t.icon} class="h-8 w-8 text-primary group-hover:text-white transition-colors" />
             </div>
-            <h3 class='text-xl font-bold tracking-tight text-default dark:text-white'>行业价值</h3>
+            <h3 class="mb-5 text-2xl font-black italic tracking-tight">{t.title}</h3>
+            <ul class="space-y-3">
+              {t.items.map(item => (
+                <li class="flex gap-2 text-sm text-muted group/li">
+                  <span class="text-primary font-black">/</span>
+                  <span class="group-hover/li:text-black dark:group-hover/li:text-white transition-colors">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul class='space-y-3 text-muted'>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              <span>降低AI应用门槛</span>
-            </li>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              <span>提升部署灵活性</span>
-            </li>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              <span>加速产业智能化升级</span>
-            </li>
-          </ul>
+        ))}
+      </div>
+    </section>
+
+    <!-- Tech Advantage: Dynamic Panels -->
+    <section class="py-32 px-6 max-w-7xl mx-auto overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {advantages.map((adj) => (
+          <div class="animate-on-scroll bento-card border-none bg-surface-light dark:bg-surface-dark relative overflow-hidden group">
+            <div class={`absolute top-0 right-0 p-12 opacity-5 scale-150 transform group-hover:rotate-12 transition-transform duration-700 ${adj.color}`}>
+              <Icon name={adj.icon} class="w-48 h-48" />
+            </div>
+            
+            <div class="relative z-10">
+              <div class="flex items-center gap-4 mb-10">
+                <div class={`w-14 h-14 rounded-2xl ${adj.bg} ${adj.color} flex items-center justify-center`}>
+                  <Icon name={adj.icon} class="w-7 h-7" />
+                </div>
+                <h3 class="text-3xl font-black italic tracking-tighter">{adj.title}</h3>
+              </div>
+              
+              <div class="space-y-10 focus-within:">
+                {adj.content.map(block => (
+                  <div>
+                    <h4 class="text-lg font-bold mb-4 flex items-center gap-2">
+                       <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                       {block.sub}
+                    </h4>
+                    <ul class="space-y-3 pl-4">
+                      {block.points.map(p => (
+                        <li class="text-muted text-sm border-l border-border-light dark:border-primary/20  pl-4 hover:border-primary transition-colors py-1 cursor-default">
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Outcomes: Split View (Optimized Content) -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="animate-on-scroll grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="animate-on-scroll animate-left">
+          <span class="text-primary text-xs font-bold uppercase tracking-widest mb-4 inline-block">RESULTS · 创新成果</span>
+          <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight italic tracking-tighter">
+            算法创新与<br />
+            <span class="gradient-text">应用深度融合</span>
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              '非 Transformer 架构突破',
+              '轻量级模型训练框架',
+              '实时交互性能突破',
+              '本地化部署方案',
+              '多场景融合能力',
+              '生态系统整合'
+            ].map(item => (
+              <div class="flex items-center gap-3 p-4 rounded-2xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20  hover:border-primary/40 transition-all cursor-default">
+                <Icon name="lucide:check-circle-2" class="w-5 h-5 text-primary" />
+                <span class="text-sm font-bold">{item}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 100ms'>
-          <div class='mb-5 flex items-center gap-4'>
-            <div class='flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10'>
-              <Icon name='tabler:chart-dots' class='h-6 w-6 text-primary' />
+        <div class="animate-on-scroll animate-right relative">
+          <div class="rounded-[3rem] overflow-hidden shadow-2xl relative group">
+            <img 
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" 
+              alt="Technology" 
+              class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700" 
+              referrerpolicy="no-referrer"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-8 left-8 text-white">
+              <p class="text-2xl font-bold italic tracking-tight">引领 AI 下半场</p>
+              <p class="text-white/70 text-sm italic">垂直领域的小模型革命</p>
             </div>
-            <h3 class='text-xl font-bold tracking-tight text-default dark:text-white'>商业价值</h3>
           </div>
-          <ul class='space-y-3 text-muted'>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              <span>显著降低使用成本</span>
-            </li>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              <span>提升落地效率</span>
-            </li>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              <span>创造新商业模式</span>
-            </li>
-          </ul>
+          <!-- Floating Stats -->
+          <div class="absolute -top-10 -right-10 bg-white dark:bg-slate-900 p-8 rounded-3xl border border-border-light dark:border-primary/20  shadow-2xl animate-bounce" style="animation-duration: 5s">
+            <p class="text-4xl font-black italic tracking-tighter text-primary leading-none">50X</p>
+            <p class="text-[10px] text-muted font-bold uppercase tracking-widest mt-2">实时率提升</p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class='relative pb-20'>
-    
-    <CallToAction
-      title='了解更多技术详情'
-      subtitle='探索我们的核心技术如何为您的业务赋能'
-      actions={[
-        {
-          variant: 'primary',
-          text: '联系我们',
-          href: '/contact/',
-          icon: 'tabler:messages',
-        },
-        {
-          text: '查看发展历程',
-          href: '/roadmap/',
-        },
-      ]}
-    />
-  </div>
+    <!-- Tech Value Cards -->
+    <section class="py-20 px-6 max-w-7xl mx-auto border-t border-border-light dark:border-primary/20 ">
+      <div class="text-center mb-20 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">Technical Value</p>
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">创造行业价值，推动产业升级</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="animate-on-scroll animate-left bento-card border-none bg-surface-light dark:bg-white/5 p-10 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center gap-4 mb-10">
+              <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
+                <Icon name="lucide:building-2" class="w-6 h-6" />
+              </div>
+              <h3 class="text-2xl font-black italic">行业价值</h3>
+            </div>
+            <ul class="space-y-6">
+              {[
+                { t: '降低 AI 应用门槛', d: '让中小型企业也能拥有顶尖的 AI 生产力' },
+                { t: '提升部署灵活性', d: '全场景适配，不论是云端还是生产环境边缘端' },
+                { t: '加速产业智能化升级', d: '高效转型的技术基石' }
+              ].map(item => (
+                <li class="flex gap-4">
+                  <Icon name="lucide:check" class="w-5 h-5 text-blue-500 mt-1 shrink-0" />
+                  <div>
+                    <p class="font-bold">{item.t}</p>
+                    <p class="text-xs text-muted mt-1 leading-relaxed">{item.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div class="animate-on-scroll animate-right bento-card border-none bg-surface-dark dark:bg-white/5 text-white p-10 flex flex-col justify-between group">
+           <div>
+            <div class="flex items-center gap-4 mb-10">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+                <Icon name="lucide:bar-chart-3" class="w-6 h-6" />
+              </div>
+              <h3 class="text-2xl font-black italic">商业价值</h3>
+            </div>
+            <ul class="space-y-6">
+              {[
+                { t: '显著降低使用成本', d: '从训练到推理，全链路降低资源开销' },
+                { t: '提升落地效率', d: '极速敏捷的部署周期，抢占市场先机' },
+                { t: '创造新商业模式', d: '助力客户打造差异化的产品优势' }
+              ].map(item => (
+                <li class="flex gap-4">
+                  <Icon name="lucide:zap" class="w-5 h-5 text-emerald-500 mt-1 shrink-0" />
+                  <div>
+                    <p class="font-bold text-white">{item.t}</p>
+                    <p class="text-xs text-white/50 mt-1 leading-relaxed">{item.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 px-6">
+      <div class="animate-on-scroll bento-card max-w-4xl mx-auto text-center border-none bg-gradient-to-br from-primary to-accent text-white p-16 shadow-2xl shadow-primary/30 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/tech/1920/1080?blur=10')] opacity-20 mix-blend-overlay"></div>
+        <div class="relative z-10">
+          <h2 class="text-4xl md:text-6xl font-black italic tracking-tighter mb-8">了解更多技术详情</h2>
+          <p class="text-xl text-white/80 mb-12 font-medium max-w-xl mx-auto">探索我们的核心技术如何为您的业务赋能，共创数智未来。</p>
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="/contact/" class="px-10 py-4 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">联系我们</a>
+            <a href="/roadmap/" class="px-10 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black italic rounded-full hover:bg-white/20 transition-all">发展历程</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>

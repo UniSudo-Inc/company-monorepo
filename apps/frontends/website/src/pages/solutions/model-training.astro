@@ -1,220 +1,271 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Content from '@/components/widgets/Content.astro';
-import Steps from '@/components/widgets/Steps.astro';
-import Timeline from '@/components/widgets/Timeline.astro';
-import CallToAction from '@/components/widgets/CallToAction.astro';
-import model from "@/assets/images/model.png";
 
 const metadata = {
-  title: '模型训练案例展示',
+  title: '模型训练和微调解决方案 - UniSudo 智独数科技',
 };
+
+const trainingSteps = [
+  { title: '需求分析', desc: '深入了解业务场景，定义模型目标与性能指标', icon: 'lucide:brain' },
+  { title: '数据准备', desc: '高质量数据集构建、处理与精准标注', icon: 'lucide:database' },
+  { title: '模型训练', desc: '采用分布式算力、大规模架构与前沿优化算法', icon: 'lucide:code' },
+  { title: '效果验证', desc: '多维度模型评估、黑盒测试与性能回归', icon: 'lucide:bar-chart-3' }
+];
+
+const advantages = [
+  { title: '专业团队', desc: '资深算法工程师领衔，深耕行业垂直领域', icon: 'lucide:users' },
+  { title: '数据安全', desc: '严格的数据分级保护与全程加密训练环境', icon: 'lucide:shield' },
+  { title: '高效训练', desc: '极致优化的训练流水线，大幅缩短研发周期', icon: 'lucide:rocket' },
+  { title: '质量保证', desc: '标准化评估模型，确保生产环境交付质量', icon: 'lucide:check-circle' }
+];
+
+const results = [
+  { title: '准确率提升', desc: '模型在核心任务上平均提升 60% 以上', icon: 'lucide:target' },
+  { title: '成本降低', desc: '通过算力优化与微调技术降低 70% 训练成本', icon: 'lucide:trending-down' },
+  { title: '部署优化', desc: '极致压缩模型体积，部署规模减少 80%', icon: 'lucide:zap' },
+  { title: '用户满意度', desc: '业务交互体验升级，用户满意度提升 45%+', icon: 'lucide:smile' }
+];
 ---
 
 <Layout metadata={metadata}>
-  <div class='relative overflow-hidden'>
-    <div class='absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-90'></div>
-    <div class='absolute inset-0 bg-[url("data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E")] opacity-30'></div>
-    <div class='relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 text-center'>
-      <p class='mb-4 text-base font-bold uppercase tracking-[0.2em] text-white/80'>模型训练</p>
-      <h1 class='mb-6 text-4xl font-bold tracking-tight text-white md:text-6xl'>
-        模型训练和微调解决方案
-      </h1>
-      <p class='mx-auto max-w-2xl text-xl text-white/90'>
-        定制化 · 循环学习 · 数据安全
-      </p>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-blue-500/5 rounded-full blur-[150px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-500/5 rounded-full blur-[150px] animate-pulse" style="animation-delay: 3s"></div>
     </div>
-  </div>
 
-  <div class='relative'>
-    
-    <Steps
-      title='模型训练流程'
-      items={[
-        {
-          title: '需求分析',
-          description: '深入了解业务场景和模型需求',
-          icon: 'tabler:brain',
-        },
-        {
-          title: '数据准备',
-          description: '数据处理和标注',
-          icon: 'tabler:database',
-        },
-        {
-          title: '模型训练',
-          description: '专业的训练和优化',
-          icon: 'tabler:code',
-        },
-        {
-          title: '效果验证',
-          description: '严格的模型评估',
-          icon: 'tabler:chart-dots',
-        },
-      ]}
-      image={{
-        src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-        alt: '训练流程',
-      }}
-    />
-  </div>
-
-  <Content
-    isReversed
-    tagline='案例研究'
-    title='大语言模型微调训练'
-    items={[
-      {
-        title: '项目背景',
-        description: '需求：某法律咨询平台需要专业的法律问答模型。痛点：通用模型法律专业性不足，响应准确度低。目标：构建专业的法律领域问答模型。',
-      },
-      {
-        title: '解决方案',
-        description: '构建法律专业知识库，设计高效微调方案，应用PEFT技术降低成本，实现增量训练更新。',
-      },
-      {
-        title: '实施效果',
-        description: '法律问答准确率提升60%，训练成本降低70%，模型部署规模减少80%，用户满意度提升45%。',
-      },
-    ]}
-    image={{
-      src: model,
-      alt: '模型训练',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4'>场景故事</h3>
-      <p class='text-muted leading-relaxed'>通过专业领域知识的深度融合和高效微调技术，帮助客户在控制成本的同时显著提升了模型在法律领域的专业表现，实现了精准的法律咨询服务。</p>
-    </Fragment>
-  </Content>
-
-  <Content
-    isAfterContent
-    tagline='案例研究'
-    title='垂直领域模型开发'
-    items={[
-      {
-        title: '项目背景',
-        description: '需求：某医疗机构需要医学影像智能诊断系统。痛点：传统诊断耗时长，人工成本高。目标：开发高精度医学影像诊断模型。',
-      },
-      {
-        title: '解决方案',
-        description: '医学影像数据处理，专业医生团队标注，深度学习模型优化，多轮迭代验证。',
-      },
-      {
-        title: '实施效果',
-        description: '诊断准确率达到95%，诊断时间缩短80%，人工成本降低50%，诊断效率提升300%。',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '医疗影像',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4'>场景故事</h3>
-      <p class='text-muted leading-relaxed'>项目团队通过收集和标注大量医学影像数据，结合专业医生的诊断经验，开发出高精度的AI辅助诊断系统，大幅提升了医疗机构的诊断效率。</p>
-    </Fragment>
-  </Content>
-
-  <Content
-    isReversed
-    isAfterContent
-    tagline='案例研究'
-    title='多模态模型训练部署'
-    items={[
-      {
-        title: '项目背景',
-        description: '需求：某电商平台需要商品推荐和图像识别系统。痛点：人工推荐效率低，图像识别准确率不足。目标：构建多模态智能推荐系统。',
-      },
-      {
-        title: '解决方案',
-        description: '整合用户行为数据，构建商品图像库，训练多模态融合模型，实现个性化推荐。',
-      },
-      {
-        title: '实施效果',
-        description: '推荐点击率提升120%，图像识别准确率达到98%，用户停留时间增加60%，销售额增长35%。',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '多模态模型',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4'>场景故事</h3>
-      <p class='text-muted leading-relaxed'>通过整合用户行为数据和商品图像信息，训练出能够同时理解文本和图像的多模态模型，为用户提供更加精准和个性化的商品推荐服务。</p>
-    </Fragment>
-  </Content>
-
-  <div class='relative'>
-    
-    <div class='relative mx-auto max-w-7xl px-4 py-16 sm:px-6'>
-      <div class='mb-12 text-center'>
-        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>核心优势</p>
-        <h2 class='text-3xl font-bold tracking-tight text-default dark:text-white md:text-4xl'>专业的模型训练服务</h2>
-      </div>
-      <div class='grid grid-cols-1 gap-6 md:grid-cols-4'>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-6 text-center' style='animation-delay: 0ms'>
-          <Icon name='tabler:brain' class='mx-auto mb-4 h-8 w-8 text-primary' />
-          <h3 class='font-semibold text-default dark:text-white'>专业团队</h3>
-          <p class='mt-2 text-sm text-muted'>资深算法工程师</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-6 text-center' style='animation-delay: 100ms'>
-          <Icon name='tabler:database' class='mx-auto mb-4 h-8 w-8 text-primary' />
-          <h3 class='font-semibold text-default dark:text-white'>数据安全</h3>
-          <p class='mt-2 text-sm text-muted'>严格的数据保护</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-6 text-center' style='animation-delay: 200ms'>
-          <Icon name='tabler:rocket' class='mx-auto mb-4 h-8 w-8 text-primary' />
-          <h3 class='font-semibold text-default dark:text-white'>高效训练</h3>
-          <p class='mt-2 text-sm text-muted'>优化训练流程</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-6 text-center' style='animation-delay: 300ms'>
-          <Icon name='tabler:shield-check' class='mx-auto mb-4 h-8 w-8 text-primary' />
-          <h3 class='font-semibold text-default dark:text-white'>质量保证</h3>
-          <p class='mt-2 text-sm text-muted'>严格的模型评估</p>
+    <!-- Hero Section -->
+    <section class="relative py-32 px-6 overflow-hidden">
+      <div class="max-w-7xl mx-auto text-center animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+          AI TRAINING · 模型训练
+        </span>
+        <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-[0.9] italic">
+          模型训练与微调<br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-5xl md:text-6xl ">定制化 · 循环学习</span>
+        </h1>
+        <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed mb-6">
+          专业的 AI 模型服务解决方案。提供从基础骨干微调到垂直领域模型开发的全链路支撑。
+        </p>
+        <div class="flex items-center justify-center gap-6 text-sm font-bold text-primary/60 uppercase tracking-[0.2em]">
+           <span>数据安全</span>
+           <span class="w-1 h-1 bg-primary/30 rounded-full"></span>
+           <span>高效算力</span>
+           <span class="w-1 h-1 bg-primary/30 rounded-full"></span>
+           <span>精准交付</span>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <Timeline
-    title='模型训练服务效果'
-    items={[
-      {
-        title: '准确率提升',
-        description: '平均提升60%以上',
-      },
-      {
-        title: '成本降低',
-        description: '训练成本降低70%',
-      },
-      {
-        title: '部署优化',
-        description: '部署规模减少80%',
-      },
-      {
-        title: '用户满意度',
-        description: '提升45%以上',
-      },
-    ]}
-  />
+    <!-- Training Process: Staggered Cards -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-end justify-between mb-20 gap-8 animate-on-scroll">
+        <div class="max-w-2xl">
+          <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">Service Flow</p>
+          <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">精益求精的训练流程</h2>
+        </div>
+        <p class="text-muted max-w-sm text-sm font-medium leading-relaxed">基于工业级标准构建的自动化训练闭环，确保每一轮迭代都有迹可循。</p>
+      </div>
 
-  <div class='relative'>
-    
-    <CallToAction
-      title='开启您的模型训练之旅'
-      subtitle='专业团队为您定制专属的模型训练方案'
-      actions={[
-        {
-          variant: 'primary',
-          text: '立即咨询',
-          href: '/contact/',
-          icon: 'tabler:messages',
-        },
-      ]}
-    />
-  </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+        <!-- Connecting Line (Desktop) -->
+        <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-border-light dark:via-border-dark to-transparent -z-10"></div>
+        
+        {trainingSteps.map((step, i) => (
+          <div class="animate-on-scroll group" style={`transition-delay: ${i * 100}ms`}>
+            <div class="bento-card h-full flex flex-col items-center text-center p-10 hover:border-primary/50 transition-all">
+              <div class="w-16 h-16 rounded-3xl bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl shadow-primary/5">
+                 <Icon name={step.icon} class="w-8 h-8" />
+              </div>
+              <span class="text-[10px] font-black uppercase tracking-widest text-muted opacity-40 mb-2">Phase 0{i + 1}</span>
+              <h3 class="text-xl font-bold mb-4 italic tracking-tight">{step.title}</h3>
+              <p class="text-xs text-muted leading-relaxed font-medium">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Case Studies: Immersive Content Blocks -->
+    <section class="py-32 space-y-40">
+       <!-- Case 1: LLM Fine-tuning -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+             <div class="animate-on-scroll animate-left">
+                <span class="text-primary text-xs font-bold uppercase tracking-widest mb-4 inline-block">CASE STUDY 01 · 法律科技</span>
+                <h3 class="text-4xl font-black mb-10 italic tracking-tighter">大语言模型微调训练</h3>
+                <div class="space-y-8">
+                   <div class="p-8 rounded-[2.5rem] bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 ">
+                      <p class="text-xs font-bold text-primary uppercase mb-4">项目背景与痛点</p>
+                      <p class="text-sm text-muted leading-relaxed">
+                        某法律咨询平台面临通用大模型在法律条文理解上的“幻觉”问题，响应准确度低且无法处理复杂的法律逻辑。目标是构建具备专家级法律素养的问答大模型。
+                      </p>
+                   </div>
+                   <div class="grid grid-cols-2 gap-6">
+                      <div class="p-8 rounded-[2.5rem] bg-primary/5 border border-primary/10">
+                         <p class="text-3xl font-black italic text-primary tracking-tighter">+60%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">问答准确率提升</p>
+                      </div>
+                      <div class="p-8 rounded-[2.5rem] bg-indigo-500/5 border border-indigo-500/10">
+                         <p class="text-3xl font-black italic text-indigo-500 tracking-tighter">-70%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">训练成本优化</p>
+                      </div>
+                   </div>
+                   <div class="p-10 rounded-[3rem] bg-slate-900 text-white relative overflow-hidden group">
+                      <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:gavel" class="w-24 h-24" /></div>
+                      <h4 class="text-xl font-black mb-4 italic tracking-tight">场景故事</h4>
+                      <p class="text-sm text-white/70 leading-relaxed italic">“通过法律专业知识库的深度融合与 PEFT（参数高效微调）技术，我们帮助客户在有限的算力成本下，实现了从通用模型向专业‘法律智囊’的质变。模型现在能精准引用法条内容，显著提升了在线咨询的转化率。”</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right relative">
+                <div class="rounded-[4rem] overflow-hidden shadow-2xl relative group">
+                   <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1740&auto=format&fit=crop" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
+                   <div class="absolute inset-x-0 bottom-0 p-10 bg-gradient-to-t from-black/80 to-transparent">
+                      <div class="flex items-center gap-4 text-white">
+                         <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center"><Icon name="lucide:check" class="w-6 h-6" /></div>
+                         <p class="text-sm font-bold italic tracking-wide">部署规模减少 80% · 极速响应</p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+
+       <!-- Case 2: Medical Vertical Model -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center flex-row-reverse">
+             <div class="animate-on-scroll animate-left lg:order-2">
+                <span class="text-emerald-500 text-xs font-bold uppercase tracking-widest mb-4 inline-block">CASE STUDY 02 · 智慧医疗</span>
+                <h3 class="text-4xl font-black mb-10 italic tracking-tighter">垂直领域医学诊断模型</h3>
+                <div class="space-y-8">
+                   <div class="p-8 rounded-[2.5rem] bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 ">
+                      <p class="text-xs font-bold text-emerald-500 uppercase mb-4">项目背景与目标</p>
+                      <p class="text-sm text-muted leading-relaxed">
+                        某医疗机构急需提升医学影像阅读的吞吐量与准确性，克服传统人工阅片耗时长、劳动强度大的问题。目标是开发具备临床实用价值的高精度医学影像诊断模型。
+                      </p>
+                   </div>
+                   <div class="flex gap-6">
+                      <div class="flex-1 p-8 rounded-[2.5rem] bg-emerald-500/5 border border-emerald-500/10">
+                         <p class="text-4xl font-black italic text-emerald-600 tracking-tighter">95%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">诊断准确率</p>
+                      </div>
+                      <div class="flex-1 p-8 rounded-[2.5rem] bg-orange-500/5 border border-orange-500/10 text-center">
+                         <p class="text-4xl font-black italic text-orange-600 tracking-tighter">300%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">诊断效率提升</p>
+                      </div>
+                   </div>
+                   <div class="p-10 rounded-[3.5rem] bg-emerald-600 text-white relative overflow-hidden group">
+                      <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:heart-pulse" class="w-24 h-24" /></div>
+                      <h4 class="text-2xl font-black mb-4 italic tracking-tight text-white/90">场景故事</h4>
+                      <p class="text-sm text-white/90 leading-relaxed italic">“我们与医疗专家团队深度协作，通过对数十万份影像数据的多轮迭代验证，构建了高精度 AI 辅助诊断系统。该系统不仅将诊断时间缩短了 80%，更关键的是，它成为了基层医师最可靠的‘数字助手’。”</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right lg:order-1 relative">
+                <div class="rounded-[4rem] overflow-hidden shadow-2xl relative group">
+                   <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1740&auto=format&fit=crop" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+             </div>
+          </div>
+       </div>
+
+       <!-- Case 3: Multimodal Retail -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+             <div class="animate-on-scroll animate-left">
+                <span class="text-accent text-xs font-bold uppercase tracking-widest mb-4 inline-block">CASE STUDY 03 · 智慧零售</span>
+                <h3 class="text-4xl font-black mb-10 italic tracking-tighter">多模态模型训练部署</h3>
+                <div class="space-y-8">
+                   <div class="p-8 rounded-[2.5rem] bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20">
+                      <p class="text-xs font-bold text-accent uppercase mb-4">挑战与机遇</p>
+                      <p class="text-sm text-muted leading-relaxed">
+                        电商平台寻求更精准的商品推荐，传统基于文本标签的推荐已触碰瓶颈。痛点在于无法充分挖掘商品图像信息。目标是构建能深度理解图文属性的多模态智能推荐系统。
+                      </p>
+                   </div>
+                   <div class="grid grid-cols-2 gap-6">
+                      <div class="p-8 rounded-[2.5rem] bg-accent/5 border border-accent/10">
+                         <p class="text-3xl font-black italic text-accent tracking-tighter">+120%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">推荐点击率提升</p>
+                      </div>
+                      <div class="p-8 rounded-[2.5rem] bg-pink-500/5 border border-pink-500/10">
+                         <p class="text-3xl font-black italic text-pink-500 tracking-tighter">+35%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">销售额增长</p>
+                      </div>
+                   </div>
+                   <div class="p-10 rounded-[3rem] border border-border-light dark:border-primary/20 flex flex-col justify-center">
+                      <h4 class="text-xl font-black mb-4 italic tracking-tight flex items-center gap-3">
+                         <Icon name="lucide:shopping-cart" class="w-6 h-6 text-accent" />
+                         场景故事
+                      </h4>
+                      <p class="text-sm text-muted leading-relaxed italic">“通过整合用户行为行为数据与数百万量级的商品图像库，我们训练出的多模态融合模型赋予了推荐引擎‘视觉理解力’。这不仅让推荐结果更贴合用户审美偏好，还让用户的平均停留时间增加了 60%。”</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right relative">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1740&auto=format&fit=crop" class="rounded-[4rem] w-full aspect-square object-cover shadow-2xl" />
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Core Advantages: Dark Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto rounded-[5rem] bg-[#0A0D28] text-white relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
+      <div class="relative z-10">
+        <div class="text-center mb-20 animate-on-scroll">
+          <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">Core Strengths</p>
+          <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic">专业的模型训练服务</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {advantages.map((adv, i) => (
+            <div class="animate-on-scroll p-10 rounded-[2.5rem] bg-white/5 border border-white/10 text-center flex flex-col items-center group hover:bg-white/10 transition-all duration-500" style={`transition-delay: ${i * 100}ms`}>
+              <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
+                 <Icon name={adv.icon} class="w-7 h-7" />
+              </div>
+              <h3 class="text-xl font-bold mb-4 italic tracking-tight">{adv.title}</h3>
+              <p class="text-xs text-white/50 leading-relaxed font-medium">{adv.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Overall Impact: Results Grid -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">Overall Impact</p>
+        <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic">模型训练服务成效统计</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {results.map((res, i) => (
+          <div class="animate-on-scroll p-10 rounded-[3rem] bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 flex flex-col items-center text-center group" style={`transition-delay: ${i * 100}ms`}>
+             <Icon name={res.icon} class="w-6 h-6 text-primary mb-6" />
+             <p class="text-5xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-primary to-accent mb-4">{res.title.includes('提升') ? '60%+' : res.title.includes('降低') ? '70%' : res.title.includes('减少') ? '80%' : '45%+'}</p>
+             <h4 class="text-lg font-bold mb-2">{res.title}</h4>
+             <p class="text-xs text-muted font-medium">{res.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section class="py-32 px-6">
+       <div class="animate-on-scroll bento-card max-w-5xl mx-auto text-center border-none bg-gradient-to-br from-indigo-600 to-primary text-white p-16 md:p-24 shadow-2xl relative overflow-hidden">
+           <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/tech/1920/1080?blur=10')] opacity-10 mix-blend-overlay"></div>
+           <div class="relative z-10">
+              <h2 class="text-4xl md:text-7xl font-black italic tracking-tighter mb-8">开启您的模型训练之旅</h2>
+              <p class="text-xl text-white/80 mb-12 font-medium max-w-2xl mx-auto">专注业务，将算法与算力交给我们。专业团队为您定制专属的模型训练方案。</p>
+              <div class="flex flex-wrap justify-center gap-6">
+                <a href="/contact/" class="px-12 py-5 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">立即咨询解决方案</a>
+                <a href="/about/" class="px-12 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black italic rounded-full hover:bg-white/20 transition-all">了解关于 UniSudo</a>
+              </div>
+           </div>
+       </div>
+    </section>
+  </main>
 </Layout>

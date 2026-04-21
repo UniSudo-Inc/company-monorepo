@@ -50,31 +50,6 @@ const pricingPlans = [
 
 <Layout metadata={metadata}>
   <div class="min-h-screen transition-colors duration-300">
-    {/* Navigation */}
-    <!-- <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-border-light  dark:border-primary/20 px-12 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold">U</div>
-        <span class="text-2xl font-extrabold tracking-tighter text-primary">UniTeach</span>
-      </div>
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#solutions" class="hover:text-primary transition-colors">产品特性</a>
-        <a href="#features" class="hover:text-primary transition-colors">核心能力</a>
-        <a href="#pricing" class="hover:text-primary transition-colors">价格体系</a>
-        <a href="#contact" class="hover:text-primary transition-colors">联系我们</a>
-      </div>
-      <div class="flex items-center gap-4">
-        <button 
-          id="theme-toggle"
-          class="p-2 rounded-full hover:bg-surface transition-colors text-text-muted hover:text-primary"
-          aria-label="Toggle theme"
-        >
-          <Icon name="lucide:sun" class="w-5 h-5 dark:hidden" />
-          <Icon name="lucide:moon" class="w-5 h-5 hidden dark:block" />
-        </button>
-        <button class="px-5 py-2 bg-bg-dark border border-border-light dark:border-primary/20 rounded-xl text-xs font-bold hover:bg-surface transition-colors">管理控制台</button>
-      </div>
-    </nav> -->
-
     {/* 01 | Hero Section */}
     <header class="relative pt-16 pb-32 overflow-hidden">
       <Beams className="opacity-50" />
@@ -87,14 +62,14 @@ const pricingPlans = [
             </div>
             <h1 class="text-5xl md:text-7xl font-display font-black mb-8 leading-[1.1] tracking-tight">
               让每一份试卷 <br />
-              <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">都有 AI 的温度</span>
+              <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic">都有 AI 的温度</span>
             </h1>
             <p class="text-lg md:text-xl text-text-muted mb-12 max-w-xl leading-relaxed">
               全学科、全题型深度覆盖。自研高精度 OCR 与大模型技术，为学校提供私有化、智能化的批卷方案。
             </p>
             <div class="flex flex-wrap gap-6">
-              <button class="btn-primary">立即体验演示</button>
-              <button class="px-8 py-4 bg-surface border border-border-light dark:border-primary/20 rounded-2xl font-bold hover:bg-bg transition-all">联系我们</button>
+              <a href="https://uniteach.unisudo.dev/" target="_blank" class="btn-primary">立即体验演示</a>
+              <a href="/contact/" class="px-8 py-4 bg-surface border border-border-light dark:border-primary/20 rounded-2xl font-bold hover:bg-bg transition-all">联系我们</a>
             </div>
           </div>
           <div class="relative hero-image-container">
@@ -262,9 +237,9 @@ const pricingPlans = [
               <h3 class="text-3xl font-display font-bold mb-6">从“批卷”走向<br />“教学数据资产”</h3>
               <p class="text-text-muted dark:text-white/60 mb-12 text-lg leading-relaxed">我们不仅是在批改错题，更是在沉淀学校的核心教学资产，实现从“批错题”到“精准教学”的跨越。</p>
             </div>
-            <div class="flex items-center gap-2 text-primary font-bold cursor-pointer group-hover:gap-4 transition-all">
+            <a href="https://uniteach.unisudo.dev/" target="_blank" class="flex items-center gap-2 text-primary font-bold cursor-pointer group-hover:gap-4 transition-all">
               了解更多 <Icon name="lucide:chevron-right" class="w-5 h-5" />
-            </div>
+            </a>
           </div>
           <div class="p-12 rounded-[40px] bg-accent text-white flex flex-col justify-between relative overflow-hidden group transition-all hover:shadow-xl">
             <div class="absolute bottom-0 right-0 w-64 h-64 bg-white/10 blur-[80px] translate-y-1/2 translate-x-1/2"></div>
@@ -272,9 +247,9 @@ const pricingPlans = [
               <h3 class="text-3xl font-display font-bold mb-6">灵活的给分逻辑</h3>
               <p class="text-white/60 mb-12 text-lg leading-relaxed">支持习题内不同的给分逻辑，精准还原老师的判卷思维，确保公平公正。</p>
             </div>
-            <div class="flex items-center gap-2 text-white/90 font-bold cursor-pointer group-hover:gap-4 transition-all">
+            <a href="https://uniteach.unisudo.dev/" target="_blank" class="flex items-center gap-2 text-white/90 font-bold cursor-pointer group-hover:gap-4 transition-all">
               查看案例 <Icon name="lucide:chevron-right" class="w-5 h-5" />
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -388,7 +363,7 @@ const pricingPlans = [
             <h3 class="text-2xl font-display font-bold mb-4">智能模板编辑器</h3>
             <p class="text-text-muted leading-relaxed">AI 自动识别题目区域，支持所见即所得的微调。模板一次配置，全校复用。</p>
             <div class="mt-8 pt-8 border-t border-border-light  dark:border-primary/20 flex justify-between items-center">
-              <span class="text-xs font-bold text-primary uppercase tracking-widest">了解详情</span>
+              <a href="https://uniteach.unisudo.dev/" target="_blank" class="text-xs font-bold text-primary uppercase tracking-widest">了解详情</a>
               <Icon name="lucide:arrow-right" class="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
@@ -398,7 +373,7 @@ const pricingPlans = [
             <h3 class="text-2xl font-display font-bold mb-4">分步得分算法</h3>
             <p class="text-text-muted leading-relaxed">不只是看答案，更能读懂解题步骤。自动归类相似错误思路，实现精准补救。</p>
             <div class="mt-8 pt-8 border-t border-border-light  dark:border-primary/20 flex justify-between items-center">
-              <span class="text-xs font-bold text-primary uppercase tracking-widest">了解详情</span>
+              <a href="https://uniteach.unisudo.dev/" target="_blank" class="text-xs font-bold text-primary uppercase tracking-widest">了解详情</a>
               <Icon name="lucide:arrow-right" class="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
@@ -480,14 +455,14 @@ const pricingPlans = [
               <div class="p-8 rounded-[32px] bg-surface border border-border-light  dark:border-primary/20 shadow-22 backdrop-blur-sm">
                 <h3 class="text-2xl font-bold mb-4">从“批卷”走向“教学数据资产”</h3>
                 <p class="text-text-muted mb-8 leading-relaxed">我们不仅是在批改错题，更是在沉淀学校的核心教学资产，实现从“批错题”到“精准教学”的跨越。</p>
-                <a href="#" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
+                <a href="https://uniteach.unisudo.dev/" target="_blank" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
                   了解更多 <Icon name="lucide:chevron-right" class="w-5 h-5" />
                 </a>
               </div>
               <div class="p-8 rounded-[32px] bg-primary text-white border border-white/20 shadow-22 translate-y-12">
                 <h3 class="text-2xl font-bold mb-4">灵活的给分逻辑</h3>
                 <p class="text-white/80 mb-8 leading-relaxed">支持习题内不同的给分逻辑，精准还原老师的判卷思维，确保公平公正。</p>
-                <a href="#" class="inline-flex items-center gap-2 text-white font-bold hover:gap-4 transition-all">
+                <a href="https://uniteach.unisudo.dev/" target="_blank" class="inline-flex items-center gap-2 text-white font-bold hover:gap-4 transition-all">
                   查看案例 <Icon name="lucide:chevron-right" class="w-5 h-5" />
                 </a>
               </div>
@@ -548,9 +523,9 @@ const pricingPlans = [
                   </li>
                 ))}
               </ul>
-              <button class={`w-full py-4 rounded-2xl font-bold transition-all ${plan.popular ? 'btn-primary' : 'bg-surface text-text border border-border-light  dark:border-primary/20 hover:border-primary/30 hover:bg-bg shadow-sm'}`}>
+              <a href="/contact/" class={`w-full px-28 py-4 rounded-2xl font-bold transition-all ${plan.popular ? 'btn-primary' : 'bg-surface text-text border border-border-light  dark:border-primary/20 hover:border-primary/30 hover:bg-bg shadow-sm'}`}>
                 立即咨询
-              </button>
+              </a>
             </div>
           ))}
         </div>
@@ -596,15 +571,11 @@ const pricingPlans = [
             让老师有更多精力关注学生的个性化成长，实现真正的因材施教，打造更具温度的智能课堂。
           </p>
           <div class="flex flex-wrap justify-center gap-6">
-            <button class="btn-primary">申请演示</button>
+            <a href="/contact/" class="btn-primary">申请演示</a>
             <button class="px-12 py-4 rounded-2xl bg-surface text-text border border-border-light  dark:border-primary/20 font-bold hover:bg-bg transition-all text-lg">
               <a rel='noopener noreferrer' href={getHomePermalink()}>返回主页</a>
             </button>
           </div>
-          <!-- <div class="mt-20 flex flex-col items-center gap-4">
-            <div class="text-text-muted/20 font-mono tracking-[0.5em] text-sm font-bold">WWW.UNISUDO.COM</div>
-            <div class="w-px h-12 bg-gradient-to-b from-primary/50 to-transparent"></div>
-          </div> -->
         </div>
       </div>
     </section>

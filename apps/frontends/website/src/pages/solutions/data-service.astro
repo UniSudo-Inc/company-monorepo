@@ -1,275 +1,312 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Content from '@/components/widgets/Content.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-import Steps from '@/components/widgets/Steps.astro';
-import CallToAction from '@/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: '数据服务',
+  title: '数据服务 - UniSudo 智独数科技',
 };
+
+const serviceFlow = [
+  { title: '需求分析', desc: '深入了解业务场景，制定闭环解决方案', icon: 'lucide:search' },
+  { title: '数据采集', desc: '多渠道合法数据收集与定制化预处理', icon: 'lucide:database' },
+  { title: '数据处理', desc: '专业级清洗、精细化标注与多维处理', icon: 'lucide:cpu' },
+  { title: '质量控制', desc: '严格的三审质量管理体系与回归验证', icon: 'lucide:shield-check' }
+];
+
+const annotationFields = [
+  { title: '图像与视频标注', desc: '支持点、线、框、多边形及语义分割', icon: 'lucide:image' },
+  { title: '文本数据标注', desc: '情感分析、实体识别及对话意图标注', icon: 'lucide:file-text' },
+  { title: '语音数据标注', desc: 'ASR 听写、音色提取与语种识别', icon: 'lucide:mic' },
+  { title: '多语言数据标注', desc: '覆盖全球 20+ 主流语种的专业互译与标注', icon: 'lucide:languages' },
+  { title: '专业领域标注', desc: '法律、医疗、金融等高度专业领域深度标注', icon: 'lucide:briefcase' }
+];
+
+const advantages = [
+  { title: '专业团队', desc: '行业资深数据科学家与标注专家领衔', icon: 'lucide:users' },
+  { title: '严格质控', desc: '全流程数字追踪，准确率可达 99.9%+', icon: 'lucide:check-square' },
+  { title: '高效流程', desc: 'AI 辅助标注技术大幅缩短交付周期', icon: 'lucide:zap' },
+  { title: '安全保障', desc: '金融级数据脱敏与物理级安全隔离环境', icon: 'lucide:lock' }
+];
 ---
 
 <Layout metadata={metadata}>
-  <div class='relative overflow-hidden'>
-    <div class='absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-90'></div>
-    <div class='absolute inset-0 bg-[url("data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E")] opacity-30'></div>
-    <div class='relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 text-center'>
-      <p class='mb-4 text-base font-bold uppercase tracking-[0.2em] text-white/80'>数据服务</p>
-      <h1 class='mb-6 text-4xl font-bold tracking-tight text-white md:text-6xl'>
-        数据赋能 智创未来
-      </h1>
-      <p class='mx-auto max-w-2xl text-xl text-white/90 leading-relaxed'>
-        专业的AI数据服务解决方案
-      </p>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
     </div>
-  </div>
 
-  <div class='relative'>
-    
-    <Steps
-      title='数据服务流程'
-      items={[
-        {
-          title: '需求分析',
-          description: '深入了解业务场景，制定解决方案',
-          icon: 'tabler:search',
-        },
-        {
-          title: '数据采集',
-          description: '多渠道数据收集与预处理',
-          icon: 'tabler:database-import',
-        },
-        {
-          title: '数据处理',
-          description: '专业的清洗、标注与处理',
-          icon: 'tabler:tool',
-        },
-        {
-          title: '质量控制',
-          description: '严格的质量管理与验证',
-          icon: 'tabler:certificate',
-        },
-      ]}
-      image={{
-        src: 'https://images.unsplash.com/photo-1599727277707-b429a4994c15?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-        alt: '服务流程',
-      }}
-    />
-  </div>
-
-  <div class='relative'>
-    
-    <div class='relative mx-auto max-w-7xl px-4 py-20 sm:px-6'>
-      <div class='mb-16 text-center'>
-        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>服务内容</p>
-        <h2 class='text-4xl font-bold tracking-tight text-default dark:text-white md:text-5xl'>AI训练数据标注</h2>
-      </div>
-      <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 0ms'>
-          <h3 class='mb-4 text-xl font-bold tracking-tight text-default dark:text-white'>业务领域</h3>
-          <ul class='space-y-3 text-muted'>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              图像与视频标注
-            </li>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              文本数据标注
-            </li>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              语音数据标注
-            </li>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              多语言数据标注
-            </li>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              专业领域标注
-            </li>
-          </ul>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 100ms'>
-          <h3 class='mb-4 text-xl font-bold tracking-tight text-default dark:text-white'>服务优势</h3>
-          <ul class='space-y-3 text-muted'>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              专业团队
-            </li>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              严格质控
-            </li>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              高效流程
-            </li>
-            <li class='flex items-center gap-3'>
-              <Icon name='tabler:check' class='h-5 w-5 text-primary shrink-0' />
-              安全保障
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <Content
-    title='多模态数据处理'
-    items={[
-      {
-        title: '处理能力',
-        description: '图像预处理、视频数据处理、语音数据处理、文本数据处理、多模态数据融合',
-      },
-      {
-        title: '技术优势',
-        description: '先进算法、高效处理、质量保证、成本优化',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80',
-      alt: '多模态处理',
-    }}
-  >
-    <Fragment slot='bg'>
+    <!-- Hero Section -->
+    <section class="relative py-32 px-6 overflow-hidden">
+      <!-- Mesh Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 opacity-30 -z-10"></div>
       
-    </Fragment>
-  </Content>
+      <div class="max-w-7xl mx-auto text-center animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+          DATA SERVICES · 数据服务
+        </span>
+        <h1 class="text-6xl md:text-7xl font-bold tracking-tight leading-tight mb-4">数据赋能</h1>
+        <h2 class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-5xl md:text-6xl mt-3 font-semibold mb-8 italic">智创未来基石</h2>
+        <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed mb-12">
+          专业的 AI 数据服务解决方案。从海量原始信息到高质量训练集，我们提供全生命周期的数据治理与增益。
+        </p>
+      </div>
+    </section>
 
-  <Content
-    isReversed
-    tagline='案例研究'
-    title='金融数据处理'
-    items={[
-      {
-        title: '项目背景',
-        description: '需求：大型银行的交易数据清洗和标注需求。痛点：数据量大、隐私要求高、准确度要求严格。挑战：需要处理历史数据和实时数据流。目标：建立高质量的金融数据集。',
-      },
-      {
-        title: '解决方案',
-        description: '部署专业数据处理团队，建立多重数据验证机制，实施数据加密和脱敏处理，开发自动化数据清洗流程，构建金融标注规范体系。',
-      },
-      {
-        title: '实施效果',
-        description: '数据准确率达99.9%，处理效率提升200%，数据安全零事故，标注成本降低40%，客户满意度98%。',
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '金融数据处理',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4'>场景故事</h3>
-      <p class='text-muted leading-relaxed'>为某大型银行处理了超过1000万条交易数据，通过AI辅助标注和多重验证机制，成功建立了高质量的反欺诈训练数据集，帮助客户的AI模型准确率提升了15%。</p>
-    </Fragment>
-  </Content>
+    <!-- Service Flow -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">Process Workflow</p>
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">标准化数据服务流程</h2>
+      </div>
 
-  <Content
-    isAfterContent
-    tagline='案例研究'
-    title='医疗影像数据标注'
-    items={[
-      {
-        title: '项目背景',
-        description: '需求：医院CT影像数据标注和分析。痛点：专业要求高，人工标注耗时。挑战：需要医学专业知识支持。目标：提供高质量医疗数据集。',
-      },
-      {
-        title: '解决方案',
-        description: '组建医疗AI标注团队，开发医疗影像标注工具，建立三级质检机制，引入专家审核环节，应用数据增强技术。',
-      },
-      {
-        title: '实施效果',
-        description: '标注效率提升150%，准确率达到95%以上，数据集扩充3倍，模型诊断准确率提升20%，标注成本降低35%。',
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '医疗数据',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4'>场景故事</h3>
-      <p class='text-muted leading-relaxed'>协助三甲医院完成了10万张胸部CT影像的标注工作，通过专业团队和AI辅助标注，显著提高了肺部疾病检测模型的准确率，获得了医生团队的一致好评。</p>
-    </Fragment>
-  </Content>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {serviceFlow.map((step, i) => (
+          <div class="animate-on-scroll bento-card relative group" style={`transition-delay: ${i * 100}ms`}>
+            <div class="text-xs font-mono text-primary/40 mb-6 font-bold uppercase tracking-widest">Step 0{i + 1}</div>
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform duration-500">
+               <Icon name={step.icon} class="w-7 h-7" />
+            </div>
+            <h3 class="text-xl font-bold mb-4 tracking-tight italic">{step.title}</h3>
+            <p class="text-sm text-muted leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-  <Content
-    isReversed
-    isAfterContent
-    tagline='案例研究'
-    title='工业视觉数据处理'
-    items={[
-      {
-        title: '项目背景',
-        description: '需求：制造业质检数据标注需求。痛点：标注规则复杂，要求高。挑战：需要处理多种缺陷类型。目标：提升质检自动化水平。',
-      },
-      {
-        title: '解决方案',
-        description: '定制化标注方案，开发缺陷识别工具，建立标准化流程，实施数据增强技术，应用质量跟踪系统。',
-      },
-      {
-        title: '实施效果',
-        description: '检测准确率提升25%，生产效率提升40%，质检成本降低50%，数据集规模扩大5倍，ROI提升200%。',
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1633934542430-0905ccb5f050?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '工业视觉',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4'>场景故事</h3>
-      <p class='text-muted leading-relaxed'>为某半导体制造商建立了芯片缺陷检测数据集，通过精确的标注和数据增强，帮助客户将产品质检效率提升40%，年度节省成本超过500万。</p>
-    </Fragment>
-  </Content>
+    <!-- Annotation & Advantages: Bento Grid -->
+    <section class="py-32 px-6 max-w-7xl mx-auto bg-surface-light dark:bg-slate-900/50 rounded-[4rem] border border-border-light dark:border-primary/20  mb-32 relative overflow-hidden">
+      <div class="absolute inset-0 bg-primary/5 blur-[100px] -z-10 animate-pulse"></div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Annotation Fields -->
+        <div class="lg:col-span-8 animate-on-scroll animate-left">
+           <div class="bento-card h-full bg-white dark:bg-white/5 border-none p-12">
+              <h3 class="text-3xl font-black italic tracking-tighter mb-10">AI 训练数据标注</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {annotationFields.map(field => (
+                  <div class="group">
+                    <div class="flex items-center gap-4 mb-4">
+                      <Icon name={field.icon} class="w-5 h-5 text-primary" />
+                      <h4 class="font-bold">{field.title}</h4>
+                    </div>
+                    <p class="text-sm text-muted leading-relaxed pl-9">{field.desc}</p>
+                  </div>
+                ))}
+              </div>
+           </div>
+        </div>
 
-  <div class='relative'>
-    
-    <Features2
-      title='核心优势'
-      subtitle='专业的数据处理能力'
-      items={[
-        {
-          title: '专业团队',
-          description: '拥有AI数据处理领域专业人才团队',
-          icon: 'tabler:users',
-        },
-        {
-          title: '质量保证',
-          description: '严格的质量管理体系，确保数据质量',
-          icon: 'tabler:certificate',
-        },
-        {
-          title: '成本效益',
-          description: '高效的处理流程，优化成本投入',
-          icon: 'tabler:coin',
-        },
-        {
-          title: '安全保障',
-          description: '完善的数据安全保护机制',
-          icon: 'tabler:shield',
-        },
-      ]}
-    />
-  </div>
+        <!-- Advantages -->
+        <div class="lg:col-span-4 animate-on-scroll animate-right">
+           <div class="bento-card h-full bg-slate-900 text-white border-none p-12 flex flex-col">
+              <h3 class="text-3xl font-black italic tracking-tighter mb-10">服务优势</h3>
+              <div class="space-y-10 flex-grow">
+                {advantages.map(adj => (
+                  <div class="flex gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-primary shrink-0 transition-transform group-hover:rotate-12">
+                       <Icon name={adj.icon} class="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-sm mb-1">{adj.title}</h4>
+                      <p class="text-white/50 text-[11px] leading-relaxed italic">{adj.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
 
-  <div class='relative'>
-    
-    <CallToAction
-      title='让数据为您创造价值'
-      subtitle='专业的数据服务团队，为您提供一站式解决方案'
-      actions={[
-        {
-          variant: 'primary',
-          text: '立即咨询',
-          href: '/contact/',
-          icon: 'tabler:messages',
-        },
-      ]}
-    />
-  </div>
+    <!-- Multi-modal content -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div class="animate-on-scroll animate-left">
+             <span class="text-accent text-xs font-bold uppercase tracking-widest mb-4 inline-block">CAPABILITIES · 处理能力</span>
+             <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-8 italic italic">多模态数据处理</h2>
+             <div class="space-y-12">
+                <div>
+                   <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                      <span class="w-2 h-2 bg-accent rounded-full animate-ping"></span>
+                      极致的处理效能
+                   </h3>
+                   <p class="text-muted leading-relaxed mb-6">集成先进算法，支持图像预处理、视频高帧率解析、语义级文本挖掘及复杂语音语调分析。通过多模态数据融合技术，让您的模型具备跨媒介的深度感知力。</p>
+                   <div class="grid grid-cols-2 gap-4">
+                      {['高速 GPU 算力', '分布式处理架构', '高精度融合算法', '全自动数据脱敏'].map(tag => (
+                        <div class="px-4 py-2 rounded-xl bg-accent/10 text-accent text-xs font-bold border border-accent/20">
+                           {tag}
+                        </div>
+                      ))}
+                   </div>
+                </div>
+                <div>
+                   <h3 class="text-2xl font-bold mb-6">质量保证体系</h3>
+                   <p class="text-muted text-sm leading-relaxed">我们建立了一套涵盖“算法自动校验、专家抽检审核、三方暗审比对”的闭环质控流程，确保每一份交付的数据都具备工业级的可靠性。</p>
+                </div>
+             </div>
+          </div>
+          <div class="animate-on-scroll animate-right relative">
+             <div class="rounded-[3.5rem] overflow-hidden shadow-2xl relative group">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                <div class="absolute bottom-10 left-10 right-10">
+                   <div class="p-8 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20">
+                      <p class="text-white text-3xl font-black italic tracking-tighter mb-2">99.9%</p>
+                      <p class="text-white/60 text-[10px] font-bold uppercase tracking-widest">标注数据一致性</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Case Studies: Full Width Scrollable style -->
+    <section class="py-32 space-y-32">
+       <div class="text-center mb-20 animate-on-scroll">
+          <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">Case Studies</p>
+          <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic">数据赋能的行业实践</h2>
+       </div>
+
+       <!-- Financial -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+             <div class="animate-on-scroll animate-left">
+                <span class="text-primary text-xs font-bold uppercase tracking-widest mb-4 inline-block">FINTECH · 金融科技</span>
+                <h3 class="text-4xl font-black mb-8 italic tracking-tighter">金融级数据精准治理</h3>
+                <div class="space-y-6">
+                   <div class="p-6 rounded-3xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 ">
+                      <p class="text-xs font-bold text-primary uppercase mb-3">项目背景与挑战</p>
+                      <p class="text-sm text-muted">大型银行面临海量历史数据的反欺诈治理。痛点在于数据规模庞杂（1000万+）、隐私合规要求极其严苛以及实时流式数据的同步挑战。</p>
+                   </div>
+                   <div class="grid grid-cols-2 gap-4">
+                      <div class="p-6 rounded-3xl bg-emerald-500/5 border border-emerald-500/10">
+                         <p class="text-2xl font-black italic text-emerald-500 tracking-tighter">99.9%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">标注准确率</p>
+                      </div>
+                      <div class="p-6 rounded-3xl bg-blue-500/5 border border-blue-500/10">
+                         <p class="text-2xl font-black italic text-blue-500 tracking-tighter">+200%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">处理效能提升</p>
+                      </div>
+                   </div>
+                   <div class="p-8 rounded-[2.5rem] bg-slate-900 text-white relative overflow-hidden group">
+                      <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:quote" class="w-20 h-20" /></div>
+                      <h4 class="text-xl font-black mb-4 italic tracking-tight">场景故事</h4>
+                      <p class="text-sm text-white/70 leading-relaxed italic">“通过 AI 辅助标注与多重脱敏隔离机制，我们为客户建立了高质量的反欺诈训练集。最终帮助该行反欺诈模型的准确率显著提升了 15%，有效拦截了潜在风险。”</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right relative">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1740&auto=format&fit=crop" class="rounded-[3rem] w-full aspect-square object-cover shadow-2xl" />
+             </div>
+          </div>
+       </div>
+
+       <!-- Medical -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center flex-row-reverse">
+             <div class="animate-on-scroll animate-left lg:order-2">
+                <span class="text-red-500 text-xs font-bold uppercase tracking-widest mb-4 inline-block">HEALTHCARE · 智慧医疗</span>
+                <h3 class="text-4xl font-black mb-8 italic italic tracking-tighter">医疗影像专家级标注</h3>
+                <div class="space-y-6">
+                   <div class="p-6 rounded-3xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 ">
+                      <p class="text-xs font-bold text-red-500 uppercase mb-3">解决方案核心</p>
+                      <p class="text-sm text-muted">组建具有医学背景的专业标注团队，引入三甲医院专家终审机制，应用医疗级影像增强技术，解决 CT 影像标注耗时且专业门槛高的核心痛点。</p>
+                   </div>
+                   <div class="flex gap-4 items-center">
+                      <div class="px-6 py-4 rounded-full bg-red-500/10 text-red-500 border border-red-500/20 text-sm font-bold">数据集扩充 3 倍</div>
+                      <div class="px-6 py-4 rounded-full bg-red-500/10 text-red-500 border border-red-500/20 text-sm font-bold">-35% 标注成本</div>
+                   </div>
+                   <div class="p-8 rounded-[2.5rem] bg-red-500 text-white relative overflow-hidden group">
+                      <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:stethoscope" class="w-20 h-20" /></div>
+                      <h4 class="text-xl font-black mb-4 italic tracking-tight">场景故事</h4>
+                      <p class="text-sm text-white/90 leading-relaxed italic">“协助三甲医院完成了 10 万张肺部 CT 影像的病灶区域标注，通过 AI 预标注大幅减轻专家负担，显著推高了肺部疾病检测模型的诊断准确率，获得了临床专家的一致好评。”</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right lg:order-1 relative">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1740&auto=format&fit=crop" class="rounded-[3rem] w-full aspect-square object-cover shadow-2xl" />
+             </div>
+          </div>
+       </div>
+
+       <!-- Industrial -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+             <div class="animate-on-scroll animate-left">
+                <span class="text-orange-500 text-xs font-bold uppercase tracking-widest mb-4 inline-block">INDUSTRY · 工业视觉</span>
+                <h3 class="text-4xl font-black mb-8 italic tracking-tighter">工业缺陷检测数据集</h3>
+                <div class="space-y-6">
+                   <div class="p-6 rounded-3xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 ">
+                      <p class="text-xs font-bold text-orange-500 uppercase mb-3">项目背景与目标</p>
+                      <p class="text-sm text-muted">制造业质检对标注规则的精细程度要求极高，需覆盖数十种微小缺陷。我们的目标是建立标准化的质检数据流水线，大幅提升生产自动化水平。</p>
+                   </div>
+                   <div class="grid grid-cols-2 gap-4">
+                      <div class="p-8 rounded-3xl bg-orange-500/10 text-orange-600 border border-orange-500/20">
+                         <p class="text-4xl font-black italic">+25%</p>
+                         <p class="text-[10px] uppercase font-bold opacity-60">检测准确率提升</p>
+                      </div>
+                      <div class="p-8 rounded-3xl bg-orange-500/10 text-orange-600 border border-orange-500/20">
+                         <p class="text-4xl font-black italic">500万+</p>
+                         <p class="text-[10px] uppercase font-bold opacity-60">年度节省成本</p>
+                      </div>
+                   </div>
+                   <div class="p-6 rounded-3xl bg-white dark:bg-white/5 border border-border-light dark:border-primary/20  flex flex-col justify-center">
+                      <h4 class="text-lg font-bold mb-4 italic flex items-center gap-2">
+                         <Icon name="lucide:factory" class="w-5 h-5 text-orange-500" />
+                         场景故事
+                      </h4>
+                      <p class="text-sm text-muted italic leading-relaxed">“为半导体巨头定制了芯片缺陷检测数据集。通过精确像素级标注与多尺度数据增强技术，帮助质检效率翻倍，年节省成本超 500 万，投资回报率（ROI）提升 200%。”</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right relative">
+                <img src="https://images.unsplash.com/photo-1633934542430-0905ccb5f050?q=80&w=1740&auto=format&fit=crop" class="rounded-[3rem] w-full aspect-square object-cover shadow-2xl" />
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Overall Benefits -->
+    <section class="py-32 px-6 max-w-7xl mx-auto text-center border-t border-border-light dark:border-primary/20 ">
+      <div class="animate-on-scroll mb-16">
+        <h2 class="text-5xl md:text-7xl font-black tracking-tighter italic mb-8">核心优势</h2>
+        <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed">
+          全方位的专业数据处理能力，助力客户在 AI 下半场竞争中抢占战略制高点。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {[
+          { title: '专业团队', desc: '深厚的行业背景与实战经验', icon: 'lucide:user-check', delay: '0ms' },
+          { title: '质量保证', desc: '工业级质管体系与精细化标准', icon: 'lucide:shield-check', delay: '50ms' },
+          { title: '成本效益', desc: 'AI 辅助标注方案平衡效能与投入', icon: 'lucide:trending-down', delay: '100ms' },
+          { title: '安全保障', desc: '物理与数字双重防护体系', icon: 'lucide:lock', delay: '150ms' }
+        ].map(item => (
+          <div class="animate-on-scroll p-8 rounded-3xl border border-border-light dark:border-primary/20  hover:border-primary transition-colors group" style={`transition-delay: ${item.delay}`}>
+            <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+               <Icon name={item.icon} class="w-6 h-6" />
+            </div>
+            <h4 class="text-sm font-bold mb-3">{item.title}</h4>
+            <p class="text-[10px] text-muted leading-relaxed font-medium">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 px-6">
+       <div class="animate-on-scroll bento-card max-w-4xl mx-auto text-center border-none bg-gradient-to-br from-primary via-accent to-accent-light text-white p-16 shadow-2xl relative overflow-hidden">
+           <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/graph/1920/1080?blur=10')] opacity-20 mix-blend-overlay"></div>
+           <div class="relative z-10">
+              <h2 class="text-4xl md:text-6xl font-black italic tracking-tighter mb-8 italic">让数据为您创造价值</h2>
+              <p class="text-xl text-white/80 mb-12 font-medium max-w-xl mx-auto">专业的数据服务团队，为您提供一站式、端到端的 AI 数据解决方案。</p>
+              <div class="flex flex-wrap justify-center gap-6">
+                <a href="/contact/" class="px-10 py-4 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">立即咨询</a>
+              </div>
+           </div>
+       </div>
+    </section>
+  </main>
 </Layout>

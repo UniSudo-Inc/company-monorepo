@@ -1,133 +1,167 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Hero from '@/components/widgets/Hero.astro';
 
 const metadata = {
   title: '加入我们 - 上海智独数科技有限公司',
-  ignoreTitleTemplate: true,
 };
+
+const benefits = [
+  {
+    title: '技术创新的第一线',
+    desc: '直接参与前沿 AI 技术的研发和应用，与行业专家共同探索创新解决方案。',
+    icon: 'lucide:lightbulb'
+  },
+  {
+    title: '富有挑战的工作环境',
+    desc: '接触多样化的项目和技术栈，不断突破自我，实现全方位职业成长。',
+    icon: 'lucide:rocket'
+  },
+  {
+    title: '完善的培训发展体系',
+    desc: '系统化的培训计划，帮助你快速完成角色转变，实现职业理想。',
+    icon: 'lucide:graduation-cap'
+  },
+  {
+    title: '有竞争力的薪酬福利',
+    desc: '提供具有市场竞争力的薪酬 Package，全方位认可并回报你的卓越贡献。',
+    icon: 'lucide:award'
+  }
+];
+
+const jobs = [
+  {
+    title: '前端开发工程师',
+    desc: '参与公司核心产品的前端架构与开发，与设计团队紧密协作，实现极致的高质量用户界面。',
+    icon: 'lucide:layout-template',
+    href: '/jobs/frontend-engineer/'
+  },
+  {
+    title: 'AI 开发工程师',
+    desc: '负责 AI 模型的开发、训练和精细化优化，深度参与公司核心 AI 能力的研发与创新。',
+    icon: 'lucide:brain-circuit',
+    href: '/jobs/ai-engineer/'
+  }
+];
 ---
 
 <Layout metadata={metadata}>
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: '立即投递简历',
-        href: 'mailto:HR@unisudo.com',
-      },
-    ]}
-    image={{ src: '@/assets/images/recruitment.png', alt: 'Recruitment Hero Image' }}
-  >
-    <Fragment slot='title'>
-      <span class='text-4xl md:text-6xl font-bold tracking-tight'>加入智独数科技</span><br />
-      <span class='text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-3xl md:text-5xl mt-2 font-semibold'>开启AI新未来</span>
-    </Fragment>
-
-    <Fragment slot='subtitle'>
-      <span class='text-xl leading-relaxed'>在这里，你将与行业顶尖人才一起，探索AI技术的无限可能，创造改变世界的解决方案。</span>
-    </Fragment>
-  </Hero>
-
-  <div class='relative'>
-    
-    <div class='relative mx-auto max-w-7xl px-4 py-20 sm:px-6'>
-      <div class='mb-16 text-center'>
-        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>为什么选择我们</p>
-        <h2 class='text-4xl font-bold tracking-tight text-default dark:text-white md:text-5xl'>在智独数科技，你将获得</h2>
-      </div>
-      <div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4'>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 0ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:bulb' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>技术创新的第一线</h3>
-          <p class='text-muted leading-relaxed'>直接参与前沿AI技术的研发和应用，与行业专家共同探索创新解决方案。</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 100ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:rocket' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>富有挑战的工作环境</h3>
-          <p class='text-muted leading-relaxed'>接触多样化的项目和技术栈，不断突破自我，实现职业成长。</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 200ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:school' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>完善的培训发展体系</h3>
-          <p class='text-muted leading-relaxed'>系统化的培训计划，帮助你快速成长，实现职业理想。</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 300ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:certificate' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>有竞争力的薪酬福利</h3>
-          <p class='text-muted leading-relaxed'>提供具有市场竞争力的薪酬package，认可并回报你的贡献。</p>
-        </div>
-      </div>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-primary/5 rounded-full blur-[150px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[150px] animate-pulse" style="animation-delay: 3s"></div>
     </div>
-  </div>
 
-  <div class='relative'>
-    
-    <div class='relative mx-auto max-w-7xl px-4 py-20 sm:px-6'>
-      <div class='mb-16 text-center'>
-        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>招贤纳士</p>
-        <h2 class='text-3xl font-bold tracking-tight text-default dark:text-white md:text-4xl'>当前招聘职位</h2>
-        <p class='mx-auto mt-4 max-w-2xl text-lg text-muted'>加入我们，与行业顶尖人才一起探索AI技术的无限可能</p>
-      </div>
-      <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 0ms'>
-          <div class='flex items-start gap-5'>
-            <div class='flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-              <Icon name='tabler:brand-react' class='h-7 w-7 text-primary' />
-            </div>
-            <div>
-              <h3 class='mb-2 text-xl font-bold tracking-tight text-default dark:text-white'>前端开发工程师</h3>
-              <p class='mb-4 text-muted text-sm leading-relaxed'>参与公司核心产品的前端开发，与设计团队紧密合作，实现高质量的用户界面。</p>
-              <a href='/jobs/frontend-engineer/' class='inline-flex items-center text-sm font-medium text-primary hover:text-accent transition-colors'>
-                查看详情 <Icon name='tabler:arrow-right' class='ml-1 h-4 w-4' />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 100ms'>
-          <div class='flex items-start gap-5'>
-            <div class='flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-              <Icon name='tabler:brain' class='h-7 w-7 text-primary' />
-            </div>
-            <div>
-              <h3 class='mb-2 text-xl font-bold tracking-tight text-default dark:text-white'>AI开发工程师</h3>
-              <p class='mb-4 text-muted text-sm leading-relaxed'>负责AI模型的开发、训练和优化，参与公司核心AI技术的研发工作。</p>
-              <a href='/jobs/ai-engineer/' class='inline-flex items-center text-sm font-medium text-primary hover:text-accent transition-colors'>
-                查看详情 <Icon name='tabler:arrow-right' class='ml-1 h-4 w-4' />
-              </a>
-            </div>
-          </div>
+    <!-- Hero Section -->
+    <section class="relative py-32 px-6 overflow-hidden">
+      <div class="max-w-7xl mx-auto text-center animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-8 inline-block">
+          JOIN UNISUDO · 招贤纳士
+        </span>
+        <h1 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-[0.9] italic">
+          加入智独数科技<br />
+          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">开启 AI 新未来</span>
+        </h1>
+        <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed mb-12">
+          在这里，你将与行业顶尖人才一起，探索 AI 技术的无限可能，创造改变世界的解决方案。
+        </p>
+        <div class="flex flex-wrap justify-center gap-6">
+           <a href="mailto:HR@unisudo.com" class="px-12 py-5 bg-primary text-white font-black italic rounded-full hover:scale-105 transition-all shadow-xl shadow-primary/20">
+             立即投递简历
+           </a>
+           <a href="#jobs" class="px-12 py-5 bg-white/10 backdrop-blur-md border border-gray-200 dark:border-primary/20 font-black italic rounded-full hover:bg-primary/5 transition-all">
+             浏览开放职位
+           </a>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class='relative pb-20'>
-    
-    <div class='relative mx-auto max-w-7xl px-4 sm:px-6'>
-      <div class='mx-auto max-w-3xl'>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento text-center p-10'>
-          <Icon name='tabler:users' class='mx-auto mb-6 h-12 w-12 text-primary' />
-          <h3 class='mb-4 text-2xl font-bold tracking-tight text-default dark:text-white'>加入我们</h3>
-          <p class='mb-8 text-muted leading-relaxed'>期待优秀的你加入智独数科技，一起开创AI的未来！</p>
-          <div class='flex flex-col gap-4 sm:flex-row sm:justify-center'>
-            <a href='mailto:hr@unisudo.com' class='btn-primary inline-flex items-center justify-center'>
-              <Icon name='tabler:mail' class='mr-2 h-5 w-5' />
-              发送简历至: hr@unisudo.com
-            </a>
-          </div>
-          <p class='mt-6 text-sm text-muted'>工作地点：上海市浦东新区临港自贸区水芸路55号港城广场二街坊1号楼8层802室</p>
-        </div>
+    <!-- Why Us: Staggered Grid -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">Why Join Us</p>
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">在智独数科技，你将获得</h2>
       </div>
-    </div>
-  </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {benefits.map((b, i) => (
+          <div class="animate-on-scroll bento-card p-10 flex flex-col items-center text-center group hover:border-primary/50 transition-all duration-500" style={`transition-delay: ${i * 100}ms`}>
+            <div class="w-16 h-16 rounded-3xl bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl shadow-primary/5">
+               <Icon name={b.icon} class="w-8 h-8" />
+            </div>
+            <h3 class="text-xl font-bold mb-4 italic tracking-tight">{b.title}</h3>
+            <p class="text-sm text-muted leading-relaxed font-medium">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section id="jobs" class="py-32 px-6 max-w-7xl mx-auto scroll-mt-24">
+       <div class="flex flex-col md:flex-row items-end justify-between mb-20 gap-8 animate-on-scroll">
+        <div class="max-w-2xl">
+          <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">Open Positions</p>
+          <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic underline decoration-accent decoration-8 underline-offset-4">招贤纳士 / 诚聘英才</h2>
+        </div>
+        <p class="text-muted max-w-sm text-sm font-medium leading-relaxed italic">寻找那些对未来充满好奇，并渴望通过代码和算法改变现状的人。即使没有找到完全匹配的职位，也欢迎投递简历，优秀的人才始终有位置。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {jobs.map((j, i) => (
+          <div class="animate-on-scroll bento-card p-12 group hover:shadow-2xl transition-all duration-700" style={`transition-delay: ${i * 150}ms`}>
+            <div class="flex flex-col sm:flex-row items-start gap-8">
+              <div class="w-20 h-20 shrink-0 rounded-[2rem] bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center text-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <Icon name={j.icon} class="w-10 h-10" />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-3xl font-black italic mb-4 tracking-tighter">{j.title}</h3>
+                <p class="text-base text-muted mb-8 leading-relaxed font-medium">{j.desc}</p>
+                <a href={j.href} class="inline-flex items-center gap-3 py-3 px-8 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-black italic rounded-full hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all group/btn shadow-lg">
+                  立即申请
+                  <Icon name="lucide:arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Footer Recruitment Info -->
+    <section class="py-32 px-6">
+       <div class="animate-on-scroll bento-card max-w-4xl mx-auto text-center border-none bg-gradient-to-br from-primary/5 via-transparent to-accent/5 p-16 md:p-24 shadow-2xl relative overflow-hidden">
+           <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
+           <div class="relative z-10 flex flex-col items-center">
+              <div class="w-20 h-20 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-10 border border-primary/20">
+                <Icon name="lucide:users" class="w-10 h-10 text-primary" />
+              </div>
+              <h2 class="text-4xl md:text-5xl font-black italic tracking-tighter mb-6">期待你的加入</h2>
+              <p class="text-xl text-muted mb-12 font-medium max-w-xl leading-relaxed">与其预见未来，不如亲自参与创造。期待优秀的你加入智独数科技，一起开创 AI 的未来！</p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left mb-16 w-full max-w-2xl border-t border-gray-200 dark:border-primary/20 pt-16">
+                 <div class="space-y-4">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-primary italic">Resume Submission</p>
+                    <a href="mailto:hr@unisudo.com" class="text-2xl font-black italic hover:text-primary transition-colors flex items-center gap-3 group">
+                       hr@unisudo.com
+                       <Icon name="lucide:mail" class="w-6 h-6 opacity-40 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                 </div>
+                 <div class="space-y-4">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-accent italic">Working Location</p>
+                    <p class="text-sm font-medium text-muted leading-relaxed">
+                       上海市浦东新区临港自贸区水芸路 55 号港城广场二街坊 1 号楼 8 层 802 室
+                    </p>
+                 </div>
+              </div>
+
+              <div class="flex justify-center">
+                 <a href="mailto:HR@unisudo.com" class="group flex items-center gap-4 text-xs font-black uppercase tracking-[0.3em] text-muted hover:text-primary transition-colors italic">
+                    Send Resume Now <Icon name="lucide:chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                 </a>
+              </div>
+           </div>
+       </div>
+    </section>
+  </main>
 </Layout>

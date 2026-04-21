@@ -1,238 +1,196 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Hero from '@/components/widgets/Hero.astro';
-import Content from '@/components/widgets/Content.astro';
-import CallToAction from '@/components/widgets/CallToAction.astro';
-import Timeline from '@/components/widgets/Timeline.astro';
-import speechAI from '@/assets/images/speechAI.png';
-import daoGou from '@/assets/images/daogou.png';
 
 const metadata = {
-  title: '数字人展厅解决方案',
+  title: '数字人展厅解决方案 - UniSudo 智独数科技',
 };
 ---
 
 <Layout metadata={metadata}>
-  <Hero
-    tagline='数字人展厅'
-    image={{
-      src: 'https://images.unsplash.com/photo-1599727277707-b429a4994c15?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      alt: 'AI数据处理',
-    }}
-  >
-    <Fragment slot='title'>
-      <span class='text-4xl md:text-5xl font-bold tracking-tight leading-tight'>数据赋能 智创未来</span><br />
-      <span class='text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-2xl md:text-3xl mt-3 font-semibold'>专业的AI数据服务解决方案</span>
-    </Fragment>
-
-    <Fragment slot='subtitle'>
-      <span class='text-lg md:text-xl text-muted leading-relaxed max-w-3xl mx-auto'>
-        从数据标注到隐私保护，提供全方位的AI数据处理服务，助力您的AI项目成功落地
-      </span>
-    </Fragment>
-  </Hero>
-
-  <div class='relative'>
-    
-    <div class='relative mx-auto max-w-7xl px-4 py-20 sm:px-6'>
-      <div class='mb-16 text-center'>
-        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>应用场景</p>
-        <h2 class='text-4xl font-bold tracking-tight text-default dark:text-white md:text-5xl'>多领域数字人解决方案</h2>
-      </div>
-      <div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 0ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:building-bank' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>银行智能网点</h3>
-          <p class='text-muted leading-relaxed'>24/7全天候服务的智能网点数字员工，提升服务效率，降低人力成本。</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 100ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:building' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>博物馆虚拟讲解</h3>
-          <p class='text-muted leading-relaxed'>沉浸式智能讲解体验，支持多语种讲解，个性化参观路线规划。</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 200ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:shopping-cart' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>企业展厅导购</h3>
-          <p class='text-muted leading-relaxed'>3D产品配置展示，智能报价与方案定制，提升客户驻留时间。</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 300ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:shopping-cart' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>商场数字导购</h3>
-          <p class='text-muted leading-relaxed'>商场导航系统，实时优惠推送，个性化购物建议，提升客单价。</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 400ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:book' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>教育培训讲师</h3>
-          <p class='text-muted leading-relaxed'>AI外教系统，智能学习评估，实时口语互动，提升学习效果。</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 500ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:star' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>品牌数字代言人</h3>
-          <p class='text-muted leading-relaxed'>直播互动系统，社交媒体互动，提升品牌好感度和市场认知度。</p>
-        </div>
-      </div>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
     </div>
-  </div>
 
-  <Content
-    isReversed
-    tagline='案例研究'
-    title='银行智能网点数字员工'
-    items={[
-      {
-        title: '项目背景',
-        description: '需求：提升网点服务效率，降低人力成本。痛点：非工作时间无法服务、高峰期等待时间长、人工成本高。目标：打造24/7全天候服务的智能网点。',
-      },
-      {
-        title: '解决方案',
-        description: '部署智能数字员工，集成核心业务系统，提供多语言服务能力，实现业务咨询、产品推荐、办理指导等功能。',
-      },
-      {
-        title: '实施效果',
-        description: '客户等待时间减少60%，业务处理效率提升40%，客户满意度提升25%，年节省运营成本约200万元。',
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '银行数字员工',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4'>场景故事</h3>
-      <p class='text-muted leading-relaxed'>某客户在深夜需要办理一笔紧急的国际汇款。传统银行网点已经下班，但智能网点数字员工24小时在线。数字员工不仅帮助客户完成了汇款预约，还贴心地提供了汇率咨询和手续费优惠方案，整个过程仅用时10分钟。</p>
-    </Fragment>
+    <!-- Hero Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto text-center animate-on-scroll">
+      <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+        SOLUTIONS · 数字人展厅
+      </span>
+      <h1 class="text-6xl md:text-7xl font-bold tracking-tight leading-tight mb-4">数据赋能 智创未来</h1>
+      <h2 class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-5xl md:text-6xl mt-3 font-semibold mb-8 italic">专业的 AI 数据服务解决方案</h2>
+      <p class="text-lg md:text-xl text-muted leading-relaxed max-w-3xl mx-auto font-medium">
+        从数据标注到隐私保护，提供全方位的 AI 数据处理服务，助力您的 AI 项目成功落地。
+      </p>
+    </section>
 
-    <Fragment slot='bg'>
-      
-    </Fragment>
-  </Content>
+    <!-- Scenarios -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-16 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">应用场景</p>
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">多领域数字人解决方案</h2>
+      </div>
 
-  <Content
-    isAfterContent
-    tagline='案例研究'
-    title='博物馆虚拟讲解员'
-    items={[
-      {
-        title: '项目背景',
-        description: '需求：提升文物展示体验，解决讲解员人手不足问题。痛点：优质讲解资源有限，个性化讲解需求难满足。目标：打造沉浸式智能讲解体验。',
-      },
-      {
-        title: '解决方案',
-        description: '部署虚拟讲解员，构建文物知识图谱，支持多语种讲解服务，提供个性化参观路线规划。',
-      },
-      {
-        title: '实施效果',
-        description: '日均服务游客增加300%，讲解满意度达95%，文物知识传播效果提升50%，运营成本降低40%。',
-      }
-    ]}
-    image={{
-      src: speechAI,
-      alt: '博物馆讲解',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4'>场景故事</h3>
-      <p class='text-muted leading-relaxed'>一个对历史特别感兴趣的小学生在参观博物馆时，虚拟讲解员不仅为他详细讲解了展品历史，还能根据他的兴趣互动问答，通过生动的故事和3D展示让历史知识变得生动有趣。家长表示，这比传统讲解更能激发孩子的学习兴趣。</p>
-    </Fragment>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { title: '银行智能网点', desc: '24/7全天候服务的智能网点数字员工，提升服务效率，降低人力成本。', icon: 'lucide:building-2', delay: '0ms' },
+          { title: '博物馆虚拟讲解', desc: '沉浸式智能讲解体验，支持多语种讲解，个性化参观路线规划。', icon: 'lucide:landmark', delay: '100ms' },
+          { title: '企业展厅导购', desc: '3D产品配置展示，智能报价与方案定制，提升客户驻留时间。', icon: 'lucide:presentation', delay: '200ms' },
+          { title: '商场数字导购', desc: '商场导航系统，实时优惠推送，个性化购物建议，提升客单价。', icon: 'lucide:shopping-bag', delay: '300ms' },
+          { title: '教育培训讲师', desc: 'AI外教系统，智能学习评估，实时口语互动，提升学习效果。', icon: 'lucide:graduation-cap', delay: '400ms' },
+          { title: '品牌数字代言人', desc: '直播互动系统，社交媒体互动，提升品牌好感度和市场认知度。', icon: 'lucide:award', delay: '500ms' }
+        ].map(s => (
+          <div class="animate-on-scroll bento-card group hover:scale-[1.02] transition-all duration-500" style={`transition-delay: ${s.delay}`}>
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:from-primary group-hover:text-white">
+              <Icon name={s.icon} class="h-7 w-7 text-primary group-hover:text-white" />
+            </div>
+            <h3 class="mb-3 text-xl font-bold tracking-tight">{s.title}</h3>
+            <p class="text-muted leading-relaxed text-sm">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-    <Fragment slot='bg'>
-      
-    </Fragment>
-  </Content>
+    <!-- Case Studies -->
+    <section class="py-32 space-y-40">
+      <!-- Case 1 -->
+      <div class="px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="animate-on-scroll animate-left">
+             <span class="text-primary text-xs font-bold uppercase tracking-widest mb-4 inline-block tracking-widest">案例研究 CASE STUDY</span>
+             <h3 class="text-4xl font-bold mb-8 italic">银行智能网点数字员工</h3>
+             <div class="space-y-6">
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:info" class="w-5 h-5 text-primary" /> 项目背景</h4>
+                  <p class="text-sm text-muted leading-relaxed">需求：提升网点服务效率，降低人力成本。痛点：非工作时间无法服务、高峰期等待时间长、人工成本高。目标：打造24/7全天候服务的智能网点。</p>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:check-circle" class="w-5 h-5 text-primary" /> 解决方案</h4>
+                  <p class="text-sm text-muted leading-relaxed">部署智能数字员工，集成核心业务系统，提供多语言服务能力，实现业务咨询、产品推荐、办理指导等功能。</p>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:trending-up" class="w-5 h-5 text-primary" /> 实施效果</h4>
+                  <p class="text-sm text-muted leading-relaxed">客户等待时间减少60%，业务处理效率提升40%，客户满意度提升25%，年节省运营成本约200万元。</p>
+                </div>
+                <div class="p-8 rounded-[2.5rem] bg-primary/5 border border-primary/10 relative overflow-hidden group">
+                  <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:quote" class="w-20 h-20" /></div>
+                  <h4 class="text-xl font-black mb-4 italic tracking-tight">场景故事</h4>
+                  <p class="text-sm text-muted leading-relaxed italic">“某客户在深夜需要办理一笔紧急的国际汇款。传统银行网点已经下班，但智能网点数字员工24小时在线。数字员工不仅帮助客户完成了汇款预约，还贴心地提供了汇率咨询和手续费优惠方案，整个过程仅用时10分钟。”</p>
+                </div>
+             </div>
+          </div>
+          <div class="animate-on-scroll animate-right">
+             <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1740&auto=format&fit=crop" class="rounded-[3rem] shadow-2xl aspect-square object-cover" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+      </div>
 
-  <Content
-    isReversed
-    isAfterContent
-    tagline='案例研究'
-    title='企业展厅互动导购'
-    items={[
-      {
-        title: '项目背景',
-        description: '需求：提升展厅互动体验，实现智能化产品展示。痛点：专业展示人员成本高，服务标准不统一。目标：打造沉浸式智能展厅体验。',
-      },
-      {
-        title: '解决方案',
-        description: '部署AI导购助手，开发3D产品配置展示系统，实现智能报价与方案定制，提供虚拟体验服务。',
-      },
-      {
-        title: '实施效果',
-        description: '客户驻留时间增加45%，成交转化率提升35%，客户满意度达98%，人力成本降低50%。',
-      }
-    ]}
-    image={{
-      src: daoGou,
-      alt: '展厅导购',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4'>场景故事</h3>
-      <p class='text-muted leading-relaxed'>某位客户对新能源汽车产品感兴趣，通过数字导购的互动介绍，不仅了解了产品的详细配置，还通过AR技术实时体验了不同外观选择的效果。数字导购根据客户需求提供了个性化的配置建议和金融方案，最终帮助客户找到了最适合的选择。</p>
-    </Fragment>
+      <!-- Case 2 -->
+      <div class="px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="animate-on-scroll animate-left lg:order-2">
+             <span class="text-accent text-xs font-bold uppercase tracking-widest mb-4 inline-block tracking-widest">案例研究 CASE STUDY</span>
+             <h3 class="text-4xl font-bold mb-8 italic">博物馆虚拟讲解员</h3>
+             <div class="space-y-6">
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:info" class="w-5 h-5 text-accent" /> 项目背景</h4>
+                  <p class="text-sm text-muted leading-relaxed">需求：提升文物展示体验，解决讲解员人手不足问题。痛点：优质讲解资源有限，个性化讲解需求难满足。目标：打造沉浸式智能讲解体验。</p>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:check-circle" class="w-5 h-5 text-accent" /> 解决方案</h4>
+                  <p class="text-sm text-muted leading-relaxed">部署虚拟讲解员，构建文物知识图谱，支持多语种讲解服务，提供个性化参观路线规划。</p>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:trending-up" class="w-5 h-5 text-accent" /> 实施效果</h4>
+                  <p class="text-sm text-muted leading-relaxed">日均服务游客增加300%，讲解满意度达95%，文物知识传播效果提升50%，运营成本降低40%。</p>
+                </div>
+                <div class="p-8 rounded-[2.5rem] bg-accent/5 border border-accent/10 relative overflow-hidden group">
+                  <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:quote" class="w-20 h-20" /></div>
+                  <h4 class="text-xl font-black mb-4 italic tracking-tight">场景故事</h4>
+                  <p class="text-sm text-muted leading-relaxed italic">“一个对历史特别感兴趣的小学生在参观博物馆时，虚拟讲解员不仅为他详细讲解了展品历史，还能根据他的兴趣互动问答，通过生动的故事和3D展示让历史知识变得生动有趣。家长表示，这比传统讲解更能激发孩子的学习兴趣。”</p>
+                </div>
+             </div>
+          </div>
+          <div class="animate-on-scroll animate-right lg:order-1">
+             <img src="https://images.unsplash.com/photo-1599727277707-b429a4994c15?q=80&w=2070&auto=format&fit=crop" class="rounded-[3rem] shadow-2xl aspect-square object-cover" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+      </div>
 
-    <Fragment slot='bg'>
-      
-    </Fragment>
-  </Content>
+      <!-- Case 3 -->
+      <div class="px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="animate-on-scroll animate-left">
+             <span class="text-emerald-500 text-xs font-bold uppercase tracking-widest mb-4 inline-block tracking-widest">案例研究 CASE STUDY</span>
+             <h3 class="text-4xl font-bold mb-8 italic">企业展厅互动导购</h3>
+             <div class="space-y-6">
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:info" class="w-5 h-5 text-emerald-500" /> 项目背景</h4>
+                  <p class="text-sm text-muted leading-relaxed">需求：提升展厅互动体验，实现智能化产品展示。痛点：专业展示人员成本高，服务标准不统一。目标：打造沉浸式智能展厅体验。</p>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:check-circle" class="w-5 h-5 text-emerald-500" /> 解决方案</h4>
+                  <p class="text-sm text-muted leading-relaxed">部署AI导购助手，开发3D产品配置展示系统，实现智能报价与方案定制，提供虚拟体验服务。</p>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:trending-up" class="w-5 h-5 text-emerald-500" /> 实施效果</h4>
+                  <p class="text-sm text-muted leading-relaxed">客户驻留时间增加45%，成交转化率提升35%，客户满意度达98%，人力成本降低50%。</p>
+                </div>
+                <div class="p-8 rounded-[2.5rem] bg-emerald-500/5 border border-emerald-500/10 relative overflow-hidden group">
+                  <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:quote" class="w-20 h-20" /></div>
+                  <h4 class="text-xl font-black mb-4 italic tracking-tight">场景故事</h4>
+                  <p class="text-sm text-muted leading-relaxed italic">“某位客户对新能源汽车产品感兴趣，通过数字导购的互动介绍，不仅了解了产品的详细配置，还通过AR技术实时体验了不同外观选择的效果。数字导购根据客户需求提供了个性化的配置建议和金融方案，最终帮助客户找到了最适合的选择。”</p>
+                </div>
+             </div>
+          </div>
+          <div class="animate-on-scroll animate-right">
+             <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2090&auto=format&fit=crop" class="rounded-[3rem] shadow-2xl aspect-square object-cover" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class='relative'>
-    
-    <Timeline
-      title='数字人解决方案整体效果'
-      items={[
-        {
-          title: '服务效率提升',
-          description: '平均提升服务效率40%，24/7全天候服务覆盖',
-          icon: 'tabler:clock',
-        },
-        {
-          title: '成本优化',
-          description: '运营成本平均降低45%，人力资源优化配置',
-          icon: 'tabler:coin',
-        },
-        {
-          title: '用户满意度',
-          description: '客户满意度提升35%，互动体验显著改善',
-          icon: 'tabler:heart',
-        },
-        {
-          title: '品牌价值',
-          description: '品牌形象提升40%，市场认知度大幅提升',
-          icon: 'tabler:star',
-        },
-      ]}
-    />
-  </div>
+    <!-- Overall Results -->
+    <section class="py-32 px-6 max-w-7xl mx-auto rounded-[4rem] bg-[#030620] border border-white/5 text-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-primary/10 blur-[120px] -z-10 animate-pulse"></div>
+      <div class="text-center mb-20 animate-on-scroll">
+        <h2 class="text-4xl md:text-5xl font-black italic tracking-tighter">数字人解决方案整体效果</h2>
+      </div>
 
-  <div class='relative'>
-    
-    <CallToAction
-      title='开启您的数字化转型之旅'
-      subtitle='让我们帮助您打造专属的数字人解决方案'
-      actions={[
-        {
-          variant: 'primary',
-          text: '预约演示',
-          href: '/contact/',
-          icon: 'tabler:calendar',
-        },
-        {
-          text: '了解更多',
-          href: '/about/',
-        },
-      ]}
-    />
-  </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          { title: '服务效率提升', desc: '平均提升服务效率40%，24/7全天候服务覆盖', icon: 'lucide:clock', delay: '0ms' },
+          { title: '成本优化', desc: '运营成本平均降低45%，人力资源优化配置', icon: 'lucide:coins', delay: '100ms' },
+          { title: '用户满意度', desc: '客户满意度提升35%，互动体验显著改善', icon: 'lucide:heart', delay: '200ms' },
+          { title: '品牌价值', desc: '品牌形象提升40%，市场认知度大幅提升', icon: 'lucide:star', delay: '300ms' }
+        ].map(r => (
+          <div class="animate-on-scroll p-10 rounded-[2.5rem] bg-white/5 border border-white/10 text-center flex flex-col items-center group hover:bg-white/10 transition-all" style={`transition-delay: ${r.delay}`}>
+            <div class="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+               <Icon name={r.icon} class="w-7 h-7" />
+            </div>
+            <h3 class="text-xl font-bold mb-2 italic tracking-tight">{r.title}</h3>
+            <p class="text-sm text-white/50 leading-relaxed">{r.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 px-6">
+      <div class="animate-on-scroll bento-card max-w-4xl mx-auto text-center border-none bg-gradient-to-br from-primary to-accent text-white p-16 shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/future/1920/1080?blur=10')] opacity-20 mix-blend-overlay"></div>
+        <div class="relative z-10">
+          <h2 class="text-4xl md:text-6xl font-black italic tracking-tighter mb-8 italic">开启数字化转型之旅</h2>
+          <p class="text-xl text-white/80 mb-12 font-medium max-w-xl mx-auto">让我们帮助您打造专属的数字人解决方案，让科技为业务注入灵魂。</p>
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="/contact/" class="px-10 py-4 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">预约演示</a>
+            <a href="/about/" class="px-10 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black italic rounded-full hover:bg-white/20 transition-all">了解更多</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>

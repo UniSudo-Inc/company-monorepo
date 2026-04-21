@@ -1,329 +1,198 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Content from '@/components/widgets/Content.astro';
-import CallToAction from '@/components/widgets/CallToAction.astro';
-import Timeline from '@/components/widgets/Timeline.astro';
 
 const metadata = {
-  title: '行业解决方案展示',
+  title: '行业解决方案展示 - UniSudo 智独数科技',
 };
+
+const stats = [
+  { title: '成本优势', value: '75%', desc: '本地化部署平均节省开支', icon: 'lucide:coins' },
+  { title: '数据安全', value: '100%', desc: '数据本地化完全自主可控', icon: 'lucide:shield-check' },
+  { title: '性能保障', value: '0.5s', desc: '毫秒级响应，99.99% 可用性', icon: 'lucide:zap' },
+  { title: '效果提升', value: '60%', desc: '平均业务效率提升幅度', icon: 'lucide:trending-up' }
+];
+
+const solutions = [
+  {
+    tagline: '解决方案 01 · 教育培训',
+    title: '教育培训数字化转型',
+    image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=1740&auto=format&fit=crop',
+    color: 'primary',
+    points: [
+      { label: '行业痛点', text: '个性化教学需求难满足、教学质量评估困难、学习效果追踪不足、优质教育资源分配不均。' },
+      { label: '解决方案', text: '部署 3B 本地模型，构建智能教学系统。提供个性化路径规划、AI 助教答疑、智能作业批改及学情分析预警。' },
+      { label: '落地效果', text: '学习效率提升 40%，教师负担降低 60%，系统响应时间 <0.5s。' }
+    ],
+    highlight: '技术亮点',
+    highlightText: '基于本地小模型部署，确保学生数据安全。支持离线运行，单机可支持千人级并发，性价比极高。'
+  },
+  {
+    tagline: '解决方案 02 · 医疗健康',
+    title: '医疗健康智能诊疗',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1740&auto=format&fit=crop',
+    color: 'emerald-500',
+    isReversed: true,
+    points: [
+      { label: '行业痛点', text: '优质医疗资源短缺、诊疗效率需提升、医患沟通待改善、慢病管理难度大。' },
+      { label: '解决方案', text: '部署 7B 本地模型保障隐私。集成智能预问诊、辅助诊断决策支持、智能随访及医疗知识图谱。' },
+      { label: '落地效果', text: '诊疗效率提升 50%，满意度提升 60%，诊断准确率达 95%。' }
+    ],
+    highlight: '隐私保护',
+    highlightText: '采用本地部署模式，医疗数据绝不出院。支持多院区协同，满足等级医院数据安全合规要求。'
+  },
+  {
+    tagline: '解决方案 03 · 金融风控',
+    title: '金融风控智能分析',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1740&auto=format&fit=crop',
+    color: 'indigo-500',
+    points: [
+      { label: '行业痛点', text: '风险识别实时性差、欺诈手段升级快、人工审核成本高、合规要求日益严格。' },
+      { label: '解决方案', text: '部署 3B 本地模型确保合规。提供实时风险预警、智能反欺诈引擎、自动化审核流程。' },
+      { label: '落地效果', text: '风险识别率提升 70%，人工成本降低 65%，系统可用性 99.99%。' }
+    ],
+    highlight: '安全合规',
+    highlightText: '本地化部署确保金融核心数据安全。毫秒级响应满足实时风控需求，成本低至云服务十分之一。'
+  },
+  {
+    tagline: '解决方案 04 · 零售升级',
+    title: '零售智能化升级',
+    image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=1740&auto=format&fit=crop',
+    color: 'accent',
+    isReversed: true,
+    points: [
+      { label: '行业痛点', text: '库存管理效率低、个性化营销难度大、客户体验待提升、运营成本居高不下。' },
+      { label: '解决方案', text: '部署 7B 本地模型保护客户数据。实现智能补货预测、个性化推荐引擎及全渠道客服。' },
+      { label: '落地效果', text: '库存周转提升 40%，营销转化提升 55%，ROI 提升达 200%。' }
+    ],
+    highlight: '成本优势',
+    highlightText: '本地部署模式大幅降低运营成本。单店部署即可服务全区域，场景化适配性远超标准云服务。'
+  },
+  {
+    tagline: '解决方案 05 · 智慧城市',
+    title: '智慧城市数据平台',
+    image: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1740&auto=format&fit=crop',
+    color: 'blue-500',
+    points: [
+      { label: '行业痛点', text: '数据孤岛严重、跨部门协同难、服务效率低下、大规模决策支持不足。' },
+      { label: '解决方案', text: '部署 3B 本地模型确保护管安全。涵盖城市数据智能分析、部门业务协同及市民服务一体化。' },
+      { label: '落地效果', text: '协同效率提升 80%，响应时间降低 70%，月运营成本降低约 85%。' }
+    ],
+    highlight: '数据安全',
+    highlightText: '本地部署确保政务敏感数据安全级别。支持跨部门高频协同的同时实施严格权限管控。'
+  },
+  {
+    tagline: '解决方案 06 · 文旅服务',
+    title: '文旅行业数字服务',
+    image: 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?q=80&w=1740&auto=format&fit=crop',
+    color: 'orange-500',
+    isReversed: true,
+    points: [
+      { label: '行业痛点', text: '游客体验待提升、景区管理效率低、营销方式单一、公共资源利用率不高。' },
+      { label: '解决方案', text: '部署 7B 本地模型打造智慧景区。集成智能导游讲解、客流预测、个性化行程推荐。' },
+      { label: '落地效果', text: '游客停留增加 45%，景区收入提升 50%，运营成本降低 40%。' }
+    ],
+    highlight: '场景创新',
+    highlightText: '本地化离线运行，即使在广域网络不稳的景区亦能提供流畅服务。单台服务器承载全景区业务。'
+  }
+];
 ---
+
 <Layout metadata={metadata}>
-  <!-- Hero Section -->
-  <div class="relative h-96 flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
-    <div class="relative z-10 text-center text-white">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
-        多行业解决方案
-      </h1>
-      <p class="text-xl" data-aos="fade-up" data-aos-delay="200">
-        本地部署· 交互友好 · 数据安全
-      </p>
+  <main class="relative z-10 pt-0 text-balance">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-blue-500/5 rounded-full blur-[150px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-500/5 rounded-full blur-[150px] animate-pulse" style="animation-delay: 2s"></div>
     </div>
-  </div>
 
-  <!-- Case 1: Education -->
-  <Content
-    isReversed
-    tagline="解决方案 1"
-    title="教育培训数字化转型"
-    items={[
-      {
-        title: '行业痛点',
-        description: `
-        • 个性化教学需求难满足
-        • 教学质量评估困难
-        • 学习效果追踪不足
-        • 优质教育资源分配不均`,
-      },
-      {
-        title: '解决方案',
-        description: `
-        • 部署3B本地模型，构建智能教学系统
-        • 个性化学习路径规划
-        • AI助教实时答疑系统
-        • 智能作业批改与分析
-        • 学情分析与预警机制`,
-      },
-      {
-        title: '落地效果',
-        description: `
-        • 学习效率提升40%
-        • 教师工作负担降低60%
-        • 学生参与度提升50%
-        • 本地部署月成本低至3000元
-        • 系统响应时间<0.5秒`,
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '教育解决方案',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">技术亮点</h3>
-      <p>基于本地小模型部署，确保学生数据安全。支持离线运行，适用于各类教育场景。单机可支持千人级并发，性价比极高。</p>
-    </Fragment>
-  </Content>
+    <!-- Hero Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto text-center animate-on-scroll">
+      <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+        INDUSTRIES · 行业方案
+      </span>
+      <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-[0.9] italic">
+        多行业<br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-5xl md:text-6xl ">场景化解决方案</span>
+      </h1>
+      <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed">
+        本地部署 · 交互友好 · 数据安全。针对不同垂直领域的深度场景，通过轻量级 AI 技术赋能，实现从痛点到价值的快速转化。
+      </p>
+    </section>
 
-  <!-- Case 2: Healthcare -->
-  <Content
-    isAfterContent
-    tagline="解决方案 2"
-    title="医疗健康智能诊疗"
-    items={[
-      {
-        title: '行业痛点',
-        description: `
-        • 优质医疗资源短缺
-        • 诊疗效率需提升
-        • 医患沟通待改善
-        • 慢病管理难度大`,
-      },
-      {
-        title: '解决方案',
-        description: `
-        • 部署7B本地模型，保障患者隐私
-        • 智能预问诊系统
-        • 辅助诊断决策支持
-        • 智能随访管理
-        • 医疗知识图谱服务`,
-      },
-      {
-        title: '落地效果',
-        description: `
-        • 诊疗效率提升50%
-        • 医生工作负荷降低45%
-        • 患者满意度提升60%
-        • 本地部署日均成本400元
-        • 诊断准确率达95%`,
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '医疗解决方案',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">隐私保护</h3>
-      <p>采用本地部署模式，医疗数据绝不出院。支持多院区协同，满足等级医院数据安全要求。</p>
-    </Fragment>
-  </Content>
+    <!-- Detailed Solutions -->
+    <section class="space-y-40 py-20">
+      {solutions.map((sol) => (
+        <div class="px-6 max-w-7xl mx-auto">
+          <div class={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${sol.isReversed ? 'lg:flex-row-reverse' : ''}`}>
+             <div class={`animate-on-scroll ${sol.isReversed ? 'animate-right lg:order-2' : 'animate-left'}`}>
+                <span class={`text-${sol.color || 'primary'} text-[10px] font-black uppercase tracking-widest mb-4 inline-block`}>{sol.tagline}</span>
+                <h3 class="text-3xl md:text-5xl font-black mb-10 tracking-tighter italic">{sol.title}</h3>
+                
+                <div class="space-y-6 mb-10">
+                   {sol.points.map(p => (
+                      <div class="p-6 rounded-3xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20">
+                        <p class={`text-[10px] font-black uppercase mb-2 text-${sol.color || 'primary'}`}>{p.label}</p>
+                        <p class="text-sm text-muted leading-relaxed font-medium">{p.text}</p>
+                      </div>
+                   ))}
+                </div>
 
-  <!-- Case 3: Financial Risk Control -->
-  <Content
-    isReversed
-    tagline="解决方案 3"
-    title="金融风控智能分析"
-    items={[
-      {
-        title: '行业痛点',
-        description: `
-        • 风险识别实时性差
-        • 欺诈手段不断升级
-        • 人工审核成本高
-        • 合规要求日益严格`,
-      },
-      {
-        title: '解决方案',
-        description: `
-        • 部署3B本地模型，确保数据合规
-        • 实时风险预警系统
-        • 智能反欺诈引擎
-        • 自动化审核流程
-        • 合规风险评估`,
-      },
-      {
-        title: '落地效果',
-        description: `
-        • 风险识别率提升70%
-        • 人工审核成本降低65%
-        • 业务处理效率提升80%
-        • 本地部署月成本7000元
-        • 系统可用性99.99%`,
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '金融风控',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">安全合规</h3>
-      <p>本地化部署确保金融数据安全，符合监管要求。毫秒级响应满足实时风控需求，成本低至云服务十分之一。</p>
-    </Fragment>
-  </Content>
+                <div class={`p-8 rounded-[2.5rem] bg-${sol.color || 'primary'}/5 border border-${sol.color || 'primary'}/10 relative overflow-hidden group`}>
+                   <div class="absolute -top-4 -right-4 opacity-10 group-hover:scale-125 transition-transform duration-700">
+                      <Icon name="lucide:sparkles" class="w-16 h-16" />
+                   </div>
+                   <h4 class="text-xl font-black mb-4 italic tracking-tight">{sol.highlight}</h4>
+                   <p class="text-sm text-muted leading-relaxed font-medium italic">{sol.highlightText}</p>
+                </div>
+             </div>
+             
+             <div class={`animate-on-scroll ${sol.isReversed ? 'animate-left lg:order-1' : 'animate-right'}`}>
+                <div class="rounded-[4rem] overflow-hidden shadow-2xl relative group">
+                   <img src={sol.image} alt={sol.title} class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105" referrerpolicy="no-referrer" />
+                   <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+             </div>
+          </div>
+        </div>
+      ))}
+    </section>
 
-  <!-- Case 4: Retail -->
-  <Content
-    isAfterContent
-    tagline="解决方案 4"
-    title="零售智能化升级"
-    items={[
-      {
-        title: '行业痛点',
-        description: `
-        • 库存管理效率低
-        • 个性化营销难度大
-        • 客户体验待提升
-        • 运营成本居高不下`,
-      },
-      {
-        title: '解决方案',
-        description: `
-        • 部署7B本地模型，保护消费者数据
-        • 智能补货预测系统
-        • 个性化推荐引擎
-        • 全渠道客服机器人
-        • 会员精准营销`,
-      },
-      {
-        title: '落地效果',
-        description: `
-        • 库存周转率提升40%
-        • 营销转化率提升55%
-        • 客户满意度提升45%
-        • 本地部署日均成本300元
-        • ROI提升200%`,
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '零售升级',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">成本优势</h3>
-      <p>本地部署模式大幅降低运营成本，单店部署即可服务全区域，性价比远超云服务。</p>
-    </Fragment>
-  </Content>
+    <!-- Overall Results -->
+    <section class="py-32 px-6 max-w-7xl mx-auto rounded-[5rem] bg-slate-900 text-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-primary/10 blur-[100px] -z-10 animate-pulse"></div>
+      <div class="text-center mb-20 animate-on-scroll">
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">行业解决方案整体价值</h2>
+      </div>
 
-  <!-- Case 5: Smart City -->
-  <Content
-    isReversed
-    tagline="解决方案 5"
-    title="智慧城市数据平台"
-    items={[
-      {
-        title: '行业痛点',
-        description: `
-        • 数据孤岛严重
-        • 跨部门协同难
-        • 服务效率低下
-        • 决策支持不足`,
-      },
-      {
-        title: '解决方案',
-        description: `
-        • 部署3B本地模型，确保政务数据安全
-        • 城市数据智能分析
-        • 跨部门业务协同
-        • 智能决策支持
-        • 市民服务一体化`,
-      },
-      {
-        title: '落地效果',
-        description: `
-        • 部门协同效率提升80%
-        • 市民服务满意度提升65%
-        • 决策响应时间降低70%
-        • 本地部署月成本降低85%
-        • 系统利用率提升200%`,
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '智慧城市',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">数据安全</h3>
-      <p>本地部署确保政务数据安全，支持跨部门协同的同时严格管控数据权限，成本低至云服务五分之一。</p>
-    </Fragment>
-  </Content>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {stats.map((s, i) => (
+          <div class="animate-on-scroll p-12 rounded-[3.5rem] bg-white/5 border border-white/10 text-center flex flex-col items-center group hover:bg-white/10 transition-all" style={`transition-delay: ${i * 50}ms`}>
+            <div class="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
+               <Icon name={s.icon} class="w-6 h-6" />
+            </div>
+            <p class="text-5xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-primary to-accent mb-4">{s.value}</p>
+            <h4 class="text-lg font-bold mb-2 italic tracking-tight">{s.title}</h4>
+            <p class="text-[10px] text-white/40 leading-relaxed font-medium uppercase tracking-widest">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-  <!-- Case 6: Tourism -->
-  <Content
-    isAfterContent
-    tagline="解决方案 6"
-    title="文旅行业数字服务"
-    items={[
-      {
-        title: '行业痛点',
-        description: `
-        • 游客体验待提升
-        • 景区管理效率低
-        • 营销方式单一
-        • 资源利用率不高`,
-      },
-      {
-        title: '解决方案',
-        description: `
-        • 部署7B本地模型，打造智慧景区
-        • 智能导游讲解系统
-        • 客流预测与调控
-        • 个性化行程推荐
-        • 文创产品智能营销`,
-      },
-      {
-        title: '落地效果',
-        description: `
-        • 游客停留时间增加45%
-        • 景区收入提升50%
-        • 运营成本降低40%
-        • 本地部署日均成本200元
-        • 游客满意度提升55%`,
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: '文旅服务',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">场景创新</h3>
-      <p>本地部署支持离线场景，即使在网络受限的景区也能稳定运行。单个服务器即可支撑全景区业务，大幅降低运营成本。</p>
-    </Fragment>
-  </Content>
-
-  <!-- Success Metrics -->
-  <Timeline
-    title="行业解决方案整体价值"
-    items={[
-      {
-        title: '成本优势',
-        description: '本地部署小模型，平均节省75%运营成本',
-      },
-      {
-        title: '数据安全',
-        description: '本地化部署，数据100%可控',
-      },
-      {
-        title: '性能保障',
-        description: '毫秒级响应，99.99%可用性',
-      },
-      {
-        title: '效果提升',
-        description: '平均提升业务效率60%，满意度提升50%',
-      },
-    ]}
-  />
-
-  <!-- Call to Action -->
-  <CallToAction
-    title="开启行业数字化转型之旅"
-    subtitle="本地化部署，安全可靠，成本更低"
-    actions={[
-      {
-        variant: 'primary',
-        text: '预约咨询',
-        href: '/contact/',
-        icon: 'tabler:download',
-      },
-      {
-        text: '了解更多',
-        href: '/about/',
-      },
-    ]}
-  />
+    <!-- CTA Section -->
+    <section class="py-32 px-6">
+       <div class="animate-on-scroll bento-card max-w-5xl mx-auto text-center border-none bg-gradient-to-br from-primary via-accent to-purple-600 text-white p-16 md:p-24 shadow-2xl relative overflow-hidden">
+           <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/industry/1920/1080?blur=10')] opacity-10 mix-blend-overlay"></div>
+           <div class="relative z-10">
+              <h2 class="text-4xl md:text-7xl font-black italic tracking-tighter mb-8">开启行业数字化转型之旅</h2>
+              <p class="text-xl text-white/80 mb-12 font-medium max-w-2xl mx-auto">本地化部署，安全可靠，成本更低。让我们为您提供更具竞争力的行业数智化服务。</p>
+              <div class="flex flex-wrap justify-center gap-6">
+                <a href="/contact/" class="px-12 py-5 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">预约专家咨询</a>
+                <a href="/about/" class="px-12 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black italic rounded-full hover:bg-white/20 transition-all">业务详情了解</a>
+              </div>
+           </div>
+       </div>
+    </section>
+  </main>
 </Layout>
+

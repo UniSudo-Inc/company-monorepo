@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import Beams from './components/Beams.astro';
 import Layout from '@/layouts/LandingLayout.astro';
 
 const metadata = {
@@ -85,46 +86,23 @@ const comparisonData = [
     <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent/5 rounded-full blur-[120px]"></div>
   </div>
 
-  <!-- <nav class="fixed top-0 w-full z-50 glass">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-4">
-        <a href="/" class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg transition-colors group">
-          <Icon name="lucide:chevron-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-        </a>
-        <div class="flex items-center gap-2">
-          <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-            <Icon name="lucide:shield-check" class="text-white w-6 h-6" />
-          </div>
-          <span class="text-xl font-bold tracking-tighter">UniClause</span>
-        </div>
-      </div>
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#features" class="hover:text-primary transition-colors">核心功能</a>
-        <a href="#selling-points" class="hover:text-primary transition-colors">核心卖点</a>
-        <a href="#pricing" class="hover:text-primary transition-colors">价格体系</a>
-        <a href="#comparison" class="hover:text-primary transition-colors">竞品对比</a>
-      </div>
-      <button class="btn-primary flex items-center gap-2 text-sm">
-        立即体验 <Icon name="lucide:arrow-right" class="w-4 h-4" />
-      </button>
-    </div>
-  </nav> -->
-
-  <main class="relative z-10 pt-18">
+  <main class="relative z-10 pt-10 transition-colors duration-300">
     <!-- Hero Section -->
-    <section class="px-6 pt-20 pb-30 max-w-7xl mx-auto text-center">
+    <section class="px-6 pt-20 pb-30 max-w-7xl mx-auto text-center relative">
+      <Beams className="opacity-50" />
+
       <div class="animate-on-scroll">
-        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6 inline-block">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-10 inline-block">
           让审查有源可溯 · 让 AI 真正可解释
         </span>
       </div>
       <div class="animate-on-scroll" style="transition-delay: 100ms">
-        <h1 class="text-5xl md:text-7xl mb-8 leading-[1.1] font-extrabold max-w-5xl mx-auto tracking-tighter text-primary">
+        <h1 class="text-5xl md:text-7xl mb-8 leading-[1.1] font-extrabold max-w-5xl mx-auto tracking-tighter italic">
           UniClause <br />
           <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI 智能合同审查</span>
         </h1>
       </div>
-      <div class="animate-on-scroll" style="transition-delay: 200ms">
+      <div class="animate-on-scroll mt-10" style="transition-delay: 200ms">
         <p class="text-lg md:text-xl text-muted max-w-3xl mx-auto mb-10 leading-relaxed">
           让每一份合同审查都有据可查、有源可溯、有理可循。 <br class="hidden md:block" />
           基于 RAG 架构驱动的可解释 AI 平台，告别“黑盒”判断，重塑法务工作流。
@@ -132,18 +110,18 @@ const comparisonData = [
       </div>
       <div class="animate-on-scroll" style="transition-delay: 300ms">
         <div class="flex flex-wrap items-center justify-center gap-4">
-          <button class="btn-primary text-lg px-8 py-4">
+          <a href="https://uniclause.unisudo.dev/" target="_blank" class="btn-primary text-lg px-8 py-4 text-white no-underline">
             开始免费试用
-          </button>
-          <button class="px-8 py-4 rounded-full border border-border-light dark:border-primary/20  font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+          </a>
+          <a href="/contact/" class="px-8 py-4 rounded-full border border-border-light dark:border-primary/20  font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-all">
             预约演示
-          </button>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Bento Grid Features -->
-    <section id="features" class="px-6 py-24 max-w-7xl mx-auto">
+    <section id="features" class="px-6 pt-40 pb-24 max-w-7xl mx-auto">
       <div class="animate-on-scroll text-center mb-16">
         <h2 class="text-3xl md:text-5xl mb-4">核心功能</h2>
         <p class="text-muted">全流程闭环，从风险识别到条款补全</p>
@@ -193,9 +171,9 @@ const comparisonData = [
               通过语义相似度自动发现缺失条款，并基于上下文生成插入建议，保持文档完整性。
             </p>
           </div>
-          <div class="flex items-center gap-2 text-accent font-bold text-sm">
+          <a href="https://uniclause.unisudo.dev/" target="_blank" class="flex items-center gap-2 text-accent font-bold text-sm">
             了解详情 <Icon name="lucide:arrow-right" class="w-4 h-4" />
-          </div>
+          </a>
         </div>
 
         {/* Feature 3: Small */}
@@ -458,9 +436,9 @@ const comparisonData = [
               </li>
             ))}
           </ul>
-          <button class="w-full py-4 rounded-full border border-primary text-primary font-bold hover:bg-primary/5 transition-colors">
+          <a href="https://uniclause.unisudo.dev/" target="_blank" class="w-full py-4 rounded-full border border-primary text-primary font-bold hover:bg-primary/5 transition-colors text-center">
             立即开始免费试用
-          </button>
+          </a>
         </div>
 
         {/* Plan 2 - Featured */}
@@ -491,9 +469,9 @@ const comparisonData = [
               </li>
             ))}
           </ul>
-          <button class="btn-primary w-full py-4 text-lg">
+          <a href="/contact/" class="btn-primary w-full py-4 text-lg">
             咨询本地部署方案
-          </button>
+          </a>
         </div>
 
         {/* Plan 3 */}
@@ -521,9 +499,9 @@ const comparisonData = [
               </li>
             ))}
           </ul>
-          <button class="w-full py-4 rounded-full border border-border-light dark:border-primary/20  font-bold hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+          <a href="/contact/" class="w-full py-4 rounded-full border border-border-light dark:border-primary/20  font-bold hover:bg-black/5 dark:hover:bg-white/5 transition-all text-center">
             联系销售大客户经理
-          </button>
+          </a>
         </div>
       </div>
 

@@ -4,22 +4,13 @@ import Layout from '@/layouts/PageLayout.astro';
 
 const products = [
   {
-    id: "unichat",
-    title: "智能员工 (UniChat)",
-    tagline: "企业 AI 助手与客服",
-    desc: "打造具备企业私有知识库的智能对话机器人。支持 5 分钟极速上线，实时多轮对话，极大提升服务效率与响应质量。",
-    icon: "lucide:message-square",
-    color: "from-blue-500 to-indigo-600",
-    href: "/products/unichat/"
-  },
-  {
     id: "a1",
     title: "无代码 AI 中台 (A1)",
-    tagline: "企业数智化底座",
+    tagline: "企业数字化底座",
     desc: "一站式无代码 AI 应用开发平台。通过拖拽即可构建复杂的 AI 工作流，兼容国内外主流大模型，快速赋能业务场景。",
     icon: "lucide:cpu",
     color: "from-purple-500 to-violet-600",
-    href: "https://a1.v7.unisudo.dev/"
+    href: "https://a1.v8.unisudo.dev/"
   },
   {
     id: "uniteach",
@@ -31,15 +22,6 @@ const products = [
     href: "/products/uniteach/"
   },
   {
-    id: "unispeech",
-    title: "出海会议同传 (UniSpeech)",
-    tagline: "跨语言协作利器",
-    desc: "实时语音识别与同步口译。毫秒级低延迟，支持多语种互译，为企业出海业务提供无缝的沟通保障。",
-    icon: "lucide:languages",
-    color: "from-emerald-500 to-teal-600",
-    href: "/products/unispeech/"
-  },
-  {
     id: "uniclause",
     title: "智能合同审查 (UniClause)",
     tagline: "可解释的风险控制",
@@ -47,6 +29,24 @@ const products = [
     icon: "lucide:shield-check",
     color: "from-indigo-500 to-purple-600",
     href: "/products/uniclause/"
+  },
+  {
+    id: "unibusiness",
+    title: "出海会议同传 (UniBusiness)",
+    tagline: "跨语言协作利器",
+    desc: "实时语音识别与同步口译。毫秒级低延迟，支持多语种互译，为企业出海业务提供无缝的沟通保障。",
+    icon: "lucide:languages",
+    color: "from-emerald-500 to-teal-600",
+    href: "/contact/"
+  },
+  {
+    id: "a2",
+    title: "智能员工 (A2)",
+    tagline: "企业 AI 助手与客服",
+    desc: "打造具备企业私有知识库的智能对话机器人。支持 5 分钟极速上线，实时多轮对话，极大提升服务效率与响应质量。",
+    icon: "lucide:message-square",
+    color: "from-blue-500 to-indigo-600",
+    href: "/contact/"
   }
 ];
 
@@ -138,7 +138,7 @@ const scenarios = [
     icon: 'lucide:headset',
   },
   {
-    title: '企业数智化',
+    title: '企业数字化',
     description: ['智能人才筛选', '企业培训助手', '办公自动化平台', '辅助决策系统'],
     icon: 'lucide:building',
   },
@@ -233,7 +233,7 @@ const metadata = {
     <section class="py-32 px-6 max-w-7xl mx-auto bg-surface-light dark:bg-surface-dark/30 rounded-[3rem] overflow-hidden border border-gray-100  dark:border-primary/20">
       <div class="animate-on-scroll text-center mb-20">
         <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">满足您对 AI 的全部需求</h2>
-        <p class="text-muted text-lg">矩阵式产品体系，助力企业全生命周期数智化转型</p>
+        <p class="text-muted text-lg">矩阵式产品体系，助力企业全生命周期数字化转型</p>
       </div>
 
       <div class="space-y-32">
@@ -305,7 +305,7 @@ const metadata = {
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((p, i) => (
-          <a href={p.href} class="animate-on-scroll group block" style={`transition-delay: ${i * 100}ms`}>
+          <a href={p.href} target={p.id==='a1' ? '_blank' : undefined} class="animate-on-scroll group block" style={`transition-delay: ${i * 100}ms`}>
             <div class="bento-card h-full flex flex-col p-8 group-hover:border-primary/50 transition-all duration-500 overflow-hidden relative">
               <div class={`absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br ${p.color} opacity-[0.03] group-hover:opacity-10 rounded-full blur-3xl transition-opacity duration-700`}></div>
               <div class={`w-14 h-14 rounded-2xl bg-gradient-to-br ${p.color} flex items-center justify-center text-white mb-8 shadow-lg group-hover:scale-110 transition-transform duration-500`}>
@@ -336,8 +336,8 @@ const metadata = {
             无论是私有化部署还是云端协同，UniSudo 都是您最可靠的 AI 合作伙伴。
           </p>
           <div class="flex gap-4">
-            <button class="bg-white text-indigo-900 px-8 py-3 rounded-full font-bold hover:bg-neutral-100 transition-colors">联系我们咨询</button>
-            <button class="bg-white/10 text-white px-8 py-3 rounded-full font-bold backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors">解决方案概览</button>
+            <a href="/contact/" class="bg-white text-indigo-900 px-8 py-3 rounded-full font-bold hover:bg-neutral-100 transition-colors">联系我们咨询</a>
+            <a href="/career/" class="bg-white/10 text-white px-8 py-3 rounded-full font-bold backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors">加入我们</a>
           </div>
         </div>
         <div class="absolute bottom-[-10%] right-[-5%] w-[40%] h-[80%] hidden lg:block opacity-40">

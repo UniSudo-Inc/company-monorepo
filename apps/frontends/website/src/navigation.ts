@@ -47,7 +47,7 @@ export const headerData = {
           href: getPermalink('/solutions/customer-service'),
         },
         {
-          text: '企业数智化',
+          text: '企业数字化',
           href: getPermalink('/solutions/enterprise-digitalization'),
         },
         {
@@ -73,7 +73,7 @@ export const headerData = {
         },
         {
           text: 'A1 Platform',
-          href: 'https://a1.v7.unisudo.dev/',
+          href: 'https://a1.v8.unisudo.dev/',
         },
         // {
         //   text: 'UniSpeech',
@@ -174,7 +174,7 @@ export const headerDataEn = {
         },
         {
           text: 'A1 Platform',
-          href: 'https://a1.v7.unisudo.dev/',
+          href: 'https://a1.v8.unisudo.dev/',
         },
         // {
         //   text: 'UniSpeech',
@@ -205,73 +205,7 @@ export const headerDataEn = {
 export const footerData = {
   links: [
     {
-      title: '产品体系',
-      links: [
-        // {
-        //   text: 'UniChat',
-        //   href: getPermalink('/products/unichat'),
-        // },
-        {
-          text: 'UniTeach',
-          href: getPermalink('/products/uniteach'),
-        },
-        {
-          text: 'UniClause',
-          href: getPermalink('/products/uniclause'),
-        },
-        {
-          text: 'A1 Platform',
-          href: 'https://a1.v7.unisudo.dev/',
-        },
-        // {
-        //   text: 'UniSpeech',
-        //   href: getPermalink('/en/speech'),
-        // },
-        // {
-        //   text: 'UniData',
-        //   href: 'https://datai.unisudo.com/',
-        // },
-        // {
-        //   text: '数据标注服务',
-        //   href: 'http://120.27.240.221:32051',
-        // },
-        // {
-        //   text: '智能硬件服务',
-        //   href: getPermalink('/hardware'),
-        // },
-      ],
-    },
-    {
-      text: '解决方案',
-      links: [
-        {
-          text: '数字人展厅',
-          href: getPermalink('/solutions/digital-human'),
-        },
-        {
-          text: '数据服务',
-          href: getPermalink('/solutions/data-service'),
-        },
-        {
-          text: '模型训练',
-          href: getPermalink('/solutions/model-training'),
-        },
-        {
-          text: '智能客服',
-          href: getPermalink('/solutions/customer-service'),
-        },
-        {
-          text: '企业数智化',
-          href: getPermalink('/solutions/enterprise-digitalization'),
-        },
-        {
-          text: '行业解决方案',
-          href: getPermalink('/solutions/industry-solutions'),
-        },
-      ],
-    },
-    {
-      text: '关于我们',
+      title: '关于我们',
       links: [
         {
           text: '公司简介',
@@ -293,6 +227,72 @@ export const footerData = {
           text: '加入我们',
           href: getPermalink('/career'),
         },
+      ],
+    },
+    {
+      title: '解决方案',
+      links: [
+        {
+          text: '数字人展厅',
+          href: getPermalink('/solutions/digital-human'),
+        },
+        {
+          text: '数据服务',
+          href: getPermalink('/solutions/data-service'),
+        },
+        {
+          text: '模型训练',
+          href: getPermalink('/solutions/model-training'),
+        },
+        {
+          text: '智能客服',
+          href: getPermalink('/solutions/customer-service'),
+        },
+        {
+          text: '企业数字化',
+          href: getPermalink('/solutions/enterprise-digitalization'),
+        },
+        {
+          text: '行业解决方案',
+          href: getPermalink('/solutions/industry-solutions'),
+        },
+      ],
+    },
+    {
+      title: '产品体系',
+      links: [
+        // {
+        //   text: 'UniChat',
+        //   href: getPermalink('/products/unichat'),
+        // },
+        {
+          text: 'UniTeach',
+          href: getPermalink('/products/uniteach'),
+        },
+        {
+          text: 'UniClause',
+          href: getPermalink('/products/uniclause'),
+        },
+        {
+          text: 'A1 Platform',
+          href: 'https://a1.v8.unisudo.dev/',
+        },
+        // {
+        //   text: 'UniSpeech',
+        //   href: getPermalink('/en/speech'),
+        // },
+        // {
+        //   text: 'UniData',
+        //   href: 'https://datai.unisudo.com/',
+        // },
+        // {
+        //   text: '数据标注服务',
+        //   href: 'http://120.27.240.221:32051',
+        // },
+        // {
+        //   text: '智能硬件服务',
+        //   href: getPermalink('/hardware'),
+        // },
       ],
     },
     {
@@ -333,40 +333,28 @@ export const footerData = {
 export const footerDataEn = {
   links: [
     {
-      title: 'Product System',
+      title: 'About Us',
       links: [
-        // {
-        //   text: 'UniChat',
-        //   href: getPermalink('/products/unichat'),
-        // },
         {
-          text: 'UniTeach',
-          href: getPermalink('/products/uniteach'),
+          text: 'Company Profile',
+          href: getPermalink('/en/about'),
         },
         {
-          text: 'UniClause',
-          href: getPermalink('/products/uniclause'),
+          text: 'Roadmap',
+          href: getPermalink('/en/roadmap'),
         },
         {
-          text: 'A1 Platform',
-          href: 'https://a1.v7.unisudo.dev/',
+          text: 'Technology Innovation',
+          href: getPermalink('/en/technology'),
         },
-        // {
-        //   text: 'UniSpeech',
-        //   href: getPermalink('/en/speech'),
-        // },
-        // {
-        //   text: 'UniData',
-        //   href: 'https://datai.unisudo.com/',
-        // },
-        // {
-        //   text: 'Data Annotation Service',
-        //   href: 'http://120.27.240.221:32051',
-        // },
-        // {
-        //   text: 'Smart Hardware Service',
-        //   href: getPermalink('/en/hardware'),
-        // },
+        {
+          text: 'Contact Us',
+          href: getPermalink('/en/contact'),
+        },
+        {
+          text: 'Join Us',
+          href: getPermalink('/en/career'),
+        },
       ],
     },
     {
@@ -399,28 +387,40 @@ export const footerDataEn = {
       ],
     },
     {
-      title: 'About Us',
+      title: 'Product System',
       links: [
+        // {
+        //   text: 'UniChat',
+        //   href: getPermalink('/products/unichat'),
+        // },
         {
-          text: 'Company Profile',
-          href: getPermalink('/en/about'),
+          text: 'UniTeach',
+          href: getPermalink('/products/uniteach'),
         },
         {
-          text: 'Roadmap',
-          href: getPermalink('/en/roadmap'),
+          text: 'UniClause',
+          href: getPermalink('/products/uniclause'),
         },
         {
-          text: 'Technology Innovation',
-          href: getPermalink('/en/technology'),
+          text: 'A1 Platform',
+          href: 'https://a1.v8.unisudo.dev/',
         },
-        {
-          text: 'Contact Us',
-          href: getPermalink('/en/contact'),
-        },
-        {
-          text: 'Join Us',
-          href: getPermalink('/en/career'),
-        },
+        // {
+        //   text: 'UniSpeech',
+        //   href: getPermalink('/en/speech'),
+        // },
+        // {
+        //   text: 'UniData',
+        //   href: 'https://datai.unisudo.com/',
+        // },
+        // {
+        //   text: 'Data Annotation Service',
+        //   href: 'http://120.27.240.221:32051',
+        // },
+        // {
+        //   text: 'Smart Hardware Service',
+        //   href: getPermalink('/en/hardware'),
+        // },
       ],
     },
     {
