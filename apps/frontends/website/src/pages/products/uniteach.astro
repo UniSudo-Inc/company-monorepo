@@ -51,7 +51,7 @@ const pricingPlans = [
 <Layout metadata={metadata}>
   <div class="min-h-screen transition-colors duration-300">
     {/* Navigation */}
-    <!-- <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-border px-12 py-4 flex items-center justify-between">
+    <!-- <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-border-light  dark:border-primary/20 px-12 py-4 flex items-center justify-between">
       <div class="flex items-center gap-2">
         <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold">U</div>
         <span class="text-2xl font-extrabold tracking-tighter text-primary">UniTeach</span>
@@ -71,7 +71,7 @@ const pricingPlans = [
           <Icon name="lucide:sun" class="w-5 h-5 dark:hidden" />
           <Icon name="lucide:moon" class="w-5 h-5 hidden dark:block" />
         </button>
-        <button class="px-5 py-2 bg-bg-dark border border-border rounded-xl text-xs font-bold hover:bg-surface transition-colors">管理控制台</button>
+        <button class="px-5 py-2 bg-bg-dark border border-border-light dark:border-primary/20 rounded-xl text-xs font-bold hover:bg-surface transition-colors">管理控制台</button>
       </div>
     </nav> -->
 
@@ -94,25 +94,25 @@ const pricingPlans = [
             </p>
             <div class="flex flex-wrap gap-6">
               <button class="btn-primary">立即体验演示</button>
-              <button class="px-8 py-4 bg-surface border border-border rounded-2xl font-bold hover:bg-bg transition-all">联系我们</button>
+              <button class="px-8 py-4 bg-surface border border-border-light dark:border-primary/20 rounded-2xl font-bold hover:bg-bg transition-all">联系我们</button>
             </div>
           </div>
           <div class="relative hero-image-container">
-            <div class="aspect-[4/5] rounded-[40px] overflow-hidden border border-border shadow-[0_40px_100px_rgba(0,0,0,0.1)] bg-surface relative p-8">
+            <div class="aspect-[4/5] rounded-[40px] overflow-hidden border border-border-light dark:border-primary/20 shadow-[0_40px_100px_rgba(0,0,0,0.1)] bg-surface relative p-8">
               <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
-              <div class="bg-surface rounded-2xl h-full shadow-inner border border-border flex flex-col overflow-hidden">
-                <div class="h-12 border-b border-border flex items-center px-5 gap-2 bg-surface/50">
+              <div class="bg-surface rounded-2xl h-full shadow-inner border border-border-light dark:border-primary/20 flex flex-col overflow-hidden">
+                <div class="h-12 border-b border-border-light  dark:border-primary/20 flex items-center px-5 gap-2 bg-surface/50">
                   <div class="flex gap-1.5">
                     <div class="w-3 h-3 rounded-full bg-red-400/20 border border-red-400/40"></div>
                     <div class="w-3 h-3 rounded-full bg-yellow-400/20 border border-yellow-400/40"></div>
                     <div class="w-3 h-3 rounded-full bg-green-400/20 border border-green-400/40"></div>
                   </div>
                   <div class="flex-1 text-center">
-                    <span class="text-[11px] text-text-muted font-mono bg-surface px-4 py-1 rounded-full border border-border shadow-sm">uniteach-analysis-v2.pdf</span>
+                    <span class="text-[11px] text-text-muted font-mono bg-surface px-4 py-1 rounded-full border border-border-light dark:border-primary/20 shadow-sm">uniteach-analysis-v2.pdf</span>
                   </div>
                 </div>
                 <div class="p-6 flex flex-col gap-6 h-full">
-                  <div class="flex-1 p-5 rounded-2xl border border-border bg-surface relative overflow-hidden group shadow-sm">
+                  <div class="flex-1 p-5 rounded-2xl border border-border-light  dark:border-primary/20 bg-surface relative overflow-hidden group shadow-sm">
                     <div class="absolute left-0 w-full h-[3px] bg-primary/40 shadow-[0_0_20px_rgba(124,58,237,0.6)] z-10 animate-scan"></div>
                     <div class="space-y-4 opacity-30">
                       <div class="flex justify-between items-center">
@@ -121,7 +121,7 @@ const pricingPlans = [
                       </div>
                       <div class="w-full h-2 bg-surface rounded-lg"></div>
                       <div class="w-[85%] h-2 bg-surface rounded-lg"></div>
-                      <div class="w-full p-4 border-2 border-dashed border-border rounded-2xl space-y-4 bg-surface/50">
+                      <div class="w-full p-4 border-2 border-dashed border-border-light dark:border-primary/20 rounded-2xl space-y-4 bg-surface/50">
                         <div class="flex gap-2">
                           <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-[10px] font-bold text-primary">Q1</div>
                           <div class="flex-1 space-y-2">
@@ -129,7 +129,7 @@ const pricingPlans = [
                             <div class="h-2 w-3/4 bg-text-muted/20 rounded"></div>
                           </div>
                         </div>
-                        <div class="h-24 w-full bg-text-muted/5 rounded-xl flex flex-col items-center justify-center p-4 border border-border/50">
+                        <div class="h-24 w-full bg-text-muted/5 rounded-xl flex flex-col items-center justify-center p-4 border border-border-light  dark:border-primary/20">
                           <div class="text-[10px] font-serif italic text-text-muted mb-2">∫ sin(x) / e^x dx</div>
                           <div class="w-full h-px bg-border/50 my-2"></div>
                           <div class="text-[9px] font-serif italic text-primary/60">Recognition: 99.2%</div>
@@ -143,7 +143,7 @@ const pricingPlans = [
                     </div>
                   </div>
                   <div class="grid grid-cols-2 gap-4">
-                    <div class="p-5 rounded-2xl border border-border bg-surface shadow-sm">
+                    <div class="p-5 rounded-2xl border border-border-light dark:border-primary/20 bg-surface shadow-sm">
                       <div class="flex justify-between items-center mb-4">
                         <div class="tag">掌握度</div>
                         <div class="text-xs font-bold text-primary">82%</div>
@@ -189,7 +189,7 @@ const pricingPlans = [
                 { icon: "lucide:layers", text: "手写公式识别精度低", detail: "通用 OCR 难以处理复杂的理科公式与手写连笔。" },
                 { icon: "lucide:bar-chart-3", text: "数据无法形成闭环", detail: "批改后的分数只是数字，缺乏深度的知识点关联。" }
               ].map((item) => (
-                <div class="flex gap-6 p-8 rounded-[32px] bg-surface border border-border shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex gap-6 p-8 rounded-[32px] bg-surface border border-border-light dark:border-primary/20 shadow-sm hover:shadow-md transition-shadow">
                   <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
                     <Icon name={item.icon} class="w-7 h-7" />
                   </div>
@@ -208,17 +208,17 @@ const pricingPlans = [
                   <div class="text-4xl font-display font-black mb-2">70%</div>
                   <div class="text-xs font-bold uppercase tracking-widest opacity-80">时间节省</div>
                 </div>
-                <div class="bento-card p-10 rounded-[40px] bg-surface border border-border shadow-sm">
+                <div class="bento-card p-10 rounded-[40px] bg-surface border border-border-light  dark:border-primary/20 shadow-sm">
                   <div class="text-4xl font-display font-black mb-2 text-primary">99%</div>
                   <div class="text-xs font-bold uppercase tracking-widest text-text-muted">识别精度</div>
                 </div>
               </div>
               <div class="space-y-6">
-                <div class="bento-card p-10 rounded-[40px] bg-surface border border-border shadow-sm">
+                <div class="bento-card p-10 rounded-[40px] bg-surface border border-border-light  dark:border-primary/20 shadow-sm">
                   <div class="text-4xl font-display font-black mb-2 text-accent">24/7</div>
                   <div class="text-xs font-bold uppercase tracking-widest text-text-muted">实时反馈</div>
                 </div>
-                <div class="bento-card p-10 rounded-[40px] bg-surface border border-border/50 shadow-sm">
+                <div class="bento-card p-10 rounded-[40px] bg-surface border border-border-light  dark:border-primary/20 shadow-sm">
                   <div class="text-4xl font-display font-black mb-2 text-primary">100%</div>
                   <div class="text-xs font-bold uppercase tracking-widest text-text-muted">私有部署</div>
                 </div>
@@ -244,7 +244,7 @@ const pricingPlans = [
             { icon: "lucide:brain", title: "智能路由", desc: "自动匹配判卷逻辑，确保识别精准。", tag: "ROUTING" },
             { icon: "lucide:graduation-cap", title: "全题型覆盖", desc: "选择、填空、计算、证明、作图全支持。", tag: "COVERAGE" }
           ].map((item) => (
-            <div class="bento-card group p-10 rounded-[40px] bg-surface border border-border shadow-sm hover:shadow-xl transition-all">
+            <div class="bento-card group p-10 rounded-[40px] bg-surface border border-border-light  dark:border-primary/20 shadow-sm hover:shadow-xl transition-all">
               <div class="tag mb-4 w-fit px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border border-current">{item.tag}</div>
               <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                 <Icon name={item.icon} class="w-6 h-6" />
@@ -256,7 +256,7 @@ const pricingPlans = [
         </div>
         
         <div class="mt-12 grid md:grid-cols-2 gap-8">
-          <div class="p-12 rounded-[40px] bg-bg-dark text-text dark:text-white flex flex-col justify-between relative overflow-hidden group border border-border/50 transition-all hover:shadow-xl">
+          <div class="p-12 rounded-[40px] bg-bg-dark text-text dark:text-white flex flex-col justify-between relative overflow-hidden group border border-border-light  dark:border-primary/20 transition-all hover:shadow-xl">
             <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
             <div class="relative z-10">
               <h3 class="text-3xl font-display font-bold mb-6">从“批卷”走向<br />“教学数据资产”</h3>
@@ -296,7 +296,7 @@ const pricingPlans = [
               { icon: "lucide:cpu", title: "部署成本低", desc: "无需昂贵硬件，纯软件方案，降低 AI 门槛。", tag: "Cost" },
               { icon: "lucide:settings", title: "支持自训练", desc: "支持雅思、作文等垂直场景的 OCR 微调。", tag: "Customization" }
             ].map((item) => (
-              <div class="p-6 rounded-2xl bg-surface border border-border hover:shadow-md transition-all">
+              <div class="p-6 rounded-2xl bg-surface border border-border-light dark:border-primary/20 hover:shadow-md transition-all">
                 <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
                   <Icon name={item.icon} class="w-5 h-5" />
                 </div>
@@ -320,7 +320,7 @@ const pricingPlans = [
         <div class="grid lg:grid-cols-2 gap-24 items-center">
           <div class="grid grid-cols-3 gap-6">
             {subjects.map((subject) => (
-              <div class="aspect-square rounded-3xl bg-surface border border-border flex flex-col items-center justify-center gap-3 group hover:shadow-xl transition-all">
+              <div class="aspect-square rounded-3xl bg-surface border border-border-light  dark:border-primary/20 flex flex-col items-center justify-center gap-3 group hover:shadow-xl transition-all">
                 <div class={`w-12 h-12 rounded-2xl ${subject.bg} ${subject.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                   <Icon name={subject.icon} class="w-6 h-6" />
                 </div>
@@ -383,21 +383,21 @@ const pricingPlans = [
             </div>
           </div>
 
-          <div class="bento-card group p-10 rounded-[40px] bg-surface border border-border shadow-sm hover:shadow-xl transition-all">
+          <div class="bento-card group p-10 rounded-[40px] bg-surface border border-border-light  dark:border-primary/20 shadow-sm hover:shadow-xl transition-all">
             <div class="tag mb-6 border-slate-400 text-slate-500">EDITOR</div>
             <h3 class="text-2xl font-display font-bold mb-4">智能模板编辑器</h3>
             <p class="text-text-muted leading-relaxed">AI 自动识别题目区域，支持所见即所得的微调。模板一次配置，全校复用。</p>
-            <div class="mt-8 pt-8 border-t border-border flex justify-between items-center">
+            <div class="mt-8 pt-8 border-t border-border-light  dark:border-primary/20 flex justify-between items-center">
               <span class="text-xs font-bold text-primary uppercase tracking-widest">了解详情</span>
               <Icon name="lucide:arrow-right" class="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
 
-          <div class="bento-card group p-10 rounded-[40px] bg-surface border border-border shadow-sm hover:shadow-xl transition-all">
+          <div class="bento-card group p-10 rounded-[40px] bg-surface border border-border-light  dark:border-primary/20 shadow-sm hover:shadow-xl transition-all">
             <div class="tag mb-6 border-slate-400 text-slate-500">ALGORITHM</div>
             <h3 class="text-2xl font-display font-bold mb-4">分步得分算法</h3>
             <p class="text-text-muted leading-relaxed">不只是看答案，更能读懂解题步骤。自动归类相似错误思路，实现精准补救。</p>
-            <div class="mt-8 pt-8 border-t border-border flex justify-between items-center">
+            <div class="mt-8 pt-8 border-t border-border-light  dark:border-primary/20 flex justify-between items-center">
               <span class="text-xs font-bold text-primary uppercase tracking-widest">了解详情</span>
               <Icon name="lucide:arrow-right" class="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
             </div>
@@ -451,7 +451,7 @@ const pricingPlans = [
               icon: "lucide:database"
             }
           ].map((box) => (
-            <div class="p-8 rounded-3xl border border-border hover:bg-surface transition-colors">
+            <div class="p-8 rounded-3xl border border-border-light  dark:border-primary/20 hover:bg-surface transition-colors">
               <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
                 <Icon name={box.icon} class="w-5 h-5" />
               </div>
@@ -477,7 +477,7 @@ const pricingPlans = [
           <div class="relative">
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square rounded-full border border-primary/5 animate-pulse"></div>
             <div class="relative z-10 grid grid-cols-2 gap-6">
-              <div class="p-8 rounded-[32px] bg-surface border border-border shadow-22 backdrop-blur-sm">
+              <div class="p-8 rounded-[32px] bg-surface border border-border-light  dark:border-primary/20 shadow-22 backdrop-blur-sm">
                 <h3 class="text-2xl font-bold mb-4">从“批卷”走向“教学数据资产”</h3>
                 <p class="text-text-muted mb-8 leading-relaxed">我们不仅是在批改错题，更是在沉淀学校的核心教学资产，实现从“批错题”到“精准教学”的跨越。</p>
                 <a href="#" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
@@ -530,7 +530,7 @@ const pricingPlans = [
         
         <div class="grid md:grid-cols-3 gap-8">
           {pricingPlans.map((plan) => (
-            <div class={`p-10 rounded-[40px] border ${plan.popular ? 'border-primary bg-primary/5 shadow-22 scale-105 z-10' : 'border-border bg-surface'} relative transition-all duration-500 hover:shadow-xl`}>
+            <div class={`p-10 rounded-[40px] border ${plan.popular ? 'border-primary bg-primary/5 shadow-22 scale-105 z-10' : 'border-border-light  dark:border-primary/20 bg-surface'} relative transition-all duration-500 hover:shadow-xl`}>
               {plan.popular && <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-6 py-1.5 bg-primary text-white text-[10px] font-black rounded-full tracking-widest">MOST POPULAR</div>}
               <h3 class="text-2xl font-display font-bold mb-3">{plan.name}</h3>
               <p class="text-text-muted mb-8 leading-relaxed text-sm">{plan.desc}</p>
@@ -548,7 +548,7 @@ const pricingPlans = [
                   </li>
                 ))}
               </ul>
-              <button class={`w-full py-4 rounded-2xl font-bold transition-all ${plan.popular ? 'btn-primary' : 'bg-surface text-text border border-border hover:border-primary/30 hover:bg-bg shadow-sm'}`}>
+              <button class={`w-full py-4 rounded-2xl font-bold transition-all ${plan.popular ? 'btn-primary' : 'bg-surface text-text border border-border-light  dark:border-primary/20 hover:border-primary/30 hover:bg-bg shadow-sm'}`}>
                 立即咨询
               </button>
             </div>
@@ -560,17 +560,17 @@ const pricingPlans = [
           <div class="relative z-10">
             <h4 class="text-2xl font-display font-bold mb-6">增值定制服务</h4>
             <div class="space-y-4">
-              <div class="flex justify-between items-center p-4 rounded-2xl bg-surface border border-border">
+              <div class="flex justify-between items-center p-4 rounded-2xl bg-surface border border-border-light  dark:border-primary/20">
                 <span class="text-text-muted">模型微调 (VLM/OCR/LLM)</span>
                 <span class="font-bold text-primary">10万-20万</span>
               </div>
-              <div class="flex justify-between items-center p-4 rounded-2xl bg-surface border border-border">
+              <div class="flex justify-between items-center p-4 rounded-2xl bg-surface border border-border-light  dark:border-primary/20">
                 <span class="text-text-muted">大模型集群化部署</span>
                 <span class="font-bold text-primary">5万-15万</span>
               </div>
             </div>
           </div>
-          <div class="relative z-10 flex flex-col items-center justify-center border-l border-border pl-12">
+          <div class="relative z-10 flex flex-col items-center justify-center border-l border-border-light  dark:border-primary/20 pl-12">
             <div class="text-sm text-text-muted/40 mb-6 uppercase tracking-widest font-bold">已服务客户</div>
             <div class="flex flex-wrap justify-center gap-8 opacity-60">
               <span class="text-xl font-display font-bold">山东瀚海云</span>
@@ -597,7 +597,7 @@ const pricingPlans = [
           </p>
           <div class="flex flex-wrap justify-center gap-6">
             <button class="btn-primary">申请演示</button>
-            <button class="px-12 py-4 rounded-2xl bg-surface text-text border border-border font-bold hover:bg-bg transition-all text-lg">
+            <button class="px-12 py-4 rounded-2xl bg-surface text-text border border-border-light  dark:border-primary/20 font-bold hover:bg-bg transition-all text-lg">
               <a rel='noopener noreferrer' href={getHomePermalink()}>返回主页</a>
             </button>
           </div>
@@ -639,7 +639,7 @@ const pricingPlans = [
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('reveal');
+        entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       }
     });
@@ -647,19 +647,19 @@ const pricingPlans = [
 
   // Add scroll reveal to sections and specific elements
   document.querySelectorAll('section, .bento-card, .p-6').forEach(el => {
-    el.classList.add('scroll-reveal');
+    el.classList.add('animate-on-scroll');
     observer.observe(el);
   });
 </script>
 
 <style is:global>
-  .scroll-reveal {
+  .animate-on-scroll {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .scroll-reveal.reveal {
+  .animate-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
   }

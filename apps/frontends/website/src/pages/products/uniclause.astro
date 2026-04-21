@@ -113,29 +113,29 @@ const comparisonData = [
   <main class="relative z-10 pt-18">
     <!-- Hero Section -->
     <section class="px-6 pt-20 pb-30 max-w-7xl mx-auto text-center">
-      <div class="reveal">
+      <div class="animate-on-scroll">
         <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6 inline-block">
           让审查有源可溯 · 让 AI 真正可解释
         </span>
       </div>
-      <div class="reveal" style="transition-delay: 100ms">
+      <div class="animate-on-scroll" style="transition-delay: 100ms">
         <h1 class="text-5xl md:text-7xl mb-8 leading-[1.1] font-extrabold max-w-5xl mx-auto tracking-tighter text-primary">
           UniClause <br />
           <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI 智能合同审查</span>
         </h1>
       </div>
-      <div class="reveal" style="transition-delay: 200ms">
+      <div class="animate-on-scroll" style="transition-delay: 200ms">
         <p class="text-lg md:text-xl text-muted max-w-3xl mx-auto mb-10 leading-relaxed">
           让每一份合同审查都有据可查、有源可溯、有理可循。 <br class="hidden md:block" />
           基于 RAG 架构驱动的可解释 AI 平台，告别“黑盒”判断，重塑法务工作流。
         </p>
       </div>
-      <div class="reveal" style="transition-delay: 300ms">
+      <div class="animate-on-scroll" style="transition-delay: 300ms">
         <div class="flex flex-wrap items-center justify-center gap-4">
           <button class="btn-primary text-lg px-8 py-4">
             开始免费试用
           </button>
-          <button class="px-8 py-4 rounded-full border border-border-light dark:border-border-dark font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+          <button class="px-8 py-4 rounded-full border border-border-light dark:border-primary/20  font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-all">
             预约演示
           </button>
         </div>
@@ -144,14 +144,14 @@ const comparisonData = [
 
     <!-- Bento Grid Features -->
     <section id="features" class="px-6 py-24 max-w-7xl mx-auto">
-      <div class="reveal text-center mb-16">
+      <div class="animate-on-scroll text-center mb-16">
         <h2 class="text-3xl md:text-5xl mb-4">核心功能</h2>
         <p class="text-muted">全流程闭环，从风险识别到条款补全</p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
         {/* Feature 1: Large */}
-        <div class="reveal md:col-span-8 bento-card flex flex-col justify-between group overflow-hidden relative">
+        <div class="animate-on-scroll md:col-span-8 bento-card flex flex-col justify-between group overflow-hidden relative">
           <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 group-hover:opacity-20 transition-all duration-700">
             <Icon name="lucide:search" class="w-48 h-48" />
           </div>
@@ -183,7 +183,7 @@ const comparisonData = [
         </div>
 
         {/* Feature 2: Side */}
-        <div class="reveal md:col-span-4 bento-card flex flex-col justify-between" style="transition-delay: 100ms">
+        <div class="animate-on-scroll md:col-span-4 bento-card flex flex-col justify-between" style="transition-delay: 100ms">
           <div>
             <div class="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
               <Icon name="lucide:file-text" class="text-accent w-6 h-6" />
@@ -199,7 +199,7 @@ const comparisonData = [
         </div>
 
         {/* Feature 3: Small */}
-        <div class="reveal md:col-span-4 bento-card flex flex-col justify-between group overflow-hidden relative" style="transition-delay: 200ms">
+        <div class="animate-on-scroll md:col-span-4 bento-card flex flex-col justify-between group overflow-hidden relative" style="transition-delay: 200ms">
           <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
             <div class="w-full h-full bg-primary/5 flex items-center justify-center scale-150 rotate-12">
                <div class="w-32 h-32 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
@@ -217,7 +217,7 @@ const comparisonData = [
         </div>
 
         {/* Feature 4: Semi-Large */}
-        <div class="reveal md:col-span-8 bento-card bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] dark:from-[#0B123B] dark:to-[#030620] border-none text-white flex flex-col justify-between" style="transition-delay: 300ms">
+        <div class="animate-on-scroll md:col-span-8 bento-card bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] dark:from-[#0B123B] dark:to-[#030620] border-none text-white flex flex-col justify-between" style="transition-delay: 300ms">
           <div>
             <h3 class="text-2xl mb-4 font-bold">本地数据中心与多模型联邦</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -244,7 +244,7 @@ const comparisonData = [
 
     <!-- Product Preview Section -->
     <section class="px-6 py-24 max-w-7xl mx-auto overflow-hidden">
-      <div class="reveal text-center mb-16">
+      <div class="animate-on-scroll text-center mb-16">
         <h2 class="text-3xl md:text-5xl mb-4 text-[#101010] dark:text-white">产品实战预览</h2>
         <p class="text-muted">直观、高效、智能的合同审查交互体验</p>
       </div>
@@ -252,7 +252,7 @@ const comparisonData = [
       <div class="space-y-24">
         {/* Step 1: Scanning */}
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="reveal reveal-right">
+          <div class="animate-on-scroll animate-right">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-6">
               <Icon name="lucide:refresh-ccw" class="w-3 h-3 animate-spin" /> 智能扫描中
             </div>
@@ -272,12 +272,12 @@ const comparisonData = [
               </li>
             </ul>
           </div>
-          <div class="reveal reveal-left">
+          <div class="animate-on-scroll animate-left">
             <div class="relative group">
               <div class="absolute inset-0 bg-primary/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
-              <div class="rounded-[2.5rem] border border-border-light dark:border-border-dark overflow-hidden shadow-2xl bg-white dark:bg-[#030620] aspect-video flex relative">
+              <div class="rounded-[2.5rem] border border-border-light dark:border-primary/20  overflow-hidden shadow-2xl bg-white dark:bg-[#030620] aspect-video flex relative">
                 {/* Simulated Document Left */}
-                <div class="w-1/2 p-6 border-r border-border-light dark:border-border-dark flex flex-col gap-3">
+                <div class="w-1/2 p-6 border-r border-border-light dark:border-primary/20  flex flex-col gap-3">
                   <div class="h-4 bg-black/5 dark:bg-white/5 rounded w-3/4"></div>
                   <div class="h-3 bg-black/5 dark:bg-white/5 rounded w-full"></div>
                   <div class="h-3 bg-black/5 dark:bg-white/5 rounded w-5/6"></div>
@@ -309,7 +309,7 @@ const comparisonData = [
 
         {/* Step 2: Risk Identified */}
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="reveal reveal-left lg:order-2">
+          <div class="animate-on-scroll animate-left lg:order-2">
             <div>
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold mb-6">
                 <Icon name="lucide:zap" class="w-3 h-3" /> 风险智能定位
@@ -331,10 +331,10 @@ const comparisonData = [
               </ul>
             </div>
           </div>
-          <div class="reveal reveal-right lg:order-1">
+          <div class="animate-on-scroll animate-right lg:order-1">
             <div class="relative group">
               <div class="absolute inset-0 bg-accent/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
-              <div class="rounded-[2.5rem] border border-border-light dark:border-border-dark overflow-hidden shadow-2xl bg-white dark:bg-[#0B123B] aspect-video flex relative">
+              <div class="rounded-[2.5rem] border border-border-light dark:border-primary/20  overflow-hidden shadow-2xl bg-white dark:bg-[#0B123B] aspect-video flex relative">
                 {/* Legal Document Base */}
                 <div class="w-2/3 p-8 space-y-4">
                   <div class="flex items-center gap-2 mb-4">
@@ -379,14 +379,14 @@ const comparisonData = [
     <!-- Selling Points -->
     <section id="selling-points" class="py-24 bg-surface-light dark:bg-surface-dark/50">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="reveal mb-16">
+        <div class="animate-on-scroll mb-16">
           <h2 class="text-3xl md:text-5xl mb-4">核心卖点</h2>
           <p class="text-muted">为什么选择 UniClause？我们的差异化优势</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sellingPoints.map((point, index) => (
-            <div class={`reveal p-8 rounded-3xl bg-white dark:bg-[#030620] border border-border-light dark:border-border-dark hover:shadow-xl transition-all h-full`} style={`transition-delay: ${index * 100}ms`}>
+            <div class={`animate-on-scroll p-8 rounded-3xl bg-white dark:bg-[#030620] border border-border-light dark:border-primary/20  hover:shadow-xl transition-all h-full`} style={`transition-delay: ${index * 100}ms`}>
               <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
                 <Icon name={point.icon} class="w-6 h-6" />
               </div>
@@ -399,14 +399,14 @@ const comparisonData = [
     </section>
 
     <!-- Scenarios Section -->
-    <section id="scenarios" class="px-6 py-24 max-w-7xl mx-auto border-t border-border-light dark:border-border-dark">
-      <div class="reveal text-center mb-16">
+    <section id="scenarios" class="px-6 py-24 max-w-7xl mx-auto border-t border-border-light dark:border-primary/20 ">
+      <div class="animate-on-scroll text-center mb-16">
         <h2 class="text-3xl md:text-5xl mb-4">适用场景</h2>
         <p class="text-muted">深耕法律与合规场景，解决行业痛点</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {scenarios.map((s, i) => (
-          <div class="reveal bento-card group" style={`transition-delay: ${i * 100}ms`}>
+          <div class="animate-on-scroll bento-card group" style={`transition-delay: ${i * 100}ms`}>
             <h3 class="text-xl font-bold mb-4 flex items-center justify-between">
               {s.title}
               <Icon name="lucide:arrow-up-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
@@ -428,14 +428,14 @@ const comparisonData = [
 
     <!-- Pricing -->
     <section id="pricing" class="py-24 px-6 max-w-7xl mx-auto">
-      <div class="reveal text-center mb-16">
+      <div class="animate-on-scroll text-center mb-16">
         <h2 class="text-3xl md:text-5xl mb-4">价格体系</h2>
         <p class="text-muted">灵活多样的方案，透明、可控、高性价比</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Plan 1 */}
-        <div class="reveal p-8 rounded-[2rem] border border-border-light dark:border-border-dark flex flex-col h-full hover:border-primary/40 transition-all">
+        <div class="animate-on-scroll p-8 rounded-[2rem] border border-border-light dark:border-primary/20  flex flex-col h-full hover:border-primary/40 transition-all">
           <div class="mb-8">
             <h3 class="text-2xl font-bold mb-2">线上版</h3>
             <p class="text-sm text-muted">适合律师、法律顾问、小型团队</p>
@@ -464,7 +464,7 @@ const comparisonData = [
         </div>
 
         {/* Plan 2 - Featured */}
-        <div class="reveal p-8 rounded-[2rem] border-2 border-primary bg-primary/5 relative flex flex-col h-full lg:transform lg:scale-105 shadow-2xl" style="transition-delay: 100ms">
+        <div class="animate-on-scroll p-8 rounded-[2rem] border-2 border-primary bg-primary/5 relative flex flex-col h-full lg:transform lg:scale-105 shadow-2xl" style="transition-delay: 100ms">
           <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 bg-primary text-white text-xs font-bold rounded-full">
             本地部署优先
           </div>
@@ -497,7 +497,7 @@ const comparisonData = [
         </div>
 
         {/* Plan 3 */}
-        <div class="reveal p-8 rounded-[2rem] border border-border-light dark:border-border-dark flex flex-col h-full hover:border-[#8B5CF6]/40 transition-all" style="transition-delay: 200ms">
+        <div class="animate-on-scroll p-8 rounded-[2rem] border border-border-light dark:border-primary/20  flex flex-col h-full hover:border-[#8B5CF6]/40 transition-all" style="transition-delay: 200ms">
           <div class="mb-8">
             <h3 class="text-2xl font-bold mb-2">定制版</h3>
             <p class="text-sm text-muted">适合大型集团、金融机构</p>
@@ -521,13 +521,13 @@ const comparisonData = [
               </li>
             ))}
           </ul>
-          <button class="w-full py-4 rounded-full border border-border-light dark:border-border-dark font-bold hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+          <button class="w-full py-4 rounded-full border border-border-light dark:border-primary/20  font-bold hover:bg-black/5 dark:hover:bg-white/5 transition-all">
             联系销售大客户经理
           </button>
         </div>
       </div>
 
-      <div class="mt-20 bento-card border-none bg-primary/5 p-12 text-center reveal">
+      <div class="mt-20 bento-card border-none bg-primary/5 p-12 text-center animate-on-scroll">
         <h3 class="text-2xl font-bold mb-6">为什么我们的价格独具优势？</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -549,7 +549,7 @@ const comparisonData = [
     <!-- Comparison Table -->
     <section id="comparison" class="py-24 bg-surface-light dark:bg-surface-dark/50">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="reveal text-center mb-16">
+        <div class="animate-on-scroll text-center mb-16">
           <h2 class="text-3xl md:text-5xl mb-4">核心差异化对比</h2>
           <p class="text-muted">UniClause 与传统 AI 审查工具的深度对比</p>
         </div>
@@ -557,7 +557,7 @@ const comparisonData = [
         <div class="overflow-x-auto">
           <table class="w-full text-left border-collapse min-w-[800px]">
             <thead>
-              <tr class="border-b border-border-light dark:border-border-dark">
+              <tr class="border-b border-border-light dark:border-primary/20 ">
                 <th class="py-6 px-4 font-bold text-lg">维度</th>
                 <th class="py-6 px-4 font-bold text-lg text-muted">传统 AI 审查工具</th>
                 <th class="py-6 px-4 font-bold text-lg text-primary">UniClause (RAG Powered)</th>
@@ -565,7 +565,7 @@ const comparisonData = [
             </thead>
             <tbody class="text-sm">
               {comparisonData.map(([dim, trad, uni]) => (
-                <tr class="border-b border-border-light dark:border-border-dark hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                <tr class="border-b border-border-light dark:border-primary/20  hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
                   <td class="py-6 px-4 font-medium">{dim}</td>
                   <td class="py-6 px-4 text-muted">{trad}</td>
                   <td class="py-6 px-4 font-bold text-primary">{uni}</td>
@@ -575,7 +575,7 @@ const comparisonData = [
           </table>
         </div>
 
-        <div class="mt-12 reveal text-sm text-muted text-center italic">
+        <div class="mt-12 animate-on-scroll text-sm text-muted text-center italic">
           * 经测试，UniClause 在长合同对赌条款识别率较传统架构提升约 45%
         </div>
       </div>
@@ -585,7 +585,7 @@ const comparisonData = [
     <section class="py-24 max-w-7xl mx-auto px-6">
        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
          {techHighlights.map((tech, i) => (
-           <div class="reveal p-6 rounded-2xl border border-border-light dark:border-border-dark bg-surface-light/50 dark:bg-surface-dark/20 text-center" style={`transition-delay: ${i * 100}ms`}>
+           <div class="animate-on-scroll p-6 rounded-2xl border border-border-light dark:border-primary/20  bg-surface-light/50 dark:bg-surface-dark/20 text-center" style={`transition-delay: ${i * 100}ms`}>
              <p class="text-xs font-mono text-primary/60 uppercase mb-2">Technical Engine</p>
              <h4 class="font-bold mb-2">{tech.title}</h4>
              <p class="text-xs text-muted">{tech.desc}</p>

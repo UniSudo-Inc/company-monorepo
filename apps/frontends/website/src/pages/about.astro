@@ -1,9 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Brands from '@/components/widgets/Brands.astro';
-import Hero from '@/components/widgets/Hero.astro';
-import Steps2 from '@/components/widgets/Steps2.astro';
 import Layout from '@/layouts/PageLayout.astro';
+import Brands from '@/components/widgets/Brands.astro';
 import tencentLogo from '@/assets/images/tencent.png';
 import alibabaLogo from '@/assets/images/alibaba.png';
 import huaweiLogo from '@/assets/images/huawei.png';
@@ -11,227 +9,282 @@ import ppioLogo from '@/assets/images/ppio.png';
 import amazonLogo from '@/assets/images/amazon.png';
 import cloudflareLogo from '@/assets/images/cloudflare.png';
 
+const coreTech = [
+  {
+    title: '专业的数据标注服务',
+    desc: '提供高质量、高效率的数据标注服务，为 AI 模型训练提供坚实基础。',
+    icon: 'lucide:database',
+  },
+  {
+    title: '全流程模型开发部署',
+    desc: '从模型选型、训练到部署的一站式服务，确保 AI 系统的稳定运行。',
+    icon: 'lucide:brain',
+  },
+  {
+    title: '低成本语音交互方案',
+    desc: '创新的语音交互技术，帮助企业大幅降低 AI 应用成本。',
+    icon: 'lucide:mic',
+  },
+  {
+    title: '生产环境定制化',
+    desc: '根据企业需求定制开发生产环境，确保 AI 系统的最佳性能表现。',
+    icon: 'lucide:settings',
+  },
+  {
+    title: '交互系统开发',
+    desc: '专业的交互系统开发团队，打造流畅自然的人机交互体验。',
+    icon: 'lucide:message-square',
+  },
+  {
+    title: '一体化技术支持',
+    desc: '提供全周期的技术支持服务，保障系统的持续优化与升级。',
+    icon: 'lucide:headset',
+  },
+];
+
+const values = [
+  {
+    title: '技术创新',
+    desc: '持续投入研发，追求技术创新，为客户提供最先进的 AI 解决方案。',
+    icon: 'lucide:rocket',
+  },
+  {
+    title: '客户至上',
+    desc: '深入理解客户需求，提供定制化服务，确保项目的落地效果。',
+    icon: 'lucide:heart',
+  },
+  {
+    title: '专业服务',
+    desc: '专业的技术团队，全流程的服务支持，确保客户获得最佳服务体验。',
+    icon: 'lucide:shield-check',
+  },
+];
+
+const achievements = [
+  {
+    title: '研发实力',
+    desc: '自主研发多项核心技术，持续推动行业创新发展。',
+    icon: 'lucide:globe',
+  },
+  {
+    title: '客户认可',
+    desc: '获得众多知名企业的信赖与认可，建立长期合作关系。',
+    icon: 'lucide:star',
+  },
+  {
+    title: '服务体系',
+    desc: '完善的服务体系，确保为客户提供最优质的解决方案。',
+    icon: 'lucide:award',
+  },
+];
+
 const metadata = {
-  title: '关于我们',
+  title: '关于我们 - 上海智独数科技有限公司',
+  ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <Hero
-    tagline='关于我们'
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: '公司形象',
-    }}
-  >
-    <Fragment slot='title'>
-      <span class='text-4xl md:text-6xl font-bold tracking-tight'>上海智独数科技有限公司</span><br />
-      <span class='text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-3xl md:text-5xl mt-2 font-semibold'>一站式AI解决方案服务商</span>
-    </Fragment>
-
-    <Fragment slot='subtitle'>
-      <span class='text-xl md:text-2xl leading-relaxed'>
-        上海智独数科技有限公司是一家专业的一站式AI服务提供商。我们提供从数据标注、模型训练部署、生产环境搭建、定制开发交互，到低成本语音交互的全流程解决方案。凭借我们的专业技术和丰富经验，我们帮助企业以最优成本实现AI转型，打造符合企业需求的智能化系统。
-      </span>
-    </Fragment>
-  </Hero>
-
-  <div class='relative'>
-    <Brands
-      title='合作伙伴'
-      images={[
-        {
-          src: tencentLogo,
-          alt: 'Tencent',
-        },
-        {
-          src: alibabaLogo,
-          alt: 'Alibaba',
-        },
-        {
-          src: huaweiLogo,
-          alt: 'Huawei',
-        },
-        {
-          src: ppioLogo,
-          alt: 'PPIO',
-        },
-        {
-          src: amazonLogo,
-          alt: 'Amazon',
-        },
-        {
-          src: cloudflareLogo,
-          alt: 'Cloudflare',
-        },
-        {
-          src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
-          alt: 'Microsoft',
-        },
-      ]}
-    />
-  </div>
-
-  <section class='relative py-20'>
-    
-    <div class='relative mx-auto max-w-7xl px-4 sm:px-6'>
-      <div class='mb-16 text-center'>
-        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>核心技术</p>
-        <h2 class='text-4xl font-bold tracking-tight text-default dark:text-white md:text-5xl'>提供全方位的AI解决方案</h2>
-        <p class='mx-auto mt-4 max-w-2xl text-lg text-muted'>助力企业数字化转型</p>
-      </div>
-      <div class='grid grid-cols-1 gap-6 md:grid-cols-3'>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 0ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:database' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>专业的数据标注服务</h3>
-          <p class='text-muted leading-relaxed'>提供高质量、高效率的数据标注服务，为AI模型训练提供坚实基础。</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 100ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:brain' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>全流程模型开发部署</h3>
-          <p class='text-muted leading-relaxed'>从模型选型、训练到部署的一站式服务，确保AI系统的稳定运行。</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 200ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:microphone' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>低成本语音交互方案</h3>
-          <p class='text-muted leading-relaxed'>创新的语音交互技术，帮助企业大幅降低AI应用成本。</p>
-        </div>
-      </div>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background (Consistent with Index) -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
     </div>
-  </section>
 
-  <section class='relative py-20'>
-    <div class='mx-auto max-w-7xl px-4 sm:px-6'>
-      <div class='grid grid-cols-1 gap-6 md:grid-cols-3'>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 0ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:settings' class='h-7 w-7 text-primary' />
+    <!-- Hero Section: Modern & Dynamic (Consistent with Index) -->
+    <section class="py-18 px-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="animate-on-scroll">
+          <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+            ABOUT UNISUDO · 智独数科技
+          </span>
+          <h1 class="text-5xl md:text-7xl font-black mb-8 leading-[0.9] tracking-tighter italic">
+            赋能 SUDO <br />
+            <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">权限的 AI 专家</span>
+          </h1>
+          <p class="text-xl text-muted leading-relaxed font-medium mb-10">
+            上海智独数科技有限公司是一家专业的一站式 AI 服务提供商。我们通过创新的模型架构和全流程技术链，帮助企业以最优成本实现数智化转型。
+          </p>
+          <div class="flex gap-4">
+             <a href="/contact/" class="btn-primary">立即合作</a>
+             <a href="#tech" class="px-8 py-3 rounded-full border border-border-light  dark:border-primary/20 font-bold hover:bg-black/5 dark:hover:bg-white/5 transition-all">技术方案</a>
           </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>生产环境定制化</h3>
-          <p class='text-muted leading-relaxed'>根据企业需求定制开发生产环境，确保AI系统的最佳性能表现。</p>
         </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 100ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:message' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>交互系统开发</h3>
-          <p class='text-muted leading-relaxed'>专业的交互系统开发团队，打造流畅自然的人机交互体验。</p>
-        </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento group cursor-pointer' style='animation-delay: 200ms'>
-          <div class='mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:scale-110 group-hover:from-primary/20 group-hover:to-accent/20'>
-            <Icon name='tabler:headset' class='h-7 w-7 text-primary' />
-          </div>
-          <h3 class='mb-3 text-xl font-bold tracking-tight text-default dark:text-white'>一体化技术支持</h3>
-          <p class='text-muted leading-relaxed'>提供全周期的技术支持服务，保障系统的持续优化与升级。</p>
+        <div class="animate-on-scroll relative">
+           <div class="bento-card border-none p-1 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2070&auto=format&fit=crop" 
+                alt="Office" 
+                referrerpolicy="no-referrer"
+                class="rounded-[2.4rem] w-full aspect-square object-cover" 
+              />
+           </div>
+           <!-- Decorative Floating Element -->
+           <div class="absolute -bottom-12 -left-16 w-32 h-32 bg-white dark:bg-[#0B123B] rounded-3xl shadow-2xl flex items-center justify-center border border-border-light  dark:border-primary/20 animate-bounce" style="animation-duration: 4s">
+              <Icon name="lucide:zap" class="text-primary w-12 h-12" />
+           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class='relative'>
-    
-    <Steps2
-      title='企业价值观'
-      subtitle='专业、创新、务实、高效'
-      items={[
-        {
-          title: '技术创新',
-          description: '持续投入研发，追求技术创新，为客户提供最先进的AI解决方案。',
-          icon: 'tabler:rocket',
-        },
-        {
-          title: '客户至上',
-          description: '深入理解客户需求，提供定制化服务，确保项目的落地效果。',
-          icon: 'tabler:heart',
-        },
-        {
-          title: '专业服务',
-          description: '专业的技术团队，全流程的服务支持，确保客户获得最佳服务体验。',
-          icon: 'tabler:shield-check',
-        },
-      ]}
-    />
-  </div>
-
-  <div class='relative'>
-    
-    <Steps2
-      title='发展成就'
-      subtitle='用专业技术服务创造价值'
-      isReversed={true}
-      callToAction={{
-        text: '回到主页',
-        href: '/',
-      }}
-      items={[
-        {
-          title: '技术创新',
-          description: '自主研发多项核心技术，持续推动行业创新发展。',
-          icon: 'tabler:globe',
-        },
-        {
-          title: '客户认可',
-          description: '获得众多知名企业的信赖与认可，建立长期合作关系。',
-          icon: 'tabler:message-star',
-        },
-        {
-          title: '服务能力',
-          description: '完善的服务体系，确保为客户提供最优质的解决方案。',
-          icon: 'tabler:award',
-        },
-      ]}
-    />
-  </div>
-
-  <div class='relative py-20'>
-    
-    <div class='relative mx-auto max-w-7xl px-4 sm:px-6'>
-      <div class='mb-12 text-center'>
-        <p class='mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent'>办公地点</p>
-        <h2 class='text-3xl font-bold tracking-tight text-default dark:text-white'>联系我们</h2>
+    <!-- Partners: Clean & Subtle (Consistent with Index Stats Bar) -->
+    <section class="py-0 border-y border-border-light  dark:border-primary/20">
+      <div class="max-w-7xl mx-auto px-6">
+          <Brands
+            title='合作伙伴'
+            images={[
+              {
+                src: tencentLogo,
+                alt: 'Tencent',
+              },
+              {
+                src: alibabaLogo,
+                alt: 'Alibaba',
+              },
+              {
+                src: huaweiLogo,
+                alt: 'Huawei',
+              },
+              {
+                src: ppioLogo,
+                alt: 'PPIO',
+              },
+              {
+                src: amazonLogo,
+                alt: 'Amazon',
+              },
+              {
+                src: cloudflareLogo,
+                alt: 'Cloudflare',
+              },
+              {
+                src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
+                alt: 'Microsoft',
+              },
+            ]}
+          />
       </div>
-      <div class='mx-auto max-w-2xl'>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento text-center p-8'>
-          <Icon name='tabler:map-pin' class='mx-auto mb-4 h-10 w-10 text-primary' />
-          <h3 class='mb-2 text-xl font-bold tracking-tight text-default dark:text-white'>上海总部</h3>
-          <p class='text-muted leading-relaxed'>上海市浦东新区临港自贸区水芸路55号港城广场二街坊1号楼8层802室</p>
-        </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <div class='relative pb-20'>
-    <div class='mx-auto max-w-7xl px-4 sm:px-6'>
-      <div class='grid grid-cols-1 gap-6 md:grid-cols-2'>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 0ms'>
-          <div class='flex items-center gap-4 mb-4'>
-            <div class='flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10'>
-              <Icon name='tabler:mail' class='h-6 w-6 text-primary' />
+    <!-- Core Technology: Bento Grid (Consistent with Index Product Matrix) -->
+    <section id="tech" class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="animate-on-scroll text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">全方位 AI 解决方案</h2>
+        <p class="text-muted text-lg max-w-2xl mx-auto font-medium">从底层数据到生产环境，打通 AI 落地的“最后一公里”。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {coreTech.map((t, i) => (
+          <div class="animate-on-scroll bento-card group" style={`transition-delay: ${i * 100}ms`}>
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+              <Icon name={t.icon} class="w-7 h-7" />
             </div>
-            <div>
-              <h3 class='text-lg font-bold tracking-tight text-default dark:text-white'>电子邮箱</h3>
-              <p class='text-muted'>developer@unisudo.com</p>
+            <h3 class="text-2xl font-bold mb-4 tracking-tight italic">{t.title}</h3>
+            <p class="text-muted text-sm leading-relaxed">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Values & Achievements: High Contrast Refactored Section -->
+    <section class="pb-32 pt-10 px-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Values -->
+        <div class="p-10 rounded-[2.5rem] bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 shadow-xl relative min-h-[450px] overflow-hidden flex flex-col justify-center">
+          <div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+          <div class="relative z-10">
+            <h2 class="text-3xl font-black italic mb-12 border-l-8 border-primary pl-6 text-slate-900 dark:text-white">
+              企业价值观
+            </h2>
+            <div class="space-y-10">
+              {values.map(v => (
+                <div class="flex gap-6 items-start group">
+                  <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                    <Icon name={v.icon} class="w-7 h-7" />
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">{v.title}</h3>
+                    <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">{v.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        <div class='intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade card-bento p-8' style='animation-delay: 100ms'>
-          <div class='flex items-center gap-4 mb-4'>
-            <div class='flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10'>
-              <Icon name='tabler:phone' class='h-6 w-6 text-primary' />
-            </div>
-            <div>
-              <h3 class='text-lg font-bold tracking-tight text-default dark:text-white'>电话咨询</h3>
-              <p class='text-muted'>16628597963</p>
-            </div>
+
+        <!-- Achievements -->
+        <div class="p-10 rounded-[2.5rem] bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 text-white shadow-2xl relative min-h-[450px] overflow-hidden flex flex-col justify-center">
+          <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-transparent opacity-50 pointer-events-none"></div>
+          <div class="relative z-10">
+             <h2 class="text-3xl font-black italic mb-12 border-l-8 border-primary pl-6 text-slate-900 dark:text-white">
+               发展成就
+             </h2>
+             <div class="space-y-10">
+                  {achievements.map(a => (
+                    <div class="flex gap-6 items-start group">
+                      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                        <Icon name={a.icon} class="w-7 h-7" />
+                      </div>
+                      <div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">{a.title}</h3>
+                        <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">{a.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <!-- Location Section: Practical & Visual -->
+    <section class="py-32 px-6 max-w-7xl mx-auto border-t border-border-light  dark:border-primary/20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-4 animate-on-scroll">
+           <h2 class="text-4xl font-bold tracking-tighter mb-8 italic">总部坐标</h2>
+           <div class="space-y-8">
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-primary mb-2">Office Address</h4>
+                <p class="text-lg font-bold leading-tight">
+                  上海市浦东新区临港自贸区水芸路 55 号港城广场二街坊 1 号楼 8 层 802 室
+                </p>
+              </div>
+              <div class="w-full h-px bg-border-light dark:bg-border-dark"></div>
+              <div class="flex flex-col gap-4">
+                 <div class="flex items-center gap-3 text-muted">
+                    <Icon name="lucide:mail" class="w-5 h-5 text-primary" />
+                    <span class="font-bold">developer@unisudo.com</span>
+                 </div>
+                 <div class="flex items-center gap-3 text-muted">
+                    <Icon name="lucide:phone" class="w-5 h-5 text-accent" />
+                    <span class="font-bold">+86 166 2859 7963</span>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="lg:col-span-8 animate-on-scroll">
+           <div class="rounded-[2.5rem] overflow-hidden border border-border-light  dark:border-primary/20 shadow-2xl relative grayscale hover:grayscale-0 transition-all duration-1000">
+              <img src="https://picsum.photos/seed/office/1200/600?blur=5" alt="Map" class="w-full aspect-video object-cover" />
+              <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+                 <div class="p-8 bg-white dark:bg-[#030620] rounded-2xl shadow-2xl border border-primary/20 flex flex-col items-center gap-4">
+                    <Icon name="lucide:map-pin" class="w-10 h-10 text-primary animate-bounce" />
+                    <span class="text-sm font-bold tracking-widest">VISIT US IN SHANGHAI</span>
+                 </div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="pb-24 text-center">
+       <a href="/" class="animate-on-scroll inline-flex items-center gap-4 group">
+          <span class="text-4xl font-black italic tracking-tighter group-hover:text-primary transition-colors">回到首页</span>
+          <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+             <Icon name="lucide:arrow-right" class="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+          </div>
+       </a>
+    </section>
+  </main>
 </Layout>

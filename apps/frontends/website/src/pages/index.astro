@@ -1,11 +1,153 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Hero from '@/components/widgets/Hero.astro';
-import Features from '@/components/widgets/Features.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-import Content from '@/components/widgets/Content.astro';
-import { getPermalink } from '@/utils/permalinks';
-import videoUrl from '@/assets/videos/a1.mp4';
+
+const products = [
+  {
+    id: "unichat",
+    title: "智能员工 (UniChat)",
+    tagline: "企业 AI 助手与客服",
+    desc: "打造具备企业私有知识库的智能对话机器人。支持 5 分钟极速上线，实时多轮对话，极大提升服务效率与响应质量。",
+    icon: "lucide:message-square",
+    color: "from-blue-500 to-indigo-600",
+    href: "/products/unichat/"
+  },
+  {
+    id: "a1",
+    title: "无代码 AI 中台 (A1)",
+    tagline: "企业数智化底座",
+    desc: "一站式无代码 AI 应用开发平台。通过拖拽即可构建复杂的 AI 工作流，兼容国内外主流大模型，快速赋能业务场景。",
+    icon: "lucide:cpu",
+    color: "from-purple-500 to-violet-600",
+    href: "https://a1.v7.unisudo.dev/"
+  },
+  {
+    id: "uniteach",
+    title: "AI 智能阅卷 (UniTeach)",
+    tagline: "教育行业深度审查",
+    desc: "专注于教育垂直领域的智能评估系统。支持多模态识别与个性化评语生成，让教学评估更客观、更高效。",
+    icon: "lucide:graduation-cap",
+    color: "from-orange-500 to-red-600",
+    href: "/products/uniteach/"
+  },
+  {
+    id: "unispeech",
+    title: "出海会议同传 (UniSpeech)",
+    tagline: "跨语言协作利器",
+    desc: "实时语音识别与同步口译。毫秒级低延迟，支持多语种互译，为企业出海业务提供无缝的沟通保障。",
+    icon: "lucide:languages",
+    color: "from-emerald-500 to-teal-600",
+    href: "/products/unispeech/"
+  },
+  {
+    id: "uniclause",
+    title: "智能合同审查 (UniClause)",
+    tagline: "可解释的风险控制",
+    desc: "基于 RAG 架构的合同深度分析平台。让每一份合同审查都有据可查，精准识别风险并生成修订建议。",
+    icon: "lucide:shield-check",
+    color: "from-indigo-500 to-purple-600",
+    href: "/products/uniclause/"
+  }
+];
+
+const stats = [
+  { label: "服务企业", value: "200+" },
+  { label: "平均提效", value: "75%" },
+  { label: "模型处理", value: "10B+" },
+  { label: "数据安全", value: "金融级" }
+];
+
+const coreCompetencies = [
+  {
+    title: '技术创新',
+    description: '突破传统架构限制，实现低成本、高效能的 AI 解决方案。',
+    icon: 'lucide:rocket',
+  },
+  {
+    title: '场景理解',
+    description: '深度理解垂直领域需求，提供精准的行业解决方案。',
+    icon: 'lucide:component',
+  },
+  {
+    title: '成本优势',
+    description: '通过创新技术架构大幅降低部署和运营成本。',
+    icon: 'lucide:coins',
+  },
+  {
+    title: '生态完整',
+    description: '自主研发全流程技术链，提供一站式服务能力。',
+    icon: 'lucide:layers',
+  },
+];
+
+const solutions = [
+  {
+    title: "流式可打断对话系统",
+    subtitle: "为您的业务提供更智能、更流畅的对话体验。",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop",
+    items: [
+      "业界领先的实时交互能力",
+      "智能化的对话路径重构",
+      "支持多场景知识库实时问答",
+      "丝滑的用户交互体验"
+    ]
+  },
+  {
+    title: "智能硬件解决方案",
+    subtitle: "我们提供多种智能硬件解决方案，满足您的业务需求。",
+    image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=2194&auto=format&fit=crop",
+    items: [
+      "支持本地化低成本部署",
+      "灵活对接各类模型",
+      "支持私有模型训练与优化",
+      "适配商用及工业场景"
+    ]
+  },
+  {
+    title: "云原生工作流平台",
+    subtitle: "为您的企业自动化提供全流程支持，让您专注于核心业务。",
+    image: "https://images.unsplash.com/photo-1611462985358-60d3498e0364?q=80&w=2070&auto=format&fit=crop",
+    items: [
+      "完整的商用级部署能力",
+      "强大的 Function Call 支持",
+      "灵活的本地部署方案",
+      "开放的 API 生态系统"
+    ]
+  }
+];
+
+const scenarios = [
+  {
+    title: '数字人展厅',
+    description: ['银行智能网点数字员工', '博物馆虚拟讲解员', '企业展厅互动导购', '商场数字导购助手'],
+    icon: 'lucide:user',
+  },
+  {
+    title: '数据服务',
+    description: ['AI 训练数据标注', '多模态数据处理', '数据清洗与增强', '数据质量评估体系'],
+    icon: 'lucide:database',
+  },
+  {
+    title: '模型训练',
+    description: ['大模型微调训练', '垂直领域模型开发', '多模态模型部署', '模型性能优化'],
+    icon: 'lucide:brain',
+  },
+  {
+    title: '智能客服',
+    description: ['金融服务智能问答', '电商客服机器人', '多轮对话管理', '情感识别服务'],
+    icon: 'lucide:headset',
+  },
+  {
+    title: '企业数智化',
+    description: ['智能人才筛选', '企业培训助手', '办公自动化平台', '辅助决策系统'],
+    icon: 'lucide:building',
+  },
+  {
+    title: '行业解决方案',
+    description: ['教育培训数字化', '医疗健康智能诊疗', '金融风控分析', '零售智能化升级'],
+    icon: 'lucide:bar-chart-3',
+  },
+];
 
 const metadata = {
   title: '上海智独数科技有限公司 — 赋能SUDO权限的独特AI解决方案',
@@ -14,303 +156,207 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget -->
+  <!-- Dynamic Background -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
+  </div>
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: '联系我们',
-        href: getPermalink('/contact'),
-      },
-      { text: '公司简介', href: getPermalink('/about') },
-    ]}
-  >
-    <Fragment slot='video'>
-      <video
-        src={videoUrl}
-        autoplay
-        muted
-        loop
-        playsinline
-        style={{ borderRadius: '16px', width: '100%', maxWidth: '900px', height: 'auto' }}
-      />
-    </Fragment>
+  <main class="relative z-10">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center relative overflow-hidden">
+      <div class="animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+          SUDO 权限 · 独特 AI 解决方案
+        </span>
+      </div>
+      <div class="animate-on-scroll" style="transition-delay: 100ms">
+        <h1 class="text-5xl md:text-7xl font-black mb-8 leading-[1.1] tracking-tighter max-w-5xl">
+          赋能 SUDO 权限的 <br />
+          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">独特 AI 解决方案</span>
+        </h1>
+      </div>
+      <div class="animate-on-scroll" style="transition-delay: 200ms">
+        <p class="text-xl text-muted max-w-3xl mx-auto mb-10 leading-relaxed font-medium">
+          <span class="font-bold text-primary block mb-2 md:inline md:mb-0">上海智独数科技有限公司</span>
+          致力于打造高效能、低成本的 AI 解决方案。通过创新的模型架构和全流程技术支持，我们帮助企业以远低于传统方案的成本实现 AI 的精准落地。
+        </p>
+      </div>
+      <div class="animate-on-scroll" style="transition-delay: 300ms">
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="/contact/">
+            <button class="btn-primary text-lg px-8 py-4">
+              联系我们
+            </button>
+          </a>
+          <a href="/about/" class="px-8 py-4 rounded-full border border-gray-200  dark:border-primary/20 font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+            公司简介
+          </a>
+        </div>
+      </div>
 
-    <Fragment slot='title'>
-      赋能SUDO权限的
-      <span class='text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent dark:text-white'>独特AI解决方案</span>
-    </Fragment>
+      <!-- Stats Bar -->
+      <div class="animate-on-scroll mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-20" style="transition-delay: 400ms">
+        {stats.map(s => (
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold mb-1 tracking-tight">{s.value}</div>
+            <div class="text-xs text-muted font-bold uppercase tracking-widest">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
 
-    <Fragment slot='subtitle'>
-      <span class='hidden sm:inline'><span class='font-semibold'>上海智独数科技有限公司</span></span>
-      <span class='mb-2 block font-bold text-blue-600 sm:hidden'>上海智独数科技有限公司</span>
-      致力于打造高效能、低成本的AI解决方案，以研发能力作为市场核心竞争力。通过创新的模型架构和全流程技术支持，我们帮助企业以远低于传统方案的成本实现AI的精准落地。
-    </Fragment>
-  </Hero>
+    <!-- Core Competency Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto border-t border-gray-100  dark:border-primary/20">
+      <div class="animate-on-scroll text-center mb-20">
+        <span class="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Core Competency</span>
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-6">业内专家 + 创新思维 + 技术研发</h2>
+        <p class="text-muted text-lg max-w-3xl mx-auto">
+          上海智独数科技持续深化技术创新，专注于为企业提供更高效、更经济的 AI 落地方案。
+        </p>
+      </div>
 
-  <!-- Features Widget -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {coreCompetencies.map((c, i) => (
+          <div class="animate-on-scroll p-8 rounded-3xl bg-white dark:bg-[#030620] border border-gray-100  dark:border-primary/20 group hover:border-primary/50 transition-all duration-500" style={`transition-delay: ${i * 100}ms`}>
+            <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+              <Icon name={c.icon} class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold mb-4">{c.title}</h3>
+            <p class="text-sm text-muted leading-relaxed">{c.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-  <Features
-    id='features'
-    tagline='核心竞争力'
-    title='业内专家 + 创新思维 + 新技术研发能力'
-    subtitle='上海智独数科技将持续深化技术创新，专注于为企业提供更高效、更经济的AI落地方案。我们期待与更多行业领先企业合作，共同推动AI技术在各垂直领域的深度应用。'
-    items={[
-      {
-        title: '技术创新',
-        description: '突破传统架构限制，实现低成本、高效能的AI解决方案。',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: '场景理解',
-        description: '深度理解垂直领域需求，提供精准的行业解决方案。',
-        icon: 'tabler:components',
-      },
-      {
-        title: '成本优势',
-        description: '通过创新技术架构大幅降低部署和运营成本。',
-        icon: 'tabler:coin',
-      },
-      {
-        title: '生态完整',
-        description: '自主研发全流程技术链，提供一站式服务能力。',
-        icon: 'tabler:stack-2',
-      },
-    ]}
-  />
+    <!-- Solutions Showcase Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto bg-surface-light dark:bg-surface-dark/30 rounded-[3rem] overflow-hidden border border-gray-100  dark:border-primary/20">
+      <div class="animate-on-scroll text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">满足您对 AI 的全部需求</h2>
+        <p class="text-muted text-lg">矩阵式产品体系，助力企业全生命周期数智化转型</p>
+      </div>
 
-  <!-- Content Widget -->
+      <div class="space-y-32">
+        {solutions.map((s, i) => (
+          <div class={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center lg:items-start`}>
+            <div class="animate-on-scroll lg:w-1/2" style={`transition-delay: ${i * 100}ms`}>
+              <div class="relative group">
+                <div class="absolute inset-0 bg-primary/20 blur-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
+                <img 
+                  src={s.image} 
+                  alt={s.title} 
+                  referrerpolicy="no-referrer"
+                  class="rounded-3xl shadow-2xl border border-gray-100  dark:border-primary/20 w-full object-cover aspect-[4/3]" 
+                />
+              </div>
+            </div>
+            <div class="animate-on-scroll lg:w-1/2" style={`transition-delay: ${(i * 100) + 100}ms`}>
+              <h3 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight italic">{s.title}</h3>
+              <p class="text-xl text-muted mb-10 leading-relaxed font-medium">{s.subtitle}</p>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {s.items.map(item => (
+                  <li class="flex items-center gap-3 p-4 bg-white dark:bg-white/5 rounded-2xl border border-gray-100  dark:border-primary/20 text-sm font-medium">
+                    <Icon name="lucide:check-circle-2" class="text-primary w-5 h-5 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
-  <Content
-    isReversed
-    tagline='产品体系'
-    title='满足您对AI的全部需求'
-    items={[
-      {
-        title: '业界领先的实时交互能力',
-        description: '支持多轮对话、上下文理解、意图识别、知识库问答等复杂交互场景。',
-      },
-      {
-        title: '智能化的对话路径重构',
-        description: '通过智能路径重构，实现更高效、更智能的对话体验。',
-      },
-      {
-        title: '支持多场景知识库实时问答',
-        description: '支持多种场景下的知识库实时问答，满足不同业务需求。',
-      },
-      {
-        title: '丝滑的用户交互体验',
-        description: '为用户提供流畅、自然的对话体验。',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'AI对话系统',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-4 text-2xl font-bold tracking-tight text-default dark:text-white sm:text-3xl'>流式可打断对话系统</h3>
-      <p class='text-muted leading-relaxed'>为您的业务提供更智能、更流畅的对话体验。</p>
-    </Fragment>
+    <!-- AI Application Scenarios -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="animate-on-scroll text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">AI 应用场景</h2>
+        <p class="text-muted text-lg">赋能智造、交通、客服、企业服务等多个垂直领域</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {scenarios.map((s, i) => (
+          <div class="animate-on-scroll bento-card flex flex-col group" style={`transition-delay: ${i * 100}ms`}>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                <Icon name={s.icon} class="w-6 h-6" />
+              </div>
+              <h3 class="text-xl font-bold">{s.title}</h3>
+            </div>
+            <ul class="space-y-3">
+              {s.description.map(item => (
+                <li class="text-sm text-muted flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-primary/30 rounded-full"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
 
-    <Fragment slot='bg'>
-          </Fragment>
-  </Content>
+    <!-- Product Matrix Section -->
+    <section id="products" class="py-32 px-6 max-w-7xl mx-auto border-t border-gray-100  dark:border-primary/20">
+      <div class="animate-on-scroll mb-20 text-center">
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">产品矩阵</h2>
+        <p class="text-muted text-lg max-w-2xl mx-auto">针对特定痛点打造的高端 AI 产品线。</p>
+      </div>
 
-  <!-- Content Widget -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {products.map((p, i) => (
+          <a href={p.href} class="animate-on-scroll group block" style={`transition-delay: ${i * 100}ms`}>
+            <div class="bento-card h-full flex flex-col p-8 group-hover:border-primary/50 transition-all duration-500 overflow-hidden relative">
+              <div class={`absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br ${p.color} opacity-[0.03] group-hover:opacity-10 rounded-full blur-3xl transition-opacity duration-700`}></div>
+              <div class={`w-14 h-14 rounded-2xl bg-gradient-to-br ${p.color} flex items-center justify-center text-white mb-8 shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+                <Icon name={p.icon} class="w-7 h-7" />
+              </div>
+              <div class="flex-grow">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-bold uppercase tracking-widest text-primary opacity-70">{p.tagline}</span>
+                  <Icon name="lucide:arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                </div>
+                <h3 class="text-2xl font-bold mb-4 tracking-tight">{p.title}</h3>
+                <p class="text-muted leading-relaxed text-sm">{p.desc}</p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
 
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: '支持本地化低成本部署',
-        description: '支持部署在私有化服务器上，节约费用的同时保障数据安全。',
-      },
-      {
-        title: '灵活对接各类模型',
-        description: '可对接多种模型，满足不同业务需求。',
-      },
-      {
-        title: '支持私有模型训练与优化',
-        description: '支持私有模型训练与优化，定制专属模型。',
-      },
-      {
-        title: '适配商用及工业场景',
-        description: '适配商用及工业场景，满足专业需求。',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: '智能硬件',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-4 text-2xl font-bold tracking-tight text-default dark:text-white sm:text-3xl'>智能硬件解决方案</h3>
-      <p class='text-muted leading-relaxed'>我们提供多种智能硬件解决方案，满足您的业务需求。</p>
-    </Fragment>
-
-    <Fragment slot='bg'>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: '完整的商用级部署能力',
-        description: '支持云端部署，提供完整的商用级部署能力。',
-      },
-      {
-        title: '强大的Function Call功能支持',
-        description: '支持Function Call，实现更智能、更灵活的对话体验。',
-      },
-      {
-        title: '灵活的本地部署方案',
-        description: '支持私有化部署，满足数据安全需求。',
-      },
-      {
-        title: '开放的API生态系统',
-        description: '支持API对接，扩展性强。',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: '云原生平台',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-4 text-2xl font-bold tracking-tight text-default dark:text-white sm:text-3xl'>云原生工作流平台</h3>
-      <p class='text-muted leading-relaxed'>为您的企业自动化提供全流程支持，让您专注于核心业务。</p>
-    </Fragment>
-
-    <Fragment slot='bg'>
-          </Fragment>
-  </Content>
-
-  <!-- Content Widget -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: '服务多家知名车企',
-        description: '服务多家知名车企，提供专业的数据标注解决方案。',
-      },
-      {
-        title: '支持自动驾驶数据处理',
-        description: '支持自动驾驶数据处理，为智能驾驶提供专业的数据标注解决方案。',
-      },
-      {
-        title: '低空飞行场景数据标注',
-        description: '支持低空飞行场景数据标注，为无人机提供专业的数据标注解决方案。',
-      },
-      {
-        title: '多模态数据处理能力',
-        description: '支持多种模态数据处理，满足多元化需求。',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: '数据标注',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-4 text-2xl font-bold tracking-tight text-default dark:text-white sm:text-3xl'>专业数据标注平台</h3>
-      <p class='text-muted leading-relaxed'>我们提供专业的数据标注解决方案，满足您的业务需求。</p>
-    </Fragment>
-
-    <Fragment slot='bg'>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: '低代码开发环境',
-        description: '快速构建AI应用，降低开发门槛。',
-      },
-      {
-        title: '智能化数据处理',
-        description: '自动化数据清洗与预处理，提升数据质量。',
-      },
-      {
-        title: '可视化分析工具',
-        description: '直观的数据可视化，帮助业务决策。',
-      },
-      {
-        title: '深度洞察能力',
-        description: 'AI驱动的深度数据分析，挖掘业务价值。',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: '数据分析平台',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-4 text-2xl font-bold tracking-tight text-default dark:text-white sm:text-3xl'>AI数据分析平台</h3>
-      <p class='text-muted leading-relaxed'>矩阵式数据分析平台，支持多维度数据分析，提供深度洞察能力。</p>
-    </Fragment>
-
-    <Fragment slot='bg'>
-          </Fragment>
-  </Content>
-
-  <!-- Features2 Widget -->
-
-  <Features2
-    title='AI应用场景'
-    subtitle='AI赋能智能制造、智能交通、智能客服、企业服务等多个领域'
-    tagline=''
-    items={[
-      {
-        title: '数字人展厅',
-        description:
-          '<ul class="space-y-2 text-sm"><li>银行智能网点数字员工</li><li>博物馆虚拟讲解员</li><li>企业展厅互动导购</li><li>商场数字导购助手</li><li>教育培训数字讲师</li><li>企业形象数字代言人</li></ul>',
-        icon: 'tabler:user',
-      },
-      {
-        title: '数据服务',
-        description:
-          '<ul class="space-y-2 text-sm"><li>AI训练数据标注</li><li>多模态数据处理</li><li>数据清洗与增强</li><li>专业领域数据集构建</li><li>数据质量评估体系</li><li>隐私数据保护方案</li></ul>',
-        icon: 'tabler:database',
-      },
-      {
-        title: '模型训练',
-        description:
-          '<ul class="space-y-2 text-sm"><li>大语言模型微调训练</li><li>垂直领域模型开发</li><li>多模态模型训练部署</li><li>模型性能优化服务</li><li>小样本学习解决方案</li><li>增量学习系统搭建</li></ul>',
-        icon: 'tabler:brain',
-      },
-
-      {
-        title: '智能客服',
-        description:
-          '<ul class="space-y-2 text-sm"><li>金融服务智能问答系统</li><li>电商全流程客服机器人</li><li>政务服务智能助手</li><li>企业知识库智能检索</li><li>多轮对话管理系统</li><li>情感识别与回应服务</li></ul>',
-        icon: 'tabler:headset',
-      },
-      {
-        title: '企业数智化',
-        description:
-          '<ul class="space-y-2 text-sm"><li>智能人才筛选系统</li><li>企业培训数字助手</li><li>智能办公自动化平台</li><li>数据分析决策系统</li><li>企业知识沉淀平台</li><li>智能会议助手系统</li></ul>',
-        icon: 'tabler:building',
-      },
-      {
-        title: '行业解决方案',
-        description:
-          '<ul class="space-y-2 text-sm"><li>教育培训数字化转型</li><li>医疗健康智能诊疗</li><li>金融风控智能分析</li><li>零售智能化升级</li><li>智慧城市数据平台</li><li>文旅行业数字服务</li></ul>',
-        icon: 'tabler:chart-bar',
-      },
-    ]}
-  >
-    <Fragment slot='bg'>
-    </Fragment>
-  </Features2>
+    <!-- Unified Experience Block -->
+    <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
+      <div class="animate-on-scroll bento-card border-none bg-gradient-to-br from-indigo-900 to-purple-900 text-white p-12 md:p-20 overflow-hidden relative">
+        <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/tech/1920/1080?blur=10')] opacity-20 mix-blend-overlay"></div>
+        <div class="relative z-10 max-w-2xl">
+          <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-8 italic">让 AI 真正深入业务场景</h2>
+          <p class="text-lg text-white/80 mb-10 leading-relaxed font-medium">
+            我们不只是提供工具，更是提供深度集成、安全合规、可落地的业务智能化路径。
+            无论是私有化部署还是云端协同，UniSudo 都是您最可靠的 AI 合作伙伴。
+          </p>
+          <div class="flex gap-4">
+            <button class="bg-white text-indigo-900 px-8 py-3 rounded-full font-bold hover:bg-neutral-100 transition-colors">联系我们咨询</button>
+            <button class="bg-white/10 text-white px-8 py-3 rounded-full font-bold backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors">解决方案概览</button>
+          </div>
+        </div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-[40%] h-[80%] hidden lg:block opacity-40">
+           <div class="w-full h-full border-[20px] border-white/10 rounded-full animate-spin" style="animation-duration: 20s"></div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  :global(.dark) .glass {
+    background: rgba(3, 6, 32, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+</style>

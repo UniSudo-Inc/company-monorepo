@@ -1,342 +1,260 @@
 ---
-import { slide } from 'astro:transitions';
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Hero from '@/components/widgets/Hero.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-import Features from '@/components/widgets/Features.astro';
 
 const metadata = {
   title: '发展路线 - 上海智独数科技有限公司',
-  ignoreTitleTemplate: true,
 };
+
+const roadmapData = [
+  {
+    year: '2024',
+    theme: '技术奠基',
+    color: 'from-violet-600 to-indigo-600',
+    events: [
+      {
+        quarter: 'Q1 创新启航',
+        items: [
+          '3月，上海智独数科技有限公司创始成员碰撞出创新框架',
+          '完成流式可打断对话系统理论突破，实现50倍实时率',
+          '发布首个技术验证原型，验证技术可行性'
+        ],
+        side: 'left',
+        icon: 'lucide:rocket'
+      },
+      {
+        quarter: 'Q2-Q3 核心技术突破',
+        items: [
+          '完成 TTS 核心技术研发，实现关键性能指标',
+          '搭建云原生平台框架，完成基础架构部署',
+          '开展核心算法优化，建立技术壁垒'
+        ],
+        side: 'right',
+        icon: 'lucide:brain'
+      },
+      {
+        quarter: 'Q4 产品矩阵起航',
+        items: [
+          '发布流式可打断对话系统 1.0 版本',
+          '推出智能硬件解决方案初代产品',
+          '完成 AI 工作流平台基础版开发',
+          '启动数据标注平台和 AI 分析平台研发'
+        ],
+        side: 'left',
+        icon: 'lucide:layout-grid'
+      }
+    ]
+  },
+  {
+    year: '2025',
+    theme: '场景深耕',
+    color: 'from-fuchsia-600 to-purple-600',
+    events: [
+      {
+        quarter: 'H1 垂直领域突破',
+        items: [
+          '推出面向制造业的数字员工解决方案',
+          '完成自动驾驶场景数据处理平台',
+          '发布企业级知识库智能问答系统'
+        ],
+        side: 'right',
+        icon: 'lucide:target'
+      },
+      {
+        quarter: 'H2 技术升级与场景扩展',
+        items: [
+          '优化小型模型训练框架，降低 50% 计算资源消耗',
+          '拓展低空飞行、智能电网等新兴领域',
+          '建立产品生态联动机制'
+        ],
+        side: 'left',
+        icon: 'lucide:zap'
+      }
+    ]
+  },
+  {
+    year: '2026',
+    theme: '规模化商用',
+    color: 'from-blue-600 to-cyan-600',
+    events: [
+      {
+        quarter: 'H1 产品成熟与市场拓展',
+        items: [
+          '发布全线产品 2.0 版本',
+          '打造行业标杆案例',
+          '建立渠道合作体系'
+        ],
+        side: 'right',
+        icon: 'lucide:shield-check'
+      },
+      {
+        quarter: 'H2 技术创新与商业突破',
+        items: [
+          '推出革命性的轻量级 AI 引擎',
+          '实现规模化商业落地',
+          '探索消费级产品布局'
+        ],
+        side: 'left',
+        icon: 'lucide:globe'
+      }
+    ]
+  }
+];
+
+const milestones = [
+  {
+    title: '技术创新',
+    desc: '创新框架突破，建立技术壁垒；轻量化 AI 引擎研发成功；多场景适配能力实现。',
+    icon: 'lucide:lightbulb',
+    color: 'bg-yellow-500/10 text-yellow-500'
+  },
+  {
+    title: '产品体系',
+    desc: '完成 "5+X" 产品矩阵搭建；建立产品协同生态；实现场景化深度应用。',
+    icon: 'lucide:layers',
+    color: 'bg-blue-500/10 text-blue-500'
+  },
+  {
+    title: '商业发展',
+    desc: '确立技术驱动的商业模式；打造标杆解决方案；构建完整商业生态。',
+    icon: 'lucide:trending-up',
+    color: 'bg-emerald-500/10 text-emerald-500'
+  }
+];
 ---
 
 <Layout metadata={metadata}>
-  <Hero>
-    <Fragment slot='title'>
-      智独数科技
-      <span class='animate-pulse text-blue-600 dark:text-blue-400'>发展蓝图</span>
-    </Fragment>
+  <main class="relative z-10 pt-0">
+    <!-- Hero Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto text-center">
+      <div class="animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+          ROADMAP · 发展路线 
+        </span>
+        <br />
+        <Fragment slot='title'>
+          <span class="text-5xl md:text-6xl dark:text-white/80 text-black/80 tracking-tighter italic">智独数科技 </span>
+          <span class='text-5xl md:text-6xl animate-pulse text-primary dark:text-primary font-black tracking-tighter italic'>发展蓝图</span>
+        </Fragment>
+        <!-- <h1 class="text-5xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9] italic">
+          <span class="gradient-text">核心发展蓝图</span>
+        </h1> -->
+        <p class="text-xl mt-6 text-muted max-w-2xl mx-auto font-medium leading-relaxed">
+          从技术创新到商业落地，我们规划了清晰的发展路径，致力于成为 AI 基础设施的创新者。
+        </p>
+      </div>
+    </section>
 
-    <Fragment slot='subtitle'>
-      从技术创新到商业落地，我们规划了清晰的发展路径，致力于成为AI基础设施的创新者。
-    </Fragment>
-  </Hero>
+    <!-- Interactive Timeline -->
+    <section class="py-20 px-6 relative max-w-7xl mx-auto overflow-hidden">
+      <!-- Center Line -->
+      <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200 dark:via-gray-800 to-transparent lg:block"></div>
 
-  <!-- Animated Timeline Section -->
-  <div class='mx-auto max-w-6xl px-4 py-12'>
-    <div class='relative'>
-      <!-- 垂直时间线 -->
-      <div
-        class='timeline-line absolute left-1/2 h-full w-1 -translate-x-1/2 transform bg-gradient-to-b from-blue-600 to-blue-200'
-      >
+      {roadmapData.map((yearSection) => (
+        <div class="mb-32 relative">
+          <!-- Year Marker -->
+          <div class="flex justify-center mb-20 animate-on-scroll">
+            <div class={`px-8 py-3 rounded-full bg-gradient-to-r ${yearSection.color} text-white shadow-xl shadow-primary/20 transform -rotate-2`}>
+              <span class="text-3xl font-black italic tracking-tighter">{yearSection.year}</span>
+              <span class="ml-4 text-sm font-bold opacity-80 uppercase tracking-widest">{yearSection.theme}</span>
+            </div>
+          </div>
+
+          <!-- Events -->
+          <div class="space-y-24">
+            {yearSection.events.map((event) => (
+              <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Connector Dot (Desktop) */}
+                <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white dark:bg-[#030620] border-4 border-primary z-10 hidden lg:block"></div>
+
+                <div class={`${event.side === 'right' ? 'lg:order-2' : ''} animate-on-scroll ${event.side === 'right' ? 'animate-right' : 'animate-left'}`}>
+                  <div class="bento-card relative group overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                       <Icon name={event.icon} class="w-32 h-32" />
+                    </div>
+                    <div class="relative z-10">
+                      <div class="flex items-center gap-4 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                          <Icon name={event.icon} class="w-5 h-5" />
+                        </div>
+                        <h3 class="text-2xl font-black italic tracking-tighter">{event.quarter}</h3>
+                      </div>
+                      <ul class="space-y-4">
+                        {event.items.map(item => (
+                          <li class="flex gap-3 text-sm text-muted group/li transition-colors hover:text-black dark:hover:text-white">
+                            <span class="text-primary mt-1 font-black">/</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Empty spacer for alignment */}
+                <div class="hidden lg:block"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- Core Milestones -->
+    <section class="py-32 px-6 max-w-7xl mx-auto bg-surface-light dark:bg-surface-dark/30 rounded-[4rem] border border-gray-200 dark:border-gray-800 mb-32 relative overflow-hidden">
+      <div class="absolute inset-0 bg-primary/5 -z-10 blur-[100px]"></div>
+      <div class="animate-on-scroll text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic mb-4">核心里程碑</h2>
+        <p class="text-muted text-lg max-w-2xl mx-auto font-medium">三大维度全面突破，构建科技与商业的闭环。</p>
       </div>
 
-      <!-- 2024 Section -->
-      <div class='timeline-section mb-24' transition:animate={slide({ duration: '1s' })}>
-        <div class='mb-8 flex justify-center'>
-          <h2 class='timeline-year rounded-full bg-blue-600 px-8 py-2 text-3xl font-bold text-white'>2024 技术奠基</h2>
-        </div>
-
-        <div class='grid gap-8'>
-          {/* Q1 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1 text-right'>
-                <h3 class='mb-2 text-xl font-bold'>Q1 创新启航</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>• 3月，上海智独数科技有限公司创始成员碰撞出创新框架</li>
-                  <li class='timeline-event'>• 完成流式可打断对话系统理论突破，实现50倍实时率</li>
-                  <li class='timeline-event'>• 发布首个技术验证原型，验证技术可行性</li>
-                </ul>
-              </div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-600'></div>
-              <div class='flex-1'></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {milestones.map((m, i) => (
+          <div class="animate-on-scroll bento-card border-none bg-white/50 dark:bg-white/5" style={`transition-delay: ${i * 100}ms`}>
+            <div class={`w-14 h-14 rounded-2xl ${m.color} flex items-center justify-center mb-8`}>
+              <Icon name={m.icon} class="w-7 h-7" />
             </div>
+            <h3 class="text-2xl font-black italic tracking-tight mb-4">{m.title}</h3>
+            <p class="text-sm text-muted leading-relaxed whitespace-pre-line">{m.desc}</p>
           </div>
+        ))}
+      </div>
+    </section>
 
-          {/* Q2-Q3 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1'></div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-500'></div>
-              <div class='flex-1'>
-                <h3 class='mb-2 text-xl font-bold'>Q2-Q3 核心技术突破</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>• 完成TTS核心技术研发，实现关键性能指标</li>
-                  <li class='timeline-event'>• 搭建云原生平台框架，完成基础架构部署</li>
-                  <li class='timeline-event'>• 开展核心算法优化，建立技术壁垒</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Q4 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1 text-right'>
-                <h3 class='mb-2 text-xl font-bold'>Q4 产品矩阵起航</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>• 发布流式可打断对话系统1.0版本</li>
-                  <li class='timeline-event'>• 推出智能硬件解决方案初代产品</li>
-                  <li class='timeline-event'>• 完成AI工作流平台基础版开发</li>
-                  <li class='timeline-event'>• 启动数据标注平台和AI分析平台研发</li>
-                </ul>
-              </div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-400'></div>
-              <div class='flex-1'></div>
-            </div>
-          </div>
-        </div>
+    <!-- Future Vision -->
+    <section class="py-32 px-6 max-w-7xl mx-auto text-center border-t border-gray-200 dark:border-gray-800">
+      <div class="animate-on-scroll mb-16">
+        <h2 class="text-5xl md:text-7xl font-black tracking-tighter italic mb-8">未来展望</h2>
+        <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed">
+          上海智独数科技从创新理念的火花，到核心技术的突破，再到完整产品体系的构建，始终坚持以技术创新为核心驱动力。我们将持续深耕垂直场景，用创新科技为传统产业赋能，让 AI 技术真正服务于产业升级。
+        </p>
       </div>
 
-      <!-- 2025 Section -->
-      <div class='timeline-section mb-24'>
-        <div class='mb-8 flex justify-center'>
-          <h2 class='timeline-year rounded-full bg-blue-600 px-8 py-2 text-3xl font-bold text-white'>2025 场景深耕</h2>
-        </div>
-
-        <div class='grid gap-8'>
-          {/* H1 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1'></div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-500'></div>
-              <div class='flex-1'>
-                <h3 class='mb-2 text-xl font-bold'>H1 垂直领域突破</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>• 推出面向制造业的数字员工解决方案</li>
-                  <li class='timeline-event'>• 完成自动驾驶场景数据处理平台</li>
-                  <li class='timeline-event'>• 发布企业级知识库智能问答系统</li>
-                </ul>
-              </div>
-            </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {[
+          { title: 'AI 基础设施创新者', icon: 'lucide:lightbulb' },
+          { title: '场景化 AI 应用引领', icon: 'lucide:layers' },
+          { title: '推动 AI 技术普惠', icon: 'lucide:heart-handshake' },
+          { title: '打造开放技术生态', icon: 'lucide:code' }
+        ].map((item, i) => (
+          <div class="animate-on-scroll p-8 rounded-3xl border border-gray-200 dark:border-gray-800 hover:border-primary transition-colors group" style={`transition-delay: ${i * 50}ms`}>
+            <Icon name={item.icon} class="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <span class="text-sm font-bold tracking-tight">{item.title}</span>
           </div>
-
-          {/* H2 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1 text-right'>
-                <h3 class='mb-2 text-xl font-bold'>H2 技术升级与场景扩展</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>• 优化小型模型训练框架，降低50%计算资源消耗</li>
-                  <li class='timeline-event'>• 拓展低空飞行、智能电网等新兴领域</li>
-                  <li class='timeline-event'>• 建立产品生态联动机制</li>
-                </ul>
-              </div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-400'></div>
-              <div class='flex-1'></div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+    </section>
+  </main>
 
-      <!-- 2026 Section -->
-      <div class='timeline-section mb-24'>
-        <div class='mb-8 flex justify-center'>
-          <h2 class='timeline-year rounded-full bg-blue-600 px-8 py-2 text-3xl font-bold text-white'>
-            2026 规模化商用
-          </h2>
-        </div>
-
-        <div class='grid gap-8'>
-          {/* H1 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1'></div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-500'></div>
-              <div class='flex-1'>
-                <h3 class='mb-2 text-xl font-bold'>H1 产品成熟与市场拓展</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>• 发布全线产品2.0版本</li>
-                  <li class='timeline-event'>• 打造行业标杆案例</li>
-                  <li class='timeline-event'>• 建立渠道合作体系</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* H2 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1 text-right'>
-                <h3 class='mb-2 text-xl font-bold'>H2 技术创新与商业突破</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>• 推出革命性的轻量级AI引擎</li>
-                  <li class='timeline-event'>• 实现规模化商业落地</li>
-                  <li class='timeline-event'>• 探索消费级产品布局</li>
-                </ul>
-              </div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-400'></div>
-              <div class='flex-1'></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Core Milestones -->
-  <Features2
-    title='核心里程碑'
-    subtitle='三大维度全面突破'
-    items={[
-      {
-        title: '技术创新',
-        description: `
-          • 创新框架突破，建立技术壁垒
-          • 轻量化AI引擎研发成功
-          • 多场景适配能力实现
-        `,
-        icon: 'tabler:bulb',
-      },
-      {
-        title: '产品体系',
-        description: `
-          • 完成"5+X"产品矩阵搭建
-          • 建立产品协同生态
-          • 实现场景化深度应用
-        `,
-        icon: 'tabler:stack',
-      },
-      {
-        title: '商业发展',
-        description: `
-          • 确立技术驱动的商业模式
-          • 打造标杆解决方案
-          • 构建完整商业生态
-        `,
-        icon: 'tabler:chart-dots',
-      },
-    ]}
-  >
-    <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
-  </Features2>
-
-  <!-- Future Vision -->
-  <Features
-    tagline='愿景'
-    title='未来展望'
-    subtitle='上海智独数科技从创新理念的火花，到核心技术的突破，再到完整产品体系的构建，始终坚持以技术创新为核心驱动力。我们将持续深耕垂直场景，用创新科技为传统产业赋能，让AI技术真正服务于产业升级。'
-    classes={{ container: 'text-center' }}
-    columns={2}
-    items={[
-      {
-        title: '成为AI基础设施创新者',
-        icon: 'tabler:bulb',
-      },
-      {
-        title: '引领场景化AI应用发展',
-        icon: 'tabler:stack',
-      },
-      {
-        title: '推动AI技术普惠落地',
-        icon: 'tabler:chart-dots',
-      },
-      {
-        title: '打造开放技术生态',
-        icon: 'tabler:code',
-      },
-    ]}
-  />
-
-  <style>
-    .timeline-line {
-      transform: scaleY(0);
-      animation: growLine 2s ease forwards;
-      transform-origin: top;
-    }
-
-    .timeline-section {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease forwards;
-    }
-
-    .timeline-year {
-      transform: scale(0.9);
-      animation: scaleIn 0.5s ease forwards;
-    }
-
-    .timeline-dot {
-      transform: scale(0);
-      animation: popIn 0.3s ease forwards;
-    }
-
-    .timeline-item {
-      transition: all 0.3s ease;
-    }
-
-    .timeline-event {
-      opacity: 0;
-      animation: slideIn 0.5s ease forwards;
-      animation-delay: calc(var(--index) * 0.1s);
-    }
-
-    @keyframes growLine {
-      to {
-        transform: scaleY(1);
-      }
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes scaleIn {
-      to {
-        transform: scale(1);
-      }
-    }
-
-    @keyframes popIn {
-      50% {
-        transform: scale(1.2);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-  </style>
-
-  <script>
-    const observerOptions = {
-      root: null,
-      threshold: 0.1,
-      rootMargin: '-50px',
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          entry.target.style.setProperty('--index', index.toString());
-          entry.target.classList.add('in-view');
-
-          // 为每个事件项添加序列动画
-          const events = entry.target.querySelectorAll('.timeline-event');
-          events.forEach((event, eventIndex) => {
-            event.style.setProperty('--index', eventIndex.toString());
-          });
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.timeline-item').forEach((item) => observer.observe(item));
-  </script>
 </Layout>
+
+<style>
+  .animate-left { transform: translateX(-40px); opacity: 0; }
+  .animate-right { transform: translateX(40px); opacity: 0; }
+  .animate-on-scroll { transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+  
+  :global(.animate-on-scroll.is-visible) {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+</style>
