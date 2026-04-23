@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import Beams from './components/Beams.astro';
 import Layout from '@/layouts/LandingLayout.astro';
+import { getHomePermalink } from '@/utils/permalinks';
 
 const metadata = {
   title: 'UniClause - 智能合同审查系统',
@@ -89,7 +90,7 @@ const comparisonData = [
   <main class="relative z-10 pt-10 transition-colors duration-300">
     <!-- Hero Section -->
     <section class="px-6 pt-20 pb-30 max-w-7xl mx-auto text-center relative">
-      <Beams className="opacity-50" />
+      <Beams className="opacity-50  dark:opacity-0" />
 
       <div class="animate-on-scroll">
         <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-10 inline-block">
@@ -97,9 +98,9 @@ const comparisonData = [
         </span>
       </div>
       <div class="animate-on-scroll" style="transition-delay: 100ms">
-        <h1 class="text-5xl md:text-7xl mb-8 leading-[1.1] font-extrabold max-w-5xl mx-auto tracking-tighter italic">
+        <h1 class="text-5xl md:text-7xl mb-8 leading-[1.1] font-extrabold max-w-5xl mx-auto tracking-tighter ">
           UniClause <br />
-          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI 智能合同审查</span>
+          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic">AI 智能合同审查</span>
         </h1>
       </div>
       <div class="animate-on-scroll mt-10" style="transition-delay: 200ms">
@@ -570,6 +571,20 @@ const comparisonData = [
            </div>
          ))}
        </div>
+    </section>
+
+    {/* CTA Section */}
+    <section class="pb-24 bg-bg-dark relative overflow-hidden" id="contact">
+      <div class="container mx-auto px-12 text-center relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="/contact/" class="btn-primary">申请演示</a>
+            <button class="px-12 py-4 rounded-2xl bg-surface text-text border border-border-light  dark:border-primary/20 font-bold hover:bg-bg transition-all text-lg">
+              <a rel='noopener noreferrer' href={getHomePermalink()}>返回主页</a>
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </Layout>

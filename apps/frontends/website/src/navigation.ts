@@ -59,10 +59,10 @@ export const headerData = {
     {
       text: '产品体系',
       links: [
-        // {
-        //   text: 'UniChat',
-        //   href: getPermalink('/products/unichat'),
-        // },
+        {
+          text: 'AG2O',
+          href: getPermalink('/products/ag2o'),
+        },
         {
           text: 'UniTeach',
           href: getPermalink('/products/uniteach'),
@@ -72,25 +72,13 @@ export const headerData = {
           href: getPermalink('/products/uniclause'),
         },
         {
+          text: 'UniBusiness',
+          href: getPermalink('/products/unibusiness'),
+        },
+        {
           text: 'A1 Platform',
           href: 'https://a1.v8.unisudo.dev/',
         },
-        // {
-        //   text: 'UniSpeech',
-        //   href: getPermalink('/speech'),
-        // },
-        // {
-        //   text: 'UniData',
-        //   href: 'https://datai.unisudo.com/',
-        // },
-        // {
-        //   text: '数据标注服务',
-        //   href: 'http://120.27.240.221:32051',
-        // },
-        // {
-        //   text: '智能硬件服务',
-        //   href: getPermalink('/hardware'),
-        // },
       ],
     },
     {
@@ -160,38 +148,26 @@ export const headerDataEn = {
     {
       text: 'Product System',
       links: [
-        // {
-        //   text: 'UniChat',
-        //   href: getPermalink('/en/products/unichat'),
-        // },
+        {
+          text: 'AG2O',
+          href: getPermalink('/en/products/ag2o'),
+        },
         {
           text: 'UniTeach',
           href: getPermalink('/en/products/uniteach'),
         },
         {
           text: 'UniClause',
-          href: getPermalink('/products/uniclause'),
+          href: getPermalink('/en/products/uniclause'),
+        },
+        {
+          text: 'UniBusiness',
+          href: getPermalink('/en/products/unibusiness'),
         },
         {
           text: 'A1 Platform',
           href: 'https://a1.v8.unisudo.dev/',
         },
-        // {
-        //   text: 'UniSpeech',
-        //   href: getPermalink('/en/speech'),
-        // },
-        // {
-        //   text: 'UniData',
-        //   href: 'https://datai.unisudo.com/',
-        // },
-        // {
-        //   text: 'Data Annotation Service',
-        //   href: 'http://120.27.240.221:32051',
-        // },
-        // {
-        //   text: 'Smart Hardware Service',
-        //   href: getPermalink('/en/hardware'),
-        // },
       ],
     },
     {
@@ -261,10 +237,10 @@ export const footerData = {
     {
       title: '产品体系',
       links: [
-        // {
-        //   text: 'UniChat',
-        //   href: getPermalink('/products/unichat'),
-        // },
+        {
+          text: 'AG2O',
+          href: getPermalink('/products/ag2o'),
+        },
         {
           text: 'UniTeach',
           href: getPermalink('/products/uniteach'),
@@ -274,25 +250,13 @@ export const footerData = {
           href: getPermalink('/products/uniclause'),
         },
         {
+          text: 'UniBusiness',
+          href: getPermalink('/products/unibusiness'),
+        },
+        {
           text: 'A1 Platform',
           href: 'https://a1.v8.unisudo.dev/',
         },
-        // {
-        //   text: 'UniSpeech',
-        //   href: getPermalink('/en/speech'),
-        // },
-        // {
-        //   text: 'UniData',
-        //   href: 'https://datai.unisudo.com/',
-        // },
-        // {
-        //   text: '数据标注服务',
-        //   href: 'http://120.27.240.221:32051',
-        // },
-        // {
-        //   text: '智能硬件服务',
-        //   href: getPermalink('/hardware'),
-        // },
       ],
     },
     {
@@ -389,38 +353,26 @@ export const footerDataEn = {
     {
       title: 'Product System',
       links: [
-        // {
-        //   text: 'UniChat',
-        //   href: getPermalink('/products/unichat'),
-        // },
+        {
+          text: 'AG2O',
+          href: getPermalink('/en/products/ag2o'),
+        },
         {
           text: 'UniTeach',
-          href: getPermalink('/products/uniteach'),
+          href: getPermalink('/en/products/uniteach'),
         },
         {
           text: 'UniClause',
-          href: getPermalink('/products/uniclause'),
+          href: getPermalink('/en/products/uniclause'),
+        },
+        {
+          text: 'UniBusiness',
+          href: getPermalink('/en/products/unibusiness'),
         },
         {
           text: 'A1 Platform',
           href: 'https://a1.v8.unisudo.dev/',
         },
-        // {
-        //   text: 'UniSpeech',
-        //   href: getPermalink('/en/speech'),
-        // },
-        // {
-        //   text: 'UniData',
-        //   href: 'https://datai.unisudo.com/',
-        // },
-        // {
-        //   text: 'Data Annotation Service',
-        //   href: 'http://120.27.240.221:32051',
-        // },
-        // {
-        //   text: 'Smart Hardware Service',
-        //   href: getPermalink('/en/hardware'),
-        // },
       ],
     },
     {

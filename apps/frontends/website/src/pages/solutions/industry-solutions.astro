@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
+import { getHomePermalink } from '@/utils/permalinks';
 
 const metadata = {
   title: '行业解决方案展示 - UniSudo 智独数科技',
@@ -111,9 +112,9 @@ const solutions = [
       <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
         INDUSTRIES · 行业方案
       </span>
-      <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-[0.9] italic">
+      <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-[0.9] ">
         多行业<br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-5xl md:text-6xl ">场景化解决方案</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-5xl md:text-6xl italic">场景化解决方案</span>
       </h1>
       <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed">
         本地部署 · 交互友好 · 数据安全。针对不同垂直领域的深度场景，通过轻量级 AI 技术赋能，实现从痛点到价值的快速转化。
@@ -188,7 +189,7 @@ const solutions = [
               <p class="text-xl text-white/80 mb-12 font-medium max-w-2xl mx-auto">本地化部署，安全可靠，成本更低。让我们为您提供更具竞争力的行业数智化服务。</p>
               <div class="flex flex-wrap justify-center gap-6">
                 <a href="/contact/" class="px-12 py-5 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">预约专家咨询</a>
-                <a href="/about/" class="px-12 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black italic rounded-full hover:bg-white/20 transition-all">业务详情了解</a>
+                <a class="px-12 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black italic rounded-full hover:bg-white/20 transition-all" rel='noopener noreferrer' href={getHomePermalink()}>业务详情了解</a>
               </div>
            </div>
        </div>

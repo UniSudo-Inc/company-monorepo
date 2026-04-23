@@ -4,6 +4,15 @@ import Layout from '@/layouts/PageLayout.astro';
 
 const products = [
   {
+    id: "a2",
+    title: "智能员工 (AG2O)",
+    tagline: "常驻式个人智能操作系统",
+    desc: "不仅是 AI 助手，更是你的个人智能团队。基于 Rust 构建的常驻式系统，支持分层协作、并行执行与长期记忆沉淀。",
+    icon: "lucide:message-square",
+    color: "from-blue-500 to-indigo-600",
+    href: "/products/ag2o/"
+  },
+  {
     id: "a1",
     title: "无代码 AI 中台 (A1)",
     tagline: "企业数字化底座",
@@ -22,6 +31,15 @@ const products = [
     href: "/products/uniteach/"
   },
   {
+    id: "unibusiness",
+    title: "出海会议同传 (UniBusiness)",
+    tagline: "跨语言协作利器",
+    desc: "实时 AI 会议同传。支持主流会议软件，提供实时翻译、双语理解与智能纪要，助推全球化高效协作。",
+    icon: "lucide:languages",
+    color: "from-emerald-500 to-teal-600",
+    href: "/products/unibusiness/"
+  },
+  {
     id: "uniclause",
     title: "智能合同审查 (UniClause)",
     tagline: "可解释的风险控制",
@@ -29,24 +47,6 @@ const products = [
     icon: "lucide:shield-check",
     color: "from-indigo-500 to-purple-600",
     href: "/products/uniclause/"
-  },
-  {
-    id: "unibusiness",
-    title: "出海会议同传 (UniBusiness)",
-    tagline: "跨语言协作利器",
-    desc: "实时语音识别与同步口译。毫秒级低延迟，支持多语种互译，为企业出海业务提供无缝的沟通保障。",
-    icon: "lucide:languages",
-    color: "from-emerald-500 to-teal-600",
-    href: "/contact/"
-  },
-  {
-    id: "a2",
-    title: "智能员工 (A2)",
-    tagline: "企业 AI 助手与客服",
-    desc: "打造具备企业私有知识库的智能对话机器人。支持 5 分钟极速上线，实时多轮对话，极大提升服务效率与响应质量。",
-    icon: "lucide:message-square",
-    color: "from-blue-500 to-indigo-600",
-    href: "/contact/"
   }
 ];
 
@@ -184,9 +184,9 @@ const metadata = {
       </div>
       <div class="animate-on-scroll" style="transition-delay: 300ms">
         <div class="flex flex-wrap items-center justify-center gap-4">
-          <a href="/contact/">
+          <a href="#products">
             <button class="btn-primary text-lg px-8 py-4">
-              联系我们
+              产品矩阵
             </button>
           </a>
           <a href="/about/" class="px-8 py-4 rounded-full border border-gray-200  dark:border-primary/20 font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-all">

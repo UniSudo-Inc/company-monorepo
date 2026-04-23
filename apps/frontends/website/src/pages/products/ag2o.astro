@@ -1,0 +1,313 @@
+---
+import { Icon } from 'astro-icon/components';
+import Beams from './components/Beams.astro';
+import Layout from '@/layouts/LandingLayout.astro';
+import { getHomePermalink } from '@/utils/permalinks';
+
+const metadata = {
+  title: 'AG2O - 长期在线的个人智能操作系统',
+  description: 'AG2O 是一个基于 Rust 构建的常驻式 Personal Agent 系统。它通过三层 Agent 架构把“聊天机器人”升级为长期协同、会分工、会沉淀的个人智能团队。',
+};
+
+const coreCapabilities = [
+  {
+    title: '常驻式 Daemon 服务',
+    desc: '启动后持续监听渠道事件，暴露 REST API。AG2O 是后台常驻的个人智能服务，而不是随用随关的临时助手。',
+    icon: 'lucide:server'
+  },
+  {
+    title: '三层 Agent 协作架构',
+    desc: 'Personal Agent 理解意图，Task Agent 长期执行领域任务，Forked Agent 并行拆解子任务，分工明确。',
+    icon: 'lucide:layers'
+  },
+  {
+    title: '长期工作区与记忆',
+    desc: '每个 Agent 拥有独立工作区和持久会话记录。它是拥有长期记忆的专业分身，而不是任务结束即失忆的执行器。',
+    icon: 'lucide:database'
+  },
+  {
+    title: '真实输入处理链路',
+    desc: '集成 marker 转换流程，支持附件、图片、音视频输入转文本，专为真实工作消息流设计。',
+    icon: 'lucide:link'
+  },
+  {
+    title: '内建记忆与触发器',
+    desc: '记忆、技能、触发机制深度集成于运行时。Agent 能自动评估触发周期，主动为您工作。',
+    icon: 'lucide:brain-circuit'
+  },
+  {
+    title: 'Rust 高并发底座',
+    desc: '基于 Rust 构建，保证长期运行的极致稳定性与清晰的并发边界，轻松处理密集型 Agent 任务。',
+    icon: 'lucide:cpu'
+  }
+];
+
+const agentLayers = [
+  {
+    name: 'Personal Agent',
+    role: '前台理解与调度',
+    desc: '面向用户，负责接收消息、理解意图、管理关系与路由任务。',
+    color: 'bg-blue-500/10 text-blue-500'
+  },
+  {
+    name: 'Task Agent',
+    role: '后台专业执行',
+    desc: '长期驻留的专业 Agent，负责代码、数据、研究等领域任务，持续积累上下文。',
+    color: 'bg-purple-500/10 text-purple-500'
+  },
+  {
+    name: 'Forked Agent',
+    role: '底层并行拆解',
+    desc: '从 Task Agent 临时分叉出的执行单元，用于处理繁琐的并行子任务。',
+    color: 'bg-emerald-500/10 text-emerald-500'
+  }
+];
+
+const comparisons = [
+  {
+    feature: '核心叙事',
+    ag2o: '三层 Agent 协作系统',
+    others: '单体助理 / 对话窗口'
+  },
+  {
+    feature: '运行模式',
+    ag2o: '常驻 Daemon，长期在线',
+    others: '临时拉起，随用随关'
+  },
+  {
+    feature: '任务组织',
+    ag2o: '分层调度 -> 专业分工',
+    others: '同一会话塞入所有任务'
+  },
+  {
+    feature: '记忆沉淀',
+    ag2o: '独立工作区 + 持久 Metadata',
+    others: '简单的会话列表搜索'
+  }
+];
+---
+
+  <Layout metadata={metadata}>
+
+  <main class="relative z-10 pt-0 overflow-x-hidden">
+    <!-- Background Accents -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pb-24 pt-20 px-6 max-w-7xl mx-auto">
+      <Beams className="opacity-50 dark:opacity-0" />
+
+      <div class="text-center mb-16 animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+          Personal Agent System · 基于 Rust & Ag2O
+        </span>
+        <h1 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
+          把“聊天机器人”升级为<br />
+          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic">个人智能操作系统</span>
+        </h1>
+        <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed mb-12 italic">
+          AG2O 不是一个窗口里的 AI，而是一个会分工、会沉淀、会长期运行的 Personal Agent 系统。让你的 AI 从“回答问题”走向“持续接活、分派执行、积累经验”。
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-6">
+          <a href="/contact/" class="px-12 py-5 bg-primary text-white font-black italic rounded-full hover:scale-105 transition-all shadow-xl shadow-primary/20">
+            立即部署 A2 服务
+          </a>
+          <a href="#architecture" class="px-12 py-5 bg-white/10 backdrop-blur-md border border-border-light dark:border-primary/20   font-black italic rounded-full hover:bg-blue-500/5 transition-all">
+            查看架构设计
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="relative max-w-5xl mx-auto animate-on-scroll">
+        <div class="p-4 rounded-[2.5rem] bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 border border-white/10 shadow-2xl">
+          <div class="bg-black/90 rounded-[2rem] p-8 font-mono text-sm overflow-hidden aspect-video relative group">
+             <div class="flex items-center gap-2 mb-6 border-b border-white/10 pb-4">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <span class="ml-4 text-white/40 text-xs tracking-widest">ag2o-daemon --status</span>
+             </div>
+             <div class="space-y-3">
+                <p class="text-blue-400">$ Starting AG2O Daemon System...</p>
+                <p class="text-green-400">[OK] Personal Agent [UID-001] Listening on Feishu/Slack</p>
+                <p class="text-purple-400">[ACTIVE] Task Agent [Researcher] processing 3 jobs</p>
+                <p class="text-emerald-400">[FORKED] 4 Sub-agents running parallel research</p>
+                <div class="mt-8 p-4 bg-white/5 rounded-xl border border-white/10">
+                   <p class="text-white/60 mb-2">// Workspace: a2_data/workspaces/personal</p>
+                   <p class="text-white">意图识别中: 用户需同步下周供应链报告到 Task Agent [Operations]</p>
+                </div>
+             </div>
+             <!-- Overlay Gradient -->
+             <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-6 py-3 bg-white text-black font-black italic rounded-full text-xs">查看详细运行时指标</span>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Selling Points -->
+    <section class="py-24 px-6 bg-slate-50 dark:bg-slate-950/40">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {[
+            { t: "长期在线", d: "以 daemon 方式常驻，不依赖对话窗口，持续监听环境与触发器。", i: "lucide:clock-9" },
+            { t: "分层协作", d: "明确 Personal -> Task -> Forked 三层架构，各施其职，高效并发。", i: "lucide:workflow" },
+            { t: "持续沉淀", d: "独立工作区持久化会话与元数据，真正成为会积累经验的专业分身。", i: "lucide:layers-2" }
+          ].map((item, i) => (
+            <div class="animate-on-scroll bento-card hover:border-primary/50 transition-all duration-500" style={`transition-delay: ${i * 50}ms`}>
+                <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6">
+                   <Icon name={item.i} class="w-6 h-6" />
+                </div>
+                <h4 class="text-2xl font-black italic mb-4">{item.t}</h4>
+                <p class="text-muted leading-relaxed font-medium">{item.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div class="animate-on-scroll animate-left">
+          <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">System Architecture</p>
+          <h2 class="text-4xl md:text-6xl tracking-tighter italic mb-8">三层 Agent 系统<br/><span class="text-primary/80">不仅是助手，更是团队</span></h2>
+          <p class="text-lg text-muted mb-10 leading-relaxed font-medium italic">
+            AG2O 采用常驻 daemon + 三层 Agent 的结构。最上层理解用户，中层深耕领域，底层负责繁杂的并行执行。
+          </p>
+          
+          <div class="space-y-6">
+            {agentLayers.map((layer, i) => (
+              <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-border-light dark:border-primary/20  hover:border-primary/50 transition-all group">
+                <div class="flex items-center gap-4 mb-3">
+                  <div class={`w-10 h-10 rounded-xl flex items-center justify-center ${layer.color}`}>
+                    <span class="font-black italic">{i + 1}</span>
+                  </div>
+                  <div>
+                    <h4 class="font-black italic">{layer.name}</h4>
+                    <p class="text-xs font-bold text-muted uppercase tracking-widest">{layer.role}</p>
+                  </div>
+                </div>
+                <p class="text-sm text-muted leading-relaxed">{layer.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="animate-on-scroll animate-right relative">
+          <div class="bento-card p-8 lg:p-12 bg-slate-900 border-none relative overflow-hidden">
+             <div class="absolute inset-0 bg-blue-500/5 pointer-events-none"></div>
+             <div class="relative z-10 space-y-8">
+                <!-- User to Channel -->
+                <div class="flex justify-center">
+                  <div class="px-6 py-3 bg-white/10 rounded-full border border-white/20 text-white font-bold text-sm tracking-widest uppercase italic">用户消息 (Feishu/Slack)</div>
+                </div>
+                <!-- Connector -->
+                <div class="flex justify-center"><Icon name="lucide:arrow-down" class="text-blue-500 w-6 h-6" /></div>
+                <!-- Personal Agent -->
+                <div class="p-6 bg-blue-600 rounded-2xl text-center text-white shadow-2xl">
+                   <h5 class="font-black italic text-lg mb-1">Personal Agent</h5>
+                   <p class="text-xs opacity-80 uppercase tracking-widest font-bold">理解意图 / 管理关系 / 路由任务</p>
+                </div>
+                <!-- Mailbox Connector -->
+                <div class="flex justify-between items-center px-12">
+                   <div class="h-12 w-0.5 bg-white/10"></div>
+                   <div class="px-4 py-1 bg-white/5 rounded-lg text-[10px] text-white/40 font-mono italic">Mailbox 通信</div>
+                   <div class="h-12 w-0.5 bg-white/10"></div>
+                </div>
+                <!-- Task Agents -->
+                <div class="grid grid-cols-2 gap-4">
+                   <div class="p-4 bg-purple-900/50 border border-purple-500/30 rounded-xl text-center">
+                      <h6 class="text-white font-black italic text-sm">Task Agent A</h6>
+                      <p class="text-[10px] text-white/50">长期驻留 / 专业领域</p>
+                   </div>
+                   <div class="p-4 bg-purple-900/50 border border-purple-500/30 rounded-xl text-center">
+                      <h6 class="text-white font-black italic text-sm">Task Agent B</h6>
+                      <p class="text-[10px] text-white/50">工作区 / 记忆沉淀</p>
+                   </div>
+                </div>
+                <!-- Forked Agents -->
+                <div class="flex justify-center gap-2">
+                   {[1, 2, 3].map(() => (
+                      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/30"></div>
+                   ))}
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Capabilities -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll">
+        <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic">硬核运行时能力</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {coreCapabilities.map((f, i) => (
+          <div class="animate-on-scroll bento-card hover:border-primary/50 transition-all duration-500" style={`transition-delay: ${i * 50}ms`}>
+            <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 text-primary flex items-center justify-center mb-6">
+              <Icon name={f.icon} class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold mb-3 italic tracking-tight">{f.title}</h3>
+            <p class="text-sm text-muted leading-relaxed font-medium">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-32 px-6 bg-slate-900 text-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20 animate-on-scroll">
+          <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic mb-4">与众不同的路径</h2>
+          <p class="text-xl text-white/50 italic font-medium">与其做更大的入口，不如做更强的协作结构</p>
+        </div>
+
+        <div class="animate-on-scroll overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-white/10">
+                <th class="py-8 font-black italic text-muted uppercase tracking-widest text-xs">对比维度</th>
+                <th class="py-8 font-black italic text-primary text-xl">AG2O (A2)</th>
+                <th class="py-8 font-black italic text-white/40">传统智能助理</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisons.map(item => (
+                <tr class="border-b border-white/5 hover:bg-white/5 transition-colors group">
+                  <td class="py-10 font-bold italic tracking-tight">{item.feature}</td>
+                  <td class="py-10 text-white/90 font-medium italic">{item.ag2o}</td>
+                  <td class="py-10 text-white/30">{item.others}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 px-6">
+       <div class="animate-on-scroll bento-card max-w-5xl mx-auto text-center border-none bg-gradient-to-br from-slate-900 to-primary text-white p-16 md:p-24 shadow-2xl relative overflow-hidden">
+           <div class="absolute inset-0 bg-primary/10 blur-[100px] pointer-events-none"></div>
+           <div class="relative z-10">
+              <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-8 italic uppercase">让 AI 真正接手你的繁琐任务</h2>
+              <p class="text-xl text-white/80 mb-12 font-medium max-w-2xl mx-auto italic">
+                A2 是一个围绕你长期运行的 Personal Agent 系统。让顶层 Agent 理解你、让专业 Agent 长期驻留在各自领域、再让临时执行单元并行工作。
+              </p>
+              <div class="flex flex-wrap justify-center gap-6">
+                <a href="/contact/" class="px-12 py-5 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">部署您的智能团队</a>
+                 <a class="px-12 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black italic rounded-full hover:bg-white/20 transition-all" rel='noopener noreferrer' href={getHomePermalink()}>返回主页</a>
+              </div>
+           </div>
+       </div>
+    </section>
+  </main>
+</Layout>

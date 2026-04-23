@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { SITE } from 'astrowind:config';
-import { getHomePermalink } from '@/utils/permalinks';
+import Logo from '../Logo.astro';
+import { getHomePermalink, getHomePermalinkEn } from '@/utils/permalinks';
 
 interface Link {
   text?: string;
@@ -34,7 +34,12 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
     <div class='grid grid-cols-12 gap-4 gap-y-8 py-8 sm:gap-8 md:py-12'>
       <div class='col-span-12 lg:col-span-4'>
         <div class='mb-2'>
-          <a class='inline-block text-xl font-bold' href={getHomePermalink()}>{SITE?.name}</a>
+          <a
+            class='flex items-center gap-3'
+            href={Astro.currentLocale === 'en' ? getHomePermalinkEn() : getHomePermalink()}
+          >
+            <Logo />
+          </a>
         </div>
         <div class='flex gap-1 text-sm text-muted'>
           {
