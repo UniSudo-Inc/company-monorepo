@@ -1,0 +1,313 @@
+---
+import { Icon } from 'astro-icon/components';
+import Beams from './components/Beams.astro';
+import Layout from '@/layouts/LandingLayout.astro';
+import { getHomePermalinkEn } from '@/utils/permalinks';
+
+const metadata = {
+  title: 'AG2O - Your Always-On Personal AI Operating System',
+  description: 'AG2O is a Rust-based persistent Personal Agent system that upgrades the "chatbot" into a long-term collaborative, task-dividing, experience-accumulating Personal AI team through a three-layer Agent architecture.',
+};
+
+const coreCapabilities = [
+  {
+    title: 'Persistent Daemon Service',
+    desc: 'Continuously listens to channel events and exposes REST API after startup. AG2O is a persistent personal AI service running in the background — not a temporary assistant that starts and stops on demand.',
+    icon: 'lucide:server'
+  },
+  {
+    title: 'Three-Layer Agent Architecture',
+    desc: 'Personal Agent understands intent, Task Agent executes domain tasks long-term, and Forked Agent breaks down parallel subtasks — clear division of responsibilities.',
+    icon: 'lucide:layers'
+  },
+  {
+    title: 'Long-Term Workspace & Memory',
+    desc: 'Each Agent has its own workspace and persistent session records. It\'s a professional persona with long-term memory — not an executor that forgets everything when a task ends.',
+    icon: 'lucide:database'
+  },
+  {
+    title: 'Real Input Processing Pipeline',
+    desc: 'Integrates marker conversion pipeline, supporting attachments, images, and audio/video input-to-text — designed for real work message flows.',
+    icon: 'lucide:link'
+  },
+  {
+    title: 'Built-In Memory & Triggers',
+    desc: 'Memory, skills, and trigger mechanisms are deeply integrated into the runtime. Agents can autonomously evaluate trigger cycles and work proactively for you.',
+    icon: 'lucide:brain-circuit'
+  },
+  {
+    title: 'Rust High-Concurrency Foundation',
+    desc: 'Built on Rust for extreme stability and clear concurrency boundaries in long-running operations, effortlessly handling intensive Agent tasks.',
+    icon: 'lucide:cpu'
+  }
+];
+
+const agentLayers = [
+  {
+    name: 'Personal Agent',
+    role: 'Front-end Understanding & Routing',
+    desc: 'Faces the user, responsible for receiving messages, understanding intent, managing relationships, and routing tasks.',
+    color: 'bg-blue-500/10 text-blue-500'
+  },
+  {
+    name: 'Task Agent',
+    role: 'Back-end Professional Execution',
+    desc: 'A long-resident specialized Agent for code, data, research and other domain tasks, continuously accumulating context.',
+    color: 'bg-purple-500/10 text-purple-500'
+  },
+  {
+    name: 'Forked Agent',
+    role: 'Bottom-Layer Parallel Breakdown',
+    desc: 'Execution units temporarily forked from Task Agent for handling parallel subtasks.',
+    color: 'bg-emerald-500/10 text-emerald-500'
+  }
+];
+
+const comparisons = [
+  {
+    feature: 'Core Narrative',
+    ag2o: 'Three-layer Agent collaboration system',
+    others: 'Single assistant / chat window'
+  },
+  {
+    feature: 'Operation Mode',
+    ag2o: 'Persistent Daemon, always online',
+    others: 'Temporary startup, on-demand use'
+  },
+  {
+    feature: 'Task Organization',
+    ag2o: 'Layered routing → specialized division',
+    others: 'Dump all tasks into one session'
+  },
+  {
+    feature: 'Memory Accumulation',
+    ag2o: 'Independent workspace + persistent metadata',
+    others: 'Simple session list search'
+  }
+];
+---
+
+  <Layout metadata={metadata}>
+
+  <main class="relative z-10 pt-0 overflow-x-hidden">
+    <!-- Background Accents -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pb-24 pt-20 px-6 max-w-7xl mx-auto">
+      <Beams className="opacity-50 dark:opacity-0" />
+
+      <div class="text-center mb-16 animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+          Personal Agent System · Built on Rust & Ag2O
+        </span>
+        <h1 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
+          Upgrade the "Chatbot" into<br />
+          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic">Personal AI Operating System</span>
+        </h1>
+        <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed mb-12 italic">
+          AG2O isn\'t an AI in a window — it\'s a Personal Agent system that divides tasks, accumulates experience, and runs persistently. Move your AI from "answering questions" to "taking on work, assigning tasks, and building expertise".
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-6">
+          <a href="/en/contact/" class="px-12 py-5 bg-primary text-white font-black italic rounded-full hover:scale-105 transition-all shadow-xl shadow-primary/20">
+            Deploy A2 Service Now
+          </a>
+          <a href="#architecture" class="px-12 py-5 bg-white/10 backdrop-blur-md border border-border-light dark:border-primary/20   font-black italic rounded-full hover:bg-blue-500/5 transition-all">
+            View Architecture
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="relative max-w-5xl mx-auto animate-on-scroll">
+        <div class="p-4 rounded-[2.5rem] bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 border border-white/10 shadow-2xl">
+          <div class="bg-black/90 rounded-[2rem] p-8 font-mono text-sm overflow-hidden aspect-video relative group">
+             <div class="flex items-center gap-2 mb-6 border-b border-white/10 pb-4">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <span class="ml-4 text-white/40 text-xs tracking-widest">ag2o-daemon --status</span>
+             </div>
+             <div class="space-y-3">
+                <p class="text-blue-400">$ Starting AG2O Daemon System...</p>
+                <p class="text-green-400">[OK] Personal Agent [UID-001] Listening on Feishu/Slack</p>
+                <p class="text-purple-400">[ACTIVE] Task Agent [Researcher] processing 3 jobs</p>
+                <p class="text-emerald-400">[FORKED] 4 Sub-agents running parallel research</p>
+                <div class="mt-8 p-4 bg-white/5 rounded-xl border border-white/10">
+                   <p class="text-white/60 mb-2">// Workspace: a2_data/workspaces/personal</p>
+                   <p class="text-white">Intent recognized: User needs to sync next week supply chain report to Task Agent [Operations]</p>
+                </div>
+             </div>
+             <!-- Overlay Gradient -->
+             <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-6 py-3 bg-white text-black font-black italic rounded-full text-xs">View detailed runtime metrics</span>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Selling Points -->
+    <section class="py-24 px-6 bg-slate-50 dark:bg-slate-950/40">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {[
+            { t: "Always Online", d: "Runs as a daemon, independent of chat windows, continuously monitoring environment and triggers.", i: "lucide:clock-9" },
+            { t: "Layered Collaboration", d: "Clear Personal → Task → Forked three-layer architecture, each with its role, efficient concurrency.", i: "lucide:workflow" },
+            { t: "Continuous Accumulation", d: "Independent workspace with persistent sessions and metadata — a true professional persona that learns.", i: "lucide:layers-2" }
+          ].map((item, i) => (
+            <div class="animate-on-scroll bento-card hover:border-primary/50 transition-all duration-500" style={`transition-delay: ${i * 50}ms`}>
+                <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6">
+                   <Icon name={item.i} class="w-6 h-6" />
+                </div>
+                <h4 class="text-2xl font-black italic mb-4">{item.t}</h4>
+                <p class="text-muted leading-relaxed font-medium">{item.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div class="animate-on-scroll animate-left">
+          <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">System Architecture</p>
+          <h2 class="text-4xl md:text-6xl tracking-tighter italic mb-8">Three-Layer Agent System<br/><span class="text-primary/80">More Than an Assistant — A Team</span></h2>
+          <p class="text-lg text-muted mb-10 leading-relaxed font-medium italic">
+            AG2O uses a persistent daemon plus three-layer Agent structure. Top layer understands the user, middle layer specializes in domains, bottom layer handles complex parallel execution.
+          </p>
+          
+          <div class="space-y-6">
+            {agentLayers.map((layer, i) => (
+              <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-border-light dark:border-primary/20  hover:border-primary/50 transition-all group">
+                <div class="flex items-center gap-4 mb-3">
+                  <div class={`w-10 h-10 rounded-xl flex items-center justify-center ${layer.color}`}>
+                    <span class="font-black italic">{i + 1}</span>
+                  </div>
+                  <div>
+                    <h4 class="font-black italic">{layer.name}</h4>
+                    <p class="text-xs font-bold text-muted uppercase tracking-widest">{layer.role}</p>
+                  </div>
+                </div>
+                <p class="text-sm text-muted leading-relaxed">{layer.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="animate-on-scroll animate-right relative">
+          <div class="bento-card p-8 lg:p-12 bg-slate-900 border-none relative overflow-hidden">
+             <div class="absolute inset-0 bg-blue-500/5 pointer-events-none"></div>
+             <div class="relative z-10 space-y-8">
+                <!-- User to Channel -->
+                <div class="flex justify-center">
+                  <div class="px-6 py-3 bg-white/10 rounded-full border border-white/20 text-white font-bold text-sm tracking-widest uppercase italic">User Message (Feishu/Slack)</div>
+                </div>
+                <!-- Connector -->
+                <div class="flex justify-center"><Icon name="lucide:arrow-down" class="text-blue-500 w-6 h-6" /></div>
+                <!-- Personal Agent -->
+                <div class="p-6 bg-blue-600 rounded-2xl text-center text-white shadow-2xl">
+                   <h5 class="font-black italic text-lg mb-1">Personal Agent</h5>
+                   <p class="text-xs opacity-80 uppercase tracking-widest font-bold">Intent / Relationships / Task Routing</p>
+                </div>
+                <!-- Mailbox Connector -->
+                <div class="flex justify-between items-center px-12">
+                   <div class="h-12 w-0.5 bg-white/10"></div>
+                   <div class="px-4 py-1 bg-white/5 rounded-lg text-[10px] text-white/40 font-mono italic">Mailbox Communication</div>
+                   <div class="h-12 w-0.5 bg-white/10"></div>
+                </div>
+                <!-- Task Agents -->
+                <div class="grid grid-cols-2 gap-4">
+                   <div class="p-4 bg-purple-900/50 border border-purple-500/30 rounded-xl text-center">
+                      <h6 class="text-white font-black italic text-sm">Task Agent A</h6>
+                      <p class="text-[10px] text-white/50">Long-resident / Domain Expert</p>
+                   </div>
+                   <div class="p-4 bg-purple-900/50 border border-purple-500/30 rounded-xl text-center">
+                      <h6 class="text-white font-black italic text-sm">Task Agent B</h6>
+                      <p class="text-[10px] text-white/50">Workspace / Memory Accumulation</p>
+                   </div>
+                </div>
+                <!-- Forked Agents -->
+                <div class="flex justify-center gap-2">
+                   {[1, 2, 3].map(() => (
+                      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/30"></div>
+                   ))}
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Capabilities -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll">
+        <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic">Hardcore Runtime Capabilities</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {coreCapabilities.map((f, i) => (
+          <div class="animate-on-scroll bento-card hover:border-primary/50 transition-all duration-500" style={`transition-delay: ${i * 50}ms`}>
+            <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 text-primary flex items-center justify-center mb-6">
+              <Icon name={f.icon} class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold mb-3 italic tracking-tight">{f.title}</h3>
+            <p class="text-sm text-muted leading-relaxed font-medium">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-32 px-6 bg-slate-900 text-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20 animate-on-scroll">
+          <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic mb-4">A Different Path Altogether</h2>
+          <p class="text-xl text-white/50 italic font-medium">Instead of a bigger gateway — a stronger collaboration structure</p>
+        </div>
+
+        <div class="animate-on-scroll overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-white/10">
+                <th class="py-8 font-black italic text-muted uppercase tracking-widest text-xs">Comparison Dimension</th>
+                <th class="py-8 font-black italic text-primary text-xl">AG2O (A2)</th>
+                <th class="py-8 font-black italic text-white/40">Traditional AI Assistant</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisons.map(item => (
+                <tr class="border-b border-white/5 hover:bg-white/5 transition-colors group">
+                  <td class="py-10 font-bold italic tracking-tight">{item.feature}</td>
+                  <td class="py-10 text-white/90 font-medium italic">{item.ag2o}</td>
+                  <td class="py-10 text-white/30">{item.others}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 px-6">
+       <div class="animate-on-scroll bento-card max-w-5xl mx-auto text-center border-none bg-gradient-to-br from-slate-900 to-primary text-white p-16 md:p-24 shadow-2xl relative overflow-hidden">
+           <div class="absolute inset-0 bg-primary/10 blur-[100px] pointer-events-none"></div>
+           <div class="relative z-10">
+              <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-8 italic uppercase">Let AI Actually Take Over Your Repetitive Work</h2>
+              <p class="text-xl text-white/80 mb-12 font-medium max-w-2xl mx-auto italic">
+                A2 is a Personal Agent system that runs around you persistently. Let the top Agent understand you, let specialized Agents reside in their domains long-term, and let temporary execution units work in parallel.
+              </p>
+              <div class="flex flex-wrap justify-center gap-6">
+                <a href="/en/contact/" class="px-12 py-5 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">Deploy Your AI Team</a>
+                 <a class="px-12 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black italic rounded-full hover:bg-white/20 transition-all" rel='noopener noreferrer' href={getHomePermalinkEn()}>Back to Home</a>
+              </div>
+           </div>
+       </div>
+    </section>
+  </main>
+</Layout>

@@ -1,165 +1,192 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import HeroText from '@/components/widgets/HeroText.astro';
-import ContactUs from '@/components/widgets/Contact.astro';
-import Features2 from '@/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact Us',
+  title: 'Contact Us - UniSudo Inc.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <div class="text-center">
-    <HeroText tagline=' ' title='<span class="text-primary">We look forward to hearing from you!</span>' />
-
-    <div class="relative mx-auto mt-4 h-16 w-16">
-      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-      <span class="relative inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      </span>
+  <main class="relative z-10 pt-20">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
     </div>
-  </div>
 
-  <!-- Contact Us Form -->
-  <ContactUs
-    id='form'
-    title='Business Inquiry'
-    subtitle='Please fill out the form below, and we will get back to you as soon as possible.'
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Your Name',
-        placeholder: 'Enter your name'
-      },
-      {
-        type: 'text',
-        name: 'company',
-        label: 'Company Name',
-        placeholder: 'Enter your company name'
-      },
-       {
-        type: 'tel',
-        name: 'phone',
-        label: 'Phone Number',
-        placeholder: 'Enter your phone number'
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email Address',
-        placeholder: 'you@example.com'
-      }
-    ]}
-    textarea={{
-      name: 'message',
-      label: 'Your Needs or Partnership Interests',
-      placeholder: 'Please describe your needs in detail here...'
-    }}
-    button='Submit Information'
-  >
-    <Fragment slot='bg'>
-      <div
-        id='snackbar-toast'
-        class='toast absolute bottom-6 right-12 z-10 rounded-md border bg-white p-4 shadow-lg dark:bg-slate-900'
-        hidden
-      >
+    <!-- Hero Section -->
+    <section class="relative mx-auto max-w-7xl px-6 py-24">
+      <div class="text-center animate-on-scroll">
+        <p class="mb-4 text-base font-bold uppercase tracking-[0.3em] text-primary">Contact Us</p>
+        <h1 class="mb-8 text-5xl md:text-8xl font-black tracking-tight italic">
+          <span class="gradient-text">We look forward to hearing from you!</span>
+        </h1>
+        
+        <div class="relative mx-auto mb-12 mt-6 inline-flex">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-20"></span>
+          <span class="relative inline-flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent shadow-2xl shadow-primary/40">
+            <Icon name="lucide:message-square" class="h-10 w-10 text-white" />
+          </span>
+        </div>
       </div>
-    </Fragment>
-  </ContactUs>
+    </section>
 
-  <!-- Features Section -->
-  <Features2
-    title='We are always here for you!'
-    items={[
-      {
-        title: 'Business Cooperation',
-        description: 'If you are interested in our products and services, we look forward to discussing cooperation opportunities with you to provide the most suitable AI solutions for your business.',
-      },
-      {
-        title: 'Technical Support',
-        description: 'Our technical team provides professional technical support to help you solve any issues you encounter during use, ensuring stable system operation.',
-      },
-      {
-        title: 'After-sales Service',
-        description: 'We provide a comprehensive after-sales service system to ensure that your needs are responded to and resolved in a timely manner, providing support for your business.',
-      },
-      {
-        title: 'Telephone',
-        description: '16628597963',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: '<a href="mailto:contact@unisudo.com" class="hover:text-primary">contact@unisudo.com</a>',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Company Address',
-        description: 'Room 802, 8th Floor, Building 1, Block 2, Gangcheng Plaza, 55 Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
+    <!-- Form Section -->
+    <section class="relative mx-auto max-w-7xl px-6 pb-32">
+      <div class="animate-on-scroll bento-card mx-auto max-w-3xl p-8 md:p-12 border-none backdrop-blur-xl shadow-xl">
+        <div class="mb-10">
+          <h2 class="text-3xl font-bold mb-2">Business Cooperation Inquiry</h2>
+          <p class="text-muted text-lg">Please fill out the information below, and we will get back to you as soon as possible</p>
+        </div>
+
+        <form id="contact-form" class="space-y-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-2">
+              <label class="text-sm font-bold text-gray-700 dark:text-gray-300">Your Name</label>
+              <input type="text" name="name" required placeholder="Enter your name" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-slate-800 rounded-2xl px-5 py-4 focus:border-primary outline-none transition-all focus:ring-4 focus:ring-primary/10" />
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-bold text-gray-700 dark:text-gray-300">Company Name</label>
+              <input type="text" name="company" required placeholder="Enter your company name" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-slate-800 rounded-2xl px-5 py-4 focus:border-primary outline-none transition-all focus:ring-4 focus:ring-primary/10" />
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-bold text-gray-700 dark:text-gray-300">Phone Number</label>
+              <input type="tel" name="phone" required placeholder="Enter your phone number" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-slate-800 rounded-2xl px-5 py-4 focus:border-primary outline-none transition-all focus:ring-4 focus:ring-primary/10" />
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm font-bold text-gray-700 dark:text-gray-300">Email Address</label>
+              <input type="email" name="email" required placeholder="you@example.com" class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-slate-800 rounded-2xl px-5 py-4 focus:border-primary outline-none transition-all focus:ring-4 focus:ring-primary/10" />
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-bold text-gray-700 dark:text-gray-300">Your Needs or Cooperation Intent</label>
+            <textarea name="message" required rows="5" placeholder="Please describe your needs in detail here..." class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-slate-800 rounded-2xl px-5 py-4 focus:border-primary outline-none transition-all focus:ring-4 focus:ring-primary/10 resize-none"></textarea>
+          </div>
+          
+          <button type="submit" id="submit-btn" class="btn-primary w-full py-5 text-xl font-black italic tracking-wider group transition-all">
+            Submit Information
+            <Icon name="lucide:send" class="w-6 h-6 inline-block ml-2 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </form>
+
+        <div id="snackbar-toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-4 shadow-2xl font-bold hidden border border-white/10">
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Support Stats Cards -->
+    <section class="py-24 px-6 max-w-7xl mx-auto border-t border-border-light  dark:border-primary/20">
+      <div class="mb-16 text-center animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">Service Support</p>
+        <h2 class="text-4xl md:text-5xl font-black tracking-tight italic">We are always here to serve you!</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="animate-on-scroll bento-card p-10 group hover:-translate-y-2 transition-all duration-500">
+          <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+            <Icon name="lucide:briefcase" class="h-8 w-8" />
+          </div>
+          <h3 class="mb-4 text-2xl font-bold italic tracking-tight">Business Cooperation</h3>
+          <p class="text-muted leading-relaxed">If you are interested in our products and services, we look forward to discussing cooperation opportunities with you to provide the most suitable AI solutions for your enterprise.</p>
+        </div>
+
+        <div class="animate-on-scroll bento-card p-10 group hover:-translate-y-2 transition-all duration-500" style="transition-delay: 100ms">
+          <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+            <Icon name="lucide:headset" class="h-8 w-8" />
+          </div>
+          <h3 class="mb-4 text-2xl font-bold italic tracking-tight">Technical Support</h3>
+          <p class="text-muted leading-relaxed">Our technical team provides professional technical support to help you solve any issues encountered during use, ensuring stable system operation.</p>
+        </div>
+
+        <div class="animate-on-scroll bento-card p-10 group hover:-translate-y-2 transition-all duration-500" style="transition-delay: 200ms">
+          <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+            <Icon name="lucide:shield-check" class="h-8 w-8" />
+          </div>
+          <h3 class="mb-4 text-2xl font-bold italic tracking-tight">After-sales Service</h3>
+          <p class="text-muted leading-relaxed">We provide a comprehensive after-sales service system to ensure your needs are responded to and resolved in a timely manner, safeguarding your business.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Contact Info -->
+    <section class="pb-32 px-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="animate-on-scroll bento-card p-10 text-center flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-6">
+            <Icon name="lucide:phone" class="h-8 w-8 text-primary" />
+          </div>
+          <h3 class="mb-3 text-xl font-bold italic tracking-tight">Phone Number</h3>
+          <p class="text-muted text-lg font-mono">16628597963</p>
+        </div>
+
+        <div class="animate-on-scroll bento-card p-10 text-center flex flex-col items-center" style="transition-delay: 100ms">
+          <div class="w-16 h-16 rounded-full bg-accent/5 flex items-center justify-center mb-6">
+            <Icon name="lucide:mail" class="h-8 w-8 text-accent" />
+          </div>
+          <h3 class="mb-3 text-xl font-bold italic tracking-tight">Email Address</h3>
+          <a href="mailto:contact@unisudo.com" class="text-muted hover:text-primary transition-colors text-lg font-mono">contact@unisudo.com</a>
+        </div>
+
+        <div class="animate-on-scroll bento-card p-10 text-center flex flex-col items-center" style="transition-delay: 200ms">
+          <div class="w-16 h-16 rounded-full bg-emerald-500/5 flex items-center justify-center mb-6">
+            <Icon name="lucide:map-pin" class="h-8 w-8 text-emerald-500" />
+          </div>
+          <h3 class="mb-3 text-xl font-bold italic tracking-tight">Company Address</h3>
+          <p class="text-muted text-sm leading-relaxed max-w-[200px]">Room 802, 8th Floor, Building 1, Second Street, Port City Square, No. 55 Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai</p>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
 
 <script>
   function toast(message: string) {
     const toastElem = document.getElementById('snackbar-toast');
-    if (!toastElem) {
-      console.error('Could not find the toast element');
-      return;
-    }
+    if (!toastElem) return;
     toastElem.innerText = message;
-    toastElem.hidden = false;
+    toastElem.classList.remove('hidden');
     setTimeout(() => {
-      toastElem.hidden = true;
-      toastElem.innerText = '';
+      toastElem.classList.add('hidden');
     }, 3000);
   }
 
-  const form = document.querySelector('#form form');
-  const button = form?.querySelector('button[type="submit"]');
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const button = document.getElementById('submit-btn');
 
-  if (!form || !button) {
-    console.error('Could not find the contact form or submit button');
-  } else {
+  if (form && button) {
     const originalButtonHTML = button.innerHTML;
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
-      button.setAttribute('disabled', '');
+      button.setAttribute('disabled', 'true');
       button.innerHTML = `
-        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-        Submitting...
+        <span class="inline-flex items-center">
+          <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Submitting...
+        </span>
       `;
 
-      const formData = new FormData(form as HTMLFormElement);
-      const formProps = Object.fromEntries(formData);
-
+      const formData = new FormData(form);
       const payload = {
-        name: formProps["name"],
-        email: formProps["email"],
-        phone: formProps["phone"],
-        company: formProps["company"],
-        message: formProps["message"],
-        subject: 'Business Inquiry',
-        source: 'Website Contact Page'
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        company: formData.get('company'),
+        message: formData.get('message'),
+        subject: 'Business Cooperation Inquiry',
+        source: 'Website Cooperation Page'
       };
 
-      const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
-      const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+      const supabaseUrl = (import.meta as any).env.PUBLIC_SUPABASE_URL;
+      const supabaseAnonKey = (import.meta as any).env.PUBLIC_SUPABASE_ANON_KEY;
 
       if (!supabaseUrl || !supabaseAnonKey) {
-        console.error('Supabase URL or Anon Key is not defined in environment variables.');
-        toast('Client configuration error.');
+        toast('Client configuration error');
         button.removeAttribute('disabled');
         button.innerHTML = originalButtonHTML;
         return;
@@ -176,22 +203,14 @@ const metadata = {
         });
 
         if (response.ok) {
-          await response.json();
-          toast('Thank you for your message. We have received your information and will get back to you as soon as possible.');
-          (form as HTMLFormElement).reset();
-          
-          button.removeAttribute('disabled');
-          button.innerHTML = originalButtonHTML;
-
+          toast('Submitted successfully! We will get back to you as soon as possible.');
+          form.reset();
         } else {
-          const errorData = await response.json().catch(() => null);
-          toast(`Submission failed (${response.status}): ${errorData?.message || 'Please try again later'}`);
-          button.removeAttribute('disabled');
-          button.innerHTML = originalButtonHTML;
+          toast('Submission failed, please try again later');
         }
       } catch (error) {
-        console.error('Form submission error:', error);
-        toast('Submission failed. Please check your network connection.');
+        toast('Submission failed, please check your network connection.');
+      } finally {
         button.removeAttribute('disabled');
         button.innerHTML = originalButtonHTML;
       }

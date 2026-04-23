@@ -1,128 +1,167 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Hero from '@/components/widgets/Hero.astro';
-import Features from '@/components/widgets/Features.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-import Content from '@/components/widgets/Content.astro';
-import { getPermalink } from '@/utils/permalinks';
 
 const metadata = {
   title: 'Join Us - UniSudo Inc.',
-  ignoreTitleTemplate: true,
 };
+
+const benefits = [
+  {
+    title: 'Innovation at the Forefront',
+    desc: 'Directly participate in the R&D and application of cutting-edge AI technology, exploring innovative solutions with industry experts.',
+    icon: 'lucide:lightbulb'
+  },
+  {
+    title: 'Challenging Work Environment',
+    desc: 'Work on diverse projects and technology stacks, continuously pushing yourself to achieve all-around career growth.',
+    icon: 'lucide:rocket'
+  },
+  {
+    title: 'Comprehensive Training & Development',
+    desc: 'Systematic training programs to help you quickly transition roles and achieve your career aspirations.',
+    icon: 'lucide:graduation-cap'
+  },
+  {
+    title: 'Competitive Compensation & Benefits',
+    desc: 'Competitive salary package, fully recognizing and rewarding your outstanding contributions.',
+    icon: 'lucide:award'
+  }
+];
+
+const jobs = [
+  {
+    title: 'Frontend Engineer',
+    desc: 'Participate in the frontend architecture and development of core products, collaborating closely with design teams to achieve极致的高质量用户界面。',
+    icon: 'lucide:layout-template',
+    href: '/en/jobs/frontend-engineer/'
+  },
+  {
+    title: 'AI Engineer',
+    desc: 'Responsible for AI model development, training, and fine-tuning optimization, deeply participating in the R&D and innovation of core AI capabilities.',
+    icon: 'lucide:brain-circuit',
+    href: '/en/jobs/ai-engineer/'
+  }
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Submit Your Resume',
-        href: 'mailto:HR@unisudo.com',
-      },
-    ]}
-    image={{ src: '@/assets/images/recruitment.png', alt: 'Recruitment Hero Image' }}
-  >
-    <Fragment slot='title'>
-      Join UniSudo Inc.
-      <span class='highlight text-accent dark:text-white'>Start a New Future with AI</span>
-    </Fragment>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-primary/5 rounded-full blur-[150px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[150px] animate-pulse" style="animation-delay: 3s"></div>
+    </div>
 
-    <Fragment slot='subtitle'>
-      Here, you will work with top talent in the industry, explore the limitless possibilities of AI technology, and
-      create solutions that change the world.
-    </Fragment>
-  </Hero>
+    <!-- Hero Section -->
+    <section class="relative py-32 px-6 overflow-hidden">
+      <div class="max-w-7xl mx-auto text-center animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-8 inline-block">
+          JOIN UNISUDO · Recruitment
+        </span>
+        <h1 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-[0.9] italic">
+          Join UniSudo Inc.<br />
+          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Start a New AI Future</span>
+        </h1>
+        <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed mb-12">
+          Here, you will work with top industry talent, explore the limitless possibilities of AI technology, and create solutions that change the world.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6">
+           <a href="mailto:HR@unisudo.com" class="px-12 py-5 bg-primary text-white font-black italic rounded-full hover:scale-105 transition-all shadow-xl shadow-primary/20">
+             Submit Your Resume
+           </a>
+           <a href="#jobs" class="px-12 py-5 bg-white/10 backdrop-blur-md border border-gray-200 dark:border-primary/20 font-black italic rounded-full hover:bg-primary/5 transition-all">
+             Browse Open Positions
+           </a>
+        </div>
+      </div>
+    </section>
 
-  <!-- Features Widget *************** -->
-  <Features
-    id='features'
-    tagline='Why Choose Us'
-    title='At UniSudo Inc., you will get'
-    classes={{ container: 'max-w-5xl mx-auto' }}
-    items={[
-      {
-        title: 'Innovation at the Forefront',
-        description:
-          'Participate directly in the research and application of cutting-edge AI technology, and explore innovative solutions with industry experts.',
-        icon: 'tabler:bulb',
-      },
-      {
-        title: 'Challenging Work Environment',
-        description: 'Expose yourself to diverse projects and technology stacks, continuously突破自我，实现职业成长。',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Comprehensive Training and Development System',
-        description: 'Systematic training programs to help you grow quickly and achieve your career goals.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Competitive Compensation and Benefits',
-        description: 'Offer a competitive salary package, recognize and reward your contributions.',
-        icon: 'tabler:certificate',
-      },
-    ]}
-  />
+    <!-- Why Us: Staggered Grid -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">Why Join Us</p>
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">At UniSudo Inc., you will get</h2>
+      </div>
 
-  <!-- Features2 Widget ************** -->
-  <Features2
-    title='Current Job Openings'
-    subtitle='Join us, and explore the limitless possibilities of AI technology with top talent in the industry'
-    tagline='Recruitment'
-    classes={{ container: 'max-w-5xl mx-auto' }}
-    columns={2}
-    items={[
-      {
-        title: 'Frontend Engineer',
-        description: '',
-        icon: 'tabler:code',
-        callToAction: {
-          text: 'View Details',
-          href: getPermalink('/en/jobs/frontend-engineer'),
-        },
-      },
-      {
-        title: 'AI Engineer',
-        description: '',
-        icon: 'tabler:code',
-        callToAction: {
-          text: 'View Details',
-          href: getPermalink('/en/jobs/ai-engineer'),
-        },
-      },
-    ]}
-  >
-    <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
-  </Features2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {benefits.map((b, i) => (
+          <div class="animate-on-scroll bento-card p-10 flex flex-col items-center text-center group hover:border-primary/50 transition-all duration-500" style={`transition-delay: ${i * 100}ms`}>
+            <div class="w-16 h-16 rounded-3xl bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl shadow-primary/5">
+               <Icon name={b.icon} class="w-8 h-8" />
+            </div>
+            <h3 class="text-xl font-bold mb-4 italic tracking-tight">{b.title}</h3>
+            <p class="text-sm text-muted leading-relaxed font-medium">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-  <!-- CallToAction Widget *********** -->
-  <Content
-    isAfterContent
-    classes={{ container: 'max-w-5xl mx-auto' }}
-    items={[
-      {
-        title: 'Submit Your Resume',
-        description: `<a href="mailto:hr@unisudo.com" class="hover:text-primary transition-all duration-200 ease-in-out"
-                     transition:animate={fade({ duration: '0.3s' })}>
-                      Send your resume to: hr@unisudo.com</a>`,
-      },
-      {
-        title: 'Work Location',
-        description: 'No. 1 Building, Block 2, Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai',
-      },
-    ]}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Join Us</h3>
-      <p>We look forward to your joining UniSudo Inc. to create the future of AI together!</p>
-    </Fragment>
+    <!-- Jobs Section -->
+    <section id="jobs" class="py-32 px-6 max-w-7xl mx-auto scroll-mt-24">
+       <div class="flex flex-col md:flex-row items-end justify-between mb-20 gap-8 animate-on-scroll">
+         <div class="max-w-2xl">
+           <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">Open Positions</p>
+           <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic underline decoration-accent decoration-8 underline-offset-4">Recruitment / Career Opportunities</h2>
+         </div>
+         <p class="text-muted max-w-sm text-sm font-medium leading-relaxed italic">Looking for those who are curious about the future and eager to change the status quo through code and algorithms. Even if you don't find a perfect match, feel free to submit your resume—great talent is always welcome.</p>
+       </div>
 
-    <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
-  </Content>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+         {jobs.map((j, i) => (
+           <div class="animate-on-scroll bento-card p-12 group hover:shadow-2xl transition-all duration-700" style={`transition-delay: ${i * 150}ms`}>
+             <div class="flex flex-col sm:flex-row items-start gap-8">
+               <div class="w-20 h-20 shrink-0 rounded-[2rem] bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center text-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                 <Icon name={j.icon} class="w-10 h-10" />
+               </div>
+               <div class="flex-1">
+                 <h3 class="text-3xl font-black italic mb-4 tracking-tighter">{j.title}</h3>
+                 <p class="text-base text-muted mb-8 leading-relaxed font-medium">{j.desc}</p>
+                 <a href={j.href} class="inline-flex items-center gap-3 py-3 px-8 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-black italic rounded-full hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all group/btn shadow-lg">
+                   Apply Now
+                   <Icon name="lucide:arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                 </a>
+               </div>
+             </div>
+           </div>
+         ))}
+       </div>
+    </section>
+
+    <!-- Footer Recruitment Info -->
+    <section class="py-32 px-6">
+       <div class="animate-on-scroll bento-card max-w-4xl mx-auto text-center border-none bg-gradient-to-br from-primary/5 via-transparent to-accent/5 p-16 md:p-24 shadow-2xl relative overflow-hidden">
+           <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
+           <div class="relative z-10 flex flex-col items-center">
+              <div class="w-20 h-20 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-10 border border-primary/20">
+                <Icon name="lucide:users" class="w-10 h-10 text-primary" />
+              </div>
+              <h2 class="text-4xl md:text-5xl font-black italic tracking-tighter mb-6">We Look Forward to Your Joining</h2>
+              <p class="text-xl text-muted mb-12 font-medium max-w-xl leading-relaxed">It is better to participate in creation personally than to foresee the future. I look forward to your excellent participation in Sudoku Technology to create the future of AI together!</p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left mb-16 w-full max-w-2xl border-t border-gray-200 dark:border-primary/20 pt-16">
+                 <div class="space-y-4">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-primary italic">Resume Submission</p>
+                    <a href="mailto:hr@unisudo.com" class="text-2xl font-black italic hover:text-primary transition-colors flex items-center gap-3 group">
+                       hr@unisudo.com
+                       <Icon name="lucide:mail" class="w-6 h-6 opacity-40 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                 </div>
+                 <div class="space-y-4">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-accent italic">Working Location</p>
+                    <p class="text-sm font-medium text-muted leading-relaxed">
+                       Room 802, 8th Floor, Building 1, Second Street, Port City Square, No. 55 Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai
+                    </p>
+                 </div>
+              </div>
+
+              <div class="flex justify-center">
+                 <a href="mailto:HR@unisudo.com" class="group flex items-center gap-4 text-xs font-black uppercase tracking-[0.3em] text-muted hover:text-primary transition-colors italic">
+                    Send Resume Now <Icon name="lucide:chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                 </a>
+              </div>
+           </div>
+       </div>
+    </section>
+  </main>
 </Layout>

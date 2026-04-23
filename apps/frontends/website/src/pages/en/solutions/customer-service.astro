@@ -1,394 +1,293 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Content from '@/components/widgets/Content.astro';
-import Steps from '@/components/widgets/Steps.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-import { getPermalink } from '@/utils/permalinks';
 
 const metadata = {
-  title: 'Intelligent Customer Service Solutions',
+  title: 'Intelligent Customer Service Solutions - UniSudo Inc.',
 };
+
+const serviceFlow = [
+  { title: 'Multi-channel Access', desc: 'Support unified access via web, APP, mini programs and other channels', icon: 'lucide:smartphone' },
+  { title: 'Intelligent Understanding', desc: 'Natural language understanding based on 3B/7B small models', icon: 'lucide:brain' },
+  { title: 'Knowledge Matching', desc: 'Accurate enterprise knowledge base matching for professional answers', icon: 'lucide:database' },
+  { title: 'Intelligent Reply', desc: 'Natural and fluent dialogue response, like talking to a real person', icon: 'lucide:message-circle' }
+];
+
+const advantages = [
+  { title: 'Cost Advantage', desc: 'Local deployment of 3B/7B models can save 80% operating costs', icon: 'lucide:coins' },
+  { title: 'Data Security', desc: 'Enterprise data fully localized, strictly preventing sensitive information leakage', icon: 'lucide:shield-check' },
+  { title: 'Response Speed', desc: 'Local deployment response <100ms, 10x faster than cloud', icon: 'lucide:zap' },
+  { title: 'Customization', desc: 'Fine-tuning for specific deep scenarios, providing more accurate services', icon: 'lucide:settings' }
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Section -->
-  <div class='relative flex h-96 items-center justify-center overflow-hidden'>
-    <div class='absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90'></div>
-    <div class='relative z-10 text-center text-white'>
-      <h1 class='mb-4 text-4xl font-bold md:text-5xl' data-aos='fade-up'>Intelligent Customer Service Solutions</h1>
-      <p class='text-xl' data-aos='fade-up' data-aos-delay='200'>
-        Local Deployment · Cost-effective · Secure and Reliable
-      </p>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
     </div>
-  </div>
 
-  <!-- Process Flow -->
-  <Steps
-    title='Intelligent Service Process'
-    items={[
-      {
-        title: 'Multi-channel Access',
-        description: 'Support multi-channel access such as web pages, apps, and mini programs',
-        icon: 'tabler:device-mobile',
-      },
-      {
-        title: 'Intelligent Understanding',
-        description: 'Based on the natural language processing capabilities of 3B/7B small models',
-        icon: 'tabler:brain',
-      },
-      {
-        title: 'Knowledge Matching',
-        description: 'Accurate matching of enterprise knowledge bases to provide professional answers',
-        icon: 'tabler:database',
-      },
-      {
-        title: 'Intelligent Reply',
-        description: 'Natural and fluent dialogue response, like talking to a real person',
-        icon: 'tabler:message-circle',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Flow Chart',
-    }}
-  />
-
-  <!-- Case Study 1: Financial Services -->
-  <Content
-    isReversed
-    tagline='Case Study 1'
-    title='Intelligent Customer Service for Financial Services'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-          • Demand Analysis: Large banks face over 100,000 consultations daily, with human customer service under pressure
-          • Pain Points: Complex financial professional questions, high training costs, and high staff turnover
-          • Challenges: Ensuring data security and high accuracy requirements
-          • Target: Building a secure, professional, and efficient intelligent customer service system`,
-      },
-      {
-        title: 'Solution',
-        description: `
-          • Local deployment of a 3B lightweight model to ensure data security
-          • Build a financial professional knowledge graph covering 90% of common issues
-          • Develop multi-round dialogue understanding engine to accurately identify customer intent
-          • Integrate business systems to provide一站式 service
-          • Configure financial domain vocabulary to enhance professionalism`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-          • Intelligent resolution rate of 85%, 15% higher than peers
-          • 60% reduction in human staff, saving 8 million+ annually
-          • Customer waiting time reduced from an average of 15 minutes to 30 seconds
-          • After-sales satisfaction increased by 35%
-          • Business processing accuracy rate of 99.9%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Financial Intelligent Customer Service',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        A user needs to adjust their credit card limit at night. Traditional human service requires waiting until the
-        next day, but the intelligent customer service system responds immediately, through multi-round dialogue to
-        understand user needs, retrieve user portraits and credit data, and complete the assessment and adjustment
-        within 3 minutes, without any human intervention. The user gave a 5-star rating for the response speed and
-        service experience.
+    <!-- Hero Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto text-center animate-on-scroll">
+      <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+        SOLUTIONS · Intelligent Customer Service
+      </span>
+      <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-[0.9]">
+        Intelligent Customer Service<br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-5xl md:text-6xl italic">Connecting Business Core</span>
+      </h1>
+      <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed">
+        Local Deployment · Controllable Cost · Secure and Reliable. Based on 3B/7B small model technology, creating a business-oriented privatized intelligent service system.
       </p>
-    </Fragment>
-  </Content>
+    </section>
 
-  <!-- Case Study 2: E-commerce -->
-  <Content
-    isAfterContent
-    tagline='Case Study 2'
-    title='Intelligent Customer Service for E-commerce'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-          • Demand Analysis: Over 500,000 consultations daily during peak seasons, making it difficult for human customer service to cope
-          • Pain Points: Orders, logistics tracking, and other repetitive tasks account for 70%
-          • Challenges: Need to handle complex after-sales scenarios while ensuring service quality
-          • Target: Provide 24/7 high-quality customer service`,
-      },
-      {
-        title: 'Solution',
-        description: `
-          • Deploy a 7B local model to support high concurrency
-          • Integrate order systems, logistics systems, and member systems
-          • Develop intelligent work order allocation mechanisms
-          • Establish a product knowledge base and FAQ system
-          • Integrate intelligent recommendation engines`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-          • Customer service efficiency increased by 200%, response time reduced by 75%
-          • Full automation rate of 78%
-          • Can support millions of concurrent requests during peak seasons
-          • Customer satisfaction maintained at over 95%
-          • Monthly operational cost savings of 1.2 million+`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'E-commerce Intelligent Customer Service',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        During the Double 11 period, a user consulted multiple orders about delivery status and return/exchange issues.
-        The intelligent customer service system quickly summarized the user's all order information, proactively pushed
-        the latest logistics progress, and automatically generated a work order and scheduled a pickup appointment for
-        return/exchange requests, all of which took only 5 minutes, avoiding the long waiting time for traditional human
-        customer service during the peak period.
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Case Study 3: Government Services -->
-  <Content
-    isReversed
-    tagline='Case Study 3'
-    title='Intelligent Assistant for Government Services'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-          • Demand Analysis: Many government service items, large amount of citizen consultation
-          • Pain Points: Frequent policy updates, unstable accuracy of manual answers
-          • Challenges: Need to cover thousands of service policies, ensure accuracy
-          • Target: Provide accurate and timely policy consultation services`,
-      },
-      {
-        title: 'Solution',
-        description: `
-          • Deploy a 3B local model to build a government knowledge base
-          • Develop a policy real-time update mechanism
-          • Integrate online appointment and processing systems
-          • Support multi-language interaction
-          • Provide smart recommendations for handling procedures`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-          • Daily service for citizens of 5000+, 24 hours online
-          • Policy resolution accuracy of 98%
-          • Customer satisfaction increased by 40%
-          • Window waiting time reduced by 65%
-          • Staff efficiency increased by 80%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1591839221653-a5cc0583e01c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Government Service',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        A citizen wants to apply for the elderly medical insurance benefits qualification certification, but is unclear
-        about the specific process. The intelligent assistant explains the process in detail through voice interaction,
-        automatically schedules the nearest processing point, and贴心推送了乘车路线，让老人感受到了暖心的智能化服务。
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Case Study 4: Enterprise Knowledge Base -->
-  <Content
-    isAfterContent
-    tagline='Case Study 4'
-    title='Enterprise Knowledge Base Management'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-          • Demand Analysis: Dispersed internal knowledge, low retrieval efficiency
-          • Pain Points: High employee training costs, difficulty in knowledge inheritance
-          • Challenges: Need to process unstructured data, implement intelligent recommendations
-          • Target: Establish an efficient knowledge management and sharing platform`,
-      },
-      {
-        title: 'Solution',
-        description: `
-          • Deploy a 7B local model to process unstructured data
-          • Build a knowledge graph to implement intelligent association
-          • Develop semantic search engines
-          • Integrate document management systems
-          • Provide personalized learning recommendations`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-          • Knowledge retrieval time reduced by 80%
-          • New employee training cycle shortened by 50%
-          • Knowledge base usage rate increased by 200%
-          • Employee satisfaction reached 96%
-          • Annual training cost savings of 3 million+`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Enterprise Knowledge Base',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        A new employee encountered a technical problem while processing a customer project. Through the intelligent
-        knowledge base, they quickly retrieved relevant cases and solutions, and the system also proactively recommended
-        related best practice documents to help the employee solve the problem within half an hour, greatly improving
-        work efficiency.
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Case Study 5: Multi-round Dialogue -->
-  <Content
-    isReversed
-    tagline='Case Study 5'
-    title='Intelligent Dialogue Management Platform'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-          • Demand Analysis: Traditional customer service is unable to handle complex multi-round dialogues
-          • Pain Points: Insufficient context understanding, fragmented dialogue experience
-          • Challenges: Need to accurately understand user intent while maintaining dialogue continuity
-          • Target: Create a seamless and natural dialogue experience`,
-      },
-      {
-        title: 'Solution',
-        description: `
-          • Deploy a 7B local model to enhance dialogue understanding capabilities
-          • Develop context management systems
-          • Integrate emotional analysis engines
-          • Design multi-round dialogue strategies
-          • Implement real-time intent recognition`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-          • Dialogue completion rate increased by 60%
-          • User satisfaction increased by 45%
-          • Average dialogue turns reduced by 30%
-          • Understanding accuracy reached 92%
-          • Customer churn rate decreased by 25%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Multi-round Dialogue',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        A customer was consulting about product features, gradually delving into specific application scenarios and
-        price plans. The system accurately grasped the changes in user needs through multi-round dialogue, timely
-        recommended suitable solutions, and finally helped the customer choose the most suitable product configuration.
-        The entire process was natural and smooth, and the customer praised it as "like talking to a real person".
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Case Study 6: Emotion Recognition -->
-  <Content
-    isAfterContent
-    tagline='Case Study 6'
-    title='Emotion Recognition Interaction System'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-          • Demand Analysis: Inaccurate customer emotion recognition, poor service experience
-          • Pain Points: Unable to detect customer dissatisfaction in time
-          • Challenges: Need to accurately identify the emotional倾向 of text
-          • Target: Provide warm and considerate emotional services`,
-      },
-      {
-        title: 'Solution',
-        description: `
-          • Deploy a 3B emotional analysis model
-          • Develop an emotional warning mechanism
-          • Design differentiated reply strategies
-          • Integrate customer portrait systems
-          • Establish a service quality evaluation system`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-          • Emotional recognition accuracy of 88%
-          • Complaint rate decreased by 50%
-          • Customer satisfaction increased by 40%
-          • Customer loyalty increased by 35%
-          • NPS increased by 45 points`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Emotion Recognition',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        A user showed obvious signs of impatience during the refund process. The system quickly identified the change in
-        mood and adjusted the reply strategy immediately, using a more concise and direct expression,
-        and适时表达理解和歉意。同时主动升级服务等级，加速处理退款申请。用户对这种贴心的服务感到惊喜，最终还给予了五星好评。
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Features Section -->
-  <Features2
-    title='Platform Core Advantages'
-    subtitle='Local deployment of small model solutions'
-    items={[
-      {
-        title: 'Cost Advantage',
-        description:
-          'Compared to cloud-based large models, local deployment of 3B/7B small models can save 80% of operating costs',
-        icon: 'tabler:coin',
-      },
-      {
-        title: 'Data Security',
-        description:
-          'Enterprise data is fully stored locally, with no need to worry about sensitive information leakage risks',
-        icon: 'tabler:shield',
-      },
-      {
-        title: 'Response Speed',
-        description: 'Local deployment model response time <100ms, faster than cloud-based models by 10 times',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Customization',
-        description: 'Support model fine-tuning for enterprise scenarios to provide more accurate services',
-        icon: 'tabler:tools',
-      },
-    ]}
-  />
-
-  <!-- Call to Action -->
-  <div class='bg-primary-50 relative py-16 dark:bg-slate-800'>
-    <div class='relative mx-auto max-w-7xl px-4 sm:px-6'>
-      <div class='text-center'>
-        <h2 class='leading-tighter mb-4 text-3xl font-bold tracking-tighter md:text-4xl'>
-          Start the Intelligent Customer Service Era
-        </h2>
-        <a href={getPermalink('/en/contact')} class='btn btn-primary mb-4'> Book a Demo </a>
-        <p class='text-xl text-gray-600 dark:text-slate-400'>
-          Let us help your business provide better customer service
-        </p>
+    <!-- Service Flow -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">Intelligent Workflow</p>
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">Intelligent Service Process</h2>
       </div>
-    </div>
-  </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {serviceFlow.map((s, i) => (
+          <div class="animate-on-scroll bento-card group" style={`transition-delay: ${i * 100}ms`}>
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+               <Icon name={s.icon} class="w-7 h-7" />
+            </div>
+            <h3 class="text-xl font-bold mb-4 italic tracking-tight">{s.title}</h3>
+            <p class="text-sm text-muted leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Detailed Case Studies -->
+    <section class="py-32 space-y-40">
+       <!-- Case 1: Finance -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+             <div class="animate-on-scroll animate-left">
+                <span class="text-primary text-xs font-bold uppercase tracking-widest mb-4 inline-block">CASE STUDY 01 · Financial Industry</span>
+                <h3 class="text-4xl font-black mb-10 italic tracking-tighter">Financial-grade Intelligent Customer Service System</h3>
+                <div class="space-y-6 mb-10">
+                   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div class="p-6 rounded-3xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 ">
+                        <p class="text-[10px] font-bold text-primary uppercase mb-2">Project Background & Challenges</p>
+                        <p class="text-xs text-muted leading-relaxed">Large banks face over 100,000 consultations daily with immense human pressure. Complex professional questions, high training costs, and extremely high data security requirements.</p>
+                      </div>
+                      <div class="p-6 rounded-3xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 ">
+                        <p class="text-[10px] font-bold text-primary uppercase mb-2">Solutions</p>
+                        <ul class="text-[10px] text-muted space-y-1 list-disc pl-3">
+                          <li>Local deployment of 3B model to ensure security</li>
+                          <li>Build knowledge graph covering 90% of issues</li>
+                          <li>Multi-round dialogue for accurate intent recognition</li>
+                        </ul>
+                      </div>
+                   </div>
+                   <div class="grid grid-cols-3 gap-4">
+                      <div class="p-4 rounded-2xl bg-emerald-500/5 border border-emerald-500/10 text-center">
+                        <p class="text-xl font-black italic text-emerald-500">85%</p>
+                        <p class="text-[8px] uppercase font-bold text-muted">Resolution Rate</p>
+                      </div>
+                      <div class="p-4 rounded-2xl bg-blue-500/5 border border-blue-500/10 text-center">
+                        <p class="text-xl font-black italic text-blue-500">8M+</p>
+                        <p class="text-[8px] uppercase font-bold text-muted">Annual Cost Savings</p>
+                      </div>
+                      <div class="p-4 rounded-2xl bg-orange-500/5 border border-orange-500/10 text-center">
+                        <p class="text-xl font-black italic text-orange-500">99.9%</p>
+                        <p class="text-[8px] uppercase font-bold text-muted">Processing Accuracy</p>
+                      </div>
+                   </div>
+                   <div class="p-8 rounded-[2.5rem] bg-slate-900 text-white relative overflow-hidden group">
+                      <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:banknote" class="w-20 h-20" /></div>
+                      <h4 class="text-lg font-black mb-3 italic tracking-tight">Scenario Story</h4>
+                      <p class="text-sm text-white/70 leading-relaxed italic">"A user needed to urgently adjust their credit card limit late at night. The system responded immediately, retrieving user profiles and credit data through multi-round dialogue, completing the assessment within 3 minutes without any human intervention. The user gave a 5-star rating."</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right relative">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1740&auto=format&fit=crop" class="rounded-[4rem] w-full aspect-square object-cover shadow-2xl" />
+             </div>
+          </div>
+       </div>
+
+       <!-- Case 2: E-commerce -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center flex-row-reverse">
+             <div class="animate-on-scroll animate-left lg:order-2">
+                <span class="text-accent text-xs font-bold uppercase tracking-widest mb-4 inline-block">CASE STUDY 02 · E-commerce Industry</span>
+                <h3 class="text-4xl font-black mb-10 italic tracking-tighter">Promotion-level Intelligent Response Platform</h3>
+                <div class="space-y-6 mb-10">
+                   <div class="p-6 rounded-3xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20">
+                      <p class="text-xs font-bold text-accent uppercase mb-2">Project Overview</p>
+                      <p class="text-sm text-muted leading-relaxed">Over 500,000 daily consultations, with order and logistics repetitive consultations accounting for 70%. Deploy 7B local model to support high concurrency, integrate all business systems.</p>
+                   </div>
+                   <div class="flex gap-4">
+                      <div class="flex-1 p-6 rounded-3xl bg-accent/5 border border-accent/10">
+                         <p class="text-2xl font-black italic text-accent">+200%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">Service Efficiency Improvement</p>
+                      </div>
+                      <div class="flex-1 p-6 rounded-3xl bg-purple-500/5 border border-purple-500/10">
+                         <p class="text-2xl font-black italic text-purple-500">78%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">Full Automation Rate</p>
+                      </div>
+                   </div>
+                   <div class="p-8 rounded-[2.5rem] bg-accent text-white relative overflow-hidden group">
+                      <div class="absolute -top-4 -right-4 opacity-20"><Icon name="lucide:shopping-cart" class="w-20 h-20" /></div>
+                      <h4 class="text-lg font-black mb-3 italic tracking-tight">Scenario Story</h4>
+                      <p class="text-sm text-white/90 leading-relaxed italic">"During Double 11, a user consulted about delivery status and returns for multiple orders. The system quickly summarized all order information, proactively pushed logistics progress, and automatically scheduled pickup, taking only 5 minutes, completely avoiding queues during peak hours."</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right lg:order-1 relative">
+                <img src="https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1740&auto=format&fit=crop" class="rounded-[4rem] w-full aspect-square object-cover shadow-2xl" />
+             </div>
+          </div>
+       </div>
+
+       <!-- More Cases in a compact grid -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="text-center mb-20 animate-on-scroll">
+             <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">More Industry Practices</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+             <!-- Case 3: Government -->
+             <div class="animate-on-scroll bento-card p-10 flex flex-col justify-between">
+                <div>
+                   <div class="flex items-center justify-between mb-8">
+                      <span class="text-[10px] font-bold uppercase tracking-widest text-primary">CASE 03 · Government Services</span>
+                      <Icon name="lucide:landmark" class="w-6 h-6 text-primary" />
+                   </div>
+                   <h4 class="text-2xl font-bold mb-4 italic tracking-tight">Government Service Intelligent Assistant</h4>
+                   <p class="text-sm text-muted mb-8 leading-relaxed">Facing thousands of complex policies, deploy 3B model to build dynamically updated knowledge base. Daily service for 5,000+ citizens, policy accuracy rate of 98%, window waiting time reduced by 65%.</p>
+                   <div class="p-6 rounded-2xl bg-primary/5 italic border border-primary/10 text-xs mb-8">
+                      "A citizen using local dialect to consult medical insurance certification process, the assistant explained in detail through voice interaction and scheduled the nearest processing point, providing warm elderly-friendly service."
+                   </div>
+                </div>
+                <div class="flex gap-6">
+                   <div>
+                      <p class="text-xl font-black italic text-primary">+40%</p>
+                      <p class="text-[8px] uppercase font-bold text-muted">Satisfaction Improvement</p>
+                   </div>
+                   <div>
+                      <p class="text-xl font-black italic text-primary">80%</p>
+                      <p class="text-[8px] uppercase font-bold text-muted">Staff Efficiency Improvement</p>
+                   </div>
+                </div>
+             </div>
+             
+             <!-- Case 4: Knowledge -->
+             <div class="animate-on-scroll bento-card p-10 flex flex-col justify-between shadow-primary/5">
+                <div>
+                   <div class="flex items-center justify-between mb-8">
+                      <span class="text-[10px] font-bold uppercase tracking-widest text-accent">CASE 04 · Enterprise Knowledge Base</span>
+                      <Icon name="lucide:folder-tree" class="w-6 h-6 text-accent" />
+                   </div>
+                   <h4 class="text-2xl font-bold mb-4 italic tracking-tight">Enterprise Intelligent Brain Management</h4>
+                   <p class="text-sm text-muted mb-8 leading-relaxed">Solving enterprise knowledge dispersion and difficult retrieval. Deploy 7B model to build semantic search engine and knowledge graph. Retrieval time reduced by 80%, new employee training cycle shortened by 50%.</p>
+                   <div class="p-6 rounded-2xl bg-accent/5 italic border border-accent/10 text-xs mb-8">
+                      "New employees instantly retrieve historical solutions for technical problems and receive best practice recommendations, solving problems within half an hour with efficiency leap."
+                   </div>
+                </div>
+                <div class="flex gap-6">
+                   <div>
+                      <p class="text-xl font-black italic text-accent">200%</p>
+                      <p class="text-[8px] uppercase font-bold text-muted">Usage Rate Improvement</p>
+                   </div>
+                   <div>
+                      <p class="text-xl font-black italic text-accent">3M+</p>
+                      <p class="text-[8px] uppercase font-bold text-muted">Annual Training Cost Savings</p>
+                   </div>
+                </div>
+             </div>
+
+             <!-- Case 5: Dialogue -->
+             <div class="animate-on-scroll bento-card p-10 flex flex-col justify-between">
+                <div>
+                   <div class="flex items-center justify-between mb-8">
+                      <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-500">CASE 05 · Dialogue Management</span>
+                      <Icon name="lucide:message-square" class="w-6 h-6 text-emerald-500" />
+                   </div>
+                   <h4 class="text-2xl font-bold mb-4 italic tracking-tight">Bi-directional Emotional Dialogue Platform</h4>
+                   <p class="text-sm text-muted mb-8 leading-relaxed">Overcoming complex multi-round dialogue understanding challenges. Deploy 7B model to enhance context management, achieving 92% understanding accuracy, average dialogue turns reduced by 30%.</p>
+                   <div class="p-6 rounded-2xl bg-emerald-500/5 italic border border-emerald-500/10 text-xs mb-8">
+                      "The system accurately captures user needs as topics change. The entire consultation process is natural and smooth. User exclaimed 'It's like talking to a real person'."
+                   </div>
+                </div>
+                <div class="flex gap-6">
+                   <div>
+                      <p class="text-xl font-black italic text-emerald-500">60%</p>
+                      <p class="text-[8px] uppercase font-bold text-muted">Dialogue Completion Rate Improvement</p>
+                   </div>
+                   <div>
+                      <p class="text-xl font-black italic text-emerald-500">-25%</p>
+                      <p class="text-[8px] uppercase font-bold text-muted">Customer Churn Rate Decrease</p>
+                   </div>
+                </div>
+             </div>
+
+             <!-- Case 6: Emotion -->
+             <div class="animate-on-scroll bento-card p-10 flex flex-col justify-between">
+                <div>
+                   <div class="flex items-center justify-between mb-8">
+                      <span class="text-[10px] font-bold uppercase tracking-widest text-pink-500">CASE 06 · Emotion Recognition</span>
+                      <Icon name="lucide:heart" class="w-6 h-6 text-pink-500" />
+                   </div>
+                   <h4 class="text-2xl font-bold mb-4 italic tracking-tight">Emotional Interactive Customer Service</h4>
+                   <p class="text-sm text-muted mb-8 leading-relaxed">Accurately identifying emotional tendencies behind text. Deploy specialized 3B emotional model for dissatisfaction early warning. NPS improved by 45 points, complaint rate halved.</p>
+                   <div class="p-6 rounded-2xl bg-pink-500/5 italic border border-pink-500/10 text-xs mb-8">
+                      "System identified negative emotions from user impatience during refund request, automatically switched to concise communication style and actively accelerated processing, successfully turning complaint into praise."
+                   </div>
+                </div>
+                <div class="flex gap-6">
+                   <div>
+                      <p class="text-xl font-black italic text-pink-500">88%</p>
+                      <p class="text-[8px] uppercase font-bold text-muted">Emotion Recognition Accuracy</p>
+                   </div>
+                   <div>
+                      <p class="text-xl font-black italic text-pink-500">45pt</p>
+                      <p class="text-[8px] uppercase font-bold text-muted">NPS Improvement</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Platform Advantages -->
+    <section class="py-32 px-6 max-w-7xl mx-auto border-t border-border-light dark:border-primary/20 ">
+      <div class="text-center mb-20 animate-on-scroll">
+         <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic mb-4">Platform Core Advantages</h2>
+         <p class="text-xl text-muted font-medium">Small model solutions based on local deployment</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {advantages.map((adv, i) => (
+          <div class="animate-on-scroll p-10 rounded-3xl border border-border-light dark:border-primary/20 hover:border-primary transition-all group" style={`transition-delay: ${i * 50}ms`}>
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+               <Icon name={adv.icon} class="w-7 h-7" />
+            </div>
+            <h4 class="text-lg font-bold mb-4 italic tracking-tight">{adv.title}</h4>
+            <p class="text-xs text-muted leading-relaxed font-medium">{adv.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 px-6">
+       <div class="animate-on-scroll bento-card max-w-4xl mx-auto text-center border-none bg-gradient-to-br from-primary to-accent text-white p-16 shadow-2xl relative overflow-hidden">
+           <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/customer/1920/1080?blur=10')] opacity-20 mix-blend-overlay"></div>
+           <div class="relative z-10">
+              <h2 class="text-4xl md:text-7xl font-black tracking-tighter mb-8 italic">Start the Intelligent Customer Service New Era</h2>
+              <p class="text-xl text-white/80 mb-12 font-medium max-w-xl mx-auto">Let us help your enterprise provide better, more efficient, and warmer customer service.</p>
+              <div class="flex flex-wrap justify-center gap-6">
+                <a href="/en/contact/" class="px-10 py-4 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">Book a Demo Now</a>
+              </div>
+           </div>
+       </div>
+    </section>
+  </main>
 </Layout>

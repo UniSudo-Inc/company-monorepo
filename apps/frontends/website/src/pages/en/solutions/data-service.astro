@@ -1,310 +1,312 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Content from '@/components/widgets/Content.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-import Steps from '@/components/widgets/Steps.astro';
-import { getPermalink } from '@/utils/permalinks';
 
 const metadata = {
-  title: 'Data Service',
+  title: 'Data Services - UniSudo',
 };
+
+const serviceFlow = [
+  { title: 'Demand Analysis', desc: 'Deep understanding of business scenarios with closed-loop solutions', icon: 'lucide:search' },
+  { title: 'Data Collection', desc: 'Multi-channel legal data collection and customized preprocessing', icon: 'lucide:database' },
+  { title: 'Data Processing', desc: 'Professional-grade cleaning, refined annotation and multi-dimensional processing', icon: 'lucide:cpu' },
+  { title: 'Quality Control', desc: 'Strict triple-review quality management system with regression validation', icon: 'lucide:shield-check' }
+];
+
+const annotationFields = [
+  { title: 'Image & Video Annotation', desc: 'Support for points, lines, boxes, polygons and semantic segmentation', icon: 'lucide:image' },
+  { title: 'Text Data Annotation', desc: 'Sentiment analysis, entity recognition and dialogue intent annotation', icon: 'lucide:file-text' },
+  { title: 'Audio Data Annotation', desc: 'ASR transcription, voice timbre extraction and language identification', icon: 'lucide:mic' },
+  { title: 'Multi-language Data Annotation', desc: 'Professional translation and annotation covering 20+ global languages', icon: 'lucide:languages' },
+  { title: 'Professional Domain Annotation', desc: 'Deep annotation for highly specialized fields like legal, medical, and finance', icon: 'lucide:briefcase' }
+];
+
+const advantages = [
+  { title: 'Professional Team', desc: 'Led by industry veteran data scientists and annotation experts', icon: 'lucide:users' },
+  { title: 'Strict Quality Control', desc: 'Full-process digital tracking, accuracy up to 99.9%+', icon: 'lucide:check-square' },
+  { title: 'Efficient Process', desc: 'AI-assisted annotation technology significantly shortens delivery cycles', icon: 'lucide:zap' },
+  { title: 'Security Assurance', desc: 'Financial-grade data masking and physically isolated security environment', icon: 'lucide:lock' }
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Section -->
-  <div class='relative flex h-96 items-center justify-center overflow-hidden'>
-    <div class='absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90'></div>
-    <div class='relative z-10 text-center text-white'>
-      <h1 class='mb-4 text-4xl font-bold md:text-5xl' data-aos='fade-up'>Data Empowerment, Intelligent Future</h1>
-      <p class='text-xl' data-aos='fade-up' data-aos-delay='200'>Professional AI Data Service Solutions</p>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
     </div>
-  </div>
 
-  <!-- Process Flow -->
-  <Steps
-    title='Data Service Process'
-    items={[
-      {
-        title: 'Demand Analysis',
-        description: 'Deeply understand business scenarios and develop solutions',
-        icon: 'tabler:search',
-      },
-      {
-        title: 'Data Collection',
-        description: 'Multi-channel data collection and preprocessing',
-        icon: 'tabler:database-import',
-      },
-      {
-        title: 'Data Processing',
-        description: 'Professional cleaning, annotation, and processing',
-        icon: 'tabler:tool',
-      },
-      {
-        title: 'Quality Control',
-        description: 'Strict quality management and verification',
-        icon: 'tabler:certificate',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1599727277707-b429a4994c15?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Service Process',
-    }}
-  />
-
-  <!-- Service Content -->
-  <Content
-    isReversed
-    title='AI Training Data Annotation'
-    items={[
-      {
-        title: 'Business Field',
-        description: `Image and video annotation, text data annotation, voice data annotation, multi-language data annotation, professional field annotation`,
-      },
-      {
-        title: 'Service Advantages',
-        description: `Professional team, strict quality control, efficient process, and security assurance`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Data Annotation',
-    }}
-  />
-
-  <Content
-    title='Multi-modal Data Processing'
-    items={[
-      {
-        title: 'Processing Capability',
-        description: `Image preprocessing, video data processing, voice data processing, text data processing, multi-modal data fusion`,
-      },
-      {
-        title: 'Technical Advantages',
-        description: `Advanced algorithms, efficient processing, quality assurance, cost optimization`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80',
-      alt: 'Multi-modal Processing',
-    }}
-  />
-
-  <!-- Case Studies -->
-  <Content
-    isReversed
-    tagline='Case Study 1'
-    title='Financial Data Processing'
-    items={[
-      {
-        title: 'Project Background',
-        description: `• Demand analysis: large bank transaction data cleaning and annotation requirements
-  • Pain point: large data volume, high privacy requirements, strict accuracy requirements
-  • Challenge: need to process historical data and real-time data streams
-  • Goal: establish a high-quality financial data set`,
-      },
-      {
-        title: 'Solution',
-        description: `• Deploy professional data processing teams
-  • Establish multiple data verification mechanisms
-  • Implement data encryption and de-sensitization processing
-  • Develop automated data cleaning processes
-  • Build a financial annotation specification system`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `• Data accuracy rate of 99.9%
-  • Processing efficiency increased by 200%
-  • Zero data security incidents
-  • Annotation cost reduced by 40%
-  • Customer satisfaction 98%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Financial Data Processing',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        Processed over 10 million transaction data for a large bank, successfully established a high-quality anti-fraud
-        training data set through AI-assisted annotation and multiple verification mechanisms, and helped the customer's
-        AI model accuracy improve by 15%.
-      </p>
-    </Fragment>
-  </Content>
-
-  <Content
-    isAfterContent
-    tagline='Case Study 2'
-    title='Medical Image Data Annotation'
-    items={[
-      {
-        title: 'Project Background',
-        description: `• Demand analysis: hospital CT image data annotation and analysis
-  • Pain point: high professional requirements, time-consuming manual annotation
-  • Challenge: need medical professional knowledge support
-  • Goal: provide high-quality medical data sets`,
-      },
-      {
-        title: 'Solution',
-        description: `• Establish a medical AI annotation team
-  • Develop medical image annotation tools
-  • Establish a three-level quality inspection mechanism
-  • Introduce expert review process
-  • Apply data enhancement technology`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `• Annotation efficiency increased by 150%
-  • Accuracy rate of 95% or higher
-  • Data set expanded 3 times
-  • Model diagnostic accuracy improved by 20%
-  • Annotation cost reduced by 35%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Medical Data',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        Assisted a tertiary hospital to complete the annotation of 100,000 chest CT images, significantly improving the
-        accuracy of lung disease detection models through professional teams and AI-assisted annotation, and receiving
-        high praise from the doctor team.
-      </p>
-    </Fragment>
-  </Content>
-
-  <Content
-    isReversed
-    tagline='Case Study 3'
-    title='Industrial Visual Data Processing'
-    items={[
-      {
-        title: 'Project Background',
-        description: `• Demand analysis: manufacturing quality inspection data annotation requirements
-  • Pain point: complex annotation rules, high requirements
-  • Challenge: need to process various types of defects
-  • Goal: improve the level of automatic inspection`,
-      },
-      {
-        title: 'Solution',
-        description: `• Customized annotation scheme
-  • Develop defect recognition tools
-  • Establish standardized processes
-  • Implement data enhancement technology
-  • Apply quality tracking system`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `• Detection accuracy rate improved by 25%
-  • Production efficiency increased by 40%
-  • Quality inspection cost reduced by 50%
-  • Data set size increased by 5 times
-  • ROI increased by 200%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1633934542430-0905ccb5f050?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Industrial Visual',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        Established a chip defect detection data set for a semiconductor manufacturer, helping customers improve product
-        quality inspection efficiency by 40% through precise annotation and data enhancement, and saving over 5 million
-        yuan in annual costs.
-      </p>
-    </Fragment>
-  </Content>
-
-  <Content
-    isAfterContent
-    tagline='Case Study 4'
-    title='Retail Data Analysis'
-    items={[
-      {
-        title: 'Project Background',
-        description: `• Demand analysis: retail scene data processing requirements
-  • Pain point: difficulty in integrating multi-source data
-  • Challenge: high real-time requirements, large data volume
-  • Goal: improve the level of retail intelligence`,
-      },
-      {
-        title: 'Solution',
-        description: `• Deploy real-time data processing systems
-  • Develop multi-source data fusion platforms
-  • Establish user behavior analysis models
-  • Implement privacy protection schemes
-  • Provide visualization analysis tools`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `• Data processing efficiency increased by 300%
-  • Sales conversion rate increased by 20%
-  • Inventory optimization efficiency increased by 35%
-  • Customer satisfaction increased by 25%
-  • Operating cost reduced by 30%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1567103472667-6898f3a79cf2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Retail Data',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        Helped a chain retail enterprise build a customer flow analysis system, optimized product display and staff
-        allocation through processing visual data and transaction data, and achieved a 15% increase in sales.
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Features -->
-  <Features2
-    title='Core Advantages'
-    subtitle='Professional Data Processing Capabilities'
-    items={[
-      {
-        title: 'Professional Team',
-        description: 'Professional team in AI data processing field',
-        icon: 'tabler:users',
-      },
-      {
-        title: 'Quality Assurance',
-        description: 'Strict quality management system, ensuring data quality',
-        icon: 'tabler:certificate',
-      },
-      {
-        title: 'Cost-effective',
-        description: 'Efficient processing flow, optimizing cost input',
-        icon: 'tabler:coin',
-      },
-      {
-        title: 'Security Assurance',
-        description: 'Complete data security protection mechanism',
-        icon: 'tabler:shield',
-      },
-    ]}
-  />
-
-  <!-- Call to Action -->
-  <div class='bg-primary-50 relative py-16 dark:bg-slate-800'>
-    <div class='relative mx-auto max-w-7xl px-4 sm:px-6'>
-      <div class='text-center'>
-        <h2 class='leading-tighter mb-4 text-3xl font-bold tracking-tighter md:text-4xl'>
-          Data Empowerment, Intelligent Future
-        </h2>
-        <a href={getPermalink('/en/about')} class='btn btn-primary mb-4'> Consult Now </a>
-        <p class='text-xl text-gray-600 dark:text-slate-400'>
-          Professional data service team, providing one-stop solutions
+    <!-- Hero Section -->
+    <section class="relative py-32 px-6 overflow-hidden">
+      <!-- Mesh Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 opacity-30 -z-10"></div>
+      
+      <div class="max-w-7xl mx-auto text-center animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+          DATA SERVICES · 数据服务
+        </span>
+        <h1 class="text-6xl md:text-7xl font-bold tracking-tight leading-tight mb-4">Data Empowerment</h1>
+        <h2 class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-5xl md:text-6xl mt-3 font-semibold mb-8 italic">Building Future Foundations</h2>
+        <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed mb-12">
+          Professional AI data service solutions. From massive raw data to high-quality training sets, we provide full-lifecycle data governance and enhancement.
         </p>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <!-- Service Flow -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">Process Workflow</p>
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">Standardized Data Service Process</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {serviceFlow.map((step, i) => (
+          <div class="animate-on-scroll bento-card relative group" style={`transition-delay: ${i * 100}ms`}>
+            <div class="text-xs font-mono text-primary/40 mb-6 font-bold uppercase tracking-widest">Step 0{i + 1}</div>
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform duration-500">
+               <Icon name={step.icon} class="w-7 h-7" />
+            </div>
+            <h3 class="text-xl font-bold mb-4 tracking-tight italic">{step.title}</h3>
+            <p class="text-sm text-muted leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Annotation & Advantages: Bento Grid -->
+    <section class="py-32 px-6 max-w-7xl mx-auto bg-surface-light dark:bg-slate-900/50 rounded-[4rem] border border-border-light dark:border-primary/20  mb-32 relative overflow-hidden">
+      <div class="absolute inset-0 bg-primary/5 blur-[100px] -z-10 animate-pulse"></div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Annotation Fields -->
+        <div class="lg:col-span-8 animate-on-scroll animate-left">
+           <div class="bento-card h-full bg-white dark:bg-white/5 border-none p-12">
+              <h3 class="text-3xl font-black italic tracking-tighter mb-10">AI Training Data Annotation</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {annotationFields.map(field => (
+                  <div class="group">
+                    <div class="flex items-center gap-4 mb-4">
+                      <Icon name={field.icon} class="w-5 h-5 text-primary" />
+                      <h4 class="font-bold">{field.title}</h4>
+                    </div>
+                    <p class="text-sm text-muted leading-relaxed pl-9">{field.desc}</p>
+                  </div>
+                ))}
+              </div>
+           </div>
+        </div>
+
+        <!-- Advantages -->
+        <div class="lg:col-span-4 animate-on-scroll animate-right">
+           <div class="bento-card h-full bg-slate-900 text-white border-none p-12 flex flex-col">
+              <h3 class="text-3xl font-black italic tracking-tighter mb-10">Service Advantages</h3>
+              <div class="space-y-10 flex-grow">
+                {advantages.map(adj => (
+                  <div class="flex gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-primary shrink-0 transition-transform group-hover:rotate-12">
+                       <Icon name={adj.icon} class="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-sm mb-1">{adj.title}</h4>
+                      <p class="text-white/50 text-[11px] leading-relaxed italic">{adj.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-modal content -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div class="animate-on-scroll animate-left">
+             <span class="text-accent text-xs font-bold uppercase tracking-widest mb-4 inline-block">CAPABILITIES · 处理能力</span>
+             <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-8 italic">Multi-modal Data Processing</h2>
+             <div class="space-y-12">
+                <div>
+                   <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                      <span class="w-2 h-2 bg-accent rounded-full animate-ping"></span>
+                      Ultimate Processing Efficiency
+                   </h3>
+                   <p class="text-muted leading-relaxed mb-6">Integrating advanced algorithms, supporting image preprocessing, high-frame-rate video parsing, semantic-level text mining, and complex voice tone analysis. Through multi-modal data fusion technology, your model gains cross-media deep perception.</p>
+                   <div class="grid grid-cols-2 gap-4">
+                      {['High-speed GPU Computing', 'Distributed Processing Architecture', 'High-precision Fusion Algorithms', 'Fully Automated Data Masking'].map(tag => (
+                        <div class="px-4 py-2 rounded-xl bg-accent/10 text-accent text-xs font-bold border border-accent/20">
+                           {tag}
+                        </div>
+                      ))}
+                   </div>
+                </div>
+                <div>
+                   <h3 class="text-2xl font-bold mb-6">Quality Assurance System</h3>
+                   <p class="text-muted text-sm leading-relaxed">We've established a closed-loop quality control process covering "algorithmic auto-validation, expert sampling review, and third-party blind review comparison" to ensure every delivered data meets industrial-grade reliability standards.</p>
+                </div>
+             </div>
+          </div>
+          <div class="animate-on-scroll animate-right relative">
+             <div class="rounded-[3.5rem] overflow-hidden shadow-2xl relative group">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                <div class="absolute bottom-10 left-10 right-10">
+                   <div class="p-8 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20">
+                      <p class="text-white text-3xl font-black italic tracking-tighter mb-2">99.9%</p>
+                      <p class="text-white/60 text-[10px] font-bold uppercase tracking-widest">Annotation Data Consistency</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Case Studies: Full Width Scrollable style -->
+    <section class="py-32 space-y-32">
+       <div class="text-center mb-20 animate-on-scroll">
+          <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">Case Studies</p>
+          <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic">Industry Practices of Data Empowerment</h2>
+       </div>
+
+       <!-- Financial -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+             <div class="animate-on-scroll animate-left">
+                <span class="text-primary text-xs font-bold uppercase tracking-widest mb-4 inline-block">FINTECH · 金融科技</span>
+                <h3 class="text-4xl font-black mb-8 italic tracking-tighter">Financial-grade Data Precision Governance</h3>
+                <div class="space-y-6">
+                   <div class="p-6 rounded-3xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 ">
+                      <p class="text-xs font-bold text-primary uppercase mb-3">Project Background & Challenges</p>
+                      <p class="text-sm text-muted">A major bank faces anti-fraud governance of massive historical data. Pain points include huge data scale (10M+), extremely strict privacy compliance requirements, and real-time streaming data synchronization challenges.</p>
+                   </div>
+                   <div class="grid grid-cols-2 gap-4">
+                      <div class="p-6 rounded-3xl bg-emerald-500/5 border border-emerald-500/10">
+                         <p class="text-2xl font-black italic text-emerald-500 tracking-tighter">99.9%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">Annotation Accuracy</p>
+                      </div>
+                      <div class="p-6 rounded-3xl bg-blue-500/5 border border-blue-500/10">
+                         <p class="text-2xl font-black italic text-blue-500 tracking-tighter">+200%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">Processing Efficiency Boost</p>
+                      </div>
+                   </div>
+                   <div class="p-8 rounded-[2.5rem] bg-slate-900 text-white relative overflow-hidden group">
+                      <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:quote" class="w-20 h-20" /></div>
+                      <h4 class="text-xl font-black mb-4 italic tracking-tight">Scenario Story</h4>
+                      <p class="text-sm text-white/70 leading-relaxed italic">"Through AI-assisted annotation and multiple desensitization isolation mechanisms, we established a high-quality anti-fraud training set for the client. Ultimately, the bank's anti-fraud model accuracy significantly improved by 15%, effectively blocking potential risks."</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right relative">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1740&auto=format&fit=crop" class="rounded-[3rem] w-full aspect-square object-cover shadow-2xl" />
+             </div>
+          </div>
+       </div>
+
+       <!-- Medical -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center flex-row-reverse">
+             <div class="animate-on-scroll animate-left lg:order-2">
+                <span class="text-red-500 text-xs font-bold uppercase tracking-widest mb-4 inline-block">HEALTHCARE · 智慧医疗</span>
+                <h3 class="text-4xl font-black mb-8 italic tracking-tighter">Medical Imaging Expert-level Annotation</h3>
+                <div class="space-y-6">
+                   <div class="p-6 rounded-3xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 ">
+                      <p class="text-xs font-bold text-red-500 uppercase mb-3">Solution Core</p>
+                      <p class="text-sm text-muted">Formed a professional annotation team with medical backgrounds, introduced tertiary hospital expert final review mechanism, and applied medical-grade image enhancement technology to solve the core pain point of time-consuming and highly specialized CT image annotation.</p>
+                   </div>
+                   <div class="flex gap-4 items-center">
+                      <div class="px-6 py-4 rounded-full bg-red-500/10 text-red-500 border border-red-500/20 text-sm font-bold">Dataset Expanded 3x</div>
+                      <div class="px-6 py-4 rounded-full bg-red-500/10 text-red-500 border border-red-500/20 text-sm font-bold">-35% Annotation Cost</div>
+                   </div>
+                   <div class="p-8 rounded-[2.5rem] bg-red-500 text-white relative overflow-hidden group">
+                      <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:stethoscope" class="w-20 h-20" /></div>
+                      <h4 class="text-xl font-black mb-4 italic tracking-tight">Scenario Story</h4>
+                      <p class="text-sm text-white/90 leading-relaxed italic">"Assisted a tertiary hospital in completing lesion area annotation for 100,000 lung CT images. Through AI pre-annotation, the expert workload was significantly reduced, and the lung disease detection model diagnostic accuracy was remarkably improved, receiving unanimous praise from clinical experts."</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right lg:order-1 relative">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1740&auto=format&fit=crop" class="rounded-[3rem] w-full aspect-square object-cover shadow-2xl" />
+             </div>
+          </div>
+       </div>
+
+       <!-- Industrial -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+             <div class="animate-on-scroll animate-left">
+                <span class="text-orange-500 text-xs font-bold uppercase tracking-widest mb-4 inline-block">INDUSTRY · 工业视觉</span>
+                <h3 class="text-4xl font-black mb-8 italic tracking-tighter">Industrial Defect Detection Dataset</h3>
+                <div class="space-y-6">
+                   <div class="p-6 rounded-3xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 ">
+                      <p class="text-xs font-bold text-orange-500 uppercase mb-3">Project Background & Goals</p>
+                      <p class="text-sm text-muted">Manufacturing quality inspection requires extremely fine annotation rules, covering dozens of minor defects. Our goal is to establish a standardized quality inspection data pipeline, significantly improving production automation levels.</p>
+                   </div>
+                   <div class="grid grid-cols-2 gap-4">
+                      <div class="p-8 rounded-3xl bg-orange-500/10 text-orange-600 border border-orange-500/20">
+                         <p class="text-4xl font-black italic">+25%</p>
+                         <p class="text-[10px] uppercase font-bold opacity-60">Detection Accuracy Improvement</p>
+                      </div>
+                      <div class="p-8 rounded-3xl bg-orange-500/10 text-orange-600 border border-orange-500/20">
+                         <p class="text-4xl font-black italic">5M+</p>
+                         <p class="text-[10px] uppercase font-bold opacity-60">Annual Cost Savings</p>
+                      </div>
+                   </div>
+                   <div class="p-6 rounded-3xl bg-white dark:bg-white/5 border border-border-light dark:border-primary/20  flex flex-col justify-center">
+                      <h4 class="text-lg font-bold mb-4 italic flex items-center gap-2">
+                         <Icon name="lucide:factory" class="w-5 h-5 text-orange-500" />
+                         Scenario Story
+                      </h4>
+                      <p class="text-sm text-muted italic leading-relaxed">"Customized a chip defect detection dataset for a semiconductor giant. Through precise pixel-level annotation and multi-scale data augmentation technology, we helped double quality inspection efficiency, saving over 5 million yuan annually, with ROI improved by 200%."</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right relative">
+                <img src="https://images.unsplash.com/photo-1633934542430-0905ccb5f050?q=80&w=1740&auto=format&fit=crop" class="rounded-[3rem] w-full aspect-square object-cover shadow-2xl" />
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Overall Benefits -->
+    <section class="py-32 px-6 max-w-7xl mx-auto text-center border-t border-border-light dark:border-primary/20 ">
+      <div class="animate-on-scroll mb-16">
+        <h2 class="text-5xl md:text-7xl font-black tracking-tighter italic mb-8">Core Advantages</h2>
+        <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed">
+          Comprehensive professional data processing capabilities, helping clients seize strategic high ground in the AI competition.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {[
+          { title: 'Professional Team', desc: 'Deep industry background and practical experience', icon: 'lucide:user-check', delay: '0ms' },
+          { title: 'Quality Assurance', desc: 'Industrial-grade quality management system and refined standards', icon: 'lucide:shield-check', delay: '50ms' },
+          { title: 'Cost Efficiency', desc: 'AI-assisted annotation solutions balancing efficiency and investment', icon: 'lucide:trending-down', delay: '100ms' },
+          { title: 'Security Assurance', desc: 'Physical and digital dual protection systems', icon: 'lucide:lock', delay: '150ms' }
+        ].map(item => (
+          <div class="animate-on-scroll p-8 rounded-3xl border border-border-light dark:border-primary/20  hover:border-primary transition-colors group" style={`transition-delay: ${item.delay}`}>
+            <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+               <Icon name={item.icon} class="w-6 h-6" />
+            </div>
+            <h4 class="text-sm font-bold mb-3">{item.title}</h4>
+            <p class="text-[10px] text-muted leading-relaxed font-medium">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 px-6">
+       <div class="animate-on-scroll bento-card max-w-4xl mx-auto text-center border-none bg-gradient-to-br from-primary via-accent to-accent-light text-white p-16 shadow-2xl relative overflow-hidden">
+           <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/graph/1920/1080?blur=10')] opacity-20 mix-blend-overlay"></div>
+           <div class="relative z-10">
+              <h2 class="text-4xl md:text-6xl font-black italic tracking-tighter mb-8">Let Data Create Value for You</h2>
+              <p class="text-xl text-white/80 mb-12 font-medium max-w-xl mx-auto">Professional data service team, providing one-stop, end-to-end AI data solutions.</p>
+              <div class="flex flex-wrap justify-center gap-6">
+                <a href="/en/contact/" class="px-10 py-4 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">Consult Now</a>
+              </div>
+           </div>
+       </div>
+    </section>
+  </main>
 </Layout>

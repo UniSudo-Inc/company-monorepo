@@ -1,381 +1,263 @@
 ---
-import { slide } from 'astro:transitions';
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Hero from '@/components/widgets/Hero.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-import Features from '@/components/widgets/Features.astro';
 
 const metadata = {
   title: 'Development Roadmap - UniSudo Inc.',
-  ignoreTitleTemplate: true,
 };
+
+const roadmapData = [
+  {
+    year: '2024',
+    theme: 'Technology Foundation',
+    color: 'from-violet-600 to-indigo-600',
+    events: [
+      {
+        quarter: 'Q1 Innovation Takes Off',
+        items: [
+          'March, founding members of UniSudo Inc. collaborated to innovate the framework',
+          'Completed theoretical breakthrough in streaming interruptible dialogue system, achieving 50x real-time rate',
+          'Released first technical verification prototype to verify technology feasibility'
+        ],
+        side: 'left',
+        icon: 'lucide:rocket'
+      },
+      {
+        quarter: 'Q2-Q3 Core Technology Breakthrough',
+        items: [
+          'Completed TTS core technology R&D, achieving key performance indicators',
+          'Built cloud-native platform framework, completed basic architecture deployment',
+          'Conducted core algorithm optimization, established technical barriers'
+        ],
+        side: 'right',
+        icon: 'lucide:brain'
+      },
+      {
+        quarter: 'Q4 Product Matrix Takes Off',
+        items: [
+          'Released streaming interruptible dialogue system 1.0 version',
+          'Launched first-generation smart hardware solutions',
+          'Completed basic version development of AI workflow platform',
+          'Started development of data annotation platform and AI analysis platform'
+        ],
+        side: 'left',
+        icon: 'lucide:layout-grid'
+      }
+    ]
+  },
+  {
+    year: '2025',
+    theme: 'Deep Industry Applications',
+    color: 'from-fuchsia-600 to-purple-600',
+    events: [
+      {
+        quarter: 'H1 Vertical Field Breakthrough',
+        items: [
+          'Launched digital employee solution for manufacturing industry',
+          'Completed autonomous driving scene data processing platform',
+          'Released enterprise-level knowledge base intelligent Q&A system'
+        ],
+        side: 'right',
+        icon: 'lucide:target'
+      },
+      {
+        quarter: 'H2 Technology Upgrade & Scenario Expansion',
+        items: [
+          'Optimized small model training framework, reducing 50% computing resource consumption',
+          'Expanded into new fields such as low-altitude flight and smart grids',
+          'Established product ecosystem linkage mechanism'
+        ],
+        side: 'left',
+        icon: 'lucide:zap'
+      }
+    ]
+  },
+  {
+    year: '2026',
+    theme: 'Scale Commercialization',
+    color: 'from-blue-600 to-cyan-600',
+    events: [
+      {
+        quarter: 'H1 Product Maturity & Market Expansion',
+        items: [
+          'Released 2.0 version of all product lines',
+          'Built industry benchmark cases',
+          'Established channel cooperation system'
+        ],
+        side: 'right',
+        icon: 'lucide:shield-check'
+      },
+      {
+        quarter: 'H2 Technology Innovation & Business Breakthrough',
+        items: [
+          'Released revolutionary lightweight AI engine',
+          'Achieved scale commercialization',
+          'Explored consumer-level product layout'
+        ],
+        side: 'left',
+        icon: 'lucide:globe'
+      }
+    ]
+  }
+];
+
+const milestones = [
+  {
+    title: 'Technology Innovation',
+    desc: 'Innovation framework breakthrough, establishing technical barriers; lightweight AI engine R&D success; multi-scenario adaptation capability realized.',
+    icon: 'lucide:lightbulb',
+    color: 'bg-yellow-500/10 text-yellow-500'
+  },
+  {
+    title: 'Product System',
+    desc: 'Completed "5+X" product matrix construction; established product collaboration ecosystem; achieved scenario-level deep applications.',
+    icon: 'lucide:layers',
+    color: 'bg-blue-500/10 text-blue-500'
+  },
+  {
+    title: 'Business Development',
+    desc: 'Established technology-driven business model; built benchmark solutions; constructed complete business ecosystem.',
+    icon: 'lucide:trending-up',
+    color: 'bg-emerald-500/10 text-emerald-500'
+  }
+];
 ---
 
 <Layout metadata={metadata}>
-  <Hero>
-    <Fragment slot='title'>
-      UniSudo Inc.
-      <span class='animate-pulse text-blue-600 dark:text-blue-400'>Development Roadmap</span>
-    </Fragment>
-
-    <Fragment slot='subtitle'>
-      From technological innovation to commercialization, we have mapped out a clear development path, aiming to become
-      an innovator in AI infrastructure.
-    </Fragment>
-  </Hero>
-
-  <!-- Animated Timeline Section -->
-  <div class='mx-auto max-w-6xl px-4 py-12'>
-    <div class='relative'>
-      <!-- 垂直时间线 -->
-      <div
-        class='timeline-line absolute left-1/2 h-full w-1 -translate-x-1/2 transform bg-gradient-to-b from-blue-600 to-blue-200'
-      >
-      </div>
-
-      <!-- 2024 Section -->
-      <div class='timeline-section mb-24' transition:animate={slide({ duration: '1s' })}>
-        <div class='mb-8 flex justify-center'>
-          <h2 class='timeline-year rounded-full bg-blue-600 px-8 py-2 text-3xl font-bold text-white'>
-            2024 Technology Foundation
-          </h2>
-        </div>
-
-        <div class='grid gap-8'>
-          {/* Q1 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1 text-right'>
-                <h3 class='mb-2 text-xl font-bold'>Q1 Innovation Takes Off</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>
-                    • March, the founding members of Shanghai ZhiDuShu Technology Co., Ltd. collided to innovate the
-                    framework
-                  </li>
-                  <li class='timeline-event'>
-                    • Completed the theoretical breakthrough of the streaming, interruptible dialogue system, achieving
-                    50 times real-time rate
-                  </li>
-                  <li class='timeline-event'>
-                    • Released the first technical verification prototype to verify the feasibility of the technology
-                  </li>
-                </ul>
-              </div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-600'></div>
-              <div class='flex-1'></div>
-            </div>
-          </div>
-
-          {/* Q2-Q3 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1'></div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-500'></div>
-              <div class='flex-1'>
-                <h3 class='mb-2 text-xl font-bold'>Q2-Q3 Core Technology Breakthrough</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>
-                    • Completed the TTS core technology research and development, achieving key performance indicators
-                  </li>
-                  <li class='timeline-event'>
-                    • Built the cloud-native platform framework and completed the basic architecture deployment
-                  </li>
-                  <li class='timeline-event'>
-                    • Conducted core algorithm optimization to establish technical barriers
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Q4 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1 text-right'>
-                <h3 class='mb-2 text-xl font-bold'>Q4 Product Matrix Takes Off</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>• Released the streaming, interruptible dialogue system 1.0 version</li>
-                  <li class='timeline-event'>• Launched the first generation of smart hardware solutions</li>
-                  <li class='timeline-event'>• Completed the basic version development of the AI workflow platform</li>
-                  <li class='timeline-event'>
-                    • Started the development of the data annotation platform and the AI analysis platform
-                  </li>
-                </ul>
-              </div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-400'></div>
-              <div class='flex-1'></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2025 Section -->
-      <div class='timeline-section mb-24'>
-        <div class='mb-8 flex justify-center'>
-          <h2 class='timeline-year rounded-full bg-blue-600 px-8 py-2 text-3xl font-bold text-white'>
-            2025 Deepen Industry Applications
-          </h2>
-        </div>
-
-        <div class='grid gap-8'>
-          {/* H1 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1'></div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-500'></div>
-              <div class='flex-1'>
-                <h3 class='mb-2 text-xl font-bold'>H1 Vertical Field Breakthrough</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>
-                    • Launched the digital employee solution for the manufacturing industry
-                  </li>
-                  <li class='timeline-event'>• Completed the autonomous driving scene data processing platform</li>
-                  <li class='timeline-event'>
-                    • Released the enterprise-level knowledge base intelligent question answering system
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* H2 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1 text-right'>
-                <h3 class='mb-2 text-xl font-bold'>H2 Technology Upgrade and Scenario Expansion</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>
-                    • Optimized the small model training framework, reducing 50% computing resource consumption
-                  </li>
-                  <li class='timeline-event'>• Expanded into new fields such as low-altitude flight and smart grids</li>
-                  <li class='timeline-event'>• Established a product ecosystem linkage mechanism</li>
-                </ul>
-              </div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-400'></div>
-              <div class='flex-1'></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2026 Section -->
-      <div class='timeline-section mb-24'>
-        <div class='mb-8 flex justify-center'>
-          <h2 class='timeline-year rounded-full bg-blue-600 px-8 py-2 text-3xl font-bold text-white'>
-            2026 Scale Commercialization
-          </h2>
-        </div>
-
-        <div class='grid gap-8'>
-          {/* H1 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1'></div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-500'></div>
-              <div class='flex-1'>
-                <h3 class='mb-2 text-xl font-bold'>H1 Product Maturity and Market Expansion</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>• Released the 2.0 version of all products</li>
-                  <li class='timeline-event'>• Built industry benchmark cases</li>
-                  <li class='timeline-event'>• Established channel cooperation system</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* H2 */}
-          <div class='timeline-item'>
-            <div class='flex items-center gap-4'>
-              <div class='flex-1 text-right'>
-                <h3 class='mb-2 text-xl font-bold'>H2 Technology Innovation and Business Breakthrough</h3>
-                <ul class='space-y-2'>
-                  <li class='timeline-event'>• Released a revolutionary lightweight AI engine</li>
-                  <li class='timeline-event'>• Achieved scale commercialization</li>
-                  <li class='timeline-event'>• Explored consumer-level product layout</li>
-                </ul>
-              </div>
-              <div class='timeline-dot z-10 h-6 w-6 rounded-full bg-blue-400'></div>
-              <div class='flex-1'></div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
     </div>
-  </div>
+    
+    <!-- Hero Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto text-center">
+      <div class="animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+          ROADMAP · Development Roadmap 
+        </span>
+        <br />
+        <Fragment slot='title'>
+          <span class="text-5xl md:text-6xl dark:text-white/80 text-black/80 tracking-tighter italic">UniSudo Inc. </span>
+          <span class='text-5xl md:text-6xl animate-pulse text-primary dark:text-primary font-black tracking-tighter italic'>Development Blueprint</span>
+        </Fragment>
+        <p class="text-xl mt-6 text-muted max-w-2xl mx-auto font-medium leading-relaxed">
+          From technological innovation to commercialization, we have mapped out a clear development path, aiming to become an innovator in AI infrastructure.
+        </p>
+      </div>
+    </section>
 
-  <!-- Core Milestones -->
-  <Features2
-    title='Core Milestones'
-    subtitle='Comprehensive breakthroughs in three dimensions'
-    items={[
-      {
-        title: 'Technological Innovation',
-        description: `
-          • Innovation framework breakthrough, establishing technical barriers
-          • Lightweight AI engine development success
-          • Multi-scene adaptation capability realization
-        `,
-        icon: 'tabler:bulb',
-      },
-      {
-        title: 'Product System',
-        description: `
-          • Completed the "5+X" product matrix construction
-          • Established product collaboration ecosystem
-          • Achieved scenario-level deep application
-        `,
-        icon: 'tabler:stack',
-      },
-      {
-        title: 'Business Development',
-        description: `
-          • Established a technology-driven business model
-          • Built benchmark solutions
-          • Constructed a complete business ecosystem
-        `,
-        icon: 'tabler:chart-dots',
-      },
-    ]}
-  >
-    <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
-  </Features2>
+    <!-- Interactive Timeline -->
+    <section class="py-20 px-6 relative max-w-7xl mx-auto overflow-hidden">
+      <!-- Center Line -->
+      <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200 dark:via-gray-800 to-transparent lg:block"></div>
 
-  <!-- Future Vision -->
-  <Features
-    tagline='Vision'
-    title='Future Prospects'
-    subtitle=`Shanghai ZhiDuShu Technology has always adhered to technological innovation as the core driving force, from the
-        spark of innovative ideas to the breakthrough of core technologies, and to the construction of a complete
-        product system. We will continue to deepen our expertise in vertical scenarios and use innovative technology to
-        empower traditional industries, truly serving industrial upgrading.`
-    classes={{ container: 'text-center' }}
-    columns={2}
-    items={[
-      {
-        title: 'Become an AI infrastructure innovator',
-        icon: 'tabler:bulb',
-      },
-      {
-        title: 'Lead the development of scenario-level AI applications',
-        icon: 'tabler:stack',
-      },
-      {
-        title: 'Promote the widespread application of AI technology',
-        icon: 'tabler:chart-dots',
-      },
-      {
-        title: 'Build an open technical ecosystem',
-        icon: 'tabler:code',
-      },
-    ]}
-  >
-    <Fragment slot='content'>
-      <p class='mx-auto mt-4 max-w-3xl text-center leading-relaxed'>
-        Shanghai ZhiDuShu Technology has always adhered to technological innovation as the core driving force, from the
-        spark of innovative ideas to the breakthrough of core technologies, and to the construction of a complete
-        product system. We will continue to deepen our expertise in vertical scenarios and use innovative technology to
-        empower traditional industries, truly serving industrial upgrading.
-      </p>
-    </Fragment>
-  </Features>
+      {roadmapData.map((yearSection) => (
+        <div class="mb-32 relative">
+          <!-- Year Marker -->
+          <div class="flex justify-center mb-20 animate-on-scroll">
+            <div class={`px-8 py-3 rounded-full bg-gradient-to-r ${yearSection.color} text-white shadow-xl shadow-primary/20 transform -rotate-2`}>
+              <span class="text-3xl font-black italic tracking-tighter">{yearSection.year}</span>
+              <span class="ml-4 text-sm font-bold opacity-80 uppercase tracking-widest">{yearSection.theme}</span>
+            </div>
+          </div>
 
-  <style>
-    .timeline-line {
-      transform: scaleY(0);
-      animation: growLine 2s ease forwards;
-      transform-origin: top;
-    }
+          <!-- Events -->
+          <div class="space-y-24">
+            {yearSection.events.map((event) => (
+              <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Connector Dot (Desktop) */}
+                <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white dark:bg-[#030620] border-4 border-primary z-10 hidden lg:block"></div>
 
-    .timeline-section {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease forwards;
-    }
+                <div class={`${event.side === 'right' ? 'lg:order-2' : ''} animate-on-scroll ${event.side === 'right' ? 'animate-right' : 'animate-left'}`}>
+                  <div class="bento-card relative group overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                       <Icon name={event.icon} class="w-32 h-32" />
+                    </div>
+                    <div class="relative z-10">
+                      <div class="flex items-center gap-4 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                          <Icon name={event.icon} class="w-5 h-5" />
+                        </div>
+                        <h3 class="text-2xl font-black italic tracking-tighter">{event.quarter}</h3>
+                      </div>
+                      <ul class="space-y-4">
+                        {event.items.map(item => (
+                          <li class="flex gap-3 text-sm text-muted group/li transition-colors hover:text-black dark:hover:text-white">
+                            <span class="text-primary mt-1 font-black">/</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
 
-    .timeline-year {
-      transform: scale(0.9);
-      animation: scaleIn 0.5s ease forwards;
-    }
+                {/* Empty spacer for alignment */}
+                <div class="hidden lg:block"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
 
-    .timeline-dot {
-      transform: scale(0);
-      animation: popIn 0.3s ease forwards;
-    }
+    <!-- Core Milestones -->
+    <section class="py-32 px-6 max-w-7xl mx-auto bg-surface-light dark:bg-surface-dark/30 rounded-[4rem] border border-gray-200 dark:border-gray-800 mb-32 relative overflow-hidden">
+      <div class="absolute inset-0 bg-primary/5 -z-10 blur-[100px]"></div>
+      <div class="animate-on-scroll text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic mb-4">Core Milestones</h2>
+        <p class="text-muted text-lg max-w-2xl mx-auto font-medium">Comprehensive breakthroughs in three dimensions, building a closed loop of technology and business.</p>
+      </div>
 
-    .timeline-item {
-      transition: all 0.3s ease;
-    }
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {milestones.map((m, i) => (
+          <div class="animate-on-scroll bento-card border-none bg-white/50 dark:bg-white/5" style={`transition-delay: ${i * 100}ms`}>
+            <div class={`w-14 h-14 rounded-2xl ${m.color} flex items-center justify-center mb-8`}>
+              <Icon name={m.icon} class="w-7 h-7" />
+            </div>
+            <h3 class="text-2xl font-black italic tracking-tight mb-4">{m.title}</h3>
+            <p class="text-sm text-muted leading-relaxed whitespace-pre-line">{m.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-    .timeline-event {
-      opacity: 0;
-      animation: slideIn 0.5s ease forwards;
-      animation-delay: calc(var(--index) * 0.1s);
-    }
+    <!-- Future Vision -->
+    <section class="py-32 px-6 max-w-7xl mx-auto text-center border-t border-gray-200 dark:border-gray-800">
+      <div class="animate-on-scroll mb-16">
+        <h2 class="text-5xl md:text-7xl font-black tracking-tighter italic mb-8">Future Prospects</h2>
+        <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed">
+          From the spark of innovative ideas to the breakthrough of core technologies, and to the construction of a complete product system, UniSudo Inc. has always adhered to technological innovation as the core driving force. We will continue to deepen our expertise in vertical scenarios and use innovative technology to empower traditional industries, truly serving industrial upgrading.
+        </p>
+      </div>
 
-    @keyframes growLine {
-      to {
-        transform: scaleY(1);
-      }
-    }
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {[
+          { title: 'AI Infrastructure Innovator', icon: 'lucide:lightbulb' },
+          { title: 'Scenario-level AI Application Leader', icon: 'lucide:layers' },
+          { title: 'Promote AI Technology Accessibility', icon: 'lucide:heart-handshake' },
+          { title: 'Build Open Technical Ecosystem', icon: 'lucide:code' }
+        ].map((item, i) => (
+          <div class="animate-on-scroll p-8 rounded-3xl border border-gray-200 dark:border-gray-800 hover:border-primary transition-colors group" style={`transition-delay: ${i * 50}ms`}>
+            <Icon name={item.icon} class="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <span class="text-sm font-bold tracking-tight">{item.title}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes scaleIn {
-      to {
-        transform: scale(1);
-      }
-    }
-
-    @keyframes popIn {
-      50% {
-        transform: scale(1.2);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-  </style>
-
-  <script>
-    const observerOptions = {
-      root: null,
-      threshold: 0.1,
-      rootMargin: '-50px',
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          entry.target.style.setProperty('--index', index.toString());
-          entry.target.classList.add('in-view');
-
-          // 为每个事件项添加序列动画
-          const events = entry.target.querySelectorAll('.timeline-event');
-          events.forEach((event, eventIndex) => {
-            event.style.setProperty('--index', eventIndex.toString());
-          });
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.timeline-item').forEach((item) => observer.observe(item));
-  </script>
 </Layout>
+
+<style>
+  .animate-left { transform: translateX(-40px); opacity: 0; }
+  .animate-right { transform: translateX(40px); opacity: 0; }
+  .animate-on-scroll { transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+  
+  :global(.animate-on-scroll.is-visible) {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+</style>

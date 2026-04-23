@@ -1,11 +1,153 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Hero from '@/components/widgets/Hero.astro';
-import Features from '@/components/widgets/Features.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-import Content from '@/components/widgets/Content.astro';
-import { getPermalink } from '@/utils/permalinks';
-import videoUrl from '@/assets/videos/a1.mp4';
+
+const products = [
+  {
+    id: "a2",
+    title: "Intelligent Employee (AG2O)",
+    tagline: "Resident Personal Intelligent Operating System",
+    desc: "More than an AI assistant, it's your personal intelligent team. Built on Rust, it supports layered collaboration, parallel execution, and long-term memory accumulation.",
+    icon: "lucide:message-square",
+    color: "from-blue-500 to-indigo-600",
+    href: "/en/products/ag2o/"
+  },
+  {
+    id: "a1",
+    title: "No-Code AI Platform (A1)",
+    tagline: "Enterprise Digital Foundation",
+    desc: "One-stop no-code AI application development platform. Build complex AI workflows through drag-and-drop, compatible with major domestic and international LLMs, quickly empowering business scenarios.",
+    icon: "lucide:cpu",
+    color: "from-purple-500 to-violet-600",
+    href: "https://a1.v8.unisudo.dev/"
+  },
+  {
+    id: "uniteach",
+    title: "AI Intelligent Grading (UniTeach)",
+    tagline: "Deep Education Industry Review",
+    desc: "Intelligent evaluation system focused on education vertical. Supports multi-modal recognition and personalized comment generation, making teaching evaluation more objective and efficient.",
+    icon: "lucide:graduation-cap",
+    color: "from-orange-500 to-red-600",
+    href: "/en/products/uniteach/"
+  },
+  {
+    id: "unibusiness",
+    title: "Cross-border Meeting Interpretation (UniBusiness)",
+    tagline: "Cross-language Collaboration Tool",
+    desc: "Real-time AI meeting interpretation. Supports major meeting software, provides real-time translation, bilingual understanding, and intelligent meeting notes, boosting global efficient collaboration.",
+    icon: "lucide:languages",
+    color: "from-emerald-500 to-teal-600",
+    href: "/en/products/unibusiness/"
+  },
+  {
+    id: "uniclause",
+    title: "Intelligent Contract Review (UniClause)",
+    tagline: "Explainable Risk Control",
+    desc: "Deep contract analysis platform based on RAG architecture. Every contract review can be traced, accurately identifying risks and generating revision suggestions.",
+    icon: "lucide:shield-check",
+    color: "from-indigo-500 to-purple-600",
+    href: "/en/products/uniclause/"
+  }
+];
+
+const stats = [
+  { label: "Enterprises Served", value: "200+" },
+  { label: "Average Efficiency", value: "75%" },
+  { label: "Model Processing", value: "10B+" },
+  { label: "Data Security", value: "Financial Level" }
+];
+
+const coreCompetencies = [
+  {
+    title: 'Technology Innovation',
+    description: 'Break through traditional architecture limitations to achieve low-cost, high-efficiency AI solutions.',
+    icon: 'lucide:rocket',
+  },
+  {
+    title: 'Scene Understanding',
+    description: 'Deeply understand vertical domain needs to provide precise industry solutions.',
+    icon: 'lucide:component',
+  },
+  {
+    title: 'Cost Advantage',
+    description: 'Significantly reduce deployment and operational costs through innovative technology architecture.',
+    icon: 'lucide:coins',
+  },
+  {
+    title: 'Complete Ecosystem',
+    description: 'Independently develop full-process technology chain to provide one-stop service capabilities.',
+    icon: 'lucide:layers',
+  },
+];
+
+const solutions = [
+  {
+    title: "Streaming Interruptable Dialogue System",
+    subtitle: "Provide more intelligent and smooth dialogue experiences for your business.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop",
+    items: [
+      "Industry-leading real-time interaction capabilities",
+      "Intelligent dialogue path reconstruction",
+      "Support multi-scenario knowledge base real-time Q&A",
+      "Smooth user interaction experience"
+    ]
+  },
+  {
+    title: "Smart Hardware Solutions",
+    subtitle: "We provide various smart hardware solutions to meet your business needs.",
+    image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=2194&auto=format&fit=crop",
+    items: [
+      "Support localized low-cost deployment",
+      "Flexible integration with various models",
+      "Support private model training and optimization",
+      "Adapt to commercial and industrial scenarios"
+    ]
+  },
+  {
+    title: "Cloud-native Workflow Platform",
+    subtitle: "Provide full-process support for your enterprise automation, letting you focus on core business.",
+    image: "https://images.unsplash.com/photo-1611462985358-60d3498e0364?q=80&w=2070&auto=format&fit=crop",
+    items: [
+      "Complete commercial-grade deployment capability",
+      "Strong Function Call support",
+      "Flexible local deployment solutions",
+      "Open API ecosystem"
+    ]
+  }
+];
+
+const scenarios = [
+  {
+    title: 'Digital Human Exhibition',
+    description: ['Bank Intelligent Net Digital Employee', 'Museum Virtual Guide', 'Enterprise Exhibition Interactive Guide', 'Shopping Mall Digital Guide Assistant'],
+    icon: 'lucide:user',
+  },
+  {
+    title: 'Data Services',
+    description: ['AI Training Data Annotation', 'Multi-modal Data Processing', 'Data Cleaning and Enhancement', 'Data Quality Evaluation System'],
+    icon: 'lucide:database',
+  },
+  {
+    title: 'Model Training',
+    description: ['Large Language Model Fine-tuning', 'Vertical Domain Model Development', 'Multi-modal Model Deployment', 'Model Performance Optimization'],
+    icon: 'lucide:brain',
+  },
+  {
+    title: 'Intelligent Customer Service',
+    description: ['Financial Services Intelligent Q&A', 'E-commerce Customer Service Robot', 'Multi-turn Dialogue Management', 'Emotion Recognition Service'],
+    icon: 'lucide:headset',
+  },
+  {
+    title: 'Enterprise Digitalization',
+    description: ['Smart Talent Screening', 'Enterprise Training Assistant', 'Office Automation Platform', 'Auxiliary Decision System'],
+    icon: 'lucide:building',
+  },
+  {
+    title: 'Industry Solutions',
+    description: ['Education Training Digitalization', 'Medical Health Intelligent Diagnosis', 'Financial Risk Analysis', 'Retail Intelligent Upgrade'],
+    icon: 'lucide:bar-chart-3',
+  },
+];
 
 const metadata = {
   title: 'UniSudo Inc. — Unique AI Solutions for SUDO Permissions',
@@ -14,333 +156,207 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Dynamic Background -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
+  </div>
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Contact Us',
-        href: getPermalink('/en/contact'),
-      },
-      { text: 'Company Introduction', href: getPermalink('/en/about') },
-    ]}
-  >
-    <Fragment slot='video'>
-      <video
-        src={videoUrl}
-        autoplay
-        muted
-        loop
-        playsinline
-        style={{ borderRadius: '20px', width: '900px', height: 'auto' }}
-      />
-    </Fragment>
+  <main class="relative z-10">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center relative overflow-hidden">
+      <div class="animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+          SUDO Permissions · Unique AI Solutions
+        </span>
+      </div>
+      <div class="animate-on-scroll" style="transition-delay: 100ms">
+        <h1 class="text-5xl md:text-7xl font-black mb-8 leading-[1.1] tracking-tighter max-w-5xl">
+          Unique AI Solutions for <br />
+          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">SUDO Permissions</span>
+        </h1>
+      </div>
+      <div class="animate-on-scroll" style="transition-delay: 200ms">
+        <p class="text-xl text-muted max-w-3xl mx-auto mb-10 leading-relaxed font-medium">
+          <span class="font-bold text-primary block mb-2 md:inline md:mb-0">UniSudo Inc.</span>
+          is dedicated to creating high-performance, low-cost AI solutions. Through innovative model architectures and full-process technical support, we help enterprises implement AI precisely at a cost far lower than traditional solutions.
+        </p>
+      </div>
+      <div class="animate-on-scroll" style="transition-delay: 300ms">
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="#products">
+            <button class="btn-primary text-lg px-8 py-4">
+              Product Matrix
+            </button>
+          </a>
+          <a href="/en/about/" class="px-8 py-4 rounded-full border border-gray-200  dark:border-primary/20 font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+            Company Introduction
+          </a>
+        </div>
+      </div>
 
-    <Fragment slot='title'>
-      Unique AI Solutions for
-      <span class='highlight text-accent dark:text-white'>SUDO Permissions</span>
-    </Fragment>
+      <!-- Stats Bar -->
+      <div class="animate-on-scroll mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-20" style="transition-delay: 400ms">
+        {stats.map(s => (
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold mb-1 tracking-tight">{s.value}</div>
+            <div class="text-xs text-muted font-bold uppercase tracking-widest">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
 
-    <Fragment slot='subtitle'>
-      <span class='hidden sm:inline'> <span class='font-semibold'>UniSudo Inc.</span></span>
-      <span class='mb-1 block font-bold text-blue-600 sm:hidden'>UniSudo Inc.</span>
-      We are dedicated to creating high-performance, low-cost AI solutions, with research and development as our core competitive
-      advantage. Through innovative model architectures and full-process technical support, we help enterprises implement
-      AI accurately at a cost far lower than traditional solutions.
-    </Fragment>
-  </Hero>
+    <!-- Core Competency Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto border-t border-gray-100  dark:border-primary/20">
+      <div class="animate-on-scroll text-center mb-20">
+        <span class="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Core Competency</span>
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-6">Industry Experts + Innovative Thinking + Technology R&D</h2>
+        <p class="text-muted text-lg max-w-3xl mx-auto">
+          UniSudo Inc. continues to deepen technological innovation, focusing on providing more efficient and cost-effective AI deployment solutions for enterprises.
+        </p>
+      </div>
 
-  <!-- Note Widget ******************* -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {coreCompetencies.map((c, i) => (
+          <div class="animate-on-scroll p-8 rounded-3xl bg-white dark:bg-[#030620] border border-gray-100  dark:border-primary/20 group hover:border-primary/50 transition-all duration-500" style={`transition-delay: ${i * 100}ms`}>
+            <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+              <Icon name={c.icon} class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold mb-4">{c.title}</h3>
+            <p class="text-sm text-muted leading-relaxed">{c.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-  <!-- <Note /> -->
+    <!-- Solutions Showcase Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto bg-surface-light dark:bg-surface-dark/30 rounded-[3rem] overflow-hidden border border-gray-100  dark:border-primary/20">
+      <div class="animate-on-scroll text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">Meet All Your AI Needs</h2>
+        <p class="text-muted text-lg">Matrix product system, empowering enterprise full lifecycle digital transformation</p>
+      </div>
 
-  <!-- Features Widget *************** -->
+      <div class="space-y-32">
+        {solutions.map((s, i) => (
+          <div class={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center lg:items-start`}>
+            <div class="animate-on-scroll lg:w-1/2" style={`transition-delay: ${i * 100}ms`}>
+              <div class="relative group">
+                <div class="absolute inset-0 bg-primary/20 blur-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
+                <img 
+                  src={s.image} 
+                  alt={s.title} 
+                  referrerpolicy="no-referrer"
+                  class="rounded-3xl shadow-2xl border border-gray-100  dark:border-primary/20 w-full object-cover aspect-[4/3]" 
+                />
+              </div>
+            </div>
+            <div class="animate-on-scroll lg:w-1/2" style={`transition-delay: ${(i * 100) + 100}ms`}>
+              <h3 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight italic">{s.title}</h3>
+              <p class="text-xl text-muted mb-10 leading-relaxed font-medium">{s.subtitle}</p>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {s.items.map(item => (
+                  <li class="flex items-center gap-3 p-4 bg-white dark:bg-white/5 rounded-2xl border border-gray-100  dark:border-primary/20 text-sm font-medium">
+                    <Icon name="lucide:check-circle-2" class="text-primary w-5 h-5 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
-  <Features
-    id='features'
-    tagline='Core Competitiveness'
-    title='Industry Experts + Innovative Thinking + New Technology Development'
-    subtitle='UniSudo Inc. will continue to deepen technological innovation, focusing on providing more efficient and cost-effective AI deployment solutions for enterprises. We look forward to partnering with more leading enterprises in various vertical industries to jointly promote the deep application of AI technology.'
-    items={[
-      {
-        title: 'Innovative Technology',
-        description:
-          'Break through the limitations of traditional architectures to achieve low-cost, high-performance AI solutions.',
-        icon: 'tabler:brand-tailwind',
-      },
-      {
-        title: 'Scene Understanding',
-        description: 'Deeply understand the needs of vertical industries to provide accurate industry solutions.',
-        icon: 'tabler:components',
-      },
-      {
-        title: 'Cost Advantage',
-        description:
-          'Significantly reduce deployment and operational costs through innovative technology architectures.',
-        icon: 'tabler:list-check',
-      },
-      {
-        title: 'Complete Ecosystem',
-        description: 'Develop an end-to-end technology chain independently to provide one-stop service capabilities.',
-        icon: 'tabler:rocket',
-      },
-    ]}
-  />
+    <!-- AI Application Scenarios -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="animate-on-scroll text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">AI Application Scenarios</h2>
+        <p class="text-muted text-lg">Empowering multiple vertical fields including intelligent manufacturing, transportation, customer service, and enterprise services</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {scenarios.map((s, i) => (
+          <div class="animate-on-scroll bento-card flex flex-col group" style={`transition-delay: ${i * 100}ms`}>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                <Icon name={s.icon} class="w-6 h-6" />
+              </div>
+              <h3 class="text-xl font-bold">{s.title}</h3>
+            </div>
+            <ul class="space-y-3">
+              {s.description.map(item => (
+                <li class="text-sm text-muted flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-primary/30 rounded-full"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
 
-  <!-- Content Widget **************** -->
+    <!-- Product Matrix Section -->
+    <section id="products" class="py-32 px-6 max-w-7xl mx-auto border-t border-gray-100  dark:border-primary/20">
+      <div class="animate-on-scroll mb-20 text-center">
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">Product Matrix</h2>
+        <p class="text-muted text-lg max-w-2xl mx-auto">High-end AI product line built for specific pain points.</p>
+      </div>
 
-  <Content
-    isReversed
-    tagline='Product System'
-    title='Meet All Your AI Needs'
-    items={[
-      {
-        title: 'Industry-leading Real-time Interaction Capabilities',
-        description:
-          'Support multi-turn conversations, context understanding, intent recognition, knowledge base question answering, and other complex interactive scenarios.',
-      },
-      {
-        title: 'Intelligent Dialogue Path Reconstruction',
-        description:
-          'Through intelligent path reconstruction, achieve more efficient and intelligent dialogue experiences.',
-      },
-      {
-        title: 'Support Real-time Knowledge Base Question Answering in Multiple Scenarios',
-        description:
-          'Support real-time knowledge base question answering in multiple scenarios to meet different business needs.',
-      },
-      {
-        title: 'Smooth User Interaction Experience',
-        description: 'Provide a smooth and natural dialogue experience for users.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>
-        Streaming Interruptable Dialogue System
-      </h3>
-      <p>Provide more intelligent and smooth dialogue experiences for your business.</p>
-    </Fragment>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {products.map((p, i) => (
+          <a href={p.href} target={p.id==='a1' ? '_blank' : undefined} class="animate-on-scroll group block" style={`transition-delay: ${i * 100}ms`}>
+            <div class="bento-card h-full flex flex-col p-8 group-hover:border-primary/50 transition-all duration-500 overflow-hidden relative">
+              <div class={`absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br ${p.color} opacity-[0.03] group-hover:opacity-10 rounded-full blur-3xl transition-opacity duration-700`}></div>
+              <div class={`w-14 h-14 rounded-2xl bg-gradient-to-br ${p.color} flex items-center justify-center text-white mb-8 shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+                <Icon name={p.icon} class="w-7 h-7" />
+              </div>
+              <div class="flex-grow">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-bold uppercase tracking-widest text-primary opacity-70">{p.tagline}</span>
+                  <Icon name="lucide:arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                </div>
+                <h3 class="text-2xl font-bold mb-4 tracking-tight">{p.title}</h3>
+                <p class="text-muted leading-relaxed text-sm">{p.desc}</p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
 
-    <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'Support Localized Low-cost Deployment',
-        description: 'Support deployment on private servers to save costs while ensuring data security.',
-      },
-      {
-        title: 'Flexible Model Integration',
-        description: 'Can integrate multiple models to meet different business needs.',
-      },
-      {
-        title: 'Support Private Model Training and Optimization',
-        description: 'Support private model training and optimization, customize exclusive models.',
-      },
-      {
-        title: 'Adapt to Commercial and Industrial Scenarios',
-        description: 'Adapt to commercial and industrial scenarios to meet professional needs.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Smart Hardware Solutions</h3>
-      <p>We provide a variety of smart hardware solutions to meet your business needs.</p>
-    </Fragment>
-
-    <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Complete Commercial Deployment Capability',
-        description: 'Support cloud deployment to provide complete commercial deployment capabilities.',
-      },
-      {
-        title: 'Strong Function Call Support',
-        description: 'Support Function Call to achieve more intelligent and flexible dialogue experiences.',
-      },
-      {
-        title: 'Flexible Local Deployment Solutions',
-        description: 'Support private deployment to meet data security needs.',
-      },
-      {
-        title: 'Open API Ecosystem',
-        description: 'Support API integration to enhance scalability.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Cloud-native Workflow Platform</h3>
-      <p>Provide full-process support for your business to allow you to focus on core business.</p>
-    </Fragment>
-
-    <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'Service Multiple Well-known Automobile Companies',
-        description:
-          'Service multiple well-known automobile companies, provide professional data annotation solutions.',
-      },
-      {
-        title: 'Support Autonomous Driving Data Processing',
-        description:
-          'Support autonomous driving data processing, provide professional data annotation solutions for intelligent driving.',
-      },
-      {
-        title: 'Low Altitude Flight Scene Data Annotation',
-        description:
-          'Support low altitude flight scene data annotation, provide professional data annotation solutions for drones.',
-      },
-      {
-        title: 'Multi-modal Data Processing Capability',
-        description: 'Support multi-modal data processing,',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>
-        Professional Data Annotation Platform
-      </h3>
-      <p>We provide professional data annotation solutions to meet your business needs.</p>
-    </Fragment>
-
-    <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Low Code Development Environment',
-      },
-      {
-        title: 'Intelligent Data Processing',
-      },
-      {
-        title: 'Visual Analysis Tools',
-      },
-      {
-        title: 'Deep Insight Capabilities',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>AI Data Analysis Platform</h3>
-      Matrix data analysis platform, support multi-dimensional data analysis, provide deep insight capabilities.
-    </Fragment>
-
-    <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
-  </Content>
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title='AI Application Scenarios'
-    subtitle='AI empowers multiple fields such as intelligent manufacturing, intelligent transportation, intelligent customer service, and enterprise services.'
-    tagline=''
-    items={[
-      {
-        title: 'Digital Human Exhibition',
-        description:
-          '<ul><li>Bank Intelligent Net Digital Employee</li><li>Museum Virtual Guide</li><li>Enterprise Exhibition Interactive Guide</li><li>Shopping Mall Digital Guide Assistant</li><li>Educational Training Digital Lecturer</li><li>Enterprise Image Digital Spokesperson</li></ul>',
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Data Services',
-        description:
-          '<ul><li>AI Training Data Annotation</li><li>Multi-modal Data Processing</li><li>Data Cleaning and Enhancement</li><li>Professional Domain Data Set Construction</li><li>Data Quality Evaluation System</li><li>Privacy Data Protection Scheme</li></ul>',
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Model Training',
-        description:
-          '<ul><li>Large Language Model Fine-tuning Training</li><li>Vertical Domain Model Development</li><li>Multi-modal Model Training and Deployment</li><li>Model Performance Optimization Service</li><li>Small Sample Learning Solution</li><li>Incremental Learning System Construction</li></ul>',
-        icon: 'flat-color-icons:approval',
-      },
-
-      {
-        title: 'Intelligent Customer Service',
-        description:
-          '<ul><li>Financial Services Intelligent Question Answering System</li><li>E-commerce Full-process Customer Service Robot</li><li>Government Service Intelligent Assistant</li><li>Enterprise Knowledge Base Intelligent Retrieval</li><li>Multi-turn Dialogue Management System</li><li>Emotion Recognition and Response Service</li></ul>',
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Enterprise Digital Transformation',
-        description:
-          '<ul><li>Smart Talent Screening System</li><li>Enterprise Training Digital Assistant</li><li>Intelligent Office Automation Platform</li><li>Data Analysis Decision System</li><li>Enterprise Knowledge Accumulation Platform</li><li>Intelligent Meeting Assistant System</li></ul>',
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Industry Solutions',
-        description:
-          '<ul><li>Educational Training Digital Transformation</li><li>Medical Health Intelligent Diagnosis</li><li>Financial Risk Intelligent Analysis</li><li>Retail Intelligent Upgrade</li><li>Smart City Data Platform</li><li>Cultural Tourism Industry Digital Service</li></ul>',
-        icon: 'flat-color-icons:document',
-      },
-    ]}
-  >
-    <Fragment slot='bg'>
-      <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
-    </Fragment>
-  </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <!-- <BlogLatestPosts
-    title='Find out more content in our Blog'
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  /> -->
+    <!-- Unified Experience Block -->
+    <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
+      <div class="animate-on-scroll bento-card border-none bg-gradient-to-br from-indigo-900 to-purple-900 text-white p-12 md:p-20 overflow-hidden relative">
+        <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/tech/1920/1080?blur=10')] opacity-20 mix-blend-overlay"></div>
+        <div class="relative z-10 max-w-2xl">
+          <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-8 italic">Let AI Truly Dive into Business Scenarios</h2>
+          <p class="text-lg text-white/80 mb-10 leading-relaxed font-medium">
+            We not only provide tools, but also provide an intelligent business path with deep integration, security compliance and landing.
+            UniSudo is your most reliable AI partner, whether it is privatization deployment or cloud collaboration.
+          </p>
+          <div class="flex gap-4">
+            <a href="/en/contact/" class="bg-white text-indigo-900 px-8 py-3 rounded-full font-bold hover:bg-neutral-100 transition-colors">Contact Us</a>
+            <a href="/en/career/" class="bg-white/10 text-white px-8 py-3 rounded-full font-bold backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors">Join Us</a>
+          </div>
+        </div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-[40%] h-[80%] hidden lg:block opacity-40">
+           <div class="w-full h-full border-[20px] border-white/10 rounded-full animate-spin" style="animation-duration: 20s"></div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  :global(.dark) .glass {
+    background: rgba(3, 6, 32, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+</style>

@@ -1,216 +1,290 @@
 ---
-import Brands from '@/components/widgets/Brands.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-import Features3 from '@/components/widgets/Features3.astro';
-import Hero from '@/components/widgets/Hero.astro';
-import Stats from '@/components/widgets/Stats.astro';
-import Steps2 from '@/components/widgets/Steps2.astro';
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
+import Brands from '@/components/widgets/Brands.astro';
 import tencentLogo from '@/assets/images/tencent.png';
 import alibabaLogo from '@/assets/images/alibaba.png';
 import huaweiLogo from '@/assets/images/huawei.png';
 import ppioLogo from '@/assets/images/ppio.png';
 import amazonLogo from '@/assets/images/amazon.png';
 import cloudflareLogo from '@/assets/images/cloudflare.png';
-import { getHomePermalinkEn, getPermalink } from '@/utils/permalinks';
+
+const coreTech = [
+  {
+    title: 'Professional Data Annotation Service',
+    desc: 'Provide high-quality and efficient data annotation services to provide a solid foundation for AI model training.',
+    icon: 'lucide:database',
+  },
+  {
+    title: 'Full-process Model Development & Deployment',
+    desc: 'One-stop service from model selection, training to deployment, ensuring stable operation of AI systems.',
+    icon: 'lucide:brain',
+  },
+  {
+    title: 'Low-cost Voice Interaction Solution',
+    desc: 'Innovative voice interaction technology helps enterprises significantly reduce AI application costs.',
+    icon: 'lucide:mic',
+  },
+  {
+    title: 'Production Environment Customization',
+    desc: 'Customize production environments based on enterprise needs to ensure optimal performance of AI systems.',
+    icon: 'lucide:settings',
+  },
+  {
+    title: 'Interactive System Development',
+    desc: 'Professional interactive system development team to create smooth and natural human-machine interaction experiences.',
+    icon: 'lucide:message-square',
+  },
+  {
+    title: 'Integrated Technical Support',
+    desc: 'Provide full-cycle technical support services to ensure continuous system optimization and upgrades.',
+    icon: 'lucide:headset',
+  },
+];
+
+const values = [
+  {
+    title: 'Technology Innovation',
+    desc: 'Continuously invest in R&D, pursue technological innovation, and provide the most advanced AI solutions for clients.',
+    icon: 'lucide:rocket',
+  },
+  {
+    title: 'Customer-centric',
+    desc: 'Deeply understand client needs, provide customized services, and ensure project implementation effects.',
+    icon: 'lucide:heart',
+  },
+  {
+    title: 'Professional Service',
+    desc: 'Professional technical team with full-process service support, ensuring clients receive the best service experience.',
+    icon: 'lucide:shield-check',
+  },
+];
+
+const achievements = [
+  {
+    title: 'R&D Strength',
+    desc: 'Independently developed multiple core technologies, continuously driving industry innovation and development.',
+    icon: 'lucide:globe',
+  },
+  {
+    title: 'Customer Recognition',
+    desc: 'Earned trust and recognition from many well-known enterprises, establishing long-term cooperative relationships.',
+    icon: 'lucide:star',
+  },
+  {
+    title: 'Service System',
+    desc: 'Complete service system to ensure the best solutions for clients.',
+    icon: 'lucide:award',
+  },
+];
 
 const metadata = {
-  title: 'About Us',
+  title: 'About Us - UniSudo Inc.',
+  ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <Hero
-    tagline='About Us'
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Company Image',
-    }}
-  >
-    <Fragment slot='title'>
-      <span class='text-4xl md:text-6xl'>UniSudo Inc.</span><br />
-      <span class='highlight text-3xl text-accent dark:text-white md:text-5xl'>One-stop AI Solution Provider</span>
-    </Fragment>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background (Consistent with Index) -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
+    </div>
 
-    <Fragment slot='subtitle'>
-      <span class='text-xl md:text-2xl'>
-        UniSudo Inc. is a professional one-stop AI service provider. We provide a full-process solution from data
-        annotation, model training and deployment, production environment setup, custom development of interactive
-        systems, to low-cost voice interaction. With our professional technology and rich experience, we help
-        enterprises achieve AI transformation at the lowest cost, and build intelligent systems tailored to their needs.
-      </span>
-    </Fragment>
-  </Hero>
+    <!-- Hero Section: Modern & Dynamic (Consistent with Index) -->
+    <section class="py-18 px-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="animate-on-scroll">
+          <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+            ABOUT UNISUDO · UniSudo Inc.
+          </span>
+          <h1 class="text-5xl md:text-7xl font-black mb-8 leading-[0.9] tracking-tighter italic">
+            AI Experts for <br />
+            <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">SUDO Permissions</span>
+          </h1>
+          <p class="text-xl text-muted leading-relaxed font-medium mb-10">
+            UniSudo Inc. is a professional one-stop AI service provider. Through innovative model architectures and full-process technology chain, we help enterprises achieve digital transformation at optimal cost.
+          </p>
+          <div class="flex gap-4">
+             <a href="/en/contact/" class="btn-primary">Cooperation Now</a>
+             <a href="#tech" class="px-8 py-3 rounded-full border border-border-light  dark:border-primary/20 font-bold hover:bg-black/5 dark:hover:bg-white/5 transition-all">Technical Solutions</a>
+          </div>
+        </div>
+        <div class="animate-on-scroll relative">
+           <div class="bento-card border-none p-1 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2070&auto=format&fit=crop" 
+                alt="Office" 
+                referrerpolicy="no-referrer"
+                class="rounded-[2.4rem] w-full aspect-square object-cover" 
+              />
+           </div>
+           <!-- Decorative Floating Element -->
+           <div class="absolute -bottom-12 -left-16 w-32 h-32 bg-white dark:bg-[#0B123B] rounded-3xl shadow-2xl flex items-center justify-center border border-border-light  dark:border-primary/20 animate-bounce" style="animation-duration: 4s">
+              <Icon name="lucide:zap" class="text-primary w-12 h-12" />
+           </div>
+        </div>
+      </div>
+    </section>
 
-  <Brands
-    title='Company Data'
-    images={[
-      {
-        src: tencentLogo,
-        alt: 'Tencent',
-      },
-      {
-        src: alibabaLogo,
-        alt: 'Alibaba',
-      },
-      {
-        src: huaweiLogo,
-        alt: 'Huawei',
-      },
-      {
-        src: ppioLogo,
-        alt: 'PPIO',
-      },
-      {
-        src: amazonLogo,
-        alt: 'Amazon',
-      },
-      {
-        src: cloudflareLogo,
-        alt: 'Cloudflare',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
-        alt: 'Microsoft',
-      },
-    ]}
-  />
+    <!-- Partners: Clean & Subtle (Consistent with Index Stats Bar) -->
+    <section class="py-0 border-y border-border-light  dark:border-primary/20">
+      <div class="max-w-7xl mx-auto px-6">
+          <Brands
+            title='Partners'
+            images={[
+              {
+                src: tencentLogo,
+                alt: 'Tencent',
+              },
+              {
+                src: alibabaLogo,
+                alt: 'Alibaba',
+              },
+              {
+                src: huaweiLogo,
+                alt: 'Huawei',
+              },
+              {
+                src: ppioLogo,
+                alt: 'PPIO',
+              },
+              {
+                src: amazonLogo,
+                alt: 'Amazon',
+              },
+              {
+                src: cloudflareLogo,
+                alt: 'Cloudflare',
+              },
+              {
+                src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
+                alt: 'Microsoft',
+              },
+            ]}
+          />
+      </div>
+    </section>
 
-  <Features3
-    title='Core Technology'
-    subtitle='Provide comprehensive AI solutions to help enterprises achieve digital transformation'
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'Professional Data Annotation Service',
-        description:
-          'Provide high-quality and efficient data annotation services to provide a solid foundation for AI model training.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Full-process Model Development and Deployment',
-        description:
-          'From model selection, training to deployment, we provide a one-stop service to ensure the stable operation of AI systems.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Low-cost Voice Interaction Solution',
-        description:
-          'Innovative voice interaction technology helps enterprises significantly reduce the cost of AI applications.',
-        icon: 'tabler:template',
-      },
-    ]}
-  />
+    <!-- Core Technology: Bento Grid (Consistent with Index Product Matrix) -->
+    <section id="tech" class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="animate-on-scroll text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">Comprehensive AI Solutions</h2>
+        <p class="text-muted text-lg max-w-2xl mx-auto font-medium">From underlying data to production environment, connecting the "last mile" of AI deployment.</p>
+      </div>
 
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'Production Environment Customization',
-        description:
-          'Customize production environments based on enterprise needs to ensure the best performance of AI systems.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Interactive System Development',
-        description:
-          'Professional interactive system development team to create a smooth and natural human-machine interaction experience.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Integrated Technical Support',
-        description:
-          'Provide comprehensive technical support services to ensure continuous optimization and upgrade of systems.',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Technical Display',
-    }}
-  />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {coreTech.map((t, i) => (
+          <div class="animate-on-scroll bento-card group" style={`transition-delay: ${i * 100}ms`}>
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+              <Icon name={t.icon} class="w-7 h-7" />
+            </div>
+            <h3 class="text-2xl font-bold mb-4 tracking-tight italic">{t.title}</h3>
+            <p class="text-muted text-sm leading-relaxed">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-  <Steps2
-    title='Company Values'
-    subtitle='Professional, Innovative, Practical, and Efficient'
-    items={[
-      {
-        title: 'Innovation',
-        description:
-          'Continuously invest in research and development, pursue technological innovation, and provide the most advanced AI solutions for customers.',
-      },
-      {
-        title: 'Customer-centric',
-        description:
-          'Deeply understand customer needs, provide customized services, and ensure project implementation effects.',
-      },
-      {
-        title: 'Professional Service',
-        description:
-          'Professional technical team, comprehensive service support, ensuring customers receive the best service experience.',
-      },
-    ]}
-  />
+    <!-- Values & Achievements: High Contrast Refactored Section -->
+    <section class="pb-32 pt-10 px-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Values -->
+        <div class="p-10 rounded-[2.5rem] bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 shadow-xl relative min-h-[450px] overflow-hidden flex flex-col justify-center">
+          <div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+          <div class="relative z-10">
+            <h2 class="text-3xl font-black italic mb-12 border-l-8 border-primary pl-6 text-slate-900 dark:text-white">
+              Corporate Values
+            </h2>
+            <div class="space-y-10">
+              {values.map(v => (
+                <div class="flex gap-6 items-start group">
+                  <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                    <Icon name={v.icon} class="w-7 h-7" />
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">{v.title}</h3>
+                    <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">{v.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
-  <Steps2
-    title='Development Achievements'
-    subtitle='Use professional technology to create value'
-    isReversed={true}
-    callToAction={{
-      text: 'Back to Homepage',
-      href: getHomePermalinkEn(),
-    }}
-    items={[
-      {
-        title: 'Innovation',
-        description:
-          'Independent research and development of multiple core technologies, continuously driving innovation in the industry.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Customer Recognition',
-        description:
-          'Obtain the trust and recognition of many well-known enterprises, establish long-term cooperative relationships.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Service Capability',
-        description: 'Comprehensive service system to ensure the best solutions for customers.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
+        <!-- Achievements -->
+        <div class="p-10 rounded-[2.5rem] bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 text-white shadow-2xl relative min-h-[450px] overflow-hidden flex flex-col justify-center">
+          <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-transparent opacity-50 pointer-events-none"></div>
+          <div class="relative z-10">
+             <h2 class="text-3xl font-black italic mb-12 border-l-8 border-primary pl-6 text-slate-900 dark:text-white">
+               Development Achievements
+             </h2>
+             <div class="space-y-10">
+                 {achievements.map(a => (
+                   <div class="flex gap-6 items-start group">
+                     <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                       <Icon name={a.icon} class="w-7 h-7" />
+                     </div>
+                     <div>
+                       <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">{a.title}</h3>
+                       <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">{a.desc}</p>
+                     </div>
+                   </div>
+                 ))}
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <Features2
-    title='Contact Us'
-    tagline='Office Location'
-    columns={1}
-    items={[
-      {
-        title: 'Shanghai Office',
-        description:
-          'Room 802, 8th Floor, Building 1, 2nd Section, Gangcheng Plaza, No. 55 Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai',
-      },
-    ]}
-  />
+    <!-- Location Section: Practical & Visual -->
+    <section class="py-32 px-6 max-w-7xl mx-auto border-t border-border-light  dark:border-primary/20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-4 animate-on-scroll">
+           <h2 class="text-4xl font-bold tracking-tighter mb-8 italic">Headquarters Location</h2>
+           <div class="space-y-8">
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest text-primary mb-2">Office Address</h4>
+                <p class="text-lg font-bold leading-tight">
+                  Room 802, 8th Floor, Building 1, Second Street, Port City Square, No. 55 Shuiyun Road, Lingang Free Trade Zone, Pudong New Area, Shanghai
+                </p>
+              </div>
+              <div class="w-full h-px bg-border-light dark:bg-border-dark"></div>
+              <div class="flex flex-col gap-4">
+                 <div class="flex items-center gap-3 text-muted">
+                    <Icon name="lucide:mail" class="w-5 h-5 text-primary" />
+                    <span class="font-bold">developer@unisudo.com</span>
+                 </div>
+                 <div class="flex items-center gap-3 text-muted">
+                    <Icon name="lucide:phone" class="w-5 h-5 text-accent" />
+                    <span class="font-bold">+86 166 2859 7963</span>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="lg:col-span-8 animate-on-scroll">
+           <div class="rounded-[2.5rem] overflow-hidden border border-border-light  dark:border-primary/20 shadow-2xl relative grayscale hover:grayscale-0 transition-all duration-1000">
+              <img src="https://picsum.photos/seed/office/1200/600?blur=5" alt="Map" class="w-full aspect-video object-cover" />
+              <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+                 <div class="p-8 bg-white dark:bg-[#030620] rounded-2xl shadow-2xl border border-primary/20 flex flex-col items-center gap-4">
+                    <Icon name="lucide:map-pin" class="w-10 h-10 text-primary animate-bounce" />
+                    <span class="text-sm font-bold tracking-widest">VISIT US IN SHANGHAI</span>
+                 </div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
 
-  <Features2
-    title='Technical Support'
-    tagline='Contact Information'
-    columns={2}
-    items={[
-      {
-        title: 'Email Inquiry',
-        description: '<a href="mailto:developer@unisudo.com" class="hover:text-primary">developer@unisudo.com</a>',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Phone Consultation',
-        description: '+86 16628597963',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
+    <!-- Final CTA -->
+    <section class="pb-24 text-center">
+       <a href="/en/" class="animate-on-scroll inline-flex items-center gap-4 group">
+          <span class="text-4xl font-black italic tracking-tighter group-hover:text-primary transition-colors">Back to Homepage</span>
+          <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+             <Icon name="lucide:arrow-right" class="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+          </div>
+       </a>
+    </section>
+  </main>
 </Layout>

@@ -1,0 +1,93 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+---
+
+<div class={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
+  <svg
+    class="absolute w-full h-full"
+    viewBox="0 0 1440 900"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g opacity="0.4">
+      <path
+        d="M-100 100C200 100 400 300 700 300C1000 300 1200 100 1500 100"
+        stroke="url(#beam-grad-1)"
+        stroke-width="2"
+        class="beam-path beam-1"
+      />
+      <path
+        d="M-100 300C200 300 400 500 700 500C1000 500 1200 300 1500 300"
+        stroke="url(#beam-grad-2)"
+        stroke-width="2"
+        class="beam-path beam-2"
+      />
+      <path
+        d="M-100 500C200 500 400 700 700 700C1000 700 1200 500 1500 500"
+        stroke="url(#beam-grad-3)"
+        stroke-width="2"
+        class="beam-path beam-3"
+      />
+      <path
+        d="M-100 700C200 700 400 900 700 900C1000 900 1200 700 1500 700"
+        stroke="url(#beam-grad-1)"
+        stroke-width="2"
+        class="beam-path beam-4"
+      />
+    </g>
+    <defs>
+      <linearGradient id="beam-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="transparent" />
+        <stop offset="50%" stop-color="#7C3AED" />
+        <stop offset="100%" stop-color="transparent" />
+      </linearGradient>
+      <linearGradient id="beam-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="transparent" />
+        <stop offset="50%" stop-color="#8B5CF6" />
+        <stop offset="100%" stop-color="transparent" />
+      </linearGradient>
+      <linearGradient id="beam-grad-3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="transparent" />
+        <stop offset="50%" stop-color="#D8B4FE" />
+        <stop offset="100%" stop-color="transparent" />
+      </linearGradient>
+    </defs>
+  </svg>
+  
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_0%,#FCFCFD_100%)]"></div>
+</div>
+
+<style>
+  .beam-path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: beam-flow 8s linear infinite;
+    opacity: 0;
+  }
+
+  @keyframes beam-flow {
+    0% {
+      stroke-dashoffset: 2000;
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0;
+    }
+  }
+
+  .beam-1 { animation-duration: 4s; }
+  .beam-2 { animation-duration: 5s; animation-delay: 1s; }
+  .beam-3 { animation-duration: 6s; animation-delay: 2s; }
+  .beam-4 { animation-duration: 7s; animation-delay: 0.5s; }
+</style>

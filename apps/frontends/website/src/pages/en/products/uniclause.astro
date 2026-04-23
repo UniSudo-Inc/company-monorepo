@@ -1,0 +1,586 @@
+---
+import { Icon } from 'astro-icon/components';
+import Beams from './components/Beams.astro';
+import Layout from '@/layouts/LandingLayout.astro';
+import { getHomePermalinkEn } from '@/utils/permalinks';
+
+const metadata = {
+  title: 'UniClause - Intelligent Contract Review System',
+};
+
+const sellingPoints = [
+  {
+    icon: "lucide:layers",
+    title: "Explainable AI Review",
+    desc: "Traditional solutions output results directly without verifiable basis. UniClause ensures every conclusion traces back to specific paragraphs."
+  },
+  {
+    icon: "lucide:zap",
+    title: "Handles Large Contracts",
+    desc: "Paragraph-level chunking + vector retrieval breaks token limits. 100-page contracts with precise matching, cost reduced 60%+"
+  },
+  {
+    icon: "lucide:refresh-ccw",
+    title: "Per-Checkpoint Independent Computation",
+    desc: "Adjusting one checkpoint doesn\'t require re-reviewing the entire document. Instant response to changes, supporting real-time iterative review strategy."
+  },
+  {
+    icon: "lucide:fingerprint",
+    title: "Automatic Missing Clause Detection",
+    desc: "From 'human finds clauses' to 'AI proactively discovers'. Semantic similarity threshold determines what's missing, flagging and generating suggestions."
+  },
+  {
+    icon: "lucide:database",
+    title: "Extreme Cost Control",
+    desc: "IndexedDB local storage, no backend vector database dependency. Using domestic models, API costs significantly reduced."
+  },
+  {
+    icon: "lucide:shield-check",
+    title: "Data Never Leaves",
+    desc: "Sensitive data stays local, desensitized before feeding AI. Enterprise version runs fully offline, strictly controlling data breach risk."
+  }
+];
+
+const scenarios = [
+  {
+    title: "Law Firm Batch Review",
+    pain: "Large contract volume, tight deadlines, junior lawyers lacking experience leads to inconsistent standards.",
+    solution: "RAG quickly locates key clauses, auto-generates standardized review opinions, improving output consistency."
+  },
+  {
+    title: "Corporate Legal Compliance",
+    pain: "Multiple contract versions, manual comparison hard to ensure every version covers all checkpoints.",
+    solution: "Auto-comparison via preset checklist, proactive discovery of missing clauses, ensuring compliance loop."
+  },
+  {
+    title: "Investment/M&A Due Diligence",
+    pain: "Long transaction documents, core clauses like betting rights and preferences scattered throughout, easily missed.",
+    solution: "Vector retrieval scans hundred-page documents in seconds, precisely extracting core clauses, reducing due diligence risk."
+  },
+  {
+    title: "Financial Institution Risk Control",
+    pain: "Extremely high regulatory requirements, review process needs audit trail, black-box AI can\'t meet compliance needs.",
+    solution: "Explainable architecture provides traceability basis and scores for every conclusion, meeting stringent audit requirements."
+  }
+];
+
+const techHighlights = [
+  { title: "RAG Concurrent Architecture", desc: "Per-Checkpoint independent retrieval, review speed improved 5-10x" },
+  { title: "Hybrid Storage Mode", desc: "IndexedDB local vector cache, zero backend dependency, response with no latency" },
+  { title: "Domestic Foundation Adaptation", desc: "Deep adaptation of DashScope, DeepSeek and other models, compliant and cost-controlled" }
+];
+
+const comparisonData = [
+  ["Architecture", "Entire document direct (single LLM call)", "RAG architecture (paragraph retrieval + generation)"],
+  ["Explainability", "Black-box output, unverifiable", "Traceable (retrieved paragraph + similarity score)"],
+  ["Length Limit", "Long contracts forced to truncate", "Unlimited (vector retrieval breaks token limit)"],
+  ["Update Mode", "Change one, re-review entire document", "Single-point update (independent checkpoint analysis)"],
+  ["Missing Detection", "Manual experience searching", "AI proactively discovers (semantic threshold)"],
+  ["Data Security", "Must upload to server", "Sensitive data locally desensitized, pure local supported"],
+  ["Billing Mode", "High fixed annual fee", "Flexible: pay-per-use / annual / one-time purchase"]
+];
+---
+
+<Layout metadata={metadata}>
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent/5 rounded-full blur-[120px]"></div>
+  </div>
+
+  <main class="relative z-10 pt-10 transition-colors duration-300">
+    <!-- Hero Section -->
+    <section class="px-6 pt-20 pb-30 max-w-7xl mx-auto text-center relative">
+      <Beams className="opacity-50  dark:opacity-0" />
+
+      <div class="animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-10 inline-block">
+          Traceable Reviews · Truly Explainable AI
+        </span>
+      </div>
+      <div class="animate-on-scroll" style="transition-delay: 100ms">
+        <h1 class="text-5xl md:text-7xl mb-8 leading-[1.1] font-extrabold max-w-5xl mx-auto tracking-tighter ">
+          UniClause <br />
+          <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic">AI-Powered Contract Review</span>
+        </h1>
+      </div>
+      <div class="animate-on-scroll mt-10" style="transition-delay: 200ms">
+        <p class="text-lg md:text-xl text-muted max-w-3xl mx-auto mb-10 leading-relaxed">
+          Every contract review should be verifiable, traceable, and justifiable. <br class="hidden md:block" />
+          A RAG-driven explainable AI platform that says goodbye to "black box" judgments, reshaping the legal workflow.
+        </p>
+      </div>
+      <div class="animate-on-scroll" style="transition-delay: 300ms">
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="https://uniclause.unisudo.dev/" target="_blank" class="btn-primary text-lg px-8 py-4 text-white no-underline">
+            Start Free Trial
+          </a>
+          <a href="/en/contact/" class="px-8 py-4 rounded-full border border-border-light dark:border-primary/20  font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+            Schedule Demo
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid Features -->
+    <section id="features" class="px-6 pt-40 pb-24 max-w-7xl mx-auto">
+      <div class="animate-on-scroll text-center mb-16">
+        <h2 class="text-3xl md:text-5xl mb-4">Core Features</h2>
+        <p class="text-muted">Full-process loop, from risk identification to clause replenishment</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
+        {/* Feature 1: Large */}
+        <div class="animate-on-scroll md:col-span-8 bento-card flex flex-col justify-between group overflow-hidden relative">
+          <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 group-hover:opacity-20 transition-all duration-700">
+            <Icon name="lucide:search" class="w-48 h-48" />
+          </div>
+          <div class="absolute bottom-0 right-0 w-1/2 h-2/3 opacity-30 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none translate-x-10 translate-y-10">
+            <div class="w-full h-full rounded-tl-3xl shadow-2xl skew-x-[-10deg] skew-y-[-5deg] bg-primary/20 border border-primary/30 flex flex-col p-6 gap-2">
+              <div class="h-2 bg-primary/30 rounded-full w-3/4"></div>
+              <div class="h-2 bg-primary/10 rounded-full w-full"></div>
+              <div class="h-2 bg-primary/10 rounded-full w-5/6"></div>
+              <div class="h-2 bg-red-500/30 rounded-full w-2/3"></div>
+              <div class="mt-4 flex flex-col gap-1">
+                <div class="h-1 bg-primary/5 rounded-full w-full"></div>
+                <div class="h-1 bg-primary/5 rounded-full w-full"></div>
+              </div>
+            </div>
+          </div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+              <Icon name="lucide:cpu" class="text-primary w-6 h-6" />
+            </div>
+            <h3 class="text-2xl mb-4">Intelligent Clause Extraction & Risk Identification</h3>
+            <p class="text-muted max-w-md">
+              Build your own review groups and checkpoints, paragraph-level RAG retrieval, auto-recall most relevant clause paragraphs, achieving risk classification and two-way comparison editing.
+            </p>
+          </div>
+          <div class="flex items-center gap-4 mt-8">
+            <span class="px-3 py-1 rounded-md bg-accent/10 text-accent text-xs font-bold">High Accuracy</span>
+            <span class="px-3 py-1 rounded-md bg-primary/10 text-primary text-xs font-bold">Paragraph Traceable</span>
+          </div>
+        </div>
+
+        {/* Feature 2: Side */}
+        <div class="animate-on-scroll md:col-span-4 bento-card flex flex-col justify-between" style="transition-delay: 100ms">
+          <div>
+            <div class="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+              <Icon name="lucide:file-text" class="text-accent w-6 h-6" />
+            </div>
+            <h3 class="text-2xl mb-4">Smart Missing Clause Completion</h3>
+            <p class="text-muted">
+              Automatically discovers missing clauses through semantic similarity and generates insertion suggestions based on context, maintaining document integrity.
+            </p>
+          </div>
+          <a href="https://uniclause.unisudo.dev/" target="_blank" class="flex items-center gap-2 text-accent font-bold text-sm">
+            Learn More <Icon name="lucide:arrow-right" class="w-4 h-4" />
+          </a>
+        </div>
+
+        {/* Feature 3: Small */}
+        <div class="animate-on-scroll md:col-span-4 bento-card flex flex-col justify-between group overflow-hidden relative" style="transition-delay: 200ms">
+          <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+            <div class="w-full h-full bg-primary/5 flex items-center justify-center scale-150 rotate-12">
+               <div class="w-32 h-32 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+            </div>
+          </div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+              <Icon name="lucide:bar-chart-3" class="text-primary w-6 h-6" />
+            </div>
+            <h3 class="text-xl mb-2">Visual Review Progress</h3>
+            <p class="text-sm text-muted line-clamp-2">
+              Real-time display of vectorization, retrieval, review, completion full lifecycle status tracking.
+            </p>
+          </div>
+        </div>
+
+        {/* Feature 4: Semi-Large */}
+        <div class="animate-on-scroll md:col-span-8 bento-card bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] dark:from-[#0B123B] dark:to-[#030620] border-none text-white flex flex-col justify-between" style="transition-delay: 300ms">
+          <div>
+            <h3 class="text-2xl mb-4 font-bold">Local Data Center & Multi-Model Federation</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                <h4 class="font-bold mb-2 flex items-center gap-2 italic">
+                  <Icon name="lucide:shield-check" class="w-4 h-4" /> Privacy First (Local First)
+                </h4>
+                <p class="text-xs text-white/80 leading-relaxed">Sensitive data locally desensitized, IndexedDB local vector store, enterprise fully offline deployment supported.</p>
+              </div>
+              <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                <h4 class="font-bold mb-2 flex items-center gap-2">
+                  <Icon name="lucide:cpu" class="w-4 h-4" /> Model Federation
+                </h4>
+                <p class="text-xs text-white/80 leading-relaxed">Embedding and LLM decoupled. Supports DeepSeek, Moonshot, DashScope and other mainstream domestic models.</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 text-white/80 text-sm mt-6">
+            <Icon name="lucide:lock" class="w-4 h-4" /> Meets the strictest data compliance requirements for law firms and financial institutions
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Preview Section -->
+    <section class="px-6 py-24 max-w-7xl mx-auto overflow-hidden">
+      <div class="animate-on-scroll text-center mb-16">
+        <h2 class="text-3xl md:text-5xl mb-4 text-[#101010] dark:text-white">Product Live Preview</h2>
+        <p class="text-muted">Intuitive, efficient, intelligent contract review experience</p>
+      </div>
+
+      <div class="space-y-24">
+        {/* Step 1: Scanning */}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="animate-on-scroll animate-right">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-6">
+              <Icon name="lucide:refresh-ccw" class="w-3 h-3 animate-spin" /> Smart Scanning
+            </div>
+            <h3 class="text-3xl md:text-4xl mb-6">Checkpoint by Checkpoint, Missing Nothing</h3>
+            <p class="text-muted text-lg mb-8 leading-relaxed">
+              UniClause simulates expert thinking, deeply retrieving and analyzing every preset checkpoint in the contract. Progress bar synchronizes review status in real-time, keeping you fully informed on review workload and progress.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="p-1 rounded-full bg-green-500/10 text-green-600 mt-1"><Icon name="lucide:check-circle-2" class="w-4 h-4" /></div>
+                <span class="text-muted">Real-time feedback on review progress (vectorization → retrieval → completion)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="p-1 rounded-full bg-green-500/10 text-green-600 mt-1"><Icon name="lucide:check-circle-2" class="w-4 h-4" /></div>
+                <span class="text-muted">Millisecond-level chunk matching for long contracts, breaking token limits</span>
+              </li>
+            </ul>
+          </div>
+          <div class="animate-on-scroll animate-left">
+            <div class="relative group">
+              <div class="absolute inset-0 bg-primary/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
+              <div class="rounded-[2.5rem] border border-border-light dark:border-primary/20  overflow-hidden shadow-2xl bg-white dark:bg-[#030620] aspect-video flex relative">
+                {/* Simulated Document Left */}
+                <div class="w-1/2 p-6 border-r border-border-light dark:border-primary/20  flex flex-col gap-3">
+                  <div class="h-4 bg-black/5 dark:bg-white/5 rounded w-3/4"></div>
+                  <div class="h-3 bg-black/5 dark:bg-white/5 rounded w-full"></div>
+                  <div class="h-3 bg-black/5 dark:bg-white/5 rounded w-5/6"></div>
+                  <div class="h-3 bg-black/5 dark:bg-white/5 rounded w-full"></div>
+                  <div class="h-3 bg-black/5 dark:bg-white/5 rounded w-4/5"></div>
+                  <div class="mt-4 h-4 bg-primary/20 rounded-full w-2/3 animate-pulse"></div>
+                  <div class="h-3 bg-primary/10 rounded w-full"></div>
+                  <div class="h-3 bg-primary/10 rounded w-5/6"></div>
+                </div>
+                {/* Scanning Side Right */}
+                <div class="w-1/2 p-6 flex flex-col items-center justify-center bg-primary/5">
+                  <div class="relative">
+                    <div class="w-24 h-24 border-2 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                      <Icon name="lucide:refresh-ccw" class="w-8 h-8 text-primary" />
+                    </div>
+                  </div>
+                  <div class="mt-6 text-center">
+                    <div class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-1">Analyzing Clause 6/12</div>
+                    <div class="w-32 h-1 bg-primary/20 rounded-full overflow-hidden">
+                      <div class="w-1/2 h-full bg-primary"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Step 2: Risk Identified */}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="animate-on-scroll animate-left lg:order-2">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold mb-6">
+                <Icon name="lucide:zap" class="w-3 h-3" /> Smart Risk Location
+              </div>
+              <h3 class="text-3xl md:text-4xl mb-6">Precise Risk Identification, One-Click Revision</h3>
+              <p class="text-muted text-lg mb-8 leading-relaxed">
+                AI auto-marks high, medium, and low risk clauses. Highlights original text dispute areas, simultaneously providing professional legal suggestions. Supports "one-click replacement," greatly shortening the time from problem discovery to draft issuance.
+              </p>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <div class="p-1 rounded-full bg-green-500/10 text-green-600 mt-1"><Icon name="lucide:check-circle-2" class="w-4 h-4" /></div>
+                  <span class="text-muted">Side-by-side original and revision suggestions, smooth interaction</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="p-1 rounded-full bg-green-500/10 text-green-600 mt-1"><Icon name="lucide:check-circle-2" class="w-4 h-4" /></div>
+                  <span class="text-muted">RAG-supported conclusions, every suggestion backed by legal basis</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="animate-on-scroll animate-right lg:order-1">
+            <div class="relative group">
+              <div class="absolute inset-0 bg-accent/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
+              <div class="rounded-[2.5rem] border border-border-light dark:border-primary/20  overflow-hidden shadow-2xl bg-white dark:bg-[#0B123B] aspect-video flex relative">
+                {/* Legal Document Base */}
+                <div class="w-2/3 p-8 space-y-4">
+                  <div class="flex items-center gap-2 mb-4">
+                    <Icon name="lucide:file-text" class="w-4 h-4 text-muted" />
+                    <span class="text-[10px] font-mono text-muted">HSBC-MT760-2026.docx</span>
+                  </div>
+                  <div class="space-y-2 opacity-30">
+                    <div class="h-2 bg-black/20 dark:bg-white/10 rounded w-full"></div>
+                    <div class="h-2 bg-black/20 dark:bg-white/10 rounded w-full"></div>
+                  </div>
+                  <div class="p-4 bg-red-500/5 border-l-2 border-red-500/30 rounded-r-lg">
+                    <div class="h-2 bg-red-500/20 rounded w-full mb-2"></div>
+                    <div class="h-2 bg-red-500/20 rounded w-5/6"></div>
+                  </div>
+                  <div class="space-y-2 opacity-30">
+                    <div class="h-2 bg-black/20 dark:bg-white/10 rounded w-full"></div>
+                    <div class="h-2 bg-black/20 dark:bg-white/10 rounded w-4/5"></div>
+                  </div>
+                </div>
+                {/* AI Sidebar Overlay */}
+                <div class="w-1/3 bg-white/5 border-l border-white/10 p-4 flex flex-col gap-4 backdrop-blur-sm">
+                  <div class="px-2 py-1 bg-red-500/10 border border-red-500/20 rounded text-[8px] text-red-500 font-bold uppercase w-fit">High Risk</div>
+                  <div class="p-3 bg-primary/10 rounded-lg border border-primary/20">
+                    <div class="text-[9px] font-bold text-primary mb-2 flex items-center gap-1">
+                      <Icon name="lucide:zap" class="w-3 h-3" /> Revision Suggestion (AI)
+                    </div>
+                    <div class="space-y-1">
+                      <div class="h-1 bg-primary/30 rounded-full w-full"></div>
+                      <div class="h-1 bg-primary/30 rounded-full w-full"></div>
+                      <div class="h-1 bg-primary/30 rounded-full w-4/5"></div>
+                    </div>
+                  </div>
+                  <button class="mt-auto px-4 py-2 bg-primary text-white text-[10px] font-bold rounded-lg shadow-lg hover:brightness-110 transition-all">Replace Original</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selling Points -->
+    <section id="selling-points" class="py-24 bg-surface-light dark:bg-surface-dark/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="animate-on-scroll mb-16">
+          <h2 class="text-3xl md:text-5xl mb-4">Core Selling Points</h2>
+          <p class="text-muted">Why choose UniClause? Our differentiated advantages</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sellingPoints.map((point, index) => (
+            <div class={`animate-on-scroll p-8 rounded-3xl bg-white dark:bg-[#030620] border border-border-light dark:border-primary/20  hover:shadow-xl transition-all h-full`} style={`transition-delay: ${index * 100}ms`}>
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
+                <Icon name={point.icon} class="w-6 h-6" />
+              </div>
+              <h3 class="text-xl font-bold mb-4">{point.title}</h3>
+              <p class="text-muted text-sm leading-relaxed">{point.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Scenarios Section -->
+    <section id="scenarios" class="px-6 py-24 max-w-7xl mx-auto border-t border-border-light dark:border-primary/20 ">
+      <div class="animate-on-scroll text-center mb-16">
+        <h2 class="text-3xl md:text-5xl mb-4">Applicable Scenarios</h2>
+        <p class="text-muted">Deep in legal and compliance scenarios, solving industry pain points</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {scenarios.map((s, i) => (
+          <div class="animate-on-scroll bento-card group" style={`transition-delay: ${i * 100}ms`}>
+            <h3 class="text-xl font-bold mb-4 flex items-center justify-between">
+              {s.title}
+              <Icon name="lucide:arrow-up-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+            </h3>
+            <div class="space-y-4">
+              <div class="p-4 bg-red-500/5 rounded-xl border-l-4 border-red-500/30">
+                <p class="text-xs font-bold text-red-600 dark:text-red-400 uppercase mb-1">Pain Points</p>
+                <p class="text-sm text-muted">{s.pain}</p>
+              </div>
+              <div class="p-4 bg-green-500/5 rounded-xl border-l-4 border-green-500/30">
+                <p class="text-xs font-bold text-green-600 dark:text-green-400 uppercase mb-1">Solution</p>
+                <p class="text-sm text-muted">{s.solution}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-24 px-6 max-w-7xl mx-auto">
+      <div class="animate-on-scroll text-center mb-16">
+        <h2 class="text-3xl md:text-5xl mb-4">Pricing Plans</h2>
+        <p class="text-muted">Flexible options, transparent, controllable, high value</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Plan 1 */}
+        <div class="animate-on-scroll p-8 rounded-[2rem] border border-border-light dark:border-primary/20  flex flex-col h-full hover:border-primary/40 transition-all">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-2">Cloud Version</h3>
+            <p class="text-sm text-muted">For lawyers, legal consultants, small teams</p>
+          </div>
+          <div class="mb-8 p-6 bg-surface-light dark:bg-surface-dark rounded-2xl">
+            <span class="text-4xl font-bold">Pay-as-you-go</span>
+            <p class="text-sm text-muted mt-2">Free trial + elastic billing, zero burden per checkpoint recomputation</p>
+          </div>
+          <ul class="space-y-4 mb-10 flex-grow">
+            {[
+              "Core RAG review engine",
+              "Paragraph-level traceability",
+              "Basic checkpoint library (200+)",
+              "No local deployment needed, ready out of box",
+              "Community support and online docs"
+            ].map((feature) => (
+              <li class="flex items-center gap-3 text-sm">
+                <Icon name="lucide:check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a href="https://uniclause.unisudo.dev/" target="_blank" class="w-full py-4 rounded-full border border-primary text-primary font-bold hover:bg-primary/5 transition-colors text-center">
+            Start Free Trial
+          </a>
+        </div>
+
+        {/* Plan 2 - Featured */}
+        <div class="animate-on-scroll p-8 rounded-[2rem] border-2 border-primary bg-primary/5 relative flex flex-col h-full lg:transform lg:scale-105 shadow-2xl" style="transition-delay: 100ms">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 bg-primary text-white text-xs font-bold rounded-full">
+            Preferred On-Premise
+          </div>
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-2">On-Premise Version</h3>
+            <p class="text-sm text-muted">For mid-size law firms, corporate legal departments</p>
+          </div>
+          <div class="mb-8 p-6 bg-primary/10 rounded-2xl">
+            <span class="text-3xl font-bold">$11,000</span>
+            <span class="text-muted"> / year</span>
+            <p class="text-sm text-muted mt-2">Fully isolated data, offline environment supported</p>
+          </div>
+          <ul class="space-y-4 mb-10 flex-grow">
+            {[
+              "Fully offline on-premise deployment",
+              "Source code controllable, compliance audit passed",
+              "Sensitive data locally desensitized",
+              "Dedicated customer success manager",
+              "One-year运维与检查"
+            ].map((feature) => (
+              <li class="flex items-center gap-3 text-sm">
+                <Icon name="lucide:check-circle-2" class="w-5 h-5 text-primary flex-shrink-0" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a href="/en/contact/" class="btn-primary w-full py-4 text-lg">
+            Consult On-Premise Plan
+          </a>
+        </div>
+
+        {/* Plan 3 */}
+        <div class="animate-on-scroll p-8 rounded-[2rem] border border-border-light dark:border-primary/20  flex flex-col h-full hover:border-[#8B5CF6]/40 transition-all" style="transition-delay: 200ms">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-2">Custom Version</h3>
+            <p class="text-sm text-muted">For large groups, financial institutions</p>
+          </div>
+          <div class="mb-8 p-6 bg-surface-light dark:bg-surface-dark rounded-2xl">
+            <span class="text-3xl font-bold">$70,000</span>
+            <span class="text-muted"> / project</span>
+            <p class="text-sm text-muted mt-2">One-time payment, lifetime use</p>
+          </div>
+          <ul class="space-y-4 mb-10 flex-grow">
+            {[
+              "OA/CLM/ERP system integration",
+              "Industry LLM deep fine-tuning",
+              "7×24 response plan",
+              "Dedicated technical team on-site",
+              "Custom corporate review checklist"
+            ].map((feature) => (
+              <li class="flex items-center gap-3 text-sm">
+                <Icon name="lucide:plus" class="w-5 h-5 text-primary flex-shrink-0" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a href="/en/contact/" class="w-full py-4 rounded-full border border-border-light dark:border-primary/20  font-bold hover:bg-black/5 dark:hover:bg-white/5 transition-all text-center">
+            Contact Enterprise Sales
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-20 bento-card border-none bg-primary/5 p-12 text-center animate-on-scroll">
+        <h3 class="text-2xl font-bold mb-6">Why is our pricing uniquely advantageous?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h4 class="font-bold text-primary mb-2">Transparent Billing</h4>
+            <p class="text-sm text-muted">No hidden fees, one-time purchase available</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-primary mb-2">Extremely High Value</h4>
+            <p class="text-sm text-muted">Only 1/10 the price of international competitors</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-primary mb-2">Domestic Compliance</h4>
+            <p class="text-sm text-muted">Supports domestic foundations, avoiding API blocking risks</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section id="comparison" class="py-24 bg-surface-light dark:bg-surface-dark/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="animate-on-scroll text-center mb-16">
+          <h2 class="text-3xl md:text-5xl mb-4">Core Differentiation Comparison</h2>
+          <p class="text-muted">In-depth comparison between UniClause and traditional AI review tools</p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse min-w-[800px]">
+            <thead>
+              <tr class="border-b border-border-light dark:border-primary/20 ">
+                <th class="py-6 px-4 font-bold text-lg">Dimension</th>
+                <th class="py-6 px-4 font-bold text-lg text-muted">Traditional AI Review</th>
+                <th class="py-6 px-4 font-bold text-lg text-primary">UniClause (RAG Powered)</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm">
+              {comparisonData.map(([dim, trad, uni]) => (
+                <tr class="border-b border-border-light dark:border-primary/20  hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                  <td class="py-6 px-4 font-medium">{dim}</td>
+                  <td class="py-6 px-4 text-muted">{trad}</td>
+                  <td class="py-6 px-4 font-bold text-primary">{uni}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-12 animate-on-scroll text-sm text-muted text-center italic">
+          * Testing shows UniClause improves long-contract betting clause identification rate by approximately 45% compared to traditional architecture
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Highlights Grid -->
+    <section class="py-24 max-w-7xl mx-auto px-6">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+         {techHighlights.map((tech, i) => (
+           <div class="animate-on-scroll p-6 rounded-2xl border border-border-light dark:border-primary/20  bg-surface-light/50 dark:bg-surface-dark/20 text-center" style={`transition-delay: ${i * 100}ms`}>
+             <p class="text-xs font-mono text-primary/60 uppercase mb-2">Technical Engine</p>
+             <h4 class="font-bold mb-2">{tech.title}</h4>
+             <p class="text-xs text-muted">{tech.desc}</p>
+           </div>
+         ))}
+       </div>
+    </section>
+
+    {/* CTA Section */}
+    <section class="pb-24 bg-bg-dark relative overflow-hidden" id="contact">
+      <div class="container mx-auto px-12 text-center relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="/en/contact/" class="btn-primary">Request Demo</a>
+<a href={getHomePermalinkEn()} class="px-12 py-4 rounded-2xl bg-surface text-text border border-border-light  dark:border-primary/20 font-bold hover:bg-bg transition-all text-lg">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

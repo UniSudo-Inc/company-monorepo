@@ -1,0 +1,306 @@
+---
+import { Icon } from 'astro-icon/components';
+import Beams from './components/Beams.astro';
+import Layout from '@/layouts/LandingLayout.astro';
+import { getHomePermalinkEn } from '@/utils/permalinks';
+
+const metadata = {
+  title: 'UniBusiness - Real-Time Cross-Language Meeting Interpretation',
+  description: 'UniBusiness is a real-time AI interpretation product for cross-language meetings and office communication, supporting major meeting software with real-time speech translation, bilingual comprehension, and post-meeting summarization.',
+};
+
+const coreFeatures = [
+  {
+    title: 'Real-Time Speech Translation',
+    desc: 'Continuously receives speech during meetings and outputs translations based on AI models for real-time transcription and translation, keeping up with the conversation pace.',
+    icon: 'lucide:languages'
+  },
+  {
+    title: 'Crystal-Clear Bilingual Comprehension',
+    desc: 'Displays original and translated text simultaneously, preserving semantics and context, reducing miscommunication costs — ideal for client meetings and internal collaboration.',
+    icon: 'lucide:message-square'
+  },
+  {
+    title: 'Supports Major Office Software',
+    desc: 'Deeply integrated with Google Meet, Slack, Zoom, Lark, Discord, WhatsApp and other mainstream office software.',
+    icon: 'lucide:layout-grid'
+  },
+  {
+    title: 'Focused Chinese-English Simultaneous Interpretation',
+    desc: 'Deeply optimized for the most common high-frequency Chinese-English cross-language meeting scenarios, ensuring translation accuracy with ultra-low latency.',
+    icon: 'lucide:check-check'
+  },
+  {
+    title: 'Automatic Post-Meeting Minutes',
+    desc: 'Automatically preserves transcription records and generates summary titles, turning meeting content into reusable assets, reducing manual organization costs.',
+    icon: 'lucide:file-text'
+  },
+  {
+    title: 'Desktop App & Browser Extension',
+    desc: 'Both desktop application and browser extension available, adapting to different office environments and access methods, ready to use out of the box.',
+    icon: 'lucide:monitor-smartphone'
+  }
+];
+
+const platforms = [
+  'Google Meet', 'Slack', 'Zoom', 'Lark', 'Discord', 'WhatsApp', 'WeChat', 'Tencent Meeting'
+];
+
+const scenarios = [
+  { title: 'Overseas Sales & Client Demos', icon: 'lucide:trending-up' },
+  { title: 'Cross-Border Procurement & Supply Chain', icon: 'lucide:truck' },
+  { title: 'International Project Meetings', icon: 'lucide:users' },
+  { title: 'Overseas Customer Support', icon: 'lucide:headset' },
+  { title: 'Remote Hiring & Cross-Language Comms', icon: 'lucide:search' },
+  { title: 'Overseas Channel Setup & Training', icon: 'lucide:graduation-cap' }
+];
+
+const personas = [
+  'Export Sales', 'Cross-Border E-Commerce Teams', 'BD Business Development', 'International PM', 'Customer Support & Implementation', 'Go-Global Decision Makers'
+];
+---
+
+<Layout metadata={metadata}>
+  <main class="relative z-10 pt-0 overflow-x-hidden">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pb-24 pt-20 px-6 max-w-7xl mx-auto overflow-hidden">
+      <Beams className="opacity-50 dark:opacity-0" />
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="animate-on-scroll animate-left">
+          <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+            UniBusiness · Real-Time AI Meeting Interpretation
+          </span>
+          <h1 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-[0.9] italic">
+            Every Cross-Language Meeting,<br />
+            <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic">Real-Time Comprehension</span>
+          </h1>
+          <p class="text-xl text-muted max-w-xl font-medium leading-relaxed mb-10">
+            UniBusiness supports major meeting and office communication software, providing real-time speech translation, bilingual comprehension, and post-meeting summarization to help global teams collaborate efficiently.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/en/contact/" class="px-10 py-4 bg-primary text-white font-black italic rounded-full hover:scale-105 transition-all shadow-xl shadow-primary/20">
+              Try Now
+            </a>
+            <a href="#platforms" class="px-10 py-4 bg-white/10 backdrop-blur-md border border-border-light dark:border-primary/20   font-black italic rounded-full hover:bg-primary/5 transition-all">
+              View Supported Platforms
+            </a>
+          </div>
+          <div class="mt-8 flex items-center gap-6 text-sm text-muted font-medium italic">
+            <div class="flex items-center gap-2">
+              <Icon name="lucide:check-circle-2" class="w-4 h-4 text-emerald-500" />
+              Desktop & Extension
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon name="lucide:check-circle-2" class="w-4 h-4 text-emerald-500" />
+              Chinese-English Focus
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon name="lucide:check-circle-2" class="w-4 h-4 text-emerald-500" />
+              Smart Meeting Minutes
+            </div>
+          </div>
+        </div>
+        <div class="relative animate-on-scroll animate-right">
+          <div class="relative rounded-[3rem] overflow-hidden shadow-2xl border border-white/10">
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2070&auto=format&fit=crop" class="w-full h-auto" alt="UniBusiness Meeting Interface" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+            <div class="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                <span class="text-xs font-bold text-white/80 uppercase">LIVE TRANSLATION</span>
+              </div>
+              <p class="text-sm font-medium text-white italic leading-relaxed">
+                "We need to finalize the global supply chain strategy by next Friday."<br />
+                <span class="text-primary font-bold">We need to finalize the global supply chain strategy by next Friday.</span>
+              </p>
+            </div>
+          </div>
+          <!-- Floating UI Elements -->
+          <div class="absolute -top-6 -right-6 w-32 h-32 bg-accent/20 rounded-full blur-3xl -z-10"></div>
+          <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl -z-10"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Solving -->
+    <section class="py-24 px-6 bg-slate-50 dark:bg-slate-950/40">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div class="animate-on-scroll animate-left">
+            <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic mb-8">What Do We Solve?</h2>
+            <p class="text-xl text-muted font-medium leading-relaxed italic mb-10 border-l-4 border-primary pl-8">
+              The biggest cost of cross-language meetings isn\'t translation itself — it\'s broken conversation flow, missed key information, and unretrievable post-meeting content.
+            </p>
+            <div class="space-y-6">
+              {[
+                { t: "Can\'t understand, slow reactions", d: "Language barriers prevent real-time follow-up during meetings, leading to low decision-making efficiency." },
+                { t: "Can\'t speak confidently", d: "Worrying about grammar and accent prevents team members from speaking up." },
+                { t: "Hard to organize after meetings", d: "Pure manual recording is time-consuming and error-prone, with critical business details hard to trace." }
+              ].map(item => (
+                <div class="flex items-start gap-4">
+                  <div class="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 mt-1 shrink-0">
+                    <Icon name="lucide:x" class="w-3 h-3" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1 italic">{item.t}</h4>
+                    <p class="text-sm text-muted">{item.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="animate-on-scroll animate-right">
+            <div class="bento-card p-10 bg-white dark:bg-slate-900 border-none shadow-xl">
+               <h3 class="text-2xl font-bold mb-6 italic text-primary">UniBusiness Processing Loop</h3>
+               <div class="space-y-8 relative">
+                 <div class="absolute left-4 top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary to-accent opacity-20"></div>
+                 {[
+                  { s: "Pre-Meeting Setup", d: "Ready to use, quickly select translation direction and audio source" },
+                  { s: "In-Meeting Translation", d: "Real-time interpretation, bilingual comparison, natural participation" },
+                  { s: "Post-Meeting Accumulation", d: "Auto transcription, title summary, forming business assets" }
+                 ].map((step, i) => (
+                  <div class="relative pl-12">
+                    <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-primary flex items-center justify-center text-xs font-bold text-primary z-10 shadow-lg">
+                      {i + 1}
+                    </div>
+                    <h4 class="font-black italic mb-1">{step.s}</h4>
+                    <p class="text-sm text-muted">{step.d}</p>
+                  </div>
+                 ))}
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Features Cards -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">Core Capabilities</p>
+        <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic">Core Feature Modules</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {coreFeatures.map((f, i) => (
+          <div class="animate-on-scroll bento-card group hover:border-primary/50 transition-all duration-500" style={`transition-delay: ${i * 50}ms`}>
+            <div class="w-14 h-14 rounded-2xl bg-primary/5 text-primary flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl shadow-primary/5">
+              <Icon name={f.icon} class="w-7 h-7" />
+            </div>
+            <h3 class="text-xl font-bold mb-4 italic tracking-tight">{f.title}</h3>
+            <p class="text-sm text-muted leading-relaxed font-medium">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Supported Platforms -->
+    <section id="platforms" class="py-24 px-6 max-w-7xl mx-auto">
+      <div class="bento-card p-12 lg:p-20 bg-slate-900 border-none relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 pointer-events-none"></div>
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center font-balance">
+          <div class="animate-on-scroll animate-left">
+            <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic text-white mb-8">Works With Your<br/>Meeting & Office Software</h2>
+            <p class="text-lg text-white/60 mb-10 leading-relaxed font-medium italic">
+              UniBusiness supports mainstream meeting and office scenarios, covering team collaboration, client communication, and remote calls. Seamlessly integrate without changing your existing collaboration habits.
+            </p>
+            <a href="/en/contact/" class="inline-flex items-center gap-3 py-4 px-10 bg-white text-slate-900 font-black italic rounded-full hover:scale-105 transition-all">
+               Get Professional Plan
+               <Icon name="lucide:arrow-right" class="w-5 h-5" />
+            </a>
+          </div>
+          <div class="animate-on-scroll animate-right grid grid-cols-2 sm:grid-cols-4 gap-6">
+            {platforms.map(p => (
+              <div class="flex flex-col items-center gap-3 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all group">
+                <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white/50 group-hover:text-white transition-all">
+                  <Icon name="lucide:box" class="w-6 h-6" />
+                </div>
+                <span class="text-xs font-bold text-white/80 text-center tracking-tighter italic">{p}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scenarios -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-end justify-between mb-20 gap-8 animate-on-scroll">
+        <div class="max-w-2xl">
+          <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">Use Scenarios</p>
+          <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic underline decoration-accent decoration-8 underline-offset-4">Multi-Dimensional Business Coverage</h2>
+        </div>
+        <p class="text-muted max-w-sm text-sm font-medium leading-relaxed italic">Deep customization for different functional teams — cross-language communication should never be a bottleneck for business growth.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {scenarios.map((s, i) => (
+          <div class="animate-on-scroll bento-card p-10 group hover:-translate-y-2 transition-all duration-500" style={`transition-delay: ${i * 50}ms`}>
+            <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+              <Icon name={s.icon} class="w-6 h-6" />
+            </div>
+            <h4 class="text-xl font-bold tracking-tight italic">{s.title}</h4>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Personas -->
+    <section class="py-24 px-6 bg-slate-900">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 animate-on-scroll">
+           <h2 class="text-3xl md:text-4xl font-black tracking-tighter italic text-white">Who Uses UniBusiness?</h2>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4 animate-on-scroll">
+          {personas.map(p => (
+            <span class="px-8 py-3 rounded-full bg-white/5 border border-white/10 text-white/80 font-bold text-sm tracking-widest italic hover:bg-white/10 transition-all cursor-default">
+              {p}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        {[
+          { t: "Faster Meeting Comprehension", d: "Fewer pauses, less repetition, and no missed key points — faster decision-making pace.", v: "+45%", l: "Response Speed" },
+          { t: "More Natural Participation", d: "Members not fluent in the target language can join real-time collaboration, boosting team creativity.", v: "92%", l: "Communication Fluency" },
+          { t: "Complete Meeting Information", d: "Auto-organized minutes after meetings, reducing manual recording costs and ensuring core asset retention.", v: "-70%", l: "Organization Workload" }
+        ].map((item, i) => (
+          <div class="animate-on-scroll p-12 rounded-[3.5rem] bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 text-center flex flex-col items-center group transition-all" style={`transition-delay: ${i * 100}ms`}>
+            <p class="text-5xl font-black italic tracking-tighter text-primary mb-2">{item.v}</p>
+            <p class="text-[10px] font-bold text-muted uppercase tracking-widest mb-10">{item.l}</p>
+            <h4 class="text-2xl font-bold mb-4 italic tracking-tight">{item.t}</h4>
+            <p class="text-sm text-muted font-medium leading-relaxed">{item.d}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 px-6">
+       <div class="animate-on-scroll bento-card max-w-5xl mx-auto text-center border-none bg-gradient-to-br from-[#0B123B] to-primary text-white p-16 md:p-24 shadow-2xl relative overflow-hidden">
+           <div class="absolute inset-0 bg-primary/20 blur-[100px] pointer-events-none"></div>
+           <div class="relative z-10">
+              <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-8 italic">A New Era of Cross-Language Collaboration</h2>
+              <p class="text-xl text-white/80 mb-12 font-medium max-w-2xl mx-auto italic">
+                Not just another translation window — real integration of cross-language meetings into your team workflow. Adapted to mainstream office environments, a complete loop from real-time translation to post-meeting summarization.
+              </p>
+              <div class="flex flex-wrap justify-center gap-6">
+                <a href="/en/contact/" class="px-12 py-5 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">Schedule Demo</a>
+                <a class="px-12 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black italic rounded-full hover:bg-white/20 transition-all" rel='noopener noreferrer' href={getHomePermalinkEn()}>Back to Home</a>
+              </div>
+           </div>
+       </div>
+    </section>
+  </main>
+</Layout>

@@ -1,413 +1,294 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import HeroText from '@/components/widgets/HeroText.astro';
-import Features3 from '@/components/widgets/Features3.astro';
-import Steps from '@/components/widgets/Steps.astro';
-import Content from '@/components/widgets/Content.astro';
 
 const metadata = {
-  title: 'Core Technologies - UniSudo Inc.',
+  title: 'Technology Innovation - UniSudo Inc.',
 };
+
+const technologies = [
+  {
+    title: 'Streaming Dialogue Technology',
+    items: [
+      'Industry-leading 50x real-time rate improvement',
+      'Support multi-language real-time interruption and reconstruction',
+      'Natural and smooth dialogue experience'
+    ],
+    icon: 'lucide:message-circle',
+    delay: '0ms'
+  },
+  {
+    title: 'Lightweight Model Architecture',
+    items: [
+      'Break through traditional Transformer limitations',
+      '3B-7B small model precision service',
+      'Significantly reduce training and deployment costs',
+      'Support deep optimization for vertical scenarios'
+    ],
+    icon: 'lucide:brain',
+    delay: '100ms'
+  },
+  {
+    title: 'Cloud Native Technology Platform',
+    items: [
+      'Full-stack self-developed commercial-grade deployment',
+      'Flexible Function Call support',
+      'Open API ecosystem',
+      'Support diverse local deployment solutions'
+    ],
+    icon: 'lucide:cloud',
+    delay: '200ms'
+  }
+];
+
+const advantages = [
+  {
+    title: 'Cost Efficiency',
+    content: [
+      {
+        sub: 'Computing Resource Optimization',
+        points: ['80% reduction in computing resource consumption compared to traditional solutions', 'Support commercial-grade GPU and consumer graphics card deployment', 'Optimized concurrency processing capability']
+      },
+      {
+        sub: 'Deployment Cost Advantage',
+        points: ['Flexible local deployment solutions', 'Minimized hardware requirements', 'Simplified operation and maintenance management']
+      }
+    ],
+    icon: 'lucide:coins',
+    color: 'text-violet-500',
+    bg: 'bg-violet-500/10'
+  },
+  {
+    title: 'Performance Breakthrough',
+    content: [
+      {
+        sub: 'Real-time Interaction Capability',
+        points: ['Millisecond response speed', 'Smooth interruption and reconstruction experience', 'Multi-turn dialogue optimization']
+      },
+      {
+        sub: 'Accuracy Improvement',
+        points: ['Scenario-optimized algorithms', 'Accuracy beyond large model APIs', 'Continuous learning and optimization capability']
+      }
+    ],
+    icon: 'lucide:zap',
+    color: 'text-orange-500',
+    bg: 'bg-orange-500/10'
+  }
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-  <HeroText
-    title="UniSudo's Core Technologies"
-    subtitle='Break through the limitations of traditional architectures and innovate AI interaction experiences'
-    tagline=' '
-  />
-
-  <!-- Core Technology Features ******************* -->
-  <Features3
-    title='Innovative Dialogue Architecture'
-    subtitle='Breakthrough technological innovation, leading industry development'
-    columns={3}
-    items={[
-      {
-        title: 'Streaming Dialogue Technology',
-        description: `
-          • Industry-leading 50x real-time rate improvement
-          • Support multi-language real-time interruption and reconstruction
-          • Natural and smooth dialogue experience
-        `,
-        icon: 'tabler:message-circle',
-      },
-      {
-        title: 'Lightweight Model Architecture',
-        description: `
-          • Break through the limitations of traditional Transformer
-          • 3B-7B small model precision service
-          • Significant reduction in training and deployment costs
-          • Support deep optimization for vertical scenarios
-        `,
-        icon: 'tabler:brain',
-      },
-      {
-        title: 'Cloud Native Technology Platform',
-        description: `
-          • Full-stack commercial deployment capabilities
-          • Flexible Function Call support
-          • Open API ecosystem
-          • Support a variety of local deployment solutions
-        `,
-        icon: 'tabler:cloud',
-      },
-    ]}
-  />
-
-  <!-- Technology Advantages ******************* -->
-  <Steps
-    title='Technical Advantages'
-    items={[
-      {
-        title: 'Cost Efficiency',
-        description: `
-          • Calculation resource optimization
-          - 80% reduction in computational resource consumption compared to traditional solutions
-          - Support commercial-grade GPU and consumer graphics card deployment
-          - Optimized concurrency processing capabilities
-
-          • Deployment cost advantage
-          - Flexible local deployment solutions
-          - Minimized hardware requirements
-          - Simplified maintenance management
-        `,
-        icon: 'tabler:chart-bar',
-      },
-      {
-        title: 'Performance Breakthrough',
-        description: `
-          • Real-time interaction capabilities
-          - Millisecond response speed
-          - Smooth interruption and reconstruction experience
-          - Multi-turn dialogue optimization
-
-          • Accuracy improvement
-          - Scenario-optimized algorithm
-          - Accuracy beyond large model APIs
-          - Continuous learning and optimization capabilities
-        `,
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Extended Capabilities',
-        description: `
-          • Multi-language support
-          - Cross-language model fusion
-          - Multi-language real-time interaction
-          - Language model dynamic adaptation
-
-          • Scenario adaptation
-          - Rapid industrial deployment
-          - Intelligent customer service deep optimization
-          - Vertical domain customization capabilities
-        `,
-        icon: 'tabler:arrows-maximize',
-      },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
-  <Content
-    isReversed
-    title='Innovation Results'
-    subtitle='Continuous breakthroughs, continuous innovation'
-    items={[
-      {
-        title: 'Breakthrough progress of non-Transformer architecture',
-      },
-      {
-        title: 'Lightweight model training framework',
-      },
-      {
-        title: 'Real-time interaction performance breakthrough',
-      },
-      {
-        title: 'Local deployment solution',
-      },
-      {
-        title: 'Multi-scenario fusion capabilities',
-      },
-      {
-        title: 'Ecosystem integration',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot='content'>
-      <h2 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>
-        Core algorithm innovation and application innovation
-      </h2></Fragment
-    >
-  </Content>
-
-  <!-- Content Widget **************** -->
-  <Content
-    title='Future Development'
-    isAfterContent
-    items={[
-      {
-        title: 'Continuously optimize core algorithms',
-      },
-      {
-        title: 'Expand scenario adaptation capabilities',
-      },
-      {
-        title: 'Deepen AI infrastructure construction',
-      },
-      {
-        title: 'Explore new model architectures',
-      },
-      {
-        title: 'Optimize resource utilization efficiency',
-      },
-      {
-        title: 'Expand application scenario boundaries',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot='content'>
-      <h2 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>
-        Technical roadmap and innovation direction
-      </h2></Fragment
-    >
-  </Content>
-
-  <!-- Technology Value ******************* -->
-  <div class='scroll-section relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8' data-aos='fade-up'>
-    <div class='mb-12 text-center'>
-      <h2 class='tech-title mb-4 text-3xl font-bold'>Technical Value</h2>
-      <p class='text-xl text-gray-600 dark:text-gray-400'>Create industry value, drive industrial upgrade</p>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
     </div>
 
-    <div class='value-cards grid grid-cols-1 gap-8 md:grid-cols-2'>
-      <!-- 行业价值 -->
-      <div
-        class='value-card transform rounded-lg bg-white p-8 shadow-lg transition-transform duration-300 hover:scale-105 dark:bg-gray-800'
-        data-aos='fade-right'
-      >
-        <div class='mb-6 flex items-center'>
-          <Icon name='tabler:building' class='h-8 w-8 text-blue-600' />
-          <h3 class='ml-4 text-2xl font-bold'>Industry Value</h3>
-        </div>
-        <ul class='space-y-4'>
-          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='100'>
-            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
-            <span>Reduce AI application barriers</span>
-          </li>
-          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='200'>
-            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
-            <span>Enhance deployment flexibility</span>
-          </li>
-          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='300'>
-            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
-            <span>Accelerate industrial intelligence upgrade</span>
-          </li>
-        </ul>
+    <!-- Hero Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto text-center animate-on-scroll">
+      <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+        INNOVATION · Technology Innovation
+      </span>
+      <div class="text-5xl md:text-7xl mb-8 tracking-tighter leading-[0.9] italic dark:text-white/80 text-black/80">
+        UniSudo Inc.<br />
+        <span class="animate-pulse text-primary dark:text-primary font-black tracking-tighter italic">Core Technology Architecture</span>
+      </div>
+      <p class="text-xl text-muted max-w-2xl mx-auto font-medium leading-relaxed">
+        Break through traditional architecture limitations, innovate AI interaction experiences. We focus on underlying technology, committed to delivering stronger intelligence at lower cost.
+      </p>
+    </section>
+
+    <!-- Break-through Section (Bento Cards) -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">Innovative Dialogue Architecture</p>
+        <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic">Breakthrough Core Technologies</h2>
       </div>
 
-      <!-- 商业价值 -->
-      <div
-        class='value-card transform rounded-lg bg-white p-8 shadow-lg transition-transform duration-300 hover:scale-105 dark:bg-gray-800'
-        data-aos='fade-left'
-      >
-        <div class='mb-6 flex items-center'>
-          <Icon name='tabler:chart-dots' class='h-8 w-8 text-blue-600' />
-          <h3 class='ml-4 text-2xl font-bold'>Business Value</h3>
-        </div>
-        <ul class='space-y-4'>
-          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='100'>
-            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
-            <span>Significant cost reduction</span>
-          </li>
-          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='200'>
-            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
-            <span>Enhance deployment efficiency</span>
-          </li>
-          <li class='value-item flex items-center' data-aos='fade-up' data-aos-delay='300'>
-            <Icon name='tabler:arrow-right' class='mr-2 h-5 w-5 text-blue-600' />
-            <span>Create new business models</span>
-          </li>
-        </ul>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {technologies.map((t) => (
+          <div class="animate-on-scroll bento-card group hover:scale-[1.02] transition-all duration-500" style={`transition-delay: ${t.delay}`}>
+            <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 group-hover:from-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
+              <Icon name={t.icon} class="h-8 w-8 text-primary group-hover:text-white transition-colors" />
+            </div>
+            <h3 class="mb-5 text-2xl font-black italic tracking-tight">{t.title}</h3>
+            <ul class="space-y-3">
+              {t.items.map(item => (
+                <li class="flex gap-2 text-sm text-muted group/li">
+                  <span class="text-primary font-black">/</span>
+                  <span class="group-hover/li:text-black dark:group-hover/li:text-white transition-colors">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- 动画样式 -->
-  <style>
-    /* 基础动画定义 */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
+    <!-- Tech Advantage: Dynamic Panels -->
+    <section class="py-32 px-6 max-w-7xl mx-auto overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {advantages.map((adj) => (
+          <div class="animate-on-scroll bento-card border-none bg-surface-light dark:bg-surface-dark relative overflow-hidden group">
+            <div class={`absolute top-0 right-0 p-12 opacity-5 scale-150 transform group-hover:rotate-12 transition-transform duration-700 ${adj.color}`}>
+              <Icon name={adj.icon} class="w-48 h-48" />
+            </div>
+            
+            <div class="relative z-10">
+              <div class="flex items-center gap-4 mb-10">
+                <div class={`w-14 h-14 rounded-2xl ${adj.bg} ${adj.color} flex items-center justify-center`}>
+                  <Icon name={adj.icon} class="w-7 h-7" />
+                </div>
+                <h3 class="text-3xl font-black italic tracking-tighter">{adj.title}</h3>
+              </div>
+              
+              <div class="space-y-10 focus-within:">
+                {adj.content.map(block => (
+                  <div>
+                    <h4 class="text-lg font-bold mb-4 flex items-center gap-2">
+                       <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                       {block.sub}
+                    </h4>
+                    <ul class="space-y-3 pl-4">
+                      {block.points.map(p => (
+                        <li class="text-muted text-sm border-l border-border-light dark:border-primary/20  pl-4 hover:border-primary transition-colors py-1 cursor-default">
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
+    <!-- Outcomes: Split View (Optimized Content) -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="animate-on-scroll grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="animate-on-scroll animate-left">
+          <span class="text-primary text-xs font-bold uppercase tracking-widest mb-4 inline-block">RESULTS · Innovation Achievements</span>
+          <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight italic tracking-tighter">
+            Algorithm Innovation and<br />
+            <span class="gradient-text">Application Deep Integration</span>
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              'Non-Transformer Architecture Breakthrough',
+              'Lightweight Model Training Framework',
+              'Real-time Interaction Performance Breakthrough',
+              'Local Deployment Solution',
+              'Multi-scenario Fusion Capability',
+              'Ecosystem Integration'
+            ].map(item => (
+              <div class="flex items-center gap-3 p-4 rounded-2xl bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20  hover:border-primary/40 transition-all cursor-default">
+                <Icon name="lucide:check-circle-2" class="w-5 h-5 text-primary" />
+                <span class="text-sm font-bold">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="animate-on-scroll animate-right relative">
+          <div class="rounded-[3rem] overflow-hidden shadow-2xl relative group">
+            <img 
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" 
+              alt="Technology" 
+              class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700" 
+              referrerpolicy="no-referrer"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-8 left-8 text-white">
+              <p class="text-2xl font-bold italic tracking-tight">Leading the AI Second Half</p>
+              <p class="text-white/70 text-sm italic">Small Model Revolution in Vertical Domains</p>
+            </div>
+          </div>
+          <!-- Floating Stats -->
+          <div class="absolute -top-10 -right-10 bg-white dark:bg-slate-900 p-8 rounded-3xl border border-border-light dark:border-primary/20  shadow-2xl animate-bounce" style="animation-duration: 5s">
+            <p class="text-4xl font-black italic tracking-tighter text-primary leading-none">50X</p>
+            <p class="text-[10px] text-muted font-bold uppercase tracking-widest mt-2">Real-time Rate Improvement</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
+    <!-- Tech Value Cards -->
+    <section class="py-20 px-6 max-w-7xl mx-auto border-t border-border-light dark:border-primary/20 ">
+      <div class="text-center mb-20 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">Technical Value</p>
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">Create Industry Value, Drive Industrial Upgrade</h2>
+      </div>
 
-    @keyframes slideInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="animate-on-scroll animate-left bento-card border-none bg-surface-light dark:bg-white/5 p-10 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center gap-4 mb-10">
+              <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
+                <Icon name="lucide:building-2" class="w-6 h-6" />
+              </div>
+              <h3 class="text-2xl font-black italic">Industry Value</h3>
+            </div>
+            <ul class="space-y-6">
+              {[
+                { t: 'Lower AI Application Barriers', d: 'Enable small and medium enterprises to have top-tier AI productivity' },
+                { t: 'Enhanced Deployment Flexibility', d: 'Full-scenario adaptation, whether cloud or edge of production environment' },
+                { t: 'Accelerate Industrial Intelligence Upgrade', d: 'Technical foundation for efficient transformation' }
+              ].map(item => (
+                <li class="flex gap-4">
+                  <Icon name="lucide:check" class="w-5 h-5 text-blue-500 mt-1 shrink-0" />
+                  <div>
+                    <p class="font-bold">{item.t}</p>
+                    <p class="text-xs text-muted mt-1 leading-relaxed">{item.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
-    @keyframes scaleIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+        <div class="animate-on-scroll animate-right bento-card border-none bg-surface-dark dark:bg-white/5 text-white p-10 flex flex-col justify-between group">
+           <div>
+             <div class="flex items-center gap-4 mb-10">
+               <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+                 <Icon name="lucide:bar-chart-3" class="w-6 h-6" />
+               </div>
+               <h3 class="text-2xl font-black italic">Business Value</h3>
+             </div>
+             <ul class="space-y-6">
+               {[
+                 { t: 'Significantly Reduce Usage Costs', d: 'Full-chain resource cost reduction from training to inference' },
+                 { t: 'Improve Deployment Efficiency', d: 'Lightning-fast agile deployment cycle, seize market first-mover advantage' },
+                 { t: 'Create New Business Models', d: 'Help clients build differentiated product advantages' }
+               ].map(item => (
+                 <li class="flex gap-4">
+                   <Icon name="lucide:zap" class="w-5 h-5 text-emerald-500 mt-1 shrink-0" />
+                   <div>
+                     <p class="font-bold text-white">{item.t}</p>
+                     <p class="text-xs text-white/50 mt-1 leading-relaxed">{item.d}</p>
+                   </div>
+                 </li>
+               ))}
+             </ul>
+           </div>
+        </div>
+      </div>
+    </section>
 
-    /* 应用动画的类 */
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    .slide-left {
-      opacity: 0;
-      animation: slideInLeft 1s ease forwards;
-    }
-
-    .slide-right {
-      opacity: 0;
-      animation: slideInRight 1s ease forwards;
-    }
-
-    .slide-up {
-      opacity: 0;
-      animation: slideInUp 1s ease forwards;
-    }
-
-    .scale-in {
-      opacity: 0;
-      animation: scaleIn 1s ease forwards;
-    }
-
-    /* 为不同延迟添加类 */
-    .delay-100 {
-      animation-delay: 100ms;
-    }
-    .delay-200 {
-      animation-delay: 200ms;
-    }
-    .delay-300 {
-      animation-delay: 300ms;
-    }
-    .delay-400 {
-      animation-delay: 400ms;
-    }
-    .delay-500 {
-      animation-delay: 500ms;
-    }
-  </style>
-
-  <!-- 动画脚本 -->
-  <script>
-    // 交叉观察器选项
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1,
-    };
-
-    // 创建观察器
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // 获取当前元素应该使用的动画类
-          const animationClass = entry.target.dataset.animation;
-          const delay = entry.target.dataset.delay;
-
-          // 添加动画类
-          if (animationClass) {
-            entry.target.classList.add(animationClass);
-          }
-          if (delay) {
-            entry.target.style.animationDelay = `${delay}ms`;
-          }
-
-          // 停止观察该元素
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-
-    // 开始观察元素
-    document.addEventListener('DOMContentLoaded', () => {
-      // 观察所有带有data-animation属性的元素
-      document.querySelectorAll('[data-animation]').forEach((element) => {
-        observer.observe(element);
-      });
-
-      // 观察滚动区域
-      document.querySelectorAll('.scroll-section').forEach((section) => {
-        observer.observe(section);
-      });
-
-      // 观察价值卡片
-      document.querySelectorAll('.value-card').forEach((card) => {
-        observer.observe(card);
-      });
-
-      // 观察价值项
-      document.querySelectorAll('.value-item').forEach((item) => {
-        observer.observe(item);
-      });
-    });
-
-    // 添加滚动动画
-    document.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      const windowHeight = window.innerHeight;
-
-      document.querySelectorAll('.scroll-animate').forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top + scrolled;
-
-        if (scrolled > elementTop - windowHeight + 100) {
-          element.classList.add('active');
-        }
-      });
-    });
-  </script>
+    <!-- CTA -->
+    <section class="py-32 px-6">
+      <div class="animate-on-scroll bento-card max-w-4xl mx-auto text-center border-none bg-gradient-to-br from-primary to-accent text-white p-16 shadow-2xl shadow-primary/30 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/tech/1920/1080?blur=10')] opacity-20 mix-blend-overlay"></div>
+        <div class="relative z-10">
+          <h2 class="text-4xl md:text-6xl font-black italic tracking-tighter mb-8">Learn More Technical Details</h2>
+          <p class="text-xl text-white/80 mb-12 font-medium max-w-xl mx-auto">Explore how our core technologies empower your business and create an intelligent future together.</p>
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="/en/contact/" class="px-10 py-4 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">Contact Us</a>
+            <a href="/en/roadmap/" class="px-10 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black italic rounded-full hover:bg-white/20 transition-all">Development Roadmap</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>

@@ -1,353 +1,196 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Hero from '@/components/widgets/Hero.astro';
-import Content from '@/components/widgets/Content.astro';
-import CallToAction from '@/components/widgets/CallToAction.astro';
-import Timeline from '@/components/widgets/Timeline.astro';
-import { getPermalink } from '@/utils/permalinks';
 
 const metadata = {
-  title: 'Digital Human',
+  title: 'Digital Human Exhibition Solutions - UniSudo Inc.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Keep only one Hero section - using the Hero component -->
-  <Hero
-    tagline=' '
-    image={{
-      src: 'https://images.unsplash.com/photo-1599727277707-b429a4994c15?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      alt: 'AI Data Processing',
-    }}
-  >
-    <Fragment slot='title'>
-      <span class='text-4xl font-bold leading-tight md:text-5xl'>Data Empowerment, Intelligent Future</span><br />
-      <span class='highlight mt-2 text-2xl font-medium text-accent dark:text-white md:text-3xl'
-        >Professional AI Data Service Solutions</span
-      >
-    </Fragment>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
+    </div>
 
-    <Fragment slot='subtitle'>
-      <span class='mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-400 md:text-xl'>
-        From data annotation to privacy protection, providing comprehensive AI data processing services to help your AI
-        projects succeed
+    <!-- Hero Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto text-center animate-on-scroll">
+      <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+        SOLUTIONS · Digital Human Exhibition
       </span>
-    </Fragment>
-  </Hero>
-
-  <!-- Case Study 1: Banking -->
-  <Content
-    isReversed
-    tagline='Case Study 1'
-    title='Bank Intelligent Digital Employee'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-        • Demand analysis: improve the efficiency of branch services and reduce labor costs
-        • Pain point: unable to serve during non-working hours, long waiting times during peak periods, and high labor costs
-        • Goal: build a smart branch that provides 24/7 services`,
-      },
-      {
-        title: 'Solution',
-        description: `
-        • Deploy intelligent digital employees
-        • Integrate core business systems
-        • Provide multi-language service capabilities
-        • Implement functions such as business consultation, product recommendation, and processing guidance`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-        • Customer waiting time reduced by 60%
-        • Business processing efficiency increased by 40%
-        • Customer satisfaction increased by 25%
-        • Annual operating cost savings of approximately 200万元`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Bank Digital Employee',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        A customer needed to make an urgent international remittance late at night. The traditional bank branch was
-        closed, but the smart digital employee was online 24 hours a day. The digital employee not only helped the
-        customer complete the remittance appointment but also provided currency consultation and fee discount plans,
-        completing the entire process in just 10 minutes.
+      <h1 class="text-6xl md:text-7xl font-bold tracking-tight leading-tight mb-4">Data Empowerment, Intelligent Future</h1>
+      <h2 class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-5xl md:text-6xl mt-3 font-semibold mb-8 italic">Professional AI Data Service Solutions</h2>
+      <p class="text-lg md:text-xl text-muted leading-relaxed max-w-3xl mx-auto font-medium">
+        From data annotation to privacy protection, providing comprehensive AI data processing services to help your AI projects succeed.
       </p>
-    </Fragment>
-  </Content>
+    </section>
 
-  <!-- Case Study 2: Museum -->
-  <Content
-    isAfterContent
-    tagline='Case Study 2'
-    title='Museum Virtual Guide'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-        • Demand analysis: improve the experience of cultural relics display and solve the problem of insufficient guide personnel
-        • Pain point: limited high-quality guide resources, personalized guide needs difficult to meet
-        • Goal: build an immersive smart guide experience`,
-      },
-      {
-        title: 'Solution',
-        description: `
-        • Deploy virtual guide
-        • Build cultural relics knowledge graph
-        • Support multi-language guide services
-        • Provide personalized tour route planning`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-        • Daily service tourists increased by 300%
-        • Guide satisfaction reached 95%
-        • Cultural relics knowledge dissemination effect increased by 50%
-        • Operating cost reduced by 40%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1584652761653-7980c782d8b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Museum Guide',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        A student interested in history visited the museum. The virtual guide not only explained the history of the
-        exhibits in detail but also interacted with him based on his interests, making historical knowledge vivid and
-        interesting through interesting stories and 3D displays. The parent expressed that this was more likely to
-        stimulate the child's interest in learning than traditional explanations.
-      </p>
-    </Fragment>
-  </Content>
-  <!-- Case Study 3: Enterprise Exhibition -->
-  <Content
-    isReversed
-    tagline='Case Study 3'
-    title='Enterprise Exhibition Interactive Guide'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-          • Demand analysis: improve the interactive experience of the exhibition hall and realize intelligent product display
-          • Pain point: high cost of professional display personnel, inconsistent service standards
-          • Goal: build an immersive smart exhibition hall experience`,
-      },
-      {
-        title: 'Solution',
-        description: `
-          • Deploy AI guide assistant
-          • Develop 3D product configuration display system
-          • Implement intelligent quotation and customized solution
-          • Provide virtual experience service`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-          • Customer retention time increased by 45%
-          • Transaction conversion rate increased by 35%
-          • Customer satisfaction reached 98%
-          • Human cost reduced by 50%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1670500953230-1cb6b7f9d284?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Exhibition Guide',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        A customer interested in new energy vehicles products through the interactive introduction of the digital guide,
-        not only understood the detailed configuration of the product but also experienced the effect of different
-        appearance choices in real time through AR technology. The digital guide provided personalized configuration
-        suggestions and financial solutions based on customer needs, ultimately helping the customer find the most
-        suitable choice.
-      </p>
-    </Fragment>
-  </Content>
+    <!-- Scenarios -->
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-16 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">Application Scenarios</p>
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">Multi-field Digital Human Solutions</h2>
+      </div>
 
-  <!-- Case Study 4: Shopping Mall -->
-  <Content
-    isAfterContent
-    tagline='Case Study 4'
-    title='Shopping Mall Digital Guide Assistant'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-          • Demand analysis: improve shopping experience and solve the problem of insufficient mall guide resources
-          • Pain point: difficulty in obtaining product information, uneven guide services
-          • Goal: build an intelligent shopping service experience`,
-      },
-      {
-        title: 'Solution',
-        description: `
-          • Deploy intelligent guide assistant
-          • Develop mall navigation system
-          • Push real-time discount information
-          • Provide personalized shopping advice`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-          • Customer average spend increased by 28%
-          • Member conversion rate increased by 40%
-          • Guide satisfaction reached 96%
-          • Merchant operating efficiency increased by 35%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1573855619003-97b4799dcd8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Shopping Mall Guide',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        A customer wants to buy a set of professional attire. The digital guide assistant recommends suitable brands and
-        styles through intelligent analysis of their preferences and budget, and plans the optimal shopping route.
-        Through the AR try-on function, the customer quickly finds the desired combination and enjoys member-exclusive
-        discounts.
-      </p>
-    </Fragment>
-  </Content>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { title: 'Bank Intelligent Branch', desc: '24/7 full-time service intelligent branch digital employee, improving service efficiency and reducing labor costs.', icon: 'lucide:building-2', delay: '0ms' },
+          { title: 'Museum Virtual Guide', desc: 'Immersive intelligent guide experience, multi-language support, personalized tour route planning.', icon: 'lucide:landmark', delay: '100ms' },
+          { title: 'Enterprise Exhibition Guide', desc: '3D product configuration display, intelligent quotation and solution customization, improving customer dwell time.', icon: 'lucide:presentation', delay: '200ms' },
+          { title: 'Shopping Mall Digital Guide', desc: 'Shopping mall navigation system, real-time discount push, personalized shopping suggestions, increasing average spend.', icon: 'lucide:shopping-bag', delay: '300ms' },
+          { title: 'Education Training Lecturer', desc: 'AI foreign teacher system, intelligent learning assessment, real-time oral interaction, improving learning effectiveness.', icon: 'lucide:graduation-cap', delay: '400ms' },
+          { title: 'Brand Digital Ambassador', desc: 'Live interaction system, social media interaction, improving brand favorability and market awareness.', icon: 'lucide:award', delay: '500ms' }
+        ].map(s => (
+          <div class="animate-on-scroll bento-card group hover:scale-[1.02] transition-all duration-500" style={`transition-delay: ${s.delay}`}>
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-300 group-hover:from-primary group-hover:text-white">
+              <Icon name={s.icon} class="h-7 w-7 text-primary group-hover:text-white" />
+            </div>
+            <h3 class="mb-3 text-xl font-bold tracking-tight">{s.title}</h3>
+            <p class="text-muted leading-relaxed text-sm">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-  <!-- Case Study 5: Education -->
-  <Content
-    isReversed
-    tagline='Case Study 5'
-    title='Education Training Digital Instructor'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-          • Demand analysis: provide personalized English learning experience and solve the problem of insufficient teacher resources
-          • Pain point: difficulty in tracking learning progress, lack of interactive practice opportunities
-          • Goal: build an intelligent learning辅导系统`,
-      },
-      {
-        title: 'Solution',
-        description: `
-          • Deploy AI foreign teacher system
-          • Develop intelligent learning assessment system
-          • Implement real-time oral interaction
-          • Provide personalized learning advice`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-          • Learning enthusiasm increased by 55%
-          • Oral proficiency improved significantly
-          • Learning duration increased by 40%
-          • Renewal rate increased by 35%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1573511860302-28c524319d2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Education Training',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        A student preparing for exams has access to AI foreign teachers for continuous oral practice. The AI system not
-        only corrects pronunciation issues but also adjusts teaching content based on learning progress, helping the
-        student significantly improve their口语成绩 through情景对话和实时反馈 in just three months.
-      </p>
-    </Fragment>
-  </Content>
+    <!-- Case Studies -->
+    <section class="py-32 space-y-40">
+      <!-- Case 1 -->
+      <div class="px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="animate-on-scroll animate-left">
+             <span class="text-primary text-xs font-bold uppercase tracking-widest mb-4 inline-block">CASE STUDY</span>
+             <h3 class="text-4xl font-bold mb-8 italic">Bank Intelligent Branch Digital Employee</h3>
+             <div class="space-y-6">
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:info" class="w-5 h-5 text-primary" /> Project Background</h4>
+                  <p class="text-sm text-muted leading-relaxed">Demand: Improve branch service efficiency, reduce labor costs. Pain points: Non-working hours no service, long waiting times during peaks, high labor costs. Goal: Build 24/7 full-time intelligent branch.</p>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:check-circle" class="w-5 h-5 text-primary" /> Solution</h4>
+                  <p class="text-sm text-muted leading-relaxed">Deploy intelligent digital employee, integrate core business systems, provide multi-language service capability, implement business consultation, product recommendation, and processing guidance.</p>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:trending-up" class="w-5 h-5 text-primary" /> Implementation Effect</h4>
+                  <p class="text-sm text-muted leading-relaxed">Customer waiting time reduced by 60%, business processing efficiency improved by 40%, customer satisfaction improved by 25%, annual operating cost savings of approximately 2 million RMB.</p>
+                </div>
+                <div class="p-8 rounded-[2.5rem] bg-primary/5 border border-primary/10 relative overflow-hidden group">
+                  <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:quote" class="w-20 h-20" /></div>
+                  <h4 class="text-xl font-black mb-4 italic tracking-tight">Scenario Story</h4>
+                  <p class="text-sm text-muted leading-relaxed italic">"A customer needed to make an urgent international remittance late at night. Traditional bank branch was closed, but the intelligent branch digital employee was online 24 hours. The digital employee not only helped complete the remittance appointment but also provided currency consultation and fee discount plans, completing the entire process in just 10 minutes."</p>
+                </div>
+             </div>
+          </div>
+          <div class="animate-on-scroll animate-right">
+             <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1740&auto=format&fit=crop" class="rounded-[3rem] shadow-2xl aspect-square object-cover" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+      </div>
 
-  <!-- Case Study 6: Brand Ambassador -->
-  <Content
-    isAfterContent
-    tagline='Case Study 6'
-    title='Enterprise Image Digital Ambassador'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-          • Demand analysis: improve brand image and enhance user interaction experience
-          • Pain point: high cost of traditional endorsements, poor interactivity
-          • Goal: build a brand digital image with strong appeal`,
-      },
-      {
-        title: 'Solution',
-        description: `
-          • Create digital brand ambassador
-          • Develop live interaction system
-          • Implement social media interaction
-          • Provide product launch hosting`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-          • Brand favorability increased by 45%
-          • Social media interaction increased by 200%
-          • Live broadcast conversion rate increased by 60%
-          • Marketing cost reduced by 30%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Digital Ambassador',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        At a brand's new product launch event, the digital ambassador not only completed the product launch
-        demonstration but also interacted with users in real-time, answering technical questions. On social media, the
-        digital ambassador posts daily product usage tips and lifestyle content, successfully attracting a lot of
-        attention from young users through a friendly image.
-      </p>
-    </Fragment>
-  </Content>
+      <!-- Case 2 -->
+      <div class="px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="animate-on-scroll animate-left lg:order-2">
+             <span class="text-accent text-xs font-bold uppercase tracking-widest mb-4 inline-block">CASE STUDY</span>
+             <h3 class="text-4xl font-bold mb-8 italic">Museum Virtual Guide</h3>
+             <div class="space-y-6">
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:info" class="w-5 h-5 text-accent" /> Project Background</h4>
+                  <p class="text-sm text-muted leading-relaxed">Demand: Improve cultural relics display experience, solve guide personnel shortage. Pain points: Limited quality guide resources, personalized guide needs hard to meet. Goal: Build immersive intelligent guide experience.</p>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:check-circle" class="w-5 h-5 text-accent" /> Solution</h4>
+                  <p class="text-sm text-muted leading-relaxed">Deploy virtual guide, build cultural relics knowledge graph, support multi-language guide services, provide personalized tour route planning.</p>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:trending-up" class="w-5 h-5 text-accent" /> Implementation Effect</h4>
+                  <p class="text-sm text-muted leading-relaxed">Daily service tourists increased by 300%, guide satisfaction reached 95%, cultural relics knowledge dissemination improved by 50%, operating cost reduced by 40%.</p>
+                </div>
+                <div class="p-8 rounded-[2.5rem] bg-accent/5 border border-accent/10 relative overflow-hidden group">
+                  <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:quote" class="w-20 h-20" /></div>
+                  <h4 class="text-xl font-black mb-4 italic tracking-tight">Scenario Story</h4>
+                  <p class="text-sm text-muted leading-relaxed italic">"A student very interested in history visiting the museum, the virtual guide not only explained exhibit history in detail but also interactively answered based on their interests, making historical knowledge vivid and interesting through stories and 3D displays. Parents said this was more likely to stimulate child's learning interest than traditional explanations."</p>
+                </div>
+             </div>
+          </div>
+          <div class="animate-on-scroll animate-right lg:order-1">
+             <img src="https://images.unsplash.com/photo-1599727277707-b429a4994c15?q=80&w=2070&auto=format&fit=crop" class="rounded-[3rem] shadow-2xl aspect-square object-cover" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+      </div>
 
-  <!-- Success Metrics -->
-  <Timeline
-    title='Digital Human Solution Overall Effect'
-    items={[
-      {
-        title: 'Service Efficiency Improvement',
-        description: 'Average service efficiency increased by 40%, 24/7全天候服务覆盖',
-      },
-      {
-        title: 'Cost Optimization',
-        description: 'Average operating cost reduced by 45%, optimized human resource allocation',
-      },
-      {
-        title: 'User Satisfaction',
-        description: 'Customer satisfaction increased by 35%, interactive experience significantly improved',
-      },
-      {
-        title: 'Brand Value',
-        description: 'Brand image improved by 40%, market awareness significantly enhanced',
-      },
-    ]}
-  />
+      <!-- Case 3 -->
+      <div class="px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="animate-on-scroll animate-left">
+             <span class="text-emerald-500 text-xs font-bold uppercase tracking-widest mb-4 inline-block">CASE STUDY</span>
+             <h3 class="text-4xl font-bold mb-8 italic">Enterprise Exhibition Interactive Guide</h3>
+             <div class="space-y-6">
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:info" class="w-5 h-5 text-emerald-500" /> Project Background</h4>
+                  <p class="text-sm text-muted leading-relaxed">Demand: Improve exhibition interactive experience, achieve intelligent product display. Pain points: High cost of professional display personnel, inconsistent service standards. Goal: Build immersive intelligent exhibition experience.</p>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:check-circle" class="w-5 h-5 text-emerald-500" /> Solution</h4>
+                  <p class="text-sm text-muted leading-relaxed">Deploy AI guide assistant, develop 3D product configuration display system, implement intelligent quotation and solution customization, provide virtual experience services.</p>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-2 flex items-center gap-2"><Icon name="lucide:trending-up" class="w-5 h-5 text-emerald-500" /> Implementation Effect</h4>
+                  <p class="text-sm text-muted leading-relaxed">Customer dwell time increased by 45%, transaction conversion rate improved by 35%, customer satisfaction reached 98%, labor cost reduced by 50%.</p>
+                </div>
+                <div class="p-8 rounded-[2.5rem] bg-emerald-500/5 border border-emerald-500/10 relative overflow-hidden group">
+                  <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:quote" class="w-20 h-20" /></div>
+                  <h4 class="text-xl font-black mb-4 italic tracking-tight">Scenario Story</h4>
+                  <p class="text-sm text-muted leading-relaxed italic">"A customer interested in new energy vehicle products, through digital guide's interactive introduction, not only learned detailed product configuration but also experienced different appearance options in real-time via AR technology. Digital guide provided personalized configuration suggestions and financial solutions based on customer needs, ultimately helping find the most suitable choice."</p>
+                </div>
+             </div>
+          </div>
+          <div class="animate-on-scroll animate-right">
+             <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2090&auto=format&fit=crop" class="rounded-[3rem] shadow-2xl aspect-square object-cover" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Call to Action -->
-  <CallToAction
-    title='Start Your Digital Transformation Journey'
-    subtitle='Let us help you create a customized digital human solution'
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Book a Demo',
-        href: getPermalink('/en/contact'),
-        icon: 'tabler:download',
-      },
-      {
-        text: 'Learn More',
-        href: getPermalink('/en/about'),
-      },
-    ]}
-  />
+    <!-- Overall Results -->
+    <section class="py-32 px-6 max-w-7xl mx-auto rounded-[4rem] bg-[#030620] border border-white/5 text-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-primary/10 blur-[120px] -z-10 animate-pulse"></div>
+      <div class="text-center mb-20 animate-on-scroll">
+        <h2 class="text-4xl md:text-5xl font-black italic tracking-tighter">Digital Human Solution Overall Results</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          { title: 'Service Efficiency', desc: 'Average improvement of 40%, 24/7 full-time service coverage', icon: 'lucide:clock', delay: '0ms' },
+          { title: 'Cost Optimization', desc: 'Average operating cost reduced by 45%, optimized human resource allocation', icon: 'lucide:coins', delay: '100ms' },
+          { title: 'User Satisfaction', desc: 'Customer satisfaction improved by 35%, interactive experience significantly enhanced', icon: 'lucide:heart', delay: '200ms' },
+          { title: 'Brand Value', desc: 'Brand image improved by 40%, market awareness significantly enhanced', icon: 'lucide:star', delay: '300ms' }
+        ].map(r => (
+          <div class="animate-on-scroll p-10 rounded-[2.5rem] bg-white/5 border border-white/10 text-center flex flex-col items-center group hover:bg-white/10 transition-all" style={`transition-delay: ${r.delay}`}>
+            <div class="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+               <Icon name={r.icon} class="w-7 h-7" />
+            </div>
+            <h3 class="text-xl font-bold mb-2 italic tracking-tight">{r.title}</h3>
+            <p class="text-sm text-white/50 leading-relaxed">{r.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 px-6">
+      <div class="animate-on-scroll bento-card max-w-4xl mx-auto text-center border-none bg-gradient-to-br from-primary to-accent text-white p-16 shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/future/1920/1080?blur=10')] opacity-20 mix-blend-overlay"></div>
+        <div class="relative z-10">
+          <h2 class="text-4xl md:text-6xl font-black italic tracking-tighter mb-8">Start Your Digital Transformation Journey</h2>
+          <p class="text-xl text-white/80 mb-12 font-medium max-w-xl mx-auto">Let us help you create a customized digital human solution, bringing soul to your business through technology.</p>
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="/en/contact/" class="px-10 py-4 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">Book a Demo</a>
+            <a href="/en/about/" class="px-10 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black italic rounded-full hover:bg-white/20 transition-all">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>

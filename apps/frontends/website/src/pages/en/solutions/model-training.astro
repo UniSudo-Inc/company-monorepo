@@ -1,397 +1,271 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '@/layouts/PageLayout.astro';
-import Content from '@/components/widgets/Content.astro';
-import Features2 from '@/components/widgets/Features2.astro';
-import Steps from '@/components/widgets/Steps.astro';
-import Timeline from '@/components/widgets/Timeline.astro';
-import CallToAction from '@/components/widgets/CallToAction.astro';
-import { getPermalink } from '@/utils/permalinks';
 
 const metadata = {
-  title: 'Model Training and Fine-tuning Solutions',
+  title: 'Model Training and Fine-tuning Solutions - UniSudo',
 };
+
+const trainingSteps = [
+  { title: 'Demand Analysis', desc: 'Deep understanding of business scenarios, defining model goals and performance metrics', icon: 'lucide:brain' },
+  { title: 'Data Preparation', desc: 'High-quality dataset construction, processing, and precise annotation', icon: 'lucide:database' },
+  { title: 'Model Training', desc: 'Using distributed computing, large-scale architectures, and cutting-edge optimization algorithms', icon: 'lucide:code' },
+  { title: 'Effect Validation', desc: 'Multi-dimensional model evaluation, black-box testing, and performance regression', icon: 'lucide:bar-chart-3' }
+];
+
+const advantages = [
+  { title: 'Professional Team', desc: 'Led by senior algorithm engineers, deep expertise in vertical domains', icon: 'lucide:users' },
+  { title: 'Data Security', desc: 'Strict data tiering protection and full-process encrypted training environment', icon: 'lucide:shield' },
+  { title: 'Efficient Training', desc: 'Extremely optimized training pipeline, significantly shortening R&D cycles', icon: 'lucide:rocket' },
+  { title: 'Quality Assurance', desc: 'Standardized evaluation models to ensure production environment delivery quality', icon: 'lucide:check-circle' }
+];
+
+const results = [
+  { title: 'Accuracy Improvement', desc: 'Model average improvement of 60%+ on core tasks', icon: 'lucide:target' },
+  { title: 'Cost Reduction', desc: '70% training cost reduction through computing optimization and fine-tuning technology', icon: 'lucide:trending-down' },
+  { title: 'Deployment Optimization', desc: 'Extreme model volume compression, deployment scale reduced by 80%', icon: 'lucide:zap' },
+  { title: 'User Satisfaction', desc: 'Business interaction experience upgraded, user satisfaction improved by 45%+', icon: 'lucide:smile' }
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Section -->
-  <div class='relative flex h-96 items-center justify-center overflow-hidden'>
-    <div class='absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90'></div>
-    <div class='relative z-10 text-center text-white'>
-      <h1 class='mb-4 text-4xl font-bold md:text-5xl' data-aos='fade-up'>Model Training and Fine-tuning Solutions</h1>
-      <p class='text-xl' data-aos='fade-up' data-aos-delay='200'>Customized · Loop Learning · Data Security</p>
+  <main class="relative z-10 pt-0">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+      <div class="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-blue-500/5 rounded-full blur-[150px] animate-pulse"></div>
+      <div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-500/5 rounded-full blur-[150px] animate-pulse" style="animation-delay: 3s"></div>
     </div>
-  </div>
 
-  <!-- Process Flow -->
-  <Steps
-    title='Model Training Process'
-    items={[
-      {
-        title: 'Demand Analysis',
-        description: 'Deep understanding of business scenarios and model requirements',
-        icon: 'tabler:brain',
-      },
-      {
-        title: 'Data Preparation',
-        description: 'Data processing and annotation',
-        icon: 'tabler:database',
-      },
-      {
-        title: 'Model Training',
-        description: 'Professional training and optimization',
-        icon: 'tabler:code',
-      },
-      {
-        title: 'Effect Validation',
-        description: 'Strict model evaluation',
-        icon: 'tabler:chart-dots',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1655720837928-eff154e1ac52?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Training Process',
-    }}
-  />
+    <!-- Hero Section -->
+    <section class="relative py-32 px-6 overflow-hidden">
+      <div class="max-w-7xl mx-auto text-center animate-on-scroll">
+        <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+          AI TRAINING · 模型训练
+        </span>
+        <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-[0.9]">
+          Model Training & Fine-tuning<br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-5xl md:text-6xl italic">Customized · Loop Learning</span>
+        </h1>
+        <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed mb-6">
+          Professional AI model service solutions. Providing full-link support from base backbone fine-tuning to vertical domain model development.
+        </p>
+        <div class="flex items-center justify-center gap-6 text-sm font-bold text-primary/60 uppercase tracking-[0.2em]">
+           <span>Data Security</span>
+           <span class="w-1 h-1 bg-primary/30 rounded-full"></span>
+           <span>Efficient Computing</span>
+           <span class="w-1 h-1 bg-primary/30 rounded-full"></span>
+           <span>Precise Delivery</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- Case Study 1: LLM Fine-tuning -->
-  <Content
-    isReversed
-    tagline='Case Study 1'
-    title='LLM Fine-tuning'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-        • Demand analysis: a legal consultation platform needs a professional legal question-answering model
-        • Pain point: the general model lacks legal expertise and low response accuracy
-        • Goal: build a professional legal domain question-answering model`,
-      },
-      {
-        title: 'Solution',
-        description: `
-        • Build a legal professional knowledge base
-        • Design an efficient fine-tuning scheme
-        • Apply PEFT technology to reduce costs
-        • Implement incremental training updates`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-        • Legal question-answering accuracy increased by 60%
-        • Training cost reduced by 70%
-        • Model deployment scale reduced by 80%
-        • User satisfaction increased by 45%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1655720837928-eff154e1ac52?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Model Training',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        Through the deep integration of professional domain knowledge and efficient fine-tuning technology, the client
-        significantly improved the model's professional performance in the legal field while controlling costs,
-        achieving accurate legal consultation services.
-      </p>
-    </Fragment>
-  </Content>
+    <!-- Training Process: Staggered Cards -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-end justify-between mb-20 gap-8 animate-on-scroll">
+        <div class="max-w-2xl">
+          <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">Service Flow</p>
+          <h2 class="text-4xl md:text-5xl font-black tracking-tighter italic">Meticulous Training Process</h2>
+        </div>
+        <p class="text-muted max-w-sm text-sm font-medium leading-relaxed">Built on industrial-grade standards, automated training closed-loop ensuring every iteration is traceable.</p>
+      </div>
 
-  <!-- Case Study 2: Domain Model -->
-  <Content
-    isAfterContent
-    tagline='Case Study 2'
-    title='Vertical Domain Model Development'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-        • Demand analysis: a medical institution needs an intelligent medical image diagnosis system
-        • Pain point: traditional diagnosis is time-consuming and high in labor costs
-        • Goal: develop a high-precision medical image diagnosis model`,
-      },
-      {
-        title: 'Solution',
-        description: `
-        • Medical image data processing
-        • Professional doctor team annotation
-        • Deep learning model optimization
-        • Multi-round iterative verification`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-        • Diagnosis accuracy reached 95%
-        • Diagnosis time reduced by 80%
-        • Labor costs reduced by 50%
-        • Diagnosis efficiency increased by 300%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Medical Image',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        The project team collected and annotated a large amount of medical image data, combined with the diagnostic
-        experience of professional doctors, developed a high-precision AI-assisted diagnostic system, greatly improving
-        the diagnostic efficiency of medical institutions.
-      </p>
-    </Fragment>
-  </Content>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+        <!-- Connecting Line (Desktop) -->
+        <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-border-light dark:via-border-dark to-transparent -z-10"></div>
+        
+        {trainingSteps.map((step, i) => (
+          <div class="animate-on-scroll group" style={`transition-delay: ${i * 100}ms`}>
+            <div class="bento-card h-full flex flex-col items-center text-center p-10 hover:border-primary/50 transition-all">
+              <div class="w-16 h-16 rounded-3xl bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl shadow-primary/5">
+                 <Icon name={step.icon} class="w-8 h-8" />
+              </div>
+              <span class="text-[10px] font-black uppercase tracking-widest text-muted opacity-40 mb-2">Phase 0{i + 1}</span>
+              <h3 class="text-xl font-bold mb-4 italic tracking-tight">{step.title}</h3>
+              <p class="text-xs text-muted leading-relaxed font-medium">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
-  <!-- Case Study 3: Multi-modal Model -->
-  <Content
-    isReversed
-    tagline='Case Study 3'
-    title='Multi-modal Model Training and Deployment'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-        • Demand analysis: an e-commerce platform needs an intelligent product recognition system
-        • Pain point: inaccurate product descriptions and low classification efficiency
-        • Goal: implement intelligent processing of product images and descriptions`,
-      },
-      {
-        title: 'Solution',
-        description: `
-        • Multi-modal data preprocessing
-        • Cross-modal feature fusion
-        • Distributed training deployment
-        • Real-time inference optimization`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-        • Product classification accuracy reached 98%
-        • Processing efficiency increased by 200%
-        • Manual audit reduced by 90%
-        • User experience significantly improved`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Multi-modal Training',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        By developing a multi-modal model, intelligent processing of product images and description texts is achieved,
-        helping e-commerce platforms improve product management efficiency and optimize user shopping experiences.
-      </p>
-    </Fragment>
-  </Content>
+    <!-- Case Studies: Immersive Content Blocks -->
+    <section class="py-32 space-y-40">
+       <!-- Case 1: LLM Fine-tuning -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+             <div class="animate-on-scroll animate-left">
+                <span class="text-primary text-xs font-bold uppercase tracking-widest mb-4 inline-block">CASE STUDY 01 · Legal Tech</span>
+                <h3 class="text-4xl font-black mb-10 italic tracking-tighter">Large Language Model Fine-tuning Training</h3>
+                <div class="space-y-8">
+                   <div class="p-8 rounded-[2.5rem] bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 ">
+                      <p class="text-xs font-bold text-primary uppercase mb-4">Project Background & Pain Points</p>
+                      <p class="text-sm text-muted leading-relaxed">
+                        A legal consultation platform faces "hallucination" problems with general large models in understanding legal provisions, with low response accuracy and inability to handle complex legal logic. Goal: Build a Q&A large model with expert-level legal literacy.
+                      </p>
+                   </div>
+                   <div class="grid grid-cols-2 gap-6">
+                      <div class="p-8 rounded-[2.5rem] bg-primary/5 border border-primary/10">
+                         <p class="text-3xl font-black italic text-primary tracking-tighter">+60%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">Q&A Accuracy Improvement</p>
+                      </div>
+                      <div class="p-8 rounded-[2.5rem] bg-indigo-500/5 border border-indigo-500/10">
+                         <p class="text-3xl font-black italic text-indigo-500 tracking-tighter">-70%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">Training Cost Optimization</p>
+                      </div>
+                   </div>
+                   <div class="p-10 rounded-[3rem] bg-slate-900 text-white relative overflow-hidden group">
+                      <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:gavel" class="w-24 h-24" /></div>
+                      <h4 class="text-xl font-black mb-4 italic tracking-tight">Scenario Story</h4>
+                      <p class="text-sm text-white/70 leading-relaxed italic">"Through deep integration of professional legal knowledge base and PEFT (Parameter Efficient Fine-tuning) technology, we helped the client achieve a qualitative transformation from general model to professional 'Legal Brain' under limited computing costs. The model can now precisely cite legal provisions, significantly improving the conversion rate of online consultation."</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right relative">
+                <div class="rounded-[4rem] overflow-hidden shadow-2xl relative group">
+                   <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1740&auto=format&fit=crop" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
+                   <div class="absolute inset-x-0 bottom-0 p-10 bg-gradient-to-t from-black/80 to-transparent">
+                      <div class="flex items-center gap-4 text-white">
+                         <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center"><Icon name="lucide:check" class="w-6 h-6" /></div>
+                         <p class="text-sm font-bold italic tracking-wide">Deployment Scale Reduced 80% · Fast Response</p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
 
-  <!-- Case Study 4: Performance Optimization -->
-  <Content
-    isAfterContent
-    tagline='Case Study 4'
-    title='Model Performance Optimization Service'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-        • Demand analysis: a smart device manufacturer needs a lightweight AI model
-        • Pain point: large model size and slow inference speed
-        • Goal: implement lightweight model deployment`,
-      },
-      {
-        title: 'Solution',
-        description: `
-        • Model compression and quantization
-        • Knowledge distillation optimization
-        • Operator fusion acceleration
-        • Heterogeneous device adaptation`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-        • Model volume reduced by 95%
-        • Inference speed increased by 300%
-        • Energy consumption reduced by 80%
-        • Precision loss less than 1%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Performance Optimization',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        Through model compression and optimization technology, the client successfully deployed large AI models to
-        resource-constrained devices, maintaining high performance while significantly reducing resource consumption.
-      </p>
-    </Fragment>
-  </Content>
+       <!-- Case 2: Medical Vertical Model -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center flex-row-reverse">
+             <div class="animate-on-scroll animate-left lg:order-2">
+                <span class="text-emerald-500 text-xs font-bold uppercase tracking-widest mb-4 inline-block">CASE STUDY 02 · Smart Healthcare</span>
+                <h3 class="text-4xl font-black mb-10 italic tracking-tighter">Vertical Domain Medical Diagnostic Model</h3>
+                <div class="space-y-8">
+                   <div class="p-8 rounded-[2.5rem] bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 ">
+                      <p class="text-xs font-bold text-emerald-500 uppercase mb-4">Project Background & Goals</p>
+                      <p class="text-sm text-muted leading-relaxed">
+                        A medical institution urgently needs to improve the throughput and accuracy of medical image reading, overcoming the problems of time-consuming and high labor intensity of traditional manual reading. Goal: Develop a high-precision medical image diagnostic model with clinical practical value.
+                      </p>
+                   </div>
+                   <div class="flex gap-6">
+                      <div class="flex-1 p-8 rounded-[2.5rem] bg-emerald-500/5 border border-emerald-500/10">
+                         <p class="text-4xl font-black italic text-emerald-600 tracking-tighter">95%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">Diagnostic Accuracy</p>
+                      </div>
+                      <div class="flex-1 p-8 rounded-[2.5rem] bg-orange-500/5 border border-orange-500/10 text-center">
+                         <p class="text-4xl font-black italic text-orange-600 tracking-tighter">300%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">Diagnostic Efficiency Boost</p>
+                      </div>
+                   </div>
+                   <div class="p-10 rounded-[3.5rem] bg-emerald-600 text-white relative overflow-hidden group">
+                      <div class="absolute -top-4 -right-4 opacity-10"><Icon name="lucide:heart-pulse" class="w-24 h-24" /></div>
+                      <h4 class="text-2xl font-black mb-4 italic tracking-tight text-white/90">Scenario Story</h4>
+                      <p class="text-sm text-white/90 leading-relaxed italic">"Through deep collaboration with medical expert teams and multi-round iterative verification of hundreds of thousands of image data, we built a high-precision AI-assisted diagnostic system. This system not only reduced diagnostic time by 80%, but more importantly, it became the most reliable 'digital assistant' for grassroots physicians."</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right lg:order-1 relative">
+                <div class="rounded-[4rem] overflow-hidden shadow-2xl relative group">
+                   <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1740&auto=format&fit=crop" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+             </div>
+          </div>
+       </div>
 
-  <!-- Case Study 5: Few-shot Learning -->
-  <Content
-    isReversed
-    tagline='Case Study 5'
-    title='Few-shot Learning Solution'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-        • Demand analysis: a manufacturing customer needs a defect detection system
-        • Pain point: insufficient sample data and high annotation costs
-        • Goal: implement fast few-shot learning`,
-      },
-      {
-        title: 'Solution',
-        description: `
-        • Data enhancement technology
-        • Transfer learning application
-        • Meta-learning method
-        • Continuous learning update`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-        • 10 samples can be trained
-        • Detection accuracy reached 90%
-        • Deployment cycle reduced by 75%
-        • Maintenance cost reduced by 60%`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1598425237654-4fc758e50a93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Few-shot Learning',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        For the manufacturing industry with few defect samples, the few-shot learning technology is used to help
-        customers quickly build high-precision defect detection systems, significantly reducing data collection and
-        annotation costs.
-      </p>
-    </Fragment>
-  </Content>
+       <!-- Case 3: Multimodal Retail -->
+       <div class="px-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+             <div class="animate-on-scroll animate-left">
+                <span class="text-accent text-xs font-bold uppercase tracking-widest mb-4 inline-block">CASE STUDY 03 · Smart Retail</span>
+                <h3 class="text-4xl font-black mb-10 italic tracking-tighter">Multi-modal Model Training Deployment</h3>
+                <div class="space-y-8">
+                   <div class="p-8 rounded-[2.5rem] bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20">
+                      <p class="text-xs font-bold text-accent uppercase mb-4">Challenges & Opportunities</p>
+                      <p class="text-sm text-muted leading-relaxed">
+                        E-commerce platforms seek more precise product recommendations, traditional text-tag based recommendations have hit a bottleneck. Pain point: inability to fully mine product image information. Goal: Build a multi-modal intelligent recommendation system that deeply understands text and image attributes.
+                      </p>
+                   </div>
+                   <div class="grid grid-cols-2 gap-6">
+                      <div class="p-8 rounded-[2.5rem] bg-accent/5 border border-accent/10">
+                         <p class="text-3xl font-black italic text-accent tracking-tighter">+120%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">Recommendation Click Rate Boost</p>
+                      </div>
+                      <div class="p-8 rounded-[2.5rem] bg-pink-500/5 border border-pink-500/10">
+                         <p class="text-3xl font-black italic text-pink-500 tracking-tighter">+35%</p>
+                         <p class="text-[10px] uppercase font-bold text-muted">Sales Growth</p>
+                      </div>
+                   </div>
+                   <div class="p-10 rounded-[3rem] border border-border-light dark:border-primary/20 flex flex-col justify-center">
+                      <h4 class="text-xl font-black mb-4 italic tracking-tight flex items-center gap-3">
+                         <Icon name="lucide:shopping-cart" class="w-6 h-6 text-accent" />
+                         Scenario Story
+                      </h4>
+                      <p class="text-sm text-muted leading-relaxed italic">"Through integrating user behavior data with millions of product images, the multi-modal fusion model we trained gave the recommendation engine 'visual understanding'. This not only made recommendations more aligned with user aesthetic preferences, but also increased average user stay time by 60%."</p>
+                   </div>
+                </div>
+             </div>
+             <div class="animate-on-scroll animate-right relative">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1740&auto=format&fit=crop" class="rounded-[4rem] w-full aspect-square object-cover shadow-2xl" />
+             </div>
+          </div>
+       </div>
+    </section>
 
-  <!-- Case Study 6: Incremental Learning -->
-  <Content
-    isAfterContent
-    tagline='Case Study 6'
-    title='Incremental Learning System Construction'
-    items={[
-      {
-        title: 'Project Background',
-        description: `
-        • Demand analysis: a smart customer service system needs continuous optimization
-        • Pain point: new issues cannot be addressed in time
-        • Goal: build an online learning system`,
-      },
-      {
-        title: 'Solution',
-        description: `
-        • Incremental training architecture
-        • Online learning strategy
-        • Disaster recovery rollback mechanism
-        • Performance monitoring system`,
-      },
-      {
-        title: 'Implementation Effect',
-        description: `
-        • Response accuracy increased by 40%
-        • New knowledge learning speed increased by 90%
-        • Maintenance cost reduced by 50%
-        • System stability improved`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1488229297570-58520851e868?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Incremental Learning',
-    }}
-  >
-    <Fragment slot='content'>
-      <h3 class='mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl'>Scenario Story</h3>
-      <p>
-        For the smart customer service system, the incremental learning ability is developed to achieve continuous
-        knowledge updates and online model optimization, significantly improving the service quality and response
-        efficiency of the system.
-      </p>
-    </Fragment>
-  </Content>
+    <!-- Core Advantages: Dark Section -->
+    <section class="py-32 px-6 max-w-7xl mx-auto rounded-[5rem] bg-[#0A0D28] text-white relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
+      <div class="relative z-10">
+        <div class="text-center mb-20 animate-on-scroll">
+          <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">Core Strengths</p>
+          <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic">Professional Model Training Services</h2>
+        </div>
 
-  <!-- Success Metrics -->
-  <Timeline
-    title='Model Training Solution Effect'
-    items={[
-      {
-        title: 'Training Efficiency',
-        description: 'Average training time reduced by 65%, resource utilization increased by 40%',
-        icon: 'tabler:chart-arrows',
-      },
-      {
-        title: 'Model Performance',
-        description: 'Accuracy increased by 50%, inference speed increased by 200%',
-        icon: 'tabler:brain',
-      },
-      {
-        title: 'Deployment Cost',
-        description: 'Computing resource cost reduced by 70%, operation and maintenance cost reduced by 45%',
-        icon: 'tabler:coin',
-      },
-      {
-        title: 'System Stability',
-        description: 'System availability reached 99.9%, fault response time reduced by 80%',
-        icon: 'tabler:shield',
-      },
-    ]}
-  />
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {advantages.map((adv, i) => (
+            <div class="animate-on-scroll p-10 rounded-[2.5rem] bg-white/5 border border-white/10 text-center flex flex-col items-center group hover:bg-white/10 transition-all duration-500" style={`transition-delay: ${i * 100}ms`}>
+              <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
+                 <Icon name={adv.icon} class="w-7 h-7" />
+              </div>
+              <h3 class="text-xl font-bold mb-4 italic tracking-tight">{adv.title}</h3>
+              <p class="text-xs text-white/50 leading-relaxed font-medium">{adv.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
-  <!-- Call to Action -->
-  <!-- Core Advantages -->
-  <Features2
-    title='Core Advantages'
-    subtitle='Professional Model Training Capabilities'
-    columns={2}
-    items={[
-      {
-        title: 'Professional Team',
-        description: 'Professional technical team in AI training field',
-        icon: 'tabler:users',
-      },
-      {
-        title: 'Efficient Training',
-        description: 'Advanced training architecture and optimization scheme',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Cost Control',
-        description: 'Efficient resource scheduling and cost optimization',
-        icon: 'tabler:coin',
-      },
-      {
-        title: 'Continuous Optimization',
-        description: 'Comprehensive effect evaluation and continuous improvement',
-        icon: 'tabler:refresh',
-      },
-    ]}
-  />
+    <!-- Overall Impact: Results Grid -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll">
+        <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-accent">Overall Impact</p>
+        <h2 class="text-4xl md:text-6xl font-black tracking-tighter italic">Model Training Service Impact Statistics</h2>
+      </div>
 
-  <CallToAction
-    title='Start Your Industry Digital Transformation Journey'
-    subtitle='Local Deployment, Secure and Reliable, Lower Cost'
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Book a Consultation',
-        href: getPermalink('/en/contact'),
-        icon: 'tabler:download',
-      },
-      {
-        text: 'Learn More',
-        href: getPermalink('/en/about'),
-      },
-    ]}
-  />
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {results.map((res, i) => (
+          <div class="animate-on-scroll p-10 rounded-[3rem] bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 flex flex-col items-center text-center group" style={`transition-delay: ${i * 100}ms`}>
+             <Icon name={res.icon} class="w-6 h-6 text-primary mb-6" />
+             <p class="text-5xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-primary to-accent mb-4">{res.title.includes('提升') ? '60%+' : res.title.includes('降低') ? '70%' : res.title.includes('减少') ? '80%' : '45%+'}</p>
+             <h4 class="text-lg font-bold mb-2">{res.title}</h4>
+             <p class="text-xs text-muted font-medium">{res.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section class="py-32 px-6">
+       <div class="animate-on-scroll bento-card max-w-5xl mx-auto text-center border-none bg-gradient-to-br from-indigo-600 to-primary text-white p-16 md:p-24 shadow-2xl relative overflow-hidden">
+           <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/tech/1920/1080?blur=10')] opacity-10 mix-blend-overlay"></div>
+           <div class="relative z-10">
+              <h2 class="text-4xl md:text-7xl font-black italic tracking-tighter mb-8">Start Your Model Training Journey</h2>
+              <p class="text-xl text-white/80 mb-12 font-medium max-w-2xl mx-auto">Focus on your business, leave algorithms and computing to us. Professional team for customized model training solutions.</p>
+              <div class="flex flex-wrap justify-center gap-6">
+                <a href="/en/contact/" class="px-12 py-5 bg-white text-primary font-black italic rounded-full hover:scale-105 transition-all shadow-xl">Consult Solution Now</a>
+                <a href="/en/about/" class="px-12 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black italic rounded-full hover:bg-white/20 transition-all">Learn About UniSudo</a>
+              </div>
+           </div>
+       </div>
+    </section>
+  </main>
 </Layout>
