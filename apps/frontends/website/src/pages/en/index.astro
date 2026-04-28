@@ -82,36 +82,39 @@ const coreCompetencies = [
 
 const solutions = [
   {
-    title: "Streaming Interruptable Dialogue System",
-    subtitle: "Provide more intelligent and smooth dialogue experiences for your business.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop",
+    title: "Virtual Digital Humans & Streaming Conversations",
+    subtitle: "Millisecond-level real-time interaction that brings digital showrooms and intelligent customer service to life.",
+    category: "Interactive Innovation",
+    image: "https://images.openai.com/static-rsc-4/8PPBBVXur7C-XIWP1_phZtYp55i3isw-Vb-45CD9lUCMQjg2WqrvIyV-Z_fQhGwvRQsOy3DlxLGvK2j51YTNOvQR1TeMWQH5lDkwGQqbuwLRcz0_PpLDOnoQ8U7VCtKw9zzT4_iMbVijDc_ruuFbgLnFC8yMHxGVjd5NTod20h_ZJiqyLGvghp73_mKzZXLt?purpose=inline",
     items: [
-      "Industry-leading real-time interaction capabilities",
-      "Intelligent dialogue path reconstruction",
-      "Support multi-scenario knowledge base real-time Q&A",
-      "Smooth user interaction experience"
+      "Industry-leading interruptible streaming technology",
+      "High-fidelity digital human rendering",
+      "Deep multi-turn conversational memory",
+      "Ultra-low latency end-to-end response"
     ]
   },
   {
-    title: "Smart Hardware Solutions",
-    subtitle: "We provide various smart hardware solutions to meet your business needs.",
-    image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=2194&auto=format&fit=crop",
+    title: "Edge Computing Hardware Solutions",
+    subtitle: "Deeply customized software-hardware integration for industrial-grade private model deployment and data security.",
+    category: "Infrastructure",
+    image: "https://images.openai.com/static-rsc-4/FyUWuvjde8DLAJvTwXLOnt4mrvxJ5BieHOYaK6SBtSCQnVXJJljMsBshKLy5cvHgeM-BaEBJXtwXPnr5XcXh-41jX84FfjFtu6B9_Jw9r_sInVcYRXNj-jAGJmCupfzVKn5DcRuo5sHXYrzQONfwAAWy-mIrxSoJugM8jGEEft0EFKTnhYTcDulFsBHNuzNM?purpose=inline",
     items: [
-      "Support localized low-cost deployment",
-      "Flexible integration with various models",
-      "Support private model training and optimization",
-      "Adapt to commercial and industrial scenarios"
+      "Support for localized and domestic computing architectures",
+      "Flexible integration with multi-vendor sensor interfaces",
+      "Private model compression and quantization optimization",
+      "Industrial-grade 24/7 stable operation"
     ]
   },
   {
-    title: "Cloud-native Workflow Platform",
-    subtitle: "Provide full-process support for your enterprise automation, letting you focus on core business.",
-    image: "https://images.unsplash.com/photo-1611462985358-60d3498e0364?q=80&w=2070&auto=format&fit=crop",
+    title: "Enterprise-Grade Cloud-Native Workflows",
+    subtitle: "Bridging AI applications and business systems to enable fully automated process transformation.",
+    category: "Organizational Efficiency",
+    image: "https://images.openai.com/static-rsc-4/rClkOUPwQtWlbhC1QbL-0MuSIks_gezzFmbBP4a8n7qFG7cl_8TveMpaAsrRKu_dttBGz-eMx2_abJ-vhimVkRaIuzrjqhoX5qHeT9sOcKqeuVVHXQ_GI6X1rTcJtAVfWd7pVuF7sT3bEdqhH-xhJB6bOmcQ4oZLETr-aNTp_ciJqZEePfiiCVQOzMWjENlz?purpose=inline",
     items: [
-      "Complete commercial-grade deployment capability",
-      "Strong Function Call support",
-      "Flexible local deployment solutions",
-      "Open API ecosystem"
+      "Standardized Function Call plugin ecosystem",
+      "Elastic and scalable cloud-native API clusters",
+      "Granular token usage monitoring",
+      "Multi-role collaborative workflow engine"
     ]
   }
 ];
@@ -236,31 +239,46 @@ const metadata = {
         <p class="text-muted text-lg">Matrix product system, empowering enterprise full lifecycle digital transformation</p>
       </div>
 
-      <div class="space-y-32">
+      <div class="space-y-40">
         {solutions.map((s, i) => (
-          <div class={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center lg:items-start`}>
-            <div class="animate-on-scroll lg:w-1/2" style={`transition-delay: ${i * 100}ms`}>
-              <div class="relative group">
-                <div class="absolute inset-0 bg-primary/20 blur-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
-                <img 
-                  src={s.image} 
-                  alt={s.title} 
-                  referrerpolicy="no-referrer"
-                  class="rounded-3xl shadow-2xl border border-gray-100  dark:border-primary/20 w-full object-cover aspect-[4/3]" 
-                />
+          <div class={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 items-center lg:items-center`}>
+            <div class="reveal lg:w-3/5" style={`transition-delay: ${i * 100}ms`}>
+              <div class="relative group perspective-1000">
+                <div class="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-[4rem] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 -z-10 scale-95 group-hover:scale-105"></div>
+                <div class="overflow-hidden rounded-[3rem] border border-border-light dark:border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
+                  <img 
+                    src={s.image} 
+                    alt={s.title} 
+                    referrerpolicy="no-referrer"
+                    class="w-full object-cover aspect-[16/10] grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700" 
+                  />
+                </div>
+                <!-- Decorative Badge -->
+                <div class="absolute -bottom-6 -right-6 md:right-12 bg-white dark:bg-[#030620] px-8 py-4 rounded-2xl shadow-xl border border-border-light dark:border-primary/20 hidden md:block">
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 rounded-full bg-primary animate-ping"></div>
+                    <span class="text-xs font-black uppercase tracking-[0.2em]">{s.category}</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="animate-on-scroll lg:w-1/2" style={`transition-delay: ${(i * 100) + 100}ms`}>
-              <h3 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight italic">{s.title}</h3>
-              <p class="text-xl text-muted mb-10 leading-relaxed font-medium">{s.subtitle}</p>
-              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="reveal lg:w-2/5" style={`transition-delay: ${(i * 100) + 150}ms`}>
+              <div class="flex items-center gap-3 mb-6">
+                 <span class="w-12 h-px bg-primary/30"></span>
+                 <span class="text-xs font-bold text-primary uppercase tracking-[0.3em]">{s.category}</span>
+              </div>
+              <h3 class="text-4xl md:text-5xl font-black mb-6 tracking-tighter italic leading-tight">{s.title}</h3>
+              <p class="text-lg text-muted mb-10 leading-relaxed font-medium italic pr-4">{s.subtitle}</p>
+              <div class="grid grid-cols-1 gap-4">
                 {s.items.map(item => (
-                  <li class="flex items-center gap-3 p-4 bg-white dark:bg-white/5 rounded-2xl border border-gray-100  dark:border-primary/20 text-sm font-medium">
-                    <Icon name="lucide:check-circle-2" class="text-primary w-5 h-5 flex-shrink-0" />
-                    {item}
-                  </li>
+                  <div class="flex items-center gap-4 group/item">
+                    <div class="w-8 h-8 rounded-lg bg-primary/5 flex items-center justify-center text-primary group-hover/item:bg-primary group-hover/item:text-white transition-all duration-300">
+                      <Icon name="lucide:arrow-right-circle" class="w-4 h-4" />
+                    </div>
+                    <span class="text-sm font-bold text-muted group-hover/item:text-default transition-colors">{item}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         ))}
