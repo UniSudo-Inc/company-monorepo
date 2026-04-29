@@ -245,7 +245,7 @@ const results = [
         {results.map((res, i) => (
           <div class="animate-on-scroll p-10 rounded-[3rem] bg-surface-light dark:bg-white/5 border border-border-light dark:border-primary/20 flex flex-col items-center text-center group" style={`transition-delay: ${i * 100}ms`}>
              <Icon name={res.icon} class="w-6 h-6 text-primary mb-6" />
-             <p class="text-5xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-primary to-accent mb-4">{res.title.includes('提升') ? '60%+' : res.title.includes('降低') ? '70%' : res.title.includes('减少') ? '80%' : '45%+'}</p>
+             <p class="text-5xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-primary to-accent mb-4">{res.title.includes('Improvement') ? '60%+' : res.title.includes('Reduction') ? '70%' : res.title.includes('reduced') ? '80%' : '45%+'}</p>
              <h4 class="text-lg font-bold mb-2">{res.title}</h4>
              <p class="text-xs text-muted font-medium">{res.desc}</p>
           </div>

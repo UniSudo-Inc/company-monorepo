@@ -24,26 +24,41 @@ const subjects = [
 
 const pricingPlans = [
   { 
-    name: "SaaS Subscription", 
-    price: "100K", 
+    name: "SaaS Subscription Edition", 
+    price: "$100K", 
     unit: "/year", 
-    desc: "Including maintenance, ready to use",
-    features: ["Standard grading", "Cloud OCR", "Regular system updates", "Basic tech support"]
+    desc: "Fully managed, ready to use out of the box.",
+    features: [
+      "Standard automated grading features",
+      "Cloud-based OCR recognition",
+      "Regular system updates",
+      "Basic technical support"
+    ]
   },
   { 
-    name: "Cloud Basic", 
-    price: "300K", 
-    unit: "One-time", 
-    desc: "Integrates with your existing system",
-    features: ["Grading core engine", "Cloud OCR/LLM", "System integration support", "15% annual maintenance"],
+    name: "Cloud Infrastructure Edition", 
+    price: "$300K", 
+    unit: "one-time", 
+    desc: "Seamless integration with existing frontend systems.",
+    features: [
+      "Core grading backend engine",
+      "Cloud-based OCR and large language models",
+      "System integration support",
+      "15% annual maintenance fee"
+    ],
     popular: true
   },
   { 
-    name: "Private Deployment", 
-    price: "500K", 
-    unit: "One-time", 
-    desc: "Fully private deployment",
-    features: ["Local OCR engine", "Custom frontend", "Full permission management", "15% annual maintenance"]
+    name: "Private Deployment Edition", 
+    price: "$500K", 
+    unit: "one-time", 
+    desc: "Fully private and on-premises deployment.",
+    features: [
+      "On-premises OCR engine deployment",
+      "Customizable user frontend",
+      "Full-featured permission management",
+      "15% annual maintenance fee"
+    ]
   }
 ];
 ---
@@ -112,7 +127,7 @@ const pricingPlans = [
                       </div>
                     </div>
                     <div class="absolute inset-0 flex items-center justify-center">
-<div class="px-6 py-3 rounded-2xl bg-primary/95 backdrop-blur-md text-white text-xs font-bold shadow-[0_10px_30px_rgba(124,58,237,0.4)] animate-pulse border border-white/20">
+                        <div class="px-6 py-3 rounded-2xl bg-primary/95 backdrop-blur-md text-white text-xs font-bold shadow-[0_10px_30px_rgba(124,58,237,0.4)] animate-pulse border border-white/20">
                           AI Analyzing...
                         </div>
                     </div>
@@ -155,7 +170,7 @@ const pricingPlans = [
           <div>
             <div class="mb-16 text-left">
               <span class="stat-badge px-4 py-1.5 bg-primary/5 text-primary rounded-full text-[10px] font-bold uppercase tracking-widest border border-primary/10 mb-4 inline-block">Industry Insights</span>
-<h2 class="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight text-text">The Last Bottleneck in Digital Education</h2>
+              <h2 class="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight text-text">The Last Bottleneck in Digital Education</h2>
               <p class="text-base md:text-lg text-text-muted leading-relaxed">Grading still relies on heavy manual work, limiting teaching efficiency.</p>
             </div>
             <div class="space-y-6">
@@ -408,7 +423,7 @@ const pricingPlans = [
           <h2 class="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight text-text">Controllable Grading, Predictable Analysis</h2>
         </div>
         
-<div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 gap-8">
           {[
             { 
               title: "Highly Controllable Grading", 
@@ -460,7 +475,7 @@ const pricingPlans = [
                 </a>
               </div>
               <div class="p-8 rounded-[32px] bg-primary text-white border border-white/20 shadow-22 translate-y-12">
-<h3 class="text-2xl font-bold mb-4">Flexible Scoring Logic</h3>
+              <h3 class="text-2xl font-bold mb-4">Flexible Scoring Logic</h3>
                 <p class="text-white/80 mb-8 leading-relaxed">Supports different scoring logic within exercises, accurately replicating teacher grading thinking to ensure fairness.</p>
                 <a href="https://uniteach.unisudo.dev/" target="_blank" class="inline-flex items-center gap-2 text-white font-bold hover:gap-4 transition-all">
                   View Case Studies <Icon name="lucide:chevron-right" class="w-5 h-5" />
@@ -523,7 +538,7 @@ const pricingPlans = [
                   </li>
                 ))}
               </ul>
-              <a href="/en/en/contact/" class={`w-full px-24 py-4 rounded-2xl font-bold transition-all ${plan.popular ? 'btn-primary' : 'bg-surface text-text border border-border-light  dark:border-primary/20 hover:border-primary/30 hover:bg-bg shadow-sm'}`}>
+              <a href="/en/en/contact/"  class={`${plan.popular ? 'btn-primary w-full py-4 text-lg' : 'btn-primary w-full py-4 text-lg !bg-white !text-black !shadow-none dark:!bg-[#161535] dark:!text-white'}`}>
                 Contact Now
               </a>
             </div>

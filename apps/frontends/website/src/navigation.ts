@@ -60,8 +60,8 @@ export const headerData = {
       text: '产品体系',
       links: [
         {
-          text: 'AG2O',
-          href: getPermalink('/products/ag2o'),
+          text: 'A2',
+          href: getPermalink('/products/a2'),
         },
         {
           text: 'UniTeach',
@@ -149,8 +149,8 @@ export const headerDataEn = {
       text: 'Product System',
       links: [
         {
-          text: 'AG2O',
-          href: getPermalink('/en/products/ag2o'),
+          text: 'A2',
+          href: getPermalink('/en/products/a2'),
         },
         {
           text: 'UniTeach',
@@ -238,8 +238,8 @@ export const footerData = {
       title: '产品体系',
       links: [
         {
-          text: 'AG2O',
-          href: getPermalink('/products/ag2o'),
+          text: 'A2',
+          href: getPermalink('/products/a2'),
         },
         {
           text: 'UniTeach',
@@ -354,8 +354,8 @@ export const footerDataEn = {
       title: 'Product System',
       links: [
         {
-          text: 'AG2O',
-          href: getPermalink('/en/products/ag2o'),
+          text: 'A2',
+          href: getPermalink('/en/products/a2'),
         },
         {
           text: 'UniTeach',

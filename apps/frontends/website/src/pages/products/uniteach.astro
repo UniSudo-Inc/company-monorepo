@@ -503,7 +503,7 @@ const pricingPlans = [
           <p class="text-base md:text-lg text-text-muted leading-relaxed mx-auto max-w-2xl">源代码开放，安全自主可控。支持多种部署与定制模式，满足不同规模教学机构需求。</p>
         </div>
         
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pricingPlans.map((plan) => (
             <div class={`p-10 rounded-[40px] border ${plan.popular ? 'border-primary bg-primary/5 shadow-22 scale-105 z-10' : 'border-border-light  dark:border-primary/20 bg-surface'} relative transition-all duration-500 hover:shadow-xl`}>
               {plan.popular && <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-6 py-1.5 bg-primary text-white text-[10px] font-black rounded-full tracking-widest">MOST POPULAR</div>}
@@ -523,7 +523,7 @@ const pricingPlans = [
                   </li>
                 ))}
               </ul>
-              <a href="/contact/" class={`w-full px-28 py-4 rounded-2xl font-bold transition-all ${plan.popular ? 'btn-primary' : 'bg-surface text-text border border-border-light  dark:border-primary/20 hover:border-primary/30 hover:bg-bg shadow-sm'}`}>
+              <a href="/contact/" class={`${plan.popular ? 'btn-primary w-full py-4 text-lg' : 'btn-primary w-full py-4 text-lg !bg-white !text-black !shadow-none dark:!bg-[#161535] dark:!text-white'}`}>
                 立即咨询
               </a>
             </div>

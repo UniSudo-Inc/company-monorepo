@@ -5,14 +5,14 @@ import Layout from '@/layouts/LandingLayout.astro';
 import { getHomePermalinkEn } from '@/utils/permalinks';
 
 const metadata = {
-  title: 'AG2O - Your Always-On Personal AI Operating System',
-  description: 'AG2O is a Rust-based persistent Personal Agent system that upgrades the "chatbot" into a long-term collaborative, task-dividing, experience-accumulating Personal AI team through a three-layer Agent architecture.',
+  title: 'A2 - Your Always-On Personal AI Operating System',
+  description: 'A2 is a Rust-based persistent Personal Agent system that upgrades the "chatbot" into a long-term collaborative, task-dividing, experience-accumulating Personal AI team through a three-layer Agent architecture.',
 };
 
 const coreCapabilities = [
   {
     title: 'Persistent Daemon Service',
-    desc: 'Continuously listens to channel events and exposes REST API after startup. AG2O is a persistent personal AI service running in the background — not a temporary assistant that starts and stops on demand.',
+    desc: 'Continuously listens to channel events and exposes REST API after startup. A2 is a persistent personal AI service running in the background — not a temporary assistant that starts and stops on demand.',
     icon: 'lucide:server'
   },
   {
@@ -66,22 +66,22 @@ const agentLayers = [
 const comparisons = [
   {
     feature: 'Core Narrative',
-    ag2o: 'Three-layer Agent collaboration system',
+    a2: 'Three-layer Agent collaboration system',
     others: 'Single assistant / chat window'
   },
   {
     feature: 'Operation Mode',
-    ag2o: 'Persistent Daemon, always online',
+    a2: 'Persistent Daemon, always online',
     others: 'Temporary startup, on-demand use'
   },
   {
     feature: 'Task Organization',
-    ag2o: 'Layered routing → specialized division',
+    a2: 'Layered routing → specialized division',
     others: 'Dump all tasks into one session'
   },
   {
     feature: 'Memory Accumulation',
-    ag2o: 'Independent workspace + persistent metadata',
+    a2: 'Independent workspace + persistent metadata',
     others: 'Simple session list search'
   }
 ];
@@ -102,14 +102,14 @@ const comparisons = [
 
       <div class="text-center mb-16 animate-on-scroll">
         <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 inline-block">
-          Personal Agent System · Built on Rust & Ag2O
+          Personal Agent System · Built on Rust & A2
         </span>
         <h1 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
           Upgrade the "Chatbot" into<br />
           <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic">Personal AI Operating System</span>
         </h1>
         <p class="text-xl text-muted max-w-3xl mx-auto font-medium leading-relaxed mb-12 italic">
-          AG2O isn\'t an AI in a window — it\'s a Personal Agent system that divides tasks, accumulates experience, and runs persistently. Move your AI from "answering questions" to "taking on work, assigning tasks, and building expertise".
+          A2 isn\'t an AI in a window — it\'s a Personal Agent system that divides tasks, accumulates experience, and runs persistently. Move your AI from "answering questions" to "taking on work, assigning tasks, and building expertise".
         </p>
         <div class="flex flex-wrap items-center justify-center gap-6">
           <a href="/en/contact/" class="px-12 py-5 bg-primary text-white font-black italic rounded-full hover:scale-105 transition-all shadow-xl shadow-primary/20">
@@ -129,10 +129,10 @@ const comparisons = [
                 <div class="w-3 h-3 rounded-full bg-red-500"></div>
                 <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                <span class="ml-4 text-white/40 text-xs tracking-widest">ag2o-daemon --status</span>
+                <span class="ml-4 text-white/40 text-xs tracking-widest">a2-daemon --status</span>
              </div>
              <div class="space-y-3">
-                <p class="text-blue-400">$ Starting AG2O Daemon System...</p>
+                <p class="text-blue-400">$ Starting A2 Daemon System...</p>
                 <p class="text-green-400">[OK] Personal Agent [UID-001] Listening on Feishu/Slack</p>
                 <p class="text-purple-400">[ACTIVE] Task Agent [Researcher] processing 3 jobs</p>
                 <p class="text-emerald-400">[FORKED] 4 Sub-agents running parallel research</p>
@@ -178,7 +178,7 @@ const comparisons = [
           <p class="mb-3 text-base font-bold uppercase tracking-[0.2em] text-primary">System Architecture</p>
           <h2 class="text-4xl md:text-6xl tracking-tighter italic mb-8">Three-Layer Agent System<br/><span class="text-primary/80">More Than an Assistant — A Team</span></h2>
           <p class="text-lg text-muted mb-10 leading-relaxed font-medium italic">
-            AG2O uses a persistent daemon plus three-layer Agent structure. Top layer understands the user, middle layer specializes in domains, bottom layer handles complex parallel execution.
+            A2 uses a persistent daemon plus three-layer Agent structure. Top layer understands the user, middle layer specializes in domains, bottom layer handles complex parallel execution.
           </p>
           
           <div class="space-y-6">
@@ -275,7 +275,7 @@ const comparisons = [
             <thead>
               <tr class="border-b border-white/10">
                 <th class="py-8 font-black italic text-muted uppercase tracking-widest text-xs">Comparison Dimension</th>
-                <th class="py-8 font-black italic text-primary text-xl">AG2O (A2)</th>
+                <th class="py-8 font-black italic text-primary text-xl">A2</th>
                 <th class="py-8 font-black italic text-white/40">Traditional AI Assistant</th>
               </tr>
             </thead>
@@ -283,7 +283,7 @@ const comparisons = [
               {comparisons.map(item => (
                 <tr class="border-b border-white/5 hover:bg-white/5 transition-colors group">
                   <td class="py-10 font-bold italic tracking-tight">{item.feature}</td>
-                  <td class="py-10 text-white/90 font-medium italic">{item.ag2o}</td>
+                  <td class="py-10 text-white/90 font-medium italic">{item.a2}</td>
                   <td class="py-10 text-white/30">{item.others}</td>
                 </tr>
               ))}
