@@ -60,7 +60,7 @@ export const headerData = {
       text: '产品体系',
       links: [
         {
-          text: 'A2',
+          text: '智能员工(A2)',
           href: getPermalink('/products/a2'),
         },
         {
@@ -149,7 +149,7 @@ export const headerDataEn = {
       text: 'Product System',
       links: [
         {
-          text: 'A2',
+          text: 'Intelligent Employee (A2)',
           href: getPermalink('/en/products/a2'),
         },
         {
@@ -238,7 +238,7 @@ export const footerData = {
       title: '产品体系',
       links: [
         {
-          text: 'A2',
+          text: '智能员工(A2)',
           href: getPermalink('/products/a2'),
         },
         {
@@ -354,7 +354,7 @@ export const footerDataEn = {
       title: 'Product System',
       links: [
         {
-          text: 'A2',
+          text: 'Intelligent Employee (A2)',
           href: getPermalink('/en/products/a2'),
         },
         {
